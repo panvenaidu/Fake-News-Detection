@@ -176,3 +176,31 @@
 - Kuntur et al., *Fake News Detection: It's All in the Data!* (Applied Sciences 2026): dataset design, labeling and bias shape reported fake-news performance and comparability.
 
 **Decided By:** Team-approved research decision analysis (Codex)
+
+---
+
+## D012 — 2026-09-08 — Reproducible Baseline Experimental Protocol (`BP-6W-v1`)
+
+**Decision:** Use the pre-registered protocol in `PROJECT_CONTEXT.md` for E002/E003/E004. It fixes the paired cohort, task, preprocessing, end-to-end fine-tuning, optimizer groups, training budget, evaluation, seed policy and logging before any model is implemented or trained.
+
+**Core protocol decisions:**
+- All three baselines use the identical verified paired cohort: `data/verified_paired_manifest.csv`, preserving **62,635 train / 6,685 validation / 6,675 test** rows. Text-only is deliberately restricted to this cohort for direct modality comparison.
+- Primary task is 6-way, with official integer mapping 0 True, 1 Satire/Parody, 2 Misleading Content, 3 Imposter Content, 4 False Connection, 5 Manipulated Content. Loss is unweighted cross-entropy; primary selection and reporting metric is macro-F1.
+- Stored `clean_title` is tokenized by `BertTokenizerFast` for `bert-base-uncased`, with a 128-token limit and dynamic padding. ResNet inputs are RGB ImageNet-normalized 224-pixel crops; no flip/colour augmentation is used because images may contain textual evidence.
+- All encoders are fine-tuned from epoch 1. Training uses AdamW, fixed model-specific parameter groups, a target effective batch of 32, 10 maximum epochs, 10% linear warm-up/decay, gradient clipping, and early stopping by validation macro-F1.
+- Three matched seeds (42, 43, 44) are required. Checkpoints are selected on validation macro-F1 only, then tested once per seed. Results are reported as three-seed mean ± standard deviation, not best-seed test performance.
+- Canonical results should be run with CUDA AMP on cloud/T4/A100. RTX 3050 memory differences may alter only micro-batch and gradient accumulation while preserving effective batch 32; all such changes are logged.
+- A later 2-way control is permitted only after the six-way baseline round. It retrains the same protocol on `2_way_label`; it cannot replace the primary task or be selected using test results.
+
+**Rationale:**
+- Fixed paired rows and split membership prevent differing image availability or text-only sample volume from confounding modality comparisons.
+- Macro-F1, per-class scores and confusion matrices are necessary because Fakeddit's fine-grained labels are imbalanced. The original Fakeddit benchmark established 6-way multimodal evaluation; later temporal Fakeddit analysis shows fine-grained class behavior and distribution shifts require more than aggregate accuracy.
+- TorchVision documents the selected ResNet-50 V2 weights, 224 crop, ImageNet normalization and approximately 25.6M parameters. Hugging Face documents dynamic padding/truncation behavior. PyTorch documents worker seeding and CUDA autocast/GradScaler for reproducible data loading and AMP.
+- Model-specific encoder learning rates and decay preserve each encoder's fixed, pre-registered transfer-learning scale; equal effective batch, epochs, scheduler, early stopping, seeds and no-sweep rule preserve the shared comparison budget.
+
+**Evidence:**
+- Nakamura, Levy and Wang, *r/Fakeddit* (LREC 2020): benchmark precedent for 2-/3-/6-way paired text-image modelling and BERT + ResNet-50 maximum fusion.
+- Stepanova and Ross, *Temporal Generalizability in Multimodal Misinformation Detection* (GenBench 2023): fine-grained imbalance and temporal degradation require macro and class-wise analysis.
+- PyTorch reproducibility and AMP documentation; TorchVision ResNet-50 V2 documentation; Hugging Face padding/truncation documentation.
+
+**Decided By:** Team-approved protocol research (Codex)

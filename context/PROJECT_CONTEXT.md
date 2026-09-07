@@ -151,6 +151,45 @@ The following initial baselines have been selected but are **not implemented or 
 
 **Evaluation caveat:** Fakeddit's labels are distant/subreddit-level and its released split is not a robustness test. Later work should add a temporal or held-out subgroup/domain-shift evaluation without replacing this initial benchmark.
 
+## Baseline Experimental Protocol (2026-09-08)
+
+**Protocol ID:** `BP-6W-v1`. This is a pre-registered baseline protocol, not an implementation or result.
+
+### Common cohort and task
+
+- Use `data/verified_paired_manifest.csv` only, for **all** E002/E003/E004, preserving its `split` column: **62,635 train / 6,685 validation / 6,675 test** (75,995 total). Do not resample, reshuffle split membership, or admit items outside the verified manifest.
+- Use `clean_title`, the local `image_path`, and `6_way_label` only. Lock the official mapping: 0 True, 1 Satire/Parody, 2 Misleading Content, 3 Imposter Content, 4 False Connection, 5 Manipulated Content.
+- The manifest already has no blank titles or duplicate IDs. Before every run, validate that every listed image exists and decodes as RGB. A failure aborts the run; samples must never be silently skipped or removed for one model only.
+- Use unweighted cross-entropy loss and no resampling. Report macro-F1 rather than attempting to hide the class imbalance through accuracy alone.
+
+### Shared training and evaluation rules
+
+- Fine-tune all selected pretrained encoders end-to-end from epoch 1; do not freeze them. Use AdamW, betas `(0.9, 0.999)`, epsilon `1e-8`, gradient-norm clipping at 1.0, and no weight decay on bias or normalization parameters.
+- Maximum 10 epochs. Evaluate validation data after every epoch. After at least 3 epochs, stop after two consecutive epochs without a validation macro-F1 gain of at least 0.001.
+- Use a linear schedule with 10% warm-up of the planned optimizer-update steps and linear decay to zero. The test split is evaluated only from the validation-selected checkpoint.
+- Run exactly three seeds: **42, 43, 44**. Select the best epoch per seed by validation macro-F1; ties use lower validation loss, then the earlier epoch. Report mean and standard deviation over the three test runs, never the best test seed alone.
+- Primary metric: test macro-F1. Also report accuracy, balanced accuracy, weighted-F1, per-class precision/recall/F1/support (with `zero_division=0`), and raw plus row-normalized 6x6 confusion matrices.
+- CUDA canonical runs use `torch.amp.autocast("cuda", float16)` plus `torch.amp.GradScaler("cuda")`. The M3/MPS machine is for development/smoke checks unless a CUDA device is unavailable; canonical numbers must state device and precision.
+
+### Fixed model settings
+
+| Experiment | Input/model-specific settings | AdamW learning rates | Weight decay | T4/A100 micro-batch and accumulation |
+|---|---|---|---|---|
+| E002 | `BertTokenizerFast`/`bert-base-uncased`; stored `clean_title`; truncation at 128 tokens including special tokens; dynamic batch padding; BERT classifier dropout 0.2 | BERT and head `2e-5` | 0.01 | 32 × 1 |
+| E003 | RGB image; train `RandomResizedCrop(224, scale=(0.8,1.0), ratio=(0.75,1.333), bilinear, antialias=True)`, no horizontal flip or colour augmentation; validation/test `Resize(232, bilinear, antialias=True)` then `CenterCrop(224)`; ImageNet V2 mean/std; ResNet-50 IMAGENET1K_V2; classifier dropout 0.2 | ResNet and head `1e-4` | `1e-4` | 32 × 1 |
+| E004 | The identical text/image pipelines; BERT CLS 768→512 and ResNet pooled 2048→512 linear projections, each LayerNorm; element-wise maximum; `512→256→6` MLP with GELU and dropout 0.2 | BERT `2e-5`; ResNet `1e-4`; new projection/MLP `1e-3` | BERT/new layers 0.01; ResNet `1e-4` | 8 × 4 |
+
+The target effective batch size is **32** for every optimizer update. On the RTX 3050, begin with E002 `8×4`, E003 `16×2`, E004 `4×8`; if memory requires a smaller micro-batch, increase accumulation to preserve 32 and record the change. This is a hardware adaptation, not a hyperparameter search.
+
+### Fairness, reproducibility and logging
+
+- `BP-6W-v1` permits no per-model hyperparameter sweep. Any future tuning requires a protocol amendment, validation-only selection and the same documented search budget for every baseline.
+- Seed Python, NumPy and PyTorch; use deterministic algorithms where supported, deterministic cuDNN, `benchmark=False`, seeded DataLoader generator and seeded workers. Exact replication is only claimed within the recorded software/hardware environment.
+- Save an immutable resolved config, code commit, manifest SHA-256 and split/class counts, package versions/`pip freeze`, model and weights revisions, preprocessing, seed, device/VRAM/driver, AMP state, trainable/total parameter counts, epoch metrics, selected checkpoint, wall time, samples/sec, peak GPU memory and any OOM/non-finite event.
+- Name runs `E00X-<model>-6way-BP6Wv1-s<seed>`; keep test predictions and confusion matrices tied to that run ID.
+
+**2-way control:** after all 6-way E002/E003/E004 runs are complete and recorded, a requested control round may retrain the same three models on `2_way_label` with the same manifest, split, preprocessing, seeds, update budget and per-model optimizer groups; only the output dimension and label column change. It is not used to choose the research gap or replace the primary six-way analysis.
+
 ---
 
 ## Repository Structure
@@ -194,6 +233,6 @@ None. Verified paired dataset (75,995 samples) is ready for baseline experiments
 
 ## Next Steps
 
-1. Obtain approval for a fixed experimental protocol: preprocessing, seeds, tuning budget, metrics, and hardware logging.
-2. Implement and run E002/E003/E004 only after that approval, using the 6-way setting and verified paired manifest.
+1. Obtain approval to implement the recorded `BP-6W-v1` protocol; confirm the RTX 3050 VRAM before local CUDA execution.
+2. Implement and run E002/E003/E004 in the recorded order, using the 6-way setting and verified paired manifest.
 3. Use observed class-wise and robustness failures to select, rather than assume, a final research contribution.

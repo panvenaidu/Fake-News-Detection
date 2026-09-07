@@ -20,19 +20,28 @@ No model-training experiments have been run yet. Dataset sampling/download valid
 
 ### E002 — Text-Only Baseline (Planned)
 - **Goal:** Establish text-only classification performance
-- **Status:** Not started — depends on architecture choice
+- **Status:** Not started — architecture and `BP-6W-v1` protocol are fixed; pending implementation approval
 
 ### E003 — Image-Only Baseline (Planned)
 - **Goal:** Establish image-only classification performance
-- **Status:** Not started — depends on image subset download
+- **Status:** Not started — architecture and `BP-6W-v1` protocol are fixed; pending implementation approval
 
 ### E004 — Text+Image Baseline (Planned)
 - **Goal:** Establish multimodal baseline performance
-- **Status:** Not started — depends on E002, E003
+- **Status:** Not started — architecture and `BP-6W-v1` protocol are fixed; pending implementation approval
 
 ---
 
 ## Completed Experiments
+
+### Baseline Protocol Decision — 2026-09-08 (Non-experimental)
+- **Goal:** Pre-register a fair, reproducible and compute-adaptable protocol for E002/E003/E004 before implementation.
+- **Verified cohort:** `data/verified_paired_manifest.csv`: 75,995 rows; 62,635 train / 6,685 validation / 6,675 test; zero empty `clean_title` values and zero duplicate IDs. No file was changed.
+- **Decision:** `BP-6W-v1` uses the same paired cohort and fixed split for every baseline; 6-way labels; three seeds (42/43/44); unweighted cross-entropy; validation macro-F1 checkpoint selection; 10-epoch cap; shared effective batch 32; and macro/per-class/confusion-matrix reporting. E002, E003 and E004 model-specific settings are recorded in PROJECT_CONTEXT and D012.
+- **Evidence:** Original Fakeddit benchmark; GenBench 2023 temporal Fakeddit evaluation; official PyTorch/TorchVision/Hugging Face documentation for reproducibility, AMP, ResNet V2 preprocessing, and token padding/truncation.
+- **Results:** No model, training, inference, metric, resource measurement, or checkpoint exists. The local manifest-count inspection was read-only.
+- **Required future log fields:** run ID; protocol/config and code hashes; manifest hash and class counts; device/VRAM/software; parameter counts; micro/effective batch and AMP; epoch-level losses/metrics; selected checkpoint; test metrics/predictions/confusion matrix; runtime, throughput, peak memory; and exceptions/OOMs.
+- **Unresolved:** exact RTX 3050 VRAM; no resulting model configuration may be changed to accommodate it except micro-batch/accumulation while preserving effective batch.
 
 ### Architecture Decision Review — 2026-09-08 (Non-experimental)
 - **Goal:** Select scientifically defensible, reproducible and compute-feasible text-only, image-only and text+image baselines before implementation.

@@ -1,85 +1,82 @@
-# Task Report — Baseline Architecture Decision Analysis
+# Task Report — Reproducible Baseline Protocol (`BP-6W-v1`)
 
-## Task
+## Task and Status
 
-Research and decide scientifically credible, reproducible, compute-feasible baselines for Fakeddit text-only, image-only and text+image fake-news detection. Select an initial label setting without training or implementation.
+Define a reproducible, fair experimental protocol for E002 text-only, E003 image-only and E004 text+image Fakeddit baselines before model implementation or training.
 
-## Status
+**Completed — protocol decision only.** No implementation, training, inference, download, re-sampling or manifest change occurred.
 
-**Completed — research and decision only.** The 75,995-item verified paired manifest remains the canonical dataset and has not been changed.
+## Protocol Decisions
 
-## What Was Investigated
+### Shared cohort and task
 
-- Official Fakeddit documentation, repository and the original Nakamura, Levy and Wang LREC 2020 benchmark.
-- The supplied data-centric reference paper: Kuntur et al., *Fake News Detection: It's All in the Data!* (Applied Sciences, 2026; DOI: 10.3390/app16031585).
-- Relevant recent evidence, prioritizing primary sources:
-  - Stepanova and Ross, *Temporal Generalizability in Multimodal Misinformation Detection* (GenBench/ACL 2023).
-  - Tahmasebi et al., *Improving Generalization for Multimodal Fake News Detection* (ICMR 2023).
-  - Saha and Kobti, *DeBERTNeXT* (ICCS 2023), as evidence of a heavier DeBERTa + ConvNeXt concatenation alternative.
-  - 2025 COLING work using BERT-base with a ViT-base encoder as a stronger, more complex later-family reference.
-- Candidate encoder families: BERT/DistilBERT/DeBERTa for text; ResNet-50, ViT, ConvNeXt and CLIP-family encoders for images or joint representations; maximum, concatenation and learned cross-modal fusion.
-- Comparability conditions: label granularity, official versus altered/temporal split, subset size, paired-image availability, preprocessing, metric and whether encoders were fine-tuned. Published headline scores were not used as directly comparable targets.
+- Use `data/verified_paired_manifest.csv` for every baseline, preserving `split`: **62,635 train, 6,685 validation, 6,675 test** (75,995 total).
+- Use only `clean_title`, local paired image and `6_way_label`. The locked mapping is 0 True, 1 Satire/Parody, 2 Misleading Content, 3 Imposter Content, 4 False Connection, 5 Manipulated Content.
+- The validated manifest has zero blank titles and zero duplicate IDs. Before every run, verify all listed image paths exist and decode as RGB. Abort rather than silently dropping an item.
+- Primary task: 6-way. Use unweighted cross-entropy, no resampling, macro-F1 as primary metric, and class-wise analysis. A 2-way control may be run only after all 6-way baselines, with the same protocol and only the label/output dimension changed.
 
-## Decisions
+### E002 — Text-only
 
-| Requirement | Decision |
-|---|---|
-| Text-only baseline | Fine-tuned `bert-base-uncased` + linear classifier. |
-| Image-only baseline | Fine-tuned ImageNet-pretrained ResNet-50 + linear classifier. |
-| Text+image baseline | BERT-base + ResNet-50; project representations to the same width, fuse by element-wise maximum, then classify with a small MLP. |
-| Initial task | **6-way** Fakeddit classification. Choose on validation macro-F1; report class-wise metrics and confusion matrix, with accuracy/micro-F1 supplemental. |
-| Dataset and inputs | Fixed official split membership within `data/verified_paired_manifest.csv`; use paired image + `clean_title` + selected label only. |
+- Model: end-to-end fine-tuned `bert-base-uncased` plus 6-way linear classifier; classifier dropout 0.2.
+- Input: stored `clean_title`, with no additional semantic rewriting or metadata; `BertTokenizerFast`, 128-token maximum including special tokens, truncation, dynamic longest-in-batch padding.
+- Optimizer: AdamW, LR `2e-5`, weight decay 0.01 (except bias/norm), betas `(0.9, 0.999)`, epsilon `1e-8`.
+- T4/A100 batch: 32 with accumulation 1; target effective batch is 32.
 
-## Why This Is the Baseline Set
+### E003 — Image-only
 
-- It directly follows the original Fakeddit benchmark family: that paper reported BERT + ResNet-50 with maximum fusion as its best simple multimodal combination, and ResNet-50 as its strongest tested image model.
-- The backbones are open, extensively documented and shared across the unimodal and multimodal conditions, yielding controlled modality ablations.
-- BERT-base (110M parameters) is much more practical than BERT-large for repeated experiments; ResNet-50 is roughly 26M parameters. The combined backbone is about 136M parameters, practical on T4/A100 cloud hardware with mixed precision and small batches. The M3/MPS is suitable for debugging; the RTX 3050 should use conservative batches/gradient accumulation after its VRAM is confirmed. These are feasibility estimates, not measured runtimes.
-- Six-way classification preserves Fakeddit's fine-grained purpose, matches the manifest stratification, and will reveal class-specific weaknesses. It has the same encoder compute as 2-way. The main trade-off is imbalance, which makes macro-F1 and per-class reporting necessary. The 3-way setting is not selected initially because the intermediate class is small and published Fakeddit analysis found it behaved similarly to 2-way.
+- Model: end-to-end fine-tuned `ResNet50_Weights.IMAGENET1K_V2` plus dropout 0.2 and 6-way linear classifier.
+- Input: convert to RGB. Training uses `RandomResizedCrop(224, scale=(0.8, 1.0), ratio=(0.75, 1.333), bilinear, antialias=True)`; validation/test use `Resize(232, bilinear, antialias=True)` then `CenterCrop(224)`; ImageNet V2 mean/std. Do not flip or colour-jitter, because images may contain written evidence.
+- Optimizer: AdamW, LR `1e-4`, weight decay `1e-4` (except bias/norm), same betas/epsilon.
+- T4/A100 batch: 32 with accumulation 1; effective batch 32.
 
-## Evidence Used
+### E004 — Text + Image
 
-- [Nakamura, Levy and Wang (LREC 2020)](https://aclanthology.org/2020.lrec-1.755/) introduced Fakeddit's 2-, 3- and 6-way labels and reported BERT + ResNet-50 maximum fusion as its strongest simple multimodal combination. Its reported numbers apply to its own paired-sample filtering, preprocessing and split, not this project’s 75,995-item manifest.
-- [Fakeddit official repository](https://github.com/entitize/Fakeddit) documents the public data and image-download structure; this project uses only the already-downloaded verified pairs, not the private test data.
-- [Stepanova and Ross (GenBench 2023)](https://aclanthology.org/2023.genbench-1.6/) found increasing imbalance at finer Fakeddit granularity, 3-way behavior similar to 2-way, and substantial degradation under temporal out-of-domain evaluation.
-- [Tahmasebi et al. (ICMR 2023)](https://doi.org/10.1145/3591106.3592230) showed that standard multimodal fake-news systems can degrade sharply under content manipulations, supporting a later robustness evaluation rather than a claim based only on an in-domain split.
-- [Kuntur et al. (Applied Sciences 2026)](https://doi.org/10.3390/app16031585) emphasizes that dataset construction, labels, bias and availability govern generalizability and result comparability.
-- [Saha and Kobti (ICCS 2023)](https://doi.org/10.1007/978-3-031-36021-3_36) provides a published heavier DeBERTa-v3 + ConvNeXt-Large concatenation alternative; it was not selected as the starting baseline because it is substantially less compute-efficient.
+- Model: end-to-end fine-tuned BERT-base and ResNet-50 using the identical E002/E003 inputs. Project BERT CLS 768→512 and ResNet pooled 2048→512, LayerNorm each, element-wise maximum fusion, then `512→256→6` MLP with GELU and dropout 0.2.
+- Optimizer: AdamW groups: BERT `2e-5` / decay 0.01; ResNet `1e-4` / decay `1e-4`; new projections and MLP `1e-3` / decay 0.01; exclusions for bias/norm apply.
+- T4/A100 batch: 8 with accumulation 4; effective batch 32.
 
-## Main Limitations and Failure Points to Investigate Later
+### Shared training and selection
 
-1. **Temporal/topic/subreddit shift:** Fakeddit's released split is in-domain and labels are distant, subreddit-level assignments; a high score may capture dataset regularities rather than factual verification.
-2. **Weak cross-modal reasoning:** maximum fusion combines features but does not explicitly model text–image agreement, contradiction or irrelevant images.
-3. **Fine-grained minority classes:** the 6-way task is imbalanced; macro performance and error patterns may differ sharply from accuracy.
-4. **Pair availability bias:** the verified image subset excludes 4,005 unavailable/corrupt URL images. It is valid and fixed for paired modelling but may differ from the original manifest.
-5. **No external factual evidence:** this scope deliberately does not retrieve claims or use social context, so it detects dataset-associated signals rather than proves truth.
+- Do not freeze encoders. Clip gradient norm at 1.0.
+- Maximum 10 epochs. Evaluate validation data after every epoch. After completing 3 epochs, stop after two consecutive epochs without a macro-F1 increase of at least 0.001.
+- Scheduler: 10% linear warm-up over planned optimizer updates, then linear decay to zero.
+- Seeds: 42, 43 and 44. Select the best checkpoint per seed by validation macro-F1; ties resolve by lower validation loss, then earlier epoch. Test once per selected seed and report mean ± standard deviation, never best test seed.
+- `BP-6W-v1` has no model-specific tuning sweep. Any later sweep requires an amendment, validation-only selection and an equal, documented budget across all baselines.
 
-## Emerging Research-Gap Candidates — Not Finalized
+## Evaluation, Reproducibility and Resource Logging
 
-1. **Compute-efficient robust fusion:** add a light, explicit text–image consistency mechanism to the BERT+ResNet baseline and test whether it improves temporal/subreddit-shift macro-F1 without adopting a large vision-language backbone.
-2. **Shift-aware, fine-grained calibration:** improve reliability for rare 6-way classes under temporal/class-distribution shift, with calibration and per-class robustness rather than only in-split accuracy.
-3. **Modality-quality-aware fusion:** make fusion respond to irrelevant, weak or conflicting images so the model can rely on the more informative modality without silently exploiting one modality.
+- Report macro-F1 (primary), accuracy, balanced accuracy, weighted-F1, per-class precision/recall/F1/support with `zero_division=0`, and raw plus row-normalized 6×6 confusion matrices.
+- Use CUDA AMP with `torch.amp.autocast("cuda", float16)` and `torch.amp.GradScaler("cuda")` for canonical cloud/CUDA runs. M3/MPS is for development/smoke checks unless CUDA is unavailable.
+- Seed Python, NumPy, PyTorch, DataLoader generator and workers; use deterministic algorithms where supported, deterministic cuDNN and `benchmark=False`. Record hardware/software because deterministic equality is only expected within the documented environment.
+- For every run, record: run ID, protocol/config and code hashes; manifest SHA-256 and split/class counts; model/weight/tokenizer revisions; parameter counts (total/trainable); device, VRAM, driver and package versions; AMP; micro/effective batch; epoch metrics; selected checkpoint; test predictions/metrics/confusion matrix; runtime, throughput, peak memory; and OOM/non-finite events.
+- Naming: `E00X-<model>-6way-BP6Wv1-s<seed>`.
 
-These are evidence-supported candidates, not a final research contribution. They require baseline failure analysis before selection.
+## Evidence and Reasoning
 
-## Unresolved Questions
+- [Nakamura, Levy and Wang (LREC 2020)](https://aclanthology.org/2020.lrec-1.755/) provides the Fakeddit 6-way and BERT/ResNet maximum-fusion benchmark precedent.
+- [Stepanova and Ross (GenBench 2023)](https://aclanthology.org/2023.genbench-1.6/) shows why Fakeddit's fine-grained imbalance requires macro and class-wise reporting.
+- [TorchVision ResNet-50 V2 documentation](https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.resnet50.html) specifies the selected pretrained weights and inference preprocessing; its model card reports 25,557,032 parameters.
+- [Hugging Face padding/truncation documentation](https://huggingface.co/docs/transformers/main/pad_truncation) supports dynamic padding and explicit maximum-length truncation.
+- [PyTorch reproducibility guidance](https://docs.pytorch.org/docs/stable/notes/randomness.html) specifies worker seeding; [PyTorch AMP guidance](https://docs.pytorch.org/docs/stable/amp) specifies autocast with gradient scaling for CUDA FP16.
 
-- Exact RTX 3050 VRAM and practical batch size; these must be measured only after approval to implement.
-- Whether maximum fusion remains superior to projected concatenation on this exact verified subset; the original result is precedent, not a guaranteed replication.
-- Whether a temporal or subreddit-held-out test can be constructed reproducibly from existing manifest metadata without changing the approved initial benchmark; decide after standard baselines.
-- The final research contribution and any external-dataset/generalization claim remain open.
+The protocol prioritizes controlled comparisons: all baselines use the same paired rows, splits, seed count, effective batch, epoch cap, selection rule and metrics. Learning-rate and weight-decay groups differ only by pretrained encoder/new-head type and are fixed before training; this preserves standard transfer-learning scales without tuning one baseline more heavily.
+
+## Unresolved Decisions Requiring Approval or Later Measurement
+
+1. **RTX 3050 VRAM:** unknown. Measure before local CUDA use. If needed, lower only micro-batch and raise accumulation to keep effective batch 32; record it.
+2. **Canonical execution location:** recommend Colab T4/A100 for reported results. Confirm this before implementation so all canonical runs share one CUDA/software environment.
+3. **Protocol exception policy:** any learning-rate sweep, class-weighted loss, augmentation change, frozen encoder, or data-eligibility change requires an explicit documented amendment and equal comparison budget.
 
 ## What Was Not Done
 
-- No model implementation, training, inference, hyperparameter search or benchmark run.
-- No dataset or image download, no change to the 80K manifest, and no re-sampling.
-- No use of private test labels, comments, metadata features or external claim verification.
-- No final research gap or final proposed model selected.
+- No model code, configuration code, training loop, data loader, checkpoint, benchmark, or smoke test was created or run.
+- No data or image was downloaded, removed, re-sampled, or modified; the 80K source manifest and 75,995-row verified manifest remain unchanged.
+- No final research contribution/gap was chosen.
 
 ## Recommended Next Step
 
-Approve a short, fixed experimental protocol for E002/E003/E004: preprocessing, seed policy, training budget, optimizer/schedule search bounds, checkpoint-selection metric, hardware log fields, and final metrics. Only then implement the three selected baselines and begin with the text-only 6-way run.
+Approve the canonical CUDA environment and confirm the RTX 3050 VRAM if local training is intended. Then authorize implementation of `BP-6W-v1`, beginning with E002 and preserving this protocol unchanged.
 
-## Agent and Date
+## Date
 
-Codex — 2026-09-08
+2026-09-08 — Codex
