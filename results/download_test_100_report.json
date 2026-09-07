@@ -1,0 +1,60 @@
+{
+  "manifest_path": "data/baseline_sample_manifest.csv",
+  "manifest_total_rows": 80000,
+  "attempted_count": 100,
+  "successful_downloads": 95,
+  "failed_downloads": 5,
+  "status_breakdown": {
+    "already_exists": 95,
+    "unavailable_http_error": 5
+  },
+  "actual_storage_bytes": 1635552,
+  "actual_storage_mb": 1.56,
+  "actual_storage_kb": 1597.22,
+  "average_image_size_bytes": 17216.3,
+  "average_image_size_kb": 16.81,
+  "estimated_80k_storage_gb": 1.283,
+  "elapsed_seconds": 0.31,
+  "failed_samples": [
+    {
+      "id": "9cdhdd",
+      "split": "train",
+      "status": "unavailable_http_error",
+      "file_size": 0,
+      "url": "https://preview.redd.it/zmrmji9wtuj11.jpg?width=320&crop=smart&auto=webp&s=598d3863c9a1ab848e5796510461770da7c5666d",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "co71i6",
+      "split": "train",
+      "status": "unavailable_http_error",
+      "file_size": 0,
+      "url": "https://preview.redd.it/5rgigv633hf31.jpg?width=320&crop=smart&auto=webp&s=28d98ffa6e1aeb83922b1cac1d349535d9e568f3",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "c9o79y",
+      "split": "train",
+      "status": "unavailable_http_error",
+      "file_size": 0,
+      "url": "https://preview.redd.it/0kw7pvqybl831.jpg?width=320&crop=smart&auto=webp&s=b47866fff8d01ce48e29302eb8796c37f1d7d7d1",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "cyip47",
+      "split": "train",
+      "status": "unavailable_http_error",
+      "file_size": 0,
+      "url": "https://preview.redd.it/vd2ab04q63k31.jpg?width=320&crop=smart&auto=webp&s=435e874513d8aec45130378c5338501a5438cd4b",
+      "error": "HTTP 404"
+    },
+    {
+      "id": "7v4v3f",
+      "split": "train",
+      "status": "unavailable_http_error",
+      "file_size": 0,
+      "url": "https://preview.redd.it/t1xk509pq4e01.jpg?width=320&crop=smart&auto=webp&s=c1075a8de23b1a1fa220f3f4a23c27e7ee2d5461",
+      "error": "HTTP 404"
+    }
+  ]
+}

@@ -116,3 +116,19 @@
 
 ---
 
+## D009 — 2026-09-07 — Image Download Architecture and Validation Strategy
+
+**Decision:** Use a multi-threaded, resumable download pipeline (`scripts/download_images.py`) restricted exclusively to the 80,000-sample baseline manifest. Each downloaded image is validated via PIL (`Image.open().verify()`) before saving as `{id}.jpg`.
+
+**Rationale:**
+- Directly maps file names to Fakeddit item `id` with zero naming conflicts.
+- Atomic writes (`.tmp` -> `.jpg`) ensure interrupted downloads never leave corrupt image fragments.
+- PIL decoding validation ensures unreadable/corrupt files or error web pages are not treated as valid images.
+- Verification test on 100 images yielded 95% availability (95/100 HTTP 200, 5/100 HTTP 404, 0 corrupt).
+- Actual average image size measured at **16.81 KB / image**, yielding an updated storage footprint of only **~1.28 GB** for all 80,000 images.
+
+**Decided By:** Antigravity (Implementation)
+
+---
+
+

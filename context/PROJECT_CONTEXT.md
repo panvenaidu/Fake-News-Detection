@@ -98,14 +98,17 @@
   - **Test:** 7,000 samples
   - **Total Baseline Subset:** **80,000 samples**
 
-### Storage Estimates
+### Storage Estimates (Empirically Verified via 100-Image Test)
 - TSV files: ~276 MB total
-- Baseline 80,000 image subset (estimated): **~3.05 GB** (based on 40KB/image reference estimate; to be verified upon download)
-- Full 771k image set (estimated): **~29.44 GB**
+- Tested Image Sample (100 items): 95 successful (95%), 5 HTTP 404 (5%), 0 corrupt
+- Actual Average Image Size: **16.81 KB / image** (measured on 95 downloaded images)
+- Baseline 80,000 image subset (empirically projected): **~1.28 GB** (at ~16.81 KB/image)
+- Full 771k image set (revised projection): **~12.3 GB**
 
 ---
 
 ## Working Hypothesis
+
 
 > **Improve multimodal fake-news detection so that it is more robust to unseen/different data while remaining computationally efficient.**
 

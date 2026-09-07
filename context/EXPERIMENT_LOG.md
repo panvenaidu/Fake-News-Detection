@@ -45,5 +45,21 @@ No experiments have been run yet. The project is in Phase 1 (Understanding).
   - **Final Sample Size:** **80,000 samples** (66,000 train, 7,000 val, 7,000 test).
   - **Output Manifest:** `data/baseline_sample_manifest.csv` containing standard metadata columns.
   - **Detailed Distributions:** Recorded in `results/sampling_report.json`. Stratification strictly preserved exact 6-way label ratios.
-  - **Estimated Storage:** ~3.05 GB (reference estimate based on 40KB/image).
+  - **Estimated Storage:** ~3.05 GB (preliminary reference estimate).
+
+### E001C — Image Downloader Pipeline 100-Sample Validation
+- **Date:** 2026-09-07
+- **Goal:** Test reliability, PIL validation, resumability, and storage metrics on a 100-image sample from `data/baseline_sample_manifest.csv`.
+- **Configuration:** Python script (`scripts/download_images.py --limit 100`), 8 workers, 10s timeout, 2 retries.
+- **Results & Observations:**
+  - **Attempted:** 100 images
+  - **Successful & Decodable:** 95 images (95.0%)
+  - **Failed / Unavailable:** 5 images (5.0%, all HTTP 404 Not Found on Reddit CDN)
+  - **Corrupt / Unreadable:** 0 images (100% of downloaded files verified with PIL)
+  - **Actual Storage Used:** 1.56 MB (1,635,552 bytes)
+  - **Measured Average Image Size:** 16.81 KB / image
+  - **Projected Storage for Full 80K Baseline:** **~1.28 GB** (at ~16.81 KB/image)
+  - **Resumability Verification:** Second run validated in 0.31s with all 95 files detected as `already_exists`.
+  - **ID Mapping:** Verified 95/95 filenames directly match `{id}.jpg`.
+
 

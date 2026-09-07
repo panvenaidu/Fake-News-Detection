@@ -1,72 +1,62 @@
 # Task Report
 
 ## Task
-Create a reproducible stratified sampling pipeline for the FIRST BASELINE DATASET from the official local Fakeddit TSV files (`all_train.tsv`, `all_validate.tsv`, `all_test_public.tsv`).
+Build a reliable, resumable, and validated image-download pipeline for the 80,000 baseline samples in `data/baseline_sample_manifest.csv`, and execute a 100-sample verification test.
 
 ## Status
-Completed
+100-Sample Pipeline Test Completed (Awaiting Approval for Full 80K Download)
 
-## Files Changed / Created
-- `scripts/create_baseline_sample.py` (Created — reproducible sampling script, seed=42)
-- `data/baseline_sample_manifest.csv` (Created — sample manifest containing 80,000 multimodal entries)
-- `results/sampling_report.json` (Created — detailed JSON report of before/after class distributions and filter metrics)
-- `context/PROJECT_CONTEXT.md` (Updated — documented manifest details, sample size, and repository structure)
-- `context/DECISIONS.md` (Updated — recorded Decision D008 for 80k stratified sampling parameters)
-- `context/EXPERIMENT_LOG.md` (Updated — logged Experiment E001B data sampling metrics)
-- `context/TASK_REPORT.md` (Updated — current task status and results)
+## Files / Scripts Changed
+- `scripts/download_images.py` (Created — multi-threaded, resumable downloader with PIL verification, atomic file writes, retry logic, and JSON reporting)
+- `results/download_test_100_report.json` (Created — download test metrics and failure analysis)
+- `context/PROJECT_CONTEXT.md` (Updated — updated empirical storage projections and pipeline status)
+- `context/DECISIONS.md` (Updated — recorded Decision D009 on download pipeline and validation architecture)
+- `context/EXPERIMENT_LOG.md` (Updated — logged Experiment E001C validation results)
+- `context/TASK_REPORT.md` (Updated — current task report)
 
-## Sample Size
-- **Total Baseline Sample Size:** **80,000 samples**
-  - **Train:** 66,000 samples (82.5%)
-  - **Validation:** 7,000 samples (8.75%)
-  - **Test:** 7,000 samples (8.75%)
-- **Reproducibility:** Seed=42 via `scripts/create_baseline_sample.py`
+## Exact Number Attempted
+- **100 images** (from `data/baseline_sample_manifest.csv`)
 
-## Missing-Data Handling
-- **`clean_title` Missingness:** Across the 771,698 raw multimodal samples (`hasImage == True` & valid `image_url`), exactly **90,900 samples** had missing, null, or empty `clean_title` text:
-  - **Train split:** 75,098 missing titles dropped
-  - **Validation split:** 7,866 missing titles dropped
-  - **Test split:** 7,936 missing titles dropped
-- **Resolution:** All 90,900 missing-title samples were filtered out, leaving a clean usable pool of **680,798** multimodal samples. 100% of samples in `data/baseline_sample_manifest.csv` have valid `clean_title` text.
+## Successful Downloads
+- **95 images (95.0%)** successfully downloaded, validated with PIL (`Image.open().verify()`), and stored as `{id}.jpg` in `images/`.
+- All 95 filenames correctly map back to the Fakeddit `id` (verified 100% 1-to-1 match).
 
-## Class Distributions (Before vs After Sampling)
+## Failed Downloads
+- **5 images (5.0%)** failed due to HTTP 404 (Not Found on Reddit CDN):
+  - IDs: `cyip47`, `c9o79y`, `7v4v3f`, `co71i6`, `9cdhdd`
+  - Cause: Origin links removed or expired on Reddit preview CDN.
 
-### Overall 6-Way Label Distribution
-| Label Index & Description | Before Sampling Count (680,798 Usable) | Before % | After Sampling Count (80,000 Sampled) | After % |
-|---|---|---|---|---|
-| **0 — True** | 267,601 | 39.31% | 31,446 | 39.31% |
-| **1 — Satire / Parody** | 40,423 | 5.94% | 4,750 | 5.94% |
-| **2 — Misleading Content** | 129,384 | 19.01% | 15,203 | 19.00% |
-| **3 — Imposter Content** | 14,234 | 2.09% | 1,673 | 2.09% |
-| **4 — False Connection** | 203,139 | 29.84% | 23,871 | 29.84% |
-| **5 — Manipulated Content** | 26,017 | 3.82% | 3,057 | 3.82% |
+## Corrupt Files
+- **0 corrupt files** (100% of the 95 downloaded images decoded and passed PIL verification; invalid temp files are automatically removed).
 
-### Per-Split 6-Way Label Counts (After Sampling)
-- **Train (66,000):** Class 0: 25,933 | Class 1: 3,920 | Class 2: 12,541 | Class 3: 1,382 | Class 4: 19,696 | Class 5: 2,528
-- **Validation (7,000):** Class 0: 2,744 | Class 1: 416 | Class 2: 1,330 | Class 3: 146 | Class 4: 2,107 | Class 5: 257
-- **Test (7,000):** Class 0: 2,769 | Class 1: 414 | Class 2: 1,332 | Class 3: 145 | Class 4: 2,068 | Class 5: 272
+## Actual Storage Used
+- **1.56 MB** (1,635,552 bytes) for the 95 downloaded test images.
+- **Actual Average Image Size:** **16.81 KB / image** (17,216.3 bytes).
 
-## Storage Estimate
-- **Estimated Image Storage:** **~3.05 GB** (calculated using ~40 KB/image reference estimate for 80,000 images).
-- *Note:* This figure is treated as an estimate until images are downloaded and verified.
+## Estimated Final Storage
+- **~1.28 GB** (1,377,305,600 bytes) for the full 80,000-sample subset based on the measured ~16.81 KB/image average (significantly lower than the prior ~3.05 GB rough estimate).
+
+## Resumability Verification
+- A repeated run with `--limit 100` completed in **0.31 seconds**, confirming that all 95 existing valid files are recognized as `already_exists` and not re-downloaded.
 
 ## What Was NOT Done
-- Did NOT download the 80,000 images or the full ~30 GB image archive yet.
+- Did NOT download the full 80,000 image set yet (only tested 100 samples).
+- Did NOT download any image outside the 80K manifest.
 - Did NOT train any baseline model.
-- Did NOT select final model architecture or research gap.
-- Did NOT upload dataset files or manifests to GitHub (protected by `.gitignore`).
+- Did NOT upload images or dataset files to GitHub (protected by `.gitignore`).
 
 ## Current Project State
-The baseline dataset manifest (`data/baseline_sample_manifest.csv`) is fully constructed, validated, and reproducible. All context memory files are updated. The repository is cleanly tracked on GitHub while dataset files remain excluded.
+The image downloading pipeline is implemented, empirically tested, and verified to be safe, resumable, and accurate. Manifest-to-ID mapping and image integrity are confirmed. Actual image sizes average ~16.81 KB, making the full 80K download (~1.28 GB) well within storage and network capacity.
 
-## Recommended Next Step
-Formulate the image download pipeline script to download the ~80,000 images specified in `data/baseline_sample_manifest.csv` and verify exact image storage requirements.
+## Next Recommended Step
+Execute the full download of the 80,000-sample baseline dataset using `scripts/download_images.py` with multi-threading (8 workers) upon user approval, and record any missing/expired URLs to produce the final clean multimodal baseline index.
 
 ## Agent
 Antigravity
 
 ## Date
 2026-09-07
+
 
 
 
