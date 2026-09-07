@@ -1,0 +1,163 @@
+# PROJECT CONTEXT — Multimodal Fake News Detection
+
+> **Last Updated:** 2026-09-07
+> **Updated By:** Antigravity (initial setup)
+
+---
+
+## Project Overview
+
+**Title:** Multimodal Fake News Detection Using Text + Image
+
+**Team:**
+- **Panvee** — Coding, implementation, model development, training, experiments
+- **Karthik** — Literature review and research paper
+- **Third Member** — Weekly reports, documentation, presentations, meeting records
+
+**Duration:** 3–5 months (minimum core work in 3 months)
+
+**Reference Paper:** "Fake News Detection: It's All in the Data!" (Applied Sciences, 2026)
+
+**Primary Dataset:** Fakeddit (https://fakeddit.netlify.app/)
+
+**Modality Scope:** TEXT + IMAGE only (no video, no AI-generated content in initial scope)
+
+---
+
+## Current Phase
+
+**Phase 1 — UNDERSTAND** (In Progress)
+
+- [x] Inspect official Fakeddit repository
+- [x] Inspect official Fakeddit website
+- [x] Determine data download structure
+- [x] Create project directory structure
+- [x] Create initial context files
+- [x] Download TSV metadata files
+- [x] Inspect TSV columns and sample counts
+- [x] Determine multimodal sample counts (has_image == True)
+- [x] Estimate image storage requirements
+- [x] Decide on practical baseline dataset size
+- [ ] Read reference paper in detail
+- [ ] Literature review (recent multimodal fake news work)
+
+---
+
+## Dataset: Fakeddit
+
+### Source
+- **Paper:** Nakamura, Levy, Wang (LREC 2020). "r/Fakeddit: A New Multimodal Benchmark Dataset for Fine-grained Fake News Detection"
+- **ArXiv:** https://arxiv.org/abs/1911.03854
+- **Website:** https://fakeddit.netlify.app/
+- **Repository:** https://github.com/entitize/Fakeddit
+
+### Key Facts (from official sources)
+- Over 1 million samples from Reddit
+- Supports **2-way**, **3-way**, and **6-way** classification
+- Contains: text (clean_title), metadata, comments (coming soon), images
+- TSV format with tab-separated columns
+- `has_image` column distinguishes multimodal (text+image) from unimodal (text-only) samples
+- Original paper experiments used **multimodal-only** samples (has_image == True)
+- `image_url` column contains URLs for downloading images
+- Images also available as a single archive from Google Drive
+
+### Classification Labels
+
+**2-way:** True, Fake
+
+**3-way:** Completely true, Not enough info (satire/misleading), Definitely false/fake
+
+**6-way:** True, Satire/Parody, Misleading Content, Imposter Content, False Connection, Manipulated Content
+
+### Data Download Links
+- **TSV/Metadata (v2.0):** https://drive.google.com/drive/folders/1jU7qgDqU1je9Y0PMKJ_f31yXRo5uWGFm?usp=sharing
+- **Images (recommended, single archive):** https://drive.google.com/file/d/1cjY6HsHaSZuLVHywIxD5xQqng33J5S2b/view?usp=sharing
+- **Images (alternative):** Use `image_url` column in TSVs with the provided `image_downloader.py` script
+- **Private test set (text):** https://drive.google.com/file/d/1ExPiA_v2Dq_rG6afY4rvgUV-Jh9ByiTI/view?usp=sharing (DO NOT USE for our research — no labels)
+- **Private test set (images):** https://drive.google.com/file/d/1YtvM2Muf4hT0SCALI7FaILaGPJdW7lW1/view?usp=sharing (DO NOT USE)
+
+### Official Usage Guidelines (from Fakeddit website — Challenge section)
+1. Only use the `6_way_label` and the `clean_title` columns from the public dataset.
+2. Do not use additional paired text/image data.
+3. Do not attempt to extract ground truth labels from the Internet.
+4. Disregarding these guidelines is unethical and will not help future research.
+
+> **Note:** The challenge guidelines restrict feature columns for the competition leaderboard. For our research (not the competition), we may use other public metadata columns (e.g., `has_image`, `image_url`, `2_way_label`, `3_way_label`), but we must NOT use private test labels or scrape extra labels.
+
+### Verified TSV Columns
+- `clean_title` — missing values exist (e.g. 75,429 missing in train)
+- `2_way_label`, `3_way_label`, `6_way_label` — all 0 missing values
+- `hasImage` — boolean, 0 missing
+- `image_url` — missing values exist
+- `id` — unique identifier (0 duplicates across all splits)
+- Additional metadata columns (`author`, `domain`, `score`, `subreddit`, `upvote_ratio`, etc.)
+
+### Train/Validation/Test Structure
+- Files: `all_train.tsv`, `all_validate.tsv`, `all_test_public.tsv`
+- We use the **public** splits only.
+
+### Multimodal Samples
+- Total row count: Train (878,218), Validate (92,444), Test (92,444)
+- Filter by `hasImage == True` and non-empty `image_url` to get multimodal samples
+- Usable multimodal count: Train (637,564), Validate (67,035), Test (67,099)
+- Total usable multimodal samples: **771,698**
+
+### Storage Estimates (preliminary)
+- TSV files: ~276 MB total
+- Full image archive (estimated for multimodal subset): **~29.44 GB** (assuming ~40KB/image)
+- We will start with a smaller balanced subset (e.g., 50k-100k samples) for initial baselines due to storage and training time constraints.
+
+---
+
+## Working Hypothesis
+
+> **Improve multimodal fake-news detection so that it is more robust to unseen/different data while remaining computationally efficient.**
+
+This is a working hypothesis only. The final research contribution will be decided after baseline experiments and failure analysis (Phase 4).
+
+---
+
+## Hardware
+
+| Machine | OS | GPU | RAM | Storage |
+|---|---|---|---|---|
+| MacBook Air M3 | macOS | Apple Silicon (MPS) | 16 GB | 512 GB |
+| Windows laptop | Windows | NVIDIA RTX 3050 | TBD | TBD |
+| Cloud | Colab / CoCalc | T4/A100 (Colab) | Varies | Varies |
+
+---
+
+## Repository Structure
+
+```
+project/
+├── context/              # Shared project memory
+│   ├── PROJECT_CONTEXT.md
+│   ├── DECISIONS.md
+│   └── EXPERIMENT_LOG.md
+├── src/                  # Source code
+├── scripts/              # Utility scripts
+├── configs/              # Training/model configs
+├── experiments/          # Experiment-specific files
+├── results/              # Results, figures, tables
+├── notebooks/            # Jupyter notebooks
+├── docs/                 # Documentation
+├── README.md
+└── requirements.txt
+```
+
+---
+
+## Blockers
+
+None at the moment. Metadata has been successfully downloaded and analyzed.
+
+---
+
+## Next Steps
+
+1. **Literature review** of recent multimodal fake news detection methods (Karthik)
+2. **Read reference paper** in full detail
+3. **Decide baseline architecture** (text encoder, image encoder, fusion strategy)
+4. **Download subset of images** (e.g., 50k-100k) for the first baseline
+6. **Read reference paper** in full detail
