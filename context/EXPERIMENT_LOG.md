@@ -63,3 +63,23 @@ No experiments have been run yet. The project is in Phase 1 (Understanding).
   - **ID Mapping:** Verified 95/95 filenames directly match `{id}.jpg`.
 
 
+
+### E001D — Full 80K Baseline Image Download (Resumed After Interruption)
+- **Date:** 2026-09-07
+- **Goal:** Download and verify all 80,000 images from `data/baseline_sample_manifest.csv`.
+- **Configuration:** `scripts/download_images.py`, 8 workers, 10s timeout, 2 retries, PIL validation, resumable.
+- **Interruption:** Original run stopped at 26,837 valid images. Resumed without restart — existing files skipped via PIL check.
+- **Results & Observations:**
+  - **Total Attempted:** 80,000
+  - **Images Present Before Resume:** 26,837 (all PIL-valid, all in manifest)
+  - **Newly Downloaded After Interruption:** 49,158
+  - **Total Successful & Verified:** **75,995 (94.99%)**
+  - **Failed / Missing:** 4,005 (5.01%)
+  - **Corrupt / Unreadable:** 31
+  - **Actual Storage Used:** 7.822 GB (8,398,948,245 bytes)
+  - **Average Image Size:** 107.93 KB / image
+  - **Primary Failure Cause:** HTTP 404 (3,863 / 4,005 failures = 96.5%)
+  - **Verified Manifest:** `data/verified_paired_manifest.csv` — 75,995 rows, matches disk exactly
+  - **Failure Log:** `results/download_failures.json` — 4,005 entries with ID, URL, status, error
+  - **ID Mapping:** Verified 75,995/75,995 filenames match `{id}.jpg`, all map to unique manifest IDs
+  - **Original Manifest:** `data/baseline_sample_manifest.csv` unchanged (80,000 rows)

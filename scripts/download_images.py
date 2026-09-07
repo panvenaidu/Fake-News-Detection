@@ -3,8 +3,12 @@
 download_images.py
 
 Reliable, resumable, concurrent image downloader for Fakeddit baseline dataset.
-Only downloads images from an approved manifest CSV.
-Validates downloaded images with PIL to detect corrupt/incomplete files.
+- Only downloads images from an approved manifest CSV.
+- Uses thread-local requests.Session for HTTP keep-alive and connection pooling.
+- Validates downloaded images with PIL to detect corrupt/incomplete files.
+- Resumes seamlessly by skipping existing valid images.
+- Produces a comprehensive download report and failure log.
+- Generates a clean verified paired-data manifest while preserving the original manifest.
 """
 
 import os
@@ -12,17 +16,21 @@ import sys
 import time
 import argparse
 import json
+import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import urllib.parse
 
 import pandas as pd
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from PIL import Image
 
 # Default configuration
 DEFAULT_MANIFEST = "data/baseline_sample_manifest.csv"
 DEFAULT_OUTPUT_DIR = "images"
-DEFAULT_REPORT = "results/download_test_100_report.json"
+DEFAULT_REPORT = "results/download_final_report.json"
+DEFAULT_FAILURES = "results/download_failures.json"
+DEFAULT_VERIFIED_MANIFEST = "data/verified_paired_manifest.csv"
 DEFAULT_WORKERS = 8
 DEFAULT_TIMEOUT = 10
 DEFAULT_RETRIES = 2
@@ -36,6 +44,25 @@ HEADERS = {
     "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
 }
 
+# Thread-local storage for requests.Session
+_thread_local = threading.local()
+
+def get_session():
+    if not hasattr(_thread_local, "session"):
+        session = requests.Session()
+        session.headers.update(HEADERS)
+        retry_strategy = Retry(
+            total=DEFAULT_RETRIES,
+            backoff_factor=0.3,
+            status_forcelist=[429, 500, 502, 503, 504],
+            allowed_methods=["GET"]
+        )
+        adapter = HTTPAdapter(max_retries=retry_strategy, pool_connections=10, pool_maxsize=10)
+        session.mount("https://", adapter)
+        session.mount("http://", adapter)
+        _thread_local.session = session
+    return _thread_local.session
+
 def verify_image(filepath):
     """Verify that the image file exists, is non-empty, and can be decoded by PIL."""
     try:
@@ -47,7 +74,7 @@ def verify_image(filepath):
     except Exception:
         return False
 
-def download_single_image(row, output_dir, timeout=10, retries=2):
+def download_single_image(row, output_dir, timeout=10):
     item_id = str(row["id"])
     url = str(row["image_url"])
     split = str(row.get("split", "unknown"))
@@ -82,83 +109,103 @@ def download_single_image(row, output_dir, timeout=10, retries=2):
             "status": "invalid_url",
             "file_size": 0,
             "url": url,
-            "error": "URL missing or not http"
+            "error": "URL missing or invalid"
         }
         
-    last_error = None
-    for attempt in range(retries + 1):
-        try:
-            resp = requests.get(url, headers=HEADERS, timeout=timeout, stream=True)
-            if resp.status_code == 200:
-                # Write to tmp file
-                with open(tmp_path, "wb") as f:
-                    for chunk in resp.iter_content(chunk_size=8192):
-                        if chunk:
-                            f.write(chunk)
-                
-                # Verify downloaded image
-                if verify_image(tmp_path):
-                    os.replace(tmp_path, target_path)
-                    file_size = os.path.getsize(target_path)
-                    return {
-                        "id": item_id,
-                        "split": split,
-                        "status": "success",
-                        "file_size": file_size,
-                        "url": url,
-                        "error": None
-                    }
-                else:
-                    if os.path.exists(tmp_path):
-                        os.remove(tmp_path)
-                    return {
-                        "id": item_id,
-                        "split": split,
-                        "status": "corrupt_image",
-                        "file_size": 0,
-                        "url": url,
-                        "error": "File downloaded but invalid/unreadable by PIL"
-                    }
-            elif resp.status_code in [404, 410, 403]:
-                # Unavailable URL / permanent error
+    session = get_session()
+    try:
+        resp = session.get(url, timeout=timeout, stream=True)
+        if resp.status_code == 200:
+            with open(tmp_path, "wb") as f:
+                for chunk in resp.iter_content(chunk_size=16384):
+                    if chunk:
+                        f.write(chunk)
+            
+            # Verify image format and integrity
+            if verify_image(tmp_path):
+                os.replace(tmp_path, target_path)
+                file_size = os.path.getsize(target_path)
                 return {
                     "id": item_id,
                     "split": split,
-                    "status": "unavailable_http_error",
-                    "file_size": 0,
+                    "status": "success",
+                    "file_size": file_size,
                     "url": url,
-                    "error": f"HTTP {resp.status_code}"
+                    "error": None
                 }
             else:
-                last_error = f"HTTP {resp.status_code}"
-                time.sleep(0.5)
-        except (requests.RequestException, Exception) as e:
-            last_error = str(e)
-            if os.path.exists(tmp_path):
-                try:
+                if os.path.exists(tmp_path):
                     os.remove(tmp_path)
-                except OSError:
-                    pass
-            time.sleep(0.5)
-            
-    return {
-        "id": item_id,
-        "split": split,
-        "status": "failed_network_error",
-        "file_size": 0,
-        "url": url,
-        "error": last_error
-    }
+                return {
+                    "id": item_id,
+                    "split": split,
+                    "status": "corrupt_image",
+                    "file_size": 0,
+                    "url": url,
+                    "error": "File downloaded but invalid/unreadable by PIL"
+                }
+        else:
+            return {
+                "id": item_id,
+                "split": split,
+                "status": f"http_{resp.status_code}",
+                "file_size": 0,
+                "url": url,
+                "error": f"HTTP {resp.status_code}"
+            }
+    except requests.exceptions.Timeout:
+        if os.path.exists(tmp_path):
+            try:
+                os.remove(tmp_path)
+            except OSError:
+                pass
+        return {
+            "id": item_id,
+            "split": split,
+            "status": "timeout",
+            "file_size": 0,
+            "url": url,
+            "error": "Request timed out"
+        }
+    except requests.exceptions.RequestException as e:
+        if os.path.exists(tmp_path):
+            try:
+                os.remove(tmp_path)
+            except OSError:
+                pass
+        return {
+            "id": item_id,
+            "split": split,
+            "status": "request_exception",
+            "file_size": 0,
+            "url": url,
+            "error": str(e)
+        }
+    except Exception as e:
+        if os.path.exists(tmp_path):
+            try:
+                os.remove(tmp_path)
+            except OSError:
+                pass
+        return {
+            "id": item_id,
+            "split": split,
+            "status": "unexpected_error",
+            "file_size": 0,
+            "url": url,
+            "error": str(e)
+        }
 
 def main():
     parser = argparse.ArgumentParser(description="Download images for Fakeddit baseline manifest.")
     parser.add_argument("--manifest", default=DEFAULT_MANIFEST, help="Path to manifest CSV")
     parser.add_argument("--output-dir", default=DEFAULT_OUTPUT_DIR, help="Directory to save images")
-    parser.add_argument("--report", default=DEFAULT_REPORT, help="Path to save download report JSON")
+    parser.add_argument("--report", default=DEFAULT_REPORT, help="Path to save final report JSON")
+    parser.add_argument("--failures", default=DEFAULT_FAILURES, help="Path to save failures JSON")
+    parser.add_argument("--verified-manifest", default=DEFAULT_VERIFIED_MANIFEST, help="Path for verified paired manifest")
     parser.add_argument("--limit", type=int, default=None, help="Limit number of images to download")
     parser.add_argument("--workers", type=int, default=DEFAULT_WORKERS, help="Number of download threads")
     parser.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT, help="Request timeout (seconds)")
-    parser.add_argument("--retries", type=int, default=DEFAULT_RETRIES, help="Number of retries")
     args = parser.parse_args()
 
     if not os.path.exists(args.manifest):
@@ -175,6 +222,8 @@ def main():
 
     os.makedirs(args.output_dir, exist_ok=True)
     os.makedirs(os.path.dirname(args.report), exist_ok=True)
+    os.makedirs(os.path.dirname(args.failures), exist_ok=True)
+    os.makedirs(os.path.dirname(args.verified_manifest), exist_ok=True)
 
     rows = df.to_dict(orient="records")
     results = []
@@ -184,77 +233,114 @@ def main():
     
     with ThreadPoolExecutor(max_workers=args.workers) as executor:
         futures = {
-            executor.submit(download_single_image, row, args.output_dir, args.timeout, args.retries): row
+            executor.submit(download_single_image, row, args.output_dir, args.timeout): row
             for row in rows
         }
         
         completed_count = 0
+        total_rows = len(rows)
         for future in as_completed(futures):
             res = future.result()
             results.append(res)
             completed_count += 1
-            if completed_count % 20 == 0 or completed_count == len(rows):
-                print(f"Progress: {completed_count}/{len(rows)} ({completed_count / len(rows) * 100:.1f}%)")
+            if completed_count % 1000 == 0 or completed_count == total_rows or (total_rows <= 1000 and completed_count % 50 == 0):
+                pct = (completed_count / total_rows) * 100
+                rate = completed_count / (time.time() - start_time)
+                print(f"Progress: {completed_count}/{total_rows} ({pct:.1f}%) | {rate:.1f} images/s")
 
     elapsed = time.time() - start_time
     
-    # Analyze results
+    # Categorize results
     status_counts = {}
+    valid_ids = set()
     valid_sizes = []
-    failed_items = []
+    failed_records = []
+    already_existing_count = 0
+    newly_downloaded_count = 0
+    corrupt_count = 0
     
     for r in results:
         st = r["status"]
         status_counts[st] = status_counts.get(st, 0) + 1
-        if st in ["success", "already_exists"]:
+        
+        if st == "already_exists":
+            already_existing_count += 1
+            valid_ids.add(r["id"])
             valid_sizes.append(r["file_size"])
+        elif st == "success":
+            newly_downloaded_count += 1
+            valid_ids.add(r["id"])
+            valid_sizes.append(r["file_size"])
+        elif st == "corrupt_image":
+            corrupt_count += 1
+            failed_records.append(r)
         else:
-            failed_items.append(r)
+            failed_records.append(r)
             
-    total_valid = len(valid_sizes)
-    total_failed = len(failed_items)
+    total_successful = len(valid_ids)
+    total_attempted = len(rows)
+    total_failed = len(failed_records)
+    
+    success_pct = (total_successful / total_attempted * 100) if total_attempted > 0 else 0
+    failure_pct = (total_failed / total_attempted * 100) if total_attempted > 0 else 0
+    
     actual_storage_bytes = sum(valid_sizes)
     actual_storage_mb = actual_storage_bytes / (1024 * 1024)
-    avg_size_bytes = (actual_storage_bytes / total_valid) if total_valid > 0 else 0
+    actual_storage_gb = actual_storage_bytes / (1024 ** 3)
+    avg_size_bytes = (actual_storage_bytes / total_successful) if total_successful > 0 else 0
     avg_size_kb = avg_size_bytes / 1024
     
-    # Extrapolate for full manifest (80,000 samples)
-    est_total_80k_gb = (total_manifest_rows * avg_size_bytes) / (1024 ** 3) if avg_size_bytes > 0 else 0
+    # Save full failures log
+    with open(args.failures, "w") as f:
+        json.dump(failed_records, f, indent=2)
+    print(f"Full failure log saved to: {args.failures} ({len(failed_records)} entries)")
     
+    # Generate clean paired-data manifest (only samples with verified images)
+    verified_df = df[df["id"].astype(str).isin(valid_ids)].copy()
+    verified_df["image_path"] = verified_df["id"].apply(lambda x: os.path.join(args.output_dir, f"{x}.jpg"))
+    verified_df.to_csv(args.verified_manifest, index=False)
+    print(f"Clean paired manifest saved to: {args.verified_manifest} ({len(verified_df)} rows)")
+    
+    # Generate final report
     report_data = {
         "manifest_path": args.manifest,
-        "manifest_total_rows": total_manifest_rows,
-        "attempted_count": len(rows),
-        "successful_downloads": total_valid,
-        "failed_downloads": total_failed,
+        "total_attempted": total_attempted,
+        "successful": total_successful,
+        "newly_downloaded": newly_downloaded_count,
+        "already_existing": already_existing_count,
+        "failed": total_failed,
+        "corrupt_unreadable": corrupt_count,
+        "success_percentage": round(success_pct, 2),
+        "failure_percentage": round(failure_pct, 2),
         "status_breakdown": status_counts,
         "actual_storage_bytes": actual_storage_bytes,
-        "actual_storage_mb": round(actual_storage_mb, 3),
-        "actual_storage_kb": round(actual_storage_bytes / 1024, 2),
-        "average_image_size_bytes": round(avg_size_bytes, 1),
+        "actual_storage_mb": round(actual_storage_mb, 2),
+        "actual_storage_gb": round(actual_storage_gb, 4),
         "average_image_size_kb": round(avg_size_kb, 2),
-        "estimated_80k_storage_gb": round(est_total_80k_gb, 3),
         "elapsed_seconds": round(elapsed, 2),
-        "failed_samples": failed_items[:50]  # first 50 failures for inspection
+        "verified_manifest_path": args.verified_manifest,
+        "verified_manifest_rows": len(verified_df),
+        "failures_path": args.failures
     }
     
     with open(args.report, "w") as f:
         json.dump(report_data, f, indent=2)
-        
-    print("\n" + "="*50)
-    print("DOWNLOAD TEST REPORT")
-    print("="*50)
-    print(f"Manifest Rows: {total_manifest_rows}")
-    print(f"Attempted: {len(rows)}")
-    print(f"Successful & Valid: {total_valid} ({total_valid / len(rows) * 100:.1f}%)")
-    print(f"Failed: {total_failed} ({total_failed / len(rows) * 100:.1f}%)")
-    print(f"Status Breakdown: {status_counts}")
-    print(f"Actual Storage Used: {actual_storage_mb:.2f} MB ({actual_storage_bytes:,} bytes)")
-    print(f"Actual Average Image Size: {avg_size_kb:.2f} KB/image")
-    print(f"Estimated Storage for Full 80,000 Subset: {est_total_80k_gb:.3f} GB")
-    print(f"Elapsed Time: {elapsed:.2f} seconds ({elapsed / len(rows):.2f} s/image)")
-    print(f"Report saved to: {args.report}")
-    print("="*50)
+    print(f"Final download report saved to: {args.report}")
+    
+    print("\n" + "="*60)
+    print("IMAGE DOWNLOAD PIPELINE FINAL SUMMARY")
+    print("="*60)
+    print(f"Total Attempted:       {total_attempted:,}")
+    print(f"Total Successful:      {total_successful:,} ({success_pct:.2f}%)")
+    print(f"  - Newly Downloaded:  {newly_downloaded_count:,}")
+    print(f"  - Already Existing:  {already_existing_count:,}")
+    print(f"Total Failed:          {total_failed:,} ({failure_pct:.2f}%)")
+    print(f"Corrupt / Unreadable:  {corrupt_count:,}")
+    print(f"Actual Storage Used:   {actual_storage_gb:.3f} GB ({actual_storage_mb:.1f} MB)")
+    print(f"Average Image Size:    {avg_size_kb:.2f} KB/image")
+    print(f"Elapsed Time:          {elapsed:.1f} seconds")
+    print(f"Clean Paired Manifest: {args.verified_manifest} ({len(verified_df):,} verified samples)")
+    print("="*60)
 
 if __name__ == "__main__":
     main()

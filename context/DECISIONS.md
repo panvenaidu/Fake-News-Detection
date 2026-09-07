@@ -132,3 +132,16 @@
 ---
 
 
+
+## D010 — 2026-09-07 — Full 80K Image Download Completed (Resumed After Interruption)
+
+**Decision:** Use the verified paired manifest (`data/verified_paired_manifest.csv`, 75,995 samples) as the canonical dataset for all baseline experiments. The original 80K manifest remains unchanged for reference.
+
+**Rationale:**
+- Full download was interrupted at 26,837 images; resumable pipeline successfully recovered without data loss or re-downloading valid files.
+- Final success rate: 94.99% (75,995 / 80,000). Failures are primarily expired Reddit CDN links (HTTP 404, 96.5% of failures).
+- All 75,995 images verified with PIL; 1:1 ID mapping confirmed.
+- Actual storage: 7.822 GB (significantly higher than 100-sample test estimate of ~1.28 GB due to full-dataset size variance).
+- 4,005 failed samples documented individually in `results/download_failures.json` — not silently discarded.
+
+**Decided By:** Cursor (Composer)

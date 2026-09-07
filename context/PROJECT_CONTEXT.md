@@ -1,7 +1,7 @@
 # PROJECT CONTEXT — Multimodal Fake News Detection
 
 > **Last Updated:** 2026-09-07
-> **Updated By:** Antigravity (initial setup)
+> **Updated By:** Cursor (Composer)
 
 ---
 
@@ -35,6 +35,7 @@
 - [x] Estimate image storage requirements
 - [x] Decide on practical baseline dataset size
 - [x] Create reproducible stratified baseline sample manifest (80,000 samples)
+- [x] Download and verify 80,000 baseline images (75,995 verified paired samples)
 - [ ] Read reference paper in detail
 - [ ] Literature review (recent multimodal fake news work)
 
@@ -98,12 +99,21 @@
   - **Test:** 7,000 samples
   - **Total Baseline Subset:** **80,000 samples**
 
-### Storage Estimates (Empirically Verified via 100-Image Test)
+### Image Download Status (Completed 2026-09-07)
+- **Baseline manifest:** `data/baseline_sample_manifest.csv` — 80,000 samples (unchanged)
+- **Verified paired manifest:** `data/verified_paired_manifest.csv` — **75,995 samples** with confirmed valid images
+- **Images directory:** `images/` — 75,995 verified `{id}.jpg` files (gitignored)
+- **Download success rate:** 94.99% (4,005 failures, primarily HTTP 404 on expired Reddit CDN links)
+- **Actual storage used:** **7.822 GB** (8,398,948,245 bytes)
+- **Actual average image size:** **107.93 KB / image** (higher than 100-sample test due to full-dataset variance)
+- **Failure log:** `results/download_failures.json` (4,005 entries)
+- **Final report:** `results/download_final_report.json`
+- Note: Original download was interrupted at 26,837 images; resumed successfully without data loss.
+
+### Storage Estimates
 - TSV files: ~276 MB total
-- Tested Image Sample (100 items): 95 successful (95%), 5 HTTP 404 (5%), 0 corrupt
-- Actual Average Image Size: **16.81 KB / image** (measured on 95 downloaded images)
-- Baseline 80,000 image subset (empirically projected): **~1.28 GB** (at ~16.81 KB/image)
-- Full 771k image set (revised projection): **~12.3 GB**
+- Baseline 80K verified images (actual): **7.822 GB**
+- Full 771k image set (projected at ~108 KB/image): **~80 GB**
 
 ---
 
@@ -138,14 +148,19 @@ project/
 ├── src/                  # Source code
 ├── scripts/              # Utility scripts
 │   ├── dataset_analysis.py
-│   └── create_baseline_sample.py
+│   ├── create_baseline_sample.py
+│   └── download_images.py
 ├── configs/              # Training/model configs
 ├── experiments/          # Experiment-specific files
 ├── results/              # Results, figures, tables
 │   ├── dataset_analysis.json
-│   └── sampling_report.json
+│   ├── sampling_report.json
+│   ├── download_final_report.json
+│   └── download_failures.json
 ├── data/                 # Ignored by Git
-│   └── baseline_sample_manifest.csv
+│   ├── baseline_sample_manifest.csv
+│   └── verified_paired_manifest.csv
+├── images/               # Ignored by Git (75,995 verified images)
 ├── notebooks/            # Jupyter notebooks
 ├── docs/                 # Documentation
 ├── README.md
@@ -156,15 +171,13 @@ project/
 
 ## Blockers
 
-None. Baseline sample manifest is generated and ready for image downloading.
+None. Verified paired dataset (75,995 samples) is ready for baseline experiments.
 
 ---
 
 ## Next Steps
 
-1. **Literature review** of recent multimodal fake news detection methods (Karthik)
-2. **Read reference paper** in full detail
-3. **Image Download Strategy:** Download the 80,000 images corresponding to `data/baseline_sample_manifest.csv` and verify exact image storage requirements.
-4. **Baseline Architecture Selection:** Decide text encoder, image encoder, and fusion strategy for baseline E002/E003/E004.
-Download subset of images** (e.g., 50k-100k) for the first baseline
-6. **Read reference paper** in full detail
+1. **Baseline architecture selection** — text encoder, image encoder, fusion strategy (E002/E003/E004)
+2. **Literature review** of recent multimodal fake news detection methods (Karthik)
+3. **Read reference paper** in full detail
+4. **Begin E002** text-only baseline using `data/verified_paired_manifest.csv`

@@ -1,0 +1,33 @@
+{
+  "manifest_path": "data/baseline_sample_manifest.csv",
+  "total_attempted": 80000,
+  "successful": 75995,
+  "newly_downloaded": 3317,
+  "already_existing": 72678,
+  "failed": 4005,
+  "corrupt_unreadable": 31,
+  "success_percentage": 94.99,
+  "failure_percentage": 5.01,
+  "status_breakdown": {
+    "already_exists": 72678,
+    "http_404": 3863,
+    "success": 3317,
+    "corrupt_image": 31,
+    "request_exception": 67,
+    "http_400": 2,
+    "http_403": 21,
+    "http_402": 5,
+    "timeout": 12,
+    "http_406": 1,
+    "http_530": 2,
+    "http_523": 1
+  },
+  "actual_storage_bytes": 8398948245,
+  "actual_storage_mb": 8009.86,
+  "actual_storage_gb": 7.8221,
+  "average_image_size_kb": 107.93,
+  "elapsed_seconds": 479.9,
+  "verified_manifest_path": "data/verified_paired_manifest.csv",
+  "verified_manifest_rows": 75995,
+  "failures_path": "results/download_failures.json"
+}
