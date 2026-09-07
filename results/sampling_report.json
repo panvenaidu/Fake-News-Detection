@@ -1,0 +1,195 @@
+{
+  "overall": {
+    "total_usable_multimodal_samples": 680798,
+    "total_sampled_multimodal_samples": 80000,
+    "sample_split_counts": {
+      "train": 66000,
+      "validate": 7000,
+      "test": 7000
+    },
+    "overall_before_sampling_distributions": {
+      "2_way_label": {
+        "0": 413197,
+        "1": 267601
+      },
+      "3_way_label": {
+        "0": 267601,
+        "1": 16680,
+        "2": 396517
+      },
+      "6_way_label": {
+        "0": 267601,
+        "1": 40423,
+        "2": 129384,
+        "3": 14234,
+        "4": 203139,
+        "5": 26017
+      }
+    },
+    "overall_after_sampling_distributions": {
+      "2_way_label": {
+        "0": 48554,
+        "1": 31446
+      },
+      "3_way_label": {
+        "0": 31446,
+        "1": 1940,
+        "2": 46614
+      },
+      "6_way_label": {
+        "0": 31446,
+        "1": 4750,
+        "2": 15203,
+        "3": 1673,
+        "4": 23871,
+        "5": 3057
+      }
+    },
+    "estimated_image_storage_gb": 3.052,
+    "estimated_bytes_per_image": 40960,
+    "random_seed": 42
+  },
+  "splits": {
+    "train": {
+      "filtering": {
+        "total_raw": 878218,
+        "total_multimodal_raw": 637564,
+        "missing_clean_title_count": 75098,
+        "usable_multimodal_count": 562466
+      },
+      "sampled_count": 66000,
+      "before_sampling_distributions": {
+        "2_way_label": {
+          "0": 341460,
+          "1": 221006
+        },
+        "3_way_label": {
+          "0": 221006,
+          "1": 13828,
+          "2": 327632
+        },
+        "6_way_label": {
+          "0": 221006,
+          "1": 33406,
+          "2": 106880,
+          "3": 11775,
+          "4": 167857,
+          "5": 21542
+        }
+      },
+      "after_sampling_distributions": {
+        "2_way_label": {
+          "0": 40067,
+          "1": 25933
+        },
+        "3_way_label": {
+          "0": 25933,
+          "1": 1611,
+          "2": 38456
+        },
+        "6_way_label": {
+          "0": 25933,
+          "1": 3920,
+          "2": 12541,
+          "3": 1382,
+          "4": 19696,
+          "5": 2528
+        }
+      }
+    },
+    "validate": {
+      "filtering": {
+        "total_raw": 92444,
+        "total_multimodal_raw": 67035,
+        "missing_clean_title_count": 7866,
+        "usable_multimodal_count": 59169
+      },
+      "sampled_count": 7000,
+      "before_sampling_distributions": {
+        "2_way_label": {
+          "0": 35974,
+          "1": 23195
+        },
+        "3_way_label": {
+          "0": 23195,
+          "1": 1361,
+          "2": 34613
+        },
+        "6_way_label": {
+          "0": 23195,
+          "1": 3514,
+          "2": 11242,
+          "3": 1236,
+          "4": 17810,
+          "5": 2172
+        }
+      },
+      "after_sampling_distributions": {
+        "2_way_label": {
+          "0": 4256,
+          "1": 2744
+        },
+        "3_way_label": {
+          "0": 2744,
+          "1": 159,
+          "2": 4097
+        },
+        "6_way_label": {
+          "0": 2744,
+          "1": 416,
+          "2": 1330,
+          "3": 146,
+          "4": 2107,
+          "5": 257
+        }
+      }
+    },
+    "test": {
+      "filtering": {
+        "total_raw": 92444,
+        "total_multimodal_raw": 67099,
+        "missing_clean_title_count": 7936,
+        "usable_multimodal_count": 59163
+      },
+      "sampled_count": 7000,
+      "before_sampling_distributions": {
+        "2_way_label": {
+          "0": 35763,
+          "1": 23400
+        },
+        "3_way_label": {
+          "0": 23400,
+          "1": 1491,
+          "2": 34272
+        },
+        "6_way_label": {
+          "0": 23400,
+          "1": 3503,
+          "2": 11262,
+          "3": 1223,
+          "4": 17472,
+          "5": 2303
+        }
+      },
+      "after_sampling_distributions": {
+        "2_way_label": {
+          "0": 4231,
+          "1": 2769
+        },
+        "3_way_label": {
+          "0": 2769,
+          "1": 170,
+          "2": 4061
+        },
+        "6_way_label": {
+          "0": 2769,
+          "1": 414,
+          "2": 1332,
+          "3": 145,
+          "4": 2068,
+          "5": 272
+        }
+      }
+    }
+  }
+}

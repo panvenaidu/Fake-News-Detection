@@ -101,3 +101,18 @@
 **Decided By:** Antigravity (Data Strategy)
 
 ---
+
+## D008 — 2026-09-07 — Baseline Stratified Sample Specification (80,000 Samples)
+
+**Decision:** Formulate an 80,000-sample reproducible baseline manifest (`data/baseline_sample_manifest.csv`) split into 66,000 Train, 7,000 Validation, and 7,000 Test samples using `scripts/create_baseline_sample.py` with seed=42.
+
+**Rationale:**
+- 80,000 samples provide a highly representative sample size for training transformer + vision backbone baselines while drastically reducing image storage requirement to ~3.05 GB (estimated).
+- Filtering strictly drops all 90,900 samples missing `clean_title` across splits, ensuring zero missing text features.
+- Stratification on `6_way_label` preserves class distribution while maintaining split integrity across Train, Validation, and Test sets.
+- Fixed seed (42) ensures 100% experiment reproducibility.
+
+**Decided By:** Antigravity (Data Strategy)
+
+---
+

@@ -34,14 +34,16 @@ No experiments have been run yet. The project is in Phase 1 (Understanding).
 
 ## Completed Experiments
 
-### E001 — Data Exploration
+### E001B — Baseline Stratified Dataset Sampling
 - **Date:** 2026-09-07
-- **Goal:** Inspect TSV files, count samples, analyze label distribution, identify multimodal samples
-- **Configuration:** Python script (`scripts/dataset_analysis.py`) analyzing `all_train.tsv`, `all_validate.tsv`, `all_test_public.tsv`
+- **Goal:** Create reproducible stratified sample of 80,000 multimodal items for first baseline experiment.
+- **Configuration:** Python script (`scripts/create_baseline_sample.py`), seed=42, filtering `hasImage==True`, valid `image_url`, non-empty `clean_title`.
 - **Results & Observations:**
-  - **Sample counts:** 878,218 train / 92,444 val / 92,444 test (total ~1.06M).
-  - **Multimodal (`hasImage=True` and valid URL):** 637,564 train / 67,035 val / 67,099 test (Total: 771,698 usable multimodal samples).
-  - **Missing Values:** `clean_title` has 75,429 missing values in train. This must be handled (likely filtered out) during dataset creation.
-  - **Labels:** 2-way, 3-way, 6-way labels have 0 missing values.
-  - **Imbalance:** 6-way label is highly imbalanced (e.g. class 4 is 242k, class 3 is 11k in train).
-  - **Storage:** ~29.44 GB estimated for the full multimodal image subset. Recommend using a balanced subset of 50k-100k for initial baseline.
+  - **Raw Multimodal Count:** 771,698
+  - **Missing `clean_title` Filtered:** 90,900 missing titles dropped (75,098 train, 7,866 val, 7,936 test).
+  - **Usable Multimodal Pool:** 680,798 samples (562,466 train, 59,169 val, 59,163 test).
+  - **Final Sample Size:** **80,000 samples** (66,000 train, 7,000 val, 7,000 test).
+  - **Output Manifest:** `data/baseline_sample_manifest.csv` containing standard metadata columns.
+  - **Detailed Distributions:** Recorded in `results/sampling_report.json`. Stratification strictly preserved exact 6-way label ratios.
+  - **Estimated Storage:** ~3.05 GB (reference estimate based on 40KB/image).
+
