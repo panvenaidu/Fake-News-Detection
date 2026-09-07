@@ -145,3 +145,34 @@
 - 4,005 failed samples documented individually in `results/download_failures.json` — not silently discarded.
 
 **Decided By:** Cursor (Composer)
+
+---
+
+## D011 — 2026-09-08 — Initial Baseline Architecture and Evaluation Setting
+
+**Decision:** Establish the following initial baselines on the canonical verified paired manifest (75,995 samples), without implementation or training yet:
+
+1. **Text-only:** fine-tuned `bert-base-uncased` with a linear classification head.
+2. **Image-only:** fine-tuned ImageNet-pretrained ResNet-50 with a linear classification head.
+3. **Text+image:** the same BERT-base and ResNet-50 encoders; project their representations to a common dimensionality, apply element-wise maximum fusion, then use a small MLP classifier.
+4. **Initial label setting:** 6-way classification. Choose checkpoints by validation macro-F1 and report macro-F1, per-class metrics and a confusion matrix; accuracy/micro-F1 are supplementary.
+
+**Rationale:**
+- The original Fakeddit paper reported BERT + ResNet-50 with maximum fusion as its best simple multimodal combination, and ResNet-50 as the strongest of its tested image encoders.
+- BERT-base (110M parameters) is a strong, standard open encoder but is more feasible than BERT-large for repeated 80K-subset experiments. ResNet-50 is about 26M parameters. Their combined size is feasible on a T4/A100 with mixed precision and conservative batches, while retaining a lower-compute path on MPS/RTX 3050.
+- Maximum fusion is deliberately simple and documented; it does not prematurely treat a cross-modal interaction mechanism as the proposed contribution. More complex CLIP/ViT/attention models remain later comparison or improvement candidates.
+- Six-way classification preserves Fakeddit's fine-grained task and exposes minority-class and modality-specific failures. The manifest is already stratified on this label. Published Fakeddit analysis found that the small 3-way intermediate class behaved similarly to 2-way; 6-way is more diagnostic but imbalanced.
+
+**Constraints and safeguards:**
+- Do not alter the 80K manifest, download more data, or use metadata/comments/private labels.
+- Keep the official split membership fixed; use only `clean_title`, the local paired image, and the chosen label.
+- Do not compare numerical results with papers unless split, subset, label setting, paired-image availability, and metric all match.
+- Treat the released/random Fakeddit split as in-domain performance only. A temporal or held-out-subgroup test is later robustness evaluation, not a replacement for this baseline.
+
+**Evidence:**
+- Nakamura, Levy and Wang, *r/Fakeddit* (LREC 2020), official paper: BERT + ResNet-50 with maximum fusion was its best simple multimodal combination across 2-, 3- and 6-way tasks; it excluded items lacking text or image.
+- Stepanova and Ross, *Temporal Generalizability in Multimodal Misinformation Detection* (GenBench 2023): Fakeddit is increasingly imbalanced at finer granularity, 3-way behaved similarly to 2-way in their analysis, and temporally out-of-domain evaluation materially reduced F1.
+- Tahmasebi et al., *Improving Generalization for Multimodal Fake News Detection* (ICMR 2023): high standard-test performance did not ensure robustness under realistic content manipulations.
+- Kuntur et al., *Fake News Detection: It's All in the Data!* (Applied Sciences 2026): dataset design, labeling and bias shape reported fake-news performance and comparability.
+
+**Decided By:** Team-approved research decision analysis (Codex)

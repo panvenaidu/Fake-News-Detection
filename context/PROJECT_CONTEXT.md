@@ -1,7 +1,7 @@
 # PROJECT CONTEXT — Multimodal Fake News Detection
 
-> **Last Updated:** 2026-09-07
-> **Updated By:** Cursor (Composer)
+> **Last Updated:** 2026-09-08
+> **Updated By:** Codex
 
 ---
 
@@ -37,7 +37,8 @@
 - [x] Create reproducible stratified baseline sample manifest (80,000 samples)
 - [x] Download and verify 80,000 baseline images (75,995 verified paired samples)
 - [ ] Read reference paper in detail
-- [ ] Literature review (recent multimodal fake news work)
+- [x] Focused baseline-architecture decision review (primary sources plus relevant 2023–2026 work)
+- [ ] Broader literature review (recent multimodal fake news work)
 
 ---
 
@@ -134,6 +135,22 @@ This is a working hypothesis only. The final research contribution will be decid
 | Windows laptop | Windows | NVIDIA RTX 3050 | TBD | TBD |
 | Cloud | Colab / CoCalc | T4/A100 (Colab) | Varies | Varies |
 
+## Baseline Architecture Decision (2026-09-08)
+
+The following initial baselines have been selected but are **not implemented or trained**:
+
+| Setting | Selected baseline | Rationale |
+|---|---|---|
+| Text-only | `bert-base-uncased` (110M parameters) with a linear classifier | Standard open English encoder; practical for repeated runs and directly isolates `clean_title`. |
+| Image-only | ImageNet-pretrained ResNet-50 (about 26M parameters) with a linear classifier | Mature, compute-efficient vision backbone. The original Fakeddit study found it stronger than its tested VGG16 and EfficientNet image alternatives. |
+| Text + image | BERT-base + ImageNet-pretrained ResNet-50; project representations to equal width, take an element-wise maximum, then use a small MLP classifier | Mirrors the strongest simple fusion family reported in the original Fakeddit paper while remaining transparent and reproducible. |
+
+**Initial task:** 6-way Fakeddit classification. Select checkpoints by validation macro-F1 and report macro-F1, per-class precision/recall/F1, confusion matrix, and accuracy/micro-F1 as supplementary metrics. Use only the fixed official split membership in `data/verified_paired_manifest.csv` (75,995 paired items).
+
+**Compute expectation (not benchmarked):** BERT-base + ResNet-50 is about 136M backbone parameters. It is practical on a Colab T4/A100 with mixed precision and conservative batches (roughly 8–16 as a starting range), suitable for M3/MPS debugging, and likely feasible on the RTX 3050 with small batches plus gradient accumulation. Exact VRAM and throughput must be measured in the first approved run.
+
+**Evaluation caveat:** Fakeddit's labels are distant/subreddit-level and its released split is not a robustness test. Later work should add a temporal or held-out subgroup/domain-shift evaluation without replacing this initial benchmark.
+
 ---
 
 ## Repository Structure
@@ -177,7 +194,6 @@ None. Verified paired dataset (75,995 samples) is ready for baseline experiments
 
 ## Next Steps
 
-1. **Baseline architecture selection** — text encoder, image encoder, fusion strategy (E002/E003/E004)
-2. **Literature review** of recent multimodal fake news detection methods (Karthik)
-3. **Read reference paper** in full detail
-4. **Begin E002** text-only baseline using `data/verified_paired_manifest.csv`
+1. Obtain approval for a fixed experimental protocol: preprocessing, seeds, tuning budget, metrics, and hardware logging.
+2. Implement and run E002/E003/E004 only after that approval, using the 6-way setting and verified paired manifest.
+3. Use observed class-wise and robustness failures to select, rather than assume, a final research contribution.

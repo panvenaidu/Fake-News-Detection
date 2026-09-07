@@ -8,7 +8,7 @@
 
 ## Status
 
-No experiments have been run yet. The project is in Phase 1 (Understanding).
+No model-training experiments have been run yet. Dataset sampling/download validation and a non-experimental architecture decision review are complete; the project remains in Phase 1 (Understanding).
 
 ---
 
@@ -33,6 +33,14 @@ No experiments have been run yet. The project is in Phase 1 (Understanding).
 ---
 
 ## Completed Experiments
+
+### Architecture Decision Review — 2026-09-08 (Non-experimental)
+- **Goal:** Select scientifically defensible, reproducible and compute-feasible text-only, image-only and text+image baselines before implementation.
+- **Configuration:** Research/decision review only. Consulted the original Fakeddit paper and repository, the supplied 2026 data-centric review, and selected 2023–2025 primary literature on generalization, temporal shift and stronger multimodal encoders. No code or model was run.
+- **Decision:** Use BERT-base for text-only, ImageNet-pretrained ResNet-50 for image-only, and BERT-base + ResNet-50 with equal-dimension projection and element-wise maximum fusion for text+image. Use 6-way labels initially and validation macro-F1 as the principal selection metric.
+- **Observations:** The original Fakeddit paper found the BERT + ResNet-50 maximum-fusion family its strongest simple multimodal combination. Later studies show that standard in-domain scores and scores from different subsets/splits are not directly comparable, and that temporal/content shifts can substantially reduce performance. The 3-way setting has a very small intermediate class and published Fakeddit analysis found it behaved similarly to 2-way; 6-way exposes more diagnostic errors but is imbalanced.
+- **Results:** No experimental metrics, runtime, memory use, checkpoint, or benchmark result exists yet.
+- **Next prerequisite:** Team approval of the fixed experimental protocol before E002/E003/E004 are implemented or run.
 
 ### E001B — Baseline Stratified Dataset Sampling
 - **Date:** 2026-09-07
