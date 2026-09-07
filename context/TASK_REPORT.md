@@ -1,82 +1,87 @@
-# Task Report — Reproducible Baseline Protocol (`BP-6W-v1`)
+# Task Report — E002 Text-Only Implementation and Smoke Test
 
-## Task and Status
+## Task Performed
 
-Define a reproducible, fair experimental protocol for E002 text-only, E003 image-only and E004 text+image Fakeddit baselines before model implementation or training.
+Implemented E002 only: the reusable `BP-6W-v1` text data pipeline, BERT-base-uncased six-class classifier, canonical CUDA training entry point, metric/artifact logging, frozen configuration, and required pre-training smoke test.
 
-**Completed — protocol decision only.** No implementation, training, inference, download, re-sampling or manifest change occurred.
+## Status
 
-## Protocol Decisions
+**Implementation complete; smoke test passed; canonical training not started.** This task did not implement or start E003/E004.
 
-### Shared cohort and task
+## Files Created or Changed
 
-- Use `data/verified_paired_manifest.csv` for every baseline, preserving `split`: **62,635 train, 6,685 validation, 6,675 test** (75,995 total).
-- Use only `clean_title`, local paired image and `6_way_label`. The locked mapping is 0 True, 1 Satire/Parody, 2 Misleading Content, 3 Imposter Content, 4 False Connection, 5 Manipulated Content.
-- The validated manifest has zero blank titles and zero duplicate IDs. Before every run, verify all listed image paths exist and decode as RGB. Abort rather than silently dropping an item.
-- Primary task: 6-way. Use unweighted cross-entropy, no resampling, macro-F1 as primary metric, and class-wise analysis. A 2-way control may be run only after all 6-way baselines, with the same protocol and only the label/output dimension changed.
+- `src/fakenews_baselines/__init__.py` — baseline package marker.
+- `src/fakenews_baselines/e002_text.py` — E002-only manifest validation, deterministic loader, model, training/evaluation, logging, artifact, and smoke-test components.
+- `configs/e002_text_bp6w_v1.json` — frozen E002 configuration, manifest hash/counts, protocol settings, approved seeds, and BERT revision.
+- `scripts/run_e002.py` — canonical CUDA-only E002 runner for seed 42/43/44.
+- `scripts/smoke_test_e002.py` — non-canonical CPU smoke-test runner.
+- `requirements.txt` — declares PyTorch, Transformers, and Safetensors dependencies for E002.
+- `results/experiments/e002_text/E002-bert-base-uncased-6way-BP6Wv1-smoke-cpu/resolved_config.json` — resolved smoke configuration.
+- `results/experiments/e002_text/E002-bert-base-uncased-6way-BP6Wv1-smoke-cpu/smoke_test_summary.json` — verified smoke-test evidence.
+- `context/PROJECT_CONTEXT.md`, `context/EXPERIMENT_LOG.md`, and this report — current factual project state.
 
-### E002 — Text-only
+`context/DECISIONS.md` was intentionally not changed: implementation made no new research/protocol decision.
 
-- Model: end-to-end fine-tuned `bert-base-uncased` plus 6-way linear classifier; classifier dropout 0.2.
-- Input: stored `clean_title`, with no additional semantic rewriting or metadata; `BertTokenizerFast`, 128-token maximum including special tokens, truncation, dynamic longest-in-batch padding.
-- Optimizer: AdamW, LR `2e-5`, weight decay 0.01 (except bias/norm), betas `(0.9, 0.999)`, epsilon `1e-8`.
-- T4/A100 batch: 32 with accumulation 1; target effective batch is 32.
+## Dataset and Cohort Used
 
-### E003 — Image-only
+- Manifest: `data/verified_paired_manifest.csv`, read only and unchanged.
+- SHA-256: `fc74cb42288d366131ac764bf02f9212bacd7cab0af68442a003beaaff9fde20`.
+- Cohort: 75,995 paired samples — 62,635 train / 6,685 validation / 6,675 test.
+- Input: stored `clean_title`; label: `6_way_label` with the approved mapping.
+- The smoke test loaded the fixed manifest and decoded the first two train-row paired images as RGB. Canonical training code validates every paired image before loading tokenizer/model.
 
-- Model: end-to-end fine-tuned `ResNet50_Weights.IMAGENET1K_V2` plus dropout 0.2 and 6-way linear classifier.
-- Input: convert to RGB. Training uses `RandomResizedCrop(224, scale=(0.8, 1.0), ratio=(0.75, 1.333), bilinear, antialias=True)`; validation/test use `Resize(232, bilinear, antialias=True)` then `CenterCrop(224)`; ImageNet V2 mean/std. Do not flip or colour-jitter, because images may contain written evidence.
-- Optimizer: AdamW, LR `1e-4`, weight decay `1e-4` (except bias/norm), same betas/epsilon.
-- T4/A100 batch: 32 with accumulation 1; effective batch 32.
+## Exact Protocol Implemented
 
-### E004 — Text + Image
+- E002 model: end-to-end `bert-base-uncased`, BERT pooler output with CLS fallback, dropout 0.2, linear six-class classifier.
+- Tokenizer: `BertTokenizerFast`, maximum 128 tokens including special tokens, truncation, and dynamic longest-in-batch padding.
+- Optimizer: AdamW, LR `2e-5`, weight decay 0.01 except bias/normalization parameters, betas `(0.9, 0.999)`, epsilon `1e-8`.
+- Training: effective batch 32 (`32 x 1` configured), maximum 10 epochs, linear 10% warm-up then decay, gradient clipping 1.0, unweighted cross-entropy, end-to-end fine-tuning.
+- Selection: validation Macro-F1; exact ties use lower validation loss then earlier epoch. Early stopping begins only after epoch 3 and requires two consecutive epochs without a Macro-F1 gain of at least 0.001.
+- Seeds: 42, 43, 44 only. Canonical runner requires CUDA and uses AMP/mixed precision when supported.
+- Evaluation/artifacts: required aggregate/per-class metrics, raw/normalized confusion matrices, ID-linked test predictions, runtime/throughput/peak-memory fields, environment, versions, manifest/code/config hashes, model revision, and exception logs.
 
-- Model: end-to-end fine-tuned BERT-base and ResNet-50 using the identical E002/E003 inputs. Project BERT CLS 768→512 and ResNet pooled 2048→512, LayerNorm each, element-wise maximum fusion, then `512→256→6` MLP with GELU and dropout 0.2.
-- Optimizer: AdamW groups: BERT `2e-5` / decay 0.01; ResNet `1e-4` / decay `1e-4`; new projections and MLP `1e-3` / decay 0.01; exclusions for bias/norm apply.
-- T4/A100 batch: 8 with accumulation 4; effective batch 32.
+## Smoke-Test Result
 
-### Shared training and selection
+**Passed** on 2026-09-08 as an explicitly non-canonical CPU implementation check. It did not perform any training epoch, validation evaluation, test evaluation, or reportable model measurement.
 
-- Do not freeze encoders. Clip gradient norm at 1.0.
-- Maximum 10 epochs. Evaluate validation data after every epoch. After completing 3 epochs, stop after two consecutive epochs without a macro-F1 increase of at least 0.001.
-- Scheduler: 10% linear warm-up over planned optimizer updates, then linear decay to zero.
-- Seeds: 42, 43 and 44. Select the best checkpoint per seed by validation macro-F1; ties resolve by lower validation loss, then earlier epoch. Test once per selected seed and report mean ± standard deviation, never best test seed.
-- `BP-6W-v1` has no model-specific tuning sweep. Any later sweep requires an amendment, validation-only selection and an equal, documented budget across all baselines.
+- Device/precision: CPU, AMP disabled; seed 42; zero DataLoader workers for this smoke-only check.
+- Imports and tokenizer: passed.
+- Dataset/manifest: passed; manifest hash and all expected split counts matched.
+- One dynamic-padded batch: two examples, `input_ids`/attention mask shape `[2, 34]`.
+- Forward pass: logits shape `[2, 6]`.
+- Loss: `2.625950574874878`.
+- Backward pass, gradient clipping, and optimizer step: passed.
+- Checkpoint writing: passed; 438,028,532-byte checkpoint was verified then deleted. No large checkpoint remains.
+- Model parameters: 109,486,854 total and trainable.
+- BERT revision: `86b5e0934494bd15c9632b12f734a8a67f723594`.
 
-## Evaluation, Reproducibility and Resource Logging
+The first smoke invocation found a real macOS DataLoader pickling error caused by a nested collator function. It was corrected by using a top-level collator class, and the final smoke rerun passed. No failed artifact was retained.
 
-- Report macro-F1 (primary), accuracy, balanced accuracy, weighted-F1, per-class precision/recall/F1/support with `zero_division=0`, and raw plus row-normalized 6×6 confusion matrices.
-- Use CUDA AMP with `torch.amp.autocast("cuda", float16)` and `torch.amp.GradScaler("cuda")` for canonical cloud/CUDA runs. M3/MPS is for development/smoke checks unless CUDA is unavailable.
-- Seed Python, NumPy, PyTorch, DataLoader generator and workers; use deterministic algorithms where supported, deterministic cuDNN and `benchmark=False`. Record hardware/software because deterministic equality is only expected within the documented environment.
-- For every run, record: run ID, protocol/config and code hashes; manifest SHA-256 and split/class counts; model/weight/tokenizer revisions; parameter counts (total/trainable); device, VRAM, driver and package versions; AMP; micro/effective batch; epoch metrics; selected checkpoint; test predictions/metrics/confusion matrix; runtime, throughput, peak memory; and OOM/non-finite events.
-- Naming: `E00X-<model>-6way-BP6Wv1-s<seed>`.
+## Training and Seed Status
 
-## Evidence and Reasoning
+- Canonical E002 training: **not started**.
+- Seed 42: not started.
+- Seed 43: not started.
+- Seed 44: not started.
+- Actual validation/test metrics: none. No values are invented or inferred from the smoke-test loss.
 
-- [Nakamura, Levy and Wang (LREC 2020)](https://aclanthology.org/2020.lrec-1.755/) provides the Fakeddit 6-way and BERT/ResNet maximum-fusion benchmark precedent.
-- [Stepanova and Ross (GenBench 2023)](https://aclanthology.org/2023.genbench-1.6/) shows why Fakeddit's fine-grained imbalance requires macro and class-wise reporting.
-- [TorchVision ResNet-50 V2 documentation](https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.resnet50.html) specifies the selected pretrained weights and inference preprocessing; its model card reports 25,557,032 parameters.
-- [Hugging Face padding/truncation documentation](https://huggingface.co/docs/transformers/main/pad_truncation) supports dynamic padding and explicit maximum-length truncation.
-- [PyTorch reproducibility guidance](https://docs.pytorch.org/docs/stable/notes/randomness.html) specifies worker seeding; [PyTorch AMP guidance](https://docs.pytorch.org/docs/stable/amp) specifies autocast with gradient scaling for CUDA FP16.
+## Errors and Blockers
 
-The protocol prioritizes controlled comparisons: all baselines use the same paired rows, splits, seed count, effective batch, epoch cap, selection rule and metrics. Learning-rate and weight-decay groups differ only by pretrained encoder/new-head type and are fixed before training; this preserves standard transfer-learning scales without tuning one baseline more heavily.
+- The initial local Python environment lacked `transformers` and `scikit-learn`; temporary isolated dependencies in `/private/tmp/e002-deps` were used only for smoke verification. The repository was not given a virtual environment.
+- This Mac reports PyTorch 2.8.0 with CUDA unavailable and MPS unavailable. Per BP-6W-v1 and task instructions, canonical training must not fall back to CPU/MPS and remains pending a CUDA environment.
+- A temporary `urllib3` LibreSSL warning appeared during smoke execution. It did not prevent the passed tokenizer/model or training-step verification.
 
-## Unresolved Decisions Requiring Approval or Later Measurement
+## What Was Not Completed
 
-1. **RTX 3050 VRAM:** unknown. Measure before local CUDA use. If needed, lower only micro-batch and raise accumulation to keep effective batch 32; record it.
-2. **Canonical execution location:** recommend Colab T4/A100 for reported results. Confirm this before implementation so all canonical runs share one CUDA/software environment.
-3. **Protocol exception policy:** any learning-rate sweep, class-weighted loss, augmentation change, frozen encoder, or data-eligibility change requires an explicit documented amendment and equal comparison budget.
+- No full E002 training, validation sweep, test evaluation, or seed aggregation.
+- No canonical CUDA run, model checkpoint retention, or reportable performance metric.
+- No E003 image-only or E004 text+image implementation/run.
+- No manifest/data/image modification, resampling, augmentation, class weighting, or protocol amendment.
 
-## What Was Not Done
+## Current Project State
 
-- No model code, configuration code, training loop, data loader, checkpoint, benchmark, or smoke test was created or run.
-- No data or image was downloaded, removed, re-sampled, or modified; the 80K source manifest and 75,995-row verified manifest remain unchanged.
-- No final research contribution/gap was chosen.
+The 75,995-row verified paired cohort remains intact and hash-locked by configuration. E002 is ready to run unchanged in a canonical CUDA environment. Context files now record the implementation and smoke-test evidence; no new decision was made.
 
-## Recommended Next Step
+## Immediate Next Step
 
-Approve the canonical CUDA environment and confirm the RTX 3050 VRAM if local training is intended. Then authorize implementation of `BP-6W-v1`, beginning with E002 and preserving this protocol unchanged.
-
-## Date
-
-2026-09-08 — Codex
+Move the committed E002 code/configuration to a CUDA environment, confirm available VRAM, run the full paired-image preflight validation, then begin only E002 seed 42. Do not start E003/E004.

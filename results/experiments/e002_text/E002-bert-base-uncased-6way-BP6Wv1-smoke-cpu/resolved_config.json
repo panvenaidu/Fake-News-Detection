@@ -1,0 +1,105 @@
+{
+  "_config_path": "configs/e002_text_bp6w_v1.json",
+  "artifacts": {
+    "output_root": "results/experiments/e002_text"
+  },
+  "data": {
+    "expected_split_counts": {
+      "test": 6675,
+      "train": 62635,
+      "validate": 6685
+    },
+    "manifest_path": "data/verified_paired_manifest.csv",
+    "manifest_sha256": "fc74cb42288d366131ac764bf02f9212bacd7cab0af68442a003beaaff9fde20",
+    "text_column": "clean_title"
+  },
+  "data_loader": {
+    "num_workers": 4
+  },
+  "early_stopping": {
+    "min_delta": 0.001,
+    "monitor": "validation macro-F1",
+    "patience": 2,
+    "start_after_epoch": 3
+  },
+  "evaluation": {
+    "checkpoint_selection": "validation Macro-F1; exact ties use lower validation loss then earlier epoch",
+    "metrics": [
+      "macro_f1",
+      "accuracy",
+      "balanced_accuracy",
+      "weighted_f1",
+      "per_class_precision_recall_f1_support",
+      "raw_confusion_matrix",
+      "normalized_confusion_matrix"
+    ],
+    "test_after_validation_selection_only": true
+  },
+  "experiment_id": "E002",
+  "model": {
+    "classifier_dropout": 0.2,
+    "classifier_representation": "BERT pooler output, with CLS fallback",
+    "name": "bert-base-uncased",
+    "revision": "86b5e0934494bd15c9632b12f734a8a67f723594"
+  },
+  "optimizer": {
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "exclude_from_weight_decay": [
+      "bias",
+      "normalization parameters"
+    ],
+    "learning_rate": 2e-05,
+    "name": "AdamW",
+    "weight_decay": 0.01
+  },
+  "protocol_id": "BP-6W-v1",
+  "scheduler": {
+    "name": "linear warm-up then linear decay",
+    "warmup_ratio": 0.1
+  },
+  "smoke_test": {
+    "batch_size": 2,
+    "non_canonical_cpu_only": true,
+    "num_workers": 0,
+    "seed": 42
+  },
+  "task": {
+    "label_column": "6_way_label",
+    "label_mapping": {
+      "0": "True",
+      "1": "Satire/Parody",
+      "2": "Misleading Content",
+      "3": "Imposter Content",
+      "4": "False Connection",
+      "5": "Manipulated Content"
+    },
+    "name": "Fakeddit 6-way text-only classification",
+    "num_classes": 6
+  },
+  "tokenizer": {
+    "implementation": "BertTokenizerFast",
+    "max_length": 128,
+    "padding": "dynamic-longest-in-batch",
+    "truncation": true
+  },
+  "training": {
+    "canonical_cuda_required": true,
+    "effective_batch_size": 32,
+    "fine_tune_end_to_end": true,
+    "gradient_accumulation_steps": 1,
+    "loss": "unweighted cross entropy",
+    "max_epochs": 10,
+    "max_grad_norm": 1.0,
+    "micro_batch_size": 32,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "use_cuda_amp": true
+  }
+}

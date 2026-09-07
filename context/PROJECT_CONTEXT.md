@@ -137,7 +137,8 @@ This is a working hypothesis only. The final research contribution will be decid
 
 ## Baseline Architecture Decision (2026-09-08)
 
-The following initial baselines have been selected but are **not implemented or trained**:
+The following initial baselines have been selected. E002 is implemented and
+smoke-tested only; no baseline has been canonically trained.
 
 | Setting | Selected baseline | Rationale |
 |---|---|---|
@@ -190,6 +191,14 @@ The target effective batch size is **32** for every optimizer update. On the RTX
 
 **2-way control:** after all 6-way E002/E003/E004 runs are complete and recorded, a requested control round may retrain the same three models on `2_way_label` with the same manifest, split, preprocessing, seeds, update budget and per-model optimizer groups; only the output dimension and label column change. It is not used to choose the research gap or replace the primary six-way analysis.
 
+## E002 Implementation Status (2026-09-08)
+
+- **Implemented:** reusable verified-manifest validation, deterministic text datasets/DataLoaders, the end-to-end `bert-base-uncased` pooled/CLS classifier with 0.2 dropout, AdamW parameter groups, linear warm-up/decay, gradient clipping, validation checkpoint ranking, BP-6W-v1 early stopping, required metrics/confusion-matrix artifacts, per-run metadata/error logging, and canonical CUDA-only training entry point.
+- **Frozen configuration:** `configs/e002_text_bp6w_v1.json` locks the verified manifest SHA-256 (`fc74cb42288d366131ac764bf02f9212bacd7cab0af68442a003beaaff9fde20`), split counts, all BP-6W-v1 E002 values, approved seeds, and the resolved public `bert-base-uncased` revision `86b5e0934494bd15c9632b12f734a8a67f723594`.
+- **Smoke test:** passed on CPU as a non-canonical implementation check only. It loaded the fixed manifest, validated two paired images, used a two-item dynamic-padded batch (shape `[2, 34]`), completed forward/loss/backward/optimizer/checkpoint-write steps, and removed the 438,028,532-byte smoke checkpoint after verification. It produced no training, validation, or test metric.
+- **Environment:** the Mac reports PyTorch 2.8.0 with CUDA unavailable and MPS unavailable. Missing local `transformers` and `scikit-learn` dependencies were installed only in `/private/tmp/e002-deps` for smoke verification; project requirements now declare the E002 deep-learning dependencies. Canonical E002 execution remains blocked pending CUDA.
+- **Scope guard:** E003 and E004 have not been implemented or run. The 80,000 source manifest and 75,995-row verified paired manifest were not modified.
+
 ---
 
 ## Repository Structure
@@ -227,12 +236,12 @@ project/
 
 ## Blockers
 
-None. Verified paired dataset (75,995 samples) is ready for baseline experiments.
+The verified paired dataset is ready, but canonical E002 training is blocked on this Mac because neither CUDA nor MPS is available. A CUDA environment is required; no CPU/MPS training fallback is permitted.
 
 ---
 
 ## Next Steps
 
-1. Obtain approval to implement the recorded `BP-6W-v1` protocol; confirm the RTX 3050 VRAM before local CUDA execution.
-2. Implement and run E002/E003/E004 in the recorded order, using the 6-way setting and verified paired manifest.
+1. Copy/prepare the committed E002 code and fixed configuration in a canonical CUDA environment, confirm available VRAM, then run the required full paired-image validation before E002 seed 42.
+2. After successful seed 42, run E002 seeds 43 and 44 unchanged; aggregate only their validation-selected test results. Do not start E003/E004 until E002 is complete and recorded.
 3. Use observed class-wise and robustness failures to select, rather than assume, a final research contribution.

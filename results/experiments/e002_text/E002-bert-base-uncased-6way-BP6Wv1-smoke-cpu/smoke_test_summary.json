@@ -1,0 +1,89 @@
+{
+  "amp_enabled": false,
+  "checks": {
+    "backward_pass": true,
+    "checkpoint_writing": {
+      "bytes_written": 438028532,
+      "removed_after_verification": true
+    },
+    "dataset_loading": true,
+    "forward_pass": {
+      "logits_shape": [
+        2,
+        6
+      ]
+    },
+    "imports": true,
+    "loss": 2.625950574874878,
+    "one_batch": {
+      "attention_mask_shape": [
+        2,
+        34
+      ],
+      "batch_size": 2,
+      "input_ids_shape": [
+        2,
+        34
+      ]
+    },
+    "optimizer_step": true,
+    "tokenizer": true
+  },
+  "data_loader_workers": 0,
+  "device": "cpu",
+  "image_validation_scope": {
+    "note": "Smoke-only subset; canonical runs validate every paired image.",
+    "validated_rows": 2
+  },
+  "manifest": {
+    "class_counts": {
+      "test": {
+        "0": 2582,
+        "1": 390,
+        "2": 1244,
+        "3": 140,
+        "4": 2047,
+        "5": 272
+      },
+      "train": {
+        "0": 24088,
+        "1": 3651,
+        "2": 11575,
+        "3": 1302,
+        "4": 19535,
+        "5": 2484
+      },
+      "validate": {
+        "0": 2574,
+        "1": 396,
+        "2": 1233,
+        "3": 139,
+        "4": 2089,
+        "5": 254
+      }
+    },
+    "path": "/Users/panveenaidu/Downloads/SEM7/UROP/data/verified_paired_manifest.csv",
+    "rows": 75995,
+    "sha256": "fc74cb42288d366131ac764bf02f9212bacd7cab0af68442a003beaaff9fde20",
+    "split_counts": {
+      "test": 6675,
+      "train": 62635,
+      "validate": 6685
+    }
+  },
+  "model": {
+    "name": "bert-base-uncased",
+    "parameter_counts": {
+      "total": 109486854,
+      "trainable": 109486854
+    },
+    "requested_revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+    "resolved_revision": "86b5e0934494bd15c9632b12f734a8a67f723594"
+  },
+  "protocol_id": "BP-6W-v1",
+  "run_id": "E002-bert-base-uncased-6way-BP6Wv1-smoke-cpu",
+  "runtime_seconds": 2.2339427919999997,
+  "scope": "non-canonical CPU smoke test; no training metrics",
+  "seed": 42,
+  "status": "passed"
+}

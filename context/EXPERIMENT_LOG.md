@@ -8,7 +8,7 @@
 
 ## Status
 
-No model-training experiments have been run yet. Dataset sampling/download validation and a non-experimental architecture decision review are complete; the project remains in Phase 1 (Understanding).
+No canonical model-training experiment has been run. E002 implementation and a non-canonical CPU smoke test are complete; dataset sampling/download validation and a non-experimental architecture decision review are also complete.
 
 ---
 
@@ -20,7 +20,7 @@ No model-training experiments have been run yet. Dataset sampling/download valid
 
 ### E002 — Text-Only Baseline (Planned)
 - **Goal:** Establish text-only classification performance
-- **Status:** Not started — architecture and `BP-6W-v1` protocol are fixed; pending implementation approval
+- **Status:** Implementation and smoke test complete; canonical CUDA training for seeds 42/43/44 is pending. No validation/test performance result exists.
 
 ### E003 — Image-Only Baseline (Planned)
 - **Goal:** Establish image-only classification performance
@@ -33,6 +33,13 @@ No model-training experiments have been run yet. Dataset sampling/download valid
 ---
 
 ## Completed Experiments
+
+### E002 — Text-Only Implementation Smoke Test — 2026-09-08 (Non-canonical)
+- **Goal:** Verify the complete E002 implementation path before any canonical training.
+- **Configuration:** `configs/e002_text_bp6w_v1.json`; fixed `data/verified_paired_manifest.csv` SHA-256 `fc74cb42288d366131ac764bf02f9212bacd7cab0af68442a003beaaff9fde20`; resolved `bert-base-uncased` revision `86b5e0934494bd15c9632b12f734a8a67f723594`; seed 42; CPU; AMP disabled; two train rows; zero DataLoader workers for the smoke-only local check. This was not a BP-6W-v1 training run and did not substitute for CUDA.
+- **Verified results:** imports, `BertTokenizerFast`, fixed-manifest loading, two paired-image RGB decodes, one dynamic-padded batch (`input_ids` and attention mask `[2, 34]`), BERT forward pass (`[2, 6]` logits), unweighted cross-entropy loss (`2.625950574874878`), backward pass, gradient clipping, optimizer step, and checkpoint writing all passed. The checkpoint was 438,028,532 bytes and was immediately removed after verification. The model contained 109,486,854 total/trainable parameters.
+- **Observations:** the first smoke invocation exposed a macOS multiprocessing pickling error in a nested collator. The collator was moved to a top-level class; the final rerun passed. No failed checkpoint, training checkpoint, validation metric, test metric, or prediction was retained.
+- **Scope:** no canonical training, E003, E004, resampling, manifest change, image download, or protocol change occurred.
 
 ### Baseline Protocol Decision — 2026-09-08 (Non-experimental)
 - **Goal:** Pre-register a fair, reproducible and compute-adaptable protocol for E002/E003/E004 before implementation.
