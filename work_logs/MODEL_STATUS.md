@@ -22,9 +22,11 @@
 - implemented
 - smoke-tested
 - preliminary seed 42 completed
-- scheduler-order issue
+- scheduler-order bug corrected; no full retraining performed during fix task
 - clean rerun required
 - seeds 43/44 pending
+
+The E002 scheduler-order bug has been corrected. No full retraining was performed during the fix task. The preliminary seed-42 result remains preliminary. A clean canonical seed-42 rerun is required.
 
 ---
 

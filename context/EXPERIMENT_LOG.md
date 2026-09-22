@@ -63,7 +63,7 @@ Faculty requested initial experimental values/metrics on 2026-09-22. The followi
 ### E002 — Preliminary Seed-42 Colab Training — 2026-09-22/23 (PRELIMINARY)
 - **Goal:** First canonical CUDA training run for E002 BERT text-only baseline.
 - **Configuration:** `configs/e002_text_bp6w_v1.json`; seed 42; Tesla T4 GPU; CUDA AMP enabled; `data/verified_paired_manifest.csv` SHA-256 verified; 75,995 paired samples (62,635 train / 6,685 validation / 6,675 test).
-- **⚠️ STATUS: PRELIMINARY.** The run produced `UserWarning: Detected call of lr_scheduler.step() before optimizer.step()`. The learning rate schedule may not have been applied correctly. This result must be rerun after fixing the scheduler order before it is treated as the final canonical E002 baseline.
+- **⚠️ STATUS: PRELIMINARY.** The run produced `UserWarning: Detected call of lr_scheduler.step() before optimizer.step()`. The learning rate schedule may not have been applied correctly. The E002 scheduler-order bug has been corrected. No full retraining was performed during the fix task. The preliminary seed-42 result remains preliminary. A clean canonical seed-42 rerun is required.
 - **Preliminary results (validation, selected epoch 4):** accuracy 0.7820, Macro-F1 0.7012, balanced accuracy 0.6689, weighted-F1 0.7784, loss 0.7400.
 - **Preliminary results (test):** accuracy 0.7790, Macro-F1 0.6891, balanced accuracy 0.6598, weighted-F1 0.7758, loss 0.7398.
 - **Per-class test F1:** True 0.8312, Satire/Parody 0.6098, Misleading Content 0.6707, Imposter Content 0.4734, False Connection 0.8293, Manipulated Content 0.7205.

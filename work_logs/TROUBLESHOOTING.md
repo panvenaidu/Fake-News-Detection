@@ -17,16 +17,28 @@ UserWarning: Detected call of lr_scheduler.step() before optimizer.step()
 ```
 
 ### Cause
-The learning rate scheduler's `.step()` method is called before the optimizer's `.step()` method in the training loop. PyTorch expects the optimizer step to happen first so the scheduler adjusts the LR for the *next* step, not the current one.
+When using PyTorch AMP (`GradScaler`), the `scaler.step(optimizer)` method may skip the optimizer step if it detects NaN/inf gradients. If the optimizer step is skipped but `scheduler.step()` is called unconditionally, the PyTorch scheduler detects that `optimizer._step_count` hasn't incremented and raises this warning.
 
 ### Fix
-Reorder the training loop so that `optimizer.step()` is called before `scheduler.step()`. The fix must be applied in `src/fakenews_baselines/e002_text.py` in the training loop.
+Moved scheduler stepping after the optimizer update at the correct optimizer-step boundary and wrapped it in a scale check (the standard PyTorch AMP pattern) in `src/fakenews_baselines/e002_text.py`:
+
+```python
+scale_before = scaler.get_scale()
+scaler.step(optimizer)
+scaler.update()
+optimizer.zero_grad(set_to_none=True)
+if scaler.get_scale() == scale_before:
+    scheduler.step()
+```
+
+### Verification
+Checked `src/fakenews_baselines/e002_text.py` statically. Verified no unintended protocol changes. Verified syntax passed.
+
+### Future prevention
+Keep `optimizer.step()` (or `scaler.step(optimizer)` with a scale check) before `scheduler.step()` in the training loop.
 
 ### Result
-The preliminary seed-42 run completed and produced metrics, but the learning rate schedule may not have been applied correctly. **This result is PRELIMINARY and must be rerun after the fix before being treated as the final canonical E002 baseline.**
-
-### Safe to repeat?
-No — the scheduler issue should be fixed before any further canonical training.
+The preliminary seed-42 run produced metrics, but the learning rate schedule may not have been applied correctly. **The scheduler-order bug has been corrected in the code. No full retraining was performed during the fix task. The preliminary seed-42 result remains preliminary. A clean canonical seed-42 rerun is required.**
 
 ### Notes
 - The preliminary metrics are preserved for reference but are not final.

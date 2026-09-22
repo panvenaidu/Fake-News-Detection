@@ -688,10 +688,12 @@ def train_one_seed(
                     torch.nn.utils.clip_grad_norm_(
                         model.parameters(), max_norm=float(config["training"]["max_grad_norm"])
                     )
+                    scale_before = scaler.get_scale()
                     scaler.step(optimizer)
                     scaler.update()
                     optimizer.zero_grad(set_to_none=True)
-                    scheduler.step()
+                    if scaler.get_scale() == scale_before:
+                        scheduler.step()
                     optimizer_steps += 1
 
             validation_metrics, _ = evaluate(

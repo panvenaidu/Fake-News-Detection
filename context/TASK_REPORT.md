@@ -94,7 +94,7 @@
 
 ## ⚠️ Most Important Immediate Next Step
 
-**Fix the E002 `lr_scheduler.step()` / `optimizer.step()` ordering in `src/fakenews_baselines/e002_text.py`, then rerun E002 seed 42 cleanly on Colab T4 before treating the result as the official canonical baseline.**
+**The E002 scheduler-order bug has been corrected. No full retraining was performed during the fix task. The preliminary seed-42 result remains preliminary. A clean canonical seed-42 rerun is required.**
 
 Do NOT run seeds 43/44 or start E003 until the scheduler fix is verified.
 

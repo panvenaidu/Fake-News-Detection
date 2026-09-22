@@ -368,7 +368,7 @@ project/
 
 ## Next Steps
 
-1. **Immediate:** Fix the `lr_scheduler.step()` / `optimizer.step()` ordering in `e002_text.py`, then rerun E002 seed 42 cleanly on Colab T4. Then run seeds 43 and 44.
+1. **Immediate:** The E002 scheduler-order bug has been corrected. No full retraining was performed during the fix task. The preliminary seed-42 result remains preliminary. A clean canonical seed-42 rerun is required. Then run seeds 43 and 44.
 2. **Phase A — Baselines:** After E002 is complete, implement and run E003 (ResNet-50), then E004 (BERT+ResNet-50).
 3. **Phase B — CLIP:** After baseline results are recorded, design and implement E005 CLIP-based multimodal experiment. Architecture must be reviewed and frozen before training.
 4. **Phase C — HGAT:** Investigate whether Fakeddit provides the required user/comment/propagation graph data. Only proceed with E006 if data is verified.
