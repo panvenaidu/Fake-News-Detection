@@ -692,7 +692,7 @@ def train_one_seed(
                     scaler.step(optimizer)
                     scaler.update()
                     optimizer.zero_grad(set_to_none=True)
-                    if scaler.get_scale() == scale_before:
+                    if scaler.get_scale() >= scale_before:
                         scheduler.step()
                     optimizer_steps += 1
 
