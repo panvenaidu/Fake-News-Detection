@@ -1,87 +1,168 @@
-# Task Report — E002 Text-Only Implementation and Smoke Test
+# Task Report — Current Project Handoff (2026-09-23)
 
-## Task Performed
+> **Purpose:** This is a handoff document for the next AI agent or team member. It contains the complete current project state so that work can continue without re-explaining the history.
 
-Implemented E002 only: the reusable `BP-6W-v1` text data pipeline, BERT-base-uncased six-class classifier, canonical CUDA training entry point, metric/artifact logging, frozen configuration, and required pre-training smoke test.
+---
 
-## Status
+## What Has Been Completed
 
-**Implementation complete; smoke test passed; canonical training not started.** This task did not implement or start E003/E004.
+### Dataset
+- **Primary dataset:** Fakeddit (LREC 2020)
+- **Canonical verified paired manifest:** `data/verified_paired_manifest.csv`
+- **75,995 verified paired samples** with confirmed valid images in `images/`
+- **Splits:** 62,635 train / 6,685 validation / 6,675 test
+- **Manifest SHA-256:** `fc74cb42288d366131ac764bf02f9212bacd7cab0af68442a003beaaff9fde20`
+- **Task:** 6-way classification (`6_way_label`): 0 True, 1 Satire/Parody, 2 Misleading Content, 3 Imposter Content, 4 False Connection, 5 Manipulated Content
+- **Inputs:** `clean_title` + local verified image
+- The manifest is hash-locked and must NOT be changed without an explicitly approved protocol amendment.
 
-## Files Created or Changed
+### Baseline Protocol
+- **Protocol ID:** `BP-6W-v1` — pre-registered in `context/PROJECT_CONTEXT.md` and `context/DECISIONS.md` (D012)
+- Seeds: 42, 43, 44
+- Primary metric: Macro-F1 (validation for checkpoint selection, test for reporting)
+- Three-seed mean ± standard deviation reporting
+- Full protocol details in `context/PROJECT_CONTEXT.md` § "Baseline Experimental Protocol"
 
-- `src/fakenews_baselines/__init__.py` — baseline package marker.
-- `src/fakenews_baselines/e002_text.py` — E002-only manifest validation, deterministic loader, model, training/evaluation, logging, artifact, and smoke-test components.
-- `configs/e002_text_bp6w_v1.json` — frozen E002 configuration, manifest hash/counts, protocol settings, approved seeds, and BERT revision.
-- `scripts/run_e002.py` — canonical CUDA-only E002 runner for seed 42/43/44.
-- `scripts/smoke_test_e002.py` — non-canonical CPU smoke-test runner.
-- `requirements.txt` — declares PyTorch, Transformers, and Safetensors dependencies for E002.
-- `results/experiments/e002_text/E002-bert-base-uncased-6way-BP6Wv1-smoke-cpu/resolved_config.json` — resolved smoke configuration.
-- `results/experiments/e002_text/E002-bert-base-uncased-6way-BP6Wv1-smoke-cpu/smoke_test_summary.json` — verified smoke-test evidence.
-- `context/PROJECT_CONTEXT.md`, `context/EXPERIMENT_LOG.md`, and this report — current factual project state.
+### E002 — BERT Text-Only Baseline
+- **Implementation:** ✅ Complete
+  - Source: `src/fakenews_baselines/e002_text.py`
+  - Config: `configs/e002_text_bp6w_v1.json`
+  - Runner: `scripts/run_e002.py`
+- **Smoke test:** ✅ Passed (2026-09-08, CPU, non-canonical)
+- **Preliminary seed-42 run:** ⚠️ Completed on Colab T4 (2026-09-22/23)
+  - **PRELIMINARY — scheduler-order issue detected — rerun required**
+  - Warning: `lr_scheduler.step()` before `optimizer.step()`
+  - Preliminary test Macro-F1: 0.6891, test accuracy: 0.7790
+  - Full metrics in `results/experiments/e002_text/E002-bert-base-uncased-6way-BP6Wv1-s42-preliminary/preliminary_result.json`
+  - Seeds 43/44: NOT run
+- **Canonical status:** ❌ NOT complete — scheduler fix and rerun required
 
-`context/DECISIONS.md` was intentionally not changed: implementation made no new research/protocol decision.
+### Colab T4 Environment
+- **GPU:** Tesla T4, ~14.56 GB VRAM
+- **Status:** Successfully configured and used for preliminary E002 run
+- **Dataset:** Verified in Colab — manifest SHA-256 match, 75,995 images, all convert to RGB
+- **Image preflight:** RGB=73,549, RGBA=196, P=2,123, L=122, CMYK=5, zero conversion failures
+- **Storage layout:** See `collab/COLAB_WORKLOG.md` for persistent-vs-temporary setup
 
-## Dataset and Cohort Used
+### Project Documentation
+- `collab/COLAB_WORKLOG.md` — chronological Colab operational history
+- `work_logs/TROUBLESHOOTING.md` — reusable error/fix knowledge base (9 entries)
+- `work_logs/MODEL_STATUS.md` — current model status with preliminary metrics
+- `scripts/sync_results_to_git.sh` — result sync helper (no auto-commit)
 
-- Manifest: `data/verified_paired_manifest.csv`, read only and unchanged.
-- SHA-256: `fc74cb42288d366131ac764bf02f9212bacd7cab0af68442a003beaaff9fde20`.
-- Cohort: 75,995 paired samples — 62,635 train / 6,685 validation / 6,675 test.
-- Input: stored `clean_title`; label: `6_way_label` with the approved mapping.
-- The smoke test loaded the fixed manifest and decoded the first two train-row paired images as RGB. Canonical training code validates every paired image before loading tokenizer/model.
+### Team
+- **Panvee** — Coding, implementation, model development, training, experiments
+- **Karthik** — Literature review and research paper
+- **Yogesh** — Documentation, weekly reports, presentations, meeting records
 
-## Exact Protocol Implemented
+---
 
-- E002 model: end-to-end `bert-base-uncased`, BERT pooler output with CLS fallback, dropout 0.2, linear six-class classifier.
-- Tokenizer: `BertTokenizerFast`, maximum 128 tokens including special tokens, truncation, and dynamic longest-in-batch padding.
-- Optimizer: AdamW, LR `2e-5`, weight decay 0.01 except bias/normalization parameters, betas `(0.9, 0.999)`, epsilon `1e-8`.
-- Training: effective batch 32 (`32 x 1` configured), maximum 10 epochs, linear 10% warm-up then decay, gradient clipping 1.0, unweighted cross-entropy, end-to-end fine-tuning.
-- Selection: validation Macro-F1; exact ties use lower validation loss then earlier epoch. Early stopping begins only after epoch 3 and requires two consecutive epochs without a Macro-F1 gain of at least 0.001.
-- Seeds: 42, 43, 44 only. Canonical runner requires CUDA and uses AMP/mixed precision when supported.
-- Evaluation/artifacts: required aggregate/per-class metrics, raw/normalized confusion matrices, ID-linked test predictions, runtime/throughput/peak-memory fields, environment, versions, manifest/code/config hashes, model revision, and exception logs.
+## Faculty Feedback (2026-09-22)
 
-## Smoke-Test Result
+1. BERT and ResNet-50 remain baselines but are insufficient alone.
+2. Broaden model comparison with modern multimodal approaches.
+3. Candidate families (NOT YET IMPLEMENTED):
+   - CLIP / semantically aligned text-image embeddings
+   - Contrastive learning for text-image alignment
+   - Cross-attention / co-attention fusion
+   - Adaptive / correlation-based fusion
+   - Multi-expert / modality-decoupled fusion
+   - HGAT / graph-based social-context modelling
+4. CLIP is the most direct next candidate (requires only paired text + image).
+5. HGAT is later — requires social/context graph data not yet verified.
+6. Faculty wants "initial values" from actual training runs.
+7. CLIP/LIP terminology from advisor screenshot to be confirmed.
 
-**Passed** on 2026-09-08 as an explicitly non-canonical CPU implementation check. It did not perform any training epoch, validation evaluation, test evaluation, or reportable model measurement.
+**Recorded in:** D013 in `context/DECISIONS.md`
 
-- Device/precision: CPU, AMP disabled; seed 42; zero DataLoader workers for this smoke-only check.
-- Imports and tokenizer: passed.
-- Dataset/manifest: passed; manifest hash and all expected split counts matched.
-- One dynamic-padded batch: two examples, `input_ids`/attention mask shape `[2, 34]`.
-- Forward pass: logits shape `[2, 6]`.
-- Loss: `2.625950574874878`.
-- Backward pass, gradient clipping, and optimizer step: passed.
-- Checkpoint writing: passed; 438,028,532-byte checkpoint was verified then deleted. No large checkpoint remains.
-- Model parameters: 109,486,854 total and trainable.
-- BERT revision: `86b5e0934494bd15c9632b12f734a8a67f723594`.
+---
 
-The first smoke invocation found a real macOS DataLoader pickling error caused by a nested collator function. It was corrected by using a top-level collator class, and the final smoke rerun passed. No failed artifact was retained.
+## What Has NOT Been Done
 
-## Training and Seed Status
+| Item | Status |
+|---|---|
+| E002 final canonical training (scheduler fixed) | ❌ Not done |
+| E002 seeds 43/44 | ❌ Not run |
+| E003 ResNet-50 image-only | ❌ Not implemented |
+| E004 BERT + ResNet-50 multimodal | ❌ Not implemented |
+| E005 CLIP-based multimodal | ❌ Not implemented, architecture not frozen |
+| E006 HGAT social-context | ❌ Future, blocked on data verification |
+| Three-seed mean ± std for any model | ❌ None |
+| Final research contribution selection | ❌ Not decided |
 
-- Canonical E002 training: **not started**.
-- Seed 42: not started.
-- Seed 43: not started.
-- Seed 44: not started.
-- Actual validation/test metrics: none. No values are invented or inferred from the smoke-test loss.
+---
 
-## Errors and Blockers
+## ⚠️ Most Important Immediate Next Step
 
-- The initial local Python environment lacked `transformers` and `scikit-learn`; temporary isolated dependencies in `/private/tmp/e002-deps` were used only for smoke verification. The repository was not given a virtual environment.
-- This Mac reports PyTorch 2.8.0 with CUDA unavailable and MPS unavailable. Per BP-6W-v1 and task instructions, canonical training must not fall back to CPU/MPS and remains pending a CUDA environment.
-- A temporary `urllib3` LibreSSL warning appeared during smoke execution. It did not prevent the passed tokenizer/model or training-step verification.
+**Fix the E002 `lr_scheduler.step()` / `optimizer.step()` ordering in `src/fakenews_baselines/e002_text.py`, then rerun E002 seed 42 cleanly on Colab T4 before treating the result as the official canonical baseline.**
 
-## What Was Not Completed
+Do NOT run seeds 43/44 or start E003 until the scheduler fix is verified.
 
-- No full E002 training, validation sweep, test evaluation, or seed aggregation.
-- No canonical CUDA run, model checkpoint retention, or reportable performance metric.
-- No E003 image-only or E004 text+image implementation/run.
-- No manifest/data/image modification, resampling, augmentation, class weighting, or protocol amendment.
+### Full Priority Order
 
-## Current Project State
+1. preserve documentation on GitHub
+2. fix E002 scheduler ordering
+3. verify scheduler fix without full training
+4. commit/push scheduler fix
+5. return to Colab
+6. rerun E002 seed 42 cleanly
+7. after successful clean seed 42, run E002 seeds 43 and 44
+8. aggregate E002 three-seed results
+9. implement E003
+10. implement E004
+11. analyze all three baseline models
+12. select appropriate advanced multimodal candidate(s)
+13. investigate CLIP/semantic alignment/contrastive learning first among the advanced directions
+14. investigate HGAT only if data requirements are verified
 
-The 75,995-row verified paired cohort remains intact and hash-locked by configuration. E002 is ready to run unchanged in a canonical CUDA environment. Context files now record the implementation and smoke-test evidence; no new decision was made.
+---
 
-## Immediate Next Step
+## Metrics Required Per Model
 
-Move the committed E002 code/configuration to a CUDA environment, confirm available VRAM, run the full paired-image preflight validation, then begin only E002 seed 42. Do not start E003/E004.
+Per seed (42, 43, 44), per model (E002, E003, E004):
+- Validation loss, Macro-F1, accuracy, balanced accuracy, weighted-F1 (per epoch)
+- Test Macro-F1, accuracy, balanced accuracy, weighted-F1, loss
+- Per-class precision / recall / F1 / support
+- Raw and row-normalized 6×6 confusion matrices
+- Training time, throughput, peak GPU memory, parameter count
+
+Aggregation: three-seed mean ± standard deviation.
+
+---
+
+## Scientific Guardrails
+
+- No fabricated metrics
+- No protocol changes to BP-6W-v1
+- No manifest changes
+- No mixing literature numbers with our results
+- No calling the smoke-test loss or preliminary scheduler-affected metrics "final canonical results"
+- No silent architecture swaps
+- No claiming novelty without verification
+- No claiming CLIP/HGAT is implemented
+
+---
+
+## Results Storage Rules
+
+| Location | Purpose | Authority |
+|----------|---------|-----------|
+| `results/experiments/` | Raw machine-generated experiment outputs | **Source of truth** |
+| `context/EXPERIMENT_LOG.md` | Experiment history | References raw artifacts |
+| `work_logs/MODEL_STATUS.md` | Current model summary | References raw artifacts |
+| `collab/COLAB_WORKLOG.md` | Colab operational history | Chronological record |
+| `work_logs/TROUBLESHOOTING.md` | Error/fix knowledge base | Reusable solutions |
+
+Raw artifacts are authoritative. If markdown and raw artifacts disagree, raw artifacts are correct.
+
+---
+
+## Result Sync Workflow
+
+```
+Colab training → result artifacts created → verify artifacts
+→ copy into GitHub working tree → bash scripts/sync_results_to_git.sh
+→ git diff/status → git commit → git push
+```
+
+Do not auto-commit. Do not include images, data, ZIP archives, or model caches.

@@ -8,7 +8,7 @@
 
 ## Status
 
-No canonical model-training experiment has been run. E002 implementation and a non-canonical CPU smoke test are complete; dataset sampling/download validation and a non-experimental architecture decision review are also complete.
+Preliminary E002 seed-42 metrics exist, but no final canonical three-seed baseline metrics exist yet. A preliminary E002 seed-42 run was completed on Colab T4 (2026-09-22/23) but produced a scheduler-order warning (`lr_scheduler.step()` before `optimizer.step()`); this result is PRELIMINARY and must be rerun after correction. E002 implementation and a non-canonical CPU smoke test are complete. On 2026-09-22, the faculty directed broadening the model comparison to include CLIP-based multimodal experiments beyond the BERT/ResNet-50 baselines, and HGAT as a later candidate.
 
 ---
 
@@ -20,7 +20,7 @@ No canonical model-training experiment has been run. E002 implementation and a n
 
 ### E002 — Text-Only Baseline (Planned)
 - **Goal:** Establish text-only classification performance
-- **Status:** Implementation and smoke test complete; canonical CUDA training for seeds 42/43/44 is pending. No validation/test performance result exists.
+- **Status:** Implementation and smoke test complete. Preliminary seed-42 run completed on Colab T4 (2026-09-22/23) with scheduler-order warning; rerun required. Seeds 43/44 pending. No final canonical validation/test performance result exists.
 
 ### E003 — Image-Only Baseline (Planned)
 - **Goal:** Establish image-only classification performance
@@ -30,9 +30,48 @@ No canonical model-training experiment has been run. E002 implementation and a n
 - **Goal:** Establish multimodal baseline performance
 - **Status:** Not started — architecture and `BP-6W-v1` protocol are fixed; pending implementation approval
 
+### E005 — CLIP-Based Multimodal (Planned — Added 2026-09-22)
+- **Goal:** Explore semantically aligned text-image representations (CLIP) for multimodal fake-news classification as a stronger comparison model beyond the BERT + ResNet-50 baseline
+- **Status:** Planned, not implemented. Architecture not yet frozen. Requires design review before implementation. Added per advisor feedback on 2026-09-22.
+- **Cohort:** Same `data/verified_paired_manifest.csv` (75,995 paired samples)
+- **Terminology note:** Working reference is CLIP (Contrastive Language-Image Pre-training, OpenAI); exact advisor terminology to be confirmed before implementation.
+
+### E006 — HGAT Social-Context Model (Future Investigation — Added 2026-09-22)
+- **Goal:** Model social/context graph relationships (users, comments, propagation) for fake-news detection
+- **Status:** Future investigation only. **NOT an immediate experiment.** HGAT requires social/context graph data that is not currently available in our canonical Fakeddit paired cohort (`clean_title` + local image + `6_way_label`). Implementation is blocked until the availability of user/comment/propagation graph data is verified for our Fakeddit setup. Added per advisor feedback on 2026-09-22.
+
+---
+
+## Advisor-Requested Experiments / Upcoming (2026-09-22)
+
+Faculty requested initial experimental values/metrics on 2026-09-22. The following table summarizes all current and planned experiments with their status:
+
+| Experiment | Model | Status | Has Results? |
+|---|---|---|---|
+| E002 | BERT text-only | ✅ Implemented, ✅ smoke-tested, ⚠️ preliminary seed-42 (scheduler issue) | **Preliminary only** |
+| E003 | ResNet-50 image-only | ❌ Not implemented | **No** |
+| E004 | BERT + ResNet-50 multimodal | ❌ Not implemented | **No** |
+| E005 | CLIP-based multimodal | ❌ Planned, architecture not frozen | **No** |
+| E006 | HGAT social-context | ❌ Future, blocked on data verification | **No** |
+
+**Preliminary E002 seed-42 metrics exist, but no final canonical three-seed baseline metrics exist yet.** All final canonical metrics must come from actual canonical CUDA training runs under protocol `BP-6W-v1`, not smoke-test losses or literature-reported values. Literature-reported results must never be placed into our experiment-results sections or mixed with our own experimental metrics.
+
 ---
 
 ## Completed Experiments
+
+### E002 — Preliminary Seed-42 Colab Training — 2026-09-22/23 (PRELIMINARY)
+- **Goal:** First canonical CUDA training run for E002 BERT text-only baseline.
+- **Configuration:** `configs/e002_text_bp6w_v1.json`; seed 42; Tesla T4 GPU; CUDA AMP enabled; `data/verified_paired_manifest.csv` SHA-256 verified; 75,995 paired samples (62,635 train / 6,685 validation / 6,675 test).
+- **⚠️ STATUS: PRELIMINARY.** The run produced `UserWarning: Detected call of lr_scheduler.step() before optimizer.step()`. The learning rate schedule may not have been applied correctly. This result must be rerun after fixing the scheduler order before it is treated as the final canonical E002 baseline.
+- **Preliminary results (validation, selected epoch 4):** accuracy 0.7820, Macro-F1 0.7012, balanced accuracy 0.6689, weighted-F1 0.7784, loss 0.7400.
+- **Preliminary results (test):** accuracy 0.7790, Macro-F1 0.6891, balanced accuracy 0.6598, weighted-F1 0.7758, loss 0.7398.
+- **Per-class test F1:** True 0.8312, Satire/Parody 0.6098, Misleading Content 0.6707, Imposter Content 0.4734, False Connection 0.8293, Manipulated Content 0.7205.
+- **Runtime:** total 1825.6s (~30.4 min), training 1312.2s, throughput 286.4 samples/sec, peak GPU memory 3,238,541,312 bytes (~3.02 GB).
+- **Environment:** PyTorch 2.11.0+cu128, Transformers 5.16.1, scikit-learn 1.6.1, Tesla T4.
+- **Artifact:** `results/experiments/e002_text/E002-bert-base-uncased-6way-BP6Wv1-s42-preliminary/preliminary_result.json` (reconstructed from Colab output; original machine-generated JSON was not synced from Colab).
+- **Observations:** Lowest per-class F1 is Imposter Content (0.4734), the smallest class (140 test samples). Highest F1 are True (0.8312) and False Connection (0.8293). Additional warnings: palette image transparency, DecompressionBombWarning, DataLoader worker count, HuggingFace unauthenticated hub, BERT unexpected keys (all non-critical).
+- **Scope:** Seed 42 only. Seeds 43/44 not run. Scheduler-order issue means this is not the final canonical result. No E003/E004/E005/E006 was run.
 
 ### E002 — Text-Only Implementation Smoke Test — 2026-09-08 (Non-canonical)
 - **Goal:** Verify the complete E002 implementation path before any canonical training.

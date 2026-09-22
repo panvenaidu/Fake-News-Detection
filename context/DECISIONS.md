@@ -204,3 +204,100 @@
 - PyTorch reproducibility and AMP documentation; TorchVision ResNet-50 V2 documentation; Hugging Face padding/truncation documentation.
 
 **Decided By:** Team-approved protocol research (Codex)
+
+---
+
+## D013 — 2026-09-22 — Advisor Feedback: Broaden Model Comparison Beyond BERT/ResNet-50
+
+**Decision:** Expand the model comparison to include a CLIP-based multimodal experiment (E005) alongside the existing BERT and ResNet-50 baselines (E002/E003/E004). Keep HGAT as a later candidate (E006) pending verification that the required social/context graph data is available. No final research contribution is selected at this stage.
+
+**Faculty directive:**
+- BERT and ResNet-50 are common/popular models. They remain as baseline/control models but should not be the **only** models considered.
+- Faculty pointed to semantically aligned text-image embeddings and HGAT from the discussed literature (including the SARD paper).
+- Faculty specifically requested initial experimental values/metrics from actual training runs.
+
+**Key constraints:**
+1. **BERT and ResNet-50 are not discarded.** They remain essential baselines for controlled comparison.
+2. **CLIP-based multimodal experiment is the immediate next practical model direction** after E002/E003/E004 baselines are trained.
+3. **HGAT is a later candidate, NOT an immediate experiment.** HGAT requires social/context graph information (user networks, comment threads, propagation patterns) that is not currently present in our canonical Fakeddit paired cohort (`clean_title` + local image + `6_way_label`). Implementation is blocked until data availability is verified.
+4. **No CLIP or HGAT implementation exists yet.** No code, configuration, or results have been produced for either model.
+5. **Faculty-requested "initial values" must come from actual canonical CUDA runs**, not smoke-test losses, literature-reported numbers, or fabricated metrics.
+6. **Final research contribution is NOT decided.** We are in the baseline/comparison stage.
+
+**Terminology note:** The advisor referenced semantically aligned text-image embeddings in the discussed literature. The SARD paper uses the term "CLIP" (Contrastive Language-Image Pre-training, OpenAI). However, the exact wording from the faculty's screenshot/discussion has not been independently verified — it may say "CLIP", "LIP", or another exact term. **Working reference: CLIP.** The exact terminology must be confirmed with the advisor before implementation begins.
+
+**Literature motivation (separated from our experimental results):**
+- **CLIP** is used in recent multimodal fake-news work for semantic alignment between text and image representations. It produces jointly trained text-image embeddings via contrastive pre-training, unlike separately trained BERT + ResNet-50 encoders.
+- **HGAT** is used in approaches such as SARD to model social/context relationships (users, comments, propagation). This is a fundamentally different capability from text-image fusion and requires graph-structured social data.
+- These are literature descriptions only. They do not imply that either model has been tested on our Fakeddit cohort or that our results are comparable to published SARD numbers.
+
+**What this decision does NOT authorize:**
+- No protocol amendment to BP-6W-v1
+- No change to the verified paired manifest or its 75,995-row cohort
+- No silent replacement of ResNet-50 with another image encoder
+- No change to the 6-way classification task
+- No hyperparameter sweep beyond the pre-registered protocol
+- No claim that CLIP or HGAT has already been implemented or tested
+
+**Decided By:** Faculty/Advisor direction (2026-09-22)
+
+---
+
+## D014 — 2026-09-22/23 — Colab T4 Validation and Preliminary E002 Seed-42 Run
+
+**Decision:** Record the successful Colab T4 environment setup, dataset verification, and preliminary E002 seed-42 training run. The preliminary result is NOT treated as the final canonical E002 baseline due to a detected scheduler-order issue.
+
+**What was verified:**
+1. Colab T4 GPU (Tesla T4, ~14.56 GB VRAM) successfully enabled.
+2. Google Drive mounted; manifest and images.zip located and copied.
+3. Manifest SHA-256 matched the locked expected hash.
+4. 75,995 images extracted and verified (all convert to RGB; zero failures).
+5. BERT GPU preflight passed on Tesla T4.
+6. E002 seed-42 training completed successfully with CUDA AMP.
+
+**Preliminary E002 seed-42 result (PRELIMINARY — scheduler issue):**
+- Test Macro-F1: 0.6891, Test accuracy: 0.7790
+- Validation Macro-F1: 0.7012 (selected epoch 4)
+- Runtime: ~30.4 min, throughput: 286.4 samples/sec, peak memory: ~3.02 GB
+- Full metrics in `results/experiments/e002_text/E002-bert-base-uncased-6way-BP6Wv1-s42-preliminary/preliminary_result.json`
+
+**Scheduler-order issue:**
+- Warning: `lr_scheduler.step()` called before `optimizer.step()`
+- Impact: Learning rate schedule may not have been applied correctly
+- **Required action:** Fix the ordering in `e002_text.py`, then rerun seed 42 before treating it as canonical
+- Seeds 43/44 must not be run until the fix is verified
+
+**What this does NOT authorize:**
+- Treating the preliminary result as the final canonical E002 baseline
+- Running seeds 43/44 before the scheduler fix
+- Starting E003/E004/E005/E006
+- Any protocol, manifest, or architecture change
+
+**Decided By:** Verified from Colab session evidence (Antigravity)
+
+---
+
+## D015 — 2026-09-23 — Advanced Multimodal Model Directions After Baseline Round
+
+**Decision:** The team will investigate stronger multimodal approaches after completing the baseline round (E002, E003, E004). The baseline/control model family remains BERT, ResNet-50, and BERT+ResNet-50, and they are not being discarded.
+
+**Advanced Candidate Directions:**
+1. CLIP / semantically aligned text-image representation
+2. Contrastive learning for cross-modal alignment
+3. Cross-attention / co-attention fusion
+4. Adaptive / correlation-based fusion
+5. Modality-decoupled or multi-expert fusion
+
+**Terminology Note:**
+- The current project uses "CLIP" as the working reference for the semantically aligned text-image direction. (Do NOT replace with "CLAP" without explicit verification).
+- CLIP represents a concrete model family, semantic alignment represents a strategy, and contrastive learning represents a training objective. They should not automatically be treated as entirely separate implementations.
+- HGAT remains a separate future investigation because it requires social/context graph data that is not currently verified for our canonical paired cohort.
+
+**Research Strategy:**
+- We do NOT commit to implementing every candidate.
+- We will complete the baseline round first: E002 → E003 → E004.
+- Then analyze overall Macro-F1, per-class F1, confusion matrices, modality-specific failures, computational cost, and robustness.
+- Based on this analysis, we will select one or more advanced directions for deeper experimentation.
+- The final research contribution is NOT yet decided.
+
+**Decided By:** Team discussion / Faculty alignment (2026-09-23)

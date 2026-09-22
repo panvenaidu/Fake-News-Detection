@@ -1,7 +1,7 @@
 # PROJECT CONTEXT — Multimodal Fake News Detection
 
-> **Last Updated:** 2026-09-08
-> **Updated By:** Codex
+> **Last Updated:** 2026-09-22
+> **Updated By:** Antigravity
 
 ---
 
@@ -199,6 +199,121 @@ The target effective batch size is **32** for every optimizer update. On the RTX
 - **Environment:** the Mac reports PyTorch 2.8.0 with CUDA unavailable and MPS unavailable. Missing local `transformers` and `scikit-learn` dependencies were installed only in `/private/tmp/e002-deps` for smoke verification; project requirements now declare the E002 deep-learning dependencies. Canonical E002 execution remains blocked pending CUDA.
 - **Scope guard:** E003 and E004 have not been implemented or run. The 80,000 source manifest and 75,995-row verified paired manifest were not modified.
 
+## E002 Colab Training Status (2026-09-22/23)
+
+- **Colab T4 setup:** Successfully configured. Tesla T4, ~14.56 GB VRAM, CUDA AMP enabled.
+- **Dataset preparation:** Manifest and images copied from Google Drive, verified (75,995 images, SHA-256 match, all images convert to RGB).
+- **Full image preflight:** Passed. Image modes: RGB=73,549, RGBA=196, P=2,123, L=122, CMYK=5. Zero RGB conversion failures.
+- **BERT GPU preflight:** Passed on Tesla T4.
+- **Preliminary seed-42 run:** Completed on Colab T4. **⚠️ PRELIMINARY — scheduler-order issue detected.**
+  - Warning: `lr_scheduler.step()` called before `optimizer.step()`.
+  - The learning rate schedule may not have been applied correctly.
+  - Test Macro-F1: 0.6891 (preliminary), Test accuracy: 0.7790 (preliminary).
+  - Full preliminary metrics preserved in `results/experiments/e002_text/E002-bert-base-uncased-6way-BP6Wv1-s42-preliminary/preliminary_result.json`.
+  - This result must be **rerun after correcting the scheduler order** before being treated as the final canonical E002 baseline.
+- **Seeds 43/44:** Not yet run.
+- **Machine-generated artifact:** No raw JSON artifact was synced from Colab to the local Git repository. The preserved preliminary result file was reconstructed from observed Colab output.
+
+---
+
+## Advanced Model Research Direction
+
+Baseline:
+- BERT (E002)
+- ResNet-50 (E003)
+- BERT+ResNet-50 (E004)
+
+Advanced candidates after baseline:
+- CLIP / semantic alignment
+- Contrastive learning
+- Cross-attention/co-attention
+- Adaptive/correlation fusion
+- Modality-decoupled/multi-expert fusion
+
+Later candidate:
+- HGAT (if required graph/social data is verified)
+
+We will not choose the final advanced method before observing baseline behaviour. No advanced method has been implemented or tested yet.
+
+### Current Model Status Summary
+
+| Experiment | Model | Role | Status |
+|---|---|---|---|
+| E002 | BERT text-only | Baseline | ✅ Implemented, ✅ smoke-tested, ⚠️ preliminary seed-42 (scheduler issue, rerun needed) |
+| E003 | ResNet-50 image-only | Baseline | ❌ Not implemented |
+| E004 | BERT + ResNet-50 multimodal | Baseline | ❌ Not implemented |
+| E005 | CLIP-based multimodal | Stronger comparison | ❌ Not implemented, architecture not frozen |
+| E006 | HGAT social-context | Future investigation | ❌ Blocked pending data verification |
+
+---
+
+## Initial Metrics Goal
+
+The faculty has requested initial experimental values. These are the metrics that must be collected from **actual canonical CUDA training runs** under protocol `BP-6W-v1`:
+
+**Per model (E002, E003, E004), per seed (42, 43, 44):**
+- Validation loss (per epoch)
+- Validation Macro-F1 (per epoch, used for checkpoint selection)
+- Test Macro-F1 (from validation-selected checkpoint only)
+- Accuracy
+- Balanced accuracy
+- Weighted-F1
+- Per-class precision / recall / F1 / support
+- Raw 6×6 confusion matrix
+- Row-normalized 6×6 confusion matrix
+- Training wall time
+- Throughput (samples/sec)
+- Peak GPU memory
+- Total / trainable parameter count
+
+**Aggregation:** three-seed mean ± standard deviation. No best-test-seed reporting.
+
+**Guardrails:**
+- Do NOT report the E002 CPU smoke-test loss (`2.6260`) as a performance result
+- Do NOT import literature-reported accuracy into our results tables
+- Do NOT fabricate any metric value
+- Do NOT mix paper-reported numbers with our experimental results as though they are directly comparable
+
+---
+
+## Experimental Priority
+
+### Phase A — Baselines (Immediate)
+
+Run in this order:
+
+1. **E002 — BERT text-only canonical training** (seeds 42, 43, 44)
+   - Implementation: ✅ complete
+   - Config: `configs/e002_text_bp6w_v1.json`
+   - Runner: `scripts/run_e002.py`
+   - Status: ⚠️ preliminary seed-42 complete with scheduler-order issue; **fix scheduler then rerun seed 42, then run 43/44**
+
+2. **E003 — ResNet-50 image-only** (seeds 42, 43, 44)
+   - Implementation: ❌ pending
+   - Protocol settings: fixed in BP-6W-v1 (see protocol section above)
+   - Status: pending implementation then training
+
+3. **E004 — BERT + ResNet-50 multimodal** (seeds 42, 43, 44)
+   - Implementation: ❌ pending
+   - Protocol settings: fixed in BP-6W-v1 (see protocol section above)
+   - Status: pending implementation then training
+
+### Phase B — Stronger Multimodal Comparison
+
+4. **E005 — CLIP-based multimodal experiment**
+   - Architecture: not yet frozen; requires design review
+   - Working reference: OpenAI CLIP (exact advisor terminology to be confirmed)
+   - Cohort: same `data/verified_paired_manifest.csv` (75,995 paired samples)
+   - Protocol: BP-6W-v1 evaluation rules apply; model-specific training settings TBD
+   - Status: ❌ planned, not implemented
+
+### Phase C — Future Investigation
+
+5. **E006 — HGAT social-context model**
+   - Prerequisite: verify that Fakeddit provides user/comment/propagation graph data compatible with our cohort
+   - If data is unavailable, HGAT cannot be implemented on the current setup
+   - Status: ❌ future, blocked pending data availability verification
+
 ---
 
 ## Repository Structure
@@ -210,18 +325,25 @@ project/
 │   ├── DECISIONS.md
 │   ├── EXPERIMENT_LOG.md
 │   └── TASK_REPORT.md
+├── collab/               # Colab operational history
+│   └── COLAB_WORKLOG.md
+├── work_logs/            # Troubleshooting and model status
+│   ├── TROUBLESHOOTING.md
+│   └── MODEL_STATUS.md
 ├── src/                  # Source code
 ├── scripts/              # Utility scripts
 │   ├── dataset_analysis.py
 │   ├── create_baseline_sample.py
-│   └── download_images.py
+│   ├── download_images.py
+│   └── sync_results_to_git.sh
 ├── configs/              # Training/model configs
 ├── experiments/          # Experiment-specific files
-├── results/              # Results, figures, tables
+├── results/              # Results, figures, tables (source of truth)
 │   ├── dataset_analysis.json
 │   ├── sampling_report.json
 │   ├── download_final_report.json
-│   └── download_failures.json
+│   ├── download_failures.json
+│   └── experiments/      # Machine-generated experiment outputs
 ├── data/                 # Ignored by Git
 │   ├── baseline_sample_manifest.csv
 │   └── verified_paired_manifest.csv
@@ -236,12 +358,18 @@ project/
 
 ## Blockers
 
-The verified paired dataset is ready, but canonical E002 training is blocked on this Mac because neither CUDA nor MPS is available. A CUDA environment is required; no CPU/MPS training fallback is permitted.
+- ~~The verified paired dataset is ready, but canonical E002 training is blocked on this Mac because neither CUDA nor MPS is available.~~ **Resolved:** A Colab T4 environment has been successfully enabled and used for a preliminary E002 seed-42 run. Google Drive is used for persistent data storage. The large image archive should be copied/extracted into the local Colab runtime for training (rather than reading file-by-file from slow Google Drive access). Exact Colab dataset paths must be verified before each training run.
+- **⚠️ E002 scheduler-order issue:** The preliminary seed-42 run detected `lr_scheduler.step()` before `optimizer.step()`. This must be fixed in `e002_text.py` before final canonical E002 training.
+- E003 and E004 are blocked on implementation (not yet written).
+- E005 (CLIP) is blocked on architecture design review and implementation.
+- E006 (HGAT) is blocked on verifying social/context graph data availability in Fakeddit.
 
 ---
 
 ## Next Steps
 
-1. Copy/prepare the committed E002 code and fixed configuration in a canonical CUDA environment, confirm available VRAM, then run the required full paired-image validation before E002 seed 42.
-2. After successful seed 42, run E002 seeds 43 and 44 unchanged; aggregate only their validation-selected test results. Do not start E003/E004 until E002 is complete and recorded.
-3. Use observed class-wise and robustness failures to select, rather than assume, a final research contribution.
+1. **Immediate:** Fix the `lr_scheduler.step()` / `optimizer.step()` ordering in `e002_text.py`, then rerun E002 seed 42 cleanly on Colab T4. Then run seeds 43 and 44.
+2. **Phase A — Baselines:** After E002 is complete, implement and run E003 (ResNet-50), then E004 (BERT+ResNet-50).
+3. **Phase B — CLIP:** After baseline results are recorded, design and implement E005 CLIP-based multimodal experiment. Architecture must be reviewed and frozen before training.
+4. **Phase C — HGAT:** Investigate whether Fakeddit provides the required user/comment/propagation graph data. Only proceed with E006 if data is verified.
+5. Use observed class-wise and cross-model failures to select, rather than assume, a final research contribution. The contribution is NOT decided at this stage.

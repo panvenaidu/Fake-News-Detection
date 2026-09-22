@@ -1,0 +1,69 @@
+{
+  "_status": "PRELIMINARY — scheduler-order issue detected — rerun required",
+  "_warning": "lr_scheduler.step() was called before optimizer.step() during this run. The learning rate schedule may not have been applied correctly. This result must be rerun after fixing the scheduler order.",
+  "_source": "Colab T4 output observed 2026-09-22/23. No machine-generated JSON artifact was synced from Colab. Values are from observed Colab cell output.",
+  "_authority": "If a machine-generated JSON artifact is recovered from Colab/Google Drive with different values, that artifact takes precedence over this file.",
+  "run_id": "E002-bert-base-uncased-6way-BP6Wv1-s42",
+  "protocol_id": "BP-6W-v1",
+  "experiment_id": "E002",
+  "seed": 42,
+  "device": "Tesla T4",
+  "cuda_amp": true,
+  "selected_epoch": 4,
+  "validation_metrics": {
+    "accuracy": 0.7820493642483172,
+    "macro_f1": 0.7011849373622043,
+    "balanced_accuracy": 0.6688611483544041,
+    "weighted_f1": 0.7784427083189532,
+    "loss": 0.7400053048365671
+  },
+  "test_metrics": {
+    "accuracy": 0.7790262172284644,
+    "macro_f1": 0.6891492224613445,
+    "balanced_accuracy": 0.6597637885595928,
+    "weighted_f1": 0.7757598886966056,
+    "loss": 0.7398176850808247
+  },
+  "test_per_class_f1": {
+    "0_True": 0.8312138728323699,
+    "1_Satire_Parody": 0.6097560975609756,
+    "2_Misleading_Content": 0.6707317073170732,
+    "3_Imposter_Content": 0.47342995169082125,
+    "4_False_Connection": 0.8292912644219449,
+    "5_Manipulated_Content": 0.7204724409448819
+  },
+  "runtime": {
+    "total_runtime_seconds": 1825.6104164160001,
+    "training_time_seconds": 1312.2338764980004,
+    "throughput_samples_per_sec": 286.38949712450335,
+    "peak_gpu_memory_bytes": 3238541312
+  },
+  "model": {
+    "name": "bert-base-uncased",
+    "revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+    "total_parameters": 109486854,
+    "trainable_parameters": 109486854
+  },
+  "environment": {
+    "pytorch": "2.11.0+cu128",
+    "transformers": "5.16.1",
+    "scikit_learn": "1.6.1",
+    "gpu": "Tesla T4",
+    "vram_gb": 14.56
+  },
+  "manifest": {
+    "sha256": "fc74cb42288d366131ac764bf02f9212bacd7cab0af68442a003beaaff9fde20",
+    "total_rows": 75995,
+    "train": 62635,
+    "validate": 6685,
+    "test": 6675
+  },
+  "warnings": [
+    "UserWarning: Detected call of lr_scheduler.step() before optimizer.step()",
+    "Palette image transparency warning",
+    "PIL.Image.DecompressionBombWarning",
+    "DataLoader worker-count warning",
+    "HuggingFace unauthenticated Hub warning",
+    "BERT pre-training head unexpected keys (expected for downstream task)"
+  ]
+}
