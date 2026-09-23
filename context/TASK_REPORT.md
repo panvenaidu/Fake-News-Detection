@@ -81,7 +81,7 @@
 
 | Item | Status |
 |---|---|
-| E002 final canonical training (scheduler fixed) | ❌ Not done |
+| E002 final canonical training seed 42 | ✅ Complete |
 | E002 seeds 43/44 | ❌ Not run |
 | E003 ResNet-50 image-only | ❌ Not implemented |
 | E004 BERT + ResNet-50 multimodal | ❌ Not implemented |
@@ -94,18 +94,18 @@
 
 ## ⚠️ Most Important Immediate Next Step
 
-**The E002 scheduler-order bug has been corrected. No full retraining was performed during the fix task. The preliminary seed-42 result remains preliminary. A clean canonical seed-42 rerun is required.**
+**Clean canonical E002 seed-42 is complete. Run E002 seeds 43 and 44 on Colab T4.**
 
-Do NOT run seeds 43/44 or start E003 until the scheduler fix is verified.
+Do NOT start E003 until E002 seeds 43/44 are complete and three-seed mean is aggregated.
 
 ### Full Priority Order
 
-1. preserve documentation on GitHub
-2. fix E002 scheduler ordering
-3. verify scheduler fix without full training
-4. commit/push scheduler fix
-5. return to Colab
-6. rerun E002 seed 42 cleanly
+1. ~~preserve documentation on GitHub~~ (Done)
+2. ~~fix E002 scheduler ordering~~ (Done)
+3. ~~verify scheduler fix without full training~~ (Done)
+4. ~~commit/push scheduler fix~~ (Done)
+5. ~~return to Colab~~ (Done)
+6. ~~rerun E002 seed 42 cleanly~~ (Done)
 7. after successful clean seed 42, run E002 seeds 43 and 44
 8. aggregate E002 three-seed results
 9. implement E003

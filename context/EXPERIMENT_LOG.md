@@ -8,7 +8,7 @@
 
 ## Status
 
-Preliminary E002 seed-42 metrics exist, but no final canonical three-seed baseline metrics exist yet. A preliminary E002 seed-42 run was completed on Colab T4 (2026-09-22/23) but produced a scheduler-order warning (`lr_scheduler.step()` before `optimizer.step()`); this result is PRELIMINARY and must be rerun after correction. E002 implementation and a non-canonical CPU smoke test are complete. On 2026-09-22, the faculty directed broadening the model comparison to include CLIP-based multimodal experiments beyond the BERT/ResNet-50 baselines, and HGAT as a later candidate.
+Clean canonical E002 seed-42 run is completed. Preliminary run is preserved. Seeds 43/44 pending. E002 implementation and a non-canonical CPU smoke test are complete. On 2026-09-22, the faculty directed broadening the model comparison to include CLIP-based multimodal experiments beyond the BERT/ResNet-50 baselines, and HGAT as a later candidate.
 
 ---
 
@@ -20,7 +20,7 @@ Preliminary E002 seed-42 metrics exist, but no final canonical three-seed baseli
 
 ### E002 — Text-Only Baseline (Planned)
 - **Goal:** Establish text-only classification performance
-- **Status:** Implementation and smoke test complete. Preliminary seed-42 run completed on Colab T4 (2026-09-22/23) with scheduler-order warning; rerun required. Seeds 43/44 pending. No final canonical validation/test performance result exists.
+- **Status:** Implementation and smoke test complete. Clean canonical seed-42 completed on Colab T4. Seeds 43/44 pending.
 
 ### E003 — Image-Only Baseline (Planned)
 - **Goal:** Establish image-only classification performance
@@ -48,17 +48,29 @@ Faculty requested initial experimental values/metrics on 2026-09-22. The followi
 
 | Experiment | Model | Status | Has Results? |
 |---|---|---|---|
-| E002 | BERT text-only | ✅ Implemented, ✅ smoke-tested, ⚠️ preliminary seed-42 (scheduler issue) | **Preliminary only** |
+| E002 | BERT text-only | ✅ Clean seed-42 complete, ⚠️ seeds 43/44 pending | **Yes (seed 42)** |
 | E003 | ResNet-50 image-only | ❌ Not implemented | **No** |
 | E004 | BERT + ResNet-50 multimodal | ❌ Not implemented | **No** |
 | E005 | CLIP-based multimodal | ❌ Planned, architecture not frozen | **No** |
 | E006 | HGAT social-context | ❌ Future, blocked on data verification | **No** |
 
-**Preliminary E002 seed-42 metrics exist, but no final canonical three-seed baseline metrics exist yet.** All final canonical metrics must come from actual canonical CUDA training runs under protocol `BP-6W-v1`, not smoke-test losses or literature-reported values. Literature-reported results must never be placed into our experiment-results sections or mixed with our own experimental metrics.
+**Clean canonical E002 seed-42 metrics exist. Seeds 43/44 pending.** All final canonical metrics must come from actual canonical CUDA training runs under protocol `BP-6W-v1`, not smoke-test losses or literature-reported values. Literature-reported results must never be placed into our experiment-results sections or mixed with our own experimental metrics.
 
 ---
 
 ## Completed Experiments
+
+### E002 — Clean Seed-42 Colab Training — 2026-09-23
+- **Goal:** Clean canonical CUDA training run for E002 BERT text-only baseline after fixing the AMP scheduler bug.
+- **Configuration:** `configs/e002_text_bp6w_v1.json`; seed 42; Tesla T4 GPU; CUDA AMP enabled; `data/verified_paired_manifest.csv` SHA-256 verified; 75,995 paired samples (62,635 train / 6,685 validation / 6,675 test); git commit `4ff4d996e9b50ad2b005ef4234c62a819e9e5992`.
+- **STATUS: COMPLETED.** No scheduler warning observed. Artifacts reconstructed from preserved notebook output (temporary Colab environment was lost).
+- **Results (validation, selected epoch 4):** accuracy 0.7801, Macro-F1 0.7022, balanced accuracy 0.6691, weighted-F1 0.7768, loss 0.7581.
+- **Results (test):** accuracy 0.7810, Macro-F1 0.6966, balanced accuracy 0.6693, weighted-F1 0.7782, loss 0.7508.
+- **Per-class test F1:** True 0.837, Satire/Parody 0.606, Misleading Content 0.672, Imposter Content 0.495, False Connection 0.826, Manipulated Content 0.744.
+- **Runtime:** total 2113.1s (~35.2 min), training 1548.4s (~25.8 min), throughput 242.7 samples/sec, peak GPU memory 3,238,541,312 bytes (~3.02 GB).
+- **Artifact:** `results/experiments/e002_text/E002-bert-base-uncased-6way-BP6Wv1-s42/clean_result_reconstructed.json`
+- **Scope:** Seed 42 complete. Seeds 43/44 not run.
+
 
 ### E002 — Preliminary Seed-42 Colab Training — 2026-09-22/23 (PRELIMINARY)
 - **Goal:** First canonical CUDA training run for E002 BERT text-only baseline.

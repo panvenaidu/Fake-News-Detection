@@ -1,0 +1,52 @@
+{
+  "_status": "CLEAN CANONICAL RUN — Reconstructed from preserved notebook",
+  "_source": "UROP_E002_seed42_preservation_package.zip (Colab notebook output). Original Colab temporary /content directory was lost.",
+  "_authority": "This is the authoritative record for the clean E002 seed-42 run.",
+  "run_id": "E002-bert-base-uncased-6way-BP6Wv1-s42",
+  "protocol_id": "BP-6W-v1",
+  "experiment_id": "E002",
+  "seed": 42,
+  "git_commit": "4ff4d996e9b50ad2b005ef4234c62a819e9e5992",
+  "device": "Tesla T4",
+  "cuda_amp": true,
+  "selected_epoch": 4,
+  "validation_metrics": {
+    "macro_f1": 0.7021675463789564,
+    "accuracy": 0.7801,
+    "balanced_accuracy": 0.6691,
+    "weighted_f1": 0.7768,
+    "loss": 0.7581
+  },
+  "test_metrics": {
+    "macro_f1": 0.6965845390192912,
+    "accuracy": 0.7809737827715356,
+    "balanced_accuracy": 0.6693,
+    "weighted_f1": 0.7782,
+    "loss": 0.7508
+  },
+  "test_per_class_f1": {
+    "0_True": 0.837,
+    "1_Satire_Parody": 0.606,
+    "2_Misleading_Content": 0.672,
+    "3_Imposter_Content": 0.495,
+    "4_False_Connection": 0.826,
+    "5_Manipulated_Content": 0.744
+  },
+  "test_confusion_matrix_raw": [
+    [2160, 45, 203, 9, 144, 21],
+    [71, 217, 20, 5, 67, 10],
+    [185, 19, 834, 1, 198, 7],
+    [38, 7, 15, 54, 20, 6],
+    [94, 28, 153, 7, 1755, 10],
+    [34, 10, 14, 2, 19, 193]
+  ],
+  "runtime": {
+    "total_runtime_seconds": 2113.082964944999,
+    "training_time_seconds": 1548.3830585370015,
+    "throughput_samples_per_sec": 242.71125799780205,
+    "peak_gpu_memory_bytes": 3238541312
+  },
+  "manifest": {
+    "sha256": "fc74cb42288d366131ac764bf02f9212bacd7cab0af68442a003beaaff9fde20"
+  }
+}

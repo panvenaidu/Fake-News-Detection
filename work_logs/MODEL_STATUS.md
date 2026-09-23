@@ -10,7 +10,7 @@
 
 | Experiment | Model | Implementation | Smoke Test | Training | Results | Current Status |
 |---|---|---|---|---|---|---|
-| E002 | BERT text-only (`bert-base-uncased`, 109.5M params) | ✅ Complete | ✅ Passed (CPU, 2026-09-08) | ⚠️ Preliminary seed-42 only | ⚠️ Preliminary | Scheduler-order issue; rerun required |
+| E002 | BERT text-only (`bert-base-uncased`, 109.5M params) | ✅ Complete | ✅ Passed | ✅ Clean seed-42 | ✅ Clean seed-42 | Clean seed-42 complete; seeds 43/44 pending |
 | E003 | ResNet-50 image-only (~26M params) | ❌ Not started | ❌ N/A | ❌ Not started | ❌ None | Pending implementation |
 | E004 | BERT + ResNet-50 multimodal (~136M params) | ❌ Not started | ❌ N/A | ❌ Not started | ❌ None | Pending implementation |
 | E005 | CLIP-based multimodal | ❌ Not started | ❌ N/A | ❌ Not started | ❌ None | Planned; architecture not frozen |
@@ -21,12 +21,17 @@
 ### E002 BERT
 - implemented
 - smoke-tested
-- preliminary seed 42 completed
-- scheduler-order bug corrected; no full retraining performed during fix task
-- clean rerun required
+- preliminary seed-42 preserved
+- scheduler-order bug corrected
+- clean canonical seed-42 completed
 - seeds 43/44 pending
 
-The E002 scheduler-order bug has been corrected. No full retraining was performed during the fix task. The preliminary seed-42 result remains preliminary. A clean canonical seed-42 rerun is required.
+**Clean seed-42 test metrics:**
+- Accuracy: 0.7810
+- Macro-F1: 0.6966
+- Balanced accuracy: 0.6693
+- Weighted-F1: 0.7782
+- Loss: 0.7508
 
 ---
 
