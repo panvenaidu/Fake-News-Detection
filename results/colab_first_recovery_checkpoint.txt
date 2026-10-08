@@ -1,0 +1,72 @@
+container Cell 11: Code cell: 
+											229 container
+												230 button Move cell up ⌘/Ctrl+M K
+												231 button (disabled) Move cell down ⌘/Ctrl+M J
+												232 pop-up button Available AI features
+												233 button Delete cell ⌘/Ctrl+M D
+												234 pop-up button More cell actions
+											235 container
+												236 container
+													237 button Run cell
+													238 text [29]
+													239 text 7s
+												240 container
+													241 editor (settable) Editor content, Value: uLmxvYWRzKChmb2xkZXIgLyAncmVzdWx0Lmpzb24nKS5yZWFkX3RleHQoKSkKICAgICAgICAgICAgcHJpbnQoJ0ZpbmFsIHRlc3QgYWNjdXJhY3kvRjE6Jywgcm91bmQocmVzdWx0Wyd0ZXN0J11bJ2FjY3VyYWN5J10sNCksIHJvdW5kKHJlc3VsdFsndGVzdCddWydtYWNyb19mMSddLDQpLCBmbHVzaD1UcnVlKQogICAgcmV0dXJuX2NvZGUgPSB0cmFpbmVyLnBvbGwoKQogICAgcHJpbnQoJ1Byb2Nlc3M6JywgcmV0dXJuX2NvZGUsICdVVEM6JywgdGltZS5zdHJmdGltZSgnJUg6JU06JVMnLCB0aW1lLmdtdGltZSgpKSwgZmx1c2g9VHJ1ZSkKICAgIGlmIHJldHVybl9jb2RlIGlzIG5vdCBOb25lOgogICAgICAgIGJyZWFrCiAgICB0aW1lLnNsZWVwKDMwKQo='))
+												242 container Cell 11 output
+													243 container
+														244 toggle button Show/hide output, Value: 0
+														245 pop-up button Code cell output actions
+													246 HTML content p7iv0xwwz1q-496ff2e9c6d22116-0-colab.googleusercontent.com/outputframe.html?vrz=colab-external_20261002-060058_RC00_992223064
+														247 container
+															248 text OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z
+bert-base training epoch 1 batch 3500 updates 3497
+Saved recovery: 1 3000
+modernbert-base queued
+Process: None UTC: 10:07:26
+ --------------------------------------------------------------------------- KeyboardInterrupt                          Traceback (most recent call last)
+															249 link /tmp/ipykernel_1876/21560781.py, Value: localhost:8080/#
+															250 text  in  <cell line: 0> () ----> 1 import base64 ; exec ( base64 . b64decode ( 'IiIiUmVhZC1vbmx5IGxpdmUgbW9uaXRvciBmb3IgdGhlIGd1YXJkZWQgQ2hyb21lIENvbGFiIGxhdW5jaC4iIiIKaW1wb3J0IGpzb24KaW1wb3J0IHRpbWUKZnJvbSBJUHl0aG9uLmRpc3BsYXkgaW1wb3J0IGNsZWFyX291dHB1dAoKd2hpbGUgVHJ1ZToKICAgIGNsZWFyX291dHB1dCh3YWl0PVRydWUpCiAgICBwcmludChjdXJyZW50X2F0dGVtcHQubmFtZSwgZmx1c2g9VHJ1ZSkKICAgIGZvciBtb2RlbF9uYW1lIGluICgnYmVydC1iYXNlJywgJ21vZGVybmJlcnQtYmFzZScpOgogICAgICAgIGZvbGRlciA9IGN1cnJlbnRfYXR0ZW1wdCAvIG1vZGVsX25hbWUKICAgICAgICBzdGF0ZV9maWxlID0gZm9sZGVyIC8gJ3N0YXR1cy5qc29uJwogICAgICAgIGlmIG5vdCBzdGF0ZV9 <string>  in  <module> KeyboardInterrupt : 
+									251 container
+										252 link Colab paid products Link will open in a new tab, Value: colab.research.google.com/signup?utm_source=footer&utm_medium=link&utm_campaign=footer_links
+										253 text -
+										254 link Cancel contracts here Link will open in a new tab, Value: colab.research.google.com/cancel-subscription
+							255 toggle button Toggle Gemini, Value: 0
+							256 container Runtime status bar
+								257 container
+									258 button Variables
+								259 container
+									260 button Terminal
+								261 container
+									262 button 3:37 PM
+								263 container
+									264 pop-up button T4 (Python 3)
+							265 container Interrupt execution (⌘/Ctrl+M I) cell executed since last change started at 3:37 PM (0 minutes ago)
+								266 text Run cell (⌘/Ctrl+Enter)
+								267 text cell executed since last change
+								268 text Previous execution ended unsuccessfully
+								269 text executed by Rocky 62
+								270 text 3:37 PM (0 minutes ago)
+								271 text executed in 7.016s
+			272 pop-up button Tab search
+			273 container
+				274 tab group
+					275 tab (selected, settable, boolean) UROP_OFFICIAL_6WAY_TEXT_20261008.ipynb - Colab - Memory usage - 318 MB, Value: on
+						276 button Close
+			277 button New tab
+			278 button Open Gemini in Chrome
+	279 close button
+	280 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	281 minimise button
+282 menu bar
+	283 Chrome
+	284 File
+	285 Edit
+	286 View
+	287 History
+	288 Bookmarks
+	289 Profiles
+	290 Tab
+	291 Window
+	292 Help
+
+The focused UI element is 237 button Run cell

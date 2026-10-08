@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-08T10:03:25.864123+00:00",
+  "updated_utc": "2026-10-08T10:08:03.557939+00:00",
   "protocol_id": "OFFICIAL-6W-TEXT-v2",
   "colab_notebook_url": "https://colab.research.google.com/drive/11JK1wLLVPH8G7_oThnb0YkLMSR4URafF",
   "runtime": "Tesla T4",
@@ -31,20 +31,25 @@
   "last_browser_observation": "Cell 16 initially Executing; later accessibility view showed 4 seconds elapsed, with no readable child-process output. Current progress cannot be inferred from that view.",
   "remaining_usage_at_latest_check_percent": 6,
   "latest_usage_check_utc": "2026-10-08T09:45:49.174071+00:00",
-  "state": "training_verified",
+  "state": "training_with_verified_checkpoint",
   "cloud_attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
   "cloud_pid": 23054,
   "model": "bert-base",
   "epoch": 1,
-  "step": 1000,
+  "step": 3500,
   "steps_per_epoch": 17625,
-  "optimizer_updates": 997,
+  "optimizer_updates": 3497,
   "skipped_updates": 3,
   "samples_per_second": 229.77983752167853,
   "cloud_status_updated_utc": "2026-10-08T10:01:41.513903+00:00",
-  "successful_recovery_checkpoint_verified": false,
+  "successful_recovery_checkpoint_verified": true,
   "validation_test_results_available": false,
   "modernbert_status": "queued_after_bert",
   "launch_method": "Chrome Colab notebook guarded subprocess; Colab CLI not used",
-  "prior_cell_16_outcome": "KeyboardInterrupt before verified training; fixed source hash now verified in cloud"
+  "prior_cell_16_outcome": "KeyboardInterrupt before verified training; fixed source hash now verified in cloud",
+  "recovery_checkpoint": {
+    "epoch": 1,
+    "step": 3000
+  },
+  "cloud_status_observed_utc": "2026-10-08T10:07:26Z"
 }
