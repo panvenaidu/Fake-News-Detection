@@ -301,3 +301,8 @@
 - The final research contribution is NOT yet decided.
 
 **Decided By:** Team discussion / Faculty alignment (2026-09-23)
+
+
+## 2026-10-08 — OFFICIAL-6W-TEXT-v2
+
+User authorized training on the full faculty-provided official multimodal release using unchanged public splits and six-way labels, on Colab cloud GPU. Initial text comparison: BERT-base and ModernBERT-base, seed 42; six-epoch cap with validation-only selection. Preserve all BP-6W-v1 data/results as historical. Paper binary accuracy is not the six-way target. No new metrics claimed before machine-generated results exist. Full details and unresolved release-count/image-availability questions: `context/AUDIT_20261008.md`.

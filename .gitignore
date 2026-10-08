@@ -2,7 +2,10 @@
 data/
 *.tsv
 *.csv
+# Retain small official-run numerical evidence when synced from Colab.
+!results/experiments/official_text/**/*.csv
 images/
+images.zip
 
 # Model checkpoints
 checkpoints/
@@ -41,5 +44,6 @@ Thumbs.db
 
 # Logs
 *.log
+!results/experiments/official_text/**/*.log
 wandb/
 runs/

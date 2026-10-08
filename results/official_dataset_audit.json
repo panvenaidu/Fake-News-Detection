@@ -1,0 +1,56 @@
+{
+  "splits": {
+    "train": {
+      "file": "data/official_multimodal_v2/multimodal_train.tsv",
+      "rows": 564000,
+      "sha256": "9894cb4aa2f901c6f29b61ac3d95ce9f7e78c43be8062ae5deb1c219c82497bb",
+      "empty_titles": 0,
+      "duplicate_ids": 0,
+      "six_way_counts": {
+        "0": 222081,
+        "1": 33481,
+        "2": 107221,
+        "3": 11784,
+        "4": 167857,
+        "5": 21576
+      },
+      "old_subset_ids_present": 62635
+    },
+    "validation": {
+      "file": "data/official_multimodal_v2/multimodal_validate.tsv",
+      "rows": 59342,
+      "sha256": "c70140ec376e083e3780b5b488c96c8933678ca5800139bfb78c92e95df6946e",
+      "empty_titles": 0,
+      "duplicate_ids": 0,
+      "six_way_counts": {
+        "0": 23320,
+        "1": 3521,
+        "2": 11277,
+        "3": 1238,
+        "4": 17810,
+        "5": 2176
+      },
+      "old_subset_ids_present": 6685
+    },
+    "test": {
+      "file": "data/official_multimodal_v2/multimodal_test_public.tsv",
+      "rows": 59319,
+      "sha256": "bc92378e070ca7b1a7497053d1c34cdc3f550be6232a76791a2c722d6d9bbf94",
+      "empty_titles": 0,
+      "duplicate_ids": 0,
+      "six_way_counts": {
+        "0": 23507,
+        "1": 3514,
+        "2": 11297,
+        "3": 1224,
+        "4": 17472,
+        "5": 2305
+      },
+      "old_subset_ids_present": 6675
+    }
+  },
+  "cross_split_overlap": 0,
+  "resampling": false,
+  "exclusions": 0,
+  "historical_subset_sha256": "fc74cb42288d366131ac764bf02f9212bacd7cab0af68442a003beaaff9fde20"
+}

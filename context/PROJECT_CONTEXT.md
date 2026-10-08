@@ -1,3 +1,5 @@
+> **Current update (2026-10-08):** Official release migration is documented in `context/AUDIT_20261008.md`. Earlier 75,995-subset results are historical. Official text runs are prepared; training start/results are not yet verified.
+
 # PROJECT CONTEXT — Multimodal Fake News Detection
 
 > **Last Updated:** 2026-09-22
@@ -373,3 +375,15 @@ project/
 3. **Phase B — CLIP:** After baseline results are recorded, design and implement E005 CLIP-based multimodal experiment. Architecture must be reviewed and frozen before training.
 4. **Phase C — HGAT:** Investigate whether Fakeddit provides the required user/comment/propagation graph data. Only proceed with E006 if data is verified.
 5. Use observed class-wise and cross-model failures to select, rather than assume, a final research contribution. The contribution is NOT decided at this stage.
+
+
+## 2026-10-08 14:50 IST — Setup/recovery checkpoint (current)
+
+- User authorized local and GitHub checkpoint updates for every model, and confirmed Chrome-only training; Colab CLI fallback declined. No Colab CLI credentials were granted.
+- Official dataset files and their hashes/counts are saved locally; full six-way cohort remains unchanged.
+- BERT-base and ModernBERT-base trainer/notebook now save recoverable state every 3,000 batches and at epoch boundaries, including optimizer, scheduler, scaler, random generators, sampler position, history and selected checkpoint. `--resume-attempt` restores a named attempt and preserves completed models.
+- Recovery batch ordering passed a CPU sampler check; script and notebook syntax checks passed. Cloud GPU execution/recovery has NOT been tested.
+- Chrome application control continues to time out, and the direct Chrome browser provider is unavailable. Training is NOT verified as started; no official-v2 validation/test metrics exist. The prior cloud preflight verified Tesla T4 only.
+- Account usage query: 34% remains in five-hour Codex window; reset 2026-10-08 17:35 IST. This is separate from Colab runtime lifetime and GPU limits.
+- Next action: restore Chrome automation or upload `notebooks/UROP_OFFICIAL_6WAY_TEXT_20261008.ipynb` in Chrome Colab, select T4 and Run all; verify Drive mount, dataset hashes and the first actual optimizer steps. Preserve exact cloud ATTEMPT path.
+- Then sync each model's small JSON/CSV/log evidence under `results/experiments/official_text/`, update these context/log/status files and push milestone documentation. Large TSVs, images and weights remain excluded from Git. Local/GitHub syncing requires a connected agent; cloud checkpoints write independently.
