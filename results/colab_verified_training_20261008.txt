@@ -1,0 +1,306 @@
+Window: "UROP_OFFICIAL_6WAY_TEXT_20261008.ipynb - Colab", App: Google Chrome.
+0 standard window UROP_OFFICIAL_6WAY_TEXT_20261008.ipynb - Colab - Google Chrome – Rocky, URL: colab.research.google.com/drive/11JK1wLLVPH8G7_oThnb0YkLMSR4URafF#scrollTo=4_SRiMM49jTF, Secondary Actions: Raise
+	1 container UROP_OFFICIAL_6WAY_TEXT_20261008.ipynb - Colab - Google Chrome – Rocky, URL: colab.research.google.com/drive/11JK1wLLVPH8G7_oThnb0YkLMSR4URafF#scrollTo=4_SRiMM49jTF
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop-up button View site information
+					9 text field (settable) Address and search bar, Value: colab.research.google.com/drive/11JK1wLLVPH8G7_oThnb0YkLMSR4URafF#scrollTo=4_SRiMM49jTF, Placeholder: Ask Google or type a URL
+					10 button Bookmark this tab
+				11 pop-up button Extensions
+				12 button Energy saver is on
+				13 button Rocky
+				14 pop-up button Chrome
+			15 container
+				16 scroll area
+					17 HTML content UROP_OFFICIAL_6WAY_TEXT_20261008.ipynb - Colab, URL: colab.research.google.com/drive/11JK1wLLVPH8G7_oThnb0YkLMSR4URafF#scrollTo=4_SRiMM49jTF
+						18 container
+							19 container
+								20 link Skip to main content, Value: colab.research.google.com/drive/11JK1wLLVPH8G7_oThnb0YkLMSR4URafF#notebook-main
+							21 container
+								22 link Colab home, Value: colab.research.google.com/
+								23 container
+									24 text field (settable) Notebook name, Value: UROP_OFFICIAL_6WAY_TEXT_20261008.ipynb
+									25 button Star
+									26 menu bar
+										27 pop-up button File
+											28 text File
+										29 pop-up button Edit
+											30 text Edit
+										31 pop-up button View
+											32 text View
+										33 pop-up button Insert
+											34 text Insert
+										35 pop-up button Runtime
+											36 text Runtime
+										37 pop-up button Tools
+											38 text Tools
+										39 pop-up button Help
+											40 text Help
+								41 container
+									42 button Open comments pane
+									43 button Open settings
+									44 button Share notebook
+									45 button Google Account: Rocky 62 (panvee62@gmail.com), Google membership
+							46 container
+								47 container
+									48 button Commands Show command palette⌘/Ctrl+Shift+P
+								49 container
+									50 button Code Insert code cell below⌘/Ctrl+M B
+								51 pop-up button Insert code cell options
+								52 container
+									53 button Text Add text cell
+								54 container
+									55 button Run all Run all cells in notebook
+								56 pop-up button More actions
+								57 button Focus the last run cell
+								58 container
+									59 button RAM Disk Connected to Python 3 Google Compute Engine backend (GPU) RAM: 3.87 GB/12.67 GB Disk: 43.11 GB/112.64 GB
+								60 pop-up button Additional connection options
+								61 toggle button Toggle header visibility, Value: 0
+							62 container
+								63 container left pane
+									64 toolbar
+										65 container Table of contents
+											66 toggle button Table of contents, Value: 0
+										67 container Find and replace
+											68 toggle button Find and replace, Value: 0
+										69 container Code snippets
+											70 toggle button Code snippets, Value: 0
+										71 container Data inspector
+											72 toggle button Data inspector, Value: 0
+										73 container Secrets
+											74 toggle button Secrets, Value: 0
+										75 container Files
+											76 toggle button Files, Value: 0
+										77 container Data explorer
+											78 toggle button Data explorer, Value: 0
+								79 container Notebook
+									80 container
+										81 container Cell 0: Code cell: 
+											82 container
+												83 container
+													84 button Run cell
+													85 text [1]
+													86 text 6s
+												87 container
+													88 text import  torch ,  sys ,  shutil print ( 'UROP official dataset preflight' ) print ( 'Python:' ,  sys.version ) print ( 'CUDA available:' ,  torch.cuda.is_available ()) print ( 'GPU:' ,  torch.cuda.get_device_name ( 0 ) if  torch.cuda.is_available () else 'NONE' ) print ( 'Free disk GB:' , round ( shutil.disk_usage ( '/content' ) .free /  1e9 , 1 ))
+												89 container Cell 0 output
+													90 container
+														91 toggle button Show/hide output, Value: 0
+														92 pop-up button Code cell output actions
+													93 text UROP official dataset preflight
+Python: 3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]
+CUDA available: True
+GPU: Tesla T4
+Free disk GB: 75.3
+
+										94 container Cell 1: Code cell: 
+											95 container
+												96 container
+													97 button Run cell
+													98 text [3]
+													99 text 13s
+												100 container
+													101 text from  google.colab  import  drive drive.mount ( '/content/drive' ) import  transformers ,  torch print ( 'Transformers:' ,  transformers. __version__ , 'Torch:' ,  torch. __version__ )
+												102 container Cell 1 output
+													103 container
+														104 toggle button Show/hide output, Value: 0
+														105 pop-up button Code cell output actions
+													106 text Mounted at /content/drive
+Transformers: 5.18.0 Torch: 2.11.0+cu130
+
+										107 container Cell 2: Code cell: 
+											108 container
+												109 container
+													110 button Run cell
+													111 text [5]
+													112 text 1s
+												113 container Cell 2 output
+													114 container
+														115 toggle button Show/hide output, Value: 0
+														116 pop-up button Code cell output actions
+													117 text Dataset and training source verified. Permanent checkpoint destination: /content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs
+
+										118 container Cell 3: Code cell: 
+											119 container
+												120 container
+													121 button Run cell
+													122 text [11]
+													123 text 15s
+												124 container
+													125 text subprocess.run ([ sys.executable , '-u' , str ( remote/ 'train_official_text.py' ), '--config' , str ( remote/ 'protocol.json' ), '--data' , str ( data ), '--output' , str ( backup )],  check= True )
+												126 container Cell 3 output
+													127 container
+														128 toggle button Show/hide output, Value: 0
+														129 pop-up button Code cell output actions
+													130 HTML content hveh5wgfgbr-496ff2e9c6d22116-0-colab.googleusercontent.com/outputframe.html?vrz=colab-external_20261002-060058_RC00_992223064
+														131 container
+										132 container Cell 4: Code cell: 
+											133 container
+												134 container
+													135 button Run cell
+													136 text [13]
+													137 text 0s
+												138 container
+													139 text print ( 'RUN FOLDERS:' , [ str ( p ) for  p  in  backup.glob ( '*' )]); print ([( str ( p ),  p.read_text ()[ -5000 :]) for  p  in  backup.glob ( '*/bert-base/error.txt' )]); print ([( str ( p ),  p.read_text ()[ -5000 :]) for  p  in  backup.glob ( '*/stderr.log' )])
+												140 container Cell 4 output
+													141 container
+														142 toggle button Show/hide output, Value: 0
+														143 pop-up button Code cell output actions
+													144 text RUN FOLDERS: ['/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T092708Z', '/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T092745Z', '/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T092810Z']
+[('/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T092708Z/bert-base/error.txt', 'Traceback (most recent call last):\
+										145 container Cell 5: Code cell: 
+											146 container
+												147 container
+													148 button Run cell
+													149 text [15]
+													150 text 0s
+												151 container
+													152 text print ( sorted ( backup.glob ( '*/bert-base/error.txt' ))[ -1 ] .read_text () .splitlines ()[ -1 ])
+												153 container Cell 5 output
+													154 container
+														155 toggle button Show/hide output, Value: 0
+														156 pop-up button Code cell output actions
+													157 text AttributeError: 'Tee' object has no attribute 'isatty'
+
+										158 container Cell 6: Code cell: 
+											159 container
+												160 container
+													161 button Run cell
+													162 text [16]
+													163 text 4s
+												164 container
+													165 text blob = urllib.request.urlopen ( 'https://raw.githubusercontent.com/panvenaidu/Fake -News-Detection/9c7abf1/scripts/train_official_tex t.py' ) .read (); assert  hashlib.sha256 ( blob ) .hexdigest ()  ==  'a13c0e5d97b2fe7661ce6a228d43d853f1aca703314cfa486 88825b7b01701f9' ; ( remote/ 'train_official_text.py' ) .write_bytes ( blob );  subprocess.run ([ sys.executable , '-u' , str ( remote/ 'train_official_text.py' ), '--config' , str ( remote/ 'protocol.json' ), '--data' , str ( data ), '--output' , str ( backup )],  check= True )
+												166 container Cell 6 output
+													167 container
+														168 toggle button Show/hide output, Value: 0
+														169 pop-up button Code cell output actions
+													170 HTML content hveh5wgfgbr-496ff2e9c6d22116-0-colab.googleusercontent.com/outputframe.html?vrz=colab-external_20261002-060058_RC00_992223064
+														171 container
+										172 container Cell 7: Code cell: 
+											173 container
+												174 container
+													175 button Run cell
+													176 text [18]
+													177 text 0s
+												178 container
+													179 editor (settable) Editor content
+												180 container Cell 7 output
+													181 container
+														182 toggle button Show/hide output, Value: 0
+														183 pop-up button Code cell output actions
+													184 text SOURCE a13c0e5d97b2fe7661ce6a228d43d853f1aca703314cfa48688825b7b01701f9
+PROCESSES 22930 /bin/sh -c pgrep -af train_official_text
+LATEST /content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T092810Z
+[('OFFICIAL-6W-TEXT-v2_seed42_20261008T092708Z', "AttributeError: 'Tee' object has no attribute 'isatty'"), ('OFFICIAL-6W-TEXT-v2_seed42_20261008T092745Z', "AttributeError: 'Tee' object has no attribute 'isatty'"), ('OFFICIAL-6W-TEXT-v2_seed42_20261008T092810Z', "Attri
+										185 container Cell 8: Code cell: 
+											186 container
+												187 container
+													188 button Run cell
+													189 text [22]
+													190 text 0s
+												191 container
+													192 editor (settable) Editor content
+												193 container Cell 8 output
+													194 container
+														195 toggle button Show/hide output, Value: 0
+														196 pop-up button Code cell output actions
+													197 HTML content hveh5wgfgbr-496ff2e9c6d22116-0-colab.googleusercontent.com/outputframe.html?vrz=colab-external_20261002-060058_RC00_992223064
+														198 container
+															199 container (showing 0-130 of 133 items)
+																200 text --------------------------------------------------------------------------- AssertionError                             Traceback (most recent call last) /tmp/ipykernel_1876/4281569286.py  in  <cell line: 0> () ----> 1 assert not ( 'trainer' in globals ( ) and trainer . poll ( ) is None ) , 'Trainer already running' ; launch_log = backup / 'launcher_20261008T1000Z.log' ; trainer = subprocess . Popen ( [ sys . executable , '-u' , str ( remote / 'train_official_text.py' ) , '--config' , str ( remote / 'protocol.json' ) , '--data' , str ( data ) , '--output' , str ( backup ) ] , stdout = launch_log . open ( 'a' ) , stderr = subprocess . STDOUT , start_new_session = True ) ; print ( 'Launched cloud trainer PID' , trainer . pid , 'Log' , str (...
+
+										201 container Cell 9: Code cell: 
+											202 container
+												203 container
+													204 button Run cell
+													205 text [23]
+													206 text 0s
+												207 container
+													208 editor (settable) Editor content, Value: print('TRAINER',trainer.pid,trainer.poll()); print('LOG',launch_log.read_text()[-600:]); current_attempt=sorted(backup.glob('OFFICIAL-6W-*'))[-1]; print('ATTEMPT',current_attempt.name); print([(p.parent.name,p.read_text()) for p in current_attempt.glob('*/status.json')])
+												209 container Cell 9 output
+													210 container
+														211 toggle button Show/hide output, Value: 0
+														212 pop-up button Code cell output actions
+													213 text TRAINER 23054 None
+LOG point. Consider training on your downstream task.
+bert-base tokenizing official titles
+/usr/local/lib/python3.13/dist-packages/torch/autograd/graph.py:869: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:900.)
+  return Variable._execution_engine.run_backward(  #
+										214 container Cell 10: Code cell: 
+											215 container
+												216 button Move cell up ⌘/Ctrl+M K
+												217 button (disabled) Move cell down ⌘/Ctrl+M J
+												218 pop-up button Available AI features
+												219 button Delete cell ⌘/Ctrl+M D
+												220 pop-up button More cell actions
+											221 container
+												222 container
+													223 button Run cell
+													224 text [24]
+													225 text 0s
+												226 container
+													227 editor (settable) Editor content, Value: print(current_attempt.name); print((current_attempt/'bert-base/status.json').read_text()); print('Checkpoint', (current_attempt/'bert-base/resume_checkpoint.pt').exists()); print('Process',trainer.poll())
+												228 container Cell 10 output
+													229 container
+														230 toggle button Show/hide output, Value: 0
+														231 pop-up button Code cell output actions
+													232 text OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z
+{
+  "state": "training",
+  "model": "bert-base",
+  "epoch": 1,
+  "step": 1000,
+  "steps_per_epoch": 17625,
+  "samples_seen_this_epoch": 32000,
+  "samples_per_second": 229.77983752167853,
+  "epoch_remaining_seconds": 2315.259710068376,
+  "optimizer_updates": 997,
+  "skipped_updates": 3,
+  "updated_utc": "2026-10-08T10:01:41.513903+00:00"
+}
+
+Checkpoint False
+Process None
+
+									233 container
+										234 link Colab paid products Link will open in a new tab, Value: colab.research.google.com/signup?utm_source=footer&utm_medium=link&utm_campaign=footer_links
+										235 text -
+										236 link Cancel contracts here Link will open in a new tab, Value: colab.research.google.com/cancel-subscription
+							237 toggle button Toggle Gemini, Value: 0
+							238 container Runtime status bar
+								239 container
+									240 button Variables
+								241 container
+									242 button Terminal
+								243 container
+									244 button 3:32 PM
+								245 container
+									246 pop-up button T4 (Python 3)
+			247 pop-up button Tab search
+			248 container
+				249 tab group
+					250 tab (selected, settable, boolean) UROP_OFFICIAL_6WAY_TEXT_20261008.ipynb - Colab - Memory usage - 341 MB, Value: on
+						251 button Close
+			252 button New tab
+			253 button Open Gemini in Chrome
+	254 close button
+	255 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	256 minimise button
+257 menu bar
+	258 Chrome
+	259 File
+	260 Edit
+	261 View
+	262 History
+	263 Bookmarks
+	264 Profiles
+	265 Tab
+	266 Window
+	267 Help
+
+The focused UI element is 223 button Run cell
