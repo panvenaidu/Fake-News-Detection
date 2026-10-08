@@ -1,0 +1,19 @@
+{
+  "retrieved_utc": "2026-10-08T18:28:22.562439+00:00",
+  "source": "User placed original Chrome-downloaded Kaggle evidence ZIP inside UROP",
+  "archive_sha256": "d156b7cd1ca663e3273434005dda299bd6a35b5ede53f8bb84833f1424e973d7",
+  "original_values_match_prior_ui_retrieval": true,
+  "csv_prediction_checks": {
+    "validation": {
+      "unique_prediction_ids": 300,
+      "official_split_ids_and_labels": "exact match",
+      "confusion_matrix": "exact match to original prediction CSV"
+    },
+    "test": {
+      "unique_prediction_ids": 300,
+      "official_split_ids_and_labels": "exact match",
+      "confusion_matrix": "exact match to original prediction CSV"
+    }
+  },
+  "weights": "Preserved in private Kaggle output; evidence ZIP excludes weights"
+}

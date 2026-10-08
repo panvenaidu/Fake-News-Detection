@@ -1,10 +1,10 @@
 {
-  "config_sha256": "80c28c353e92528af2cef01e5bb00a60bdc8bc48bc5bc81b346765d779583743",
-  "gpu": "Tesla T4",
-  "manifest_sha256": "b8e0ee632cd847b60ec00ca7f253a0456602fd70b95c541fddd378bf66d7e4bd",
+  "utc": "2026-10-08T17:24:16.361354+00:00",
   "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
-  "source_sha256": "793b0867e3f3f672a2b1ba9787826cdacdc515d5301f22d9084aea1b8aed50f1",
   "torch": "2.11.0+cu128",
   "torchvision": "0.26.0+cu128",
-  "utc": "2026-10-08T17:24:16.361354+00:00"
+  "gpu": "Tesla T4",
+  "source_sha256": "793b0867e3f3f672a2b1ba9787826cdacdc515d5301f22d9084aea1b8aed50f1",
+  "config_sha256": "80c28c353e92528af2cef01e5bb00a60bdc8bc48bc5bc81b346765d779583743",
+  "manifest_sha256": "b8e0ee632cd847b60ec00ca7f253a0456602fd70b95c541fddd378bf66d7e4bd"
 }

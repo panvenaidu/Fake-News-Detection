@@ -52,5 +52,9 @@ Thumbs.db
 # Logs
 *.log
 !results/experiments/official_text/**/*.log
+!results/experiments/multimodal/**/*.log
 wandb/
 runs/
+
+# Original pretrained tokenizer copies stay in the local evidence archive.
+results/experiments/multimodal/**/tokenizer/

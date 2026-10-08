@@ -52,8 +52,8 @@ Could not verify a working local UROP scheduled-task definition; app view return
 - Official TSVs: data/official_multimodal_v2/; images: images/; pilot manifests/provenance: data/paired_pilot_20261009/.
 - Original five-epoch text history and JSON evidence: results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/bert-base/.
 - Original synced multimodal result, history, environment, class reports and confusion matrices: results/experiments/multimodal/MM-PILOT-6W-v1_seed42_20261009/.
-- Original BERT weights/recovery: https://drive.google.com/drive/u/0/folders/15K7CqdsqrZVEdJH1rGNFhlnswNCdMD1j. Downloaded checkpoint ZIP still needs to be placed inside data/cloud_recovery/ and verified.
-- Multimodal weights/checkpoints and prediction CSVs: private Kaggle saved version2 https://www.kaggle.com/code/rocky62/urop-official-six-way-text-recovery?scriptVersionId=356486031. Full prediction CSVs and weights are not yet synced locally.
+- Original BERT weights/recovery (also locally recovered and integrity-verified): https://drive.google.com/drive/u/0/folders/15K7CqdsqrZVEdJH1rGNFhlnswNCdMD1j. Checkpoint ZIP is now under data/cloud_recovery/ and verified at epoch5 batch15000; no GPU recovery job launched.
+- Multimodal weights/checkpoints and prediction CSVs: private Kaggle saved version2 https://www.kaggle.com/code/rocky62/urop-official-six-way-text-recovery?scriptVersionId=356486031. Complete300-row validation and300-row test prediction CSVs are now synced locally and verified. Weights remain in the private Kaggle output.
 - GitHub: https://github.com/panvenaidu/Fake-News-Detection. Completed-pilot milestone d522e96 verified on remote main.
 
 First finish original BERT recovery and final test. Then train ModernBERT on the same official protocol. Expand multimodal data with matched text/image controls and address rare-class coverage, using validation for tuning. Further improvement is possible but +1pp test improvement cannot be guaranteed.

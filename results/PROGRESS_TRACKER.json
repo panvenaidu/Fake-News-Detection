@@ -1,0 +1,124 @@
+{
+  "updated_utc": "2026-10-08T18:28:22.563708+00:00",
+  "method_version": "CHECKPOINT-PROGRESS-v1",
+  "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
+  "rules": [
+    "Five stages weighted equally at20% each.",
+    "Dataset audit means identity/schema/labels/splits verified; it does not certify complete image availability.",
+    "Training and validation stages use completed epochs divided by the registered run budget, and become1 if training legitimately ends early.",
+    "Final stage requires selected-checkpoint final test, original numerical evidence and archived results.",
+    "Pilot progress never counts as full-cohort train/validation/test completion.",
+    "Percentages measure workflow checkpoints, not accuracy, percent of dataset processed or predicted remaining time.",
+    "Headline text bar refers to BERT baseline; additional model comparisons are separate.",
+    "Three-modality overall progress uses equal modality weights; display rounded integer percentages and exact stage states.",
+    "If tensor recovery is older than observed training history, training-stage fraction uses verified recoverable epoch/batch progress; original validation observations are retained separately."
+  ],
+  "overall_three_modality_checkpoint_percent": 44,
+  "models": {
+    "text_only_bert": {
+      "scope": "Official six-way faculty TSV cohort; BERT baseline",
+      "milestones": {
+        "dataset_audit": 1,
+        "model_implementation": 1,
+        "training": 0.8085106382978724,
+        "validation": 0.8333333333333334,
+        "final_test_and_result_archive": 0
+      },
+      "epochs_trained": 5,
+      "epochs_validated": 5,
+      "registered_max_epochs": 6,
+      "final_test_completed": false,
+      "state": "Interrupted; not currently running",
+      "checkpoint_completion_percent": 73,
+      "recoverable_training_percent": 81
+    },
+    "text_plus_image": {
+      "scope": "Full official-cohort benchmark; the completed 2600-row pilot is tracked separately",
+      "milestones": {
+        "dataset_audit": 1,
+        "model_implementation": 1,
+        "training": 0,
+        "validation": 0,
+        "final_test_and_result_archive": 0
+      },
+      "state": "Implementation demonstrated by pilot; full-cohort image coverage/protocol and full training pending",
+      "checkpoint_completion_percent": 40
+    },
+    "image_only": {
+      "scope": "Standalone image-only six-way benchmark",
+      "milestones": {
+        "dataset_audit": 1,
+        "model_implementation": 0,
+        "training": 0,
+        "validation": 0,
+        "final_test_and_result_archive": 0
+      },
+      "state": "Shared official dataset audited; standalone implementation/training pending",
+      "checkpoint_completion_percent": 20
+    },
+    "text_plus_image_pilot": {
+      "scope": "2600 paired rows:2000 train/300 validation/300 test",
+      "milestones": {
+        "dataset_audit": 1,
+        "model_implementation": 1,
+        "training": 1,
+        "validation": 1,
+        "final_test_and_result_archive": 1
+      },
+      "epochs_trained": 3,
+      "epochs_validated": 3,
+      "final_test_completed": true,
+      "state": "Completed private Kaggle version2",
+      "checkpoint_completion_percent": 100
+    },
+    "modernbert_optional_comparison": {
+      "scope": "Additional text comparison; excluded from three-modality headline progress",
+      "milestones": {
+        "dataset_audit": 1,
+        "model_implementation": 1,
+        "training": 0,
+        "validation": 0,
+        "final_test_and_result_archive": 0
+      },
+      "state": "Prepared; no training",
+      "checkpoint_completion_percent": 40
+    }
+  },
+  "new_recovery_files_observed": [
+    "bert-base-20261008T133126Z-1-001.zip",
+    "bert-base/",
+    "multimodal_pilot_evidence.zip",
+    "multimodal_pilot_evidence/"
+  ],
+  "recovery_note": "Original BERT checkpoint verified: epoch5 batch15000/17625, epoch unfinished, four validated epochs inside tensor. Later fifth-epoch observed history retained. Resume must replay remaining2625 batches of epoch5 before epoch6/final test; no GPU job launched.",
+  "bert_recovery_verification": {
+    "attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
+    "verified_utc": "2026-10-08T18:26:34.754726+00:00",
+    "archive_filename": "bert-base-20261008T133126Z-1-001.zip",
+    "archive_sha256": "369610b47f755e0bda9b09b51d546970da284e51fe245d2c2349e1d95094ff87",
+    "checkpoint_sha256": "1a89825e3cdc921b800732ac9338008b0c6d82faeddc95427014364ba3bc806b",
+    "best_weights_sha256": "870bea50fa608dddd20421c21fd1786e244b1323e22734093214b87023666753",
+    "source_sha256": "a13c0e5d97b2fe7661ce6a228d43d853f1aca703314cfa48688825b7b01701f9",
+    "epoch": 5,
+    "step_in_epoch": 15000,
+    "epoch_finished": false,
+    "epochs_validated": 4,
+    "optimizer_updates": 85466,
+    "skipped_updates": 34,
+    "best": {
+      "epoch": 4,
+      "metrics": {
+        "accuracy": 0.8274072326514105,
+        "macro_f1": 0.7786816742546674,
+        "weighted_f1": 0.8259081148742857,
+        "balanced_accuracy": 0.7515221994793709,
+        "loss": 0.6015845915151155,
+        "samples": 59342
+      }
+    },
+    "torch_verification_version": "2.8.0",
+    "status": "verified",
+    "note": "CPU integrity/recovery-state inspection only; no training or final test performed"
+  },
+  "recovery_files_location": "data/cloud_recovery/"
+}

@@ -5,5 +5,6 @@
   "retrieved_utc": "2026-10-08T17:35:18.461Z",
   "archive_download": "UI download initiated; browser download-event capture timed out; archive not yet locally verified",
   "additional_retrieval": "Original class reports and environment parsed from rendered JSON tree; confusion matrices read from rendered CSV table. No hidden application state or backend used. JSON/CSV formatting normalized.",
-  "unretrieved_files": "Original prediction CSVs (preview limited to first49 rows) and model weights/recovery tensors remain in saved private Kaggle output."
+  "unretrieved_files": "Model weights/recovery tensors remain in saved private Kaggle output; complete prediction CSVs are now local",
+  "original_archive_now_synced": "Original Chrome-downloaded ZIP placed inside UROP by user; exact original artifact bytes synced; UI-derived formatting snapshots retained separately"
 }

@@ -9,9 +9,7 @@
       "balanced_accuracy": 0.4407739661224621,
       "loss": 0.768302698135376,
       "samples": 300
-    },
-    "updates": 62,
-    "skips": 1
+    }
   },
   {
     "epoch": 2,
@@ -23,9 +21,7 @@
       "balanced_accuracy": 0.5464424138672122,
       "loss": 0.6190573445955913,
       "samples": 300
-    },
-    "updates": 125,
-    "skips": 1
+    }
   },
   {
     "epoch": 3,
@@ -37,8 +33,6 @@
       "balanced_accuracy": 0.5788096173275924,
       "loss": 0.6507545598347981,
       "samples": 300
-    },
-    "updates": 188,
-    "skips": 1
+    }
   }
 ]

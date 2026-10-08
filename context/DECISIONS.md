@@ -344,3 +344,8 @@ BERT+ResNet-50 maximum-fusion pilot is now IMPLEMENTED and synthetic smoke check
 - Data scope is the explicit2600-row engineering pilot. No full-cohort multimodal result or superiority claim. Six imposter examples in each evaluation split; test imposter F1=0. Follow-up must address rare-class coverage and evaluate text/image controls on the same paired cohort. Do not tune against the pilot test scores.
 - Original BERT five-epoch validation history retrieved from Drive; selected epoch4 unchanged. Tensor recovery archive remains outside the authorized project directory, location not inspected. User has a pending request to place it in `data/cloud_recovery/`. Prepared CPU verifier and separate Kaggle recovery notebook, not executed. No active BERT/ModernBERT job.
 - Original result URL: https://www.kaggle.com/code/rocky62/urop-official-six-way-text-recovery?scriptVersionId=356486031. Synced evidence: `results/experiments/multimodal/MM-PILOT-6W-v1_seed42_20261009/`. Saved Kaggle weights and recovery checkpoints remain private; prediction CSVs are preserved in cloud but not yet synced locally.
+
+
+## User progress-display preference — 8 October 2026
+
+**Progress-display preference:** When the user asks how much is completed, show loading bars and the five checkpoint states from `results/PROGRESS_TRACKER.json` / `results/PROGRESS_TRACKER.md`. Refresh using verified artifacts. These are equally weighted workflow stages, not accuracy or elapsed-time percentages. Keep the completed small multimodal pilot separate from the full benchmark. Current bars: BERT73%, full text+image40%, standalone image-only20%, overall44%; ModernBERT comparison40% prepared. Recovery ZIPs/extracted folders are newly visible inside UROP root and require verification.
