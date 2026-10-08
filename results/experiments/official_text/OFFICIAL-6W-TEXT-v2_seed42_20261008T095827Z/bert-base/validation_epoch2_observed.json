@@ -1,0 +1,8 @@
+{
+  "epoch": 2,
+  "accuracy_rounded_4dp": 0.8243,
+  "macro_f1_rounded_4dp": 0.7582,
+  "source": "Chrome extension DOM live monitor; rounded intermediate values, original JSON not yet exported",
+  "observed_utc": "2026-10-08T11:27:15Z",
+  "final": false
+}

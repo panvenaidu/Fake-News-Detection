@@ -1,0 +1,318 @@
+- link "Skip to main content":
+  - /url: "#notebook-main"
+  - generic: Skip to main content
+- banner:
+  - link "Colab home":
+    - /url: https://colab.research.google.com/
+  - textbox "Notebook name": UROP_OFFICIAL_6WAY_TEXT_20261008.ipynb
+  - generic: UROP_OFFICIAL_6WAY_TEXT_20261008.ipynb_
+  - generic "Star":
+    - button "Star"
+  - menubar:
+    - button "File":
+      - generic: File
+    - button "Edit":
+      - generic: Edit
+    - button "View":
+      - generic: View
+    - button "Insert":
+      - generic: Insert
+    - button "Runtime":
+      - generic: Runtime
+    - button "Tools":
+      - generic: Tools
+    - button "Help":
+      - generic: Help
+  - generic "Open comments pane":
+    - button "Open comments pane"
+  - generic "Open settings":
+    - button "Open settings"
+  - generic "Share notebook":
+    - button "Share notebook":
+      - generic: Share
+  - 'button "Google Account: Rocky 62 (panvee62@gmail.com), Google membership"':
+- button "Commands Show command palette ⌘/Ctrl+Shift+P":
+  - generic: Commands
+  - generic: Show command palette ⌘/Ctrl+Shift+P
+- button "Code Insert code cell below ⌘/Ctrl+M B":
+  - generic: Code
+  - generic: Insert code cell below ⌘/Ctrl+M B
+- generic "Insert code cell options":
+  - button "Insert code cell options"
+- button "Text Add text cell":
+  - generic: Text
+  - generic: Add text cell
+- button "Run all Run all cells in notebook":
+  - generic: Run all
+  - generic: Run all cells in notebook
+- generic "More actions":
+  - button "More actions"
+- generic "Focus the last run cell":
+  - button "Focus the last run cell" [disabled]
+- button "Connecting" [disabled]:
+  - generic: Connecting
+- generic "Additional connection options":
+  - button "Additional connection options"
+- generic "Toggle header visibility":
+  - button "Toggle header visibility"
+- complementary "left pane":
+  - toolbar:
+    - generic "Table of contents":
+      - button "Table of contents"
+    - generic "Find and replace":
+      - button "Find and replace"
+    - generic "Code snippets":
+      - button "Code snippets"
+    - generic "Data inspector":
+      - button "Data inspector"
+    - generic "Secrets":
+      - button "Secrets"
+    - generic "Files":
+      - button "Files"
+    - generic "Data explorer":
+      - button "Data explorer"
+- main "Notebook":
+  - 'region "Cell 0: Code cell:"':
+    - button "Run cell":
+    - generic: "[ ]"
+    - generic: import torch, sys, shutil
+    - generic: print('UROP official dataset preflight')
+    - generic: print('Python:', sys.version)
+    - generic: print('CUDA available:', torch.cuda.is_available())
+    - generic: print('GPU:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'NONE')
+    - generic: print('Free disk GB:', round(shutil.disk_usage('/content').free / 1e9, 1))
+    - region "Cell 0 output":
+      - generic "Show/hide output":
+        - button "Show/hide output"
+      - generic "Code cell output actions":
+        - button "Code cell output actions"
+      - generic: "UROP official dataset preflight Python: 3.13.15 (main, Aug 6 2026, 11:06:22) [GCC 13.3.0] CUDA available: True GPU: Tesla T4 Free disk GB: 75.3"
+  - 'region "Cell 1: Code cell:"':
+    - button "Run cell":
+    - generic: "[ ]"
+    - generic: from google.colab import drive
+    - generic: drive.mount('/content/drive')
+    - generic: import transformers, torch
+    - generic: print('Transformers:', transformers.__version__, 'Torch:', torch.__version__)
+    - region "Cell 1 output":
+      - generic "Show/hide output":
+        - button "Show/hide output"
+      - generic "Code cell output actions":
+        - button "Code cell output actions"
+      - generic: "Mounted at /content/drive Transformers: 5.18.0 Torch: 2.11.0+cu130"
+  - 'region "Cell 2: Code cell:"':
+    - button "Run cell":
+    - generic: "[ ]"
+    - generic: import urllib.request, hashlib, json, concurrent.futures, subprocess, sys
+    - generic: from pathlib import Path
+    - generic: remote = Path('/content/UROP_OFFICIAL_6WAY_TEXT'); remote.mkdir(exist_ok=True)
+    - generic: base = 'https://raw.githubusercontent.com/panvenaidu/Fake-News-Detection/09876a8/'
+    - generic: assets = [('scripts/train_official_text.py','train_official_text.py','bf4b8f8fd03035dc16756de3aabd8a987d9f06b1571ad3ed692e28df24da7e51'),('configs/text_official_6way_v2.json','protocol.json','b203b3ea15c247c8174bbd67733501e304a31c7b681c720a4ed61bbe05f57689')]
+    - generic: "for source, name, expected in assets:"
+    - generic: blob = urllib.request.urlopen(base+source, timeout=60).read()
+    - generic: assert hashlib.sha256(blob).hexdigest() == expected, 'Source checksum mismatch'
+    - generic: (remote/name).write_bytes(blob)
+    - generic: cfg = json.loads((remote/'protocol.json').read_text())
+    - generic: data = remote/'data'; data.mkdir(exist_ok=True)
+    - generic: "def prepare(info):"
+    - generic: target = data/info['filename']
+    - generic: "if target.exists() and hashlib.sha256(target.read_bytes()).hexdigest() == info['sha256']: return"
+    - generic: url = 'https://drive.usercontent.google.com/download?id='+info['drive_id']+'&export=download&confirm=t'
+    - generic: "request = urllib.request.Request(url, headers={'User-Agent':'Mozilla/5.0'})"
+    - generic: tmp = target.with_suffix('.tsv.part')
+    - generic: "with urllib.request.urlopen(request, timeout=300) as response, tmp.open('wb') as output:"
+    - generic: "while True:"
+    - generic: block=response.read(1024*1024)
+    - generic: "if not block: break"
+    - generic: output.write(block)
+    - generic: assert hashlib.sha256(tmp.read_bytes()).hexdigest() == info['sha256'], 'Dataset checksum mismatch'
+    - generic: tmp.replace(target)
+    - generic: print('Verified:', info['filename'], info['rows'], flush=True)
+    - generic: "with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:"
+    - generic: list(pool.map(prepare, cfg['splits'].values()))
+    - generic: backup = Path('/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs')
+    - generic: backup.mkdir(parents=True, exist_ok=True)
+    - generic: print('Dataset and training source verified. Permanent checkpoint destination:', backup)
+    - region "Cell 2 output":
+      - generic "Show/hide output":
+        - button "Show/hide output"
+      - generic "Code cell output actions":
+        - button "Code cell output actions"
+      - generic: "Dataset and training source verified. Permanent checkpoint destination: /content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs"
+  - 'region "Cell 3: Code cell:"':
+    - button "Run cell":
+    - generic: "[ ]"
+    - generic: subprocess.run([sys.executable, '-u', str(remote/'train_official_text.py'), '--config', str(remote/'protocol.json'), '--data', str(data), '--output', str(backup)], check=True)
+    - region "Cell 3 output":
+      - generic "Show/hide output":
+        - button "Show/hide output"
+      - generic "Code cell output actions":
+        - button "Code cell output actions"
+      - iframe:
+        - generic: "---------------------------------------------------------------------------"
+        - generic: CalledProcessError Traceback (most recent call last)
+        - generic: "/tmp/ipykernel_1876/2332901371.py in <cell line: 0>() ----> 1 subprocess.run([sys.executable, '-u', str(remote/'train_official_text.py'), '--config', str(remote/'protocol.json'), '--data', str(data), '--output', str(backup)], check=True)"
+        - generic: "/usr/lib/python3.13/subprocess.py in run(input, capture_output, timeout, check, *popenargs, **kwargs) 575 retcode = process.poll() 576 if check and retcode: --> 577 raise CalledProcessError(retcode, process.args, 578 output=stdout, stderr=stderr) 579 return CompletedProcess(process.args, retcode, stdout, stderr)"
+        - generic: "CalledProcessError: Command '['/usr/bin/python3', '-u', '/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py', '--config', '/content/UROP_OFFICIAL_6WAY_TEXT/protocol.json', '--data', '/content/UROP_OFFICIAL_6WAY_TEXT/data', '--output', '/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs']' returned non-zero exit status 1."
+  - 'region "Cell 4: Code cell:"':
+    - button "Run cell":
+    - generic: "[ ]"
+    - generic: print('RUN FOLDERS:', [str(p) for p in backup.glob('*')]); print([(str(p), p.read_text()[-5000:]) for p in backup.glob('*/bert-base/error.txt')]); print([(str(p), p.read_text()[-5000:]) for p in backup.glob('*/stderr.log')])
+    - region "Cell 4 output":
+      - generic "Show/hide output":
+        - button "Show/hide output"
+      - generic "Code cell output actions":
+        - button "Code cell output actions"
+      - generic: "RUN FOLDERS: ['/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T092708Z', '/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T092745Z', '/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T092810Z'] [('/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T092708Z/bert-base/error.txt', 'Traceback (most recent call last):\\n File \"/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py\", line 347, in main\\n results.append(train_one(spec, cfg, frames, folder, resume=bool(args.resume_attempt)))\\n ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py\", line 144, in train_one\\n model = AutoModelForSequenceClassification.from_pretrained(\\n ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\\n spec[\"checkpoint\"], revision=spec[\"revision\"], num_labels=6,\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n id2label=dict(enumerate(LABELS)), label2id={s: i for i, s in enumerate(LABELS)},\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n attn_implementation=\"sdpa\").cuda()\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 409, in from_pretrained\\n return model_class.from_pretrained(\\n ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\\n pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n )\\n ^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py\", line 4340, in from_pretrained\\n loading_info = cls._finalize_model_loading(model, load_config, loading_info)\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py\", line 4524, in _finalize_model_loading\\n log_state_dict_report(\\n ~~~~~~~~~~~~~~~~~~~~~^\\n model=model,\\n ^^^^^^^^^^^^\\n ...<3 lines>...\\n logger=logger,\\n ^^^^^^^^^^^^^^\\n )\\n ^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 300, in log_state_dict_report\\n report = loading_info.create_loading_report(report_model)\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 204, in create_loading_report\\n tips += f\"\\\\n- {_style(\\'UNEXPECTED:\\', \\'orange\\')}\\\\t\" + _style(\\n ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 126, in _style\\n if sys.stdout is not None and sys.stdout.isatty():\\n ^^^^^^^^^^^^^^^^^\\nAttributeError: \\'Tee\\' object has no attribute \\'isatty\\'\\n'), ('/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T092745Z/bert-base/error.txt', 'Traceback (most recent call last):\\n File \"/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py\", line 347, in main\\n results.append(train_one(spec, cfg, frames, folder, resume=bool(args.resume_attempt)))\\n ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py\", line 144, in train_one\\n model = AutoModelForSequenceClassification.from_pretrained(\\n ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\\n spec[\"checkpoint\"], revision=spec[\"revision\"], num_labels=6,\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n id2label=dict(enumerate(LABELS)), label2id={s: i for i, s in enumerate(LABELS)},\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n attn_implementation=\"sdpa\").cuda()\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 409, in from_pretrained\\n return model_class.from_pretrained(\\n ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\\n pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n )\\n ^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py\", line 4340, in from_pretrained\\n loading_info = cls._finalize_model_loading(model, load_config, loading_info)\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py\", line 4524, in _finalize_model_loading\\n log_state_dict_report(\\n ~~~~~~~~~~~~~~~~~~~~~^\\n model=model,\\n ^^^^^^^^^^^^\\n ...<3 lines>...\\n logger=logger,\\n ^^^^^^^^^^^^^^\\n )\\n ^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 300, in log_state_dict_report\\n report = loading_info.create_loading_report(report_model)\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 204, in create_loading_report\\n tips += f\"\\\\n- {_style(\\'UNEXPECTED:\\', \\'orange\\')}\\\\t\" + _style(\\n ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 126, in _style\\n if sys.stdout is not None and sys.stdout.isatty():\\n ^^^^^^^^^^^^^^^^^\\nAttributeError: \\'Tee\\' object has no attribute \\'isatty\\'\\n'), ('/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T092810Z/bert-base/error.txt', 'Traceback (most recent call last):\\n File \"/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py\", line 347, in main\\n results.append(train_one(spec, cfg, frames, folder, resume=bool(args.resume_attempt)))\\n ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py\", line 144, in train_one\\n model = AutoModelForSequenceClassification.from_pretrained(\\n ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\\n spec[\"checkpoint\"], revision=spec[\"revision\"], num_labels=6,\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n id2label=dict(enumerate(LABELS)), label2id={s: i for i, s in enumerate(LABELS)},\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n attn_implementation=\"sdpa\").cuda()\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 409, in from_pretrained\\n return model_class.from_pretrained(\\n ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\\n pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n )\\n ^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py\", line 4340, in from_pretrained\\n loading_info = cls._finalize_model_loading(model, load_config, loading_info)\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py\", line 4524, in _finalize_model_loading\\n log_state_dict_report(\\n ~~~~~~~~~~~~~~~~~~~~~^\\n model=model,\\n ^^^^^^^^^^^^\\n ...<3 lines>...\\n logger=logger,\\n ^^^^^^^^^^^^^^\\n )\\n ^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 300, in log_state_dict_report\\n report = loading_info.create_loading_report(report_model)\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 204, in create_loading_report\\n tips += f\"\\\\n- {_style(\\'UNEXPECTED:\\', \\'orange\\')}\\\\t\" + _style(\\n ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 126, in _style\\n if sys.stdout is not None and sys.stdout.isatty():\\n ^^^^^^^^^^^^^^^^^\\nAttributeError: \\'Tee\\' object has no attribute \\'isatty\\'\\n')] [('/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T092708Z/stderr.log', '\\nconfig.json: 0%| | 0.00/570 [00:00<?, ?B/s]\\nconfig.json: 100%|##########| 570/570 [00:00<00:00, 1.64MB/s]\\n\\ntokenizer_config.json: 0%| | 0.00/48.0 [00:00<?, ?B/s]\\ntokenizer_config.json: 100%|##########| 48.0/48.0 [00:00<00:00, 112kB/s]\\n\\nvocab.txt: 0%| | 0.00/232k [00:00<?, ?B/s]\\nvocab.txt: 100%|##########| 232k/232k [00:00<00:00, 77.1MB/s]\\n\\ntokenizer.json: 0%| | 0.00/466k [00:00<?, ?B/s]\\ntokenizer.json: 100%|##########| 466k/466k [00:00<00:00, 110MB/s]\\n\\n\\nmodel.safetensors: reconstructing file: 0%| | 0.00B / 440MB \\x1b[A\\nmodel.safetensors: downloading bytes: | 0.00B \\nmodel.safetensors: downloading bytes: 1 | 7.42MB \\nmodel.safetensors: downloading bytes: 6 | 28.4MB, 718kB/s \\nmodel.safetensors: downloading bytes: #4 | 63.0MB, 2.73MB/s \\nmodel.safetensors: downloading bytes: ##2 | 97.7MB, 6.04MB/s \\nmodel.safetensors: downloading bytes: ###1 | 138MB, 9.32MB/s \\nmodel.safetensors: downloading bytes: ###9 | 172MB, 13.1MB/s \\nmodel.safetensors: downloading bytes: ####8 | 213MB, 16.2MB/s \\nmodel.safetensors: downloading bytes: #####7 | 254MB, 19.9MB/s \\nmodel.safetensors: downloading bytes: ####### | 312MB, 26.7MB/s \\nmodel.safetensors: downloading bytes: ########1 | 358MB, 30.8MB/s \\n\\nmodel.safetensors: reconstructing file: 46%|####5 | 201MB / 440MB \\x1b[A\\n\\nmodel.safetensors: reconstructing file: 61%|###### | 268MB / 440MB, 18.8MB/s \\x1b[A\\nmodel.safetensors: downloading bytes: #########1| 405MB, 33.6MB/s \\n\\nmodel.safetensors: reconstructing file: 100%|##########| 440MB / 440MB, 24.9MB/s \\x1b[A\\nmodel.safetensors: downloading bytes: ##########| 415MB, 36.8MB/s \\nmodel.safetensors: downloading bytes: ##########| 415MB, 36.8MB/s \\n\\nmodel.safetensors: reconstructing file: 100%|##########| 440MB / 440MB, 40.2MB/s \\n\\nLoading weights: 0%| | 0/199 [00:00<?, ?it/s]\\nLoading weights: 100%|##########| 199/199 [00:00<00:00, 3722.55it/s]\\nTraceback (most recent call last):\\n File \"/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py\", line 365, in <module>\\n main()\\n ~~~~^^\\n File \"/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py\", line 347, in main\\n results.append(train_one(spec, cfg, frames, folder, resume=bool(args.resume_attempt)))\\n ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py\", line 144, in train_one\\n model = AutoModelForSequenceClassification.from_pretrained(\\n ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\\n spec[\"checkpoint\"], revision=spec[\"revision\"], num_labels=6,\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n id2label=dict(enumerate(LABELS)), label2id={s: i for i, s in enumerate(LABELS)},\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n attn_implementation=\"sdpa\").cuda()\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 409, in from_pretrained\\n return model_class.from_pretrained(\\n ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\\n pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n )\\n ^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py\", line 4340, in from_pretrained\\n loading_info = cls._finalize_model_loading(model, load_config, loading_info)\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py\", line 4524, in _finalize_model_loading\\n log_state_dict_report(\\n ~~~~~~~~~~~~~~~~~~~~~^\\n model=model,\\n ^^^^^^^^^^^^\\n ...<3 lines>...\\n logger=logger,\\n ^^^^^^^^^^^^^^\\n )\\n ^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 300, in log_state_dict_report\\n report = loading_info.create_loading_report(report_model)\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 204, in create_loading_report\\n tips += f\"\\\\n- {_style(\\'UNEXPECTED:\\', \\'orange\\')}\\\\t\" + _style(\\n ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 126, in _style\\n if sys.stdout is not None and sys.stdout.isatty():\\n ^^^^^^^^^^^^^^^^^\\nAttributeError: \\'Tee\\' object has no attribute \\'isatty\\'\\n'), ('/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T092745Z/stderr.log', '\\nLoading weights: 0%| | 0/199 [00:00<?, ?it/s]\\nLoading weights: 100%|##########| 199/199 [00:00<00:00, 16361.52it/s]\\nTraceback (most recent call last):\\n File \"/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py\", line 365, in <module>\\n main()\\n ~~~~^^\\n File \"/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py\", line 347, in main\\n results.append(train_one(spec, cfg, frames, folder, resume=bool(args.resume_attempt)))\\n ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py\", line 144, in train_one\\n model = AutoModelForSequenceClassification.from_pretrained(\\n ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\\n spec[\"checkpoint\"], revision=spec[\"revision\"], num_labels=6,\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n id2label=dict(enumerate(LABELS)), label2id={s: i for i, s in enumerate(LABELS)},\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n attn_implementation=\"sdpa\").cuda()\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 409, in from_pretrained\\n return model_class.from_pretrained(\\n ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\\n pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n )\\n ^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py\", line 4340, in from_pretrained\\n loading_info = cls._finalize_model_loading(model, load_config, loading_info)\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py\", line 4524, in _finalize_model_loading\\n log_state_dict_report(\\n ~~~~~~~~~~~~~~~~~~~~~^\\n model=model,\\n ^^^^^^^^^^^^\\n ...<3 lines>...\\n logger=logger,\\n ^^^^^^^^^^^^^^\\n )\\n ^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 300, in log_state_dict_report\\n report = loading_info.create_loading_report(report_model)\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 204, in create_loading_report\\n tips += f\"\\\\n- {_style(\\'UNEXPECTED:\\', \\'orange\\')}\\\\t\" + _style(\\n ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 126, in _style\\n if sys.stdout is not None and sys.stdout.isatty():\\n ^^^^^^^^^^^^^^^^^\\nAttributeError: \\'Tee\\' object has no attribute \\'isatty\\'\\n'), ('/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T092810Z/stderr.log', '\\nLoading weights: 0%| | 0/199 [00:00<?, ?it/s]\\nLoading weights: 100%|##########| 199/199 [00:00<00:00, 5557.55it/s]\\nTraceback (most recent call last):\\n File \"/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py\", line 365, in <module>\\n main()\\n ~~~~^^\\n File \"/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py\", line 347, in main\\n results.append(train_one(spec, cfg, frames, folder, resume=bool(args.resume_attempt)))\\n ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py\", line 144, in train_one\\n model = AutoModelForSequenceClassification.from_pretrained(\\n ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\\n spec[\"checkpoint\"], revision=spec[\"revision\"], num_labels=6,\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n id2label=dict(enumerate(LABELS)), label2id={s: i for i, s in enumerate(LABELS)},\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n attn_implementation=\"sdpa\").cuda()\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 409, in from_pretrained\\n return model_class.from_pretrained(\\n ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\\n pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n )\\n ^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py\", line 4340, in from_pretrained\\n loading_info = cls._finalize_model_loading(model, load_config, loading_info)\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py\", line 4524, in _finalize_model_loading\\n log_state_dict_report(\\n ~~~~~~~~~~~~~~~~~~~~~^\\n model=model,\\n ^^^^^^^^^^^^\\n ...<3 lines>...\\n logger=logger,\\n ^^^^^^^^^^^^^^\\n )\\n ^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 300, in log_state_dict_report\\n report = loading_info.create_loading_report(report_model)\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 204, in create_loading_report\\n tips += f\"\\\\n- {_style(\\'UNEXPECTED:\\', \\'orange\\')}\\\\t\" + _style(\\n ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/loading_report.py\", line 126, in _style\\n if sys.stdout is not None and sys.stdout.isatty():\\n ^^^^^^^^^^^^^^^^^\\nAttributeError: \\'Tee\\' object has no attribute \\'isatty\\'\\n')]"
+  - 'region "Cell 5: Code cell:"':
+    - button "Run cell":
+    - generic: "[ ]"
+    - generic: print(sorted(backup.glob('*/bert-base/error.txt'))[-1].read_text().splitlines()[-1])
+    - region "Cell 5 output":
+      - generic "Show/hide output":
+        - button "Show/hide output"
+      - generic "Code cell output actions":
+        - button "Code cell output actions"
+      - generic: "AttributeError: 'Tee' object has no attribute 'isatty'"
+  - 'region "Cell 6: Code cell:"':
+    - button "Run cell":
+    - generic: "[ ]"
+    - generic: blob = urllib.request.urlopen('https://raw.githubusercontent.com/panvenaidu/Fake-News-Detection/9c7abf1/scripts/train_official_text.py').read(); assert hashlib.sha256(blob).hexdigest() == 'a13c0e5d97b2fe7661ce6a228d43d853f1aca703314cfa48688825b7b01701f9'; (remote/'train_official_text.py').write_bytes(blob); subprocess.run([sys.executable, '-u', str(remote/'train_official_text.py'), '--config', str(remote/'protocol.json'), '--data', str(data), '--output', str(backup)], check=True)
+    - region "Cell 6 output":
+      - generic "Show/hide output":
+        - button "Show/hide output"
+      - generic "Code cell output actions":
+        - button "Code cell output actions"
+      - iframe:
+        - generic: "---------------------------------------------------------------------------"
+        - generic: KeyboardInterrupt Traceback (most recent call last)
+        - text: "/tmp/ipykernel_1876/3514018030.py in <cell line: 0>() ----> 1 blob = urllib.request.urlopen("
+        - text: "'"
+        - link "https://raw.githubusercontent.com/panvenaidu/Fake-News-Detection/9c7abf1/scripts/train_official_text.py":
+          - /url: https://raw.githubusercontent.com/panvenaidu/Fake-News-Detection/9c7abf1/scripts/train_official_text.py
+        - text: "'"
+        - text: ).read(); assert hashlib.sha256(blob).hexdigest() == 'a13c0e5d97b2fe7661ce6a228d43d853f1aca703314cfa48688825b7b01701f9'; (remote/'train_official_text.py').write_bytes(blob); subprocess.run([sys.executable, '-u', str(remote/'train_official_text.py'), '--config', str(remote/'protocol.json'), '--data', str(data), '--output', str(backup)], check=True)
+        - button "4 frames":
+          - separator
+          - generic: 4 frames
+          - separator
+        - generic: "/usr/lib/python3.13/subprocess.py in _try_wait(self, wait_flags) 2041 \"\"\"All callers to this function MUST hold self._waitpid_lock.\"\"\" 2042 try: -> 2043 (pid, sts) = os.waitpid(self.pid, wait_flags) 2044 except ChildProcessError: 2045 # This happens if SIGCLD is set to be ignored or waiting"
+        - generic: "KeyboardInterrupt:"
+  - 'region "Cell 7: Code cell:"':
+    - button "Run cell":
+    - generic: "[ ]"
+    - generic: print('SOURCE',hashlib.sha256((remote/'train_official_text.py').read_bytes()).hexdigest()); print('PROCESSES',subprocess.getoutput('pgrep -af train_official_text')); print('LATEST',str(sorted(backup.glob('OFFICIAL-6W-*'))[-1])); print([(str(f.parent.parent.name),f.read_text().splitlines()[-1]) for f in sorted(backup.glob('*/bert-base/error.txt'))])
+    - region "Cell 7 output":
+      - generic "Show/hide output":
+        - button "Show/hide output"
+      - generic "Code cell output actions":
+        - button "Code cell output actions"
+      - generic: "SOURCE a13c0e5d97b2fe7661ce6a228d43d853f1aca703314cfa48688825b7b01701f9 PROCESSES 22930 /bin/sh -c pgrep -af train_official_text LATEST /content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T092810Z [('OFFICIAL-6W-TEXT-v2_seed42_20261008T092708Z', \"AttributeError: 'Tee' object has no attribute 'isatty'\"), ('OFFICIAL-6W-TEXT-v2_seed42_20261008T092745Z', \"AttributeError: 'Tee' object has no attribute 'isatty'\"), ('OFFICIAL-6W-TEXT-v2_seed42_20261008T092810Z', \"AttributeError: 'Tee' object has no attribute 'isatty'\")]"
+  - 'region "Cell 8: Code cell:"':
+    - button "Run cell":
+    - generic: "[ ]"
+    - generic: assert not ('trainer' in globals() and trainer.poll() is None), 'Trainer already running'; launch_log = backup/'launcher_20261008T1000Z.log'; trainer = subprocess.Popen([sys.executable,'-u',str(remote/'train_official_text.py'),'--config',str(remote/'protocol.json'),'--data',str(data),'--output',str(backup)],stdout=launch_log.open('a'),stderr=subprocess.STDOUT,start_new_session=True); print('Launched cloud trainer PID',trainer.pid,'Log',str(launch_log))
+    - region "Cell 8 output":
+      - generic "Show/hide output":
+        - button "Show/hide output"
+      - generic "Code cell output actions":
+        - button "Code cell output actions"
+      - iframe:
+        - generic: "---------------------------------------------------------------------------"
+        - generic: AssertionError Traceback (most recent call last)
+        - generic: "/tmp/ipykernel_1876/4281569286.py in <cell line: 0>() ----> 1 assert not ('trainer' in globals() and trainer.poll() is None), 'Trainer already running'; launch_log = backup/'launcher_20261008T1000Z.log'; trainer = subprocess.Popen([sys.executable,'-u',str(remote/'train_official_text.py'),'--config',str(remote/'protocol.json'),'--data',str(data),'--output',str(backup)],stdout=launch_log.open('a'),stderr=subprocess.STDOUT,start_new_session=True); print('Launched cloud trainer PID',trainer.pid,'Log',str(..."
+        - generic: "AssertionError: Trainer already running"
+  - 'region "Cell 9: Code cell:"':
+    - button "Run cell":
+    - generic: "[ ]"
+    - generic: print('TRAINER',trainer.pid,trainer.poll()); print('LOG',launch_log.read_text()[-600:]); current_attempt=sorted(backup.glob('OFFICIAL-6W-*'))[-1]; print('ATTEMPT',current_attempt.name); print([(p.parent.name,p.read_text()) for p in current_attempt.glob('*/status.json')])
+    - region "Cell 9 output":
+      - generic "Show/hide output":
+        - button "Show/hide output"
+      - generic "Code cell output actions":
+        - button "Code cell output actions"
+      - generic: "TRAINER 23054 None LOG point. Consider training on your downstream task. bert-base tokenizing official titles /usr/local/lib/python3.13/dist-packages/torch/autograd/graph.py:869: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:900.) return Variable._execution_engine.run_backward( # Calls into the C++ engine to run the backward pass bert-base epoch 1 step 500/17625 loss 1.6763 speed 240.6/s ATTEMPT OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z [('bert-base', '{\\n \"state\": \"training\",\\n \"model\": \"bert-base\",\\n \"epoch\": 1,\\n \"step\": 500,\\n \"steps_per_epoch\": 17625,\\n \"samples_seen_this_epoch\": 16000,\\n \"samples_per_second\": 240.56556478699738,\\n \"epoch_remaining_seconds\": 2277.965262755759,\\n \"optimizer_updates\": 499,\\n \"skipped_updates\": 1,\\n \"updated_utc\": \"2026-10-08T10:00:28.760145+00:00\"\\n}\\n')]"
+    - generic: Code
+    - generic: Text
+  - 'region "Cell 10: Code cell:"':
+    - button "Run cell":
+    - generic: "[ ]"
+    - code:
+      - generic: print(current_attempt.name); print((current_attempt/'bert-base/status.json').read_text()); print('Checkpoint', (current_attempt/'bert-base/resume_checkpoint.pt').exists()); print('Process',trainer.poll())
+      - textbox "Editor content"
+    - region "Cell 10 output":
+      - generic "Show/hide output":
+        - button "Show/hide output"
+      - generic "Code cell output actions":
+        - button "Code cell output actions"
+      - generic: "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z { \"state\": \"checkpointing\", \"model\": \"bert-base\", \"epoch\": 1, \"step\": 6000, \"updated_utc\": \"2026-10-08T10:12:53.340886+00:00\" } Checkpoint True Process None"
+    - generic: Code
+    - generic: Text
+  - 'region "Cell 11: Code cell:"':
+    - generic "Move cell up ⌘/Ctrl+M K":
+      - button "Move cell up ⌘/Ctrl+M K"
+    - generic "Move cell down ⌘/Ctrl+M J":
+      - button "Move cell down ⌘/Ctrl+M J" [disabled]
+    - generic "Available AI features":
+      - button "Available AI features"
+    - generic "Delete cell ⌘/Ctrl+M D":
+      - button "Delete cell ⌘/Ctrl+M D"
+    - generic "More cell actions":
+      - button "More cell actions"
+    - button "Run cell":
+      - progressbar
+    - generic: "[ ]"
+    - code:
+      - generic: import base64; exec(base64.b64decode('IiIiUmVhZC1vbmx5IGxpdmUgbW9uaXRvciBmb3IgdGhlIGd1YXJkZWQgQ2hyb21lIENvbGFiIGxhdW5jaC4iIiIKaW1wb3J0IGpzb24KaW1wb3J0IHRpbWUKZnJvbSBJUHl0aG9uLmRpc3BsYXkgaW1wb3J0IGNsZWFyX291dHB1dAoKd2hpbGUgVHJ1ZToKICAgIGNsZWFyX291dHB1dCh3YWl0PVRydWUpCiAgICBwcmludChjdXJyZW50X2F0dGVtcHQubmFtZSwgZmx1c2g9VHJ1ZSkKICAgIGZvciBtb2RlbF9uYW1lIGluICgnYmVydC1iYXNlJywgJ21vZGVybmJlcnQtYmFzZScpOgogICAgICAgIGZvbGRlciA9IGN1cnJlbnRfYXR0ZW1wdCAvIG1vZGVsX25hbWUKICAgICAgICBzdGF0ZV9maWxlID0gZm9sZGVyIC8gJ3N0YXR1cy5qc29uJwogICAgICAgIGlmIG5vdCBzdGF0ZV9maWxlLmV4aXN0cygpOgogICAgICAgICAgICBwcmludChtb2RlbF9uYW1lLCAncXVldWVkJywgZmx1c2g9VHJ1ZSkKICAgICAgICAgICAgY29udGludWUKICAgICAgICBzdGF0ZSA9IGpzb24ubG9hZHMoc3RhdGVfZmlsZS5yZWFkX3RleHQoKSkKICAgICAgICBoaXN0b3J5X2ZpbGUgPSBmb2xkZXIgLyAnaGlzdG9yeS5qc29uJwogICAgICAgIGhpc3RvcnkgPSBqc29uLmxvYWRzKGhpc3RvcnlfZmlsZS5yZWFkX3RleHQoKSkgaWYgaGlzdG9yeV9maWxlLmV4aXN0cygpIGVsc2UgW10KICAgICAgICBsYXN0ID0gaGlzdG9yeVstMV1bJ3ZhbGlkYXRpb24nXSBpZiBoaXN0b3J5IGVsc2UgTm9uZQogICAgICAgIHJlY292ZXJ5X2ZpbGUgPSBmb2xkZXIgLyAncmVjb3ZlcnlfY2hlY2twb2ludC5qc29uJwogICAgICAgIHJlY292ZXJ5ID0ganNvbi5sb2FkcyhyZWNvdmVyeV9maWxlLnJlYWRfdGV4dCgpKSBpZiByZWNvdmVyeV9maWxlLmV4aXN0cygpIGVsc2UgTm9uZQogICAgICAgIHByaW50KG1vZGVsX25hbWUsIHN0YXRlWydzdGF0ZSddLCAnZXBvY2gnLCBzdGF0ZS5nZXQoJ2Vwb2NoJyksICdiYXRjaCcsIHN0YXRlLmdldCgnc3RlcCcpLAogICAgICAgICAgICAgICd1cGRhdGVzJywgc3RhdGUuZ2V0KCdvcHRpbWl6ZXJfdXBkYXRlcycpLCBmbHVzaD1UcnVlKQogICAgICAgIGlmIHJlY292ZXJ5OgogICAgICAgICAgICBwcmludCgnU2F2ZWQgcmVjb3Zlcnk6JywgcmVjb3ZlcnlbJ2Vwb2NoJ10sIHJlY292ZXJ5WydzdGVwJ10sIGZsdXNoPVRydWUpCiAgICAgICAgaWYgbGFzdDoKICAgICAgICAgICAgcHJpbnQoJ0xhdGVzdCB2YWwgYWNjdXJhY3kvRjE6Jywgcm91bmQobGFzdFsnYWNjdXJhY3knXSwgNCksIHJvdW5kKGxhc3RbJ21hY3JvX2YxJ10sIDQpLCBmbHVzaD1UcnVlKQogICAgICAgIGlmIHN0YXRlWydzdGF0ZSddID09ICdmYWlsZWQnOgogICAgICAgICAgICBwcmludCgnRXJyb3I6Jywgc3RhdGVbJ3JlYXNvbiddLnNwbGl0bGluZXMoKVstMV0sIGZsdXNoPVRydWUpCiAgICAgICAgaWYgKGZvbGRlciAvICdyZXN1bHQuanNvbicpLmV4aXN0cygpOgogICAgICAgICAgICByZXN1bHQgPSBqc29uLmxvYWRzKChmb2xkZXIgLyAncmVzdWx0Lmpzb24nKS5yZWFkX3RleHQoKSkKICAgICAgICAgICAgcHJpbnQoJ0ZpbmFsIHRlc3QgYWNjdXJhY3kvRjE6Jywgcm91bmQocmVzdWx0Wyd0ZXN0J11bJ2FjY3VyYWN5J10sNCksIHJvdW5kKHJlc3VsdFsndGVzdCddWydtYWNyb19mMSddLDQpLCBmbHVzaD1UcnVlKQogICAgcmV0dXJuX2NvZGUgPSB0cmFpbmVyLnBvbGwoKQogICAgcHJpbnQoJ1Byb2Nlc3M6JywgcmV0dXJuX2NvZGUsICdVVEM6JywgdGltZS5zdHJmdGltZSgnJUg6JU06JVMnLCB0aW1lLmdtdGltZSgpKSwgZmx1c2g9VHJ1ZSkKICAgIGlmIHJldHVybl9jb2RlIGlzIG5vdCBOb25lOgogICAgICAgIGJyZWFrCiAgICB0aW1lLnNsZWVwKDMwKQo='))
+      - textbox "Editor content": import base64; exec(base64.b64decode('IiIiUmVhZC1vbmx5IGxpdmUgbW9uaXRvciBmb3IgdGhlIGd1YXJkZWQgQ2hyb21lIENvbGFiIGxhdW5jaC4iIiIKaW1wb3J0IGpzb24KaW1wb3J0IHRpbWUKZnJvbSBJUHl0aG9uLmRpc3BsYXkgaW1wb3J0IGNsZWFyX291dHB1dAoKd2hpbGUgVHJ1ZToKICAgIGNsZWFyX291dHB1dCh3YWl0PVRydWUpCiAgICBwcmludChjdXJyZW50X2F0dGVtcHQubmFtZSwgZmx1c2g9VHJ1ZSkKICAgIGZvciBtb2RlbF9uYW1lIGluICgnYmVydC1iYXNlJywgJ21vZGVybmJlcnQtYmFzZScpOgogICAgICAgIGZvbGRlciA9IGN1cnJlbnRfYXR0ZW1wdCAvIG1vZGVsX25hbWUKICAgICAgICBzdGF0ZV9maWxlID0gZm9sZGVyIC
+    - region "Cell 11 output":
+      - generic "Show/hide output":
+        - button "Show/hide output"
+      - generic "Code cell output actions":
+        - button "Code cell output actions"
+      - generic: "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z bert-base training epoch 3 batch 1500 updates 36735 Saved recovery: 2 17625 Latest val accuracy/F1: 0.8243 0.7582 modernbert-base queued Process: None UTC: 11:27:15"
+    - generic: Code
+    - generic: Text
+  - link "Colab paid products Link will open in a new tab":
+    - /url: /signup?utm_source=footer&utm_medium=link&utm_campaign=footer_links
+    - text: Colab paid products
+  - text: "-"
+  - link "Cancel contracts here Link will open in a new tab":
+    - /url: /cancel-subscription
+    - text: Cancel contracts here
+- generic "Resources":
+  - generic: Resources
+- generic "More tab actions":
+  - button "More tab actions"
+- generic "Close all tabs":
+  - button "Close all tabs"
+- text: You are not subscribed.
+- link "Learn more":
+  - /url: /signup?utm_source=resource_tab&utm_medium=link&utm_campaign=payg_learn_more
+- text: You currently have zero compute units available. Resources offered free of charge are not guaranteed. Purchase more units
+- link "here":
+  - /url: /signup?utm_source=resource_tab&utm_medium=link&utm_campaign=payg_learn_more
+- text: .
+- generic: At your current usage level, this runtime may last up to 1 hour 50 minutes.
+- button "Manage sessions":
+  - generic: Manage sessions
+- note "Upgrade to Google AI Ultra":
+  - text: Want access to premium GPUs?
+  - link "Upgrade to Google AI Ultra Link will open in a new tab":
+    - /url: /signup?utm_source=colab&utm_medium=link&utm_campaign=want_more_resources_pro_plus
+    - text: Upgrade to Google AI Ultra
+  - generic "Dismiss":
+    - button "Dismiss"
+- generic: Not connected to runtime.
+- button "Change runtime type":
+  - generic: Change runtime type
+- generic "Toggle Gemini":
+  - button "Toggle Gemini"
+- region "Runtime status bar":
+  - button "Variables":
+    - generic: Variables
+  - button "Terminal":
+    - generic: Terminal
+  - generic: Resuming execution
+- alert
+- alert
