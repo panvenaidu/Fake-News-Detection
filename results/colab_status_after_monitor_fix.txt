@@ -1,8 +1,8 @@
 OFFICIAL FAKEDDIT — SIX-CLASS TEXT TRAINING
-Checked: 08 Oct 2026 06:37:44 PM IST
+Checked: 08 Oct 2026 06:41:46 PM IST
 BERT trainer: RUNNING
-Stage: checkpointing | Epoch: 5 of 6 | Batch: 9000 of 17625
-GPU: Tesla T4, 59 %, 3641 MiB
+Stage: training | Epoch: 5 of 6 | Batch: 10500 of 17625
+GPU: Tesla T4, 49 %, 3641 MiB
 Latest validation: accuracy 82.74% | Macro-F1 77.87% (epoch 4)
 Selected checkpoint by Macro-F1: epoch 4
 Saved recovery: epoch 5 batch 9000 at 2026-10-08T13:07:43.808724+00:00

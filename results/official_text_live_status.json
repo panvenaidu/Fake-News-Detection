@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-08T13:10:22.682876+00:00",
+  "updated_utc": "2026-10-08T13:11:46Z",
   "protocol_id": "OFFICIAL-6W-TEXT-v2",
   "colab_notebook_url": "https://colab.research.google.com/drive/11JK1wLLVPH8G7_oThnb0YkLMSR4URafF",
   "runtime": "Tesla T4",
@@ -19,12 +19,12 @@
   "checkpoints": "every 3000 batches and epoch boundary in mounted Drive",
   "raw_metrics_available": true,
   "training_cli_authorized": false,
-  "state": "checkpointing",
+  "state": "training",
   "cloud_attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
   "cloud_pid": 23054,
   "model": "bert-base",
   "epoch": 5,
-  "step": 9000,
+  "step": 10500,
   "steps_per_epoch": 17625,
   "optimizer_updates": null,
   "skipped_updates": null,
@@ -39,7 +39,7 @@
     "epoch_finished": false,
     "saved_utc": "2026-10-08T13:07:43.808724+00:00"
   },
-  "latest_cloud_output": "OFFICIAL FAKEDDIT \u2014 SIX-CLASS TEXT TRAINING\nChecked: 08 Oct 2026 06:37:44 PM IST\nBERT trainer: RUNNING\nStage: checkpointing | Epoch: 5 of 6 | Batch: 9000 of 17625\nGPU: Tesla T4, 59 %, 3641 MiB\nLatest validation: accuracy 82.74% | Macro-F1 77.87% (epoch 4)\nSelected checkpoint by Macro-F1: epoch 4\nSaved recovery: epoch 5 batch 9000 at 2026-10-08T13:07:43.808724+00:00\nbert-base final test pending\nmodernbert-base queued; not started\nThis status check is complete. BERT continues independently; run this cell once to refresh.\n",
+  "latest_cloud_output": "OFFICIAL FAKEDDIT \u2014 SIX-CLASS TEXT TRAINING\nChecked: 08 Oct 2026 06:41:46 PM IST\nBERT trainer: RUNNING\nStage: training | Epoch: 5 of 6 | Batch: 10500 of 17625\nGPU: Tesla T4, 49 %, 3641 MiB\nLatest validation: accuracy 82.74% | Macro-F1 77.87% (epoch 4)\nSelected checkpoint by Macro-F1: epoch 4\nSaved recovery: epoch 5 batch 9000 at 2026-10-08T13:07:43.808724+00:00\nbert-base final test pending\nmodernbert-base queued; not started\nThis status check is complete. BERT continues independently; run this cell once to refresh.\n",
   "continuation": {
     "automation_id": "complete-urop-text-training",
     "status": "ACTIVE",
@@ -56,7 +56,7 @@
   "cloud_evidence_folder_url": "https://drive.google.com/drive/folders/1bHlZH8jpaBBJq0XUu7Of3nh9gvAOfLaa",
   "cloud_attempt_url": "https://drive.google.com/drive/folders/1imzOwSiVgQ05YPKFGpK_9mVVtjUUKWdf",
   "cloud_bert_folder_url": "https://drive.google.com/drive/folders/15K7CqdsqrZVEdJH1rGNFhlnswNCdMD1j",
-  "cloud_reading_utc": "2026-10-08T13:07:44Z",
+  "cloud_reading_utc": "2026-10-08T13:11:46Z",
   "checkpoint_file_verified_in_drive": {
     "name": "resume_checkpoint.pt",
     "size_gb": 1.22,
@@ -93,7 +93,7 @@
   },
   "training_process": "active; advancing optimizer progress verified from recent Colab monitor output",
   "models": {
-    "bert-base": "training; finite health check verifies active process and GPU; epoch 5 batch 9000 checkpoint saved",
+    "bert-base": "training; epoch 5 batch 10500 verified after finite-monitor repair",
     "modernbert-base": "queued after BERT; not started"
   },
   "cloud_execution_cell": 8,
@@ -204,5 +204,13 @@
   },
   "monitor_cell_mode": "Finite one-shot; rerun cell 11 once for fresh status, not Run all. The trainer continues independently while kernel is idle.",
   "health_export_cell": 12,
-  "original_small_evidence_local_root": "/Users/panveenaidu/Downloads/SEM7/UROP/results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z"
+  "original_small_evidence_local_root": "/Users/panveenaidu/Downloads/SEM7/UROP/results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
+  "gpu_health_check_latest": {
+    "checked_utc": "2026-10-08T13:11:46Z",
+    "name": "Tesla T4",
+    "utilization_percent": 49,
+    "memory_used_mib": 3641,
+    "trainer_pid": 23054,
+    "trainer_poll": null
+  }
 }
