@@ -1,0 +1,26 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 16071.06it/s]
+/usr/local/lib/python3.13/dist-packages/torch/autograd/graph.py:869: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:900.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py", line 369, in <module>
+    main()
+    ~~~~^^
+  File "/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py", line 351, in main
+    results.append(train_one(spec, cfg, frames, folder, resume=bool(args.resume_attempt)))
+                   ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py", line 280, in train_one
+    checkpoint(epoch, len(loaders["train"]), True, total_loss, seen, 0.0, sampler_start)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py", line 206, in checkpoint
+    save_json(folder / "recovery_checkpoint.json", {"epoch": epoch, "step": index,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              "epoch_finished": finished, "saved_utc": utc(), "optimizer_updates": updates})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/UROP_OFFICIAL_6WAY_TEXT/train_official_text.py", line 65, in save_json
+    tmp.replace(path)
+    ~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/pathlib/_local.py", line 780, in replace
+    os.replace(self, target)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/bert-base/recovery_checkpoint.json.tmp' -> '/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/bert-base/recovery_checkpoint.json'

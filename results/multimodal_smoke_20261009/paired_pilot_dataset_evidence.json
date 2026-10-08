@@ -1,0 +1,55 @@
+{
+  "purpose": "Engineering pilot, not an official full-cohort benchmark",
+  "seed": 42,
+  "sampling": "proportional six-class selection by SHA256(seed,id), within each official split",
+  "official_cohort": 682661,
+  "historical_image_manifest_sha256": "fc74cb42288d366131ac764bf02f9212bacd7cab0af68442a003beaaff9fde20",
+  "splits": {
+    "train": {
+      "official_rows": 564000,
+      "available_images": 62635,
+      "pilot_rows": 2000,
+      "pilot_class_counts": {
+        "0": 769,
+        "1": 117,
+        "2": 370,
+        "3": 41,
+        "4": 624,
+        "5": 79
+      },
+      "pilot_ids_sha256": "86aba94d5496c679151838af5dbfd78992907e11510588f5550c9154c9ee6a1a"
+    },
+    "validation": {
+      "official_rows": 59342,
+      "available_images": 6685,
+      "pilot_rows": 300,
+      "pilot_class_counts": {
+        "0": 116,
+        "1": 18,
+        "2": 55,
+        "3": 6,
+        "4": 94,
+        "5": 11
+      },
+      "pilot_ids_sha256": "7084ed46f0ea28953f04e70ee3cdec58a18bfdf483faf95b542c085c633218dd"
+    },
+    "test": {
+      "official_rows": 59319,
+      "available_images": 6675,
+      "pilot_rows": 300,
+      "pilot_class_counts": {
+        "0": 116,
+        "1": 18,
+        "2": 56,
+        "3": 6,
+        "4": 92,
+        "5": 12
+      },
+      "pilot_ids_sha256": "de66f9fb0e4b0cf7be54fe4ffe26d3bd06512dcb739bac3f32e9de9bf2f4807d"
+    }
+  },
+  "available_official_pairs.csv_sha256": "bf207940f503120490666003f30e9a29327727e5789b978dcc92710dbee643ba",
+  "pilot_manifest.csv_sha256": "b8e0ee632cd847b60ec00ca7f253a0456602fd70b95c541fddd378bf66d7e4bd",
+  "archive_bytes": 296841347,
+  "archive_sha256": "0e38e9138dd6117d1e58a6646809c738ef75ec6e04ba27934d0f783bdf92f853"
+}

@@ -27,6 +27,12 @@ build/
 venv/
 env/
 .env/
+.venv-urop/
+.cache/
+.tmp/
+
+# Local literature extraction and browser diagnostics may contain personal UI data.
+results/literature_survey_extracted_*.txt
 
 # Jupyter
 .ipynb_checkpoints/

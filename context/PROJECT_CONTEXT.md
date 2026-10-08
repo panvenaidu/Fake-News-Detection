@@ -1,4 +1,8 @@
-> **Current update (2026-10-08):** Official release migration is documented in `context/AUDIT_20261008.md`. Earlier 75,995-subset results are historical. Official text runs are prepared; training start/results are not yet verified.
+## Current state — renewed review, 8 October 2026
+
+Official six-way BERT text is INTERRUPTED, not complete: saved log confirms an epoch-boundary recovery-JSON rename failure; Colab GPU quota is now blocked. Last retrieved selected validation checkpoint is epoch4 (accuracy 82.7407%, Macro-F1 77.8682%). Epoch5 history/checkpoint exists in Drive but requires retrieval/verification; final test pending. ModernBERT has not been verified as started. Kaggle T4 fallback is configured; no GPU training on Kaggle verified yet.
+
+BERT+ResNet-50 maximum-fusion pilot is now IMPLEMENTED and synthetic smoke checks PASSED. Official split-preserving paired availability audit and 2,600-row pilot are prepared; cloud pilot training/results pending. See `context/RENEWED_AUDIT_20261009.md`, `scripts/train_multimodal_pilot.py`, `configs/multimodal_pilot_6way_v1.json`, `results/multimodal_smoke_20261009/smoke_result.json`. Historical notes below remain evidence, not the current status.
 
 # PROJECT CONTEXT — Multimodal Fake News Detection
 

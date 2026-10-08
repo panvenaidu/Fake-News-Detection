@@ -1,0 +1,6 @@
+{
+  "official_training_inputs.zip": "c7b62f7943a11f8f6d9e45cdf7954488faefd54118b2850aad3856cd71d36d46",
+  "train_multimodal_pilot.py": "793b0867e3f3f672a2b1ba9787826cdacdc515d5301f22d9084aea1b8aed50f1",
+  "train_official_text.py": "a13c0e5d97b2fe7661ce6a228d43d853f1aca703314cfa48688825b7b01701f9",
+  "multimodal_pilot_6way_v1.json": "80c28c353e92528af2cef01e5bb00a60bdc8bc48bc5bc81b346765d779583743"
+}

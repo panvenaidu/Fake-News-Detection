@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "kind": "synthetic CPU implementation check; no pretrained model or research metrics",
+  "checks": [
+    "six logits",
+    "finite loss",
+    "nonzero gradients through BOTH encoders and head",
+    "checkpoint roundtrip identical",
+    "RGB/RGBA/palette/grayscale preprocessing"
+  ],
+  "gradient_sums": {
+    "text": 50.92897484057261,
+    "image": 57476.3362788409,
+    "classifier": 1172.5662202835083
+  },
+  "torch": "2.8.0",
+  "torchvision": "0.23.0",
+  "utc": "2026-10-08T16:51:04.904829+00:00"
+}
