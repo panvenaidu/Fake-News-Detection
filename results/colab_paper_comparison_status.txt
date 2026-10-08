@@ -1,0 +1,6 @@
+OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z
+bert-base checkpointing epoch 4 batch 9000 updates None
+Saved recovery: 4 9000
+Latest val accuracy/F1: 0.8289 0.7775
+modernbert-base queued
+Process: None UTC: 12:26:02

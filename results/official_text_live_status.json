@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-08T12:19:17.544923+00:00",
+  "updated_utc": "2026-10-08T12:27:24.034334+00:00",
   "protocol_id": "OFFICIAL-6W-TEXT-v2",
   "colab_notebook_url": "https://colab.research.google.com/drive/11JK1wLLVPH8G7_oThnb0YkLMSR4URafF",
   "runtime": "Tesla T4",
@@ -19,15 +19,15 @@
   "checkpoints": "every 3000 batches and epoch boundary in mounted Drive",
   "raw_metrics_available": false,
   "training_cli_authorized": false,
-  "state": "training",
+  "state": "checkpointing",
   "cloud_attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
   "cloud_pid": 23054,
   "model": "bert-base",
   "epoch": 4,
-  "step": 5500,
+  "step": 9000,
   "steps_per_epoch": 17625,
-  "optimizer_updates": 58351,
-  "skipped_updates": 24,
+  "optimizer_updates": null,
+  "skipped_updates": null,
   "successful_recovery_checkpoint_verified": true,
   "validation_test_results_available": false,
   "modernbert_status": "queued_after_bert",
@@ -35,10 +35,10 @@
   "prior_cell_16_outcome": "KeyboardInterrupt before verified training; fixed source hash now verified in cloud",
   "recovery_checkpoint": {
     "epoch": 4,
-    "step": 3000,
+    "step": 9000,
     "epoch_finished": false
   },
-  "latest_cloud_output": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z\nbert-base training epoch 4 batch 5500 updates 58351\nSaved recovery: 4 3000\nLatest val accuracy/F1: 0.8289 0.7775\nmodernbert-base queued\nProcess: None UTC: 12:18:12\n",
+  "latest_cloud_output": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z\nbert-base checkpointing epoch 4 batch 9000 updates None\nSaved recovery: 4 9000\nLatest val accuracy/F1: 0.8289 0.7775\nmodernbert-base queued\nProcess: None UTC: 12:26:02\n",
   "continuation": {
     "automation_id": "complete-urop-text-training",
     "status": "ACTIVE",
@@ -55,7 +55,7 @@
   "cloud_evidence_folder_url": "https://drive.google.com/drive/folders/1bHlZH8jpaBBJq0XUu7Of3nh9gvAOfLaa",
   "cloud_attempt_url": "https://drive.google.com/drive/folders/1imzOwSiVgQ05YPKFGpK_9mVVtjUUKWdf",
   "cloud_bert_folder_url": "https://drive.google.com/drive/folders/15K7CqdsqrZVEdJH1rGNFhlnswNCdMD1j",
-  "cloud_reading_utc": "2026-10-08T12:18:12Z",
+  "cloud_reading_utc": "2026-10-08T12:26:02Z",
   "checkpoint_file_verified_in_drive": {
     "name": "resume_checkpoint.pt",
     "size_gb": 1.22,
@@ -88,12 +88,12 @@
   },
   "training_process": "active; advancing optimizer progress verified from recent Colab monitor output",
   "models": {
-    "bert-base": "training; epoch 4 batch 5500 verified",
+    "bert-base": "checkpointing; epoch 4 batch 9000 verified",
     "modernbert-base": "queued after BERT; not started"
   },
   "cloud_execution_cell": 8,
   "monitor_cell": 11,
-  "skipped_updates_note": "Derived from 58375 batches minus 58351 successful optimizer updates.",
+  "skipped_updates_note": "Checkpointing monitor does not expose optimizer counters; last training counters preserved under last_successful_optimizer_observation.",
   "blocker": null,
   "colab_resource_panel_observed": {
     "observed_utc": "2026-10-08T11:13:59Z",
@@ -104,5 +104,12 @@
     "interpretation": "Free GPU remaining quota is not exposed; advancing timestamped output supports continued trainer progress despite Connecting/Resuming UI. Estimate is not guaranteed time remaining.",
     "evidence": "results/colab_gpu_quota_check.txt"
   },
-  "kaggle_alternative": "Existing rocky62 account now phone verified; GPU quota 0/30 hours used; no Kaggle training launched."
+  "kaggle_alternative": "Existing rocky62 account now phone verified; GPU quota 0/30 hours used; no Kaggle training launched.",
+  "last_successful_optimizer_observation": {
+    "epoch": 4,
+    "step": 5500,
+    "optimizer_updates": 58351,
+    "cloud_reading_utc": "2026-10-08T12:18:12Z"
+  },
+  "user_stop_preference": "Considering stop after waiting a few minutes; explicitly not stopping now, no stop instruction yet."
 }
