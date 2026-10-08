@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-08T17:39:31.220084+00:00",
+  "updated_utc": "2026-10-08T18:04:19.062441+00:00",
   "status": "interrupted",
   "attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
   "reason": "Drive recovery-JSON rename failed at epoch boundary; Colab GPU quota blocked",
@@ -237,7 +237,17 @@
     "runtime_stage": "Saved version2 completed successfully; no current text recovery job",
     "pilot_cell": "Version2 GPU pilot completed; version1 failed before training and is preserved",
     "interactive_session": "Cancelled before any verified execution",
-    "quota_observation_note": "30h observed before pilot, not a current remaining-quota measurement"
+    "quota_observation_note": "30h observed before pilot, not a current remaining-quota measurement",
+    "latest_quota_observation": {
+      "source": "Chrome Kaggle notebook editor, Session options",
+      "display": "00:09 / 30 hrs - Link to Colab Pro for more Quota",
+      "used_minutes_displayed": 9,
+      "total_hours_displayed": 30,
+      "remaining_minutes_derived": 1791,
+      "active_events_verified": 0,
+      "accelerator": "Tesla T4 x2 allocated; pilot trained on device0 only",
+      "completed_version_id": 356486031
+    }
   },
   "verified_epochs_completed": 5,
   "last_epoch_validation": {
