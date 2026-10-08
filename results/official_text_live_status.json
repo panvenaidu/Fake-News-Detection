@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-08T09:39:18.215639+00:00",
+  "updated_utc": "2026-10-08T09:44:46.619929+00:00",
   "protocol_id": "OFFICIAL-6W-TEXT-v2",
   "colab_notebook_url": "https://colab.research.google.com/drive/11JK1wLLVPH8G7_oThnb0YkLMSR4URafF",
   "runtime": "Tesla T4",
@@ -9,7 +9,7 @@
     "torch": "2.11.0+cu130"
   },
   "cloud_execution_cell": 16,
-  "training_process": "launched; first optimizer steps not yet verified",
+  "training_process": "launch observed; current running/failed state and optimizer progress unverified",
   "models": {
     "bert-base": "initializing or training; progress unverified",
     "modernbert-base": "queued after BERT; not verified as started"
@@ -27,5 +27,8 @@
   "blocker": "Chrome live controls became unavailable again; awaiting visible awake/unlocked desktop",
   "training_cli_authorized": false,
   "usage_reset_ist": "2026-10-08 17:35",
-  "remaining_usage_at_preflight_percent": 34
+  "remaining_usage_at_preflight_percent": 34,
+  "last_browser_observation": "Cell 16 initially Executing; later accessibility view showed 4 seconds elapsed, with no readable child-process output. Current progress cannot be inferred from that view.",
+  "remaining_usage_at_latest_check_percent": 6,
+  "latest_usage_check_utc": "2026-10-08T09:45:49.174071+00:00"
 }

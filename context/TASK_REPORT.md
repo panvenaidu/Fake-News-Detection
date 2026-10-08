@@ -193,3 +193,8 @@ Chrome recovered; Drive mounted on T4. Observed Python 3.13.15 / transformers 5.
 ## 2026-10-08T09:39:18.215639+00:00 — Corrected cloud process launched
 
 Pinned fixed source SHA256 `a13c0e5d97b2fe7661ce6a228d43d853f1aca703314cfa48688825b7b01701f9` loaded from pushed commit `9c7abf1`. Colab cell [16] visibly entered Executing state on Tesla T4. This verifies process launch only; first optimizer steps, current attempt folder, and metrics have not yet been observed. BERT runs first; ModernBERT remains queued. Live Chrome controls subsequently became unavailable. Do not rerun launch cells or replace data blindly: inspect current process/output and cloud status before deciding whether a recovery is needed. Latest machine-readable local status: `results/official_text_live_status.json`. Checkpoints write to Drive independently; local and GitHub synchronization needs a connected agent.
+
+
+## 2026-10-08T09:45:49.174071+00:00 — Usage/recovery checkpoint
+
+Last usage check: 6% remains; five-hour window resets 2026-10-08 17:35 IST. This supersedes the earlier 34% preflight reading. Latest source logging fix and recovery code are pushed. Current cloud training progress is unverified: cell 16 entered execution, but a later accessibility view showed 4 seconds elapsed without readable subprocess output. Do not claim active optimizer steps or metrics. Native Chrome controls/screenshots are unreliable/unavailable and the Chrome terminal has no usable prompt. User was asked to keep the Mac awake/unlocked with Chrome visible; Colab CLI fallback was explicitly declined. Preserve existing cloud attempts; inspect latest model status/error/checkpoint before any rerun. All scientific settings and dataset files remain unchanged.
