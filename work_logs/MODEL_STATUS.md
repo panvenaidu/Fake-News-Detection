@@ -138,3 +138,8 @@ User authorized full official six-way text training on Google Colab. BERT-base a
 - Account usage query: 34% remains in five-hour Codex window; reset 2026-10-08 17:35 IST. This is separate from Colab runtime lifetime and GPU limits.
 - Next action: restore Chrome automation or upload `notebooks/UROP_OFFICIAL_6WAY_TEXT_20261008.ipynb` in Chrome Colab, select T4 and Run all; verify Drive mount, dataset hashes and the first actual optimizer steps. Preserve exact cloud ATTEMPT path.
 - Then sync each model's small JSON/CSV/log evidence under `results/experiments/official_text/`, update these context/log/status files and push milestone documentation. Large TSVs, images and weights remain excluded from Git. Local/GitHub syncing requires a connected agent; cloud checkpoints write independently.
+
+
+## 2026-10-08T09:33:11.547672+00:00 — Cloud startup checkpoint
+
+Chrome recovered; Drive mounted on T4. Observed Python 3.13.15 / transformers 5.18.0 / torch 2.11.0+cu130. Official file/source verification succeeded. Three cloud initialization attempts (20261008T092708Z, 20261008T092745Z, 20261008T092810Z) failed with `AttributeError: Tee object has no attribute isatty` before optimizer steps. Cloud evidence is preserved under `/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/`. Fixed stream-method delegation; isatty/encoding/fileno checks and notebook syntax passed locally. Clean relaunch pending; no new validation/test metrics. Chrome-only preference honored. Setup commit 09876a88d70747cae62e6fac55946a547532e9e8 is pushed.

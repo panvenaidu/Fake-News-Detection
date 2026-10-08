@@ -6,8 +6,9 @@
   "cloud_training_started": false,
   "cloud_resume_tested": false,
   "sha256": {
-    "scripts/train_official_text.py": "bf4b8f8fd03035dc16756de3aabd8a987d9f06b1571ad3ed692e28df24da7e51",
+    "scripts/train_official_text.py": "a13c0e5d97b2fe7661ce6a228d43d853f1aca703314cfa48688825b7b01701f9",
     "configs/text_official_6way_v2.json": "b203b3ea15c247c8174bbd67733501e304a31c7b681c720a4ed61bbe05f57689",
-    "notebooks/UROP_OFFICIAL_6WAY_TEXT_20261008.ipynb": "d631ff5c31bf60f08fbbf78ed9f7c1fa07fb7684c957e83fb51d438ca1299469"
-  }
+    "notebooks/UROP_OFFICIAL_6WAY_TEXT_20261008.ipynb": "d73b7d11f226a141f5e9ff7b3cd63588018b5958a10d01119c718b0f9aa5aba8"
+  },
+  "tee_standard_stream_interface": "passed"
 }

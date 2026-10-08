@@ -49,6 +49,10 @@ class Tee:
         self.stream.flush()
         self.file.flush()
 
+    def __getattr__(self, name):
+        # Hugging Face progress bars inspect isatty/encoding/fileno.
+        return getattr(self.stream, name)
+
 
 def utc():
     return datetime.now(timezone.utc).isoformat()
