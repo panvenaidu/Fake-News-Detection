@@ -1,0 +1,31 @@
+{
+  "updated_utc": "2026-10-08T09:39:18.215639+00:00",
+  "protocol_id": "OFFICIAL-6W-TEXT-v2",
+  "colab_notebook_url": "https://colab.research.google.com/drive/11JK1wLLVPH8G7_oThnb0YkLMSR4URafF",
+  "runtime": "Tesla T4",
+  "environment": {
+    "python": "3.13.15",
+    "transformers": "5.18.0",
+    "torch": "2.11.0+cu130"
+  },
+  "cloud_execution_cell": 16,
+  "training_process": "launched; first optimizer steps not yet verified",
+  "models": {
+    "bert-base": "initializing or training; progress unverified",
+    "modernbert-base": "queued after BERT; not verified as started"
+  },
+  "source_sha256": "a13c0e5d97b2fe7661ce6a228d43d853f1aca703314cfa48688825b7b01701f9",
+  "source_git_commit": "9c7abf1",
+  "initial_failed_attempts": [
+    "20261008T092708Z",
+    "20261008T092745Z",
+    "20261008T092810Z"
+  ],
+  "failure": "logging wrapper lacked isatty; corrected and interface checked",
+  "checkpoints": "every 3000 batches and epoch boundary in mounted Drive",
+  "raw_metrics_available": false,
+  "blocker": "Chrome live controls became unavailable again; awaiting visible awake/unlocked desktop",
+  "training_cli_authorized": false,
+  "usage_reset_ist": "2026-10-08 17:35",
+  "remaining_usage_at_preflight_percent": 34
+}

@@ -1,4 +1,4 @@
-> **Current update (2026-10-08):** Official release migration is documented in `context/AUDIT_20261008.md`. Earlier 75,995-subset results are historical. Official text runs are prepared; training start/results are not yet verified.
+> **Current update (2026-10-08):** Official release migration is documented in `context/AUDIT_20261008.md`. Earlier 75,995-subset results are historical. The corrected official text process has launched in Colab; first optimizer steps and results are not yet verified. See `context/RESUME_HERE.md` and `results/official_text_live_status.json`.
 
 # Multimodal Fake News Detection Using Text + Image
 

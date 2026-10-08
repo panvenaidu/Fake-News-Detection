@@ -143,3 +143,8 @@ User authorized full official six-way text training on Google Colab. BERT-base a
 ## 2026-10-08T09:33:11.547672+00:00 — Cloud startup checkpoint
 
 Chrome recovered; Drive mounted on T4. Observed Python 3.13.15 / transformers 5.18.0 / torch 2.11.0+cu130. Official file/source verification succeeded. Three cloud initialization attempts (20261008T092708Z, 20261008T092745Z, 20261008T092810Z) failed with `AttributeError: Tee object has no attribute isatty` before optimizer steps. Cloud evidence is preserved under `/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/`. Fixed stream-method delegation; isatty/encoding/fileno checks and notebook syntax passed locally. Clean relaunch pending; no new validation/test metrics. Chrome-only preference honored. Setup commit 09876a88d70747cae62e6fac55946a547532e9e8 is pushed.
+
+
+## 2026-10-08T09:39:18.215639+00:00 — Corrected cloud process launched
+
+Pinned fixed source SHA256 `a13c0e5d97b2fe7661ce6a228d43d853f1aca703314cfa48688825b7b01701f9` loaded from pushed commit `9c7abf1`. Colab cell [16] visibly entered Executing state on Tesla T4. This verifies process launch only; first optimizer steps, current attempt folder, and metrics have not yet been observed. BERT runs first; ModernBERT remains queued. Live Chrome controls subsequently became unavailable. Do not rerun launch cells or replace data blindly: inspect current process/output and cloud status before deciding whether a recovery is needed. Latest machine-readable local status: `results/official_text_live_status.json`. Checkpoints write to Drive independently; local and GitHub synchronization needs a connected agent.
