@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-08T16:57:13.722024+00:00",
+  "updated_utc": "2026-10-08T17:39:31.220084+00:00",
   "status": "interrupted",
   "attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
   "reason": "Drive recovery-JSON rename failed at epoch boundary; Colab GPU quota blocked",
@@ -8,10 +8,10 @@
   "validation_macro_f1": 0.7786816742546674,
   "final_test_verified": false,
   "modernbert_started_verified": false,
-  "kaggle_training_verified": false,
+  "kaggle_training_verified": true,
   "multimodal_implemented": true,
   "multimodal_smoke": "passed",
-  "multimodal_cloud_pilot": "pending",
+  "multimodal_cloud_pilot": "completed",
   "scope": "See context/RENEWED_AUDIT_20261009.md",
   "previous_verified_snapshot": {
     "updated_utc": "2026-10-08T13:15:47Z",
@@ -234,7 +234,48 @@
     "private_inputs": "https://www.kaggle.com/datasets/rocky62/urop-official-six-way-inputs-and-paired-pilot",
     "accelerator_selected": "T4 x2",
     "quota_observed_remaining_hours": 30,
+    "runtime_stage": "Saved version2 completed successfully; no current text recovery job",
+    "pilot_cell": "Version2 GPU pilot completed; version1 failed before training and is preserved",
+    "interactive_session": "Cancelled before any verified execution",
+    "quota_observation_note": "30h observed before pilot, not a current remaining-quota measurement"
+  },
+  "verified_epochs_completed": 5,
+  "last_epoch_validation": {
+    "accuracy": 0.8280307370833474,
+    "macro_f1": 0.7783884649712434,
+    "weighted_f1": 0.8259979245082972,
+    "balanced_accuracy": 0.7534236036328652,
+    "loss": 0.6685243945077007,
+    "samples": 59342
+  },
+  "optimizer_updates_verified": 88091,
+  "skipped_updates_verified": 34,
+  "multimodal_pilot": {
+    "state": "completed",
+    "attempt": "MM-PILOT-6W-v1_seed42_20261009",
+    "kaggle_version_id": 356486031,
+    "url": "https://www.kaggle.com/code/rocky62/urop-official-six-way-text-recovery?scriptVersionId=356486031",
+    "local_evidence": "results/experiments/multimodal/MM-PILOT-6W-v1_seed42_20261009",
+    "validation_accuracy": 0.7933333333333333,
+    "validation_macro_f1": 0.5962019586111545,
+    "test_accuracy": 0.7433333333333333,
+    "test_macro_f1": 0.5590325881866459,
+    "pilot": true,
+    "samples": {
+      "train": 2000,
+      "validation": 300,
+      "test": 300
+    }
+  },
+  "current_text_gpu_job": "none",
+  "kaggle_text_training_verified": false,
+  "kaggle_previous_pending_stage": {
+    "notebook": "https://www.kaggle.com/code/rocky62/urop-official-six-way-text-recovery/edit",
+    "private_inputs": "https://www.kaggle.com/datasets/rocky62/urop-official-six-way-inputs-and-paired-pilot",
+    "accelerator_selected": "T4 x2",
+    "quota_observed_remaining_hours": 30,
     "runtime_stage": "Adding data; queue position 24",
-    "pilot_cell": "queued; no GPU optimizer step verified"
+    "pilot_cell": "Version #1 Save & Run All with GPU T4 x2 submitted; Fetching worker time, optimizer steps unverified",
+    "interactive_session": "Cancelled before any verified execution"
   }
 }

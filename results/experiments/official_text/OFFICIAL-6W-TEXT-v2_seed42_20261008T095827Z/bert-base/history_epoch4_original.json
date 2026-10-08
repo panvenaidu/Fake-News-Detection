@@ -54,19 +54,5 @@
     },
     "optimizer_updates": 70473,
     "skipped_updates": 27
-  },
-  {
-    "epoch": 5,
-    "train_loss": 0.1883444912429397,
-    "validation": {
-      "accuracy": 0.8280307370833474,
-      "macro_f1": 0.7783884649712434,
-      "weighted_f1": 0.8259979245082972,
-      "balanced_accuracy": 0.7534236036328652,
-      "loss": 0.6685243945077007,
-      "samples": 59342
-    },
-    "optimizer_updates": 88091,
-    "skipped_updates": 34
   }
 ]

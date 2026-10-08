@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "script_version_id": 356483712,
+  "url": "https://www.kaggle.com/code/rocky62/urop-official-six-way-text-recovery?scriptVersionId=356483712",
+  "runtime_seconds": 90,
+  "cuda_verified": true,
+  "python": "3.13.15",
+  "torch": "2.11.0+cu128",
+  "gpus": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "error": "ValueError: Image path escapes input root",
+  "stage": "first training batch loading, before optimizer updates",
+  "cause": "Bootstrap image symlink resolves outside protected input root; trainer correctly rejected it",
+  "fix": "Copy the already uploaded pilot images into the run input directory; keep original path guard and scientific configuration unchanged"
+}

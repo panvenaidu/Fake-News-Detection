@@ -1,6 +1,6 @@
 # Run only on the authorized private Kaggle GPU notebook with our input dataset.
 from pathlib import Path
-import hashlib, json, shutil, subprocess, sys, zipfile
+import hashlib, json, shutil, subprocess, sys, zipfile, csv
 
 work = Path('/kaggle/working/UROP'); work.mkdir(exist_ok=True)
 inputs = Path('/kaggle/input')
@@ -44,7 +44,15 @@ assert evidence_candidates
 pilot=work/'pilot_input'; pilot.mkdir(exist_ok=True)
 shutil.copy2(manifests[0],pilot/'pilot_manifest.csv')
 shutil.copy2(evidence_candidates[0],pilot/'dataset_evidence.json')
-if not (pilot/'images').exists(): (pilot/'images').symlink_to(manifests[0].parent/'images',target_is_directory=True)
+image_dst=pilot/'images'
+if image_dst.is_symlink(): image_dst.unlink()  # remove only our generated scratch symlink
+shutil.copytree(manifests[0].parent/'images',image_dst,dirs_exist_ok=True)
+with (pilot/'pilot_manifest.csv').open(newline='') as f:
+    pilot_rows=list(csv.DictReader(f))
+missing=[row['id'] for row in pilot_rows if not (pilot/row['image_path']).is_file()]
+assert len(pilot_rows)==2600 and not missing, ('Missing pilot images',missing[:10])
+assert all((pilot/row['image_path']).resolve().is_relative_to(pilot.resolve()) for row in pilot_rows)
+print('All 2600 pilot image paths verified inside the run folder',flush=True)
 source=work/'source'; source.mkdir(exist_ok=True)
 for name in ['train_multimodal_pilot.py','train_official_text.py']: shutil.copy2(source_root/name,source/name)
 cfg=work/'multimodal_pilot_6way_v1.json'; shutil.copy2(cfgs[0],cfg)

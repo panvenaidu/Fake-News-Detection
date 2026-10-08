@@ -1,3 +1,29 @@
+# Current faculty data and paper comparison — 8 October 2026
+
+The faculty-provided original TSVs are used unchanged for our six-way text model: **564,000 train / 59,342 validation / 59,319 public test**. Five validation epochs belong to **one BERT-base run**, not five independent experiments. It is interrupted before final testing; selected checkpoint is epoch4 by validation Macro-F1. ModernBERT has not started.
+
+| Full-cohort six-way text | Validation accuracy | Validation Macro-F1 | Test accuracy | Test Macro-F1 |
+|---|---:|---:|---:|---:|
+| Original paper BERT | 76.96% | Not reported in Table4 | 76.77% | Not reported in Table4 |
+| Our BERT-base epoch1 | 81.07% | 75.25% | Pending | Pending |
+| Our BERT-base epoch2 | 82.43% | 75.82% | Pending | Pending |
+| Our BERT-base epoch3 | 82.89% | 77.75% | Pending | Pending |
+| Our BERT-base epoch4 — selected | **82.74%** | **77.87%** | Pending | Pending |
+| Our BERT-base epoch5 | 82.80% | 77.84% | Pending | Pending |
+
+Selected validation accuracy is numerically **5.78 percentage points** above the paper. This is provisional: our BERT-base fine-tuning differs from its BERT-large feature pipeline; released TSVs have 335 fewer rows than its stated multimodal count. Final test is pending. The 86.54%/86.44% paper text scores are two-way, not six-way. [Original paper, Table4](https://arxiv.org/pdf/1911.03854).
+
+| Six-way text+image — different cohorts, not a direct benchmark comparison | Training / validation / test rows | Validation accuracy | Validation Macro-F1 | Test accuracy | Test Macro-F1 |
+|---|---|---:|---:|---:|---:|
+| Original paper BERT+ResNet50 maximum fusion | Original paper multimodal cohort | 86.00% | Not reported in Table4 | 85.88% | Not reported in Table4 |
+| Our completed BERT-base+ResNet50 pilot | **2,000 / 300 / 300** | **79.33%** | **59.62%** | **74.33%** | **55.90%** |
+
+One multimodal pilot completed three GPU epochs and final testing on private Kaggle version2. Version1 failed before the first optimizer step and is not a completed model run. The pilot uses original official titles/labels and unchanged split membership from the 75,995 available paired rows. It proves the pipeline works; it does not establish full-cohort performance. Imposter test F1=0 on six examples. Image-only training remains pending.
+
+Original full-precision five-epoch text history: `results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/bert-base/history.json`. Original multimodal metrics/class reports/confusion matrices/environment: `results/experiments/multimodal/MM-PILOT-6W-v1_seed42_20261009/`. Short current status: `results/FACULTY_STATUS_20261009.md`. Earlier observations below are preserved as historical, not current status.
+
+---
+
 # Faculty dataset training and original-paper comparison
 
 Checked 2026-10-08; latest cloud monitor 12:26:02 UTC / 17:56:02 IST.

@@ -1,0 +1,9 @@
+{
+  "url": "https://www.kaggle.com/code/rocky62/urop-official-six-way-text-recovery/notebook?scriptVersionId=356486031",
+  "script_version_id": 356486031,
+  "method": "Original rendered notebook stdout extracted through Chrome UI; JSON whitespace normalized; values unchanged",
+  "retrieved_utc": "2026-10-08T17:35:18.461Z",
+  "archive_download": "UI download initiated; browser download-event capture timed out; archive not yet locally verified",
+  "additional_retrieval": "Original class reports and environment parsed from rendered JSON tree; confusion matrices read from rendered CSV table. No hidden application state or backend used. JSON/CSV formatting normalized.",
+  "unretrieved_files": "Original prediction CSVs (preview limited to first49 rows) and model weights/recovery tensors remain in saved private Kaggle output."
+}

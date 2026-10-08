@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "checks": [
+    "Both original 6x6 confusion matrices sum to 300; diagonal sums match accuracy",
+    "Class supports and F1 match original reports",
+    "Macro-F1, weighted-F1 and balanced accuracy recomputed from confusion matrices",
+    "All three original epoch validations parsed from notebook stdout"
+  ],
+  "micro_f1": {
+    "validation": 0.7933333333333333,
+    "test": 0.7433333333333333
+  },
+  "micro_f1_note": "Derived for single-label multiclass over all six labels; equal to accuracy",
+  "prediction_csv_sync": "Not yet retrieved; cloud output files preserved",
+  "cohort": "2000 train / 300 validation / 300 test engineering pilot"
+}

@@ -1,0 +1,11 @@
+{
+  "kind": "Real image staging regression check, no research metrics",
+  "copied_images_loaded": 2,
+  "shape": [
+    3,
+    224,
+    224
+  ],
+  "original_external_symlink_rejected": true,
+  "result": "passed"
+}

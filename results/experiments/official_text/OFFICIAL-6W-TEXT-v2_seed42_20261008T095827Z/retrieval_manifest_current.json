@@ -1,0 +1,98 @@
+{
+  "method": "Hashes of current synchronized artifacts; epoch5 viewer whitespace may differ; original epoch4 bytes archived",
+  "utc": "2026-10-08T17:39:31.220084+00:00",
+  "files": {
+    "dataset_evidence.json": {
+      "bytes": 1055,
+      "sha256": "cd0f08e46ce0a5b13f07ef81868e44254724a30d06efbb4ef0ed06b23965668f"
+    },
+    "retrieval_manifest.json": {
+      "bytes": 232,
+      "sha256": "c891d984002c4aa1fe51c8a0fe237e57acad60ffa4a0f43be8f049bda0302f25"
+    },
+    "pip_freeze.txt": {
+      "bytes": 14183,
+      "sha256": "351c23aaefade158854385b4d1552e30cf081c996afda3657c9138b1cce40014"
+    },
+    "protocol.json": {
+      "bytes": 1701,
+      "sha256": "b203b3ea15c247c8174bbd67733501e304a31c7b681c720a4ed61bbe05f57689"
+    },
+    "environment.json": {
+      "bytes": 2188,
+      "sha256": "1c5547c370d59347666d9164ddc32c0f8f18aea91b746840eeb0291a2e3fa3db"
+    },
+    "retrieval_manifest_epoch4_original.json": {
+      "bytes": 2438,
+      "sha256": "57a2333d7f90cc34003e8d4f3d0d3aecbd697b8cccc3ac4f62148a506a621d53"
+    },
+    "bert-base/best_checkpoint.json": {
+      "bytes": 246,
+      "sha256": "8afc3b780f55d90b6fcbd08112cffa2dde8d1d83d72a8181b3c8f460698f4d11"
+    },
+    "bert-base/validation_metrics.json": {
+      "bytes": 201,
+      "sha256": "d8177b04ef1bc8fd3e026801c1219b379f50fbf9000319c8e828750ab6098f05"
+    },
+    "bert-base/history_epoch4_original.json": {
+      "bytes": 1477,
+      "sha256": "9d95976d83589e9c8fb370b7c0f0e02f301b41ba6bbdac6f16ddb7458418540f"
+    },
+    "bert-base/validation_epoch3_observed.json": {
+      "bytes": 241,
+      "sha256": "72f1dcc930a4989d490a5981c603190ae59e70235d238ee22e9fa44ab3da7b86"
+    },
+    "bert-base/config.json": {
+      "bytes": 1108,
+      "sha256": "864d63c4c2c4f02b1ec8eabdf40a0315af6a120df8775edc01d80e8c9d1d93bd"
+    },
+    "bert-base/recovery_checkpoint.json": {
+      "bytes": 141,
+      "sha256": "86daa68104d8ec47f467b8a901f82ca8aa70655566b739a400671f51d9e1cb83"
+    },
+    "bert-base/history.json": {
+      "bytes": 1846,
+      "sha256": "2766b7252c0e64d8bd0e25efb1f516e995db72774496ae6357fddf8040acb58f"
+    },
+    "bert-base/status_at_epoch5_interruption.json": {
+      "bytes": 139,
+      "sha256": "a93f5446e0ea0e50602c5a543d6459c475823c180f46d66867bfded500bba294"
+    },
+    "bert-base/history_epoch5_retrieval.json": {
+      "bytes": 392,
+      "sha256": "dd549822beb8a74c12f9e2a166b40d457cc27b0462c0067dbe11bc3cc03e9821"
+    },
+    "bert-base/validation_epoch1_observed.json": {
+      "bytes": 582,
+      "sha256": "a9c2fcc941dc9626d3b8a69942bd799b4adbea0fcac5e7f84c2b53515309f784"
+    },
+    "bert-base/validation_classification_report.json": {
+      "bytes": 1281,
+      "sha256": "6018fb88183b4cd5ab16327849c012e493f76a4a5b5e9db2af5d2927535e3172"
+    },
+    "bert-base/checkpoint_history.jsonl": {
+      "bytes": 3359,
+      "sha256": "9d31ee2ff7a7b04b82fffdf16340adae52deaa10394a39dbafee15c62b80681d"
+    },
+    "bert-base/validation_epoch2_observed.json": {
+      "bytes": 255,
+      "sha256": "e3c4054ac6be003408a6466b6aa01674583feba0fd9ba49a1d1092d3f7327305"
+    },
+    "bert-base/history_epoch5_drive_viewer.txt": {
+      "bytes": 1846,
+      "sha256": "2766b7252c0e64d8bd0e25efb1f516e995db72774496ae6357fddf8040acb58f"
+    },
+    "bert-base/validation_history.csv": {
+      "bytes": 765,
+      "sha256": "b7ecdce55f3339139656ff7fc08b3d393cf0991f09bd86c3cd7bb6a58d0181a4"
+    },
+    "bert-base/status.json": {
+      "bytes": 346,
+      "sha256": "f607d62fa167e76c15035887bc4dc60cf472028859648b1c90fcca4ee9a9151f"
+    },
+    "bert-base/validation_confusion_matrix.csv": {
+      "bytes": 326,
+      "sha256": "4b9249949bc36cef410477405bf6b64b78bf79f5d4eee081e59a3b0080aca340"
+    }
+  }
+}

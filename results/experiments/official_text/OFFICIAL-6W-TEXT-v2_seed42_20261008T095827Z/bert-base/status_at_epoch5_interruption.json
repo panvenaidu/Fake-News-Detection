@@ -1,0 +1,7 @@
+{
+  "state": "checkpointing",
+  "model": "bert-base",
+  "epoch": 5,
+  "step": 17625,
+  "updated_utc": "2026-10-08T13:28:02.893718+00:00"
+}

@@ -4,6 +4,7 @@ data/
 *.csv
 # Retain small official-run numerical evidence when synced from Colab.
 !results/experiments/official_text/**/*.csv
+!results/experiments/multimodal/**/*.csv
 images/
 images.zip
 

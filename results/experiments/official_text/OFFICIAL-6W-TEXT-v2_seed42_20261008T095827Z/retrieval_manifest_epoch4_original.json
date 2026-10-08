@@ -1,0 +1,63 @@
+{
+  "attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
+  "retrieval_method": "Original small cloud files compressed/base64-encoded by a finite Colab cell and read through Chrome output; decoded locally without numerical transformations",
+  "cloud_health_checked_utc": "2026-10-08T13:04:44.664181+00:00",
+  "cloud_gpu_utilization_percent": 73,
+  "cloud_gpu_memory_used_mib": 3641,
+  "cloud_trainer_pid": 23054,
+  "source_sha256": "a13c0e5d97b2fe7661ce6a228d43d853f1aca703314cfa48688825b7b01701f9",
+  "files": {
+    "dataset_evidence.json": {
+      "bytes": 1055,
+      "sha256": "cd0f08e46ce0a5b13f07ef81868e44254724a30d06efbb4ef0ed06b23965668f"
+    },
+    "pip_freeze.txt": {
+      "bytes": 14183,
+      "sha256": "351c23aaefade158854385b4d1552e30cf081c996afda3657c9138b1cce40014"
+    },
+    "protocol.json": {
+      "bytes": 1701,
+      "sha256": "b203b3ea15c247c8174bbd67733501e304a31c7b681c720a4ed61bbe05f57689"
+    },
+    "environment.json": {
+      "bytes": 2188,
+      "sha256": "1c5547c370d59347666d9164ddc32c0f8f18aea91b746840eeb0291a2e3fa3db"
+    },
+    "bert-base/best_checkpoint.json": {
+      "bytes": 246,
+      "sha256": "8afc3b780f55d90b6fcbd08112cffa2dde8d1d83d72a8181b3c8f460698f4d11"
+    },
+    "bert-base/validation_metrics.json": {
+      "bytes": 201,
+      "sha256": "d8177b04ef1bc8fd3e026801c1219b379f50fbf9000319c8e828750ab6098f05"
+    },
+    "bert-base/config.json": {
+      "bytes": 1108,
+      "sha256": "864d63c4c2c4f02b1ec8eabdf40a0315af6a120df8775edc01d80e8c9d1d93bd"
+    },
+    "bert-base/recovery_checkpoint.json": {
+      "bytes": 141,
+      "sha256": "86daa68104d8ec47f467b8a901f82ca8aa70655566b739a400671f51d9e1cb83"
+    },
+    "bert-base/history.json": {
+      "bytes": 1477,
+      "sha256": "9d95976d83589e9c8fb370b7c0f0e02f301b41ba6bbdac6f16ddb7458418540f"
+    },
+    "bert-base/validation_classification_report.json": {
+      "bytes": 1281,
+      "sha256": "6018fb88183b4cd5ab16327849c012e493f76a4a5b5e9db2af5d2927535e3172"
+    },
+    "bert-base/checkpoint_history.jsonl": {
+      "bytes": 3359,
+      "sha256": "9d31ee2ff7a7b04b82fffdf16340adae52deaa10394a39dbafee15c62b80681d"
+    },
+    "bert-base/status.json": {
+      "bytes": 346,
+      "sha256": "f607d62fa167e76c15035887bc4dc60cf472028859648b1c90fcca4ee9a9151f"
+    },
+    "bert-base/validation_confusion_matrix.csv": {
+      "bytes": 326,
+      "sha256": "4b9249949bc36cef410477405bf6b64b78bf79f5d4eee081e59a3b0080aca340"
+    }
+  }
+}
