@@ -1,7 +1,7 @@
 # Resume UROP official text work
 
 
-## 2026-10-08 14:50 IST — Setup/recovery checkpoint (current)
+## 2026-10-08 14:50 IST — Historical setup/recovery checkpoint
 
 - User authorized local and GitHub checkpoint updates for every model, and confirmed Chrome-only training; Colab CLI fallback declined. No Colab CLI credentials were granted.
 - Official dataset files and their hashes/counts are saved locally; full six-way cohort remains unchanged.
@@ -58,3 +58,17 @@ bert-base training epoch 1 batch 6500 updates 6496
 Saved recovery: 1 6000
 modernbert-base queued
 Process: None UTC: 10:15:46
+
+
+### 2026-10-08T10:22:41.633Z — Recovery checkpoint observed
+
+OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z
+bert-base checkpointing epoch 1 batch 9000 updates None
+Saved recovery: 1 9000
+modernbert-base queued
+Process: None UTC: 10:21:45
+
+
+## 2026-10-08T10:24:48.790731+00:00 — Automatic continuation and restart safeguards
+
+An hourly thread follow-up is now ACTIVE (automation id `complete-urop-text-training`), superseding earlier failed scheduling attempts. It inspects this existing cloud attempt, finishes authorized BERT/ModernBERT evaluations, recovers from checkpoints if needed, and synchronizes small evidence/context/GitHub milestones. It remains quiet when nothing meaningful changes. No paid compute authorization or Colab CLI access is granted. The local notebook and launch helper now inspect real cloud process arguments before starting, preserving the same scientific protocol and trainer source. Launch metadata and logs persist in Drive; a separate monitor displays checkpoint/validation/test progress. These local launch-cell changes have not been deployed over the currently running trainer and do not alter its source or results. Colab's resource panel reported zero purchased compute units and up to three hours of runtime at the observed usage level; continuation depends on actual GPU availability.

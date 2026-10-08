@@ -306,3 +306,8 @@
 ## 2026-10-08 — OFFICIAL-6W-TEXT-v2
 
 User authorized training on the full faculty-provided official multimodal release using unchanged public splits and six-way labels, on Colab cloud GPU. Initial text comparison: BERT-base and ModernBERT-base, seed 42; six-epoch cap with validation-only selection. Preserve all BP-6W-v1 data/results as historical. Paper binary accuracy is not the six-way target. No new metrics claimed before machine-generated results exist. Full details and unresolved release-count/image-availability questions: `context/AUDIT_20261008.md`.
+
+
+## 2026-10-08T10:24:48.790731+00:00 — Automatic continuation and restart safeguards
+
+An hourly thread follow-up is now ACTIVE (automation id `complete-urop-text-training`), superseding earlier failed scheduling attempts. It inspects this existing cloud attempt, finishes authorized BERT/ModernBERT evaluations, recovers from checkpoints if needed, and synchronizes small evidence/context/GitHub milestones. It remains quiet when nothing meaningful changes. No paid compute authorization or Colab CLI access is granted. The local notebook and launch helper now inspect real cloud process arguments before starting, preserving the same scientific protocol and trainer source. Launch metadata and logs persist in Drive; a separate monitor displays checkpoint/validation/test progress. These local launch-cell changes have not been deployed over the currently running trainer and do not alter its source or results. Colab's resource panel reported zero purchased compute units and up to three hours of runtime at the observed usage level; continuation depends on actual GPU availability.

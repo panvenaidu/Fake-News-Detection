@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-08T10:16:40.078Z",
+  "updated_utc": "2026-10-08T10:22:41.633Z",
   "protocol_id": "OFFICIAL-6W-TEXT-v2",
   "colab_notebook_url": "https://colab.research.google.com/drive/11JK1wLLVPH8G7_oThnb0YkLMSR4URafF",
   "runtime": "Tesla T4",
@@ -36,9 +36,9 @@
   "cloud_pid": 23054,
   "model": "bert-base",
   "epoch": 1,
-  "step": 6500,
+  "step": 8000,
   "steps_per_epoch": 17625,
-  "optimizer_updates": 6496,
+  "optimizer_updates": 7996,
   "skipped_updates": 3,
   "samples_per_second": 229.77983752167853,
   "cloud_status_updated_utc": "2026-10-08T10:01:41.513903+00:00",
@@ -49,8 +49,14 @@
   "prior_cell_16_outcome": "KeyboardInterrupt before verified training; fixed source hash now verified in cloud",
   "recovery_checkpoint": {
     "epoch": 1,
-    "step": 6000
+    "step": 9000
   },
   "cloud_status_observed_utc": "2026-10-08T10:07:26Z",
-  "latest_cloud_output": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z\nbert-base training epoch 1 batch 6500 updates 6496\nSaved recovery: 1 6000\nmodernbert-base queued\nProcess: None UTC: 10:15:46"
+  "latest_cloud_output": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z\nbert-base checkpointing epoch 1 batch 9000 updates None\nSaved recovery: 1 9000\nmodernbert-base queued\nProcess: None UTC: 10:21:45",
+  "continuation": {
+    "automation_id": "complete-urop-text-training",
+    "status": "ACTIVE",
+    "cadence": "hourly",
+    "purpose": "finish and synchronize both authorized text runs"
+  }
 }
