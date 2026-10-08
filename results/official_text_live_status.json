@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-08T11:08:58.983885+00:00",
+  "updated_utc": "2026-10-08T11:14:28.565499+00:00",
   "protocol_id": "OFFICIAL-6W-TEXT-v2",
   "colab_notebook_url": "https://colab.research.google.com/drive/11JK1wLLVPH8G7_oThnb0YkLMSR4URafF",
   "runtime": "Tesla T4",
@@ -24,10 +24,10 @@
   "cloud_pid": 23054,
   "model": "bert-base",
   "epoch": 2,
-  "step": 11000,
+  "step": 13500,
   "steps_per_epoch": 17625,
-  "optimizer_updates": 28614,
-  "skipped_updates": 11,
+  "optimizer_updates": 31112,
+  "skipped_updates": 13,
   "successful_recovery_checkpoint_verified": true,
   "validation_test_results_available": false,
   "modernbert_status": "queued_after_bert",
@@ -35,10 +35,10 @@
   "prior_cell_16_outcome": "KeyboardInterrupt before verified training; fixed source hash now verified in cloud",
   "recovery_checkpoint": {
     "epoch": 2,
-    "step": 9000,
+    "step": 12000,
     "epoch_finished": false
   },
-  "latest_cloud_output": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z\nbert-base training epoch 2 batch 11000 updates 28614\nSaved recovery: 2 9000\nLatest val accuracy/F1: 0.8107 0.7525\nmodernbert-base queued\nProcess: None UTC: 11:07:28",
+  "latest_cloud_output": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z\nbert-base training epoch 2 batch 13500 updates 31112\nSaved recovery: 2 12000\nLatest val accuracy/F1: 0.8107 0.7525\nmodernbert-base queued\nProcess: None UTC: 11:13:59",
   "continuation": {
     "automation_id": "complete-urop-text-training",
     "status": "ACTIVE",
@@ -55,13 +55,13 @@
   "cloud_evidence_folder_url": "https://drive.google.com/drive/folders/1bHlZH8jpaBBJq0XUu7Of3nh9gvAOfLaa",
   "cloud_attempt_url": "https://drive.google.com/drive/folders/1imzOwSiVgQ05YPKFGpK_9mVVtjUUKWdf",
   "cloud_bert_folder_url": "https://drive.google.com/drive/folders/15K7CqdsqrZVEdJH1rGNFhlnswNCdMD1j",
-  "cloud_reading_utc": "2026-10-08T11:07:28Z",
+  "cloud_reading_utc": "2026-10-08T11:13:59Z",
   "checkpoint_file_verified_in_drive": {
     "name": "resume_checkpoint.pt",
     "size_gb": 1.22,
     "folder_url": "https://drive.google.com/drive/folders/15K7CqdsqrZVEdJH1rGNFhlnswNCdMD1j"
   },
-  "display_note": "Connecting/Resuming execution remains displayed, but fresh output advanced to epoch 2 batch 10000 at 16:35:58 IST; do not infer a stopped trainer from the connection label. Ignore older replayed readings.",
+  "display_note": "Chrome Connecting/Resuming remains, resources panel says Not connected; latest monitor advanced to epoch 2 batch 13500 at 16:43:59 IST. Exact current GPU utilization not independently measured.",
   "intermediate_validation_available": true,
   "intermediate_validation_observed": {
     "epoch": 1,
@@ -88,11 +88,20 @@
   },
   "training_process": "active; advancing optimizer progress verified from recent Colab monitor output",
   "models": {
-    "bert-base": "training; epoch 2 batch 11000 verified",
+    "bert-base": "training; epoch 2 batch 13500 verified",
     "modernbert-base": "queued after BERT; not started"
   },
   "cloud_execution_cell": 8,
   "monitor_cell": 11,
-  "skipped_updates_note": "Derived from 28625 batches minus 28614 successful optimizer updates.",
-  "blocker": null
+  "skipped_updates_note": "Derived from 31125 batches minus 31112 successful optimizer updates.",
+  "blocker": null,
+  "colab_resource_panel_observed": {
+    "observed_utc": "2026-10-08T11:13:59Z",
+    "subscription": "not subscribed",
+    "purchased_compute_units": 0,
+    "runtime_may_last_up_to_hours": 2,
+    "connection_panel": "Not connected to runtime",
+    "interpretation": "Free GPU remaining quota is not exposed; advancing timestamped output supports continued trainer progress despite Connecting/Resuming UI. Estimate is not guaranteed time remaining.",
+    "evidence": "results/colab_gpu_quota_check.txt"
+  }
 }

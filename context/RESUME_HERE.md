@@ -101,3 +101,7 @@ The active trainer is an independent Colab subprocess (PID 23054), launched with
 ### 2026-10-08T11:08:23.431218+00:00 — Connection label stale; training progress verified
 
 Chrome still displays Connecting/Resuming execution, while fresh output confirms BERT epoch 2 batch 10,000, 27,615 optimizer updates, recovery saved at epoch 2 batch 9,000. Cloud reading 2026-10-08 11:05:58 UTC (16:35:58 IST), approximately one minute before inspection. This advanced from the user screenshot showing batch 5,500 at 16:24:38 IST. No runtime reset or duplicate training launch was performed. First validation remains 81.07% accuracy / 75.25% Macro-F1 (rounded); final test pending, ModernBERT queued. Stale startup/usage fields in live status were moved under historical_startup_observations so they do not contradict current verified progress.
+
+
+### Colab quota check — 2026-10-08 16:43:59 IST
+Chrome Resources panel: not subscribed, zero purchased compute units, free resources not guaranteed, runtime may last up to 2 hours. This is not proof that free GPU quota is exhausted or a promised remaining duration. Panel says Not connected while timestamped monitor advances to BERT epoch 2 batch 13500, 31112 optimizer updates, recovery epoch 2 batch 12000. ModernBERT queued; latest validation remains intermediate 0.8107 accuracy/0.7525 Macro-F1, no final test yet. Raw Chrome evidence: results/colab_gpu_quota_check.txt. Do not restart or delete this runtime based solely on Connecting.
