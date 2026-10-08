@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-08T10:50:06.508644+00:00",
+  "updated_utc": "2026-10-08T11:08:58.983885+00:00",
   "protocol_id": "OFFICIAL-6W-TEXT-v2",
   "colab_notebook_url": "https://colab.research.google.com/drive/11JK1wLLVPH8G7_oThnb0YkLMSR4URafF",
   "runtime": "Tesla T4",
@@ -7,12 +7,6 @@
     "python": "3.13.15",
     "transformers": "5.18.0",
     "torch": "2.11.0+cu130"
-  },
-  "cloud_execution_cell": 16,
-  "training_process": "launch observed; current running/failed state and optimizer progress unverified",
-  "models": {
-    "bert-base": "initializing or training; progress unverified",
-    "modernbert-base": "queued after BERT; not verified as started"
   },
   "source_sha256": "a13c0e5d97b2fe7661ce6a228d43d853f1aca703314cfa48688825b7b01701f9",
   "source_git_commit": "9c7abf1",
@@ -24,36 +18,27 @@
   "failure": "logging wrapper lacked isatty; corrected and interface checked",
   "checkpoints": "every 3000 batches and epoch boundary in mounted Drive",
   "raw_metrics_available": false,
-  "blocker": "Chrome live controls became unavailable again; awaiting visible awake/unlocked desktop",
   "training_cli_authorized": false,
-  "usage_reset_ist": "2026-10-08 17:35",
-  "remaining_usage_at_preflight_percent": 34,
-  "last_browser_observation": "Cell 16 initially Executing; later accessibility view showed 4 seconds elapsed, with no readable child-process output. Current progress cannot be inferred from that view.",
-  "remaining_usage_at_latest_check_percent": 6,
-  "latest_usage_check_utc": "2026-10-08T09:45:49.174071+00:00",
   "state": "training",
   "cloud_attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
   "cloud_pid": 23054,
   "model": "bert-base",
   "epoch": 2,
-  "step": 1500,
+  "step": 11000,
   "steps_per_epoch": 17625,
-  "optimizer_updates": 19116,
-  "skipped_updates": 3,
-  "samples_per_second": 229.77983752167853,
-  "cloud_status_updated_utc": "2026-10-08T10:01:41.513903+00:00",
+  "optimizer_updates": 28614,
+  "skipped_updates": 11,
   "successful_recovery_checkpoint_verified": true,
   "validation_test_results_available": false,
   "modernbert_status": "queued_after_bert",
   "launch_method": "Chrome Colab notebook guarded subprocess; Colab CLI not used",
   "prior_cell_16_outcome": "KeyboardInterrupt before verified training; fixed source hash now verified in cloud",
   "recovery_checkpoint": {
-    "epoch": 1,
-    "step": 17625,
-    "epoch_finished": true
+    "epoch": 2,
+    "step": 9000,
+    "epoch_finished": false
   },
-  "cloud_status_observed_utc": "2026-10-08T10:07:26Z",
-  "latest_cloud_output": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z\nbert-base training epoch 2 batch 500 updates 18117\nSaved recovery: 1 17625\nLatest val accuracy/F1: 0.8107 0.7525\nmodernbert-base queued\nProcess: None UTC: 10:43:43",
+  "latest_cloud_output": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z\nbert-base training epoch 2 batch 11000 updates 28614\nSaved recovery: 2 9000\nLatest val accuracy/F1: 0.8107 0.7525\nmodernbert-base queued\nProcess: None UTC: 11:07:28",
   "continuation": {
     "automation_id": "complete-urop-text-training",
     "status": "ACTIVE",
@@ -70,18 +55,44 @@
   "cloud_evidence_folder_url": "https://drive.google.com/drive/folders/1bHlZH8jpaBBJq0XUu7Of3nh9gvAOfLaa",
   "cloud_attempt_url": "https://drive.google.com/drive/folders/1imzOwSiVgQ05YPKFGpK_9mVVtjUUKWdf",
   "cloud_bert_folder_url": "https://drive.google.com/drive/folders/15K7CqdsqrZVEdJH1rGNFhlnswNCdMD1j",
-  "cloud_reading_utc": "2026-10-08T10:46:13Z",
+  "cloud_reading_utc": "2026-10-08T11:07:28Z",
   "checkpoint_file_verified_in_drive": {
     "name": "resume_checkpoint.pt",
     "size_gb": 1.22,
     "folder_url": "https://drive.google.com/drive/folders/15K7CqdsqrZVEdJH1rGNFhlnswNCdMD1j"
   },
-  "display_note": "On reconnection Colab replayed older monitor output. Replayed readings must not replace newer verified progress.",
+  "display_note": "Connecting/Resuming execution remains displayed, but fresh output advanced to epoch 2 batch 10000 at 16:35:58 IST; do not infer a stopped trainer from the connection label. Ignore older replayed readings.",
   "intermediate_validation_available": true,
   "intermediate_validation_observed": {
     "epoch": 1,
     "accuracy_rounded_4dp": 0.8107,
     "macro_f1_rounded_4dp": 0.7525,
     "source": "Colab live monitor; rounded values, not yet original JSON export"
-  }
+  },
+  "historical_startup_observations": {
+    "cloud_execution_cell": 16,
+    "training_process": "launch observed; current running/failed state and optimizer progress unverified",
+    "models": {
+      "bert-base": "initializing or training; progress unverified",
+      "modernbert-base": "queued after BERT; not verified as started"
+    },
+    "blocker": "Chrome live controls became unavailable again; awaiting visible awake/unlocked desktop",
+    "last_browser_observation": "Cell 16 initially Executing; later accessibility view showed 4 seconds elapsed, with no readable child-process output. Current progress cannot be inferred from that view.",
+    "usage_reset_ist": "2026-10-08 17:35",
+    "remaining_usage_at_preflight_percent": 34,
+    "remaining_usage_at_latest_check_percent": 6,
+    "latest_usage_check_utc": "2026-10-08T09:45:49.174071+00:00",
+    "samples_per_second": 229.77983752167853,
+    "cloud_status_updated_utc": "2026-10-08T10:01:41.513903+00:00",
+    "cloud_status_observed_utc": "2026-10-08T10:07:26Z"
+  },
+  "training_process": "active; advancing optimizer progress verified from recent Colab monitor output",
+  "models": {
+    "bert-base": "training; epoch 2 batch 11000 verified",
+    "modernbert-base": "queued after BERT; not started"
+  },
+  "cloud_execution_cell": 8,
+  "monitor_cell": 11,
+  "skipped_updates_note": "Derived from 28625 batches minus 28614 successful optimizer updates.",
+  "blocker": null
 }

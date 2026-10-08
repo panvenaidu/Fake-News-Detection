@@ -307,3 +307,8 @@ A refreshed Colab snapshot verified BERT epoch 1 batch 16,500 with 16,492 optimi
 ## 2026-10-08T10:46:10.624380+00:00 — First official full-cohort validation result
 
 BERT epoch 1 validation: **81.07% accuracy**, **75.25% Macro-F1**, read from the Colab monitor's four-decimal rounded output at 10:43:43 UTC. This is an intermediate validation observation, not a final result. Epoch 2 batch 500 / 18,117 optimizer updates is running; recovery saved at the epoch-1 boundary (batch 17,625). ModernBERT is queued. Test has not been evaluated; full-precision original JSON/report/predictions must still be synchronized from Drive. Rounded observation saved at `results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/bert-base/validation_epoch1_observed.json`. The experiment continues unchanged under the original validation-selection/early-stop protocol. Hourly automatic continuation is active; no paid compute or Colab CLI fallback authorized.
+
+
+### 2026-10-08T11:08:23.431218+00:00 — Connection label stale; training progress verified
+
+Chrome still displays Connecting/Resuming execution, while fresh output confirms BERT epoch 2 batch 10,000, 27,615 optimizer updates, recovery saved at epoch 2 batch 9,000. Cloud reading 2026-10-08 11:05:58 UTC (16:35:58 IST), approximately one minute before inspection. This advanced from the user screenshot showing batch 5,500 at 16:24:38 IST. No runtime reset or duplicate training launch was performed. First validation remains 81.07% accuracy / 75.25% Macro-F1 (rounded); final test pending, ModernBERT queued. Stale startup/usage fields in live status were moved under historical_startup_observations so they do not contradict current verified progress.

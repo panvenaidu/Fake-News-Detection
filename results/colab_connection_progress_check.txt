@@ -1,0 +1,15 @@
+									47 button Connecting
+								227 text Resuming execution
+container Cell 11 output
+													213 container
+														214 toggle button Show/hide output, Value: 0
+														215 pop-up button Code cell output actions
+													216 text OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z
+bert-base training epoch 2 batch 11000 updates 28614
+Saved recovery: 2 9000
+Latest val accuracy/F1: 0.8107 0.7525
+modernbert-base queued
+Process: None UTC: 11:07:28
+
+									217 container
+										218 
