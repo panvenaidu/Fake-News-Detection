@@ -1,4 +1,4 @@
-> Current official text run: BERT optimizer steps verified on Colab T4; ModernBERT queued. Metrics pending. See [resume checkpoint](context/RESUME_HERE.md) and [live evidence](results/official_text_live_status.json).
+> Official text training is active: BERT epoch-1 validation accuracy **81.07%**, Macro-F1 **75.25%** (rounded, intermediate). Epoch 2 running; final test pending; ModernBERT queued. Hourly continuation enabled. See [current context](context/RESUME_HERE.md) and [live evidence](results/official_text_live_status.json).
 
 > **Current update (2026-10-08):** Official release migration is documented in `context/AUDIT_20261008.md`. Earlier 75,995-subset results are historical. The corrected official text process has launched in Colab; first optimizer steps and results are not yet verified. See `context/RESUME_HERE.md` and `results/official_text_live_status.json`.
 

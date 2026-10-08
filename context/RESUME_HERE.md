@@ -72,3 +72,27 @@ Process: None UTC: 10:21:45
 ## 2026-10-08T10:24:48.790731+00:00 — Automatic continuation and restart safeguards
 
 An hourly thread follow-up is now ACTIVE (automation id `complete-urop-text-training`), superseding earlier failed scheduling attempts. It inspects this existing cloud attempt, finishes authorized BERT/ModernBERT evaluations, recovers from checkpoints if needed, and synchronizes small evidence/context/GitHub milestones. It remains quiet when nothing meaningful changes. No paid compute authorization or Colab CLI access is granted. The local notebook and launch helper now inspect real cloud process arguments before starting, preserving the same scientific protocol and trainer source. Launch metadata and logs persist in Drive; a separate monitor displays checkpoint/validation/test progress. These local launch-cell changes have not been deployed over the currently running trainer and do not alter its source or results. Colab's resource panel reported zero purchased compute units and up to three hours of runtime at the observed usage level; continuation depends on actual GPU availability.
+
+
+### 2026-10-08T10:41:09.172Z — Recovery checkpoint observed
+
+OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z
+bert-base training epoch 1 batch 6500 updates 6496
+Saved recovery: 1 6000
+modernbert-base queued
+Process: None UTC: 10:15:16
+
+
+### 2026-10-08T10:42:25.373784+00:00 — Verified 15,000-batch recovery; ignore replayed output
+
+A refreshed Colab snapshot verified BERT epoch 1 batch 16,500 with 16,492 optimizer updates and saved recovery at batch 15,000 (cloud reading 10:38:37 UTC). Chrome Drive separately verified resume_checkpoint.pt at 1.22 GB, checkpoint history, recovery metadata, tokenizer, source and config in the exact BERT folder linked in live status. Reconnection replayed an older 6,500-batch reading; that is historical cached display, not current progress. Do not let such replayed outputs regress live status. Validation and test metrics remain unverified.
+
+
+## 2026-10-08T10:46:10.624380+00:00 — First official full-cohort validation result
+
+BERT epoch 1 validation: **81.07% accuracy**, **75.25% Macro-F1**, read from the Colab monitor's four-decimal rounded output at 10:43:43 UTC. This is an intermediate validation observation, not a final result. Epoch 2 batch 500 / 18,117 optimizer updates is running; recovery saved at the epoch-1 boundary (batch 17,625). ModernBERT is queued. Test has not been evaluated; full-precision original JSON/report/predictions must still be synchronized from Drive. Rounded observation saved at `results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/bert-base/validation_epoch1_observed.json`. The experiment continues unchanged under the original validation-selection/early-stop protocol. Hourly automatic continuation is active; no paid compute or Colab CLI fallback authorized.
+
+
+### Browser recovery lessons for continued work
+
+The active trainer is an independent Colab subprocess (PID 23054), launched with its own process session. Only notebook monitor cells were later interrupted; this did not stop that trainer. Chrome sometimes shows an older accessibility tree, and reconnecting replays older monitor output. Compare cloud reading timestamps before changing live status. A refreshed notebook snapshot and existing-runtime reconnect recovered current output. Do not repeatedly click a long-running cell's Run control: it can toggle to Interrupt before the accessibility label refreshes. Check runtime/execution state first and wait for the requested action. Use the latest Colab notebook tab (the stale duplicate was closed), not a new training launch. The local guarded launch helper checks /proc for an existing trainer even after a kernel reconnect. Experiment parameters are in the attempt's root protocol.json; model config.json is the Hugging Face architecture config. Later multi-seed runs need the trainer's currently hard-coded seed42 folder label generalized before changing the seed. No such seed change is part of today's active run.
