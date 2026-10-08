@@ -1,0 +1,7 @@
+{
+  "epoch": 5,
+  "step": 6000,
+  "epoch_finished": false,
+  "saved_utc": "2026-10-08T13:00:19.958134+00:00",
+  "optimizer_updates": 76470
+}

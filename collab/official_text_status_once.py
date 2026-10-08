@@ -1,7 +1,7 @@
 from pathlib import Path
 import json, subprocess
 from datetime import datetime, timezone, timedelta
-r = current_attempt
+r=Path('/content/drive/MyDrive/Colab Notebooks/UROP/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z')
 s=json.loads((r/'bert-base/status.json').read_text())
 h=json.loads((r/'bert-base/history.json').read_text())
 b=json.loads((r/'bert-base/best_checkpoint.json').read_text())

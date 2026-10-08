@@ -1,0 +1,13 @@
+{
+  "state": "training",
+  "model": "bert-base",
+  "epoch": 5,
+  "step": 7500,
+  "steps_per_epoch": 17625,
+  "samples_seen_this_epoch": 240000,
+  "samples_per_second": 221.36919341268342,
+  "epoch_remaining_seconds": 1463.6182885483483,
+  "optimizer_updates": 77970,
+  "skipped_updates": 30,
+  "updated_utc": "2026-10-08T13:04:21.860154+00:00"
+}

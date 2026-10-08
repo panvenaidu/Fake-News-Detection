@@ -16,6 +16,7 @@ One verified BERT-base seed-42 optimization run is in progress: OFFICIAL-6W-TEXT
 | Our BERT-base epoch 1 | 81.07% | 75.25% | Pending |
 | Our BERT-base epoch 2 | 82.43% | 75.82% | Pending |
 | Our BERT-base epoch 3 | 82.89% | 77.75% | Pending |
+| Our BERT-base epoch 4 | 82.74% | 77.87% | Pending |
 | Paper ResNet-50 image-only | 75.29% | Not reported in Table 4 | 75.49% |
 | Paper BERT + ResNet-50 maximum fusion | 86.00% | Not reported in Table 4 | 85.88% |
 
@@ -28,3 +29,6 @@ Two earlier BERT runs on BP-6W-v1 (75,995 verified pairs: 62,635 train / 6,685 v
 
 ## User direction
 User is considering stopping, but explicitly said NOT right now and to wait a few minutes. No runtime stop, deletion, restart, or new model launch performed for this comparison. BERT continues under its existing protocol; ModernBERT remains queued. A future explicit stop should preserve and verify the most recent durable checkpoint first.
+
+
+Update 18:37 IST: original cloud history/validation metrics/report/confusion matrix retrieved, with full precision and file hashes in the experiment retrieval manifest. Four completed validation epochs within the same ongoing run; current selected checkpoint epoch 4 by Macro-F1. BERT epoch 5 batch 9000 recovery observed. GPU utilization independently measured at 73%, later 59%. User KeyboardInterrupt interrupted the status monitor; trainer remains alive. Paper comparison remains provisional until selected-checkpoint test.

@@ -1,6 +1,6 @@
-> Official text training is active: BERT epoch-3 validation accuracy **82.89%**, Macro-F1 **77.75%** (rounded, intermediate). Epoch 4 running; final test pending; ModernBERT queued. Kaggle phone verification complete; GPU quota 0/30 hours used, no Kaggle run launched. Hourly continuation enabled. See [current context](context/RESUME_HERE.md) and [live evidence](results/official_text_live_status.json).
+> Official text training is active: BERT epoch-4 validation accuracy **82.74%**, Macro-F1 **77.87%** (original metrics retrieved). Epoch 5 running; selected checkpoint currently epoch 4 by Macro-F1; final test pending; ModernBERT queued. Finite status display repaired; trainer/GPU activity verified independently. Kaggle phone verified, 0/30 GPU hours used as last checked. See [current context](context/RESUME_HERE.md) and [live evidence](results/official_text_live_status.json).
 
-> **Current update (2026-10-08):** Official full-cohort training is documented in `context/AUDIT_20261008.md`. Earlier 75,995-subset results remain historical. BERT optimizer progress and three intermediate validation observations are verified; original full-precision metrics and final test evidence are pending.
+> **Current update (2026-10-08):** Official full-cohort training is documented in `context/AUDIT_20261008.md`. Earlier 75,995-subset results remain historical. Four original full-precision validation observations and small cloud evidence are synchronized locally; final test and predictions are pending.
 
 # Multimodal Fake News Detection Using Text + Image
 
