@@ -153,3 +153,8 @@ Pinned fixed source SHA256 `a13c0e5d97b2fe7661ce6a228d43d853f1aca703314cfa486888
 ## 2026-10-08T09:45:49.174071+00:00 — Usage/recovery checkpoint
 
 Last usage check: 6% remains; five-hour window resets 2026-10-08 17:35 IST. This supersedes the earlier 34% preflight reading. Latest source logging fix and recovery code are pushed. Current cloud training progress is unverified: cell 16 entered execution, but a later accessibility view showed 4 seconds elapsed without readable subprocess output. Do not claim active optimizer steps or metrics. Native Chrome controls/screenshots are unreliable/unavailable and the Chrome terminal has no usable prompt. User was asked to keep the Mac awake/unlocked with Chrome visible; Colab CLI fallback was explicitly declined. Preserve existing cloud attempts; inspect latest model status/error/checkpoint before any rerun. All scientific settings and dataset files remain unchanged.
+
+
+## 2026-10-08T09:49:32.158683+00:00 — Final continuity checkpoint
+
+All code/config/notebook, dataset provenance, audit, startup errors and current unverified launch state are saved. Checkpoint cadence is implemented (every 3,000 batches and each epoch), but no successful cloud weight checkpoint or optimizer updates have yet been verified. The last available Colab setup screenshot is `results/colab_setup_last_available.png`; it is not live training-progress proof. Attempts to create a continuation heartbeat failed schedule validation, so no automatic follow-up is active. Resume only after checking the existing cloud attempt; do not assume chat usage reset automatically resumes an agent. Chrome-only preference remains in force.
