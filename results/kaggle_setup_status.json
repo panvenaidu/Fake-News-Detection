@@ -1,16 +1,16 @@
 {
-  "observed_utc": "2026-10-08T11:28:02.547207+00:00",
+  "observed_utc": "2026-10-08T12:19:17.544923+00:00",
   "website": "https://www.kaggle.com",
   "account_username": "rocky62",
   "google_signin_used": "panvee62@gmail.com",
   "gpu_hours_used": 0,
   "gpu_hours_weekly_limit": 30,
   "gpu_enabled": false,
-  "phone_verified": false,
-  "state": "awaiting_user_phone_verification",
+  "phone_verified": true,
+  "state": "phone_verified_gpu_quota_available",
   "training_started": false,
   "existing_colab_runtime_untouched": true,
   "evidence": "results/kaggle_quota_verification_observed.txt",
   "handoff_url": "https://www.kaggle.com/settings/account?verifyPhone=1",
-  "note": "Existing Kaggle account reached through Google sign-in; GPU quota verified in settings. CAPTCHA and SMS verification left to user. No API token created, no dataset uploaded, no Kaggle training launched."
+  "note": "Phone verification now independently observed as Verified in Chrome account settings. GPU quota remains 00:00 / 30 hrs. No GPU assigned or training launched by this agent. No API token created or dataset uploaded."
 }

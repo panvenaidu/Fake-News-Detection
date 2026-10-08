@@ -1,0 +1,6 @@
+OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z
+bert-base training epoch 4 batch 5500 updates 58351
+Saved recovery: 4 3000
+Latest val accuracy/F1: 0.8289 0.7775
+modernbert-base queued
+Process: None UTC: 12:18:12

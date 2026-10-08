@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-08T11:28:02.547207+00:00",
+  "updated_utc": "2026-10-08T12:19:17.544923+00:00",
   "protocol_id": "OFFICIAL-6W-TEXT-v2",
   "colab_notebook_url": "https://colab.research.google.com/drive/11JK1wLLVPH8G7_oThnb0YkLMSR4URafF",
   "runtime": "Tesla T4",
@@ -23,22 +23,22 @@
   "cloud_attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
   "cloud_pid": 23054,
   "model": "bert-base",
-  "epoch": 3,
-  "step": 1500,
+  "epoch": 4,
+  "step": 5500,
   "steps_per_epoch": 17625,
-  "optimizer_updates": 36735,
-  "skipped_updates": 15,
+  "optimizer_updates": 58351,
+  "skipped_updates": 24,
   "successful_recovery_checkpoint_verified": true,
   "validation_test_results_available": false,
   "modernbert_status": "queued_after_bert",
   "launch_method": "Chrome Colab notebook guarded subprocess; Colab CLI not used",
   "prior_cell_16_outcome": "KeyboardInterrupt before verified training; fixed source hash now verified in cloud",
   "recovery_checkpoint": {
-    "epoch": 2,
-    "step": 17625,
-    "epoch_finished": true
+    "epoch": 4,
+    "step": 3000,
+    "epoch_finished": false
   },
-  "latest_cloud_output": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z\nbert-base training epoch 3 batch 1500 updates 36735\nSaved recovery: 2 17625\nLatest val accuracy/F1: 0.8243 0.7582\nmodernbert-base queued\nProcess: None UTC: 11:27:15",
+  "latest_cloud_output": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z\nbert-base training epoch 4 batch 5500 updates 58351\nSaved recovery: 4 3000\nLatest val accuracy/F1: 0.8289 0.7775\nmodernbert-base queued\nProcess: None UTC: 12:18:12\n",
   "continuation": {
     "automation_id": "complete-urop-text-training",
     "status": "ACTIVE",
@@ -55,19 +55,19 @@
   "cloud_evidence_folder_url": "https://drive.google.com/drive/folders/1bHlZH8jpaBBJq0XUu7Of3nh9gvAOfLaa",
   "cloud_attempt_url": "https://drive.google.com/drive/folders/1imzOwSiVgQ05YPKFGpK_9mVVtjUUKWdf",
   "cloud_bert_folder_url": "https://drive.google.com/drive/folders/15K7CqdsqrZVEdJH1rGNFhlnswNCdMD1j",
-  "cloud_reading_utc": "2026-10-08T11:27:15Z",
+  "cloud_reading_utc": "2026-10-08T12:18:12Z",
   "checkpoint_file_verified_in_drive": {
     "name": "resume_checkpoint.pt",
     "size_gb": 1.22,
     "folder_url": "https://drive.google.com/drive/folders/15K7CqdsqrZVEdJH1rGNFhlnswNCdMD1j"
   },
-  "display_note": "Chrome connection labels remain inconsistent with fresh timestamped advancing output; Chrome extension browser controls are now available as browser id 3 (Rocky).",
+  "display_note": "Connecting/Runtime disconnected labels shown while live monitor timestamp advances to 12:18:12 UTC; fresh optimizer progress supports continued trainer activity.",
   "intermediate_validation_available": true,
   "intermediate_validation_observed": {
-    "epoch": 2,
-    "accuracy_rounded_4dp": 0.8243,
-    "macro_f1_rounded_4dp": 0.7582,
-    "source": "Chrome extension DOM live monitor; rounded intermediate values, original JSON not yet exported"
+    "epoch": 3,
+    "accuracy_rounded_4dp": 0.8289,
+    "macro_f1_rounded_4dp": 0.7775,
+    "source": "Chrome live monitor; rounded intermediate values, original JSON not yet exported"
   },
   "historical_startup_observations": {
     "cloud_execution_cell": 16,
@@ -88,12 +88,12 @@
   },
   "training_process": "active; advancing optimizer progress verified from recent Colab monitor output",
   "models": {
-    "bert-base": "training; epoch 3 batch 1500 verified",
+    "bert-base": "training; epoch 4 batch 5500 verified",
     "modernbert-base": "queued after BERT; not started"
   },
   "cloud_execution_cell": 8,
   "monitor_cell": 11,
-  "skipped_updates_note": "Derived from 36750 batches minus 36735 successful optimizer updates.",
+  "skipped_updates_note": "Derived from 58375 batches minus 58351 successful optimizer updates.",
   "blocker": null,
   "colab_resource_panel_observed": {
     "observed_utc": "2026-10-08T11:13:59Z",
@@ -104,5 +104,5 @@
     "interpretation": "Free GPU remaining quota is not exposed; advancing timestamped output supports continued trainer progress despite Connecting/Resuming UI. Estimate is not guaranteed time remaining.",
     "evidence": "results/colab_gpu_quota_check.txt"
   },
-  "kaggle_alternative": "Authorized by user; rocky62 GPU quota 0/30 hours, phone verification pending; no training launched."
+  "kaggle_alternative": "Existing rocky62 account now phone verified; GPU quota 0/30 hours used; no Kaggle training launched."
 }
