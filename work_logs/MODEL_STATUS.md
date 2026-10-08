@@ -168,3 +168,12 @@ Chrome Colab runtime recovered. A guarded notebook launch started PID 23054 with
 ## 2026-10-08T10:08:03.557939+00:00 — First durable training checkpoint verified
 
 Live Colab monitor observed BERT epoch 1 batch 3,500 / 3,497 optimizer updates, with recovery metadata saved for epoch 1 batch 3,000. Source writes recovery metadata only after the full model/optimizer/scheduler/scaler/RNG checkpoint replaces its temporary file. Active attempt remains OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z. ModernBERT queued; no validation or test metrics yet. Continuous read-only monitor installed in notebook cell 11; do not rerun this monitor or launch while it is executing.
+
+
+### 2026-10-08T10:16:40.078Z — Recovery checkpoint observed
+
+OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z
+bert-base training epoch 1 batch 6500 updates 6496
+Saved recovery: 1 6000
+modernbert-base queued
+Process: None UTC: 10:15:46
