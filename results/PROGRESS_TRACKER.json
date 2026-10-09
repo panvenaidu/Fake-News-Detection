@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-09T11:51:56.512061+00:00",
+  "updated_utc": "2026-10-09T16:08:21.723093+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -129,17 +129,17 @@
   ],
   "recovery_note": "Original checkpoint retained; final epoch6 recovery state and selected epoch4 weights retrieved and verified locally; final test/archives complete. No active GPU job.",
   "recovery_files_location": "data/cloud_recovery/",
-  "current_plan": "context/TEXT_COMPLETION_PLAN_20261009.md",
-  "execution_approval": "User authorized execution of TEXT-COMPLETE-v1; BERT completed and independently verified",
+  "current_plan": "context/MULTIMODAL_COMPLETION_PLAN_20261009.md",
+  "execution_approval": "TEXT-COMPLETE-v1 completed; MM-COMPLETE-v1 is proposed, awaiting later user go",
   "usage_reserve_policy": {
     "prepare_at_remaining_percent": 25,
     "reserve_at_remaining_percent": 20,
     "action": "No new experiment; save current state/context/results, verify safe GitHub push, hand off; leave healthy submitted cloud job running",
     "latest_observed_remaining_percent": {
-      "five_hour": 24,
-      "weekly": 42
+      "five_hour": 11,
+      "weekly": 27
     },
-    "observation_utc": "2026-10-09T11:48:43.652963+00:00"
+    "observation_utc": "2026-10-09T16:10:02.423881+00:00"
   },
   "text_completion_execution": {
     "state": "Complete: BERT training, validation, test and local/private archives verified",
@@ -394,5 +394,32 @@
     "method": "Successful normal fast-forward push, followed by git ls-remote origin refs/heads/main; remote hash equals local results/documentation commit",
     "scope": "Approved code, notebooks, metrics, predictions, reports, manifests and context; raw TSVs/images/weights/ZIPs excluded",
     "receipt_commit_note": "This receipt is committed as a child of the verified results/documentation commit; it does not claim its own future commit hash."
+  },
+  "multimodal_completion_plan": {
+    "id": "MM-COMPLETE-v1",
+    "state": "proposed_plan_only",
+    "plan": "context/MULTIMODAL_COMPLETION_PLAN_20261009.md",
+    "part1_prompt": "context/MULTIMODAL_PART1_GO.md",
+    "part2_prompt": "context/MULTIMODAL_PART2_GO.md",
+    "progress_targets": [
+      40,
+      60,
+      100
+    ],
+    "proposed_registered_max_epochs": 4,
+    "proposed_part1_epochs": 2,
+    "current_full_cohort_epochs": 0,
+    "image_gate_passed": false,
+    "available_images": 75995,
+    "required_images": 682661,
+    "missing_unverified_images": 606666,
+    "audit": "results/MULTIMODAL_PLAN_AUDIT_20261009.json",
+    "expected_test_accuracy_target": [
+      0.8788,
+      0.8888
+    ],
+    "target_guaranteed": false,
+    "progress_unchanged": true,
+    "safe_handoff": "Plan saved; no execution; reserve mode documentation and Git only"
   }
 }

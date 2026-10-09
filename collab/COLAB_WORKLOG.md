@@ -1,3 +1,15 @@
+<!-- MM-COMPLETE-v1 PLAN -->
+## Full text + image: proposed next task — 9 October 2026
+
+Read `context/MULTIMODAL_COMPLETION_PLAN_20261009.md` and `context/MULTIMODAL_PART1_GO.md` / `MULTIMODAL_PART2_GO.md`. **Awaiting go; planning only.** Part 1 targets 40%→60%; Part 2 targets 60%→100% for the first full-cohort multimodal baseline. Current progress is unchanged: text100%, text+image40%, image-only20%, overall53%; pilot100% separately.
+
+The [faculty dataset](https://drive.google.com/drive/folders/1DuH0YaEox08ZwzZDpRMOaFpMCeRyxiEF) remains 564,000/59,342/59,319 rows with verified unchanged hashes. Only 75,995 paired images (11.13%) exist locally; 606,666 are still unavailable/unverified locally. Full image coverage and storage are the first execution gate. Do not substitute the historical subset or increase progress after preparation alone.
+
+Proposed protocol: completed validation-selected BERT encoder + ResNet-50, maximum fusion, seed42, four-epoch cap. Part 1 trains/validates two epochs and verifies recovery; Part 2 resumes, finishes, tests once and archives. New protocol settings await go. CLIP/SigLIP2, image-only and repeated seeds remain separate. Target: 88–89% validation and 87.88–88.88% test accuracy, +2–3 percentage points over the matching paper row; no guarantee. Rough pilot extrapolation is 21 GPU hours, plus uncertain image preparation; remeasure before launch. Last recorded Kaggle quota29h09m is historical.
+
+Audit/inventory: `results/MULTIMODAL_PLAN_AUDIT_20261009.json`; verification: `results/MULTIMODAL_PLAN_VERIFICATION_20261009.json`. No new training, large download, data modification or scheduler. Latest usage check: 11% current window /27% weekly remaining; reserve mode, documentation/Git handoff only. Preserve completed BERT and all historical artifacts. This note supersedes older next-action notes below.
+<!-- /MM-COMPLETE-v1 PLAN -->
+
 <!-- TEXT-COMPLETE-v1 LIVE -->
 ## BERT completion execution — 9 October 2026
 

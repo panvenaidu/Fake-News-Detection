@@ -1,0 +1,9 @@
+# Go: full text+image Part2
+
+Execute Part2 of `/Users/panveenaidu/Downloads/SEM7/UROP/context/MULTIMODAL_COMPLETION_PLAN_20261009.md` (`MM-COMPLETE-v1`). Read current context/progress and Part1's verified receipt first. If Part1 is incomplete, finish its required gates/milestones before Part2; do not assume the saved plan is evidence of training.
+
+Work only inside UROP locally and through Chrome in the existing authorized private cloud workspace. Verify complete official paired data, source/config/input hashes and recoverable state. Resume the same four-epoch BERT+ResNet50 attempt and complete epochs 3–4, or legitimate registered early stopping, with full validation after each. Preserve optimizer/scheduler/AMP/RNG/order; do not restart already completed epochs or reset the learning-rate budget.
+
+Select one checkpoint using validation Macro-F1, freeze its weight hash, then evaluate all 59,319 public test rows once. Save full selected-validation/test predictions, all six probabilities, per-item cross-entropy, accuracy/micro-F1/Macro-F1/weighted-F1/balanced accuracy/loss, six-class reports and both confusion matrices. Independently recompute evidence and verify exact IDs/counts/labels. Compare with the matching paper86.00% validation/85.88% test, reporting whether +2–3percentage points was achieved without promising success or tuning on test.
+
+Save the report and simple offline faculty HTML, weights/recovery privately and locally, and small evidence/context/logs in GitHub with verified remote receipt. Mark the baseline100% only after train/validate/test/archive checks pass. Advanced models, independent image-only and multi-seed research remain separately tracked; do not start them automatically. Recheck live GPU quota, finish/export before session limits, leave no unnecessary idle GPU. Keep the 20% assistant usage reserve for documentation/checkpointing. No new scheduler, paid compute, account migration or Colab CLI.

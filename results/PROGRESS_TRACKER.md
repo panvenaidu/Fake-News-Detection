@@ -1,3 +1,7 @@
+## Multimodal plan saved — 9 October 2026
+
+Current verified bars are unchanged: **BERT100%, full text+image40%, image-only20%, overall53%; pilot100% separately.** Plan: [MM-COMPLETE-v1](../context/MULTIMODAL_COMPLETION_PLAN_20261009.md). Awaiting go. Full image coverage is a prerequisite; only11.13% of required IDs have local images. Proposed Part1 completes2/4 training/validation epochs and verified recovery for60%; Part2 completes selected testing/archive for100%. These are proposed milestones, not completed work. See the JSON for authoritative state and the plan for separate advanced-model scope.
+
 <!-- TEXT-COMPLETE-v1 LIVE -->
 ## BERT completion execution — 9 October 2026
 
