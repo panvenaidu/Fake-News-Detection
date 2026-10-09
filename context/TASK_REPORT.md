@@ -7,6 +7,7 @@ BERT baseline complete. Read results/TEXT_ONLY_FINAL_REPORT_20261009.md; registe
 
 Evidence: `results/text_completion_execution_20261009.json`; plan `context/TEXT_COMPLETION_PLAN_20261009.md`. The user has authorized execution. Historical entries below retain earlier observations.
 GitHub backup verified: results and documentation commit `5527824302480de39cafd85a5a9a1c2b8cc68fd7` is on remote `main`. Receipt: `results/TEXT_COMPLETION_GITHUB_RECEIPT_20261009.json`. Latest assistant usage check: 24% five-hour / 42% weekly remaining; the final 20% remains reserved for safe handoff. No new model or GPU job was started after final evaluation.
+Faculty HTML presentation (9 October 2026): `results/UROP_Text_Only.html` is a self-contained, offline page with subtle CSS animations, the actual connected BERT architecture, separate workflow, the linked faculty dataset and original split counts, all six validation/test metrics and paper comparisons, and validation/test class-report selection. Values are embedded from verified JSON. No additional model training or data changes. Source-data/static-document and JavaScript syntax checks passed; visual Chrome preview was blocked by its local-file URL policy and was not bypassed. Receipt: `results/UROP_Text_Only_HTML_VERIFICATION.json`.
 <!-- /TEXT-COMPLETE-v1 LIVE -->
 
 ## Latest handoff - 9 October 2026: text completion plan ready

@@ -1,0 +1,12 @@
+{
+  "status": "static-verified",
+  "verified_utc": "2026-10-09T15:45:11.875295+00:00",
+  "artifact": "results/UROP_Text_Only.html",
+  "sha256": "3b1e8fc4b4dbc789ad597cb88b5d5f1dcfd8b9695517d7f7c31bccfdbd5007cf",
+  "bytes": 32233,
+  "external_assets": 0,
+  "data_checks": "Exact embedded validation/test metrics and class reports match verified JSON; supports match full split sizes; selected weight hash matches",
+  "document_checks": "Unique IDs; six metric rows; six default test-class rows; exact faculty dataset link; inline SVG architecture; reduced-motion and print styles present",
+  "ui_verification_limit": "Automatic Chrome local-file navigation was rejected by the browser URL policy. No browser-policy workaround was attempted; visual layout and real-browser clicks were not inspected. JavaScript syntax is checked separately before publication.",
+  "javascript_syntax": "passed: node --check on extracted inline JavaScript"
+}
