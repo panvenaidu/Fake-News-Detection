@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-10-09T10:27:23.945324+00:00",
-  "status": "BERT epoch6 batch3000; session recovery checkpoint saved",
+  "updated_utc": "2026-10-09T10:34:45.511274+00:00",
+  "status": "BERT epoch6 batch6500; session checkpoint6000 saved",
   "attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
   "reason": "Drive recovery-JSON rename failed at epoch boundary; Colab GPU quota blocked",
   "last_retrieved_selected_epoch": 4,
@@ -341,16 +341,17 @@
     "missing_validation_predictions": "Must export full selected-checkpoint validation predictions"
   },
   "text_completion_execution": {
-    "state": "BERT epoch6 batch3000; session recovery checkpoint saved",
-    "summary": "Saved Kaggle version356721456 advanced to epoch6/batch3000 of17625, finite mean training loss0.1460 and279.7 titles/s. A new full model/optimizer/scheduler/AMP/RNG recovery checkpoint saved at6/3000. It is currently session storage; durable saved-output verification and local retrieval remain pending. Recovered epoch5 validation still matches Colab; epoch4 remains selected so far. Final text test pending.",
+    "state": "BERT epoch6 batch6500; session checkpoint6000 saved",
+    "summary": "Saved Kaggle version356721456 advanced to epoch6/batch6500 of17625, finite mean loss0.1469 and279.1 titles/s. The6/6000 full recovery checkpoint saved successfully at job elapsed1168s. Kaggle session storage is current; durable output/local retrieval remain pending. Epoch4 remains selected so far; final text test pending. Original verified input checkpoint and historical results are retained.",
     "next_action": "Continue observing this exact saved job. Finish remaining epoch5, then epoch6 or the registered early-stop rule. Keep original input checkpoint as durable fallback; new Kaggle working checkpoints become durable only after saved outputs are verified. Freeze validation-selected weight hash, export full validation/test evidence, retrieve weights and independently verify metrics/IDs before claiming completion.",
     "check_evidence": "results/text_recovery_v1_checks_20261009.json",
     "source": "scripts/train_official_text_recovery_v1.py",
     "source_sha256": "abf2237c5ae9d27a2cb0ca746a59e119d6c27c6b241bbdedca468779584eb0bf",
     "payload_sha256": "f4c4a64d4535116dd1c21c08ebc8ca21dd1f89d94aae8b4a8514db621e876c9d",
     "assistant_usage_observed": {
-      "primary_remaining_percent": 74,
-      "weekly_remaining_percent": 50
+      "primary_remaining_percent": 63,
+      "weekly_remaining_percent": 48,
+      "observation": "At previous3000-batch checkpoint; refresh before final retrieval"
     },
     "cloud_active_job_verified": true,
     "final_test_verified": false,
@@ -370,16 +371,16 @@
     "input_hashes_verified_in_cloud": true,
     "processed_batch_progress_verified": true,
     "last_observed_epoch": 6,
-    "last_observed_batch": 3000,
-    "last_observed_loss": 0.146,
+    "last_observed_batch": 6500,
+    "last_observed_loss": 0.1469,
     "successful_optimizer_count_live": null,
-    "last_verified_log_elapsed_seconds": 824.9,
+    "last_verified_log_elapsed_seconds": 1225.2,
     "gpu_observed": "Tesla T4",
     "torch_observed": "2.11.0+cu128",
     "python_observed": "3.13.15",
     "runtime_recovery_checkpoint": {
       "epoch": 6,
-      "batch": 3000,
+      "batch": 6000,
       "persistence": "Kaggle session disk; saved-version outputs pending"
     },
     "recovered_epoch5_validation": {
@@ -392,6 +393,6 @@
       "samples": 59342
     },
     "observation_evidence": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/validation_epoch5_observed.json",
-    "updated_utc": "2026-10-09T10:27:23.945324+00:00"
+    "updated_utc": "2026-10-09T10:34:45.511274+00:00"
   }
 }
