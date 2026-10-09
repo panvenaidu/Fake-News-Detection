@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-10-09T09:48:25.173696+00:00",
-  "status": "recovery checks passed; private input upload pending",
+  "updated_utc": "2026-10-09T10:14:13.023934+00:00",
+  "status": "Kaggle saved BERT recovery batch running; optimizer progress not yet verified",
   "attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
   "reason": "Drive recovery-JSON rename failed at epoch boundary; Colab GPU quota blocked",
   "last_retrieved_selected_epoch": 4,
@@ -341,19 +341,31 @@
     "missing_validation_predictions": "Must export full selected-checkpoint validation predictions"
   },
   "text_completion_execution": {
-    "state": "recovery checks passed; private input upload pending",
-    "summary": "Versioned BERT-only recovery implemented. CPU checks passed: persistent-worker later-epoch exact suffix, epoch-boundary and second-interruption order, exact CPU model/AdamW/scheduler/RNG/GradScaler state with two actual overflows. The real epoch5/batch15000 checkpoint reconstructs the frozen permutation and next-epoch RNG. Original trainer/config and weights are preserved. Full selected-weight validation/test export and independent metric verifier are implemented. No GPU training or final test has been run in this execution session.",
-    "next_action": "Finish private upload of original BERT checkpoint archive plus the 37KB pinned recovery payload, attach inputs and replace the old pilot draft with the BERT-only bootstrap. Re-run focused CPU gates on installed Kaggle Torch before optimizer steps; submit one saved GPU batch. Follow the 20% reserve rule.",
+    "state": "Kaggle saved BERT recovery batch running; optimizer progress not yet verified",
+    "summary": "Recovery checks passed locally and input transfer completed. Private recovery dataset successfully created and attached (version20499630), alongside unchanged official inputs (version20474176). Submitted saved Kaggle version3/scriptVersionId356721456. Immutable saved bootstrap matches the prepared local source exactly. Provider reports Running with GPU T4 x2; preflight/optimizer progress and final text test remain unverified. Original Colab source/config/history and checkpoint remain preserved.",
+    "next_action": "Inspect version356721456 logs for input/hash and installed-Torch recovery gates, restored epoch5/batch15000 and first actual optimizer progress. Monitor this exact job; do not submit another run based on observation delays. Then verify and retrieve final numerical evidence and weights, update records and GitHub.",
     "check_evidence": "results/text_recovery_v1_checks_20261009.json",
     "source": "scripts/train_official_text_recovery_v1.py",
     "source_sha256": "abf2237c5ae9d27a2cb0ca746a59e119d6c27c6b241bbdedca468779584eb0bf",
     "payload_sha256": "f4c4a64d4535116dd1c21c08ebc8ca21dd1f89d94aae8b4a8514db621e876c9d",
     "assistant_usage_observed": {
-      "primary_remaining_percent": 89,
-      "weekly_remaining_percent": 52
+      "primary_remaining_percent": 74,
+      "weekly_remaining_percent": 50
     },
-    "cloud_active_job_verified": false,
+    "cloud_active_job_verified": true,
     "final_test_verified": false,
-    "updated_utc": "2026-10-09T09:48:25.173696+00:00"
+    "cloud_job_url": "https://www.kaggle.com/code/rocky62/urop-official-six-way-text-recovery?scriptVersionId=356721456",
+    "script_version_id": 356721456,
+    "kaggle_version": 3,
+    "private_recovery_input_url": "https://www.kaggle.com/datasets/rocky62/urop-verified-bert-recovery-v1",
+    "private_input_versions": [
+      20474176,
+      20499630
+    ],
+    "bert_resume_optimizer_progress_verified": false,
+    "bootstrap_source_sha256": "c77c8c59528a5c2b41ef608d86898bac53fc68c03deec573c0f6b53499ceccc3",
+    "gpu_setting": "T4 x2; trainer exposes device0 only",
+    "kaggle_quota_observed": "00:06 /30h used, approximately29h54m remaining before submission",
+    "updated_utc": "2026-10-09T10:14:13.023934+00:00"
   }
 }

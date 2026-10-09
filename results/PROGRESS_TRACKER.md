@@ -1,9 +1,9 @@
 <!-- TEXT-COMPLETE-v1 LIVE -->
 ## BERT completion execution — 9 October 2026
 
-Versioned BERT-only recovery implemented. CPU checks passed: persistent-worker later-epoch exact suffix, epoch-boundary and second-interruption order, exact CPU model/AdamW/scheduler/RNG/GradScaler state with two actual overflows. The real epoch5/batch15000 checkpoint reconstructs the frozen permutation and next-epoch RNG. Original trainer/config and weights are preserved. Full selected-weight validation/test export and independent metric verifier are implemented. No GPU training or final test has been run in this execution session.
+Recovery checks passed locally and input transfer completed. Private recovery dataset successfully created and attached (version20499630), alongside unchanged official inputs (version20474176). Submitted saved Kaggle version3/scriptVersionId356721456. Immutable saved bootstrap matches the prepared local source exactly. Provider reports Running with GPU T4 x2; preflight/optimizer progress and final text test remain unverified. Original Colab source/config/history and checkpoint remain preserved.
 
-Finish private upload of original BERT checkpoint archive plus the 37KB pinned recovery payload, attach inputs and replace the old pilot draft with the BERT-only bootstrap. Re-run focused CPU gates on installed Kaggle Torch before optimizer steps; submit one saved GPU batch. Follow the 20% reserve rule.
+Inspect version356721456 logs for input/hash and installed-Torch recovery gates, restored epoch5/batch15000 and first actual optimizer progress. Monitor this exact job; do not submit another run based on observation delays. Then verify and retrieve final numerical evidence and weights, update records and GitHub.
 
 Evidence: `results/text_completion_execution_20261009.json`; plan `context/TEXT_COMPLETION_PLAN_20261009.md`. The user has authorized execution. Historical entries below retain earlier observations.
 <!-- /TEXT-COMPLETE-v1 LIVE -->
