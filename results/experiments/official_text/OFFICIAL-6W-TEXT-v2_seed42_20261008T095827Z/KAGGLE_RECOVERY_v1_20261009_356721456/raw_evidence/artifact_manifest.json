@@ -1,0 +1,278 @@
+{
+  "environment.json": {
+    "bytes": 2188,
+    "sha256": "1c5547c370d59347666d9164ddc32c0f8f18aea91b746840eeb0291a2e3fa3db"
+  },
+  "retrieval_manifest.json": {
+    "bytes": 2438,
+    "sha256": "57a2333d7f90cc34003e8d4f3d0d3aecbd697b8cccc3ac4f62148a506a621d53"
+  },
+  "environment_resume_20261009T101418Z.json": {
+    "bytes": 2559,
+    "sha256": "4cbe4de5073a66a26b821af8be1a89017d9abbc33696f4e8a301c42d2ee1ebea"
+  },
+  "installed_torch_recovery_checks.json": {
+    "bytes": 1434,
+    "sha256": "e253c2a53b7e13ec363ed0c76af33b65ce58b752e02067143aa5b570abe6fd1c"
+  },
+  "pip_freeze_resume_20261009T101418Z.txt": {
+    "bytes": 18034,
+    "sha256": "d528ff60100f913954e4984f575d4c6639a93817ba9f1c81fc5646d396cddb23"
+  },
+  "migration_verification.json": {
+    "bytes": 1122,
+    "sha256": "de009826d763ebb450128ba72b73bc971f5f089cb65b289582ca5746da3c3249"
+  },
+  "dataset_evidence.json": {
+    "bytes": 1055,
+    "sha256": "cd0f08e46ce0a5b13f07ef81868e44254724a30d06efbb4ef0ed06b23965668f"
+  },
+  "results_summary.json": {
+    "bytes": 1550,
+    "sha256": "b279b2f6dfed63c1ab8b357afd6a762883b4ad83029ee5e2c5b89faf9ec6a4d5"
+  },
+  "protocol.json": {
+    "bytes": 1701,
+    "sha256": "b203b3ea15c247c8174bbd67733501e304a31c7b681c720a4ed61bbe05f57689"
+  },
+  "training.log": {
+    "bytes": 5193,
+    "sha256": "32e4635dd5ddbca99c23aa6c5f1471caebffead06911a0fe9c1951b473e13c84"
+  },
+  "recovery_payload_manifest.json": {
+    "bytes": 5137,
+    "sha256": "025362937e9326a3b3b4cd9495cab83bfc1aca83556d0aa686d198ec51df056d"
+  },
+  "stderr.log": {
+    "bytes": 601,
+    "sha256": "f22a88e0e1a85d719906d9bff3bf10fee4f2b1d9201e4a513465464d3ec8c8b4"
+  },
+  "pip_freeze.txt": {
+    "bytes": 14183,
+    "sha256": "351c23aaefade158854385b4d1552e30cf081c996afda3657c9138b1cce40014"
+  },
+  "historical_colab_snapshot/retrieval_manifest_epoch4_original.json": {
+    "bytes": 2438,
+    "sha256": "57a2333d7f90cc34003e8d4f3d0d3aecbd697b8cccc3ac4f62148a506a621d53"
+  },
+  "historical_colab_snapshot/environment.json": {
+    "bytes": 2188,
+    "sha256": "1c5547c370d59347666d9164ddc32c0f8f18aea91b746840eeb0291a2e3fa3db"
+  },
+  "historical_colab_snapshot/retrieval_manifest_current.json": {
+    "bytes": 3688,
+    "sha256": "99caa8d086b14a550cb6f328337815bedd77164de8b9d035104d350bcd6130b4"
+  },
+  "historical_colab_snapshot/retrieval_manifest.json": {
+    "bytes": 232,
+    "sha256": "c891d984002c4aa1fe51c8a0fe237e57acad60ffa4a0f43be8f049bda0302f25"
+  },
+  "historical_colab_snapshot/dataset_evidence.json": {
+    "bytes": 1055,
+    "sha256": "cd0f08e46ce0a5b13f07ef81868e44254724a30d06efbb4ef0ed06b23965668f"
+  },
+  "historical_colab_snapshot/protocol.json": {
+    "bytes": 1701,
+    "sha256": "b203b3ea15c247c8174bbd67733501e304a31c7b681c720a4ed61bbe05f57689"
+  },
+  "historical_colab_snapshot/pip_freeze.txt": {
+    "bytes": 14183,
+    "sha256": "351c23aaefade158854385b4d1552e30cf081c996afda3657c9138b1cce40014"
+  },
+  "bert-base/result.json": {
+    "bytes": 1452,
+    "sha256": "8a6a20bd40b8eddbf7ccf8ac1fa0093f06fabf05fd94ca77f3b0ddcc7d3c8400"
+  },
+  "bert-base/validation_selection_metrics.json": {
+    "bytes": 201,
+    "sha256": "d8177b04ef1bc8fd3e026801c1219b379f50fbf9000319c8e828750ab6098f05"
+  },
+  "bert-base/train_official_text.py": {
+    "bytes": 19922,
+    "sha256": "a13c0e5d97b2fe7661ce6a228d43d853f1aca703314cfa48688825b7b01701f9"
+  },
+  "bert-base/sampler_epoch6_proof.json": {
+    "bytes": 1298,
+    "sha256": "6cd40976f112213bf0b3b0f1fa1697821e88bac83b40d08663df6749686c8c57"
+  },
+  "bert-base/validation_metrics.json": {
+    "bytes": 235,
+    "sha256": "9459142988c6d42bd2dfa35312490797e88e6877aec4b68f3165f99a4102cb53"
+  },
+  "bert-base/validation_classification_report.json": {
+    "bytes": 1281,
+    "sha256": "6018fb88183b4cd5ab16327849c012e493f76a4a5b5e9db2af5d2927535e3172"
+  },
+  "bert-base/best_checkpoint.json": {
+    "bytes": 246,
+    "sha256": "8afc3b780f55d90b6fcbd08112cffa2dde8d1d83d72a8181b3c8f460698f4d11"
+  },
+  "bert-base/history.json": {
+    "bytes": 2292,
+    "sha256": "5c7edc390449e5252e4408067da5d7558ff32afe2de8f8ef7255d27d79486d71"
+  },
+  "bert-base/config.json": {
+    "bytes": 1108,
+    "sha256": "864d63c4c2c4f02b1ec8eabdf40a0315af6a120df8775edc01d80e8c9d1d93bd"
+  },
+  "bert-base/validation_confusion_matrix.csv": {
+    "bytes": 326,
+    "sha256": "4b9249949bc36cef410477405bf6b64b78bf79f5d4eee081e59a3b0080aca340"
+  },
+  "bert-base/validation_confusion_matrix_normalized.csv": {
+    "bytes": 917,
+    "sha256": "604c47104d180d53d28f255b2241afe9b45beda882bb2214f221b420e21bbc32"
+  },
+  "bert-base/selected_checkpoint.json": {
+    "bytes": 395,
+    "sha256": "10c41d14ee6f3a8d9b96d5598d00ab981c9b2ff6f16889591d1c10af3035d6bf"
+  },
+  "bert-base/execution_protocol.json": {
+    "bytes": 2233,
+    "sha256": "d20065ecb54c17a3fcdbdcafecf9a8f2b29674f4122b10845f45c18db0ca861d"
+  },
+  "bert-base/checkpoint_history.jsonl": {
+    "bytes": 4656,
+    "sha256": "bfd45031b583512885646d9107a02427b4ed8c141a64a817fcdbf7a6f838dc1f"
+  },
+  "bert-base/test_classification_report.json": {
+    "bytes": 1281,
+    "sha256": "e408a4561bf2676db0e66a70d2fa203996b5dbb65c2f5d29c39353ccbc6497dc"
+  },
+  "bert-base/test_evaluation_provenance.json": {
+    "bytes": 197,
+    "sha256": "428b2f1f9c1463a0cd83178f1133b4ab9f194391cc5f7a3f700fb849cb696f3b"
+  },
+  "bert-base/status.json": {
+    "bytes": 1636,
+    "sha256": "f33f58070c549ce42fedf98fb98e02dce72d4ac689bf455181fe09caeb3077c0"
+  },
+  "bert-base/test_predictions.csv": {
+    "bytes": 1789975,
+    "sha256": "bb2902a6d3c0a821880a164440f5128e56d6ca56b5d7c375bb36839b4e267191"
+  },
+  "bert-base/recovery_checkpoint.json": {
+    "bytes": 142,
+    "sha256": "4c9265f015716df6564bf1496b683540a780d2d695cc8f2a7fc6767df8f10c2c"
+  },
+  "bert-base/validation_predictions.csv": {
+    "bytes": 1790907,
+    "sha256": "8c2482d63b79ee3506b2c111cfed4e054e3166c5f76b6cecae7f1463581eae86"
+  },
+  "bert-base/test_confusion_matrix_normalized.csv": {
+    "bytes": 909,
+    "sha256": "05a40a9810070c7e6077abf9485a9384b7a57314adbbec1e510591f3bd62e0ff"
+  },
+  "bert-base/test_metrics.json": {
+    "bytes": 234,
+    "sha256": "aa8b544587e8f177ce4333183b4b9d6eb7b6cdee35c8dffaa953c264e9692ef9"
+  },
+  "bert-base/test_confusion_matrix.csv": {
+    "bytes": 327,
+    "sha256": "236e7621a229d6c4caffb623b183191f878d3f0cec3392a37fb79018c26a4644"
+  },
+  "bert-base/train_official_text_recovery_v1.py": {
+    "bytes": 26752,
+    "sha256": "abf2237c5ae9d27a2cb0ca746a59e119d6c27c6b241bbdedca468779584eb0bf"
+  },
+  "bert-base/sampler_epoch5_proof.json": {
+    "bytes": 1300,
+    "sha256": "53b953e5f309a4eb0a47b272ca87df6c8ca976763c78dfdd8590c9f84aebf847"
+  },
+  "bert-base/metric_verification.json": {
+    "bytes": 1242,
+    "sha256": "6d89ced8197911d705bdd0a22d794a95abe9fd517a741c2a97feec0577f87655"
+  },
+  "recovery_source/text_recovery_order_v1.py": {
+    "bytes": 3161,
+    "sha256": "b7be22c5ce2a8fcc00278ce428bbbacda33a792f9e7bf00599d9cbab5427d1a1"
+  },
+  "recovery_source/check_text_recovery_v1.py": {
+    "bytes": 7339,
+    "sha256": "d697e47f7c7e29f580469726bc166c449a5dfc512c8459e0596b045c00c14675"
+  },
+  "recovery_source/verify_completed_text_v1.py": {
+    "bytes": 4175,
+    "sha256": "64397f8eb823d9af68d2aa738e5d497d9d4809373976dd3283783a4a8a05a789"
+  },
+  "recovery_source/train_official_text_recovery_v1.py": {
+    "bytes": 26752,
+    "sha256": "abf2237c5ae9d27a2cb0ca746a59e119d6c27c6b241bbdedca468779584eb0bf"
+  },
+  "bert-base/tokenizer/tokenizer_config.json": {
+    "bytes": 351,
+    "sha256": "e1c2a61a99bda00f6c55303a210b30e2f92dcf8b555e215812e2eb583e177ffd"
+  },
+  "bert-base/tokenizer/tokenizer.json": {
+    "bytes": 711396,
+    "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+  },
+  "historical_colab_snapshot/bert-base/history_epoch4_original.json": {
+    "bytes": 1477,
+    "sha256": "9d95976d83589e9c8fb370b7c0f0e02f301b41ba6bbdac6f16ddb7458418540f"
+  },
+  "historical_colab_snapshot/bert-base/history_epoch5_retrieval.json": {
+    "bytes": 392,
+    "sha256": "dd549822beb8a74c12f9e2a166b40d457cc27b0462c0067dbe11bc3cc03e9821"
+  },
+  "historical_colab_snapshot/bert-base/validation_history.csv": {
+    "bytes": 765,
+    "sha256": "b7ecdce55f3339139656ff7fc08b3d393cf0991f09bd86c3cd7bb6a58d0181a4"
+  },
+  "historical_colab_snapshot/bert-base/validation_metrics.json": {
+    "bytes": 201,
+    "sha256": "d8177b04ef1bc8fd3e026801c1219b379f50fbf9000319c8e828750ab6098f05"
+  },
+  "historical_colab_snapshot/bert-base/status_at_epoch5_interruption.json": {
+    "bytes": 139,
+    "sha256": "a93f5446e0ea0e50602c5a543d6459c475823c180f46d66867bfded500bba294"
+  },
+  "historical_colab_snapshot/bert-base/validation_classification_report.json": {
+    "bytes": 1281,
+    "sha256": "6018fb88183b4cd5ab16327849c012e493f76a4a5b5e9db2af5d2927535e3172"
+  },
+  "historical_colab_snapshot/bert-base/best_checkpoint.json": {
+    "bytes": 246,
+    "sha256": "8afc3b780f55d90b6fcbd08112cffa2dde8d1d83d72a8181b3c8f460698f4d11"
+  },
+  "historical_colab_snapshot/bert-base/validation_epoch2_observed.json": {
+    "bytes": 255,
+    "sha256": "e3c4054ac6be003408a6466b6aa01674583feba0fd9ba49a1d1092d3f7327305"
+  },
+  "historical_colab_snapshot/bert-base/history.json": {
+    "bytes": 1846,
+    "sha256": "2766b7252c0e64d8bd0e25efb1f516e995db72774496ae6357fddf8040acb58f"
+  },
+  "historical_colab_snapshot/bert-base/history_epoch5_drive_viewer.txt": {
+    "bytes": 1846,
+    "sha256": "2766b7252c0e64d8bd0e25efb1f516e995db72774496ae6357fddf8040acb58f"
+  },
+  "historical_colab_snapshot/bert-base/config.json": {
+    "bytes": 1108,
+    "sha256": "864d63c4c2c4f02b1ec8eabdf40a0315af6a120df8775edc01d80e8c9d1d93bd"
+  },
+  "historical_colab_snapshot/bert-base/validation_confusion_matrix.csv": {
+    "bytes": 326,
+    "sha256": "4b9249949bc36cef410477405bf6b64b78bf79f5d4eee081e59a3b0080aca340"
+  },
+  "historical_colab_snapshot/bert-base/checkpoint_history.jsonl": {
+    "bytes": 3359,
+    "sha256": "9d31ee2ff7a7b04b82fffdf16340adae52deaa10394a39dbafee15c62b80681d"
+  },
+  "historical_colab_snapshot/bert-base/status.json": {
+    "bytes": 346,
+    "sha256": "f607d62fa167e76c15035887bc4dc60cf472028859648b1c90fcca4ee9a9151f"
+  },
+  "historical_colab_snapshot/bert-base/recovery_checkpoint.json": {
+    "bytes": 141,
+    "sha256": "86daa68104d8ec47f467b8a901f82ca8aa70655566b739a400671f51d9e1cb83"
+  },
+  "historical_colab_snapshot/bert-base/validation_epoch1_observed.json": {
+    "bytes": 582,
+    "sha256": "a9c2fcc941dc9626d3b8a69942bd799b4adbea0fcac5e7f84c2b53515309f784"
+  },
+  "historical_colab_snapshot/bert-base/validation_epoch3_observed.json": {
+    "bytes": 241,
+    "sha256": "72f1dcc930a4989d490a5981c603190ae59e70235d238ee22e9fa44ab3da7b86"
+  }
+}

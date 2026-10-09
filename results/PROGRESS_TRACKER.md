@@ -1,38 +1,32 @@
 <!-- TEXT-COMPLETE-v1 LIVE -->
 ## BERT completion execution — 9 October 2026
 
-BERT completed the registered six-epoch training budget. Epoch6 validation accuracy82.5284%, Macro-F177.7718% did not replace epoch4 (82.7407% accuracy/77.8682% Macro-F1). Checkpoint6/17625 saved in session storage at job elapsed2553s. Final selected-weight validation export, official59319-row test, saved-output verification and local evidence/weight retrieval remain pending. Preserve historical results and the unchanged scientific protocol.
+BERT text-only six-class baseline is complete: six epochs, epoch4 selected; validation82.7407% accuracy/77.8682% Macro-F1; test82.3901%/77.4566% on all59319 rows. Test exceeds paper76.77% by5.6201 percentage points, reaching+1-point target. Both archives,69 manifest members and allprediction metrics/IDs verified. Model/optimizer/scheduler/AMP/tokenizer load and completed-result idempotence passed. Final epoch6 checkpoint and selected weights stored locally/private cloud. Original data/config/source/history retained. Text100%, full text+image40%, image20%, overall53%; pilot100% separately. No active cloud GPU job; Kaggle quota29h09m remaining at final observation.
 
-Continue observing this exact saved job. Finish remaining epoch5, then epoch6 or the registered early-stop rule. Keep original input checkpoint as durable fallback; new Kaggle working checkpoints become durable only after saved outputs are verified. Freeze validation-selected weight hash, export full validation/test evidence, retrieve weights and independently verify metrics/IDs before claiming completion.
+BERT baseline complete. Read results/TEXT_ONLY_FINAL_REPORT_20261009.md; register a separate future ModernBERT comparison or full multimodal cohort before any new training. Final GitHub verification is recorded in the requirement audit.
 
 Evidence: `results/text_completion_execution_20261009.json`; plan `context/TEXT_COMPLETION_PLAN_20261009.md`. The user has authorized execution. Historical entries below retain earlier observations.
 <!-- /TEXT-COMPLETE-v1 LIVE -->
 
-**9 October planning update:** percentages are unchanged. The saved checkpoint is intact, but the original resume path needs a sample-order repair and focused checks before GPU execution. BERT completion will be a separate job with complete validation/test exports. Plan: `context/TEXT_COMPLETION_PLAN_20261009.md`. No GPU job launched. At 20% assistant usage remaining, reserve work for checkpoint/context/GitHub handoff while any healthy submitted cloud job continues.
+# UROP progress — verified 9 October 2026
 
-# Six-way project progress bars
-
-User preference: Whenever asked for progress, show these bars plus data/model/train/validate/test checkpoints. Read PROGRESS_TRACKER.json and refresh from verified evidence; never increment merely because time passed. Keep pilots separate from full benchmark work. This preference does not create an automation.
-
-Five workflow checkpoints, each worth20%: official dataset audit; model implementation; training; validation; final test + saved results. Percentages measure workflow completion, not accuracy, percent of data processed, elapsed time or remaining GPU time. Dataset audit is complete for all three modalities; full image availability remains incomplete. Five training/validation epochs were observed; the verified recoverable tensor is epoch5 batch15000/17625. Training-stage progress uses this older durable state, approximately81% of the six-epoch maximum; observed validation checks are83%. Some epoch5 work needs replay.
+Five workflow stages each carry20%: dataset audit, model code, training, validation, final test+archive. Percentages are workflow progress, not accuracy.
 
 ```text
-Text-only BERT      ███████░░░  73%
-Text + image, full  ████░░░░░░  40%
-Image-only         ██░░░░░░░░  20%
-Overall            ████░░░░░░  44%
+Text-only BERT  [██████████] 100%
+Text+image full [████░░░░░░]  40%
+Image-only     [██░░░░░░░░]  20%
+Overall        [█████░░░░░]  53%
 ```
 
-| Checkpoint | Text-only BERT | Text+image full benchmark | Image-only |
-|---|---|---|---|
-| Official dataset/label/split audit | Done | Done | Done |
-| Model code | Done | Done; pilot demonstrated | Pending standalone model |
-| Training | Recoverable state:81% of six-epoch budget | Full run pending | Pending |
-| Validation | 5/6 epoch checks,83% | Full run pending | Pending |
-| Final test + saved final results | Pending | Full run pending | Pending |
+| Text checkpoint | Verified completion |
+|---|---|
+| Dataset / code | 100% /100%; full unchanged official splits |
+| Training | 100%; six epochs; durable final6/17625 checkpoint |
+| Validation | 100%; six checks, epoch4 selected, all59,342 selected-weight predictions |
+| Test | 100%; all59,319 official rows, metrics independently recomputed |
+| Saving | 100%; numerical ZIP, reports/predictions, two tensors and tokenizer/config locally/private cloud |
 
-Text+image engineering pilot:100% completed,3epochs,2000/300/300 rows; separate from the full benchmark. ModernBERT additional comparison:40% prepared, training/validation/test pending; excluded from the BERT headline and three-modality average.
+Small multimodal pilot:100% separately,2,000/300/300 rows. ModernBERT:40% prepared,0% trained, excluded from headline. Full text+image has no full benchmark training; image-only remains unimplemented/untrained. Overall equals(100+40+20)/3, rounded53%.
 
-We did train BERT; validation followed each training epoch. Final testing is evaluation on unseen test data, not another training stage on that data. Best checkpoint is selected using validation.
-
-Recovery files are preserved under data/cloud_recovery/. BERT checkpoint integrity passed: epoch5 batch15000, four validations inside tensor, best epoch4. Original fifth-epoch observed history remains preserved. Resume must replay the epoch5 tail. Original multimodal archive and all300 validation/300 test predictions are now synced and verified. No GPU training job is currently running.
+See `results/TEXT_ONLY_FINAL_REPORT_20261009.md` and `results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/completion_verification.json`.

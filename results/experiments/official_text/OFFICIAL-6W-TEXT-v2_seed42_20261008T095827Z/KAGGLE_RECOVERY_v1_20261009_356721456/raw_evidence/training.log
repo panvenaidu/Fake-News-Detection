@@ -1,0 +1,59 @@
+ATTEMPT /kaggle/working/UROP_BERT_RECOVERY_V1/official_text_runs/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z OFFICIAL COUNTS {'train': 564000, 'validation': 59342, 'test': 59319}
+bert-base tokenizing official titles
+Restoring bert-base epoch 5 after step 15000
+SAMPLER VERIFIED 5 cursor 480000 next IDs ['84p7pu', '3nue2v', '2nfbs2']
+bert-base epoch 5 step 15001/17625 loss 0.1882 speed 227.6/s
+bert-base epoch 5 step 15500/17625 loss 0.1882 speed 229.0/s
+bert-base epoch 5 step 16000/17625 loss 0.1883 speed 230.2/s
+bert-base epoch 5 step 16500/17625 loss 0.1882 speed 231.5/s
+bert-base epoch 5 step 17000/17625 loss 0.1884 speed 232.7/s
+bert-base epoch 5 step 17500/17625 loss 0.1883 speed 233.9/s
+bert-base epoch 5 step 17625/17625 loss 0.1883 speed 234.2/s
+CHECKPOINT SAVED bert-base epoch 5 step 17625
+bert-base EPOCH 5 VALIDATION {"accuracy": 0.8280307370833474, "micro_f1": 0.8280307370833474, "macro_f1": 0.7783884649712434, "weighted_f1": 0.8259979245082972, "balanced_accuracy": 0.7534236036328652, "loss": 0.6685243945077007, "samples": 59342}
+SAMPLER VERIFIED 6 cursor 0 next IDs ['8zo7ue', '1zbyf8', '1ns1al']
+bert-base epoch 6 step 1/17625 loss 0.1634 speed 92.7/s
+bert-base epoch 6 step 500/17625 loss 0.1430 speed 279.9/s
+bert-base epoch 6 step 1000/17625 loss 0.1410 speed 280.1/s
+bert-base epoch 6 step 1500/17625 loss 0.1415 speed 280.2/s
+bert-base epoch 6 step 2000/17625 loss 0.1424 speed 279.3/s
+bert-base epoch 6 step 2500/17625 loss 0.1451 speed 279.4/s
+bert-base epoch 6 step 3000/17625 loss 0.1460 speed 279.7/s
+CHECKPOINT SAVED bert-base epoch 6 step 3000
+bert-base epoch 6 step 3500/17625 loss 0.1457 speed 278.6/s
+bert-base epoch 6 step 4000/17625 loss 0.1451 speed 278.9/s
+bert-base epoch 6 step 4500/17625 loss 0.1455 speed 279.1/s
+bert-base epoch 6 step 5000/17625 loss 0.1456 speed 279.3/s
+bert-base epoch 6 step 5500/17625 loss 0.1459 speed 279.4/s
+bert-base epoch 6 step 6000/17625 loss 0.1463 speed 279.7/s
+CHECKPOINT SAVED bert-base epoch 6 step 6000
+bert-base epoch 6 step 6500/17625 loss 0.1469 speed 279.1/s
+bert-base epoch 6 step 7000/17625 loss 0.1472 speed 279.4/s
+bert-base epoch 6 step 7500/17625 loss 0.1473 speed 279.5/s
+bert-base epoch 6 step 8000/17625 loss 0.1474 speed 279.7/s
+bert-base epoch 6 step 8500/17625 loss 0.1470 speed 279.8/s
+bert-base epoch 6 step 9000/17625 loss 0.1468 speed 280.1/s
+CHECKPOINT SAVED bert-base epoch 6 step 9000
+bert-base epoch 6 step 9500/17625 loss 0.1466 speed 279.8/s
+bert-base epoch 6 step 10000/17625 loss 0.1468 speed 280.0/s
+bert-base epoch 6 step 10500/17625 loss 0.1466 speed 280.2/s
+bert-base epoch 6 step 11000/17625 loss 0.1464 speed 280.3/s
+bert-base epoch 6 step 11500/17625 loss 0.1461 speed 280.5/s
+bert-base epoch 6 step 12000/17625 loss 0.1462 speed 280.6/s
+CHECKPOINT SAVED bert-base epoch 6 step 12000
+bert-base epoch 6 step 12500/17625 loss 0.1463 speed 280.2/s
+bert-base epoch 6 step 13000/17625 loss 0.1463 speed 280.4/s
+bert-base epoch 6 step 13500/17625 loss 0.1463 speed 280.4/s
+bert-base epoch 6 step 14000/17625 loss 0.1461 speed 280.0/s
+bert-base epoch 6 step 14500/17625 loss 0.1457 speed 279.5/s
+bert-base epoch 6 step 15000/17625 loss 0.1455 speed 279.1/s
+CHECKPOINT SAVED bert-base epoch 6 step 15000
+bert-base epoch 6 step 15500/17625 loss 0.1452 speed 278.3/s
+bert-base epoch 6 step 16000/17625 loss 0.1454 speed 277.9/s
+bert-base epoch 6 step 16500/17625 loss 0.1454 speed 277.6/s
+bert-base epoch 6 step 17000/17625 loss 0.1451 speed 277.4/s
+bert-base epoch 6 step 17500/17625 loss 0.1454 speed 277.2/s
+bert-base epoch 6 step 17625/17625 loss 0.1454 speed 277.1/s
+CHECKPOINT SAVED bert-base epoch 6 step 17625
+bert-base EPOCH 6 VALIDATION {"accuracy": 0.8252839472885983, "micro_f1": 0.8252839472885983, "macro_f1": 0.7777178572618486, "weighted_f1": 0.8240532401143373, "balanced_accuracy": 0.7534566690986185, "loss": 0.7621944958162614, "samples": 59342}
+FINAL RESULT {"model": {"name": "bert-base", "checkpoint": "google-bert/bert-base-uncased", "revision": "86b5e0934494bd15c9632b12f734a8a67f723594", "learning_rate": 2e-05}, "seed": 42, "protocol_id": "OFFICIAL-6W-TEXT-v2", "checkpoint_epoch": 4, "validation_selection": {"accuracy": 0.8274072326514105, "macro_f1": 0.7786816742546674, "weighted_f1": 0.8259081148742857, "balanced_accuracy": 0.7515221994793709, "loss": 0.6015845915151155, "samples": 59342}, "validation": {"accuracy": 0.8274072326514105, "micro_f1": 0.8274072326514105, "macro_f1": 0.7786816742546674, "weighted_f1": 0.8259081148742857, "balanced_accuracy": 0.7515221994793709, "loss": 0.6015845915151155, "samples": 59342}, "test": {"accuracy": 0.8239012795225813, "micro_f1": 0.8239012795225813, "macro_f1": 0.7745655655088569, "weighted_f1": 0.822430054171013, "balanced_accuracy": 0.7497860290168639, "loss": 0.6180801154495272, "samples": 59319}, "selected_weight_sha256": "870bea50fa608dddd20421c21fd1786e244b1323e22734093214b87023666753", "recovery_schema": "TEXT-RECOVERY-ORDER-v1", "epochs_completed": 6, "training_seconds": 14246.324151702, "total_seconds": 2533.140595597, "peak_gpu_allocated_bytes": 3275995136, "optimizer_updates": 105710, "skipped_updates": 40, "single_seed": true, "completed_utc": "2026-10-09T10:56:37.875385+00:00"}

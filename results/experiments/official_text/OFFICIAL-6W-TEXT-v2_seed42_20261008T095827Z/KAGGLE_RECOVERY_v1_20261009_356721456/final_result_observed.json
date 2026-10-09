@@ -1,0 +1,51 @@
+{
+  "source": "Saved-job FINAL RESULT log; retrieval and local verification pending",
+  "script_version_id": 356721456,
+  "result": {
+    "model": {
+      "name": "bert-base",
+      "checkpoint": "google-bert/bert-base-uncased",
+      "revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+      "learning_rate": 0.00002
+    },
+    "seed": 42,
+    "protocol_id": "OFFICIAL-6W-TEXT-v2",
+    "checkpoint_epoch": 4,
+    "validation_selection": {
+      "accuracy": 0.8274072326514105,
+      "macro_f1": 0.7786816742546674,
+      "weighted_f1": 0.8259081148742857,
+      "balanced_accuracy": 0.7515221994793709,
+      "loss": 0.6015845915151155,
+      "samples": 59342
+    },
+    "validation": {
+      "accuracy": 0.8274072326514105,
+      "micro_f1": 0.8274072326514105,
+      "macro_f1": 0.7786816742546674,
+      "weighted_f1": 0.8259081148742857,
+      "balanced_accuracy": 0.7515221994793709,
+      "loss": 0.6015845915151155,
+      "samples": 59342
+    },
+    "test": {
+      "accuracy": 0.8239012795225813,
+      "micro_f1": 0.8239012795225813,
+      "macro_f1": 0.7745655655088569,
+      "weighted_f1": 0.822430054171013,
+      "balanced_accuracy": 0.7497860290168639,
+      "loss": 0.6180801154495272,
+      "samples": 59319
+    },
+    "selected_weight_sha256": "870bea50fa608dddd20421c21fd1786e244b1323e22734093214b87023666753",
+    "recovery_schema": "TEXT-RECOVERY-ORDER-v1",
+    "epochs_completed": 6,
+    "training_seconds": 14246.324151702,
+    "total_seconds": 2533.140595597,
+    "peak_gpu_allocated_bytes": 3275995136,
+    "optimizer_updates": 105710,
+    "skipped_updates": 40,
+    "single_seed": true,
+    "completed_utc": "2026-10-09T10:56:37.875385+00:00"
+  }
+}

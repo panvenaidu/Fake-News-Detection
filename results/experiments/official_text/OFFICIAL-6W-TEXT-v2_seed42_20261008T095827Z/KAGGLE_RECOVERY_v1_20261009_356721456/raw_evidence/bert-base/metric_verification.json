@@ -1,0 +1,35 @@
+{
+  "status": "verified",
+  "tolerance": 1e-12,
+  "selected_epoch": 4,
+  "selected_weight_sha256": "870bea50fa608dddd20421c21fd1786e244b1323e22734093214b87023666753",
+  "splits": {
+    "validation": {
+      "rows": 59342,
+      "metrics_recomputed": {
+        "accuracy": 0.8274072326514105,
+        "micro_f1": 0.8274072326514105,
+        "macro_f1": 0.7786816742546674,
+        "weighted_f1": 0.8259081148742857,
+        "balanced_accuracy": 0.7515221994793709,
+        "samples": 59342
+      },
+      "prediction_sha256": "8c2482d63b79ee3506b2c111cfed4e054e3166c5f76b6cecae7f1463581eae86",
+      "loss_verified": "finite stored inference loss; confidence alone does not reconstruct CE loss"
+    },
+    "test": {
+      "rows": 59319,
+      "metrics_recomputed": {
+        "accuracy": 0.8239012795225813,
+        "micro_f1": 0.8239012795225813,
+        "macro_f1": 0.7745655655088569,
+        "weighted_f1": 0.822430054171013,
+        "balanced_accuracy": 0.7497860290168639,
+        "samples": 59319
+      },
+      "prediction_sha256": "bb2902a6d3c0a821880a164440f5128e56d6ca56b5d7c375bb36839b4e267191",
+      "loss_verified": "finite stored inference loss; confidence alone does not reconstruct CE loss"
+    }
+  },
+  "single_seed": true
+}

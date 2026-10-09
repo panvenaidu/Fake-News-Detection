@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "artifact_fixture": "Separate ignored copy of actual complete artifacts with hard-linked tensors",
+  "source": "scripts/train_official_text_recovery_v1.py",
+  "observed_output": "VERIFIED COMPLETE; no training or inference repeated",
+  "gpu_training_or_inference": false,
+  "utc": "2026-10-09T11:36:42.935101+00:00"
+}

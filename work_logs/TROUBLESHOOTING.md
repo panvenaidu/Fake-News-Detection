@@ -1,3 +1,7 @@
+## Verified recovery outcome — 9 October 2026
+
+Versioned recovery passed locally and in KaggleTorch2.11. Original epoch5 validation was reproduced; epoch6 completed and epoch4 selected. Both downloaded archives passed checksums/CRC; full prediction verification and strict model/optimizer/scheduler/AMP/tokenizer loads passed. Completion guard returned without training/inference. Native Chrome AX toggling did not refresh the download toast; the visible toolbar coordinate opened the current download panel and confirmed completion. No duplicate download/training was launched from observation timeouts.
+
 ## Recovery correction — 9 October 2026
 
 The original restart coupled worker seeding with the sample-order generator. Versioned recovery separates the worker generator, replays the installed RandomSampler through exhaustion (including its unused final permutation), verifies the saved epoch5 order and resumes at sample480000. Focused checks pass on local Torch2.8.0; repeat in installed Kaggle Torch before optimization. The original source is preserved. Artifact verifier rejects duplicate IDs, wrong labels, confidence outside0–1 and incorrect metrics. Evidence: `results/text_recovery_v1_checks_20261009.json` and `results/text_evidence_verifier_checks_20261009.json`.

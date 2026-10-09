@@ -1,0 +1,28 @@
+{
+  "protocol_id": "OFFICIAL-6W-TEXT-v2",
+  "label_column": "6_way_label",
+  "text_column": "clean_title",
+  "seed": 42,
+  "max_length": 128,
+  "batch_size": 32,
+  "eval_batch_size": 128,
+  "max_epochs": 6,
+  "min_epochs": 3,
+  "patience": 2,
+  "min_delta": 0.001,
+  "recovery_checkpoint_every_steps": 3000,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "checkpoint_selection": "validation_macro_f1_then_lower_loss_then_earlier_epoch",
+  "models": [
+    {"name": "bert-base", "checkpoint": "google-bert/bert-base-uncased", "revision": "86b5e0934494bd15c9632b12f734a8a67f723594", "learning_rate": 0.00002},
+    {"name": "modernbert-base", "checkpoint": "answerdotai/ModernBERT-base", "revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8", "learning_rate": 0.00003}
+  ],
+  "splits": {
+    "train": {"filename": "multimodal_train.tsv", "drive_id": "1XsOkD3yhxgWu8URMes0S9LVSwuFJ4pT6", "rows": 564000, "sha256": "9894cb4aa2f901c6f29b61ac3d95ce9f7e78c43be8062ae5deb1c219c82497bb"},
+    "validation": {"filename": "multimodal_validate.tsv", "drive_id": "1Z99QrwpthioZQY2U6HElmnx8jazf7-Kv", "rows": 59342, "sha256": "c70140ec376e083e3780b5b488c96c8933678ca5800139bfb78c92e95df6946e"},
+    "test": {"filename": "multimodal_test_public.tsv", "drive_id": "1p9EewIKVcFbipVRLZNGYc2JbSC7A0SWv", "rows": 59319, "sha256": "bc92378e070ca7b1a7497053d1c34cdc3f550be6232a76791a2c722d6d9bbf94"}
+  },
+  "paper_six_way_accuracy": {"validation": 0.7696, "test": 0.7677},
+  "notes": "Full official public multimodal cohort, no exclusions or resampling. Initial single-seed screening; not an exact paper replication. Seeds 43/44 follow only after the initial results. Test does not select models or hyperparameters."
+}

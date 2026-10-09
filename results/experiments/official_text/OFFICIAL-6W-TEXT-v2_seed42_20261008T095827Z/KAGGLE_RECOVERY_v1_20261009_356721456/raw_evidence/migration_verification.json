@@ -1,0 +1,29 @@
+{
+  "attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
+  "verified_utc": "2026-10-08T18:26:34.754726+00:00",
+  "archive_filename": "bert-base-20261008T133126Z-1-001.zip",
+  "archive_sha256": "369610b47f755e0bda9b09b51d546970da284e51fe245d2c2349e1d95094ff87",
+  "checkpoint_sha256": "1a89825e3cdc921b800732ac9338008b0c6d82faeddc95427014364ba3bc806b",
+  "best_weights_sha256": "870bea50fa608dddd20421c21fd1786e244b1323e22734093214b87023666753",
+  "source_sha256": "a13c0e5d97b2fe7661ce6a228d43d853f1aca703314cfa48688825b7b01701f9",
+  "epoch": 5,
+  "step_in_epoch": 15000,
+  "epoch_finished": false,
+  "epochs_validated": 4,
+  "optimizer_updates": 85466,
+  "skipped_updates": 34,
+  "best": {
+    "epoch": 4,
+    "metrics": {
+      "accuracy": 0.8274072326514105,
+      "macro_f1": 0.7786816742546674,
+      "weighted_f1": 0.8259081148742857,
+      "balanced_accuracy": 0.7515221994793709,
+      "loss": 0.6015845915151155,
+      "samples": 59342
+    }
+  },
+  "torch_verification_version": "2.8.0",
+  "status": "verified",
+  "note": "CPU integrity/recovery-state inspection only; no training or final test performed"
+}

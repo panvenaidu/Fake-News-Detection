@@ -1,0 +1,102 @@
+{
+  "plan": "TEXT-COMPLETE-v1",
+  "utc": "2026-10-09T11:36:42.935101+00:00",
+  "status": "All implementation/training/evaluation/archive requirements verified; final GitHub push pending",
+  "requirements": [
+    {
+      "id": "1-current-state-and-no-duplicate",
+      "status": "passed",
+      "evidence": "Initial Active Events0; exactly saved BERT version356721456; final0 active, draft off"
+    },
+    {
+      "id": "2-recovery-order-and-counters",
+      "status": "passed",
+      "evidence": [
+        "results/text_recovery_v1_checks_20261009.json",
+        "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence/installed_torch_recovery_checks.json"
+      ],
+      "checks": "later-epoch suffix, no omission/duplication, epoch boundary, second interruption; exact CPU optimizer/scheduler/scaler/RNG with actual AMP overflows"
+    },
+    {
+      "id": "3-private-inputs-and-historical-preservation",
+      "status": "passed",
+      "evidence": [
+        "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence/migration_verification.json",
+        "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence/historical_colab_snapshot"
+      ],
+      "input_versions": [
+        20474176,
+        20499630
+      ]
+    },
+    {
+      "id": "4-frozen-protocol-and-cloud-preflight",
+      "status": "passed",
+      "evidence": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence",
+      "checks": "All TSV hashes/counts, fixed six labels/titles, unchanged protocol/pretrained revision and original source; CPU gates on installedTorch2.11; CUDA TeslaT4; no CPU training"
+    },
+    {
+      "id": "5-single-saved-BERT-batch",
+      "status": "passed",
+      "version": 356721456,
+      "checks": "Immutable bootstrap matches local preparation; BERT only; actual finite advancing optimization; ModernBERT not started"
+    },
+    {
+      "id": "6-training-and-validation",
+      "status": "passed",
+      "evidence": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/completion_verification.json",
+      "epochs": 6,
+      "selected_epoch": 4,
+      "counters": {
+        "successful": 105710,
+        "skipped": 40
+      }
+    },
+    {
+      "id": "7-freeze-and-final-evaluations",
+      "status": "passed",
+      "evidence": [
+        "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence/bert-base/selected_checkpoint.json",
+        "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/local_prediction_verification.json"
+      ],
+      "rows": {
+        "validation": 59342,
+        "test": 59319
+      },
+      "test_tuning": false
+    },
+    {
+      "id": "8-full-artifact-retrieval-and-integrity",
+      "status": "passed",
+      "evidence": [
+        "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/retrieval_manifest.json",
+        "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/completion_verification.json",
+        "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/idempotent_completion_check.json"
+      ],
+      "weights": "data/cloud_recovery/KAGGLE_RECOVERY_v1_20261009_356721456/weights",
+      "checks": "Two usable tensors, tokenizer/config, exact hashes/CRC,69 manifest members, finitehistory/loss, raw/normalized6x6 matrices, all class precision/recall/F1/support, confidence bounds, metrics tolerance1e-12"
+    },
+    {
+      "id": "9-records-and-GitHub",
+      "status": "pending-final-remote-verification",
+      "evidence": [
+        "results/TEXT_ONLY_FINAL_REPORT_20261009.md",
+        "results/PROGRESS_TRACKER.json",
+        "context/RESUME_HERE.md"
+      ],
+      "records": "README, RESUME_HERE, PROJECT_CONTEXT, DECISIONS, EXPERIMENT_LOG, TASK_REPORT, MODEL_STATUS, COLAB_WORKLOG, live status, tracker, faculty summary, troubleshooting"
+    },
+    {
+      "id": "usage-reserve-and-exclusions",
+      "status": "passed",
+      "evidence": "Milestone context/Git pushes; last usage above20%, later queryunavailable so saved proactively; no paid compute/new OAuth/scheduled task/large image download/new model or post-test tuning"
+    }
+  ],
+  "known_limits": [
+    "single seed; differing paper architecture",
+    "335-row release/paper statistic gap",
+    "SDPA warn-only nondeterminism",
+    "Macro-F1 not available from paperTable4",
+    "full multimodal/image-only not in this BERT completion scope"
+  ]
+}

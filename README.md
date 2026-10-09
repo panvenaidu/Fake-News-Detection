@@ -1,9 +1,9 @@
 <!-- TEXT-COMPLETE-v1 LIVE -->
 ## BERT completion execution — 9 October 2026
 
-BERT completed the registered six-epoch training budget. Epoch6 validation accuracy82.5284%, Macro-F177.7718% did not replace epoch4 (82.7407% accuracy/77.8682% Macro-F1). Checkpoint6/17625 saved in session storage at job elapsed2553s. Final selected-weight validation export, official59319-row test, saved-output verification and local evidence/weight retrieval remain pending. Preserve historical results and the unchanged scientific protocol.
+BERT text-only six-class baseline is complete: six epochs, epoch4 selected; validation82.7407% accuracy/77.8682% Macro-F1; test82.3901%/77.4566% on all59319 rows. Test exceeds paper76.77% by5.6201 percentage points, reaching+1-point target. Both archives,69 manifest members and allprediction metrics/IDs verified. Model/optimizer/scheduler/AMP/tokenizer load and completed-result idempotence passed. Final epoch6 checkpoint and selected weights stored locally/private cloud. Original data/config/source/history retained. Text100%, full text+image40%, image20%, overall53%; pilot100% separately. No active cloud GPU job; Kaggle quota29h09m remaining at final observation.
 
-Continue observing this exact saved job. Finish remaining epoch5, then epoch6 or the registered early-stop rule. Keep original input checkpoint as durable fallback; new Kaggle working checkpoints become durable only after saved outputs are verified. Freeze validation-selected weight hash, export full validation/test evidence, retrieve weights and independently verify metrics/IDs before claiming completion.
+BERT baseline complete. Read results/TEXT_ONLY_FINAL_REPORT_20261009.md; register a separate future ModernBERT comparison or full multimodal cohort before any new training. Final GitHub verification is recorded in the requirement audit.
 
 Evidence: `results/text_completion_execution_20261009.json`; plan `context/TEXT_COMPLETION_PLAN_20261009.md`. The user has authorized execution. Historical entries below retain earlier observations.
 <!-- /TEXT-COMPLETE-v1 LIVE -->

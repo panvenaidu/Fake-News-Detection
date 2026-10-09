@@ -1,0 +1,25 @@
+{
+  "verified_utc": "2026-10-09T11:36:42.935101+00:00",
+  "source_job": "https://www.kaggle.com/code/rocky62/urop-official-six-way-text-recovery/output?scriptVersionId=356721456",
+  "script_version_id": 356721456,
+  "method": "Chrome downloads; only those generated artifacts placed into UROP; CRC and archived-member byte hashes verified",
+  "archives": {
+    "text_results_evidence.zip": {
+      "bytes": 2035444,
+      "sha256": "0b443b7be78dd6cfeaa6f08e7a9359ab6fdac2e0e09464e35d9b9aaccfd1cdd0"
+    },
+    "bert_final_weights.zip": {
+      "bytes": 1570472401,
+      "sha256": "61f39fa86b8d9ca1ff1dbb0b77f1952a4410e2e6437a62a542c7332add2cc26c"
+    }
+  },
+  "numerical_manifest_members_verified": 69,
+  "prediction_rows": {
+    "validation": 59342,
+    "test": 59319
+  },
+  "weights_location": "/Users/panveenaidu/Downloads/SEM7/UROP/data/cloud_recovery/KAGGLE_RECOVERY_v1_20261009_356721456/weights",
+  "raw_evidence_location": "/Users/panveenaidu/Downloads/SEM7/UROP/results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence",
+  "original_colab_snapshot_preserved": true,
+  "completion_receipt": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/completion_verification.json"
+}

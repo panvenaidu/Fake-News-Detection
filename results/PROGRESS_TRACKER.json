@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-09T10:57:08.875694+00:00",
+  "updated_utc": "2026-10-09T11:48:43.652963+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -13,7 +13,7 @@
     "Three-modality overall progress uses equal modality weights; display rounded integer percentages and exact stage states.",
     "If tensor recovery is older than observed training history, training-stage fraction uses verified recoverable epoch/batch progress; original validation observations are retained separately."
   ],
-  "overall_three_modality_checkpoint_percent": 47,
+  "overall_three_modality_checkpoint_percent": 53,
   "models": {
     "text_only_bert": {
       "scope": "Official six-way faculty TSV cohort; BERT baseline",
@@ -22,18 +22,52 @@
         "model_implementation": 1,
         "training": 1,
         "validation": 1,
-        "final_test_and_result_archive": 0
+        "final_test_and_result_archive": 1
       },
       "epochs_trained": 6,
       "epochs_validated": 6,
       "registered_max_epochs": 6,
-      "final_test_completed": false,
-      "state": "BERT training and six epoch validations finished; selected epoch4; final inference/archive pending",
-      "checkpoint_completion_percent": 80,
-      "recoverable_training_percent": 81,
+      "final_test_completed": true,
+      "state": "Complete: BERT training, validation, test and local/private archives verified",
+      "checkpoint_completion_percent": 100,
+      "recoverable_training_percent": 100,
       "resume_fix_required": false,
       "runtime_recoverable_training_percent": 100,
-      "durable_input_recoverable_training_percent": 81
+      "durable_input_recoverable_training_percent": 100,
+      "saved_tensor_files": 2,
+      "full_prediction_rows": {
+        "validation": 59342,
+        "test": 59319
+      },
+      "receipt": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/completion_verification.json",
+      "required_model_numerical_artifacts_verified": 25,
+      "required_model_artifact_names": [
+        "result.json",
+        "status.json",
+        "history.json",
+        "selected_checkpoint.json",
+        "validation_selection_metrics.json",
+        "validation_metrics.json",
+        "validation_classification_report.json",
+        "validation_confusion_matrix.csv",
+        "validation_confusion_matrix_normalized.csv",
+        "validation_predictions.csv",
+        "test_metrics.json",
+        "test_classification_report.json",
+        "test_confusion_matrix.csv",
+        "test_confusion_matrix_normalized.csv",
+        "test_predictions.csv",
+        "test_evaluation_provenance.json",
+        "metric_verification.json",
+        "recovery_checkpoint.json",
+        "checkpoint_history.jsonl",
+        "sampler_epoch5_proof.json",
+        "sampler_epoch6_proof.json",
+        "execution_protocol.json",
+        "config.json",
+        "train_official_text_recovery_v1.py",
+        "best_checkpoint.json"
+      ]
     },
     "text_plus_image": {
       "scope": "Full official-cohort benchmark; the completed 2600-row pilot is tracked separately",
@@ -93,8 +127,224 @@
     "multimodal_pilot_evidence.zip",
     "multimodal_pilot_evidence/"
   ],
-  "recovery_note": "Original BERT checkpoint verified: epoch5 batch15000/17625, epoch unfinished, four validated epochs inside tensor. Later fifth-epoch observed history retained. Resume must replay remaining2625 batches of epoch5 before epoch6/final test; no GPU job launched.",
-  "bert_recovery_verification": {
+  "recovery_note": "Original checkpoint retained; final epoch6 recovery state and selected epoch4 weights retrieved and verified locally; final test/archives complete. No active GPU job.",
+  "recovery_files_location": "data/cloud_recovery/",
+  "current_plan": "context/TEXT_COMPLETION_PLAN_20261009.md",
+  "execution_approval": "User authorized execution of TEXT-COMPLETE-v1; BERT completed and independently verified",
+  "usage_reserve_policy": {
+    "prepare_at_remaining_percent": 25,
+    "reserve_at_remaining_percent": 20,
+    "action": "No new experiment; save current state/context/results, verify safe GitHub push, hand off; leave healthy submitted cloud job running",
+    "latest_observed_remaining_percent": {
+      "five_hour": 24,
+      "weekly": 42
+    },
+    "observation_utc": "2026-10-09T11:48:43.652963+00:00"
+  },
+  "text_completion_execution": {
+    "state": "Complete: BERT training, validation, test and local/private archives verified",
+    "summary": "BERT text-only six-class baseline is complete: six epochs, epoch4 selected; validation82.7407% accuracy/77.8682% Macro-F1; test82.3901%/77.4566% on all59319 rows. Test exceeds paper76.77% by5.6201 percentage points, reaching+1-point target. Both archives,69 manifest members and allprediction metrics/IDs verified. Model/optimizer/scheduler/AMP/tokenizer load and completed-result idempotence passed. Final epoch6 checkpoint and selected weights stored locally/private cloud. Original data/config/source/history retained. Text100%, full text+image40%, image20%, overall53%; pilot100% separately. No active cloud GPU job; Kaggle quota29h09m remaining at final observation.",
+    "next_action": "BERT baseline complete. Read results/TEXT_ONLY_FINAL_REPORT_20261009.md; register a separate future ModernBERT comparison or full multimodal cohort before any new training. Final GitHub verification is recorded in the requirement audit.",
+    "check_evidence": "results/text_recovery_v1_checks_20261009.json",
+    "source": "scripts/train_official_text_recovery_v1.py",
+    "source_sha256": "abf2237c5ae9d27a2cb0ca746a59e119d6c27c6b241bbdedca468779584eb0bf",
+    "payload_sha256": "f4c4a64d4535116dd1c21c08ebc8ca21dd1f89d94aae8b4a8514db621e876c9d",
+    "assistant_usage_observed": {
+      "primary_remaining_percent": 24,
+      "weekly_remaining_percent": 42,
+      "observation_utc": "2026-10-09T11:48:43.652963+00:00"
+    },
+    "cloud_active_job_verified": false,
+    "final_test_verified": true,
+    "cloud_job_url": "https://www.kaggle.com/code/rocky62/urop-official-six-way-text-recovery?scriptVersionId=356721456",
+    "script_version_id": 356721456,
+    "kaggle_version": 3,
+    "private_recovery_input_url": "https://www.kaggle.com/datasets/rocky62/urop-verified-bert-recovery-v1",
+    "private_input_versions": [
+      20474176,
+      20499630
+    ],
+    "bert_resume_optimizer_progress_verified": true,
+    "bootstrap_source_sha256": "c77c8c59528a5c2b41ef608d86898bac53fc68c03deec573c0f6b53499ceccc3",
+    "gpu_setting": "T4 x2; trainer exposes device0 only",
+    "kaggle_quota_observed": "00:06 /30h used, approximately29h54m remaining before submission",
+    "installed_torch_checks_passed": true,
+    "input_hashes_verified_in_cloud": true,
+    "processed_batch_progress_verified": true,
+    "last_observed_epoch": 6,
+    "last_observed_batch": 17625,
+    "last_observed_loss": 0.1454,
+    "successful_optimizer_count_live": null,
+    "last_verified_log_elapsed_seconds": 2553.0,
+    "gpu_observed": "Tesla T4",
+    "torch_observed": "2.11.0+cu128",
+    "python_observed": "3.13.15",
+    "runtime_recovery_checkpoint": {
+      "epoch": 6,
+      "batch": 17625,
+      "epoch_finished": true,
+      "persistence": "Verified private saved output and local ignored storage"
+    },
+    "recovered_epoch5_validation": {
+      "accuracy": 0.8280307370833474,
+      "micro_f1": 0.8280307370833474,
+      "macro_f1": 0.7783884649712434,
+      "weighted_f1": 0.8259979245082972,
+      "balanced_accuracy": 0.7534236036328652,
+      "loss": 0.6685243945077007,
+      "samples": 59342
+    },
+    "observation_evidence": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/validation_epoch5_observed.json",
+    "offline_verifier": "scripts/verify_text_completion_archive_v1.py",
+    "training_completed_verified": true,
+    "epochs_validated": 6,
+    "selected_epoch": 4,
+    "epoch6_validation": {
+      "accuracy": 0.8252839472885983,
+      "micro_f1": 0.8252839472885983,
+      "macro_f1": 0.7777178572618486,
+      "weighted_f1": 0.8240532401143373,
+      "balanced_accuracy": 0.7534566690986185,
+      "loss": 0.7621944958162614,
+      "samples": 59342
+    },
+    "local_predictions_verified": true,
+    "cloud_training_completed": true,
+    "cloud_output_accessible_verified": true,
+    "numerical_archive_sha256": "0b443b7be78dd6cfeaa6f08e7a9359ab6fdac2e0e09464e35d9b9aaccfd1cdd0",
+    "weights_archive_expected_sha256": "61f39fa86b8d9ca1ff1dbb0b77f1952a4410e2e6437a62a542c7332add2cc26c",
+    "weights_archive_expected_bytes": 1570472401,
+    "final_result": {
+      "model": {
+        "name": "bert-base",
+        "checkpoint": "google-bert/bert-base-uncased",
+        "revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+        "learning_rate": 2e-05
+      },
+      "seed": 42,
+      "protocol_id": "OFFICIAL-6W-TEXT-v2",
+      "checkpoint_epoch": 4,
+      "validation_selection": {
+        "accuracy": 0.8274072326514105,
+        "macro_f1": 0.7786816742546674,
+        "weighted_f1": 0.8259081148742857,
+        "balanced_accuracy": 0.7515221994793709,
+        "loss": 0.6015845915151155,
+        "samples": 59342
+      },
+      "validation": {
+        "accuracy": 0.8274072326514105,
+        "micro_f1": 0.8274072326514105,
+        "macro_f1": 0.7786816742546674,
+        "weighted_f1": 0.8259081148742857,
+        "balanced_accuracy": 0.7515221994793709,
+        "loss": 0.6015845915151155,
+        "samples": 59342
+      },
+      "test": {
+        "accuracy": 0.8239012795225813,
+        "micro_f1": 0.8239012795225813,
+        "macro_f1": 0.7745655655088569,
+        "weighted_f1": 0.822430054171013,
+        "balanced_accuracy": 0.7497860290168639,
+        "loss": 0.6180801154495272,
+        "samples": 59319
+      },
+      "selected_weight_sha256": "870bea50fa608dddd20421c21fd1786e244b1323e22734093214b87023666753",
+      "recovery_schema": "TEXT-RECOVERY-ORDER-v1",
+      "epochs_completed": 6,
+      "training_seconds": 14246.324151702,
+      "total_seconds": 2533.140595597,
+      "peak_gpu_allocated_bytes": 3275995136,
+      "optimizer_updates": 105710,
+      "skipped_updates": 40,
+      "single_seed": true,
+      "completed_utc": "2026-10-09T10:56:37.875385+00:00"
+    },
+    "numerical_evidence_path": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence",
+    "weights_verified": true,
+    "archive_local_verified": true,
+    "completion_receipt": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/completion_verification.json",
+    "all_scientific_work_completed": true,
+    "final_checkpoint_sha256": "695a1a04155a0507bb60ed957a5e17b451eb92339995d0dbf4d564c8056d3f0d",
+    "gpu_quota_final": {
+      "used_minutes": 51,
+      "total_hours": 30,
+      "remaining_minutes": 1749,
+      "source": "Fresh Chrome Kaggle Session options"
+    },
+    "cloud_successful_verified": true,
+    "active_cloud_jobs": 0,
+    "idempotent_completion_check": "passed without repeated training or inference",
+    "assistant_usage_latest_query": "available: 24% five-hour / 42% weekly remaining; final documentation and Git synchronization only",
+    "updated_utc": "2026-10-09T11:48:43.652963+00:00",
+    "successful_optimizer_count_final": 105710,
+    "skipped_optimizer_count_final": 40,
+    "cloud_current_state_verified": true,
+    "cloud_current_state": "Successful saved version 356721456; zero active events; draft session off"
+  },
+  "final_recovery_verification": {
+    "status": "verified",
+    "verified_utc": "2026-10-09T11:23:49.098288+00:00",
+    "model": "bert-base",
+    "protocol_id": "OFFICIAL-6W-TEXT-v2",
+    "classes": 6,
+    "seed": 42,
+    "selected_epoch": 4,
+    "best_weights_sha256": "870bea50fa608dddd20421c21fd1786e244b1323e22734093214b87023666753",
+    "resume_checkpoint_sha256": "695a1a04155a0507bb60ed957a5e17b451eb92339995d0dbf4d564c8056d3f0d",
+    "epochs_completed": 6,
+    "training_stop_rule_satisfied": true,
+    "optimizer_updates": 105710,
+    "skipped_updates": 40,
+    "strict_model_optimizer_scheduler_amp_tokenizer_load": "passed; no inference or downloads",
+    "sampler_end_state_matches": true,
+    "archived_file_manifest": "all members matched",
+    "prediction_checks": {
+      "status": "verified",
+      "tolerance": 1e-12,
+      "selected_epoch": 4,
+      "selected_weight_sha256": "870bea50fa608dddd20421c21fd1786e244b1323e22734093214b87023666753",
+      "splits": {
+        "validation": {
+          "rows": 59342,
+          "metrics_recomputed": {
+            "accuracy": 0.8274072326514105,
+            "micro_f1": 0.8274072326514105,
+            "macro_f1": 0.7786816742546674,
+            "weighted_f1": 0.8259081148742857,
+            "balanced_accuracy": 0.7515221994793709,
+            "samples": 59342
+          },
+          "prediction_sha256": "8c2482d63b79ee3506b2c111cfed4e054e3166c5f76b6cecae7f1463581eae86",
+          "loss_verified": "finite stored inference loss; confidence alone does not reconstruct CE loss"
+        },
+        "test": {
+          "rows": 59319,
+          "metrics_recomputed": {
+            "accuracy": 0.8239012795225813,
+            "micro_f1": 0.8239012795225813,
+            "macro_f1": 0.7745655655088569,
+            "weighted_f1": 0.822430054171013,
+            "balanced_accuracy": 0.7497860290168639,
+            "samples": 59319
+          },
+          "prediction_sha256": "bb2902a6d3c0a821880a164440f5128e56d6ca56b5d7c375bb36839b4e267191",
+          "loss_verified": "finite stored inference loss; confidence alone does not reconstruct CE loss"
+        }
+      },
+      "single_seed": true
+    },
+    "source": "Retrieved immutable saved Kaggle version356721456",
+    "target_test_accuracy": 0.7777,
+    "target_reached": true,
+    "paper_comparison_caveats": [
+      "single seed",
+      "BERT-base fine-tuning versus paper BERT-Large feature pipeline",
+      "released multimodal cohort335 fewer rows than paper statistic"
+    ]
+  },
+  "original_recovery_verification": {
     "attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
     "verified_utc": "2026-10-08T18:26:34.754726+00:00",
     "archive_filename": "bert-base-20261008T133126Z-1-001.zip",
@@ -122,87 +372,5 @@
     "torch_verification_version": "2.8.0",
     "status": "verified",
     "note": "CPU integrity/recovery-state inspection only; no training or final test performed"
-  },
-  "recovery_files_location": "data/cloud_recovery/",
-  "current_plan": "context/TEXT_COMPLETION_PLAN_20261009.md",
-  "execution_approval": "Awaiting user approval of TEXT-COMPLETE-v1",
-  "usage_reserve_policy": {
-    "prepare_at_remaining_percent": 25,
-    "reserve_at_remaining_percent": 20,
-    "action": "No new experiment; save current state/context/results, verify safe GitHub push, hand off; leave healthy submitted cloud job running",
-    "latest_observed_remaining_percent": {
-      "five_hour": 24,
-      "weekly": 57
-    },
-    "observation_utc": "2026-10-09T05:14:22.853594+00:00"
-  },
-  "text_completion_execution": {
-    "state": "BERT training and six epoch validations finished; selected epoch4; final inference/archive pending",
-    "summary": "BERT completed the registered six-epoch training budget. Epoch6 validation accuracy82.5284%, Macro-F177.7718% did not replace epoch4 (82.7407% accuracy/77.8682% Macro-F1). Checkpoint6/17625 saved in session storage at job elapsed2553s. Final selected-weight validation export, official59319-row test, saved-output verification and local evidence/weight retrieval remain pending. Preserve historical results and the unchanged scientific protocol.",
-    "next_action": "Continue observing this exact saved job. Finish remaining epoch5, then epoch6 or the registered early-stop rule. Keep original input checkpoint as durable fallback; new Kaggle working checkpoints become durable only after saved outputs are verified. Freeze validation-selected weight hash, export full validation/test evidence, retrieve weights and independently verify metrics/IDs before claiming completion.",
-    "check_evidence": "results/text_recovery_v1_checks_20261009.json",
-    "source": "scripts/train_official_text_recovery_v1.py",
-    "source_sha256": "abf2237c5ae9d27a2cb0ca746a59e119d6c27c6b241bbdedca468779584eb0bf",
-    "payload_sha256": "f4c4a64d4535116dd1c21c08ebc8ca21dd1f89d94aae8b4a8514db621e876c9d",
-    "assistant_usage_observed": {
-      "primary_remaining_percent": 63,
-      "weekly_remaining_percent": 48,
-      "observation": "At previous3000-batch checkpoint; refresh before final retrieval"
-    },
-    "cloud_active_job_verified": true,
-    "final_test_verified": false,
-    "cloud_job_url": "https://www.kaggle.com/code/rocky62/urop-official-six-way-text-recovery?scriptVersionId=356721456",
-    "script_version_id": 356721456,
-    "kaggle_version": 3,
-    "private_recovery_input_url": "https://www.kaggle.com/datasets/rocky62/urop-verified-bert-recovery-v1",
-    "private_input_versions": [
-      20474176,
-      20499630
-    ],
-    "bert_resume_optimizer_progress_verified": false,
-    "bootstrap_source_sha256": "c77c8c59528a5c2b41ef608d86898bac53fc68c03deec573c0f6b53499ceccc3",
-    "gpu_setting": "T4 x2; trainer exposes device0 only",
-    "kaggle_quota_observed": "00:06 /30h used, approximately29h54m remaining before submission",
-    "installed_torch_checks_passed": true,
-    "input_hashes_verified_in_cloud": true,
-    "processed_batch_progress_verified": true,
-    "last_observed_epoch": 6,
-    "last_observed_batch": 17625,
-    "last_observed_loss": 0.1454,
-    "successful_optimizer_count_live": null,
-    "last_verified_log_elapsed_seconds": 2553.0,
-    "gpu_observed": "Tesla T4",
-    "torch_observed": "2.11.0+cu128",
-    "python_observed": "3.13.15",
-    "runtime_recovery_checkpoint": {
-      "epoch": 6,
-      "batch": 17625,
-      "epoch_finished": true,
-      "persistence": "Kaggle session disk; saved-version outputs pending"
-    },
-    "recovered_epoch5_validation": {
-      "accuracy": 0.8280307370833474,
-      "micro_f1": 0.8280307370833474,
-      "macro_f1": 0.7783884649712434,
-      "weighted_f1": 0.8259979245082972,
-      "balanced_accuracy": 0.7534236036328652,
-      "loss": 0.6685243945077007,
-      "samples": 59342
-    },
-    "observation_evidence": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/validation_epoch5_observed.json",
-    "offline_verifier": "scripts/verify_text_completion_archive_v1.py",
-    "training_completed_verified": true,
-    "epochs_validated": 6,
-    "selected_epoch": 4,
-    "epoch6_validation": {
-      "accuracy": 0.8252839472885983,
-      "micro_f1": 0.8252839472885983,
-      "macro_f1": 0.7777178572618486,
-      "weighted_f1": 0.8240532401143373,
-      "balanced_accuracy": 0.7534566690986185,
-      "loss": 0.7621944958162614,
-      "samples": 59342
-    },
-    "updated_utc": "2026-10-09T10:57:08.875694+00:00"
   }
 }

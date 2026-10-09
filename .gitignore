@@ -58,3 +58,12 @@ runs/
 
 # Original pretrained tokenizer copies stay in the local evidence archive.
 results/experiments/multimodal/**/tokenizer/
+
+# Full portable snapshots remain local; commit explicit current scientific evidence.
+results/experiments/official_text/**/raw_evidence/historical_colab_snapshot/
+results/experiments/official_text/**/raw_evidence/bert-base/tokenizer/
+results/experiments/official_text/**/raw_evidence/bert-base/train_official_text.py
+results/experiments/official_text/**/raw_evidence/environment*.json
+results/experiments/official_text/**/raw_evidence/pip_freeze*.txt
+results/experiments/official_text/**/raw_evidence/retrieval_manifest.json
+results/bert_*_20261009.png

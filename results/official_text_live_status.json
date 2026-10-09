@@ -1,18 +1,17 @@
 {
-  "updated_utc": "2026-10-09T10:57:08.875694+00:00",
-  "status": "BERT training and six epoch validations finished; selected epoch4; final inference/archive pending",
+  "updated_utc": "2026-10-09T11:48:43.652963+00:00",
+  "status": "complete",
   "attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
-  "reason": "Drive recovery-JSON rename failed at epoch boundary; Colab GPU quota blocked",
   "last_retrieved_selected_epoch": 4,
   "validation_accuracy": 0.8274072326514105,
   "validation_macro_f1": 0.7786816742546674,
-  "final_test_verified": false,
+  "final_test_verified": true,
   "modernbert_started_verified": false,
   "kaggle_training_verified": true,
   "multimodal_implemented": true,
   "multimodal_smoke": "passed",
   "multimodal_cloud_pilot": "completed",
-  "scope": "See context/RENEWED_AUDIT_20261009.md",
+  "scope": "Completed full official six-class BERT baseline; results/TEXT_ONLY_FINAL_REPORT_20261009.md",
   "previous_verified_snapshot": {
     "updated_utc": "2026-10-08T13:15:47Z",
     "protocol_id": "OFFICIAL-6W-TEXT-v2",
@@ -341,20 +340,20 @@
     "missing_validation_predictions": "Must export full selected-checkpoint validation predictions"
   },
   "text_completion_execution": {
-    "state": "BERT training and six epoch validations finished; selected epoch4; final inference/archive pending",
-    "summary": "BERT completed the registered six-epoch training budget. Epoch6 validation accuracy82.5284%, Macro-F177.7718% did not replace epoch4 (82.7407% accuracy/77.8682% Macro-F1). Checkpoint6/17625 saved in session storage at job elapsed2553s. Final selected-weight validation export, official59319-row test, saved-output verification and local evidence/weight retrieval remain pending. Preserve historical results and the unchanged scientific protocol.",
-    "next_action": "Continue observing this exact saved job. Finish remaining epoch5, then epoch6 or the registered early-stop rule. Keep original input checkpoint as durable fallback; new Kaggle working checkpoints become durable only after saved outputs are verified. Freeze validation-selected weight hash, export full validation/test evidence, retrieve weights and independently verify metrics/IDs before claiming completion.",
+    "state": "Complete: BERT training, validation, test and local/private archives verified",
+    "summary": "BERT text-only six-class baseline is complete: six epochs, epoch4 selected; validation82.7407% accuracy/77.8682% Macro-F1; test82.3901%/77.4566% on all59319 rows. Test exceeds paper76.77% by5.6201 percentage points, reaching+1-point target. Both archives,69 manifest members and allprediction metrics/IDs verified. Model/optimizer/scheduler/AMP/tokenizer load and completed-result idempotence passed. Final epoch6 checkpoint and selected weights stored locally/private cloud. Original data/config/source/history retained. Text100%, full text+image40%, image20%, overall53%; pilot100% separately. No active cloud GPU job; Kaggle quota29h09m remaining at final observation.",
+    "next_action": "BERT baseline complete. Read results/TEXT_ONLY_FINAL_REPORT_20261009.md; register a separate future ModernBERT comparison or full multimodal cohort before any new training. Final GitHub verification is recorded in the requirement audit.",
     "check_evidence": "results/text_recovery_v1_checks_20261009.json",
     "source": "scripts/train_official_text_recovery_v1.py",
     "source_sha256": "abf2237c5ae9d27a2cb0ca746a59e119d6c27c6b241bbdedca468779584eb0bf",
     "payload_sha256": "f4c4a64d4535116dd1c21c08ebc8ca21dd1f89d94aae8b4a8514db621e876c9d",
     "assistant_usage_observed": {
-      "primary_remaining_percent": 63,
-      "weekly_remaining_percent": 48,
-      "observation": "At previous3000-batch checkpoint; refresh before final retrieval"
+      "primary_remaining_percent": 24,
+      "weekly_remaining_percent": 42,
+      "observation_utc": "2026-10-09T11:48:43.652963+00:00"
     },
-    "cloud_active_job_verified": true,
-    "final_test_verified": false,
+    "cloud_active_job_verified": false,
+    "final_test_verified": true,
     "cloud_job_url": "https://www.kaggle.com/code/rocky62/urop-official-six-way-text-recovery?scriptVersionId=356721456",
     "script_version_id": 356721456,
     "kaggle_version": 3,
@@ -363,7 +362,7 @@
       20474176,
       20499630
     ],
-    "bert_resume_optimizer_progress_verified": false,
+    "bert_resume_optimizer_progress_verified": true,
     "bootstrap_source_sha256": "c77c8c59528a5c2b41ef608d86898bac53fc68c03deec573c0f6b53499ceccc3",
     "gpu_setting": "T4 x2; trainer exposes device0 only",
     "kaggle_quota_observed": "00:06 /30h used, approximately29h54m remaining before submission",
@@ -382,7 +381,7 @@
       "epoch": 6,
       "batch": 17625,
       "epoch_finished": true,
-      "persistence": "Kaggle session disk; saved-version outputs pending"
+      "persistence": "Verified private saved output and local ignored storage"
     },
     "recovered_epoch5_validation": {
       "accuracy": 0.8280307370833474,
@@ -407,6 +406,95 @@
       "loss": 0.7621944958162614,
       "samples": 59342
     },
-    "updated_utc": "2026-10-09T10:57:08.875694+00:00"
+    "local_predictions_verified": true,
+    "cloud_training_completed": true,
+    "cloud_output_accessible_verified": true,
+    "numerical_archive_sha256": "0b443b7be78dd6cfeaa6f08e7a9359ab6fdac2e0e09464e35d9b9aaccfd1cdd0",
+    "weights_archive_expected_sha256": "61f39fa86b8d9ca1ff1dbb0b77f1952a4410e2e6437a62a542c7332add2cc26c",
+    "weights_archive_expected_bytes": 1570472401,
+    "final_result": {
+      "model": {
+        "name": "bert-base",
+        "checkpoint": "google-bert/bert-base-uncased",
+        "revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+        "learning_rate": 2e-05
+      },
+      "seed": 42,
+      "protocol_id": "OFFICIAL-6W-TEXT-v2",
+      "checkpoint_epoch": 4,
+      "validation_selection": {
+        "accuracy": 0.8274072326514105,
+        "macro_f1": 0.7786816742546674,
+        "weighted_f1": 0.8259081148742857,
+        "balanced_accuracy": 0.7515221994793709,
+        "loss": 0.6015845915151155,
+        "samples": 59342
+      },
+      "validation": {
+        "accuracy": 0.8274072326514105,
+        "micro_f1": 0.8274072326514105,
+        "macro_f1": 0.7786816742546674,
+        "weighted_f1": 0.8259081148742857,
+        "balanced_accuracy": 0.7515221994793709,
+        "loss": 0.6015845915151155,
+        "samples": 59342
+      },
+      "test": {
+        "accuracy": 0.8239012795225813,
+        "micro_f1": 0.8239012795225813,
+        "macro_f1": 0.7745655655088569,
+        "weighted_f1": 0.822430054171013,
+        "balanced_accuracy": 0.7497860290168639,
+        "loss": 0.6180801154495272,
+        "samples": 59319
+      },
+      "selected_weight_sha256": "870bea50fa608dddd20421c21fd1786e244b1323e22734093214b87023666753",
+      "recovery_schema": "TEXT-RECOVERY-ORDER-v1",
+      "epochs_completed": 6,
+      "training_seconds": 14246.324151702,
+      "total_seconds": 2533.140595597,
+      "peak_gpu_allocated_bytes": 3275995136,
+      "optimizer_updates": 105710,
+      "skipped_updates": 40,
+      "single_seed": true,
+      "completed_utc": "2026-10-09T10:56:37.875385+00:00"
+    },
+    "numerical_evidence_path": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence",
+    "weights_verified": true,
+    "archive_local_verified": true,
+    "completion_receipt": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/completion_verification.json",
+    "all_scientific_work_completed": true,
+    "final_checkpoint_sha256": "695a1a04155a0507bb60ed957a5e17b451eb92339995d0dbf4d564c8056d3f0d",
+    "gpu_quota_final": {
+      "used_minutes": 51,
+      "total_hours": 30,
+      "remaining_minutes": 1749,
+      "source": "Fresh Chrome Kaggle Session options"
+    },
+    "cloud_successful_verified": true,
+    "active_cloud_jobs": 0,
+    "idempotent_completion_check": "passed without repeated training or inference",
+    "assistant_usage_latest_query": "available: 24% five-hour / 42% weekly remaining; final documentation and Git synchronization only",
+    "updated_utc": "2026-10-09T11:48:43.652963+00:00",
+    "successful_optimizer_count_final": 105710,
+    "skipped_optimizer_count_final": 40,
+    "cloud_current_state_verified": true,
+    "cloud_current_state": "Successful saved version 356721456; zero active events; draft session off"
+  },
+  "original_interruption_reason": "Drive recovery-JSON rename failed at epoch boundary; Colab GPU quota blocked",
+  "final_validation": {
+    "accuracy": 0.8274072326514105,
+    "macro_f1": 0.7786816742546674
+  },
+  "final_test": {
+    "accuracy": 0.8239012795225813,
+    "macro_f1": 0.7745655655088569
+  },
+  "current_gpu_job_active": false,
+  "cloud_saved_output_verified": true,
+  "assistant_usage_observed": {
+    "primary_remaining_percent": 24,
+    "weekly_remaining_percent": 42,
+    "observation_utc": "2026-10-09T11:48:43.652963+00:00"
   }
 }

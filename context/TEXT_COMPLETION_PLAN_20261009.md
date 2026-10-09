@@ -2,7 +2,9 @@
 
 Plan version: TEXT-COMPLETE-v1, 9 October 2026 (Asia/Kolkata).
 
-Status: **EXECUTION AUTHORIZED on 9 October 2026.** Current progress is recorded in `results/text_completion_execution_20261009.json`. The user requested a concrete plan to hand to GPT-6 Sol. This planning session performs inspection, small CPU diagnostics, documentation and a safe GitHub push. It does not start GPU training or modify the dataset/trainer. A later instruction to execute this plan authorizes its implementation and training steps without repeated routine permission questions.
+Status: **TRAINING/EVALUATION/ARCHIVES VERIFIED COMPLETE on 9 October 2026.** Current progress is recorded in `results/text_completion_execution_20261009.json`. The user requested a concrete plan to hand to GPT-6 Sol. This planning session performs inspection, small CPU diagnostics, documentation and a safe GitHub push. It does not start GPU training or modify the dataset/trainer. A later instruction to execute this plan authorizes its implementation and training steps without repeated routine permission questions.
+
+**Execution outcome:** The user subsequently authorized execution. BERT finished all six epochs; epoch 4 was selected using validation Macro-F1. Final validation accuracy/Macro-F1: **82.7407% / 77.8682%**. Final test accuracy/Macro-F1: **82.3901% / 77.4566%**, verified against all 59,319 official test predictions. Both evidence and weight archives are retrieved and verified. See `results/TEXT_ONLY_FINAL_REPORT_20261009.md` and `results/TEXT_COMPLETION_REQUIREMENT_AUDIT_20261009.json`. The starting-state tables, estimates, and pending descriptions below preserve the approved pre-execution plan; they are historical and must not trigger another BERT run.
 
 ## 1. Outcome and scope
 
@@ -12,7 +14,7 @@ The headline text bar refers to this BERT baseline. ModernBERT is an additional 
 
 Working directory: `/Users/panveenaidu/Downloads/SEM7/UROP` only. The ChatGPT project's mirrored `sources/` files are read-only references. Use Chrome for cloud UI; do not use Colab CLI, new OAuth scopes, new account credentials or paid compute. Use the existing private Kaggle account/workspace. No change to raw TSVs, labels, split membership, historical manifests or images.
 
-## 2. Verified starting point
+## 2. Verified starting point — historical, before execution
 
 | Item | Evidence-backed state |
 |---|---|
@@ -104,7 +106,7 @@ Per selected model, archive:
 
 Recalculate accuracy and all F1 aggregates from the exported CSVs, reconstruct confusion matrices, verify per-class support and confidence bounds, and compare against JSON at a documented floating-point tolerance. Check loss/history are finite and output files contain actual numbers rather than placeholders. Count only the required verified artifacts, not duplicate snapshots, as completion evidence. No further accuracy tuning or extra training after the test result is seen.
 
-## 7. Paper comparison and expectations
+## 7. Paper comparison and expectations — registered before execution
 
 | Six-way reference | Paper validation accuracy | Paper test accuracy | Our current position |
 |---|---:|---:|---|
@@ -140,7 +142,7 @@ At every milestone update `context/RESUME_HERE.md` first, followed by `context/P
 - Existing untracked literature PDF and browser diagnostics are user/reference files; leave them untouched and unstaged.
 - A small plan/audit checkpoint is pushed during this planning turn. GPU execution still awaits the user approving this plan.
 
-## 10. Progress reporting
+## 10. Progress reporting — historical starting bars and reporting rules
 
 Current verified bars: text-only BERT **73%**, full text+image **40%**, standalone image-only **20%**, overall **44%**. Small multimodal pilot **100%** separately. ModernBERT **40% prepared, 0% trained** separately.
 
