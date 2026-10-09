@@ -1,7 +1,7 @@
 <!-- TEXT-COMPLETE-v1 LIVE -->
 ## BERT completion execution — 9 October 2026
 
-Saved Kaggle version356721456 is actively processing the recovered BERT training. Installed Torch2.11.0+cu128 passed the persistent-worker, exact suffix/next-epoch and CPU optimizer/AMP gates. Input hashes passed; original epoch5/batch15000 and counter state restored. Next IDs84p7pu/3nue2v/2nfbs2 verified; finite resumed loss0.1882; training advanced through batches15001,15500 and16000. GPU TeslaT4, Python3.13.15; one trainer device exposed despite T4x2 allocation. Original selected epoch4 remains unchanged until new validation. Final test pending; ModernBERT not launched.
+Recovered epoch5 finished and validated: accuracy82.8031%, Macro-F177.8388%, matching the historical Colab observation. Epoch5/batch17625 session checkpoint saved successfully. Epoch6 is active (batch500 observed, finite loss0.1430, throughput279.9 titles/s); frozen full official splits remain unchanged. Epoch4 is still selected by validation Macro-F1. This is the same BERT attempt continued; ModernBERT and another model were not launched. Final test and local archival remain pending.
 
 Continue observing this exact saved job. Finish remaining epoch5, then epoch6 or the registered early-stop rule. Keep original input checkpoint as durable fallback; new Kaggle working checkpoints become durable only after saved outputs are verified. Freeze validation-selected weight hash, export full validation/test evidence, retrieve weights and independently verify metrics/IDs before claiming completion.
 

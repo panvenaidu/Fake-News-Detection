@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-10-09T10:19:30.967101+00:00",
-  "status": "BERT actively training in saved Kaggle version3; epoch5 batch16000 verified",
+  "updated_utc": "2026-10-09T10:23:16.607361+00:00",
+  "status": "BERT epoch6 training; recovered epoch5 validation and session checkpoint verified",
   "attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
   "reason": "Drive recovery-JSON rename failed at epoch boundary; Colab GPU quota blocked",
   "last_retrieved_selected_epoch": 4,
@@ -341,8 +341,8 @@
     "missing_validation_predictions": "Must export full selected-checkpoint validation predictions"
   },
   "text_completion_execution": {
-    "state": "BERT actively training in saved Kaggle version3; epoch5 batch16000 verified",
-    "summary": "Saved Kaggle version356721456 is actively processing the recovered BERT training. Installed Torch2.11.0+cu128 passed the persistent-worker, exact suffix/next-epoch and CPU optimizer/AMP gates. Input hashes passed; original epoch5/batch15000 and counter state restored. Next IDs84p7pu/3nue2v/2nfbs2 verified; finite resumed loss0.1882; training advanced through batches15001,15500 and16000. GPU TeslaT4, Python3.13.15; one trainer device exposed despite T4x2 allocation. Original selected epoch4 remains unchanged until new validation. Final test pending; ModernBERT not launched.",
+    "state": "BERT epoch6 training; recovered epoch5 validation and session checkpoint verified",
+    "summary": "Recovered epoch5 finished and validated: accuracy82.8031%, Macro-F177.8388%, matching the historical Colab observation. Epoch5/batch17625 session checkpoint saved successfully. Epoch6 is active (batch500 observed, finite loss0.1430, throughput279.9 titles/s); frozen full official splits remain unchanged. Epoch4 is still selected by validation Macro-F1. This is the same BERT attempt continued; ModernBERT and another model were not launched. Final test and local archival remain pending.",
     "next_action": "Continue observing this exact saved job. Finish remaining epoch5, then epoch6 or the registered early-stop rule. Keep original input checkpoint as durable fallback; new Kaggle working checkpoints become durable only after saved outputs are verified. Freeze validation-selected weight hash, export full validation/test evidence, retrieve weights and independently verify metrics/IDs before claiming completion.",
     "check_evidence": "results/text_recovery_v1_checks_20261009.json",
     "source": "scripts/train_official_text_recovery_v1.py",
@@ -369,14 +369,29 @@
     "installed_torch_checks_passed": true,
     "input_hashes_verified_in_cloud": true,
     "processed_batch_progress_verified": true,
-    "last_observed_epoch": 5,
-    "last_observed_batch": 16000,
-    "last_observed_loss": 0.1883,
+    "last_observed_epoch": 6,
+    "last_observed_batch": 500,
+    "last_observed_loss": 0.143,
     "successful_optimizer_count_live": null,
-    "last_verified_log_elapsed_seconds": 257.9,
+    "last_verified_log_elapsed_seconds": 537.1,
     "gpu_observed": "Tesla T4",
     "torch_observed": "2.11.0+cu128",
     "python_observed": "3.13.15",
-    "updated_utc": "2026-10-09T10:19:30.967101+00:00"
+    "runtime_recovery_checkpoint": {
+      "epoch": 5,
+      "batch": 17625,
+      "persistence": "Kaggle session disk; saved-version outputs pending"
+    },
+    "recovered_epoch5_validation": {
+      "accuracy": 0.8280307370833474,
+      "micro_f1": 0.8280307370833474,
+      "macro_f1": 0.7783884649712434,
+      "weighted_f1": 0.8259979245082972,
+      "balanced_accuracy": 0.7534236036328652,
+      "loss": 0.6685243945077007,
+      "samples": 59342
+    },
+    "observation_evidence": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/validation_epoch5_observed.json",
+    "updated_utc": "2026-10-09T10:23:16.607361+00:00"
   }
 }

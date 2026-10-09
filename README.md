@@ -1,3 +1,13 @@
+<!-- TEXT-COMPLETE-v1 LIVE -->
+## BERT completion execution — 9 October 2026
+
+Recovered epoch5 finished and validated: accuracy82.8031%, Macro-F177.8388%, matching the historical Colab observation. Epoch5/batch17625 session checkpoint saved successfully. Epoch6 is active (batch500 observed, finite loss0.1430, throughput279.9 titles/s); frozen full official splits remain unchanged. Epoch4 is still selected by validation Macro-F1. This is the same BERT attempt continued; ModernBERT and another model were not launched. Final test and local archival remain pending.
+
+Continue observing this exact saved job. Finish remaining epoch5, then epoch6 or the registered early-stop rule. Keep original input checkpoint as durable fallback; new Kaggle working checkpoints become durable only after saved outputs are verified. Freeze validation-selected weight hash, export full validation/test evidence, retrieve weights and independently verify metrics/IDs before claiming completion.
+
+Evidence: `results/text_completion_execution_20261009.json`; plan `context/TEXT_COMPLETION_PLAN_20261009.md`. The user has authorized execution. Historical entries below retain earlier observations.
+<!-- /TEXT-COMPLETE-v1 LIVE -->
+
 ## Text completion execution — 9 October 2026
 
 The user approved `TEXT-COMPLETE-v1`. Versioned BERT-only recovery passed the original-checkpoint, sample-order and optimizer/AMP recovery gates. Private Kaggle input staging is in progress; no resumed GPU step or final text test is verified yet. Original data, weights, source/config and five-epoch observations are preserved. Current execution: `results/text_completion_execution_20261009.json`.
