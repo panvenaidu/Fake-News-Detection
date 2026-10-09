@@ -7,6 +7,7 @@ BERT baseline complete. Read results/TEXT_ONLY_FINAL_REPORT_20261009.md; registe
 
 Evidence: `results/text_completion_execution_20261009.json`; plan `context/TEXT_COMPLETION_PLAN_20261009.md`. The user has authorized execution. Historical entries below retain earlier observations.
 GitHub backup verified: results and documentation commit `5527824302480de39cafd85a5a9a1c2b8cc68fd7` is on remote `main`. Receipt: `results/TEXT_COMPLETION_GITHUB_RECEIPT_20261009.json`. Latest assistant usage check: 24% five-hour / 42% weekly remaining; the final 20% remains reserved for safe handoff. No new model or GPU job was started after final evaluation.
+User briefing preference (9 October 2026): whenever referring to the official source in new briefings/reports, use the clickable label [faculty dataset](https://drive.google.com/drive/folders/1DuH0YaEox08ZwzZDpRMOaFpMCeRyxiEF). It identifies the faculty-provided three-TSV release. Show accuracy, micro-F1, Macro-F1, weighted-F1, balanced accuracy and loss for validation/test, plus class-wise results. Label absent paper metrics as not reported; never substitute multimodal error rates for text F1. Distinguish Git-backed small artifacts from locally/private-cloud-stored raw data and weights. Latest complete briefing: `results/TEXT_ONLY_BRIEFING_20261009.md`.
 <!-- /TEXT-COMPLETE-v1 LIVE -->
 
 ## Latest handoff - 9 October 2026: text completion plan ready
