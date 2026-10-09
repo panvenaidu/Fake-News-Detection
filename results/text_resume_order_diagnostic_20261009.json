@@ -1,0 +1,42 @@
+{
+  "date_local": "2026-10-09",
+  "purpose": "Read-only CPU diagnosis of the original trainer's mid-epoch restart order; no training/evaluation",
+  "source": "scripts/train_official_text.py",
+  "source_sha256": "a13c0e5d97b2fe7661ce6a228d43d853f1aca703314cfa48688825b7b01701f9",
+  "local_torch": "2.8.0",
+  "synthetic_dataloader_check": {
+    "rows": 128,
+    "batch_size": 8,
+    "shuffle": true,
+    "seed": 42,
+    "num_workers": 2,
+    "persistent_workers": true,
+    "local_multiprocessing_context": "fork",
+    "checked_epoch": 2,
+    "sample_cursor": 80,
+    "epoch_order_equal_after_fresh_iterator": false,
+    "already_seen_ids_repeated_after_cursor": 32,
+    "unseen_ids_missed": 32
+  },
+  "actual_checkpoint_rng_check": {
+    "attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
+    "checkpoint_sha256": "1a89825e3cdc921b800732ac9338008b0c6d82faeddc95427014364ba3bc806b",
+    "epoch": 5,
+    "step_in_epoch": 15000,
+    "training_rows": 564000,
+    "processed_rows_this_epoch": 480000,
+    "remaining_rows_this_epoch": 84000,
+    "direct_permutation_from_sampler_start_matches_saved_loader_rng": true,
+    "worker_seed_draw_then_permutation_matches_saved_loader_rng": false,
+    "orders_equal": false,
+    "permutation_hash_format": "SHA256 of numpy int64 little-endian bytes",
+    "original_order_sha256": "a776b65a95c4fd26a8ceb1f2f55b48f30b8adb92bb1b388ed39a0cacb6eec6f6",
+    "fresh_worker_order_sha256": "028a668f343b3df13a051348c1f945cbd94acf10b22c8dc8bd55ea34f746d761"
+  },
+  "finding": "Fresh worker initialization consumes the same generator used by RandomSampler; existing persistent workers do not consume that seed on later-epoch reset. Original resume code can regenerate a different permutation before skipping the saved cursor.",
+  "impact": "Prepared restart path needs a versioned repair and order checks before GPU resume. Existing uninterrupted Colab training observations and checkpoint integrity remain valid.",
+  "upstream_source_reviewed": "https://github.com/pytorch/pytorch/blob/v2.11.0/torch/utils/data/dataloader.py",
+  "cloud_reproduction_status": "Not run; require installed-runtime order check before resumed optimizer steps",
+  "fix_status": "Planned, not implemented",
+  "plan": "context/TEXT_COMPLETION_PLAN_20261009.md"
+}

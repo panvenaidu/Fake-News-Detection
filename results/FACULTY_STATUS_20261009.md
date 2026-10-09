@@ -1,3 +1,5 @@
+**9 October update:** BERT final test is still pending. Original weights are intact and locally verified. Before GPU continuation, the recovery path needs a sample-order correction; this planning review launched no training. Full completion plan: `context/TEXT_COMPLETION_PLAN_20261009.md`. Completed multimodal pilot results below remain unchanged.
+
 # UROP faculty update — 9 October 2026
 
 Task: six-class Fakeddit classification, text-only followed by text + image.

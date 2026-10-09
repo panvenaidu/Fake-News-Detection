@@ -1,3 +1,13 @@
+## Latest handoff - 9 October 2026: text completion plan ready
+
+Read `context/TEXT_COMPLETION_PLAN_20261009.md` first. User requested a detailed GPT-6 Sol handoff and will approve execution next. This session audited data/code/evidence and saved a plan; no GPU training or final test was run. All official TSVs were rescanned and saved weight hashes reverified. Kaggle inspection: no active jobs, draft off, quota 00:06 / 30h used (about 29h54m remaining at observation).
+
+**New prerequisite:** original mid-epoch resume changes sample order when fresh workers consume the sampler generator. CPU reproduction and actual checkpoint RNG inspection confirmed the mismatch. Saved weights are intact; repair and verify resume ordering before running the prepared recovery notebook. Also make a BERT-only job and export the missing full validation prediction CSV. Preserve original source/config/history; record versioned recovery changes. See `results/text_resume_order_diagnostic_20261009.json` and `results/TEXT_COMPLETION_PLAN_AUDIT_20261009.json`.
+
+**Usage reserve:** start syncing around 25% remaining; at 20% start no new experiment and use the reserve to update all context/log/status files and safely commit/push. Leave a healthy submitted cloud job running independently; record its exact state and durable outputs. Do not imply local/GitHub updates happen while the agent is inactive. Latest planning check: 24% five-hour / 57% weekly remaining; finish documentation and handoff now.
+
+Progress unchanged: BERT73%, full text+image40%, image-only20%, overall44%; multimodal pilot100% separately. BERT has five observed training/validation epochs, saved epoch5 batch15000, final test pending. A later approval to execute the saved plan authorizes its implementation and training sequence. Earlier entries below are historical where they conflict with this note.
+
 ## Current state — 8 October 2026, completed multimodal pilot
 
 **Text-only, official full cohort:** BERT-base completed five training/validation epochs. Selected epoch4 has validation accuracy **82.7407%** and Macro-F1 **77.8682%**. Epoch5 accuracy **82.8031%**, Macro-F1 **77.8388%** did not replace the selected checkpoint. The trainer failed writing recovery metadata at the end of epoch5; Colab GPU allocation is blocked by usage limits. **Final test pending. ModernBERT not started.** Original five-epoch history is retrieved. Original tensor integrity is verified at epoch5 batch15000/17625, before epoch completion; resume will replay the remaining2625 batches of epoch5. Verification: `results/bert_recovery_verification.json`. No BERT recovery job is currently running.

@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-08T18:29:33.974003+00:00",
+  "updated_utc": "2026-10-09T05:14:22.853594+00:00",
   "status": "interrupted",
   "attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
   "reason": "Drive recovery-JSON rename failed at epoch boundary; Colab GPU quota blocked",
@@ -239,6 +239,17 @@
     "interactive_session": "Cancelled before any verified execution",
     "quota_observation_note": "30h observed before pilot, not a current remaining-quota measurement",
     "latest_quota_observation": {
+      "source": "Chrome Kaggle editor Session options and Active Events",
+      "observed_utc": "2026-10-09T05:14:22.853594+00:00",
+      "display": "00:06 / 30 hrs",
+      "used_minutes_displayed": 6,
+      "total_hours_displayed": 30,
+      "remaining_minutes_derived": 1794,
+      "active_events_verified": 0,
+      "draft_session": "off",
+      "accelerator": "GPU T4 x2 selected; no allocation launched"
+    },
+    "previous_quota_observation": {
       "source": "Chrome Kaggle notebook editor, Session options",
       "display": "00:09 / 30 hrs - Link to Colab Pro for more Quota",
       "used_minutes_displayed": 9,
@@ -319,5 +330,14 @@
     "note": "CPU integrity/recovery-state inspection only; no training or final test performed",
     "remaining_epoch5_batches": 2625
   },
-  "progress_tracker": "results/PROGRESS_TRACKER.json"
+  "progress_tracker": "results/PROGRESS_TRACKER.json",
+  "current_plan": "context/TEXT_COMPLETION_PLAN_20261009.md",
+  "execution_approval": "Awaiting user approval of TEXT-COMPLETE-v1",
+  "resume_preflight": {
+    "state": "repair_required",
+    "reason": "Fresh worker seed changes restored sample permutation",
+    "evidence": "results/text_resume_order_diagnostic_20261009.json",
+    "checkpoint_integrity": "verified; unchanged",
+    "missing_validation_predictions": "Must export full selected-checkpoint validation predictions"
+  }
 }

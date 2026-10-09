@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-08T18:28:22.563708+00:00",
+  "updated_utc": "2026-10-09T05:14:22.853594+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -28,9 +28,10 @@
       "epochs_validated": 5,
       "registered_max_epochs": 6,
       "final_test_completed": false,
-      "state": "Interrupted; not currently running",
+      "state": "Interrupted; saved weights intact; resume-order repair required before execution",
       "checkpoint_completion_percent": 73,
-      "recoverable_training_percent": 81
+      "recoverable_training_percent": 81,
+      "resume_fix_required": true
     },
     "text_plus_image": {
       "scope": "Full official-cohort benchmark; the completed 2600-row pilot is tracked separately",
@@ -120,5 +121,17 @@
     "status": "verified",
     "note": "CPU integrity/recovery-state inspection only; no training or final test performed"
   },
-  "recovery_files_location": "data/cloud_recovery/"
+  "recovery_files_location": "data/cloud_recovery/",
+  "current_plan": "context/TEXT_COMPLETION_PLAN_20261009.md",
+  "execution_approval": "Awaiting user approval of TEXT-COMPLETE-v1",
+  "usage_reserve_policy": {
+    "prepare_at_remaining_percent": 25,
+    "reserve_at_remaining_percent": 20,
+    "action": "No new experiment; save current state/context/results, verify safe GitHub push, hand off; leave healthy submitted cloud job running",
+    "latest_observed_remaining_percent": {
+      "five_hour": 24,
+      "weekly": 57
+    },
+    "observation_utc": "2026-10-09T05:14:22.853594+00:00"
+  }
 }

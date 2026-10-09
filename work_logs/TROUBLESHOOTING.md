@@ -1,3 +1,11 @@
+## TSH-010 - 2026-10-09 - Mid-epoch restart sample-order mismatch
+
+Status: diagnosed; fix planned, not implemented. Original `train_official_text.py` uses one generator for shuffle and worker base seeds, with persistent workers. A fresh iterator after restart consumes an extra worker seed compared with later-epoch persistent-worker resets. Restoring sampler_start and skipping batches therefore changes the sample order.
+
+Verified locally with a 128-item two-worker DataLoader: epoch2 order changed, 32 already-seen items repeated and 32 unseen items missed after an 80-item cursor. Actual checkpoint: direct randperm(564000) from sampler_start matches saved loader_rng; adding the fresh worker seed does not. Torch2.8 CPU inspection; upstream Torch2.11 DataLoader has the same mechanism. No GPU resume was launched; historical uninterrupted training is preserved.
+
+Required next action: versioned sampler/worker RNG separation with exact current-suffix and next-epoch order checks, including actual installed Kaggle runtime, before optimization. Preserve old weights/source/config and original observed history. Details: `context/TEXT_COMPLETION_PLAN_20261009.md`, `results/text_resume_order_diagnostic_20261009.json`.
+
 # TROUBLESHOOTING — Multimodal Fake News Detection
 
 > **Purpose:** Reusable knowledge base of verified problems and fixes encountered during the project.

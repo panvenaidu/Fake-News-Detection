@@ -1,3 +1,13 @@
+## Latest handoff - 9 October 2026: text completion plan ready
+
+Read `context/TEXT_COMPLETION_PLAN_20261009.md` first. User requested a detailed GPT-6 Sol handoff and will approve execution next. This session audited data/code/evidence and saved a plan; no GPU training or final test was run. All official TSVs were rescanned and saved weight hashes reverified. Kaggle inspection: no active jobs, draft off, quota 00:06 / 30h used (about 29h54m remaining at observation).
+
+**New prerequisite:** original mid-epoch resume changes sample order when fresh workers consume the sampler generator. CPU reproduction and actual checkpoint RNG inspection confirmed the mismatch. Saved weights are intact; repair and verify resume ordering before running the prepared recovery notebook. Also make a BERT-only job and export the missing full validation prediction CSV. Preserve original source/config/history; record versioned recovery changes. See `results/text_resume_order_diagnostic_20261009.json` and `results/TEXT_COMPLETION_PLAN_AUDIT_20261009.json`.
+
+**Usage reserve:** start syncing around 25% remaining; at 20% start no new experiment and use the reserve to update all context/log/status files and safely commit/push. Leave a healthy submitted cloud job running independently; record its exact state and durable outputs. Do not imply local/GitHub updates happen while the agent is inactive. Latest planning check: 24% five-hour / 57% weekly remaining; finish documentation and handoff now.
+
+Progress unchanged: BERT73%, full text+image40%, image-only20%, overall44%; multimodal pilot100% separately. BERT has five observed training/validation epochs, saved epoch5 batch15000, final test pending. A later approval to execute the saved plan authorizes its implementation and training sequence. Earlier entries below are historical where they conflict with this note.
+
 **Progress-display preference:** When the user asks how much is completed, show loading bars and the five checkpoint states from `results/PROGRESS_TRACKER.json` / `results/PROGRESS_TRACKER.md`. Refresh using verified artifacts. These are equally weighted workflow stages, not accuracy or elapsed-time percentages. Keep the completed small multimodal pilot separate from the full benchmark. Current bars: BERT73%, full text+image40%, standalone image-only20%, overall44%; ModernBERT comparison40% prepared. Recovery files are stored in data/cloud_recovery/. Original BERT tensor verified at epoch5 batch15000/17625 (epoch unfinished); replay remaining epoch5 batches before proceeding. Full multimodal prediction CSVs/original archive now synced and verified. No GPU job currently running.
 
 ## Current state — 8 October 2026, completed multimodal pilot

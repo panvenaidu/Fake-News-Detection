@@ -1,3 +1,5 @@
+**9 October planning update:** percentages are unchanged. The saved checkpoint is intact, but the original resume path needs a sample-order repair and focused checks before GPU execution. BERT completion will be a separate job with complete validation/test exports. Plan: `context/TEXT_COMPLETION_PLAN_20261009.md`. No GPU job launched. At 20% assistant usage remaining, reserve work for checkpoint/context/GitHub handoff while any healthy submitted cloud job continues.
+
 # Six-way project progress bars
 
 User preference: Whenever asked for progress, show these bars plus data/model/train/validate/test checkpoints. Read PROGRESS_TRACKER.json and refresh from verified evidence; never increment merely because time passed. Keep pilots separate from full benchmark work. This preference does not create an automation.
