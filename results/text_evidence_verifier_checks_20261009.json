@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "valid_six_class_prediction_fixture": true,
+  "invalid_evidence_rejected": [
+    "duplicate_id",
+    "wrong_label",
+    "invalid_confidence",
+    "wrong_score"
+  ],
+  "scope": "CPU artifact verifier only; no project model training or inference"
+}

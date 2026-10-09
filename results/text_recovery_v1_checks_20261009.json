@@ -1,0 +1,63 @@
+{
+  "utc": "2026-10-09T09:42:11.982952+00:00",
+  "torch": "2.8.0",
+  "schema": "TEXT-RECOVERY-ORDER-v1",
+  "sampler": {
+    "later_epoch_resume": "same exact suffix; no duplicates or omissions",
+    "second_interruption": "same remaining suffix",
+    "epoch_boundary": "same next epoch and exhausted sampler RNG",
+    "persistent_workers": 2,
+    "rows": 128,
+    "batch_size": 8
+  },
+  "numerical": {
+    "mid_epoch_and_boundary_and_second_resume": "exact CPU weights/AdamW/LR/scaler/RNG/order match",
+    "successful_updates": 46,
+    "actual_amp_overflows": 2,
+    "scheduler_steps": 46,
+    "gpu_equivalence_claimed": false
+  },
+  "actual_checkpoint": {
+    "epoch": 5,
+    "step": 15000,
+    "cursor": 480000,
+    "remaining": 84000,
+    "permutation_sha256": "a776b65a95c4fd26a8ceb1f2f55b48f30b8adb92bb1b388ed39a0cacb6eec6f6",
+    "next_indices": [
+      57678,
+      319342,
+      149495,
+      366803,
+      20395,
+      312228,
+      329449,
+      39876,
+      436335,
+      86231,
+      236608,
+      435917,
+      214513,
+      241667,
+      210428,
+      459357,
+      96100,
+      442718,
+      185217,
+      557662,
+      447167,
+      236676,
+      120599,
+      83178,
+      317754,
+      368895,
+      444038,
+      387888,
+      159162,
+      190274,
+      307348,
+      370109
+    ],
+    "next_epoch_rng_sha256": "9a695bdfc371bded703c244a6ed369c2800d07953a283e11e0d1f14c66c057d0"
+  },
+  "status": "passed"
+}

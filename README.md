@@ -1,3 +1,7 @@
+## Text completion execution — 9 October 2026
+
+The user approved `TEXT-COMPLETE-v1`. Versioned BERT-only recovery passed the original-checkpoint, sample-order and optimizer/AMP recovery gates. Private Kaggle input staging is in progress; no resumed GPU step or final text test is verified yet. Original data, weights, source/config and five-epoch observations are preserved. Current execution: `results/text_completion_execution_20261009.json`.
+
 ## Latest handoff - 9 October 2026: text completion plan ready
 
 Read `context/TEXT_COMPLETION_PLAN_20261009.md` first. User requested a detailed GPT-6 Sol handoff and will approve execution next. This session audited data/code/evidence and saved a plan; no GPU training or final test was run. All official TSVs were rescanned and saved weight hashes reverified. Kaggle inspection: no active jobs, draft off, quota 00:06 / 30h used (about 29h54m remaining at observation).

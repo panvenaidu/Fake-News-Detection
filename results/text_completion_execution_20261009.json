@@ -1,0 +1,16 @@
+{
+  "state": "recovery checks passed; private input upload pending",
+  "summary": "Versioned BERT-only recovery implemented. CPU checks passed: persistent-worker later-epoch exact suffix, epoch-boundary and second-interruption order, exact CPU model/AdamW/scheduler/RNG/GradScaler state with two actual overflows. The real epoch5/batch15000 checkpoint reconstructs the frozen permutation and next-epoch RNG. Original trainer/config and weights are preserved. Full selected-weight validation/test export and independent metric verifier are implemented. No GPU training or final test has been run in this execution session.",
+  "next_action": "Finish private upload of original BERT checkpoint archive plus the 37KB pinned recovery payload, attach inputs and replace the old pilot draft with the BERT-only bootstrap. Re-run focused CPU gates on installed Kaggle Torch before optimizer steps; submit one saved GPU batch. Follow the 20% reserve rule.",
+  "check_evidence": "results/text_recovery_v1_checks_20261009.json",
+  "source": "scripts/train_official_text_recovery_v1.py",
+  "source_sha256": "abf2237c5ae9d27a2cb0ca746a59e119d6c27c6b241bbdedca468779584eb0bf",
+  "payload_sha256": "f4c4a64d4535116dd1c21c08ebc8ca21dd1f89d94aae8b4a8514db621e876c9d",
+  "assistant_usage_observed": {
+    "primary_remaining_percent": 89,
+    "weekly_remaining_percent": 52
+  },
+  "cloud_active_job_verified": false,
+  "final_test_verified": false,
+  "updated_utc": "2026-10-09T09:48:25.173696+00:00"
+}

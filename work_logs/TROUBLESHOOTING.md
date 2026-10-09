@@ -1,3 +1,7 @@
+## Recovery correction — 9 October 2026
+
+The original restart coupled worker seeding with the sample-order generator. Versioned recovery separates the worker generator, replays the installed RandomSampler through exhaustion (including its unused final permutation), verifies the saved epoch5 order and resumes at sample480000. Focused checks pass on local Torch2.8.0; repeat in installed Kaggle Torch before optimization. The original source is preserved. Artifact verifier rejects duplicate IDs, wrong labels, confidence outside0–1 and incorrect metrics. Evidence: `results/text_recovery_v1_checks_20261009.json` and `results/text_evidence_verifier_checks_20261009.json`.
+
 ## TSH-010 - 2026-10-09 - Mid-epoch restart sample-order mismatch
 
 Status: diagnosed; fix planned, not implemented. Original `train_official_text.py` uses one generator for shuffle and worker base seeds, with persistent workers. A fresh iterator after restart consumes an extra worker seed compared with later-epoch persistent-worker resets. Restoring sampler_start and skipping batches therefore changes the sample order.

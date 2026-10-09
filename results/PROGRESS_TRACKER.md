@@ -1,3 +1,13 @@
+<!-- TEXT-COMPLETE-v1 LIVE -->
+## BERT completion execution — 9 October 2026
+
+Versioned BERT-only recovery implemented. CPU checks passed: persistent-worker later-epoch exact suffix, epoch-boundary and second-interruption order, exact CPU model/AdamW/scheduler/RNG/GradScaler state with two actual overflows. The real epoch5/batch15000 checkpoint reconstructs the frozen permutation and next-epoch RNG. Original trainer/config and weights are preserved. Full selected-weight validation/test export and independent metric verifier are implemented. No GPU training or final test has been run in this execution session.
+
+Finish private upload of original BERT checkpoint archive plus the 37KB pinned recovery payload, attach inputs and replace the old pilot draft with the BERT-only bootstrap. Re-run focused CPU gates on installed Kaggle Torch before optimizer steps; submit one saved GPU batch. Follow the 20% reserve rule.
+
+Evidence: `results/text_completion_execution_20261009.json`; plan `context/TEXT_COMPLETION_PLAN_20261009.md`. The user has authorized execution. Historical entries below retain earlier observations.
+<!-- /TEXT-COMPLETE-v1 LIVE -->
+
 **9 October planning update:** percentages are unchanged. The saved checkpoint is intact, but the original resume path needs a sample-order repair and focused checks before GPU execution. BERT completion will be a separate job with complete validation/test exports. Plan: `context/TEXT_COMPLETION_PLAN_20261009.md`. No GPU job launched. At 20% assistant usage remaining, reserve work for checkpoint/context/GitHub handoff while any healthy submitted cloud job continues.
 
 # Six-way project progress bars

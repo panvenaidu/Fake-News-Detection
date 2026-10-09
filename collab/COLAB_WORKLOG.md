@@ -1,3 +1,13 @@
+<!-- TEXT-COMPLETE-v1 LIVE -->
+## BERT completion execution — 9 October 2026
+
+Versioned BERT-only recovery implemented. CPU checks passed: persistent-worker later-epoch exact suffix, epoch-boundary and second-interruption order, exact CPU model/AdamW/scheduler/RNG/GradScaler state with two actual overflows. The real epoch5/batch15000 checkpoint reconstructs the frozen permutation and next-epoch RNG. Original trainer/config and weights are preserved. Full selected-weight validation/test export and independent metric verifier are implemented. No GPU training or final test has been run in this execution session.
+
+Finish private upload of original BERT checkpoint archive plus the 37KB pinned recovery payload, attach inputs and replace the old pilot draft with the BERT-only bootstrap. Re-run focused CPU gates on installed Kaggle Torch before optimizer steps; submit one saved GPU batch. Follow the 20% reserve rule.
+
+Evidence: `results/text_completion_execution_20261009.json`; plan `context/TEXT_COMPLETION_PLAN_20261009.md`. The user has authorized execution. Historical entries below retain earlier observations.
+<!-- /TEXT-COMPLETE-v1 LIVE -->
+
 ## Latest handoff - 9 October 2026: text completion plan ready
 
 Read `context/TEXT_COMPLETION_PLAN_20261009.md` first. User requested a detailed GPT-6 Sol handoff and will approve execution next. This session audited data/code/evidence and saved a plan; no GPU training or final test was run. All official TSVs were rescanned and saved weight hashes reverified. Kaggle inspection: no active jobs, draft off, quota 00:06 / 30h used (about 29h54m remaining at observation).
