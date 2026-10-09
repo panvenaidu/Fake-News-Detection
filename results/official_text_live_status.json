@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-10-09T10:46:53.417357+00:00",
-  "status": "BERT epoch6 batch13000; session checkpoint12000 saved",
+  "updated_utc": "2026-10-09T10:57:08.875694+00:00",
+  "status": "BERT training and six epoch validations finished; selected epoch4; final inference/archive pending",
   "attempt": "OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z",
   "reason": "Drive recovery-JSON rename failed at epoch boundary; Colab GPU quota blocked",
   "last_retrieved_selected_epoch": 4,
@@ -341,8 +341,8 @@
     "missing_validation_predictions": "Must export full selected-checkpoint validation predictions"
   },
   "text_completion_execution": {
-    "state": "BERT epoch6 batch13000; session checkpoint12000 saved",
-    "summary": "Saved Kaggle version356721456 advanced to epoch6/batch13000 of17625, finite mean loss0.1463 and280.4 titles/s. Recovery checkpoint6/12000 saved at job elapsed1850.3s. Final validation/test and durable archive retrieval remain pending. Offline full evidence/weight/optimizer/tokenizer verifier is prepared. The observed SDPA backward determinism warning is consistent with original warn-only determinism; no bitwise GPU equivalence is claimed.",
+    "state": "BERT training and six epoch validations finished; selected epoch4; final inference/archive pending",
+    "summary": "BERT completed the registered six-epoch training budget. Epoch6 validation accuracy82.5284%, Macro-F177.7718% did not replace epoch4 (82.7407% accuracy/77.8682% Macro-F1). Checkpoint6/17625 saved in session storage at job elapsed2553s. Final selected-weight validation export, official59319-row test, saved-output verification and local evidence/weight retrieval remain pending. Preserve historical results and the unchanged scientific protocol.",
     "next_action": "Continue observing this exact saved job. Finish remaining epoch5, then epoch6 or the registered early-stop rule. Keep original input checkpoint as durable fallback; new Kaggle working checkpoints become durable only after saved outputs are verified. Freeze validation-selected weight hash, export full validation/test evidence, retrieve weights and independently verify metrics/IDs before claiming completion.",
     "check_evidence": "results/text_recovery_v1_checks_20261009.json",
     "source": "scripts/train_official_text_recovery_v1.py",
@@ -371,16 +371,17 @@
     "input_hashes_verified_in_cloud": true,
     "processed_batch_progress_verified": true,
     "last_observed_epoch": 6,
-    "last_observed_batch": 13000,
-    "last_observed_loss": 0.1463,
+    "last_observed_batch": 17625,
+    "last_observed_loss": 0.1454,
     "successful_optimizer_count_live": null,
-    "last_verified_log_elapsed_seconds": 1963.7,
+    "last_verified_log_elapsed_seconds": 2553.0,
     "gpu_observed": "Tesla T4",
     "torch_observed": "2.11.0+cu128",
     "python_observed": "3.13.15",
     "runtime_recovery_checkpoint": {
       "epoch": 6,
-      "batch": 12000,
+      "batch": 17625,
+      "epoch_finished": true,
       "persistence": "Kaggle session disk; saved-version outputs pending"
     },
     "recovered_epoch5_validation": {
@@ -394,6 +395,18 @@
     },
     "observation_evidence": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/validation_epoch5_observed.json",
     "offline_verifier": "scripts/verify_text_completion_archive_v1.py",
-    "updated_utc": "2026-10-09T10:46:53.417357+00:00"
+    "training_completed_verified": true,
+    "epochs_validated": 6,
+    "selected_epoch": 4,
+    "epoch6_validation": {
+      "accuracy": 0.8252839472885983,
+      "micro_f1": 0.8252839472885983,
+      "macro_f1": 0.7777178572618486,
+      "weighted_f1": 0.8240532401143373,
+      "balanced_accuracy": 0.7534566690986185,
+      "loss": 0.7621944958162614,
+      "samples": 59342
+    },
+    "updated_utc": "2026-10-09T10:57:08.875694+00:00"
   }
 }

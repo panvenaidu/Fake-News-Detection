@@ -1,0 +1,16 @@
+{
+  "source": "Live saved-job log; raw artifact retrieval pending",
+  "elapsed_seconds": 2553.0,
+  "epoch": 6,
+  "validation": {
+    "accuracy": 0.8252839472885983,
+    "micro_f1": 0.8252839472885983,
+    "macro_f1": 0.7777178572618486,
+    "weighted_f1": 0.8240532401143373,
+    "balanced_accuracy": 0.7534566690986185,
+    "loss": 0.7621944958162614,
+    "samples": 59342
+  },
+  "selected_epoch": 4,
+  "test_pending": true
+}
