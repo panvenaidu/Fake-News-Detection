@@ -64,6 +64,7 @@ try:
         (attempt/'migration_verification.json').write_text(json.dumps(proof,indent=2)+'\n')
     deployed=work/'recovery_source';shutil.copytree(source_dir,deployed,dirs_exist_ok=True)
     shutil.copy2(manifest_path,attempt/manifest_path.name)
+    shutil.copytree(deployed,attempt/'recovery_source',dirs_exist_ok=True)
     # Keep Kaggle Torch installed, match the original Hugging Face version.
     subprocess.run([sys.executable,'-m','pip','install','--quiet','transformers==5.18.0'],check=True)
     env=dict(os.environ,CUDA_VISIBLE_DEVICES='0',TOKENIZERS_PARALLELISM='false')
