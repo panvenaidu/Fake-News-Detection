@@ -1,7 +1,7 @@
 <!-- TEXT-COMPLETE-v1 LIVE -->
 ## BERT completion execution — 9 October 2026
 
-Recovered epoch5 finished and validated: accuracy82.8031%, Macro-F177.8388%, matching the historical Colab observation. Epoch5/batch17625 session checkpoint saved successfully. Epoch6 is active (batch500 observed, finite loss0.1430, throughput279.9 titles/s); frozen full official splits remain unchanged. Epoch4 is still selected by validation Macro-F1. This is the same BERT attempt continued; ModernBERT and another model were not launched. Final test and local archival remain pending.
+Saved Kaggle version356721456 advanced to epoch6/batch3000 of17625, finite mean training loss0.1460 and279.7 titles/s. A new full model/optimizer/scheduler/AMP/RNG recovery checkpoint saved at6/3000. It is currently session storage; durable saved-output verification and local retrieval remain pending. Recovered epoch5 validation still matches Colab; epoch4 remains selected so far. Final text test pending.
 
 Continue observing this exact saved job. Finish remaining epoch5, then epoch6 or the registered early-stop rule. Keep original input checkpoint as durable fallback; new Kaggle working checkpoints become durable only after saved outputs are verified. Freeze validation-selected weight hash, export full validation/test evidence, retrieve weights and independently verify metrics/IDs before claiming completion.
 
