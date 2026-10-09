@@ -1,7 +1,7 @@
 <!-- TEXT-COMPLETE-v1 LIVE -->
 ## BERT completion execution — 9 October 2026
 
-Saved Kaggle version356721456 reached epoch6/batch9000 of17625, finite mean loss0.1468 and280.1 titles/s. The6/9000 full model/optimizer/scheduler/AMP/RNG checkpoint saved at job elapsed1509.8s. This is session storage; saved output and local archival remain pending. Original input checkpoint/history retained; selected epoch4 and final-test-pending state unchanged.
+Saved Kaggle version356721456 advanced to epoch6/batch13000 of17625, finite mean loss0.1463 and280.4 titles/s. Recovery checkpoint6/12000 saved at job elapsed1850.3s. Final validation/test and durable archive retrieval remain pending. Offline full evidence/weight/optimizer/tokenizer verifier is prepared. The observed SDPA backward determinism warning is consistent with original warn-only determinism; no bitwise GPU equivalence is claimed.
 
 Continue observing this exact saved job. Finish remaining epoch5, then epoch6 or the registered early-stop rule. Keep original input checkpoint as durable fallback; new Kaggle working checkpoints become durable only after saved outputs are verified. Freeze validation-selected weight hash, export full validation/test evidence, retrieve weights and independently verify metrics/IDs before claiming completion.
 
