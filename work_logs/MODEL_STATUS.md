@@ -1,9 +1,9 @@
 <!-- TEXT-COMPLETE-v1 LIVE -->
 ## BERT completion execution — 9 October 2026
 
-Recovery checks passed locally and input transfer completed. Private recovery dataset successfully created and attached (version20499630), alongside unchanged official inputs (version20474176). Submitted saved Kaggle version3/scriptVersionId356721456. Immutable saved bootstrap matches the prepared local source exactly. Provider reports Running with GPU T4 x2; preflight/optimizer progress and final text test remain unverified. Original Colab source/config/history and checkpoint remain preserved.
+Saved Kaggle version356721456 is actively processing the recovered BERT training. Installed Torch2.11.0+cu128 passed the persistent-worker, exact suffix/next-epoch and CPU optimizer/AMP gates. Input hashes passed; original epoch5/batch15000 and counter state restored. Next IDs84p7pu/3nue2v/2nfbs2 verified; finite resumed loss0.1882; training advanced through batches15001,15500 and16000. GPU TeslaT4, Python3.13.15; one trainer device exposed despite T4x2 allocation. Original selected epoch4 remains unchanged until new validation. Final test pending; ModernBERT not launched.
 
-Inspect version356721456 logs for input/hash and installed-Torch recovery gates, restored epoch5/batch15000 and first actual optimizer progress. Monitor this exact job; do not submit another run based on observation delays. Then verify and retrieve final numerical evidence and weights, update records and GitHub.
+Continue observing this exact saved job. Finish remaining epoch5, then epoch6 or the registered early-stop rule. Keep original input checkpoint as durable fallback; new Kaggle working checkpoints become durable only after saved outputs are verified. Freeze validation-selected weight hash, export full validation/test evidence, retrieve weights and independently verify metrics/IDs before claiming completion.
 
 Evidence: `results/text_completion_execution_20261009.json`; plan `context/TEXT_COMPLETION_PLAN_20261009.md`. The user has authorized execution. Historical entries below retain earlier observations.
 <!-- /TEXT-COMPLETE-v1 LIVE -->
