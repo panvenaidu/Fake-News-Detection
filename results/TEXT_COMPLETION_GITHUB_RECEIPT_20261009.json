@@ -1,0 +1,11 @@
+{
+  "status": "verified",
+  "verified_utc": "2026-10-09T11:51:56.512061+00:00",
+  "repository": "https://github.com/panvenaidu/Fake-News-Detection",
+  "branch": "main",
+  "results_documentation_commit": "5527824302480de39cafd85a5a9a1c2b8cc68fd7",
+  "remote_main_hash_observed": "5527824302480de39cafd85a5a9a1c2b8cc68fd7",
+  "method": "Successful normal fast-forward push, followed by git ls-remote origin refs/heads/main; remote hash equals local results/documentation commit",
+  "scope": "Approved code, notebooks, metrics, predictions, reports, manifests and context; raw TSVs/images/weights/ZIPs excluded",
+  "receipt_commit_note": "This receipt is committed as a child of the verified results/documentation commit; it does not claim its own future commit hash."
+}

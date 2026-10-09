@@ -67,3 +67,6 @@ results/experiments/official_text/**/raw_evidence/environment*.json
 results/experiments/official_text/**/raw_evidence/pip_freeze*.txt
 results/experiments/official_text/**/raw_evidence/retrieval_manifest.json
 results/bert_*_20261009.png
+
+results/bert_completion_cloud_proof_20261009.png
+results/bert_completion_gpu_quota_20261009.png
