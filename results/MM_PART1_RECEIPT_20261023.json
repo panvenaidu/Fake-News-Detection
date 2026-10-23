@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-23T18:08:19.911111+00:00",
+  "updated_utc": "2026-10-23T18:34:29.310176+00:00",
   "plan": "MM-PART1-v2",
   "state": "bounded_cpu_image_extraction_running",
   "part1_complete": false,
@@ -16,18 +16,18 @@
   "source_archive_download_confirmed": false,
   "drive_storage_observed": "78.96 GB of5.39 TB used",
   "cpu_prep_notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
-  "cpu_runtime": "Fresh CPU runtime reconnected; approved Drive remounted; first640 images readback verified; bounded4h CPU extraction launched",
+  "cpu_runtime": "Bounded8h CPU job7128d949 advancing in Cell6; latest 51536 committed images at 2026-10-23T18:33:34.291373+00:00",
   "image_gate_passed": false,
   "image_coverage": "results/official_image_coverage_v1.json",
   "recovery_checks": "results/multimodal_recovery_primitives_checks_20261023.json",
   "warmstart_checks": "results/multimodal_warmstart_verification_20261023.json",
   "limitations": [
     "Full paired image extraction/coverage still pending; only75995 images audited locally",
-    "CPU synthetic engine/recovery/verifier tests passed; actual CUDA AMP/numerical replay still pending",
     "No real multimodal checkpoint, no training epochs or full validations, no final test",
-    "Private Kaggle full-image input import/storage route still needs measured verification"
+    "Private Kaggle full-image input import/storage route still needs measured verification",
+    "CUDA fixture passed; full pretrained-model/image I/O throughput and durable scientific checkpoint export remain pending"
   ],
-  "next_action": "Observe existing CPU extraction job7128d949 in notebook Cell6; do not duplicate it. It resumes from24220 committed images after rescanning the durable compressed prefix. Verify all682661 images/full compressed SHA/CRC. Prepare exact private input metadata with scripts/verify_official_image_shards_v1.py only after complete extraction. Verify actual unpacked runtime files before cloud scientific training. Kaggle editor loading/user verification pending; authorized Colab fallback possible. CUDA recovery fixture is authored but has not run; production epochs/validations remain0.",
+  "next_action": "Keep observing existing bounded CPU job7128d949 (Colab Cell6), do not duplicate or restart merely for Connecting/render errors. First24220 images were recovered; latest47001 committed and1999 open at18:29:30UTC. Only historical Cell5 output was cleared to fix its JavaScript error renderer; current Cell6 output became readable again. Await full682661 source coverage/CRC/hash. Prepare metadata using verify_official_image_shards_v1.py --layout kaggle-tar, package data/ as data.tar and results/ as results.tar so Kaggle wrappers match trainer paths; upload remaining original shards in private dataset new versions. Verify full saved input and runtime hashes before measured throughput and scientific epochs1-2. CUDA fixture passed; no full scientific epoch, validation or final test.",
   "progress": {
     "text": 100,
     "multimodal": 40,
@@ -53,12 +53,14 @@
     "configs/multimodal_official_6way_v1.json": "19e3c78288aa7a5eb7ee657900583a3cb2984637354fc43b742302816aea049b",
     "notebooks/UROP_MM_PART1_IMAGE_PREP_CPU_20261023.ipynb": "45743e524f24c8d2ce25658bd22f4d24527c28f44660af0ee9f330730e338669",
     "scripts/check_multimodal_cuda_v1.py": "cb8bf1c28d1d2bee547eb9bfbb27f9a8171cbf6e1f684444eb59e3a98c665244",
-    "scripts/check_image_shard_verifier_v1.py": "39bf0293c473f30ee7fd9d29411f63400a0759c3d25d350a2c5978d725310cd3",
-    "scripts/verify_official_image_shards_v1.py": "64649eb6d0c1dbc27312d3127cdaf6ee96ce2ff46058e8be2dd04f304b8408b6"
+    "scripts/check_image_shard_verifier_v1.py": "40b0cf27b42317af710528832e2ff74d6c76ab19958bfb39638553833cc325d6",
+    "scripts/verify_official_image_shards_v1.py": "ae0f169efd81c682f910de70cde44766c545486b05bc03f54534c862baf21aa0",
+    "collab/multimodal_cuda_preflight_cell_v1.py": "c1884d85385b987c53a6e52b1cbb8ee798c47e5c9afd24b5a05af19acd50a641",
+    "notebooks/UROP_MM_PART1_CUDA_ENGINEERING_20261023.ipynb": "9072566aa987235a02c4060fa716b7d3bfeb72ad5f3856ea8a9dba1272f936af"
   },
   "assistant_usage_observed": {
-    "short_window_remaining_percent": 77,
-    "weekly_remaining_percent": 96,
+    "short_window_remaining_percent": 30,
+    "weekly_remaining_percent": 89,
     "action": "Resumed after quota reset; bounded CPU extraction allowed; reserve20%, handoff10%, hardstop5%"
   },
   "drive_access_approved": true,
@@ -86,23 +88,24 @@
     "results/multimodal_image_prep_checks_20261023.json",
     "results/multimodal_evidence_checks_20261023.json",
     "results/multimodal_first_shard_join_verification_20261023.json",
-    "results/image_shard_verifier_checks_20261023.json"
+    "results/image_shard_verifier_checks_20261023.json",
+    "results/multimodal_cuda_engineering_checks_20261023.json",
+    "results/multimodal_first_shard_byte_comparison_20261023.json"
   ],
   "github_backup_prior": {
-    "status": "verified",
-    "commit": "fe21e0e2867e1422735785ff1b3094814212a4b9",
-    "remote_sha_observed": "fe21e0e2867e1422735785ff1b3094814212a4b9",
-    "verified_utc": "2026-10-23T14:24:41.202402+00:00",
-    "scope": "Image audit/recovery components, verification receipts and context; raw data/weights excluded",
-    "note": "This records the preceding checkpoint commit; subsequent receipt commit is separate"
-  },
-  "github_backup": {
     "status": "verified",
     "commit": "10a72d1190c8bce15cd3b3b58e4a29ef42b0dcc8",
     "remote_sha_observed": "10a72d1190c8bce15cd3b3b58e4a29ef42b0dcc8",
     "verified_utc": "2026-10-23T15:12:53.554905+00:00",
     "scope": "Trainer/config, CPU verification receipts, cloud source staging tools and notebook source mirror, project records",
     "note": "This receipt is a separate child checkpoint; source archive/images/weights are excluded from Git."
+  },
+  "github_backup": {
+    "status": "verified",
+    "commit": "1c2634d5008437a7e697759ed462c0ebd087d366",
+    "remote_sha_observed": "1c2634d5008437a7e697759ed462c0ebd087d366",
+    "scope": "CPU image staging/resume source, input verifier and CUDA fixture source; current new CUDA receipt awaits next child commit",
+    "note": "Pinned source commit verified before fetching it in Colab; no raw image bytes or weights in Git"
   },
   "source_preflight": "results/MM_PART1_CLOUD_IMAGE_PREP_20261023.json",
   "cpu_extraction_job": {
@@ -112,7 +115,12 @@
     "committed_images_at_restart": 24220,
     "committed_shards_at_restart": 6,
     "ignored_orphan": "images_20ad5ec99d0c4f59990dc54e195383b7.tar",
-    "scientific_training": false
+    "scientific_training": false,
+    "last_live_output_utc": "2026-10-23T18:33:34.291373+00:00",
+    "usable_committed_observed": 51536,
+    "usable_in_open_shard_observed": 4464,
+    "required": 682661,
+    "full_image_gate_passed": false
   },
   "kaggle_engineering_notebook": {
     "url": "https://www.kaggle.com/code/rocky62/urop-mm-part1-engineering-preflight/edit",
@@ -123,7 +131,31 @@
   },
   "cloud_cuda_regression": {
     "source": "scripts/check_multimodal_cuda_v1.py",
-    "state": "Authored and syntax checked; local CUDA-unavailable guard passed in project venv; actual CUDA not yet executed",
-    "scope": "Random tiny BERT plus full random ResNet50, real CUDA GradScaler with one injected overflowing gradient, repeated recovery and next-epoch state comparison; no faculty inference"
-  }
+    "state": "passed_cuda_engineering_fixture",
+    "receipt": "results/multimodal_cuda_engineering_checks_20261023.json",
+    "notebook": "https://colab.research.google.com/drive/1aMUiYE2qTV4ctVRgxJor-AwyZVUxO-Rw",
+    "gpu": "Tesla T4",
+    "torch": "2.11.0+cu130",
+    "maximum_state_absolute_difference": 0.0,
+    "actual_amp_skips": 1,
+    "successful_updates": 5,
+    "scientific_training": false,
+    "runtime_release": "Confirmed Colab active sessions lists only CPU image-preparation notebook; T4 session released"
+  },
+  "private_input_staging": {
+    "url": "https://www.kaggle.com/datasets/rocky62/urop-official-images-private-staging-v1",
+    "version": 1,
+    "privacy": "Private",
+    "files": 641,
+    "image_count": 640,
+    "size_display": "66.74MB",
+    "archive_name": "images_590bbadd6dcd433b83059f13e85137bc.tar",
+    "observed_unpacked_prefix": "images_590bbadd6dcd433b83059f13e85137bc/images/",
+    "readme": "STAGING_README.md states INCOMPLETE/no benchmark training",
+    "compression_observed": "ZIP export still awaiting compression",
+    "status": "Saved version/file tree verified; all-byte Kaggle roundtrip/runtime audit pending"
+  },
+  "source_byte_comparison": "results/multimodal_first_shard_byte_comparison_20261023.json",
+  "full_input_verifier": "scripts/verify_official_image_shards_v1.py",
+  "full_input_layout": "kaggle-tar, observed archive-name wrapper"
 }

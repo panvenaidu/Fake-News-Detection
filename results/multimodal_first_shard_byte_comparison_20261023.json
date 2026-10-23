@@ -1,0 +1,14 @@
+{
+  "utc": "2026-10-23T18:26:11.775258+00:00",
+  "scope": "First640 source images only, not a full overlap audit",
+  "source_images": 640,
+  "existing_local_overlap": 72,
+  "same_bytes": 21,
+  "byte_conflicts": 51,
+  "details_private": "data/official_paired_v1/first_shard_byte_conflicts.json",
+  "action": "No old image overwritten or reused; preserve historical subset; new source shard stays separate",
+  "conflict_same_dimensions": 27,
+  "conflict_same_rgb_pixels": 0,
+  "conflict_different_dimensions": 24,
+  "interpretation": "Byte differences do not by themselves prove image identity differences. Preserve both sources; use author archive for the new fixed cohort. No resizing or substitutions performed."
+}

@@ -318,3 +318,7 @@ Yes — the warning is informational.
 ## 2026-10-23 CPU remount and Kaggle editor
 
 CPU runtime had disconnected due to inactivity/duration. Reconnect plus routine previously-approved Google Drive sign-in restored mount; original source and script survived. Do not redownload the113623359224-byte archive. A new Kaggle engineering notebook and old text editor both stay at Editor Loading, with reCAPTCHA-service error visible. Reload/new dedicated notebook did not expose code cells; no GPU allocated. User verification requested; no security setting changed.
+
+### 2026-10-23 browser observation recovery
+
+An unhandled download-wait rejection reset the CUA bindings; cloud CPU/GPU jobs were unaffected. Catch event promises immediately before triggering UI actions. Download was actually complete in Chrome history; reveal exact file in Finder, then move only that owned artifact into UROP. Never repeat a download solely because its event observation timed out. Colab output JavaScript errors recurred after an intentionally interrupted historical cell; a view reload/old-output cleanup does not establish a stopped process. Colab Active sessions and new Drive shard receipts showed the CPU runtime/job remained active. No cookie/security setting was weakened.

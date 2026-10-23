@@ -3,10 +3,11 @@
   "dataset_specs_url": "https://www.kaggle.com/docs/datasets",
   "notebook_specs_url": "https://www.kaggle.com/docs/notebooks",
   "official_docs_observed": {
-    "per_dataset_bytes_limit_decimal": 200000000000,
-    "all_private_dataset_bytes_limit_decimal": 200000000000,
+    "per_dataset_limit_as_documented": "200GB",
+    "all_private_dataset_limit_as_documented": "200GB",
     "max_top_level_files": 50,
-    "notebook_saved_working_output_gb": 20
+    "notebook_saved_working_output_as_documented": "20GB",
+    "unit_note": "Keep documentation labels; actual signed-in quota displayed214.75GB, no unsupported byte-unit conversion"
   },
   "signed_in_account_observed": "Rocky62",
   "new_engineering_notebook": "https://www.kaggle.com/code/rocky62/urop-mm-part1-engineering-preflight/edit",
@@ -22,8 +23,34 @@
   ],
   "private_drive_link_is_not_a_verified_remote_import_route": true,
   "limitations": [
-    "Account-specific remaining private storage not yet observed",
-    "Automatic TAR unpack/root layout not yet tested",
-    "Kaggle documentation limits are not a substitute for actual runtime capacity check"
-  ]
+    "Full private cohort upload/runtime capacity still pending",
+    "Private dataset first version saved, but ZIP compression/roundtrip still pending",
+    "Full pretrained/data I/O throughput not measured"
+  ],
+  "updated_utc": "2026-10-23T18:32:10.323396+00:00",
+  "private_quota_observed_before_upload": {
+    "used_gb_display": 2.31,
+    "total_gb_display": 214.75,
+    "scope": "Signed-in Rocky62 dataset upload form; decimal GB display, not notebook scratch"
+  },
+  "private_staging_version": {
+    "url": "https://www.kaggle.com/datasets/rocky62/urop-official-images-private-staging-v1",
+    "version": 1,
+    "privacy": "Private",
+    "files": 641,
+    "image_count": 640,
+    "size_display": "66.74MB",
+    "archive_name": "images_590bbadd6dcd433b83059f13e85137bc.tar",
+    "observed_unpacked_prefix": "images_590bbadd6dcd433b83059f13e85137bc/images/",
+    "readme": "STAGING_README.md states INCOMPLETE/no benchmark training",
+    "compression_observed": "ZIP export still awaiting compression",
+    "status": "Saved version/file tree verified; all-byte Kaggle roundtrip/runtime audit pending"
+  },
+  "colab_cuda_fallback": {
+    "notebook": "https://colab.research.google.com/drive/1aMUiYE2qTV4ctVRgxJor-AwyZVUxO-Rw",
+    "gpu": "TeslaT4",
+    "torch": "2.11.0+cu130",
+    "engineering_check_passed": true,
+    "released_after_receipt_retrieval": true
+  }
 }

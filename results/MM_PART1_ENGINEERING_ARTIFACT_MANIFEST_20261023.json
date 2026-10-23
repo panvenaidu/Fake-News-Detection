@@ -1,0 +1,113 @@
+{
+  "utc": "2026-10-23T18:34:29.310176+00:00",
+  "status": "Engineering/staging checkpoint, not accepted Part1",
+  "artifact_count": 15,
+  "artifacts": [
+    {
+      "path": "scripts/train_official_multimodal_v1.py",
+      "bytes": 19705,
+      "sha256": "e0e2ace518f8232ca250c7185b89b56a645c12125666630cace4a2876e520026",
+      "role": "source_or_configuration"
+    },
+    {
+      "path": "scripts/multimodal_recovery_v1.py",
+      "bytes": 4567,
+      "sha256": "2f5f67ce79289c69279040d21b483e28535895f5c99c63e0021da3eee6d3d1c8",
+      "role": "source_or_configuration"
+    },
+    {
+      "path": "scripts/check_multimodal_cuda_v1.py",
+      "bytes": 11186,
+      "sha256": "cb8bf1c28d1d2bee547eb9bfbb27f9a8171cbf6e1f684444eb59e3a98c665244",
+      "role": "source_or_configuration"
+    },
+    {
+      "path": "scripts/verify_official_image_shards_v1.py",
+      "bytes": 13050,
+      "sha256": "ae0f169efd81c682f910de70cde44766c545486b05bc03f54534c862baf21aa0",
+      "role": "source_or_configuration"
+    },
+    {
+      "path": "scripts/check_image_shard_verifier_v1.py",
+      "bytes": 6483,
+      "sha256": "40b0cf27b42317af710528832e2ff74d6c76ab19958bfb39638553833cc325d6",
+      "role": "source_or_configuration"
+    },
+    {
+      "path": "scripts/verify_official_multimodal_v1.py",
+      "bytes": 5701,
+      "sha256": "338e41f3978465ecf5832916b1ec80dad66386e5cd1ef6097d82de4e7137e03f",
+      "role": "source_or_configuration"
+    },
+    {
+      "path": "collab/prepare_official_images_drive_v1.py",
+      "bytes": 10039,
+      "sha256": "543c60d78d61182b10052cfd061d90c5bb764f99138a8bc09ae72dbfe93d7354",
+      "role": "source_or_configuration"
+    },
+    {
+      "path": "collab/multimodal_cuda_preflight_cell_v1.py",
+      "bytes": 2778,
+      "sha256": "c1884d85385b987c53a6e52b1cbb8ee798c47e5c9afd24b5a05af19acd50a641",
+      "role": "source_or_configuration"
+    },
+    {
+      "path": "configs/multimodal_official_6way_v1.json",
+      "bytes": 1101,
+      "sha256": "19e3c78288aa7a5eb7ee657900583a3cb2984637354fc43b742302816aea049b",
+      "role": "source_or_configuration"
+    },
+    {
+      "path": "notebooks/UROP_MM_PART1_IMAGE_PREP_CPU_20261023.ipynb",
+      "bytes": 20482,
+      "sha256": "45743e524f24c8d2ce25658bd22f4d24527c28f44660af0ee9f330730e338669",
+      "role": "source_or_configuration"
+    },
+    {
+      "path": "notebooks/UROP_MM_PART1_CUDA_ENGINEERING_20261023.ipynb",
+      "bytes": 4053,
+      "sha256": "9072566aa987235a02c4060fa716b7d3bfeb72ad5f3856ea8a9dba1272f936af",
+      "role": "source_or_configuration"
+    },
+    {
+      "path": "results/multimodal_cuda_engineering_checks_20261023.json",
+      "bytes": 1915,
+      "sha256": "9474fe166d0a0182db54dcc46eaf84cc3e5ed92d61c227eda32078c3bb3b1e95",
+      "role": "engineering_or_source_verification"
+    },
+    {
+      "path": "results/image_shard_verifier_checks_20261023.json",
+      "bytes": 893,
+      "sha256": "6c5f88382886056c5f32ba3840775dfa2f4d6ffd28f9b73ce8e4d4ebd45b8867",
+      "role": "engineering_or_source_verification"
+    },
+    {
+      "path": "results/multimodal_first_shard_join_verification_20261023.json",
+      "bytes": 1281,
+      "sha256": "e0eab3f027c85b4a3e6ec08721708c41af72747a77d8627f597e16bb5e68e381",
+      "role": "engineering_or_source_verification"
+    },
+    {
+      "path": "results/multimodal_first_shard_byte_comparison_20261023.json",
+      "bytes": 716,
+      "sha256": "79f727198ef8cba06ff8042505125911ad2ec001892fd245df4d437dc7299d4d",
+      "role": "engineering_or_source_verification"
+    }
+  ],
+  "excluded_from_git": [
+    "Raw faculty TSVs, all images and large source/archive shards",
+    "Model weights and recovery tensors",
+    "Browser screenshots with account context",
+    "Private per-image receipts/conflict details",
+    "Unrelated user HTML/PDF/screenshots"
+  ],
+  "mutable_receipts_context_not_self_hashed": true,
+  "local_data_reference": {
+    "path": "data/official_paired_v1/cloud_shards/images_590bbadd6dcd433b83059f13e85137bc.tar",
+    "bytes": 67235840,
+    "sha256": "38b460fcca29986161edc70b717085c5efd85b2ab707eeb099009e9dc4f9490b"
+  },
+  "scientific_epochs_completed": 0,
+  "full_validations_completed": 0,
+  "final_test_performed": false
+}

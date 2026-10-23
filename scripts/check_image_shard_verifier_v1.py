@@ -66,12 +66,12 @@ def main():
                 item = json.loads(receipt.read_text())
                 with tarfile.open(source / 'shards' / item['archive']) as shard:
                     for row in item['images']:
-                        destination = verifier.safe_path(metadata, row['member'])
+                        destination = verifier.safe_path(metadata, Path(item['archive']).stem + '/' + row['member'])
                         destination.parent.mkdir(parents=True, exist_ok=True)
                         destination.write_bytes(shard.extractfile(row['member']).read())
             result = verifier.verify_unpacked(metadata, base / 'runtime_receipt.json')
             assert result['image_gate_passed'] is True and result['usable'] == 6 and result['split_counts'] == counts
-            first = metadata / 'images/s0.png'
+            first = next(metadata.glob('images_*/images/s0.png'))
             original = first.read_bytes()
             first.write_bytes(b'X' * len(original))
             rejected(lambda: verifier.verify_unpacked(metadata, base / 'corrupt.json'), 'checksum mismatch: s0')
@@ -96,7 +96,11 @@ def main():
             (base / 'incomplete.json').write_text(json.dumps(bad_report))
             rejected(lambda: verifier.prepare(source, base / 'not-ready', base / 'incomplete.json'), 'Complete archive')
     result = {
+        'utc': verifier.prep.now(),
         'status': 'passed', 'scope': 'Six synthetic images; no network, official inference, or full cohort claim',
+        'verifier_sha256': verifier.prep.sha(Path(verifier.__file__)),
+        'test_sha256': verifier.prep.sha(__file__),
+        'input_layout_tested': 'kaggle-tar',
         'checks': ['Metadata preparation never opens image gate',
                    'Actual unpacked images all hashed/decoded before runtime gate',
                    'RGB, grayscale, palette and RGBA decode',

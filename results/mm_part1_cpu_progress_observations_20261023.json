@@ -1,0 +1,281 @@
+{
+  "observed_utc": "2026-10-23T18:33:47.256Z",
+  "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
+  "job_id": "CPU_IMAGE_PREP_7128d94997e84072a77aca9a66bc46c6",
+  "records": [
+    {
+      "state": "extended_cpu_extraction_resumed",
+      "utc": "2026-10-23T18:05:05.015258+00:00",
+      "job_id": "CPU_IMAGE_PREP_7128d94997e84072a77aca9a66bc46c6",
+      "previous_job": "CPU_IMAGE_PREP_3af1eae08d9741d681804165003e0146",
+      "reason": "Intentional interrupt to extend bound before expensive four-hour prefix replay; completed shards preserved; open orphan ignored",
+      "committed_images_before_restart": 24220,
+      "committed_shards_before_restart": 6,
+      "uncommitted_orphans_ignored": [
+        "images_20ad5ec99d0c4f59990dc54e195383b7.tar"
+      ],
+      "max_seconds": 28800,
+      "target_shard_bytes": 536870912,
+      "max_shards": 512,
+      "source_archive_unchanged_bytes": 113623359224,
+      "no_training": true
+    },
+    {
+      "utc": "2026-10-23T18:15:17.947338+00:00",
+      "state": "extracting",
+      "usable_committed": 24220,
+      "usable_in_open_shard": 780,
+      "required": 682661,
+      "elapsed_seconds": 593.4600527200002
+    },
+    {
+      "utc": "2026-10-23T18:15:50.350235+00:00",
+      "state": "extracting",
+      "usable_committed": 24220,
+      "usable_in_open_shard": 1780,
+      "required": 682661,
+      "elapsed_seconds": 625.8629499750002
+    },
+    {
+      "utc": "2026-10-23T18:16:18.842251+00:00",
+      "state": "extracting",
+      "usable_committed": 24220,
+      "usable_in_open_shard": 2780,
+      "required": 682661,
+      "elapsed_seconds": 654.3549823370001
+    },
+    {
+      "utc": "2026-10-23T18:16:52.865187+00:00",
+      "state": "extracting",
+      "usable_committed": 24220,
+      "usable_in_open_shard": 3780,
+      "required": 682661,
+      "elapsed_seconds": 688.3779054630002
+    },
+    {
+      "utc": "2026-10-23T18:17:33.173502+00:00",
+      "state": "extracting",
+      "usable_committed": 28738,
+      "usable_in_open_shard": 262,
+      "required": 682661,
+      "elapsed_seconds": 728.6862151020002
+    },
+    {
+      "utc": "2026-10-23T18:18:08.186713+00:00",
+      "state": "extracting",
+      "usable_committed": 28738,
+      "usable_in_open_shard": 1262,
+      "required": 682661,
+      "elapsed_seconds": 763.6994249269999
+    },
+    {
+      "utc": "2026-10-23T18:18:47.514935+00:00",
+      "state": "extracting",
+      "usable_committed": 28738,
+      "usable_in_open_shard": 2262,
+      "required": 682661,
+      "elapsed_seconds": 803.0276607580001
+    },
+    {
+      "utc": "2026-10-23T18:19:23.005792+00:00",
+      "state": "extracting",
+      "usable_committed": 28738,
+      "usable_in_open_shard": 3262,
+      "required": 682661,
+      "elapsed_seconds": 838.5185215470003
+    },
+    {
+      "utc": "2026-10-23T18:19:54.746036+00:00",
+      "state": "extracting",
+      "usable_committed": 28738,
+      "usable_in_open_shard": 4262,
+      "required": 682661,
+      "elapsed_seconds": 870.2587482480001
+    },
+    {
+      "utc": "2026-10-23T18:20:35.245043+00:00",
+      "state": "extracting",
+      "usable_committed": 33173,
+      "usable_in_open_shard": 827,
+      "required": 682661,
+      "elapsed_seconds": 910.7577598089999
+    },
+    {
+      "utc": "2026-10-23T18:21:08.804517+00:00",
+      "state": "extracting",
+      "usable_committed": 33173,
+      "usable_in_open_shard": 1827,
+      "required": 682661,
+      "elapsed_seconds": 944.3172433269999
+    },
+    {
+      "utc": "2026-10-23T18:21:43.739419+00:00",
+      "state": "extracting",
+      "usable_committed": 33173,
+      "usable_in_open_shard": 2827,
+      "required": 682661,
+      "elapsed_seconds": 979.2521322340001
+    },
+    {
+      "utc": "2026-10-23T18:22:17.171334+00:00",
+      "state": "extracting",
+      "usable_committed": 33173,
+      "usable_in_open_shard": 3827,
+      "required": 682661,
+      "elapsed_seconds": 1012.684051209
+    },
+    {
+      "utc": "2026-10-23T18:23:00.485419+00:00",
+      "state": "extracting",
+      "usable_committed": 37874,
+      "usable_in_open_shard": 126,
+      "required": 682661,
+      "elapsed_seconds": 1055.9981578170002
+    },
+    {
+      "utc": "2026-10-23T18:23:39.632843+00:00",
+      "state": "extracting",
+      "usable_committed": 37874,
+      "usable_in_open_shard": 1126,
+      "required": 682661,
+      "elapsed_seconds": 1095.14556785
+    },
+    {
+      "utc": "2026-10-23T18:24:10.729685+00:00",
+      "state": "extracting",
+      "usable_committed": 37874,
+      "usable_in_open_shard": 2126,
+      "required": 682661,
+      "elapsed_seconds": 1126.2423974210003
+    },
+    {
+      "utc": "2026-10-23T18:24:42.445916+00:00",
+      "state": "extracting",
+      "usable_committed": 37874,
+      "usable_in_open_shard": 3126,
+      "required": 682661,
+      "elapsed_seconds": 1157.9586300510002
+    },
+    {
+      "utc": "2026-10-23T18:25:15.531485+00:00",
+      "state": "extracting",
+      "usable_committed": 37874,
+      "usable_in_open_shard": 4126,
+      "required": 682661,
+      "elapsed_seconds": 1191.044216554
+    },
+    {
+      "utc": "2026-10-23T18:25:52.265662+00:00",
+      "state": "extracting",
+      "usable_committed": 42567,
+      "usable_in_open_shard": 433,
+      "required": 682661,
+      "elapsed_seconds": 1227.778373504
+    },
+    {
+      "utc": "2026-10-23T18:26:28.153027+00:00",
+      "state": "extracting",
+      "usable_committed": 42567,
+      "usable_in_open_shard": 1433,
+      "required": 682661,
+      "elapsed_seconds": 1263.6657457070003
+    },
+    {
+      "utc": "2026-10-23T18:26:59.946024+00:00",
+      "state": "extracting",
+      "usable_committed": 42567,
+      "usable_in_open_shard": 2433,
+      "required": 682661,
+      "elapsed_seconds": 1295.4587376900001
+    },
+    {
+      "utc": "2026-10-23T18:27:32.164800+00:00",
+      "state": "extracting",
+      "usable_committed": 42567,
+      "usable_in_open_shard": 3433,
+      "required": 682661,
+      "elapsed_seconds": 1327.677522397
+    },
+    {
+      "utc": "2026-10-23T18:28:07.825241+00:00",
+      "state": "extracting",
+      "usable_committed": 42567,
+      "usable_in_open_shard": 4433,
+      "required": 682661,
+      "elapsed_seconds": 1363.3379519480002
+    },
+    {
+      "utc": "2026-10-23T18:28:57.314662+00:00",
+      "state": "extracting",
+      "usable_committed": 47001,
+      "usable_in_open_shard": 999,
+      "required": 682661,
+      "elapsed_seconds": 1412.8273768669999
+    },
+    {
+      "utc": "2026-10-23T18:29:30.557495+00:00",
+      "state": "extracting",
+      "usable_committed": 47001,
+      "usable_in_open_shard": 1999,
+      "required": 682661,
+      "elapsed_seconds": 1446.0702190970003
+    },
+    {
+      "utc": "2026-10-23T18:30:04.296220+00:00",
+      "state": "extracting",
+      "usable_committed": 47001,
+      "usable_in_open_shard": 2999,
+      "required": 682661,
+      "elapsed_seconds": 1479.8089424340003
+    },
+    {
+      "utc": "2026-10-23T18:30:39.735890+00:00",
+      "state": "extracting",
+      "usable_committed": 47001,
+      "usable_in_open_shard": 3999,
+      "required": 682661,
+      "elapsed_seconds": 1515.248601506
+    },
+    {
+      "utc": "2026-10-23T18:31:21.185373+00:00",
+      "state": "extracting",
+      "usable_committed": 51536,
+      "usable_in_open_shard": 464,
+      "required": 682661,
+      "elapsed_seconds": 1556.698096123
+    },
+    {
+      "utc": "2026-10-23T18:31:56.113198+00:00",
+      "state": "extracting",
+      "usable_committed": 51536,
+      "usable_in_open_shard": 1464,
+      "required": 682661,
+      "elapsed_seconds": 1591.625915799
+    },
+    {
+      "utc": "2026-10-23T18:32:32.356718+00:00",
+      "state": "extracting",
+      "usable_committed": 51536,
+      "usable_in_open_shard": 2464,
+      "required": 682661,
+      "elapsed_seconds": 1627.8694345790002
+    },
+    {
+      "utc": "2026-10-23T18:33:01.790963+00:00",
+      "state": "extracting",
+      "usable_committed": 51536,
+      "usable_in_open_shard": 3464,
+      "required": 682661,
+      "elapsed_seconds": 1657.3036780270002
+    },
+    {
+      "utc": "2026-10-23T18:33:34.291373+00:00",
+      "state": "extracting",
+      "usable_committed": 51536,
+      "usable_in_open_shard": 4464,
+      "required": 682661,
+      "elapsed_seconds": 1689.8040980560002
+    }
+  ],
+  "scope": "Visible output observations; committed counts distinct from open shard"
+}

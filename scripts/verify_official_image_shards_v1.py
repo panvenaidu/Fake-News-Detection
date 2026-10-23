@@ -57,8 +57,10 @@ def write_json(path, value):
     os.replace(temporary, path)
 
 
-def receipt_rows(source, expected):
+def receipt_rows(source, expected, layout='flat'):
     """Strict semantic joins; existing TAR bytes are verified in the runtime."""
+    if layout not in ['flat', 'kaggle-tar']:
+        raise ValueError('Unknown private input layout')
     rows = {}
     shards = []
     for path in sorted((Path(source) / 'shards').glob('*.receipt.json')):
@@ -85,7 +87,9 @@ def receipt_rows(source, expected):
                 raise ValueError('Unexpected image member/source path: ' + ident)
             if not digest_valid(row['image_sha256']) or not 0 < row['bytes'] <= 512 * 1024**2:
                 raise ValueError('Invalid image checksum/size: ' + ident)
-            rows[ident] = {**expected[ident], 'image_path': str(member),
+            # Kaggle's verified upload route wraps each TAR in its basename.
+            image_path = member if layout == 'flat' else PurePosixPath(archive.stem) / member
+            rows[ident] = {**expected[ident], 'image_path': str(image_path),
                            'image_sha256': row['image_sha256'], 'bytes': row['bytes'],
                            'source_shard': archive.name, 'source_member': str(original)}
         shards.append({'file': archive.name, 'bytes': receipt['bytes'],
@@ -97,7 +101,7 @@ def receipt_rows(source, expected):
     return rows, shards
 
 
-def prepare(source, output, extraction_report):
+def prepare(source, output, extraction_report, layout='kaggle-tar'):
     source, output = Path(source).resolve(), Path(output).resolve()
     if source == output or source.is_relative_to(output) or output.is_relative_to(source):
         raise ValueError('Metadata output must be separate from original source/shards')
@@ -111,7 +115,7 @@ def prepare(source, output, extraction_report):
             or complete.get('decode_failures') or complete.get('compressed_archive_bytes') != ARCHIVE_BYTES
             or not digest_valid(complete.get('compressed_archive_sha256'))):
         raise ValueError('Complete archive CRC/hash/coverage evidence required')
-    rows, shards = receipt_rows(source, expected)
+    rows, shards = receipt_rows(source, expected, layout)
     # Original archive is not copied into the private training input.
     output.mkdir(parents=True, exist_ok=True)
     tsvdir = output / 'data/official_multimodal_v2'
@@ -157,6 +161,7 @@ def prepare(source, output, extraction_report):
     receipt = {
         'utc': prep.now(), 'image_gate_passed': False,
         'shard_metadata_gate_passed': True, 'runtime_image_bytes_verified': False,
+        'input_layout': layout,
         'required': REQUIRED, 'split_counts': COUNTS, 'manifest_sha256': prep.sha(manifest),
         'shards': shards, 'image_bytes': sum(row['bytes'] for row in rows.values()),
         'cross_split_content_duplicate_groups': len(cross_split),
@@ -194,7 +199,11 @@ def verify_unpacked(root, output):
                     raise ValueError('Official runtime metadata mismatch: ' + ident)
             path = safe_path(root, row['image_path'])
             member = PurePosixPath(row['image_path'])
-            if member.parent != PurePosixPath('images') or member.stem != ident:
+            expected_parent = (PurePosixPath('images') if coverage.get('input_layout') == 'flat'
+                               else PurePosixPath(Path(row['source_shard']).stem) / 'images')
+            if coverage.get('input_layout') not in ['flat', 'kaggle-tar']:
+                raise ValueError('Unknown runtime input layout')
+            if member.parent != expected_parent or member.stem != ident:
                 raise ValueError('Invalid image path: ' + ident)
             if not path.is_file() or path.stat().st_size != int(row['bytes']):
                 raise ValueError('Missing/size-mismatched runtime image: ' + ident)
@@ -228,11 +237,12 @@ if __name__ == '__main__':
     metadata.add_argument('--source-root', type=Path, required=True)
     metadata.add_argument('--output-root', type=Path, required=True)
     metadata.add_argument('--extraction-report', type=Path, required=True)
+    metadata.add_argument('--layout', choices=['flat', 'kaggle-tar'], default='kaggle-tar')
     runtime = subparsers.add_parser('verify-unpacked')
     runtime.add_argument('--root', type=Path, required=True)
     runtime.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     if args.mode == 'prepare-metadata':
-        prepare(args.source_root, args.output_root, args.extraction_report)
+        prepare(args.source_root, args.output_root, args.extraction_report, args.layout)
     else:
         verify_unpacked(args.root, args.output)

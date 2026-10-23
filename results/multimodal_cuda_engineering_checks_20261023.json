@@ -1,0 +1,66 @@
+{
+  "utc": "2026-10-23T18:11:57.307035+00:00",
+  "status": "passed_cuda_engineering_fixture",
+  "torch": "2.11.0+cu130",
+  "cuda": "13.0",
+  "device": "Tesla T4",
+  "allocated_devices": 1,
+  "source_sha256": "cb8bf1c28d1d2bee547eb9bfbb27f9a8171cbf6e1f684444eb59e3a98c665244",
+  "trainer_sha256": "e0e2ace518f8232ca250c7185b89b56a645c12125666630cace4a2876e520026",
+  "recovery_sha256": "2f5f67ce79289c69279040d21b483e28535895f5c99c63e0021da3eee6d3d1c8",
+  "fixture": "Random tiny BERT + full random ResNet50, 13 synthetic examples, two epochs",
+  "interruptions": [
+    [
+      1,
+      6,
+      1,
+      0
+    ],
+    [
+      1,
+      12,
+      1,
+      1
+    ],
+    [
+      2,
+      6,
+      3,
+      1
+    ],
+    [
+      2,
+      12,
+      4,
+      1
+    ]
+  ],
+  "successful_updates": 5,
+  "actual_amp_skips": 1,
+  "scheduler_updates": 5,
+  "tolerance": {
+    "rtol": 0.0001,
+    "atol": 0.00001
+  },
+  "maximum_state_absolute_difference": 0,
+  "encoder_and_head_max_parameter_changes": {
+    "text.embeddings.word_embeddings.weight": 0.00033236853778362274,
+    "image.conv1.weight": 0.00034630950540304184,
+    "classifier.0.weight": 0.000345645472407341
+  },
+  "checks": [
+    "Production Engine with real CUDA fp16 GradScaler",
+    "Repeated mid-epoch and validation-pending restoration",
+    "Next-epoch model, BatchNorm, optimizer, scheduler, scaler and history agreement",
+    "Injected infinite gradient skips exactly one optimizer/scheduler update",
+    "Two committed recovery generations"
+  ],
+  "limitations": [
+    "Engineering fixture, no official scientific scores",
+    "Not full pretrained BERT throughput or full image I/O preflight",
+    "Not cross-device bitwise reproducibility",
+    "Not durable cloud export verification"
+  ],
+  "notebook": "https://colab.research.google.com/drive/1aMUiYE2qTV4ctVRgxJor-AwyZVUxO-Rw",
+  "retrieval": "Plain JSON receipt read from visible notebook output"
+}

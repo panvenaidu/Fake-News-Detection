@@ -17,8 +17,12 @@
   "receipt_route": "Semantic JSON copy read from private Drive preview accessibility text, not a byte-identical file export",
   "local_semantic_receipt_sha256": "7bba7cfc6a73dc4066f3884fd8cbfa7fb16689d2ffb6fadb90be5eba423f90c5",
   "limitations": [
-    "No local archive bytes retrieved yet",
-    "Cloud first-shard decode/hash readback verified separately in CPU notebook",
     "Full cohort still pending; no scientific scores"
-  ]
+  ],
+  "local_archive_retrieved": true,
+  "local_archive_path": "data/official_paired_v1/cloud_shards/images_590bbadd6dcd433b83059f13e85137bc.tar",
+  "local_archive_bytes": 67235840,
+  "local_archive_sha256": "38b460fcca29986161edc70b717085c5efd85b2ab707eeb099009e9dc4f9490b",
+  "local_images_rehashed_and_decoded": 640,
+  "local_verification_utc": "2026-10-23T18:19:49.956549+00:00"
 }

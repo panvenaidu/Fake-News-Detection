@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-23T18:08:19.911111+00:00",
+  "updated_utc": "2026-10-23T18:34:29.310176+00:00",
   "status": "bounded_cpu_extraction_launched",
   "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
   "account": "panvee62@gmail.com",
@@ -73,7 +73,16 @@
       "images_20ad5ec99d0c4f59990dc54e195383b7.tar"
     ],
     "source_archive_bytes_verified": 113623359224,
-    "stage_observed": "Rescanning durable bzip2 prefix; committed shard checksums reverified by extractor; new images resume after prefix",
-    "gpu": false
-  }
+    "stage_observed": "Producing new shards after rescan; timestamps/counters advancing",
+    "gpu": false,
+    "last_live_output": {
+      "utc": "2026-10-23T18:33:34.291373+00:00",
+      "state": "extracting",
+      "usable_committed": 51536,
+      "usable_in_open_shard": 4464,
+      "required": 682661,
+      "elapsed_seconds": 1689.8040980560002
+    }
+  },
+  "cpu_viewer_repair": "Cleared only historical intentionally interrupted Cell5 output; current Cell6 process not restarted"
 }

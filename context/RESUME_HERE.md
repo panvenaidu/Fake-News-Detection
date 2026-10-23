@@ -1,3 +1,21 @@
+<!-- MM-PART1 PRIVATE INPUT ROUTE -->
+## Private input route verified on first shard — current checkpoint
+
+Private Kaggle `rocky62/urop-official-images-private-staging-v1`, Version1, was created successfully:640images plus STAGING_README.md,641files/66.74MB, visibilityPrivate. The signed-in upload form showed2.31GB used of214.75GB before this upload. This is an explicitly INCOMPLETE staging input, not the full official benchmark. ZIP compression/byte-level Kaggle roundtrip and full runtime validation remain pending. Kaggle wraps uploaded TARs in the archive basename, observed `images_590bbadd6dcd433b83059f13e85137bc/images/*.jpg`; metadata/runtime verifier now supports this exact `kaggle-tar` layout and its synthetic checks pass. Package small metadata contents as `data.tar` and `results.tar` to produce required root/data and root/results directories. Do not assume a flat images/ path for Kaggle TAR uploads.
+
+CPU job7128d949 recovered24220 committed images and is advancing again:18:29:30UTC47,001 committed plus1,999 in the open shard, required682,661. The old interrupted Cell5 error output caused recurring JavaScript renderer errors. Clearing only that historical output restored reads of current Cell6; source/process were not restarted. T4 synthetic check is complete and its runtime released. Scientific full-cohort epochs/validations remain0/0, no final test; workflow bars unchanged.
+
+Source conflict sample: first640 archive images overlap72 old cached local IDs;21 byte-identical,51 byte-different (24 have different dimensions; none of the51 have exactly equal decoded RGB pixels). This does not establish different semantic image identities. Both collections are preserved, no old images overwritten/reused, and the new experiment uses author-archive bytes. Evidence `results/multimodal_first_shard_byte_comparison_20261023.json`; full overlap audit not claimed. Existing text results unchanged.
+<!-- /MM-PART1 PRIVATE INPUT ROUTE -->
+
+<!-- MM-PART1 CUDA PASS -->
+## CUDA recovery check passed — 23 October 2026
+
+Short Colab fallback allocated one TeslaT4 (Torch2.11.0+cu130, CUDA13.0). The production Engine/MaximumFusion passed the disposable synthetic fixture with tiny random BERT and full random ResNet50: repeated mid-epoch and validation-pending restoration, next-epoch model/BatchNorm/optimizer/scheduler/scaler/history agreement (maximum state difference0), one actual GradScaler overflow skip, five successful updates and two retained checkpoint generations. Both encoders and the classifier parameters changed. Receipt retrieved to `results/multimodal_cuda_engineering_checks_20261023.json`; pinned source commit1c2634d. This is engineering validation, no faculty-data experiment or performance score. The completed GPU session was released; active-session inventory retained only the CPU image-preparation notebook. Full pretrained/data-I/O throughput remains unmeasured.
+
+First real64MiB shard also downloaded through Chrome, moved immediately into ignored `data/official_paired_v1/cloud_shards/` and independently rehashed/decoded locally:640images,67235840bytes, SHA38b460fcca29986161edc70b717085c5efd85b2ab707eeb099009e9dc4f9490b. The113GB source archive stays off the laptop. Runtime observation timeout did not mean the shard download failed: Chrome's completed-download history and Finder showed the actual artifact. CPU extraction continues separately; new committed shard was independently visible in Drive at18:17UTC. Do not restart it based on transient Connecting/output-renderer errors.
+<!-- /MM-PART1 CUDA PASS -->
+
 <!-- MM-PART1 EXTENDED CPU JOB -->
 ## Current CPU job — extended bound, 23 October 2026
 
@@ -261,3 +279,7 @@ Original multimodal ZIP CRC/source/result values matched earlier UI evidence. Sy
 ## Final usage handoff
 
 At 2026-10-23T15:12:53.554905+00:00, allowance was7% remaining in the short window and70% weekly. The user's10% handoff threshold has been crossed. No new extraction, transfer or training job was launched. Main checkpoint10a72d1190c8bce15cd3b3b58e4a29ef42b0dcc8 was verified against remote main. This receipt/context update is a separate child commit. Pause the Goal after this handoff is pushed; resume only when the user resumes the work. Part1 is incomplete; use the exact next action in the receipt.
+
+### Latest live preparation observation
+
+2026-10-23T18:33:34.291373+00:00: 51536 committed images and4464 in the open shard, of682661 required. CPU job7128d949 continues bounded to8h from18:05:05UTC. Evidence: `results/mm_part1_cpu_progress_observations_20261023.json`. Scientific epochs0/2 and full validations0/2; test excluded. This update does not increase workflow bars.

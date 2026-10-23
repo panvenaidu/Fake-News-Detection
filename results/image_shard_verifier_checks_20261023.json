@@ -1,6 +1,10 @@
 {
+  "utc": "2026-10-23T18:33:24.781231+00:00",
   "status": "passed",
   "scope": "Six synthetic images; no network, official inference, or full cohort claim",
+  "verifier_sha256": "ae0f169efd81c682f910de70cde44766c545486b05bc03f54534c862baf21aa0",
+  "test_sha256": "40b0cf27b42317af710528832e2ff74d6c76ab19958bfb39638553833cc325d6",
+  "input_layout_tested": "kaggle-tar",
   "checks": [
     "Metadata preparation never opens image gate",
     "Actual unpacked images all hashed/decoded before runtime gate",
