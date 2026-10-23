@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-23T18:40:47.975847+00:00",
+  "updated_utc": "2026-10-23T18:51:15.639847+00:00",
   "status": "bounded_cpu_extraction_launched",
   "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
   "account": "panvee62@gmail.com",
@@ -84,5 +84,14 @@
       "elapsed_seconds": 2007.663014393
     }
   },
-  "cpu_viewer_repair": "Cleared only historical intentionally interrupted Cell5 output; current Cell6 process not restarted"
+  "cpu_viewer_repair": "Cleared only historical intentionally interrupted Cell5 output; current Cell6 process not restarted",
+  "latest_cpu_observation": {
+    "utc": "2026-10-23T18:50:21.292939+00:00",
+    "state": "extracting",
+    "usable_committed": 83925,
+    "usable_in_open_shard": 75,
+    "required": 682661,
+    "elapsed_seconds": 2696.805649424
+  },
+  "assistant_handoff": "Usage pause; existing bounded CPU extraction left intact, completion unverified. No continued monitoring claimed."
 }

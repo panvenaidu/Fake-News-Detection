@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-23T18:43:31.056768+00:00",
+  "updated_utc": "2026-10-23T18:51:15.639847+00:00",
   "plan": "MM-PART1-v2",
-  "state": "usage_checkpoint_reserve_existing_cpu_job_running",
+  "state": "paused_at_user_usage_handoff",
   "part1_complete": false,
   "scientific_training_started": false,
   "epochs_completed": 0,
@@ -14,9 +14,9 @@
   "gpu_training_started": false,
   "source_archive_display_size": "106G",
   "source_archive_download_confirmed": false,
-  "drive_storage_observed": "78.96 GB of5.39 TB used",
+  "drive_storage_observed": "185.53 GB of5.39 TB after cloud source copy; historical UI snapshot, later shards increase usage",
   "cpu_prep_notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
-  "cpu_runtime": "Existing CPU job7128d949 live; advancing output observed 2026-10-23T18:38:52.150294+00:00",
+  "cpu_runtime": "Existing CPU job7128d949 advanced at 2026-10-23T18:50:21.292939+00:00",
   "image_gate_passed": false,
   "image_coverage": "results/official_image_coverage_v1.json",
   "recovery_checks": "results/multimodal_recovery_primitives_checks_20261023.json",
@@ -27,7 +27,7 @@
     "Private Kaggle full-image input import/storage route still needs measured verification",
     "CUDA fixture passed; full pretrained-model/image I/O throughput and durable scientific checkpoint export remain pending"
   ],
-  "next_action": "Keep observing existing bounded CPU job7128d949 (Colab Cell6), do not duplicate or restart merely for Connecting/render errors. First24220 images were recovered; latest47001 committed and1999 open at18:29:30UTC. Only historical Cell5 output was cleared to fix its JavaScript error renderer; current Cell6 output became readable again. Await full682661 source coverage/CRC/hash. Prepare metadata using verify_official_image_shards_v1.py --layout kaggle-tar, package data/ as data.tar and results/ as results.tar so Kaggle wrappers match trainer paths; upload remaining original shards in private dataset new versions. Verify full saved input and runtime hashes before measured throughput and scientific epochs1-2. CUDA fixture passed; no full scientific epoch, validation or final test.",
+  "next_action": "After allowance recovers, verify exact existing CPU job/result and committed receipts. Do not duplicate or restart. Require complete682661 image/source SHA/CRC gate, private input runtime verification and throughput before epochs1\u20132; no final test. Kaggle editor still loading after direct desktop/extension inspection; no CAPTCHA challenge exposed.",
   "progress": {
     "text": 100,
     "multimodal": 40,
@@ -59,9 +59,9 @@
     "notebooks/UROP_MM_PART1_CUDA_ENGINEERING_20261023.ipynb": "9072566aa987235a02c4060fa716b7d3bfeb72ad5f3856ea8a9dba1272f936af"
   },
   "assistant_usage_observed": {
-    "short_window_remaining_percent": 19,
-    "weekly_remaining_percent": 87,
-    "action": "In user20% reserve. No new substantive work/jobs. Existing bounded CPU extraction verified live; checkpoint verification and handoff only. Pause at user10% handoff, hardstop5%."
+    "short_window_remaining_percent": 9,
+    "weekly_remaining_percent": 86,
+    "action": "User10% handoff triggered; essential synchronization then pause; hardstop5%"
   },
   "drive_access_approved": true,
   "full_trainer": "scripts/train_official_multimodal_v1.py",
@@ -165,5 +165,13 @@
     "persistence": "Completed TAR plus matching receipt in private Drive; one preceding uncommitted orphan ignored; first640 shard verified by local download/hash/decode",
     "scope": "CPU image preparation only; no GPU scientific job active",
     "monitoring_note": "After an assistant handoff, the job may continue independently. No scheduled monitor or guaranteed completion is claimed. Revalidate the exact existing job/result on resume; never duplicate it from a spinner alone."
+  },
+  "latest_cpu_observation": {
+    "utc": "2026-10-23T18:50:21.292939+00:00",
+    "state": "extracting",
+    "usable_committed": 83925,
+    "usable_in_open_shard": 75,
+    "required": 682661,
+    "elapsed_seconds": 2696.805649424
   }
 }
