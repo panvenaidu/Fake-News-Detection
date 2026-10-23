@@ -1,0 +1,56 @@
+{
+  "verified_utc": "2026-10-23T14:08:07.095447+00:00",
+  "status": "planning_audit_only",
+  "review_scope": "Relevant project context/source/results reviewed; literature23pages extracted/read; large audit inventory parsed as metadata. Not every binary decoded, not all original journal papers reread.",
+  "reviewed_paths": [
+    "context/MULTIMODAL_COMPLETION_PLAN_20261009.md",
+    "context/MULTIMODAL_PART1_GO.md",
+    "context/MULTIMODAL_PART2_GO.md",
+    "scripts/train_multimodal_pilot.py",
+    "scripts/build_paired_pilot.py",
+    "scripts/train_official_text_recovery_v1.py",
+    "configs/multimodal_pilot_6way_v1.json",
+    "results/TEXT_ONLY_FINAL_REPORT_20261009.md",
+    "results/official_dataset_provenance.json",
+    "results/official_dataset_audit.json",
+    "context/AUDIT_20261008.md",
+    "context/RENEWED_AUDIT_20261009.md",
+    "work_logs/TROUBLESHOOTING.md",
+    "LITERATURE_SURVEY_REPORT_UPDATED_FINAL.pdf",
+    "README.md",
+    "context/RESUME_HERE.md",
+    "context/PROJECT_CONTEXT.md",
+    "context/DECISIONS.md",
+    "context/EXPERIMENT_LOG.md",
+    "context/TASK_REPORT.md",
+    "collab/COLAB_WORKLOG.md",
+    "work_logs/MODEL_STATUS.md",
+    "results/PROGRESS_TRACKER.md"
+  ],
+  "fresh_checks": {
+    "official_tsv_hashes_match": true,
+    "split_counts": [
+      564000,
+      59342,
+      59319
+    ],
+    "duplicate_or_overlapping_ids": 0,
+    "local_images": 75995,
+    "missing_unverified_images": 606666,
+    "fresh_image_decode": false,
+    "zip_same_image_ids": true,
+    "warmstart_hash_match": true,
+    "warmstart_encoder_keys": 197,
+    "full_trainer_exists": false,
+    "drive_three_tsvs_visible": true,
+    "public_archive_visible": "too large to preview; size/content/coverage unverified",
+    "cloud_auth_or_quota_verified": false
+  },
+  "remote_main_before": "572ccdd517844f9fdab5d1831f36d255d5bd4b74",
+  "training_started": false,
+  "large_download_started": false,
+  "plans": [
+    "context/MULTIMODAL_PART1_EXECUTION_PLAN_20261023.md",
+    "context/MULTIMODAL_PART2_EXECUTION_PLAN_20261023.md"
+  ]
+}

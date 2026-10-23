@@ -1,3 +1,5 @@
+> Superseded execution handoff: read `context/MULTIMODAL_PART1_EXECUTION_PLAN_20261023.md` and `context/MULTIMODAL_PART2_EXECUTION_PLAN_20261023.md`. The October23 revision changes the minimum target to +1pp, adds20/10/5% reserve rules and Rocky/panvee62@gmail.com instructions. Original plan retained below as history.
+
 # Go: full text+image Part1
 
 Execute Part1 of `/Users/panveenaidu/Downloads/SEM7/UROP/context/MULTIMODAL_COMPLETION_PLAN_20261009.md` (`MM-COMPLETE-v1`). Read the plan, `RESUME_HERE.md`, current progress and latest experiment records first. Work only inside UROP locally; use Chrome and the existing private Kaggle workspace for cloud work. Keep completed BERT results and historical data/protocols unchanged.

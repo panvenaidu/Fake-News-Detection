@@ -1,3 +1,5 @@
+> Superseded execution handoff: read `context/MULTIMODAL_PART1_EXECUTION_PLAN_20261023.md` and `context/MULTIMODAL_PART2_EXECUTION_PLAN_20261023.md`. The October23 revision changes the minimum target to +1pp, adds20/10/5% reserve rules and Rocky/panvee62@gmail.com instructions. Original plan retained below as history.
+
 # Go: full text+image Part2
 
 Execute Part2 of `/Users/panveenaidu/Downloads/SEM7/UROP/context/MULTIMODAL_COMPLETION_PLAN_20261009.md` (`MM-COMPLETE-v1`). Read current context/progress and Part1's verified receipt first. If Part1 is incomplete, finish its required gates/milestones before Part2; do not assume the saved plan is evidence of training.

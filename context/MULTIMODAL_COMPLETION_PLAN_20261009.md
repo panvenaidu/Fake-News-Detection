@@ -1,3 +1,5 @@
+> Superseded execution handoff: read `context/MULTIMODAL_PART1_EXECUTION_PLAN_20261023.md` and `context/MULTIMODAL_PART2_EXECUTION_PLAN_20261023.md`. The October23 revision changes the minimum target to +1pp, adds20/10/5% reserve rules and Rocky/panvee62@gmail.com instructions. Original plan retained below as history.
+
 # Full text + image: two-part completion plan
 
 **Plan ID: `MM-COMPLETE-v1` · 9 October 2026 · PROPOSED, awaiting the user's go.**
