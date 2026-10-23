@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-23T18:37:17.134983+00:00",
+  "updated_utc": "2026-10-23T18:40:47.975847+00:00",
   "plan": "MM-PART1-v2",
-  "state": "bounded_cpu_image_extraction_running",
+  "state": "usage_checkpoint_reserve_existing_cpu_job_running",
   "part1_complete": false,
   "scientific_training_started": false,
   "epochs_completed": 0,
@@ -16,7 +16,7 @@
   "source_archive_download_confirmed": false,
   "drive_storage_observed": "78.96 GB of5.39 TB used",
   "cpu_prep_notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
-  "cpu_runtime": "Bounded8h CPU job7128d949 advancing in Cell6; latest 51536 committed images at 2026-10-23T18:33:34.291373+00:00",
+  "cpu_runtime": "Existing CPU job7128d949 live; advancing output observed 2026-10-23T18:38:52.150294+00:00",
   "image_gate_passed": false,
   "image_coverage": "results/official_image_coverage_v1.json",
   "recovery_checks": "results/multimodal_recovery_primitives_checks_20261023.json",
@@ -59,9 +59,9 @@
     "notebooks/UROP_MM_PART1_CUDA_ENGINEERING_20261023.ipynb": "9072566aa987235a02c4060fa716b7d3bfeb72ad5f3856ea8a9dba1272f936af"
   },
   "assistant_usage_observed": {
-    "short_window_remaining_percent": 30,
-    "weekly_remaining_percent": 89,
-    "action": "Resumed after quota reset; bounded CPU extraction allowed; reserve20%, handoff10%, hardstop5%"
+    "short_window_remaining_percent": 21,
+    "weekly_remaining_percent": 88,
+    "action": "Checkpoint preparation; start no new training, large transfer or debugging. Handoff at10%, hardstop5%. Existing bounded CPU extraction may continue with verified Drive shard persistence."
   },
   "drive_access_approved": true,
   "full_trainer": "scripts/train_official_multimodal_v1.py",
@@ -94,18 +94,18 @@
   ],
   "github_backup_prior": {
     "status": "verified",
-    "commit": "1c2634d5008437a7e697759ed462c0ebd087d366",
-    "remote_sha_observed": "1c2634d5008437a7e697759ed462c0ebd087d366",
-    "scope": "CPU image staging/resume source, input verifier and CUDA fixture source; current new CUDA receipt awaits next child commit",
-    "note": "Pinned source commit verified before fetching it in Colab; no raw image bytes or weights in Git"
-  },
-  "github_backup": {
-    "status": "verified",
     "commit": "2c9d1a09a29be03e5b4c955728eaace3d23faa74",
     "remote_sha_observed": "2c9d1a09a29be03e5b4c955728eaace3d23faa74",
     "verified_utc": "2026-10-23T18:37:17.134983+00:00",
     "scope": "CUDA fixture passing receipt/source-only notebook, private Kaggle staging evidence, actual archive layout fix/tests, source conflict sample and context/progress records",
     "note": "This backup receipt is a separate child update; raw dataset/images/weights and screenshots remain outside Git"
+  },
+  "github_backup": {
+    "status": "verified",
+    "commit": "dd84be6cb5e2047b7aa381406b007339046c8408",
+    "remote_sha_observed": "dd84be6cb5e2047b7aa381406b007339046c8408",
+    "verified_utc": "2026-10-23T18:40:47.975847+00:00",
+    "scope": "Previous verified engineering backup receipt and exact continuation commands; this live checkpoint update will be a separate child commit"
   },
   "source_preflight": "results/MM_PART1_CLOUD_IMAGE_PREP_20261023.json",
   "cpu_extraction_job": {
@@ -116,9 +116,9 @@
     "committed_shards_at_restart": 6,
     "ignored_orphan": "images_20ad5ec99d0c4f59990dc54e195383b7.tar",
     "scientific_training": false,
-    "last_live_output_utc": "2026-10-23T18:33:34.291373+00:00",
-    "usable_committed_observed": 51536,
-    "usable_in_open_shard_observed": 4464,
+    "last_live_output_utc": "2026-10-23T18:38:52.150294+00:00",
+    "usable_committed_observed": 60829,
+    "usable_in_open_shard_observed": 4171,
     "required": 682661,
     "full_image_gate_passed": false
   },
@@ -158,5 +158,13 @@
   },
   "source_byte_comparison": "results/multimodal_first_shard_byte_comparison_20261023.json",
   "full_input_verifier": "scripts/verify_official_image_shards_v1.py",
-  "full_input_layout": "kaggle-tar, observed archive-name wrapper"
+  "full_input_layout": "kaggle-tar, observed archive-name wrapper",
+  "independent_continuation": {
+    "allowed_existing_job": "CPU_IMAGE_PREP_7128d94997e84072a77aca9a66bc46c6",
+    "started_utc": "2026-10-23T18:05:05.015258+00:00",
+    "max_seconds_between_members": 28800,
+    "persistence": "Completed TAR plus matching receipt in private Drive; one preceding uncommitted orphan ignored; first640 shard verified by local download/hash/decode",
+    "scope": "CPU image preparation only; no GPU scientific job active",
+    "monitoring_note": "After an assistant handoff, the job may continue independently. No scheduled monitor or guaranteed completion is claimed. Revalidate the exact existing job/result on resume; never duplicate it from a spinner alone."
+  }
 }

@@ -444,5 +444,5 @@
     "progress_unchanged": true
   },
   "part1_execution_receipt": "results/MM_PART1_RECEIPT_20261023.json",
-  "last_cpu_preparation_note": "CPU extraction current job7128d949: 51536 committed plus4464 open at2026-10-23T18:33:34.291373+00:00. Full image gate false, no workflow percentage increase. CUDA engineering fixture passed separately; full scientific epochs0."
+  "last_cpu_preparation_note": "2026-10-23T18:38:52.150294+00:00: 60829 committed, 4171 open; existing bounded CPU job7128d949 live. No scientific epochs. Reserve checkpoint; workflow bars unchanged."
 }

@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-10-23T18:33:47.256Z",
+  "observed_utc": "2026-10-23T18:40:10.927Z",
   "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
   "job_id": "CPU_IMAGE_PREP_7128d94997e84072a77aca9a66bc46c6",
   "records": [
@@ -275,7 +275,79 @@
       "usable_in_open_shard": 4464,
       "required": 682661,
       "elapsed_seconds": 1689.8040980560002
+    },
+    {
+      "utc": "2026-10-23T18:34:11.857042+00:00",
+      "state": "extracting",
+      "usable_committed": 56239,
+      "usable_in_open_shard": 761,
+      "required": 682661,
+      "elapsed_seconds": 1727.369754871
+    },
+    {
+      "utc": "2026-10-23T18:34:41.370231+00:00",
+      "state": "extracting",
+      "usable_committed": 56239,
+      "usable_in_open_shard": 1761,
+      "required": 682661,
+      "elapsed_seconds": 1756.882942512
+    },
+    {
+      "utc": "2026-10-23T18:35:15.911259+00:00",
+      "state": "extracting",
+      "usable_committed": 56239,
+      "usable_in_open_shard": 2761,
+      "required": 682661,
+      "elapsed_seconds": 1791.4239808230002
+    },
+    {
+      "utc": "2026-10-23T18:35:47.733157+00:00",
+      "state": "extracting",
+      "usable_committed": 56239,
+      "usable_in_open_shard": 3761,
+      "required": 682661,
+      "elapsed_seconds": 1823.2458765920003
+    },
+    {
+      "utc": "2026-10-23T18:36:24.459647+00:00",
+      "state": "extracting",
+      "usable_committed": 60829,
+      "usable_in_open_shard": 171,
+      "required": 682661,
+      "elapsed_seconds": 1859.972360421
+    },
+    {
+      "utc": "2026-10-23T18:36:57.853835+00:00",
+      "state": "extracting",
+      "usable_committed": 60829,
+      "usable_in_open_shard": 1171,
+      "required": 682661,
+      "elapsed_seconds": 1893.3665489880002
+    },
+    {
+      "utc": "2026-10-23T18:37:31.651717+00:00",
+      "state": "extracting",
+      "usable_committed": 60829,
+      "usable_in_open_shard": 2171,
+      "required": 682661,
+      "elapsed_seconds": 1927.16443348
+    },
+    {
+      "utc": "2026-10-23T18:38:04.662034+00:00",
+      "state": "extracting",
+      "usable_committed": 60829,
+      "usable_in_open_shard": 3171,
+      "required": 682661,
+      "elapsed_seconds": 1960.1747553080002
+    },
+    {
+      "utc": "2026-10-23T18:38:52.150294+00:00",
+      "state": "extracting",
+      "usable_committed": 60829,
+      "usable_in_open_shard": 4171,
+      "required": 682661,
+      "elapsed_seconds": 2007.663014393
     }
   ],
-  "scope": "Visible output observations; committed counts distinct from open shard"
+  "scope": "Visible status observations; committed images distinct from open shard"
 }

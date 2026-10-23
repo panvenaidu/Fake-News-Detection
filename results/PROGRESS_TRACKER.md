@@ -1,3 +1,13 @@
+<!-- MM-PART1 STATUS SNAPSHOT -->
+## Latest Part1 snapshot — 2026-10-23T18:38:52.150294+00:00
+
+**Incomplete; checkpoint reserve.** Existing CPU job7128d949 in saved Colab Cell6 is advancing: **60,829 committed images**, plus4,171 in the uncommitted open shard, of682661 required. It has an8h between-member processing bound from its18:05UTC launch (hash/preflight/commit overhead additional). Source, completed shards and receipts remain private in Drive. A prior first640-image shard survived independent browser download and local checksum/decode. Never credit open-shard bytes or duplicate this live job. The goal remains active until a user-requested usage handoff at10%; hardstop5%. Allowance last observed21% short/88% weekly. Start no new training, large transfer or debugging in reserve.
+
+Full image gate **false**; scientific train epochs **0/2**, full validations **0/2**, final test excluded. CUDA fixture passed on Colab/TeslaT4/Torch2.11; that GPU runtime is released. Private Kaggle Version1 contains only640images/641files and is explicitly incomplete; full input upload/runtime verification and measured throughput are pending. Workflow bars unchanged: text100%, multimodal40%, image20%, overall53%. Minimum+1pp accuracy target remains unproven, never promised.
+
+After handoff the already-running bounded CPU job may continue independently with durable shard receipts. No scheduled monitor or guaranteed successful completion is claimed. On resume verify that exact job/result before any launch; if complete, perform the full image/source coverage audit and follow the exact continuation commands below. If it failed or stopped at its bound, preserve receipts/orphans and diagnose the actual terminal evidence. No final test in Part1. Current receipts: `results/MM_PART1_RECEIPT_20261023.json`, `results/MM_PART1_CLOUD_IMAGE_PREP_20261023.json`, `results/mm_part1_cpu_progress_observations_20261023.json`.
+<!-- /MM-PART1 STATUS SNAPSHOT -->
+
 <!-- MM-PART1 PRIVATE INPUT ROUTE -->
 ## Private input route verified on first shard — current checkpoint
 
