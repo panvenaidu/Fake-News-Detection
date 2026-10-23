@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-23T18:08:19.911111+00:00",
+  "dataset_specs_url": "https://www.kaggle.com/docs/datasets",
+  "notebook_specs_url": "https://www.kaggle.com/docs/notebooks",
+  "official_docs_observed": {
+    "per_dataset_bytes_limit_decimal": 200000000000,
+    "all_private_dataset_bytes_limit_decimal": 200000000000,
+    "max_top_level_files": 50,
+    "notebook_saved_working_output_gb": 20
+  },
+  "signed_in_account_observed": "Rocky62",
+  "new_engineering_notebook": "https://www.kaggle.com/code/rocky62/urop-mm-part1-engineering-preflight/edit",
+  "privacy_verified": "Private",
+  "editor_state": "Editor Loading, reCAPTCHA service inaccessible; original and new editor fail to expose code cells",
+  "accelerator_observed": "None on new notebook; no session started",
+  "import_ui_observed": [
+    "Local files",
+    "Public remote URLs",
+    "GitHub archive",
+    "Public Google Cloud Storage",
+    "Notebook output"
+  ],
+  "private_drive_link_is_not_a_verified_remote_import_route": true,
+  "limitations": [
+    "Account-specific remaining private storage not yet observed",
+    "Automatic TAR unpack/root layout not yet tested",
+    "Kaggle documentation limits are not a substitute for actual runtime capacity check"
+  ]
+}

@@ -1,3 +1,19 @@
+<!-- MM-PART1 EXTENDED CPU JOB -->
+## Current CPU job — extended bound, 23 October 2026
+
+Current job `CPU_IMAGE_PREP_7128d94997e84072a77aca9a66bc46c6` started18:05:05UTC in CPU notebook Cell6, bounded8h. The prior4h job was intentionally interrupted after24220 images in6 committed shards; it was healthy, not a failure. Measured image rate suggested6–8h total, so the bound was extended early to avoid a later four-hour prefix replay. One open orphan is preserved/ignored; completed shards survive. The new extractor verifies committed shards and rescans the compressed prefix before producing new images. Source remains private and unchanged; no scientific model training. Previous job observations below are historical.
+
+First640-image metadata was independently retrieved through private Drive preview and matched against local official TSVs (522train/56validation/62test). Full-input metadata/runtime verifier now exists and passed synthetic six-image tests; metadata preparation alone cannot open the image gate. CUDA AMP recovery fixture is authored but not GPU-executed. Plain system Python lacked Transformers; project `.venv-urop/bin/python` is the correct existing test environment. That environment confirmed the CUDA-unavailable guard; no local scientific training. See current receipt and `results/MM_PART1_CLOUD_IMAGE_PREP_20261023.json`.
+<!-- /MM-PART1 EXTENDED CPU JOB -->
+
+<!-- MM-PART1 LIVE CPU PREPARATION -->
+## Live CPU preparation resumed — 23 October 2026
+
+Allowance reset; the prior usage pause is historical. CPU Colab reconnected and the already-approved Drive access was remounted. Three original faculty TSV checksums/counts passed in the new runtime (564000/59342/59319). The first640 real images passed committed-shard and per-image SHA readback plus complete decode/RGB checks. A bounded4-hour CPU extraction is running in saved notebook Cell5, job `CPU_IMAGE_PREP_3af1eae08d9741d681804165003e0146`, started2026-10-23T17:48:59Z. Latest observed17:51:39Z:640 committed and4360 in the open shard; open-shard bytes are not credited as durable. Source/shards remain private in `/content/drive/MyDrive/UROP/official_images_v1/`; no full source archive on laptop. See `results/MM_PART1_CLOUD_IMAGE_PREP_20261023.json`.
+
+No multimodal scientific epoch/validation/test has run. Full image gate remains false, workflow progress unchanged40%. Do not launch duplicate extraction or call this training. Kaggle private engineering notebook created/named/privacy checked at `https://www.kaggle.com/code/rocky62/urop-mm-part1-engineering-preflight/edit`; editor remains loading, no GPU session started, and user verification was requested. Existing completed text notebook/results unchanged. Next: verify completed source/shards/coverage, private input capacity, actual CUDA recovery and throughput, then registered epochs1–2 only. Minimum+1pp target is unproven and not promised.
+<!-- /MM-PART1 LIVE CPU PREPARATION -->
+
 # Part1 current execution checkpoint
 
 <!-- MM-PART1 CODE AND CLOUD CHECKPOINT -->

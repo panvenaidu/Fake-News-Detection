@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-23T15:12:53.554905+00:00",
+  "updated_utc": "2026-10-23T18:08:19.911111+00:00",
   "plan": "MM-PART1-v2",
-  "state": "usage_handoff_checkpoint_incomplete",
+  "state": "bounded_cpu_image_extraction_running",
   "part1_complete": false,
   "scientific_training_started": false,
   "epochs_completed": 0,
@@ -16,7 +16,7 @@
   "source_archive_download_confirmed": false,
   "drive_storage_observed": "78.96 GB of5.39 TB used",
   "cpu_prep_notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
-  "cpu_runtime": "Connected CPU; Drive mounted; no image extraction or training process started",
+  "cpu_runtime": "Fresh CPU runtime reconnected; approved Drive remounted; first640 images readback verified; bounded4h CPU extraction launched",
   "image_gate_passed": false,
   "image_coverage": "results/official_image_coverage_v1.json",
   "recovery_checks": "results/multimodal_recovery_primitives_checks_20261023.json",
@@ -27,7 +27,7 @@
     "No real multimodal checkpoint, no training epochs or full validations, no final test",
     "Private Kaggle full-image input import/storage route still needs measured verification"
   ],
-  "next_action": "After assistant allowance recovers above20%: open saved CPU prep notebook in Rocky/panvee62; verify current runtime/mount and staged113623359224-byte archive. Import the staged preparation module, fetch/hash original three TSVs with expected_rows(root,download=True), verify headers/IDs and a first small committed image shard, then run bounded extraction with CPU only. Verify all682661 usable IDs and private Kaggle full input capacity before cloud/GPU preflight and epochs1-2. No final test.",
+  "next_action": "Observe existing CPU extraction job7128d949 in notebook Cell6; do not duplicate it. It resumes from24220 committed images after rescanning the durable compressed prefix. Verify all682661 images/full compressed SHA/CRC. Prepare exact private input metadata with scripts/verify_official_image_shards_v1.py only after complete extraction. Verify actual unpacked runtime files before cloud scientific training. Kaggle editor loading/user verification pending; authorized Colab fallback possible. CUDA recovery fixture is authored but has not run; production epochs/validations remain0.",
   "progress": {
     "text": 100,
     "multimodal": 40,
@@ -51,12 +51,15 @@
     "scripts/check_multimodal_image_prep_v1.py": "7ef9b316fd9430dcb08a96a1ef5fc3c8233f99c6d33376d2308c0a73cf73a02c",
     "collab/prepare_official_images_drive_v1.py": "543c60d78d61182b10052cfd061d90c5bb764f99138a8bc09ae72dbfe93d7354",
     "configs/multimodal_official_6way_v1.json": "19e3c78288aa7a5eb7ee657900583a3cb2984637354fc43b742302816aea049b",
-    "notebooks/UROP_MM_PART1_IMAGE_PREP_CPU_20261023.ipynb": "9d8130eb21deb57570e4dbf0c1b6587ebc3267e4ecf8c73ddfa3f19a13aa276d"
+    "notebooks/UROP_MM_PART1_IMAGE_PREP_CPU_20261023.ipynb": "45743e524f24c8d2ce25658bd22f4d24527c28f44660af0ee9f330730e338669",
+    "scripts/check_multimodal_cuda_v1.py": "cb8bf1c28d1d2bee547eb9bfbb27f9a8171cbf6e1f684444eb59e3a98c665244",
+    "scripts/check_image_shard_verifier_v1.py": "39bf0293c473f30ee7fd9d29411f63400a0759c3d25d350a2c5978d725310cd3",
+    "scripts/verify_official_image_shards_v1.py": "64649eb6d0c1dbc27312d3127cdaf6ee96ce2ff46058e8be2dd04f304b8408b6"
   },
   "assistant_usage_observed": {
-    "short_window_remaining_percent": 7,
-    "weekly_remaining_percent": 70,
-    "action": "User 10% handoff threshold crossed; final receipt synchronization only, then pause Goal; no new jobs. Hard stop at5%."
+    "short_window_remaining_percent": 77,
+    "weekly_remaining_percent": 96,
+    "action": "Resumed after quota reset; bounded CPU extraction allowed; reserve20%, handoff10%, hardstop5%"
   },
   "drive_access_approved": true,
   "full_trainer": "scripts/train_official_multimodal_v1.py",
@@ -81,7 +84,9 @@
     "results/multimodal_recovery_primitives_checks_20261023.json",
     "results/official_multimodal_engine_checks_20261023.json",
     "results/multimodal_image_prep_checks_20261023.json",
-    "results/multimodal_evidence_checks_20261023.json"
+    "results/multimodal_evidence_checks_20261023.json",
+    "results/multimodal_first_shard_join_verification_20261023.json",
+    "results/image_shard_verifier_checks_20261023.json"
   ],
   "github_backup_prior": {
     "status": "verified",
@@ -98,5 +103,27 @@
     "verified_utc": "2026-10-23T15:12:53.554905+00:00",
     "scope": "Trainer/config, CPU verification receipts, cloud source staging tools and notebook source mirror, project records",
     "note": "This receipt is a separate child checkpoint; source archive/images/weights are excluded from Git."
+  },
+  "source_preflight": "results/MM_PART1_CLOUD_IMAGE_PREP_20261023.json",
+  "cpu_extraction_job": {
+    "id": "CPU_IMAGE_PREP_7128d94997e84072a77aca9a66bc46c6",
+    "started_utc": "2026-10-23T18:05:05.015258+00:00",
+    "max_seconds": 28800,
+    "committed_images_at_restart": 24220,
+    "committed_shards_at_restart": 6,
+    "ignored_orphan": "images_20ad5ec99d0c4f59990dc54e195383b7.tar",
+    "scientific_training": false
+  },
+  "kaggle_engineering_notebook": {
+    "url": "https://www.kaggle.com/code/rocky62/urop-mm-part1-engineering-preflight/edit",
+    "title": "UROP MM Part1 engineering preflight",
+    "privacy_verified": "Private, only collaborators",
+    "state": "Editor Loading, no code/session started; reCAPTCHA service error visible",
+    "user_verification_requested": true
+  },
+  "cloud_cuda_regression": {
+    "source": "scripts/check_multimodal_cuda_v1.py",
+    "state": "Authored and syntax checked; local CUDA-unavailable guard passed in project venv; actual CUDA not yet executed",
+    "scope": "Random tiny BERT plus full random ResNet50, real CUDA GradScaler with one injected overflowing gradient, repeated recovery and next-epoch state comparison; no faculty inference"
   }
 }

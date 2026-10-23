@@ -1,0 +1,79 @@
+{
+  "updated_utc": "2026-10-23T18:08:19.911111+00:00",
+  "status": "bounded_cpu_extraction_launched",
+  "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
+  "account": "panvee62@gmail.com",
+  "profile": "Rocky",
+  "source_archive_bytes": 113623359224,
+  "source_archive_path": "/content/drive/MyDrive/UROP/official_images_v1/public_images.tar.bz2",
+  "source_preflight": {
+    "tsv_hashes_verified": true,
+    "rows": {
+      "train": 564000,
+      "validation": 59342,
+      "test": 59319
+    },
+    "archive_header": "BZh9",
+    "script_sha256": "543c60d78d61182b10052cfd061d90c5bb764f99138a8bc09ae72dbfe93d7354"
+  },
+  "first_real_shard": {
+    "utc": "2026-10-23T17:47:33.374461+00:00",
+    "verified_images": 640,
+    "elapsed_seconds": 25.66566538400002,
+    "checks": [
+      "Shard SHA256 readback",
+      "Per-image SHA256 readback",
+      "Every committed image decoded and RGB conversion checked"
+    ],
+    "full_image_gate_passed": false,
+    "archive": "images_590bbadd6dcd433b83059f13e85137bc.tar",
+    "bytes": 67235840,
+    "sha256": "38b460fcca29986161edc70b717085c5efd85b2ab707eeb099009e9dc4f9490b",
+    "independent_local_metadata_join": "results/multimodal_first_shard_join_verification_20261023.json"
+  },
+  "scientific_training_started": false,
+  "no_test_inference": true,
+  "full_image_gate_passed": false,
+  "notebook_source_mirror_sha256": "45743e524f24c8d2ce25658bd22f4d24527c28f44660af0ee9f330730e338669",
+  "limitations": [
+    "Full archive compressed SHA/CRC/coverage not yet verified",
+    "Private Kaggle upload/runtime root capacity not yet verified",
+    "CPU image preparation is not multimodal training or a progress bar increase"
+  ],
+  "prior_jobs": [
+    {
+      "id": "CPU_IMAGE_PREP_3af1eae08d9741d681804165003e0146",
+      "started_utc": "2026-10-23T17:48:59.460263+00:00",
+      "max_seconds": 14400,
+      "max_new_shards": 512,
+      "target_shard_bytes": 536870912,
+      "gpu": false,
+      "persistence": "Completed TAR plus matching receipt in private mounted Drive; open shard remains untrusted until committed",
+      "last_live_output": {
+        "utc": "2026-10-23T17:49:30.010238+00:00",
+        "state": "extracting",
+        "usable_committed": 640,
+        "usable_in_open_shard": 360,
+        "required": 682661
+      },
+      "terminal_state": "Intentionally interrupted after verified shards; output renderer required reload; no runtime restart",
+      "last_observed_committed_images": 24220,
+      "reason": "Measured full preparation6-8h; avoid first4h bound forcing a4h prefix replay"
+    }
+  ],
+  "job": {
+    "id": "CPU_IMAGE_PREP_7128d94997e84072a77aca9a66bc46c6",
+    "started_utc": "2026-10-23T18:05:05.015258+00:00",
+    "max_seconds": 28800,
+    "target_shard_bytes": 536870912,
+    "max_new_shards": 512,
+    "initial_committed_images": 24220,
+    "initial_committed_shards": 6,
+    "ignored_orphans": [
+      "images_20ad5ec99d0c4f59990dc54e195383b7.tar"
+    ],
+    "source_archive_bytes_verified": 113623359224,
+    "stage_observed": "Rescanning durable bzip2 prefix; committed shard checksums reverified by extractor; new images resume after prefix",
+    "gpu": false
+  }
+}

@@ -314,3 +314,7 @@ Yes — the warning is informational.
 
 ### Notes
 - If exact transparency preservation is ever needed (unlikely for fake-news detection), convert to RGBA first, then composite onto a white background, then convert to RGB.
+
+## 2026-10-23 CPU remount and Kaggle editor
+
+CPU runtime had disconnected due to inactivity/duration. Reconnect plus routine previously-approved Google Drive sign-in restored mount; original source and script survived. Do not redownload the113623359224-byte archive. A new Kaggle engineering notebook and old text editor both stay at Editor Loading, with reCAPTCHA-service error visible. Reload/new dedicated notebook did not expose code cells; no GPU allocated. User verification requested; no security setting changed.

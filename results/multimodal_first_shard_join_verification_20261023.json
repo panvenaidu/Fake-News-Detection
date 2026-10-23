@@ -1,0 +1,24 @@
+{
+  "utc": "2026-10-23T17:58:48.460709+00:00",
+  "status": "passed_first_real_shard_metadata_join",
+  "images": 640,
+  "splits": {
+    "train": 522,
+    "validation": 56,
+    "test": 62
+  },
+  "checks": [
+    "Exact IDs/titles/splits/six-way gold labels match local checksum-verified faculty TSVs",
+    "Canonical image member and original public_image_set filename agree"
+  ],
+  "archive": "images_590bbadd6dcd433b83059f13e85137bc.tar",
+  "archive_sha256_from_cloud_receipt": "38b460fcca29986161edc70b717085c5efd85b2ab707eeb099009e9dc4f9490b",
+  "archive_bytes_from_cloud_receipt": 67235840,
+  "receipt_route": "Semantic JSON copy read from private Drive preview accessibility text, not a byte-identical file export",
+  "local_semantic_receipt_sha256": "7bba7cfc6a73dc4066f3884fd8cbfa7fb16689d2ffb6fadb90be5eba423f90c5",
+  "limitations": [
+    "No local archive bytes retrieved yet",
+    "Cloud first-shard decode/hash readback verified separately in CPU notebook",
+    "Full cohort still pending; no scientific scores"
+  ]
+}

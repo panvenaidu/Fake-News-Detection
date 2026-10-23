@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "scope": "Six synthetic images; no network, official inference, or full cohort claim",
+  "checks": [
+    "Metadata preparation never opens image gate",
+    "Actual unpacked images all hashed/decoded before runtime gate",
+    "RGB, grayscale, palette and RGBA decode",
+    "Official title/label/split joins including multiline CSV text",
+    "Corrupt/missing image and symlink escape rejected",
+    "Runtime receipt cannot mutate immutable input",
+    "Altered receipt labels and incomplete extraction rejected"
+  ],
+  "limitations": [
+    "Real full-cohort manifest/private Kaggle import still pending"
+  ]
+}

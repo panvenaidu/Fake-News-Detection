@@ -443,5 +443,6 @@
     "account": "panvee62@gmail.com",
     "progress_unchanged": true
   },
-  "part1_execution_receipt": "results/MM_PART1_RECEIPT_20261023.json"
+  "part1_execution_receipt": "results/MM_PART1_RECEIPT_20261023.json",
+  "last_cpu_preparation_note": "First640 official images readback verified; bounded CPU extraction running; full image gate false; no scientific epochs. No workflow percentage increase."
 }
