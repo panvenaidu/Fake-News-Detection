@@ -241,3 +241,7 @@ User requested checkpoint-based loading bars for every future status request. Sa
 User-provided archives/extracted folders appeared inside UROP and were moved within the project to `data/cloud_recovery/`. Original BERT ZIP CRC/source/model/state/finite tensor checks passed. Durable tensor is epoch5 batch15000/17625, four validations inside tensor, best epoch4; later observed fifth validation retained separately. Resume must replay remaining2625 epoch5 batches, then proceed under original protocol. No GPU job launched.
 
 Original multimodal ZIP CRC/source/result values matched earlier UI evidence. Synced original source/config/history/reports/logs/tokenizer/metrics and complete prediction CSVs. Each evaluation CSV contains exactly300 unique IDs matching original pilot split membership and labels; reconstructed matrices exactly match original saved confusion matrices. Earlier UI-derived artifact bytes retained under `ui_retrieved_snapshot/`. Weights remain saved privately in Kaggle, not in this small evidence ZIP.
+
+## Final usage handoff
+
+At 2026-10-23T15:12:53.554905+00:00, allowance was7% remaining in the short window and70% weekly. The user's10% handoff threshold has been crossed. No new extraction, transfer or training job was launched. Main checkpoint10a72d1190c8bce15cd3b3b58e4a29ef42b0dcc8 was verified against remote main. This receipt/context update is a separate child commit. Pause the Goal after this handoff is pushed; resume only when the user resumes the work. Part1 is incomplete; use the exact next action in the receipt.

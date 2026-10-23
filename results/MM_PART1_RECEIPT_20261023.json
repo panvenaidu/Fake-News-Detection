@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-23T15:07:15.125612+00:00",
+  "updated_utc": "2026-10-23T15:12:53.554905+00:00",
   "plan": "MM-PART1-v2",
-  "state": "usage_reserve_checkpoint_cloud_source_staged",
+  "state": "usage_handoff_checkpoint_incomplete",
   "part1_complete": false,
   "scientific_training_started": false,
   "epochs_completed": 0,
@@ -54,9 +54,9 @@
     "notebooks/UROP_MM_PART1_IMAGE_PREP_CPU_20261023.ipynb": "9d8130eb21deb57570e4dbf0c1b6587ebc3267e4ecf8c73ddfa3f19a13aa276d"
   },
   "assistant_usage_observed": {
-    "short_window_remaining_percent": 20,
-    "weekly_remaining_percent": 72,
-    "action": "No new large transfer or training job; checkpoint synchronization only; user requires handoff10%, hardstop5%"
+    "short_window_remaining_percent": 7,
+    "weekly_remaining_percent": 70,
+    "action": "User 10% handoff threshold crossed; final receipt synchronization only, then pause Goal; no new jobs. Hard stop at5%."
   },
   "drive_access_approved": true,
   "full_trainer": "scripts/train_official_multimodal_v1.py",
@@ -92,7 +92,11 @@
     "note": "This records the preceding checkpoint commit; subsequent receipt commit is separate"
   },
   "github_backup": {
-    "status": "pending_new_checkpoint_push",
-    "note": "Prior backup retained separately; verify this checkpoint push before claiming backup"
+    "status": "verified",
+    "commit": "10a72d1190c8bce15cd3b3b58e4a29ef42b0dcc8",
+    "remote_sha_observed": "10a72d1190c8bce15cd3b3b58e4a29ef42b0dcc8",
+    "verified_utc": "2026-10-23T15:12:53.554905+00:00",
+    "scope": "Trainer/config, CPU verification receipts, cloud source staging tools and notebook source mirror, project records",
+    "note": "This receipt is a separate child checkpoint; source archive/images/weights are excluded from Git."
   }
 }
