@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "checks": [
+    "Stable per-ID crop preserves model RNG",
+    "Deterministic epoch permutations",
+    "CPU synthetic model/optimizer/scheduler/RNG resume including BatchNorm/dropout",
+    "Corrupted generation falls back",
+    "Unsafe gradient boundary rejected"
+  ],
+  "limitations": [
+    "Not full trainer verification",
+    "No GPU/AMP skip or real BERT strict mapping executed",
+    "No scientific training, validation or test metrics",
+    "No cloud durability proved"
+  ]
+}

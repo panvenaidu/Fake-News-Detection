@@ -1,0 +1,53 @@
+{
+  "utc": "2026-10-23T14:18:08.344421+00:00",
+  "image_gate_passed": false,
+  "splits": {
+    "train": {
+      "expected": 564000,
+      "classes": {
+        "0": 222081,
+        "2": 107221,
+        "4": 167857,
+        "5": 21576,
+        "1": 33481,
+        "3": 11784
+      },
+      "usable": 62635
+    },
+    "validation": {
+      "expected": 59342,
+      "classes": {
+        "0": 23320,
+        "4": 17810,
+        "2": 11277,
+        "1": 3521,
+        "5": 2176,
+        "3": 1238
+      },
+      "usable": 6685
+    },
+    "test": {
+      "expected": 59319,
+      "classes": {
+        "4": 17472,
+        "0": 23507,
+        "5": 2305,
+        "2": 11297,
+        "1": 3514,
+        "3": 1224
+      },
+      "usable": 6675
+    }
+  },
+  "required": 682661,
+  "usable": 75995,
+  "missing_or_failed": 606666,
+  "decode_failures": [],
+  "duplicate_id_stems": [],
+  "cross_split_duplicate_content_groups": 110,
+  "elapsed_seconds": 64.39346524999999,
+  "manifest": "data/official_paired_v1/candidate_manifest.csv",
+  "manifest_sha256": "1235dadfe08deac738ab69441071aea5a157b792a3be546e9b41f02041653ba4",
+  "missing_ids_sha256": "ea25f10c87bab6d0264669113c1de77fe9fd72b87214c9ad8530594c14c7919e",
+  "scope": "Local image audit only; no download, training, validation or test inference"
+}

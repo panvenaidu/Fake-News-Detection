@@ -1,0 +1,16 @@
+{
+  "mapped_keys": 197,
+  "excluded_keys": [
+    "bert.pooler.dense.bias",
+    "bert.pooler.dense.weight",
+    "classifier.bias",
+    "classifier.weight"
+  ],
+  "strict": true,
+  "status": "passed",
+  "weight_sha256": "870bea50fa608dddd20421c21fd1786e244b1323e22734093214b87023666753",
+  "source": "data/cloud_recovery/KAGGLE_RECOVERY_v1_20261009_356721456/weights/best_weights.pt",
+  "target": "Explicit BertModel(BertConfig(), add_pooling_layer=False)",
+  "kind": "CPU strict encoder mapping/load; no forward, training or inference",
+  "excluded_optimizer": true
+}
