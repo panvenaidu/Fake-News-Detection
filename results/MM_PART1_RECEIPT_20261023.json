@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-23T18:40:47.975847+00:00",
+  "updated_utc": "2026-10-23T18:43:31.056768+00:00",
   "plan": "MM-PART1-v2",
   "state": "usage_checkpoint_reserve_existing_cpu_job_running",
   "part1_complete": false,
@@ -59,9 +59,9 @@
     "notebooks/UROP_MM_PART1_CUDA_ENGINEERING_20261023.ipynb": "9072566aa987235a02c4060fa716b7d3bfeb72ad5f3856ea8a9dba1272f936af"
   },
   "assistant_usage_observed": {
-    "short_window_remaining_percent": 21,
-    "weekly_remaining_percent": 88,
-    "action": "Checkpoint preparation; start no new training, large transfer or debugging. Handoff at10%, hardstop5%. Existing bounded CPU extraction may continue with verified Drive shard persistence."
+    "short_window_remaining_percent": 19,
+    "weekly_remaining_percent": 87,
+    "action": "In user20% reserve. No new substantive work/jobs. Existing bounded CPU extraction verified live; checkpoint verification and handoff only. Pause at user10% handoff, hardstop5%."
   },
   "drive_access_approved": true,
   "full_trainer": "scripts/train_official_multimodal_v1.py",
@@ -94,18 +94,17 @@
   ],
   "github_backup_prior": {
     "status": "verified",
-    "commit": "2c9d1a09a29be03e5b4c955728eaace3d23faa74",
-    "remote_sha_observed": "2c9d1a09a29be03e5b4c955728eaace3d23faa74",
-    "verified_utc": "2026-10-23T18:37:17.134983+00:00",
-    "scope": "CUDA fixture passing receipt/source-only notebook, private Kaggle staging evidence, actual archive layout fix/tests, source conflict sample and context/progress records",
-    "note": "This backup receipt is a separate child update; raw dataset/images/weights and screenshots remain outside Git"
-  },
-  "github_backup": {
-    "status": "verified",
     "commit": "dd84be6cb5e2047b7aa381406b007339046c8408",
     "remote_sha_observed": "dd84be6cb5e2047b7aa381406b007339046c8408",
     "verified_utc": "2026-10-23T18:40:47.975847+00:00",
     "scope": "Previous verified engineering backup receipt and exact continuation commands; this live checkpoint update will be a separate child commit"
+  },
+  "github_backup": {
+    "status": "verified",
+    "commit": "2bc75feaf9603545327b1caabcfa1e55810be61e",
+    "remote_sha_observed": "2bc75feaf9603545327b1caabcfa1e55810be61e",
+    "verified_utc": "2026-10-23T18:43:31.056768+00:00",
+    "scope": "Live CPU checkpoint observation and all named context/progress/log records; this Git receipt is a separate child update"
   },
   "source_preflight": "results/MM_PART1_CLOUD_IMAGE_PREP_20261023.json",
   "cpu_extraction_job": {
