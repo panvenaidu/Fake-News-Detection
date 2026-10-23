@@ -1,0 +1,11 @@
+{
+  "verified_utc": "2026-10-23T14:09:16.055271+00:00",
+  "repository": "https://github.com/panvenaidu/Fake-News-Detection",
+  "branch": "main",
+  "plan_commit": "58b51de0dc36af9c26d1278974c5ca9bfa04acb4",
+  "remote_sha_observed": "58b51de0dc36af9c26d1278974c5ca9bfa04acb4",
+  "status": "verified",
+  "scope": "Separate Part1/Part2 Markdown and PDFs, audit, context/log/status handoff; no training or large downloads",
+  "unrelated_user_changes": "preserved and unstaged",
+  "note": "This receipt records the preceding verified plan commit; it does not claim its own future hash."
+}
