@@ -29,7 +29,8 @@ def order(seed,epoch,count):
 def crop(image,seed,epoch,ident):
  # Local CPU RNG fork makes augmentation independent of worker/model RNG.
  with torch.random.fork_rng(devices=[]):
-  torch.manual_seed(stable_seed(seed,epoch,ident))
+  # torch.manual_seed also seeds CUDA; crop must never change model CUDA RNG.
+  torch.random.default_generator.manual_seed(stable_seed(seed,epoch,ident))
   return T.RandomResizedCrop.get_params(image,(.8,1.),(.75,4/3))
 
 def capture_rng():
@@ -66,6 +67,12 @@ def save_generation(folder,payload):
  item={'file':path.name,'sha256':sha(path),'bytes':path.stat().st_size,'cursor':payload['cursor']}
  pointer=folder/'generations.json';old=json.loads(pointer.read_text()) if pointer.exists() else {'generations':[]}
  generations=[item]+old['generations'][:1];atomic_json(pointer,{'schema':SCHEMA,'generations':generations})
+ # Bound scratch space only after the new pointer is committed. Never sweep
+ # unrelated files or uncommitted/corrupt artifacts retained for diagnosis.
+ for retired in old['generations'][1:]:
+  candidate=folder/retired['file']
+  if candidate.parent.resolve()==folder.resolve() and len(candidate.stem)==32 and all(c in '0123456789abcdef' for c in candidate.stem):
+   candidate.unlink(missing_ok=True)
  return item
 
 def load_generation(folder):

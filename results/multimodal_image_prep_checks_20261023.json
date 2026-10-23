@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "scope": "Synthetic6-image compressed archive only; no network or real images",
+  "checks": [
+    "Bounded extraction and subsequent restart",
+    "All committed original image bytes/hashes preserved",
+    "No duplicate rows on repeated extraction",
+    "Uncommitted orphan excluded",
+    "Corrupt committed shard rejected",
+    "Durable source unchanged"
+  ],
+  "not_verified": [
+    "Real106G source transport/range-resume",
+    "Drive FUSE read/write throughput",
+    "Full author archive ID coverage",
+    "Private Kaggle import/extraction capacity"
+  ]
+}

@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-23T14:23:43.924695+00:00",
+  "updated_utc": "2026-10-23T15:07:15.125612+00:00",
   "plan": "MM-PART1-v2",
-  "state": "in_progress_waiting_drive_permission",
+  "state": "usage_reserve_checkpoint_cloud_source_staged",
   "part1_complete": false,
   "scientific_training_started": false,
   "epochs_completed": 0,
@@ -16,17 +16,18 @@
   "source_archive_download_confirmed": false,
   "drive_storage_observed": "78.96 GB of5.39 TB used",
   "cpu_prep_notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
-  "cpu_runtime": "Connected Python3;12.67GB RAM;107.72GB disk; Drive mount awaiting permission",
+  "cpu_runtime": "Connected CPU; Drive mounted; no image extraction or training process started",
   "image_gate_passed": false,
   "image_coverage": "results/official_image_coverage_v1.json",
   "recovery_checks": "results/multimodal_recovery_primitives_checks_20261023.json",
   "warmstart_checks": "results/multimodal_warmstart_verification_20261023.json",
   "limitations": [
-    "Full trainer/config not implemented yet",
-    "Full images absent; no new validation metrics",
-    "GPU/AMP and full multimodal interrupted-resume regression not yet verified"
+    "Full paired image extraction/coverage still pending; only75995 images audited locally",
+    "CPU synthetic engine/recovery/verifier tests passed; actual CUDA AMP/numerical replay still pending",
+    "No real multimodal checkpoint, no training epochs or full validations, no final test",
+    "Private Kaggle full-image input import/storage route still needs measured verification"
   ],
-  "next_action": "Obtain explicit new-notebook Drive permission, connect existing account, verify mount/capacity, establish resumable106G archive staging on Drive with CPU only; implement full trainer and verify before GPU launch",
+  "next_action": "After assistant allowance recovers above20%: open saved CPU prep notebook in Rocky/panvee62; verify current runtime/mount and staged113623359224-byte archive. Import the staged preparation module, fetch/hash original three TSVs with expected_rows(root,download=True), verify headers/IDs and a first small committed image shard, then run bounded extraction with CPU only. Verify all682661 usable IDs and private Kaggle full input capacity before cloud/GPU preflight and epochs1-2. No final test.",
   "progress": {
     "text": 100,
     "multimodal": 40,
@@ -41,19 +42,57 @@
   "usage_policy": "Prepare/sync20%, checkpoint and handoff10%, hardstop5%",
   "component_sources": {
     "scripts/audit_official_images_v1.py": "6ac1df4ff235af0f5434442999488257939b7d92309b2d6b8645574769a8393a",
-    "scripts/multimodal_recovery_v1.py": "6daf55a72d8d97da2028d58e43f5452def8ae82ebb3896d0f0b227426d37b398",
-    "scripts/check_multimodal_recovery_v1.py": "5f85f62bf79c2edcc0c340ba9f4717aa4bca7806a09fef010f5ec5fee3add1f1"
+    "scripts/multimodal_recovery_v1.py": "2f5f67ce79289c69279040d21b483e28535895f5c99c63e0021da3eee6d3d1c8",
+    "scripts/check_multimodal_recovery_v1.py": "5f85f62bf79c2edcc0c340ba9f4717aa4bca7806a09fef010f5ec5fee3add1f1",
+    "scripts/train_official_multimodal_v1.py": "e0e2ace518f8232ca250c7185b89b56a645c12125666630cace4a2876e520026",
+    "scripts/check_official_multimodal_v1.py": "dafdb1dd0c2328123b96b02aa7fddce2af3f498b4565f1ef76ddd0697025ffff",
+    "scripts/verify_official_multimodal_v1.py": "338e41f3978465ecf5832916b1ec80dad66386e5cd1ef6097d82de4e7137e03f",
+    "scripts/check_multimodal_evidence_v1.py": "657c03645c512f8bf691f1df3d1a432ed8ab2af9fbc0acfed8b1611956e938a2",
+    "scripts/check_multimodal_image_prep_v1.py": "7ef9b316fd9430dcb08a96a1ef5fc3c8233f99c6d33376d2308c0a73cf73a02c",
+    "collab/prepare_official_images_drive_v1.py": "543c60d78d61182b10052cfd061d90c5bb764f99138a8bc09ae72dbfe93d7354",
+    "configs/multimodal_official_6way_v1.json": "19e3c78288aa7a5eb7ee657900583a3cb2984637354fc43b742302816aea049b",
+    "notebooks/UROP_MM_PART1_IMAGE_PREP_CPU_20261023.ipynb": "9d8130eb21deb57570e4dbf0c1b6587ebc3267e4ecf8c73ddfa3f19a13aa276d"
   },
   "assistant_usage_observed": {
-    "short_window_remaining_percent": 62,
-    "weekly_remaining_percent": 78
+    "short_window_remaining_percent": 20,
+    "weekly_remaining_percent": 72,
+    "action": "No new large transfer or training job; checkpoint synchronization only; user requires handoff10%, hardstop5%"
   },
-  "github_backup": {
+  "drive_access_approved": true,
+  "full_trainer": "scripts/train_official_multimodal_v1.py",
+  "config": "configs/multimodal_official_6way_v1.json",
+  "config_state": "Candidate until measured full-data/cloud preflight; scientific run not frozen or launched",
+  "image_preparer": "collab/prepare_official_images_drive_v1.py",
+  "independent_verifier": "scripts/verify_official_multimodal_v1.py",
+  "archive_private_copy_id": "12YYAoTT2Mnb1eEoIRhuVJ3WmTvFoJXoi",
+  "archive_bytes": 113623359224,
+  "archive_path": "/content/drive/MyDrive/UROP/official_images_v1/public_images.tar.bz2",
+  "cloud_source_state": "Private Drive-native copy; exact size and BZh9 header observed; full compressed SHA/CRC/coverage still unverified",
+  "cloud_script_sha256": "543c60d78d61182b10052cfd061d90c5bb764f99138a8bc09ae72dbfe93d7354",
+  "cloud_storage_probe": {
+    "fsync_rename_readback": true,
+    "probe_file": "/content/drive/MyDrive/UROP/official_images_v1/io_probe_cfc9aaaa9c15449292a45d35ebe9b694.verified",
+    "statvfs_note": "Drive FUSE reports notebook scratch availability, not full account quota; signed-in Drive UI has5.39TB total with under200GB used after copy"
+  },
+  "notebook_source_mirror": "notebooks/UROP_MM_PART1_IMAGE_PREP_CPU_20261023.ipynb",
+  "verification_receipts": [
+    "results/official_image_coverage_v1.json",
+    "results/multimodal_warmstart_verification_20261023.json",
+    "results/multimodal_recovery_primitives_checks_20261023.json",
+    "results/official_multimodal_engine_checks_20261023.json",
+    "results/multimodal_image_prep_checks_20261023.json",
+    "results/multimodal_evidence_checks_20261023.json"
+  ],
+  "github_backup_prior": {
     "status": "verified",
     "commit": "fe21e0e2867e1422735785ff1b3094814212a4b9",
     "remote_sha_observed": "fe21e0e2867e1422735785ff1b3094814212a4b9",
     "verified_utc": "2026-10-23T14:24:41.202402+00:00",
     "scope": "Image audit/recovery components, verification receipts and context; raw data/weights excluded",
     "note": "This records the preceding checkpoint commit; subsequent receipt commit is separate"
+  },
+  "github_backup": {
+    "status": "pending_new_checkpoint_push",
+    "note": "Prior backup retained separately; verify this checkpoint push before claiming backup"
   }
 }

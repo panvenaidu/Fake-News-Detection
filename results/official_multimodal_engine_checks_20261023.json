@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "kind": "Synthetic CPU regression against actual full trainer Engine and MaximumFusion; no scientific training or task scores",
+  "checks": [
+    "Both-encoder actual architecture loop with13 train examples",
+    "Two mid-epoch interruptions and validation-pending restore",
+    "Repeated resume across next epoch including BatchNorm and dropout",
+    "Exact final model/optimizer/scheduler/scaler state and validation-history equality",
+    "One simulated AMP skip;5 successful updates; scheduler advanced5 times",
+    "Partial accumulation tail handled",
+    "Only two committed recovery generations retained",
+    "Crop never seeds CUDA",
+    "Selection ties preserve earlier epoch",
+    "Incomplete official image cohort rejected"
+  ],
+  "limitations": [
+    "CUDA AMP/numerical agreement still needs cloud regression",
+    "Full data/cloud throughput/durable export not verified",
+    "CPU test uses tiny random BERT and synthetic vision branch, not a scientific pretrained run"
+  ]
+}

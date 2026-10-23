@@ -1,0 +1,48 @@
+{
+  "verified_utc": "2026-10-23T15:08:19.256383+00:00",
+  "status": "passed_cpu_checkpoint_checks",
+  "checks": [
+    {
+      "script": "scripts/check_multimodal_recovery_v1.py",
+      "exit_code": 0,
+      "script_sha256": "5f85f62bf79c2edcc0c340ba9f4717aa4bca7806a09fef010f5ec5fee3add1f1",
+      "stdout": "{\n  \"status\": \"passed\",\n  \"checks\": [\n    \"Stable per-ID crop preserves model RNG\",\n    \"Deterministic epoch permutations\",\n    \"CPU synthetic model/optimizer/scheduler/RNG resume including BatchNorm/dropout\",\n    \"Corrupted generation falls back\",\n    \"Unsafe gradient boundary rejected\"\n  ],\n  \"limitations\": [\n    \"Not full trainer verification\",\n    \"No GPU/AMP skip or real BERT strict mapping executed\",\n    \"No scientific training, validation or test metrics\",\n    \"No cloud durability proved\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "scripts/check_official_multimodal_v1.py",
+      "exit_code": 0,
+      "script_sha256": "dafdb1dd0c2328123b96b02aa7fddce2af3f498b4565f1ef76ddd0697025ffff",
+      "stdout": "{\n  \"status\": \"passed\",\n  \"kind\": \"Synthetic CPU regression against actual full trainer Engine and MaximumFusion; no scientific training or task scores\",\n  \"checks\": [\n    \"Both-encoder actual architecture loop with13 train examples\",\n    \"Two mid-epoch interruptions and validation-pending restore\",\n    \"Repeated resume across next epoch including BatchNorm and dropout\",\n    \"Exact final model/optimizer/scheduler/scaler state and validation-history equality\",\n    \"One simulated AMP skip;5 successful updates; scheduler advanced5 times\",\n    \"Partial accumulation tail handled\",\n    \"Only two committed recovery generations retained\",\n    \"Crop never seeds CUDA\",\n    \"Selection ties preserve earlier epoch\",\n    \"Incomplete official image cohort rejected\"\n  ],\n  \"limitations\": [\n    \"CUDA AMP/numerical agreement still needs cloud regression\",\n    \"Full data/cloud throughput/durable export not verified\",\n    \"CPU test uses tiny random BERT and synthetic vision branch, not a scientific pretrained run\"\n  ]\n}\n",
+      "stderr": "/Users/panveenaidu/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020\n  warnings.warn(\n"
+    },
+    {
+      "script": "scripts/check_multimodal_image_prep_v1.py",
+      "exit_code": 0,
+      "script_sha256": "7ef9b316fd9430dcb08a96a1ef5fc3c8233f99c6d33376d2308c0a73cf73a02c",
+      "stdout": "{\n  \"status\": \"passed\",\n  \"scope\": \"Synthetic6-image compressed archive only; no network or real images\",\n  \"checks\": [\n    \"Bounded extraction and subsequent restart\",\n    \"All committed original image bytes/hashes preserved\",\n    \"No duplicate rows on repeated extraction\",\n    \"Uncommitted orphan excluded\",\n    \"Corrupt committed shard rejected\",\n    \"Durable source unchanged\"\n  ],\n  \"not_verified\": [\n    \"Real106G source transport/range-resume\",\n    \"Drive FUSE read/write throughput\",\n    \"Full author archive ID coverage\",\n    \"Private Kaggle import/extraction capacity\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "scripts/check_multimodal_evidence_v1.py",
+      "exit_code": 0,
+      "script_sha256": "657c03645c512f8bf691f1df3d1a432ed8ab2af9fbc0acfed8b1611956e938a2",
+      "stdout": "{\n  \"status\": \"passed\",\n  \"scope\": \"Synthetic59342-row export verification only; no faculty data inference, no task metrics\",\n  \"checks\": [\n    \"Complete IDs/labels/supports and all requested metrics independently recomputed\",\n    \"All-six probabilities, loss, reports and confusions checked\",\n    \"Invalid probability rejected\",\n    \"Duplicate ID rejected\",\n    \"Altered gold label rejected\",\n    \"Altered per-row CE rejected\"\n  ]\n}\n",
+      "stderr": "/Users/panveenaidu/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020\n  warnings.warn(\n"
+    }
+  ],
+  "part1_epoch3_launch_guard": "rejected before data/model allocation; no output created",
+  "sources": {
+    "scripts/train_official_multimodal_v1.py": "e0e2ace518f8232ca250c7185b89b56a645c12125666630cace4a2876e520026",
+    "scripts/multimodal_recovery_v1.py": "2f5f67ce79289c69279040d21b483e28535895f5c99c63e0021da3eee6d3d1c8",
+    "scripts/verify_official_multimodal_v1.py": "338e41f3978465ecf5832916b1ec80dad66386e5cd1ef6097d82de4e7137e03f",
+    "collab/prepare_official_images_drive_v1.py": "543c60d78d61182b10052cfd061d90c5bb764f99138a8bc09ae72dbfe93d7354",
+    "configs/multimodal_official_6way_v1.json": "19e3c78288aa7a5eb7ee657900583a3cb2984637354fc43b742302816aea049b"
+  },
+  "limitations": [
+    "No CUDA/GPU regression or throughput",
+    "Full cohort not ready",
+    "No official scientific metrics or trained multimodal checkpoint",
+    "No real archive extraction started"
+  ]
+}

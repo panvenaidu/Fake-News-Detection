@@ -70,3 +70,6 @@ results/bert_*_20261009.png
 
 results/bert_completion_cloud_proof_20261009.png
 results/bert_completion_gpu_quota_20261009.png
+
+# Current Part1 browser screenshots stay local (account/UI context).
+results/mm_part1_*_20261023.png
