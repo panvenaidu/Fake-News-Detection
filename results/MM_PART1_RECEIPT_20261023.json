@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-23T18:34:29.310176+00:00",
+  "updated_utc": "2026-10-23T18:37:17.134983+00:00",
   "plan": "MM-PART1-v2",
   "state": "bounded_cpu_image_extraction_running",
   "part1_complete": false,
@@ -94,18 +94,18 @@
   ],
   "github_backup_prior": {
     "status": "verified",
-    "commit": "10a72d1190c8bce15cd3b3b58e4a29ef42b0dcc8",
-    "remote_sha_observed": "10a72d1190c8bce15cd3b3b58e4a29ef42b0dcc8",
-    "verified_utc": "2026-10-23T15:12:53.554905+00:00",
-    "scope": "Trainer/config, CPU verification receipts, cloud source staging tools and notebook source mirror, project records",
-    "note": "This receipt is a separate child checkpoint; source archive/images/weights are excluded from Git."
-  },
-  "github_backup": {
-    "status": "verified",
     "commit": "1c2634d5008437a7e697759ed462c0ebd087d366",
     "remote_sha_observed": "1c2634d5008437a7e697759ed462c0ebd087d366",
     "scope": "CPU image staging/resume source, input verifier and CUDA fixture source; current new CUDA receipt awaits next child commit",
     "note": "Pinned source commit verified before fetching it in Colab; no raw image bytes or weights in Git"
+  },
+  "github_backup": {
+    "status": "verified",
+    "commit": "2c9d1a09a29be03e5b4c955728eaace3d23faa74",
+    "remote_sha_observed": "2c9d1a09a29be03e5b4c955728eaace3d23faa74",
+    "verified_utc": "2026-10-23T18:37:17.134983+00:00",
+    "scope": "CUDA fixture passing receipt/source-only notebook, private Kaggle staging evidence, actual archive layout fix/tests, source conflict sample and context/progress records",
+    "note": "This backup receipt is a separate child update; raw dataset/images/weights and screenshots remain outside Git"
   },
   "source_preflight": "results/MM_PART1_CLOUD_IMAGE_PREP_20261023.json",
   "cpu_extraction_job": {
@@ -140,7 +140,8 @@
     "actual_amp_skips": 1,
     "successful_updates": 5,
     "scientific_training": false,
-    "runtime_release": "Confirmed Colab active sessions lists only CPU image-preparation notebook; T4 session released"
+    "runtime_release": "Confirmed Colab active sessions lists only CPU image-preparation notebook; T4 session released",
+    "environment_scope": "Passed on Colab Torch2.11.0+cu130/TeslaT4 only. Repeat in actual scientific runtime if its software/device contract differs."
   },
   "private_input_staging": {
     "url": "https://www.kaggle.com/datasets/rocky62/urop-official-images-private-staging-v1",

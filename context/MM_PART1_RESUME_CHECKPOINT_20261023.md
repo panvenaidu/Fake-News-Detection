@@ -58,3 +58,21 @@ At 2026-10-23T15:12:53.554905+00:00, allowance was7% remaining in the short wind
 ### Latest live preparation observation
 
 2026-10-23T18:33:34.291373+00:00: 51536 committed images and4464 in the open shard, of682661 required. CPU job7128d949 continues bounded to8h from18:05:05UTC. Evidence: `results/mm_part1_cpu_progress_observations_20261023.json`. Scientific epochs0/2 and full validations0/2; test excluded. This update does not increase workflow bars.
+
+## Exact continuation commands after full source extraction
+
+Do not duplicate the current CPU job. Require a successful complete extraction report with682661 usable IDs, CRC consumed and compressed SHA before metadata preparation. Fetch the reviewed tools and their dependencies from the verified project commit into a cloud tools scaffold (`scripts/` plus `collab/`), checking source hashes. Then use:
+
+```sh
+python scripts/verify_official_image_shards_v1.py prepare-metadata \
+  --source-root /content/drive/MyDrive/UROP/official_images_v1 \
+  --output-root /content/drive/MyDrive/UROP/official_input_metadata_v1 \
+  --extraction-report /exact/path/to/the/verified/complete/extraction_report.json \
+  --layout kaggle-tar
+```
+
+The extraction-report argument above is deliberately a placeholder; discover/verify the actual completed report rather than inventing its UUID. The metadata output is separate from original sources/shards. It cannot open the runtime image gate. Package its data-directory contents as `data.tar` and results-directory contents as `results.tar`; Kaggle's observed basename wrapping then yields root/data and root/results. Upload only the original committed image TARs plus these metadata archives into new PRIVATE versions of the existing staging dataset. Keep the first version/history intact; do not publish publicly. Confirm all images/counts/storage and saved version.
+
+In the actual training runtime, use `verify-unpacked --root <immutable-private-input-root> --output <separate-working-receipt.json>` to hash/decode every image before calling the trainer's own full-data guard. Do not point the trainer to runtime scratch that cannot hold the full input. Keep image inputs mounted read-only where possible. Current Kaggle Version1 is only640images/641files. Its ZIP export was still awaiting compression on a fresh page check; no full runtime import or byte-level Kaggle roundtrip is claimed.
+
+CUDA recovery passed on Colab Torch2.11.0+cu130/TeslaT4. Repeat the synthetic CUDA test if actual training uses a different device/software contract; do not treat Colab results as proof for an untested Kaggle environment. Full pretrained BERT/image I/O throughput remains required. Freeze final source/config/environment before the first scientific epoch. Retrieve verified latest recovery and selected weights at every bounded scientific job end. Part1 stops at2 complete train+validation epochs; no final test.
