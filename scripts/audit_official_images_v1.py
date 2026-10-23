@@ -71,7 +71,7 @@ def main():
  atomic(out/'cross_split_content_duplicates.json',dup_content)
  usable=sum(x.get('usable',0) for x in counts.values());passed=usable==len(expected) and not duplicates
  result={'utc':datetime.now(timezone.utc).isoformat(),'image_gate_passed':passed,'splits':counts,'required':len(expected),'usable':usable,'missing_or_failed':len(expected)-usable,'decode_failures':failures,'duplicate_id_stems':duplicates,'cross_split_duplicate_content_groups':len(dup_content),'elapsed_seconds':time.monotonic()-started,'manifest':'data/official_paired_v1/candidate_manifest.csv','manifest_sha256':sha(out/'candidate_manifest.csv'),'missing_ids_sha256':sha(out/'missing_ids.csv'),'scope':'Local image audit only; no download, training, validation or test inference'}
- 
+
  if passed:
   import shutil
   shutil.copyfile(out/'candidate_manifest.csv',out/'paired_manifest.csv')

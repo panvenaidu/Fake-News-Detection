@@ -40,12 +40,20 @@
   },
   "usage_policy": "Prepare/sync20%, checkpoint and handoff10%, hardstop5%",
   "component_sources": {
-    "scripts/audit_official_images_v1.py": "fbe7b92991422eee9b840d6ce028e6652fdc82113734b81bc8035fd6f71b353a",
+    "scripts/audit_official_images_v1.py": "6ac1df4ff235af0f5434442999488257939b7d92309b2d6b8645574769a8393a",
     "scripts/multimodal_recovery_v1.py": "6daf55a72d8d97da2028d58e43f5452def8ae82ebb3896d0f0b227426d37b398",
     "scripts/check_multimodal_recovery_v1.py": "5f85f62bf79c2edcc0c340ba9f4717aa4bca7806a09fef010f5ec5fee3add1f1"
   },
   "assistant_usage_observed": {
     "short_window_remaining_percent": 62,
     "weekly_remaining_percent": 78
+  },
+  "github_backup": {
+    "status": "verified",
+    "commit": "fe21e0e2867e1422735785ff1b3094814212a4b9",
+    "remote_sha_observed": "fe21e0e2867e1422735785ff1b3094814212a4b9",
+    "verified_utc": "2026-10-23T14:24:41.202402+00:00",
+    "scope": "Image audit/recovery components, verification receipts and context; raw data/weights excluded",
+    "note": "This records the preceding checkpoint commit; subsequent receipt commit is separate"
   }
 }
