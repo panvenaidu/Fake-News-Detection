@@ -11,5 +11,11 @@
   "source_file": "notebooks/UROP_MM_PART1_REGISTERED_EPOCH_TEMPLATE_20261024.ipynb",
   "source_sha256": "001323a5bc84beec88336daa3c999a656f6d4fe8b9023b1a025d22b6f3c49b95",
   "screenshot": "results/mm_part1_guarded_draft_imported_20261024.png",
-  "verification": "Visible Kaggle UI; guarded source, Draft saved, session off, None accelerator, Private selected. Not a byte-for-byte downloaded cloud notebook comparison."
+  "verification": "Visible Kaggle UI; guarded source, Draft saved, session off, None accelerator, Private selected. Not a byte-for-byte downloaded cloud notebook comparison.",
+  "cloud_source_readback_verified": true,
+  "source_comparison": "All cell types and full source strings equal after CRLF normalization; no code outputs or execution counts. Whole notebooks differ in platform metadata.",
+  "cloud_readback": "data/official_paired_v1/source_bundles/UROP_MM_PART1_REGISTERED_EPOCH_KAGGLE_READBACK_20261024.ipynb",
+  "cloud_readback_bytes": 13912,
+  "cloud_readback_sha256": "90b964fa6b961bcf78bb0224d721cb55a972a51dfa1102a92bd9c0da44cbd314",
+  "readback_utc": "2026-10-24T05:34:07.105765+00:00"
 }

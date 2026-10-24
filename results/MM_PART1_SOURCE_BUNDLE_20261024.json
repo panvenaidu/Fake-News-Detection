@@ -66,5 +66,11 @@
     "Python syntax",
     "Reject missing/incomplete original source evidence"
   ],
-  "updated_utc": "2026-10-24T05:24:43.107365+00:00"
+  "updated_utc": "2026-10-24T05:24:43.107365+00:00",
+  "cloud_readback_sha256": "e52dc84c4f05ec8f712bedd0fdc624d00c3fc32cd659e869e11749d8a972aa20",
+  "cloud_readback_bytes": 33313,
+  "cloud_readback_verified": true,
+  "cloud_readback_utc": "2026-10-24T05:32:31.128906+00:00",
+  "cloud_readback_local": "data/official_paired_v1/source_bundles/UROP_MM_PART1_SOURCE_BUNDLE_20261024_DRIVE_READBACK.zip",
+  "cloud_bundle_file": "https://drive.google.com/file/d/1Bt4QSHbXa7BUCAfIDehRnKYKqBz8ZphD/view"
 }
