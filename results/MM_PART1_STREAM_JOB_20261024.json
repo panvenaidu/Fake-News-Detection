@@ -1,0 +1,946 @@
+{
+  "observed_utc": "2026-10-24T04:20:04.383Z",
+  "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
+  "cell_id": "CTwlzdeQDnsR",
+  "source_commit": "8d77eca6544d6e6140b75d3f1f30355af578d4c9",
+  "records": [
+    {
+      "state": "bounded_stream_recovery_started",
+      "utc": "2026-10-24T03:57:50.010031+00:00",
+      "job_id": "CPU_STREAM_PREP_87f54da6a55c47349ba79a6f6ab33747",
+      "pid": 5722,
+      "max_seconds_after_committed_hash_audit": 28800,
+      "script_sha256": "5b9be91021d4d397d8f3bd74c0354d0496b7cfb685723cf2c3c3ee24ea6266e6",
+      "original_source_id": "1cjY6HsHaSZuLVHywIxD5xQqng33J5S2b",
+      "required": 682661,
+      "source_route": "Same original public author archive via verified HTTP ranges; no full source file written in VM",
+      "existing_metadata_count": 505573,
+      "existing_committed_shards": 111,
+      "existing_committed_shard_bytes": 59466014720,
+      "existing_hashes_rechecked_before_extraction": true,
+      "uncommitted_orphans_ignored": [
+        "images_20ad5ec99d0c4f59990dc54e195383b7.tar",
+        "images_3d24f1ea619648fd9138ea942cffbe25.tar"
+      ],
+      "gpu": false,
+      "training": false,
+      "final_test": false,
+      "source_head_tail_identity_proof": "results/MM_PART1_STREAM_SOURCE_PROBE_20261024.json",
+      "scratch_safety_bytes": 8589934592,
+      "checkpoint": "New immutable shard receipts; each closed shard SHA256 and original per-image hashes; preserve prior111generations",
+      "recovery": "Verify terminal state; reuse committed shards; re-read compressed prefix without new archive storage. Do not run duplicate job."
+    },
+    {
+      "utc": "2026-10-24T03:58:01.616914+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 1,
+      "shards_total": 111,
+      "usable_verified": 4888,
+      "scratch_free": 92548272128
+    },
+    {
+      "utc": "2026-10-24T03:58:08.191331+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 2,
+      "shards_total": 111,
+      "usable_verified": 9551,
+      "scratch_free": 92015513600
+    },
+    {
+      "utc": "2026-10-24T03:58:18.357258+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 3,
+      "shards_total": 111,
+      "usable_verified": 14573,
+      "scratch_free": 91477078016
+    },
+    {
+      "utc": "2026-10-24T03:58:23.865408+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 4,
+      "shards_total": 111,
+      "usable_verified": 19315,
+      "scratch_free": 90937241600
+    },
+    {
+      "utc": "2026-10-24T03:58:36.351382+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 5,
+      "shards_total": 111,
+      "usable_verified": 23749,
+      "scratch_free": 90397478912
+    },
+    {
+      "utc": "2026-10-24T03:58:42.006319+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 6,
+      "shards_total": 111,
+      "usable_verified": 28429,
+      "scratch_free": 89859338240
+    },
+    {
+      "utc": "2026-10-24T03:58:48.792020+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 7,
+      "shards_total": 111,
+      "usable_verified": 32964,
+      "scratch_free": 89320681472
+    },
+    {
+      "utc": "2026-10-24T03:58:56.214299+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 8,
+      "shards_total": 111,
+      "usable_verified": 37604,
+      "scratch_free": 88780107776
+    },
+    {
+      "utc": "2026-10-24T03:59:07.478350+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 9,
+      "shards_total": 111,
+      "usable_verified": 42307,
+      "scratch_free": 88239472640
+    },
+    {
+      "utc": "2026-10-24T03:59:14.820934+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 10,
+      "shards_total": 111,
+      "usable_verified": 46752,
+      "scratch_free": 87699030016
+    },
+    {
+      "utc": "2026-10-24T03:59:28.282430+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 11,
+      "shards_total": 111,
+      "usable_verified": 51453,
+      "scratch_free": 87158939648
+    },
+    {
+      "utc": "2026-10-24T03:59:34.958672+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 12,
+      "shards_total": 111,
+      "usable_verified": 56208,
+      "scratch_free": 86618222592
+    },
+    {
+      "utc": "2026-10-24T03:59:41.449827+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 13,
+      "shards_total": 111,
+      "usable_verified": 60786,
+      "scratch_free": 86086152192
+    },
+    {
+      "utc": "2026-10-24T03:59:47.726606+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 14,
+      "shards_total": 111,
+      "usable_verified": 65381,
+      "scratch_free": 85547438080
+    },
+    {
+      "utc": "2026-10-24T03:59:57.800076+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 15,
+      "shards_total": 111,
+      "usable_verified": 70006,
+      "scratch_free": 85008338944
+    },
+    {
+      "utc": "2026-10-24T04:00:04.699201+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 16,
+      "shards_total": 111,
+      "usable_verified": 74709,
+      "scratch_free": 84472422400
+    },
+    {
+      "utc": "2026-10-24T04:00:15.747845+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 17,
+      "shards_total": 111,
+      "usable_verified": 79468,
+      "scratch_free": 83934986240
+    },
+    {
+      "utc": "2026-10-24T04:00:29.015701+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 18,
+      "shards_total": 111,
+      "usable_verified": 83942,
+      "scratch_free": 83394150400
+    },
+    {
+      "utc": "2026-10-24T04:00:38.771664+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 19,
+      "shards_total": 111,
+      "usable_verified": 88436,
+      "scratch_free": 82854023168
+    },
+    {
+      "utc": "2026-10-24T04:00:45.344738+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 20,
+      "shards_total": 111,
+      "usable_verified": 93025,
+      "scratch_free": 82314371072
+    },
+    {
+      "utc": "2026-10-24T04:00:54.134029+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 21,
+      "shards_total": 111,
+      "usable_verified": 97443,
+      "scratch_free": 81773846528
+    },
+    {
+      "utc": "2026-10-24T04:01:00.882445+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 22,
+      "shards_total": 111,
+      "usable_verified": 102325,
+      "scratch_free": 81237872640
+    },
+    {
+      "utc": "2026-10-24T04:01:10.271209+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 23,
+      "shards_total": 111,
+      "usable_verified": 106913,
+      "scratch_free": 80697241600
+    },
+    {
+      "utc": "2026-10-24T04:01:18.510270+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 24,
+      "shards_total": 111,
+      "usable_verified": 111675,
+      "scratch_free": 80157900800
+    },
+    {
+      "utc": "2026-10-24T04:01:25.229517+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 25,
+      "shards_total": 111,
+      "usable_verified": 116152,
+      "scratch_free": 79617400832
+    },
+    {
+      "utc": "2026-10-24T04:01:31.870994+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 26,
+      "shards_total": 111,
+      "usable_verified": 120613,
+      "scratch_free": 79079055360
+    },
+    {
+      "utc": "2026-10-24T04:01:37.447931+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 27,
+      "shards_total": 111,
+      "usable_verified": 125291,
+      "scratch_free": 78547742720
+    },
+    {
+      "utc": "2026-10-24T04:01:48.637303+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 28,
+      "shards_total": 111,
+      "usable_verified": 129661,
+      "scratch_free": 78012256256
+    },
+    {
+      "utc": "2026-10-24T04:01:54.871302+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 29,
+      "shards_total": 111,
+      "usable_verified": 134250,
+      "scratch_free": 77471588352
+    },
+    {
+      "utc": "2026-10-24T04:02:01.208148+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 30,
+      "shards_total": 111,
+      "usable_verified": 138703,
+      "scratch_free": 76934930432
+    },
+    {
+      "utc": "2026-10-24T04:02:09.831294+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 31,
+      "shards_total": 111,
+      "usable_verified": 143269,
+      "scratch_free": 76394856448
+    },
+    {
+      "utc": "2026-10-24T04:02:19.286807+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 32,
+      "shards_total": 111,
+      "usable_verified": 147859,
+      "scratch_free": 76015509504
+    },
+    {
+      "utc": "2026-10-24T04:02:25.510726+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 33,
+      "shards_total": 111,
+      "usable_verified": 152453,
+      "scratch_free": 76294164480
+    },
+    {
+      "utc": "2026-10-24T04:02:32.297220+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 34,
+      "shards_total": 111,
+      "usable_verified": 156943,
+      "scratch_free": 76296470528
+    },
+    {
+      "utc": "2026-10-24T04:02:41.724046+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 35,
+      "shards_total": 111,
+      "usable_verified": 161284,
+      "scratch_free": 76295299072
+    },
+    {
+      "utc": "2026-10-24T04:03:31.391538+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 36,
+      "shards_total": 111,
+      "usable_verified": 166016,
+      "scratch_free": 76293324800
+    },
+    {
+      "utc": "2026-10-24T04:03:41.562180+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 37,
+      "shards_total": 111,
+      "usable_verified": 170518,
+      "scratch_free": 76293902336
+    },
+    {
+      "utc": "2026-10-24T04:03:51.552930+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 38,
+      "shards_total": 111,
+      "usable_verified": 175089,
+      "scratch_free": 76292509696
+    },
+    {
+      "utc": "2026-10-24T04:04:05.774377+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 39,
+      "shards_total": 111,
+      "usable_verified": 179841,
+      "scratch_free": 76290719744
+    },
+    {
+      "utc": "2026-10-24T04:04:13.708243+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 40,
+      "shards_total": 111,
+      "usable_verified": 184335,
+      "scratch_free": 76287180800
+    },
+    {
+      "utc": "2026-10-24T04:04:26.277401+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 41,
+      "shards_total": 111,
+      "usable_verified": 188998,
+      "scratch_free": 76287954944
+    },
+    {
+      "utc": "2026-10-24T04:04:33.134182+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 42,
+      "shards_total": 111,
+      "usable_verified": 193494,
+      "scratch_free": 76290936832
+    },
+    {
+      "utc": "2026-10-24T04:04:39.704350+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 43,
+      "shards_total": 111,
+      "usable_verified": 198217,
+      "scratch_free": 76288450560
+    },
+    {
+      "utc": "2026-10-24T04:04:46.420612+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 44,
+      "shards_total": 111,
+      "usable_verified": 202911,
+      "scratch_free": 76288389120
+    },
+    {
+      "utc": "2026-10-24T04:04:53.518247+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 45,
+      "shards_total": 111,
+      "usable_verified": 207221,
+      "scratch_free": 76288299008
+    },
+    {
+      "utc": "2026-10-24T04:05:03.128819+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 46,
+      "shards_total": 111,
+      "usable_verified": 211672,
+      "scratch_free": 76284657664
+    },
+    {
+      "utc": "2026-10-24T04:05:13.391448+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 47,
+      "shards_total": 111,
+      "usable_verified": 216256,
+      "scratch_free": 76284510208
+    },
+    {
+      "utc": "2026-10-24T04:05:22.876079+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 48,
+      "shards_total": 111,
+      "usable_verified": 220751,
+      "scratch_free": 76284391424
+    },
+    {
+      "utc": "2026-10-24T04:05:31.030445+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 49,
+      "shards_total": 111,
+      "usable_verified": 225407,
+      "scratch_free": 76284743680
+    },
+    {
+      "utc": "2026-10-24T04:05:39.761778+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 50,
+      "shards_total": 111,
+      "usable_verified": 229949,
+      "scratch_free": 76286488576
+    },
+    {
+      "utc": "2026-10-24T04:05:42.545033+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 51,
+      "shards_total": 111,
+      "usable_verified": 230589,
+      "scratch_free": 76222951424
+    },
+    {
+      "utc": "2026-10-24T04:05:50.159639+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 52,
+      "shards_total": 111,
+      "usable_verified": 235411,
+      "scratch_free": 76222472192
+    },
+    {
+      "utc": "2026-10-24T04:05:58.183329+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 53,
+      "shards_total": 111,
+      "usable_verified": 239889,
+      "scratch_free": 76221063168
+    },
+    {
+      "utc": "2026-10-24T04:06:04.353983+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 54,
+      "shards_total": 111,
+      "usable_verified": 244747,
+      "scratch_free": 76225290240
+    },
+    {
+      "utc": "2026-10-24T04:06:16.501294+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 55,
+      "shards_total": 111,
+      "usable_verified": 249550,
+      "scratch_free": 76225355776
+    },
+    {
+      "utc": "2026-10-24T04:06:25.783322+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 56,
+      "shards_total": 111,
+      "usable_verified": 254489,
+      "scratch_free": 76223156224
+    },
+    {
+      "utc": "2026-10-24T04:06:52.548270+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 57,
+      "shards_total": 111,
+      "usable_verified": 259129,
+      "scratch_free": 76220907520
+    },
+    {
+      "utc": "2026-10-24T04:07:00.330426+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 58,
+      "shards_total": 111,
+      "usable_verified": 263732,
+      "scratch_free": 76220510208
+    },
+    {
+      "utc": "2026-10-24T04:07:15.357390+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 59,
+      "shards_total": 111,
+      "usable_verified": 268242,
+      "scratch_free": 76221677568
+    },
+    {
+      "utc": "2026-10-24T04:07:25.850988+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 60,
+      "shards_total": 111,
+      "usable_verified": 272805,
+      "scratch_free": 76217303040
+    },
+    {
+      "utc": "2026-10-24T04:07:43.136355+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 61,
+      "shards_total": 111,
+      "usable_verified": 277353,
+      "scratch_free": 76214140928
+    },
+    {
+      "utc": "2026-10-24T04:07:49.961857+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 62,
+      "shards_total": 111,
+      "usable_verified": 282156,
+      "scratch_free": 76214472704
+    },
+    {
+      "utc": "2026-10-24T04:07:58.716347+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 63,
+      "shards_total": 111,
+      "usable_verified": 286921,
+      "scratch_free": 76213641216
+    },
+    {
+      "utc": "2026-10-24T04:08:07.657163+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 64,
+      "shards_total": 111,
+      "usable_verified": 291473,
+      "scratch_free": 76210438144
+    },
+    {
+      "utc": "2026-10-24T04:08:14.119878+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 65,
+      "shards_total": 111,
+      "usable_verified": 296057,
+      "scratch_free": 76209594368
+    },
+    {
+      "utc": "2026-10-24T04:08:23.886011+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 66,
+      "shards_total": 111,
+      "usable_verified": 300718,
+      "scratch_free": 76207304704
+    },
+    {
+      "utc": "2026-10-24T04:08:30.101718+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 67,
+      "shards_total": 111,
+      "usable_verified": 305256,
+      "scratch_free": 76210167808
+    },
+    {
+      "utc": "2026-10-24T04:08:37.723925+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 68,
+      "shards_total": 111,
+      "usable_verified": 310056,
+      "scratch_free": 76211023872
+    },
+    {
+      "utc": "2026-10-24T04:08:44.877148+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 69,
+      "shards_total": 111,
+      "usable_verified": 314452,
+      "scratch_free": 76213284864
+    },
+    {
+      "utc": "2026-10-24T04:08:53.473650+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 70,
+      "shards_total": 111,
+      "usable_verified": 319092,
+      "scratch_free": 76214435840
+    },
+    {
+      "utc": "2026-10-24T04:08:59.111759+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 71,
+      "shards_total": 111,
+      "usable_verified": 323527,
+      "scratch_free": 76212637696
+    },
+    {
+      "utc": "2026-10-24T04:09:05.122809+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 72,
+      "shards_total": 111,
+      "usable_verified": 328170,
+      "scratch_free": 76212535296
+    },
+    {
+      "utc": "2026-10-24T04:09:14.659834+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 73,
+      "shards_total": 111,
+      "usable_verified": 332734,
+      "scratch_free": 76210651136
+    },
+    {
+      "utc": "2026-10-24T04:09:22.286506+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 74,
+      "shards_total": 111,
+      "usable_verified": 337228,
+      "scratch_free": 76207419392
+    },
+    {
+      "utc": "2026-10-24T04:09:31.526099+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 75,
+      "shards_total": 111,
+      "usable_verified": 341789,
+      "scratch_free": 76209033216
+    },
+    {
+      "utc": "2026-10-24T04:09:42.242100+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 76,
+      "shards_total": 111,
+      "usable_verified": 346159,
+      "scratch_free": 76208709632
+    },
+    {
+      "utc": "2026-10-24T04:09:50.953578+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 77,
+      "shards_total": 111,
+      "usable_verified": 350951,
+      "scratch_free": 76209582080
+    },
+    {
+      "utc": "2026-10-24T04:09:56.907462+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 78,
+      "shards_total": 111,
+      "usable_verified": 355386,
+      "scratch_free": 76212371456
+    },
+    {
+      "utc": "2026-10-24T04:10:10.880418+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 79,
+      "shards_total": 111,
+      "usable_verified": 359884,
+      "scratch_free": 76209930240
+    },
+    {
+      "utc": "2026-10-24T04:10:18.983908+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 80,
+      "shards_total": 111,
+      "usable_verified": 364628,
+      "scratch_free": 76207632384
+    },
+    {
+      "utc": "2026-10-24T04:10:25.363465+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 81,
+      "shards_total": 111,
+      "usable_verified": 368959,
+      "scratch_free": 76208619520
+    },
+    {
+      "utc": "2026-10-24T04:10:31.947317+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 82,
+      "shards_total": 111,
+      "usable_verified": 373744,
+      "scratch_free": 76206170112
+    },
+    {
+      "utc": "2026-10-24T04:10:40.846069+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 83,
+      "shards_total": 111,
+      "usable_verified": 378262,
+      "scratch_free": 76206047232
+    },
+    {
+      "utc": "2026-10-24T04:10:46.855317+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 84,
+      "shards_total": 111,
+      "usable_verified": 382890,
+      "scratch_free": 76206309376
+    },
+    {
+      "utc": "2026-10-24T04:10:56.086060+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 85,
+      "shards_total": 111,
+      "usable_verified": 387399,
+      "scratch_free": 76205613056
+    },
+    {
+      "utc": "2026-10-24T04:11:02.317818+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 86,
+      "shards_total": 111,
+      "usable_verified": 391873,
+      "scratch_free": 76208742400
+    },
+    {
+      "utc": "2026-10-24T04:11:10.401973+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 87,
+      "shards_total": 111,
+      "usable_verified": 396356,
+      "scratch_free": 76211712000
+    },
+    {
+      "utc": "2026-10-24T04:11:16.039658+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 88,
+      "shards_total": 111,
+      "usable_verified": 400833,
+      "scratch_free": 76211703808
+    },
+    {
+      "utc": "2026-10-24T04:11:25.419405+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 89,
+      "shards_total": 111,
+      "usable_verified": 405238,
+      "scratch_free": 76210094080
+    },
+    {
+      "utc": "2026-10-24T04:11:34.854601+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 90,
+      "shards_total": 111,
+      "usable_verified": 409783,
+      "scratch_free": 76211355648
+    },
+    {
+      "utc": "2026-10-24T04:11:42.983773+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 91,
+      "shards_total": 111,
+      "usable_verified": 414186,
+      "scratch_free": 76278390784
+    },
+    {
+      "utc": "2026-10-24T04:11:51.777022+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 92,
+      "shards_total": 111,
+      "usable_verified": 418831,
+      "scratch_free": 76276355072
+    },
+    {
+      "utc": "2026-10-24T04:11:57.684341+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 93,
+      "shards_total": 111,
+      "usable_verified": 423339,
+      "scratch_free": 76278132736
+    },
+    {
+      "utc": "2026-10-24T04:12:06.122875+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 94,
+      "shards_total": 111,
+      "usable_verified": 427894,
+      "scratch_free": 76278960128
+    },
+    {
+      "utc": "2026-10-24T04:12:14.714482+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 95,
+      "shards_total": 111,
+      "usable_verified": 432184,
+      "scratch_free": 76278620160
+    },
+    {
+      "utc": "2026-10-24T04:12:22.953834+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 96,
+      "shards_total": 111,
+      "usable_verified": 436877,
+      "scratch_free": 76276559872
+    },
+    {
+      "utc": "2026-10-24T04:12:31.877400+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 97,
+      "shards_total": 111,
+      "usable_verified": 441054,
+      "scratch_free": 76276662272
+    },
+    {
+      "utc": "2026-10-24T04:12:38.372853+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 98,
+      "shards_total": 111,
+      "usable_verified": 445534,
+      "scratch_free": 76276547584
+    },
+    {
+      "utc": "2026-10-24T04:12:49.008854+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 99,
+      "shards_total": 111,
+      "usable_verified": 450109,
+      "scratch_free": 76273938432
+    },
+    {
+      "utc": "2026-10-24T04:12:58.609834+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 100,
+      "shards_total": 111,
+      "usable_verified": 454723,
+      "scratch_free": 76275077120
+    },
+    {
+      "utc": "2026-10-24T04:13:06.500784+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 101,
+      "shards_total": 111,
+      "usable_verified": 459545,
+      "scratch_free": 76274413568
+    },
+    {
+      "utc": "2026-10-24T04:13:14.274314+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 102,
+      "shards_total": 111,
+      "usable_verified": 464037,
+      "scratch_free": 76274450432
+    },
+    {
+      "utc": "2026-10-24T04:13:21.241572+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 103,
+      "shards_total": 111,
+      "usable_verified": 468908,
+      "scratch_free": 76273627136
+    },
+    {
+      "utc": "2026-10-24T04:13:28.040175+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 104,
+      "shards_total": 111,
+      "usable_verified": 473715,
+      "scratch_free": 76277506048
+    },
+    {
+      "utc": "2026-10-24T04:13:34.846995+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 105,
+      "shards_total": 111,
+      "usable_verified": 478383,
+      "scratch_free": 76279599104
+    },
+    {
+      "utc": "2026-10-24T04:13:42.081152+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 106,
+      "shards_total": 111,
+      "usable_verified": 482896,
+      "scratch_free": 76278202368
+    },
+    {
+      "utc": "2026-10-24T04:13:48.701595+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 107,
+      "shards_total": 111,
+      "usable_verified": 487213,
+      "scratch_free": 76276973568
+    },
+    {
+      "utc": "2026-10-24T04:13:57.788942+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 108,
+      "shards_total": 111,
+      "usable_verified": 491988,
+      "scratch_free": 76281413632
+    },
+    {
+      "utc": "2026-10-24T04:14:03.599202+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 109,
+      "shards_total": 111,
+      "usable_verified": 496373,
+      "scratch_free": 76280152064
+    },
+    {
+      "utc": "2026-10-24T04:14:12.245894+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 110,
+      "shards_total": 111,
+      "usable_verified": 500983,
+      "scratch_free": 76281794560
+    },
+    {
+      "utc": "2026-10-24T04:14:19.999612+00:00",
+      "state": "revalidating_committed_shards",
+      "shards_checked": 111,
+      "shards_total": 111,
+      "usable_verified": 505573,
+      "scratch_free": 76279607296
+    },
+    {
+      "utc": "2026-10-24T04:16:55.206286+00:00",
+      "state": "replaying_verified_prefix",
+      "usable_committed": 505573,
+      "usable_in_open_shard": 0,
+      "required": 682661,
+      "source_bytes_read": 1619836928,
+      "source_required_members_seen": 10000,
+      "elapsed_seconds": 155.20081502999983,
+      "scratch_free": 76278530048
+    },
+    {
+      "utc": "2026-10-24T04:19:38.734678+00:00",
+      "state": "replaying_verified_prefix",
+      "usable_committed": 505573,
+      "usable_in_open_shard": 0,
+      "required": 682661,
+      "source_bytes_read": 3260915712,
+      "source_required_members_seen": 20000,
+      "elapsed_seconds": 318.72920587199997,
+      "scratch_free": 76276768768
+    }
+  ],
+  "image_gate_passed": false,
+  "scientific_training_started": false
+}

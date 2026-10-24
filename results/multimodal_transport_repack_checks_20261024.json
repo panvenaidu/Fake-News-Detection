@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "scope": "Synthetic9images only; full source CLI gate not bypassed",
+  "checks": [
+    "Bounded transport grouping and restart",
+    "Every image byte, ID, split, title, label and source path preserved",
+    "Previously committed packs unchanged",
+    "Orphan ignored",
+    "Corrupt committed pack rejected",
+    "Transport packing never marks runtime image gate passed"
+  ],
+  "source_sha256": "b8703658a25655b7523c15cd5493321b727a8da63539ffbf651965a6e84de3e8"
+}

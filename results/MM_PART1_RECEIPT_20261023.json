@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-24T00:05:13.928027+00:00",
+  "updated_utc": "2026-10-24T04:22:16.420799+00:00",
   "plan": "MM-PART1-v2",
-  "state": "paused_goal_requires_human_resume_cloud_runtime_disconnected",
+  "state": "active_stream_recovery_verified_prefix_replay",
   "part1_complete": false,
   "scientific_training_started": false,
   "epochs_completed": 0,
@@ -16,7 +16,7 @@
   "source_archive_download_confirmed": false,
   "drive_storage_observed": "185.53 GB of5.39 TB after cloud source copy; historical UI snapshot, later shards increase usage",
   "cpu_prep_notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
-  "cpu_runtime": "Colab explicitly reports Runtime disconnected due to inactivity or maximum duration. Saved Cell6 shows a traceback inside imageprep.extract; exact terminal exception not retrieved because desktop control became unavailable. Completion and latest durable count unverified.",
+  "cpu_runtime": "Current CPU stream job CPU_STREAM_PREP_87f54da6a55c47349ba79a6f6ab33747 live; committed-shard SHA revalidation advancing",
   "image_gate_passed": false,
   "image_coverage": "results/official_image_coverage_v1.json",
   "recovery_checks": "results/multimodal_recovery_primitives_checks_20261023.json",
@@ -27,7 +27,7 @@
     "Private Kaggle full-image input import/storage route still needs measured verification",
     "CUDA fixture passed; full pretrained-model/image I/O throughput and durable scientific checkpoint export remain pending"
   ],
-  "next_action": "Human must resume the paused goal through supported goal controls; this tool cannot resume it. Then recover desktop control, inspect exact job result and durable shard receipts before any extraction restart; no duplicate job. Full image gate and runtime verification required before scientific epochs1\u20132. No final test in Part1.",
+  "next_action": "Keep exact existing bounded CPU job; source CRC/SHA/cohort gate, then lossless larger transport packs, immutable full private Kaggle input/runtime audit, actual CUDA/throughput preflight, registered epochs1\u20132. No final test. See exact continuation section in resume checkpoint.",
   "progress": {
     "text": 100,
     "multimodal": 40,
@@ -59,9 +59,9 @@
     "notebooks/UROP_MM_PART1_CUDA_ENGINEERING_20261023.ipynb": "9072566aa987235a02c4060fa716b7d3bfeb72ad5f3856ea8a9dba1272f936af"
   },
   "assistant_usage_observed": {
-    "short_window_remaining_percent": 100,
-    "weekly_remaining_percent": 85,
-    "action": "Allowance reset; paused goal cannot be resumed with available tools; notify human."
+    "short_window_remaining_percent": 43,
+    "weekly_remaining_percent": 76,
+    "action": "Goal active; CPU-only bounded recovery. Preserve thresholds20/10/5."
   },
   "drive_access_approved": true,
   "full_trainer": "scripts/train_official_multimodal_v1.py",
@@ -174,5 +174,29 @@
     "required": 682661,
     "elapsed_seconds": 2696.805649424
   },
-  "latest_heartbeat": "results/MM_PART1_HEARTBEAT_20261024.json"
+  "latest_heartbeat": "results/MM_PART1_HEARTBEAT_20261024.json",
+  "latest_stream_job": "results/MM_PART1_STREAM_JOB_20261024.json",
+  "metadata_committed_images": 505573,
+  "latest_stream_observation": {
+    "utc": "2026-10-24T04:19:38.734678+00:00",
+    "state": "replaying_verified_prefix",
+    "usable_committed": 505573,
+    "usable_in_open_shard": 0,
+    "required": 682661,
+    "source_bytes_read": 3260915712,
+    "source_required_members_seen": 20000,
+    "elapsed_seconds": 318.72920587199997,
+    "scratch_free": 76276768768
+  },
+  "committed_shard_hash_audit": {
+    "utc": "2026-10-24T04:14:19.999612+00:00",
+    "state": "revalidating_committed_shards",
+    "shards_checked": 111,
+    "shards_total": 111,
+    "usable_verified": 505573,
+    "scratch_free": 76279607296
+  },
+  "private_staging_engineering": "results/MM_PART1_PRIVATE_STAGING_ENGINEERING_20261024.json",
+  "transport_repacker": "collab/repack_official_images_kaggle_v1.py",
+  "transport_repacker_state": "Local prepared and synthetic checked; not run on real data"
 }

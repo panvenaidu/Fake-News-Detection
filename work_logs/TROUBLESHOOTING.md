@@ -1,3 +1,9 @@
+##24October2026: official image staging scratch limit
+
+The prior CPU job stopped at505573 committed images because the8GiB scratch guard triggered. Source/shards are in Drive, but mounted Drive reads/writes use runtime cache; Drive quota does not increase VM disk. The error itself is verified; exact cache-byte attribution was not separately profiled. A replacement streamed reader uses the same original public author file, verifies HTTP ranges, total length, original head/tail bytes and final CRC/SHA, and avoids storing the full compressed source on VM. Committed shards are hash-revalidated and reused; orphans preserved. The active job is recorded in results/MM_PART1_STREAM_JOB_20261024.json. No scientific cohort/model/protocol change, no paid resources or extra permissions. Do not bypass disk safety or blindly restart old code.
+
+Primary references: https://research.google.com/colaboratory/faq.html ; https://github.com/googlecolab/colabtools/blob/main/google/colab/drive.py .
+
 ## Verified recovery outcome — 9 October 2026
 
 Versioned recovery passed locally and in KaggleTorch2.11. Original epoch5 validation was reproduced; epoch6 completed and epoch4 selected. Both downloaded archives passed checksums/CRC; full prediction verification and strict model/optimizer/scheduler/AMP/tokenizer loads passed. Completion guard returned without training/inference. Native Chrome AX toggling did not refresh the download toast; the visible toolbar coordinate opened the current download panel and confirmed completion. No duplicate download/training was launched from observation timeouts.

@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-10-23T18:51:15.639847+00:00",
-  "status": "bounded_cpu_extraction_launched",
+  "updated_utc": "2026-10-24T04:22:16.420799+00:00",
+  "status": "bounded_stream_recovery_running",
   "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
   "account": "panvee62@gmail.com",
   "profile": "Rocky",
@@ -93,5 +93,72 @@
     "required": 682661,
     "elapsed_seconds": 2696.805649424
   },
-  "assistant_handoff": "Usage pause; existing bounded CPU extraction left intact, completion unverified. No continued monitoring claimed."
+  "assistant_handoff": "Usage pause; existing bounded CPU extraction left intact, completion unverified. No continued monitoring claimed.",
+  "prior_job_error": "Scratch margin fell below8GiB; old source read/write DriveFS cache exhausted scratch",
+  "stream_recovery_job": {
+    "state": "bounded_stream_recovery_started",
+    "utc": "2026-10-24T03:57:50.010031+00:00",
+    "job_id": "CPU_STREAM_PREP_87f54da6a55c47349ba79a6f6ab33747",
+    "pid": 5722,
+    "max_seconds_after_committed_hash_audit": 28800,
+    "script_sha256": "5b9be91021d4d397d8f3bd74c0354d0496b7cfb685723cf2c3c3ee24ea6266e6",
+    "original_source_id": "1cjY6HsHaSZuLVHywIxD5xQqng33J5S2b",
+    "required": 682661,
+    "source_route": "Same original public author archive via verified HTTP ranges; no full source file written in VM",
+    "existing_metadata_count": 505573,
+    "existing_committed_shards": 111,
+    "existing_committed_shard_bytes": 59466014720,
+    "existing_hashes_rechecked_before_extraction": true,
+    "uncommitted_orphans_ignored": [
+      "images_20ad5ec99d0c4f59990dc54e195383b7.tar",
+      "images_3d24f1ea619648fd9138ea942cffbe25.tar"
+    ],
+    "gpu": false,
+    "training": false,
+    "final_test": false,
+    "source_head_tail_identity_proof": "results/MM_PART1_STREAM_SOURCE_PROBE_20261024.json",
+    "scratch_safety_bytes": 8589934592,
+    "checkpoint": "New immutable shard receipts; each closed shard SHA256 and original per-image hashes; preserve prior111generations",
+    "recovery": "Verify terminal state; reuse committed shards; re-read compressed prefix without new archive storage. Do not run duplicate job."
+  },
+  "latest_stream_hash_observation": {
+    "utc": "2026-10-24T03:59:14.820934+00:00",
+    "state": "revalidating_committed_shards",
+    "shards_checked": 10,
+    "shards_total": 111,
+    "usable_verified": 46752,
+    "scratch_free": 87699030016
+  },
+  "metadata_committed_images": 505573,
+  "state": "active_stream_recovery_verified_prefix_replay",
+  "latest_stream_job": "results/MM_PART1_STREAM_JOB_20261024.json",
+  "latest_stream_observation": {
+    "utc": "2026-10-24T04:19:38.734678+00:00",
+    "state": "replaying_verified_prefix",
+    "usable_committed": 505573,
+    "usable_in_open_shard": 0,
+    "required": 682661,
+    "source_bytes_read": 3260915712,
+    "source_required_members_seen": 20000,
+    "elapsed_seconds": 318.72920587199997,
+    "scratch_free": 76276768768
+  },
+  "committed_shard_hash_audit": {
+    "utc": "2026-10-24T04:14:19.999612+00:00",
+    "state": "revalidating_committed_shards",
+    "shards_checked": 111,
+    "shards_total": 111,
+    "usable_verified": 505573,
+    "scratch_free": 76279607296
+  },
+  "image_gate_passed": false,
+  "private_staging_engineering": "results/MM_PART1_PRIVATE_STAGING_ENGINEERING_20261024.json",
+  "transport_repacker": "collab/repack_official_images_kaggle_v1.py",
+  "transport_repacker_state": "Local prepared and synthetic checked; not run on real data",
+  "next_action": "Keep exact existing bounded CPU job; source CRC/SHA/cohort gate, then lossless larger transport packs, immutable full private Kaggle input/runtime audit, actual CUDA/throughput preflight, registered epochs1\u20132. No final test. See exact continuation section in resume checkpoint.",
+  "assistant_usage_observed": {
+    "short_window_remaining_percent": 43,
+    "weekly_remaining_percent": 76,
+    "action": "Goal active; CPU-only bounded recovery. Preserve thresholds20/10/5."
+  }
 }

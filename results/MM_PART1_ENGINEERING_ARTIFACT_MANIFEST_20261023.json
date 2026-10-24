@@ -1,7 +1,7 @@
 {
-  "utc": "2026-10-23T18:34:29.310176+00:00",
-  "status": "Engineering/staging checkpoint, not accepted Part1",
-  "artifact_count": 15,
+  "utc": "2026-10-24T04:22:16.420799+00:00",
+  "status": "Engineering/recovery checkpoint; not accepted Part1",
+  "artifact_count": 26,
   "artifacts": [
     {
       "path": "scripts/train_official_multimodal_v1.py",
@@ -92,6 +92,72 @@
       "bytes": 716,
       "sha256": "79f727198ef8cba06ff8042505125911ad2ec001892fd245df4d437dc7299d4d",
       "role": "engineering_or_source_verification"
+    },
+    {
+      "path": "collab/prepare_official_images_stream_v2.py",
+      "bytes": 9518,
+      "sha256": "5b9be91021d4d397d8f3bd74c0354d0496b7cfb685723cf2c3c3ee24ea6266e6",
+      "role": "Engineering source or source-only notebook mirror"
+    },
+    {
+      "path": "collab/multimodal_image_recovery_inventory_20261024.py",
+      "bytes": 2924,
+      "sha256": "60a000f6999f1bee39eb76d484e8636a6dab60d897c9279a158a1b8dc53d4bf4",
+      "role": "Engineering source or source-only notebook mirror"
+    },
+    {
+      "path": "collab/multimodal_stream_probe_cell_20261024.py",
+      "bytes": 12566,
+      "sha256": "a993b4b8ba5dc90c7525ab9c5b36526c2186cd1f58755efd2157bf4fd6f4eb02",
+      "role": "Engineering source or source-only notebook mirror"
+    },
+    {
+      "path": "collab/multimodal_stream_recovery_launch_cell_20261024.py",
+      "bytes": 3313,
+      "sha256": "5722b68234c661968ea681dd742792fc95048d37c46ae1cb400cee3b4cdca029",
+      "role": "Engineering source or source-only notebook mirror"
+    },
+    {
+      "path": "scripts/check_multimodal_stream_recovery_v2.py",
+      "bytes": 4607,
+      "sha256": "d390ac75e31add44ca100f556f7b6ab8bdebc4b817624902637d707a09bfed77",
+      "role": "Engineering source or source-only notebook mirror"
+    },
+    {
+      "path": "collab/repack_official_images_kaggle_v1.py",
+      "bytes": 7532,
+      "sha256": "b8703658a25655b7523c15cd5493321b727a8da63539ffbf651965a6e84de3e8",
+      "role": "Prepared transport source; not yet run on real data"
+    },
+    {
+      "path": "scripts/check_multimodal_transport_repack_v1.py",
+      "bytes": 3510,
+      "sha256": "90e5e2250e097024078b2f373a7cb9f139a44b3c2823ee212ced1c7ca422d234",
+      "role": "Engineering source or source-only notebook mirror"
+    },
+    {
+      "path": "collab/check_kaggle_private_staging_v1.py",
+      "bytes": 2209,
+      "sha256": "a456e410cdae20702338291e9e952306519e5e7118797105e883ebb825c540bf",
+      "role": "Engineering source or source-only notebook mirror"
+    },
+    {
+      "path": "notebooks/UROP_MM_PART1_IMAGE_PREP_CPU_20261024.ipynb",
+      "bytes": 40905,
+      "sha256": "b7c990a1a13f087455efec73371ce321e025a3418ed562fbcfb6facdeb5e5f7d",
+      "role": "Engineering source or source-only notebook mirror"
+    },
+    {
+      "path": "results/multimodal_stream_recovery_checks_20261024.json",
+      "bytes": 570,
+      "sha256": "9ee9224ec51cbd5fb846ba544b807952f3639b68b82072605e7886f35ce7908d",
+      "role": "Synthetic check receipt"
+    },
+    {
+      "path": "results/multimodal_transport_repack_checks_20261024.json",
+      "bytes": 490,
+      "sha256": "d79340eedb2f1b697b99e7600980c1d88a47cd7a89a9255a62ba82ad2ec28317",
+      "role": "Synthetic check receipt"
     }
   ],
   "excluded_from_git": [

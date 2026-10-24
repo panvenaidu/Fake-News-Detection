@@ -12,8 +12,8 @@
   "signed_in_account_observed": "Rocky62",
   "new_engineering_notebook": "https://www.kaggle.com/code/rocky62/urop-mm-part1-engineering-preflight/edit",
   "privacy_verified": "Private",
-  "editor_state": "Direct Rocky Chrome desktop/extension inspection and one reload: Editor Loading, no code cells, no visible CAPTCHA challenge; no security changes.",
-  "accelerator_observed": "None on new notebook; no session started",
+  "editor_state": "Loaded;640-image private staging CPU integrity check passed; private Version1 output verified after runtime stop.",
+  "accelerator_observed": "None/CPU; completed CPU session stopped. No scientific GPU run allocated.",
   "import_ui_observed": [
     "Local files",
     "Public remote URLs",
@@ -27,7 +27,7 @@
     "Private dataset first version saved, but ZIP compression/roundtrip still pending",
     "Full pretrained/data I/O throughput not measured"
   ],
-  "updated_utc": "2026-10-23T18:51:15.639847+00:00",
+  "updated_utc": "2026-10-24T04:22:16.420799+00:00",
   "private_quota_observed_before_upload": {
     "used_gb_display": 2.31,
     "total_gb_display": 214.75,
@@ -53,5 +53,8 @@
     "engineering_check_passed": true,
     "released_after_receipt_retrieval": true
   },
-  "editor_screenshot": "results/mm_part1_kaggle_editor_loading_20261023.png"
+  "editor_screenshot": "results/mm_part1_kaggle_editor_loading_20261023.png",
+  "private_staging_runtime_verification": "results/MM_PART1_PRIVATE_STAGING_ENGINEERING_20261024.json",
+  "saved_engineering_output": "https://www.kaggle.com/code/rocky62/urop-mm-part1-engineering-preflight/output",
+  "saved_engineering_version": 1
 }
