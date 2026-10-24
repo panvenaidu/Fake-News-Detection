@@ -57,8 +57,21 @@
     "weekly_remaining": 28,
     "action": "Reserve: no new longjob/largetransfer/major debugging; save evidence, sync and handoff"
   },
-  "goal_status_observed": "paused",
+  "goal_status_observed": "active",
   "user_said_existing_goal_resumed": true,
   "goal_resume_API_available": false,
-  "next": "After allowance recovers, check existingGoal supported resume status without duplication. No active imagecopy/trainer exists. Inspect new derived1.7MB receiptcopy through same approved Drive, with a boundedread only. Preserve original source metadata; compare full bytes/hash or explicit source/packed-row evidence before any alternative metadata path. If copy read also fails, do not loop resets: inspect supported private transfer/service route. Only resume pinned one-hour transport after reads/guards pass; then metadata/full immutable Kaggle input/runtimeimagehashdecode/CUDA/measuredpreflight/epochs1\u20132validation. No finaltest."
+  "next": "ExistingGoal is now ACTIVE; do not ask user to resume again unless actual status changes. Wait for allowance to recover above20percent before new debugging/transfer/job. Then follow preserved derivedreceiptcopy read/reconciliation and full privateinput/runtime verification, CUDA/measuredpreflight, epochs1\u20132validation. No finaltest.",
+  "latest_goal_recheck": {
+    "utc": "2026-10-24T16:00:10.459603+00:00",
+    "status": "active",
+    "user_resume_now_reflected": true,
+    "short_remaining": 13,
+    "weekly_remaining": 27,
+    "reserve_active": true,
+    "running_notebook_cells": [],
+    "inventory_cell_terminal": true,
+    "no_new_cloud_job": true,
+    "previous_goal_turn_classification": "Progress: approved reset/backup performed, freshboot reproduced failure, safe diagnostic copy created, source/evidence backedup",
+    "current_goal_turn_classification": "Progress: revalidated runtime terminal status and corrected authoritative Goalresume state; substantive work held at userreserve"
+  }
 }

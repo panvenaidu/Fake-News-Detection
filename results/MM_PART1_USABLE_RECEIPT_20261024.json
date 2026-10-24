@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-24T15:55:24.809235+00:00",
+  "updated_utc": "2026-10-24T16:00:10.459603+00:00",
   "plan": "MM-PART1-v2+approved-usable-cohort-amendment20261024",
-  "goal_status": "paused",
+  "goal_status": "active_verified_after_delayed_resume",
   "approval": "results/MM_PART1_USABLE_COHORT_APPROVAL_20261024.json",
   "registration": "results/MM_PART1_USABLE_COHORT_REGISTRATION_20261024.json",
   "cohort_id": "FACULTY-6W-USABLE-682170-v1",
@@ -53,7 +53,7 @@
   },
   "terminal_flush_verified": false,
   "no_GPU_allocated": true,
-  "next": "After allowance recovers, check existingGoal supported resume status without duplication. No active imagecopy/trainer exists. Inspect new derived1.7MB receiptcopy through same approved Drive, with a boundedread only. Preserve original source metadata; compare full bytes/hash or explicit source/packed-row evidence before any alternative metadata path. If copy read also fails, do not loop resets: inspect supported private transfer/service route. Only resume pinned one-hour transport after reads/guards pass; then metadata/full immutable Kaggle input/runtimeimagehashdecode/CUDA/measuredpreflight/epochs1\u20132validation. No finaltest.",
+  "next": "ExistingGoal is now ACTIVE; do not ask user to resume again unless actual status changes. Wait for allowance to recover above20percent before new debugging/transfer/job. Then follow preserved derivedreceiptcopy read/reconciliation and full privateinput/runtime verification, CUDA/measuredpreflight, epochs1\u20132validation. No finaltest.",
   "bars": {
     "text_only": 100,
     "text_plus_image": 40,
@@ -61,9 +61,9 @@
     "overall": 53
   },
   "usage_observation": {
-    "short_remaining": 19,
-    "weekly_remaining": 28,
-    "action": "Reserve: no new longjob/largetransfer/major debugging; save evidence, sync and handoff"
+    "short_remaining": 13,
+    "weekly_remaining": 27,
+    "action": "Reserve checkpoint only; no new longjob/transfer/major debugging"
   },
   "limitations": [
     "Fresh ColabCPU reset did not fix Drivefile4readabort",
@@ -82,7 +82,7 @@
   "state": "approved_reset_complete_same_Drive_failure_reproduced_reserve_handoff",
   "goal_pause_requested": false,
   "previous_goal_turn_classification": "Progress: verified and pushed essential reserve handoff; paused per user10percent instruction",
-  "current_goal_turn_classification": "Progress: userapprovedreset completed after verifiedbackup/emptyprojectscratch; freshboot reproduces exactfile failure; tested originalerror fallback; derived smallreceiptcopy preserved; no scientific progress",
+  "current_goal_turn_classification": "Progress: revalidated runtime terminal status and corrected authoritative Goalresume state; substantive work held at userreserve",
   "prior_terminal": {
     "job_id": "CPU_USABLE_TRANSPORT_3bcc65e9a0c747288ae516a87ee6ccce",
     "images_committed": 319820,

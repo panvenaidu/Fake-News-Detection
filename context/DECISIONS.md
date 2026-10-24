@@ -1,3 +1,7 @@
+<!-- GOAL RESUME VERIFIED -->
+2026-10-24T16:00:10.459603+00:00: ExistingGoal NOW VERIFIED ACTIVE afteruserresume; olderpausedstatusbelowishistorical. Currentallowance13%short/27%weekly, so userreserveapplies: no newdebugging/transfer/longjob. CurrentColabDOMconfirmszeroexecutingcells andsame terminalinventoryerror; this isNOTa verifiedwaitonlivework. No newcloudjob. Durable319820images18packs/scientific0train0validation/test0unchanged. Recovery/backupalreadyverified3c37da9. Do not requestduplicateGoal/resume again whileactualstatusactive. Afterallowance>20%, follow`results/MM_PART1_POST_RESET_HANDOFF_20261024.json`; at10%performessentialhandoff/pauseasuserinstructed, hardstop5%.
+<!-- /GOAL RESUME VERIFIED -->
+
 <!-- APPROVED RESET RESERVE HANDOFF -->
 ## Current recovery handoff — 2026-10-24T15:55:24.809235+00:00
 
