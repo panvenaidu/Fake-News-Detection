@@ -494,3 +494,7 @@ Original multimodal ZIP CRC/source/result values matched earlier UI evidence. Sy
 ### Latest live preparation observation
 
 2026-10-23T18:33:34.291373+00:00: 51536 committed images and4464 in the open shard, of682661 required. CPU job7128d949 continues bounded to8h from18:05:05UTC. Evidence: `results/mm_part1_cpu_progress_observations_20261023.json`. Scientific epochs0/2 and full validations0/2; test excluded. This update does not increase workflow bars.
+
+## Scheduled check — 2026-10-24T05:09:27.154831+00:00
+
+Existing goal remains paused; available tools cannot resume it. Short-window allowance reset to100% remaining; weekly70%. Existing CPU source stream advanced to220000 replayed source IDs/36622073856compressed bytes at05:07UTC, committed505573/682661images unchanged. No new extraction/training job launched, no new scientific result. Receipt: `results/MM_PART1_HEARTBEAT_20261024T0508Z.json`. User/system must resume the existing goal; then follow the exact cloud continuation above.

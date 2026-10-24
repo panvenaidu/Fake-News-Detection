@@ -1,0 +1,33 @@
+{
+  "checked_utc": "2026-10-24T05:09:27.154831+00:00",
+  "automation_id": "audit-urop-dataset-and-models",
+  "goal_status": "paused",
+  "usage_remaining_percent": {
+    "short_window": 100,
+    "weekly": 70
+  },
+  "execution_blocker": "Available goal tools cannot resume a paused goal. User/system goal resume required; no replacement goal created.",
+  "cloud_observation": {
+    "utc": "2026-10-24T05:07:00.483788+00:00",
+    "state": "replaying_verified_prefix",
+    "usable_committed": 505573,
+    "usable_in_open_shard": 0,
+    "required": 682661,
+    "source_bytes_read": 36622073856,
+    "source_required_members_seen": 220000,
+    "elapsed_seconds": 3160.4783193669996,
+    "scratch_free": 76273029120
+  },
+  "observation_basis": "Existing Colab Cell CTwlzdeQDnsR visible output: counters advanced from 210000 at05:04:43UTC to220000 at05:07:00UTC. No job restarted or allocated.",
+  "new_prepared_images_claimed": 0,
+  "scientific_epochs_completed": 0,
+  "full_validations_completed": 0,
+  "part1_complete": false,
+  "progress_percent": {
+    "text_only": 100,
+    "text_image": 40,
+    "image_only": 20,
+    "overall": 53
+  },
+  "next_action": "Resume existing app goal through user/system controls. Then inspect same bounded source stream and terminal receipts; finish exact image gate before packing/private runtime checks/training."
+}
