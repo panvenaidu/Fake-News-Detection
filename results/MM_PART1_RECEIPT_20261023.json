@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T10:38:52.274309+00:00",
+  "updated_utc": "2026-10-24T10:41:30.824485+00:00",
   "plan": "MM-PART1-v2",
   "state": "original_html_payloads_verified_awaiting_protocol_decision",
   "part1_complete": false,
@@ -236,5 +236,6 @@
     "remote_sha_observed": "0cd9783972636bd8618882253ae896a877205eb8",
     "verified_utc": "2026-10-24T10:38:52.274309+00:00",
     "scope": "Diagnosis/context/protocolproposal; this updated receipt is a separate child commit"
-  }
+  },
+  "original_specimen_private_backup_byte_verified": true
 }

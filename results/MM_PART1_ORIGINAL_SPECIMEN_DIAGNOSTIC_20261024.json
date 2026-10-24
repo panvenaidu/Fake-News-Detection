@@ -70,8 +70,14 @@
     "url": "https://drive.google.com/file/d/1q6aiYU2SeL89h6Eaz0twsCgWdJ65who8/view",
     "folder": "13VA4aO8-5dmt6en9JKrnyBPJ5_Cg4HRf",
     "upload_complete_observed": true,
-    "remote_byte_readback_verified": false,
-    "screenshot": "results/mm_part1_specimen_backup_20261024.png"
+    "remote_byte_readback_verified": true,
+    "screenshot": "results/mm_part1_specimen_backup_20261024.png",
+    "readback_verified_utc": "2026-10-24T10:41:30.824485+00:00",
+    "readback_path": "data/official_paired_v1/source_recovery/urop_failed_specimens_stateless_v2_DRIVE_READBACK.zip",
+    "readback_bytes": 137784,
+    "readback_sha256": "1389e967e5fbf31d444acf34c881c314803bf57542aca323137e41aa88733ef6",
+    "readback_zip_crc_verified": true,
+    "method": "One Chrome Download click; event observation timed out, completed actual137784byte download independently found and verified; no duplicate download"
   },
   "approval_state": "Pending explicit user decision; no exclusion applied"
 }
