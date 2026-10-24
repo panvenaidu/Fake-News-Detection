@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-24T20:35:15.822036+00:00",
+  "condition": "Applicable weekly allowance at20percent; user prohibits new long transfer, major debugging or training at/below20percent",
+  "consecutive_goal_turns_observed": 2,
+  "observations": [
+    {
+      "evidence": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
+      "goal_turn": "previous",
+      "weekly_remaining": 20,
+      "classification": "progress: verified API recovery and completed reserve checkpoint"
+    },
+    {
+      "goal_turn": "current",
+      "short_remaining": 67,
+      "weekly_remaining": 20,
+      "classification": "no_progress: allowance and same recovery state revalidated; no new scientific or transport work"
+    }
+  ],
+  "current_cloud_observation": "Existing Rocky62 Colab CPU notebook is connected/idle; no Executing status. Exact metadata/range outputs remain terminal. No new job submitted.",
+  "all8_local_checkpoint_hashes_match": true,
+  "verified_Git_checkpoint": "7edb9ec346bcfb05309a17def9d5ab2257d91fff",
+  "remote_matches": true,
+  "scientific_epochs": 0,
+  "full_validations": 0,
+  "packing_images": 319820,
+  "part1_complete": false,
+  "goal_state": "active",
+  "blocked_audit": "Do not mark blocked before third consecutive goal-turn observation; at that point recheck if meaningful work is possible under reserve and use supported blocked status if at impasse. Do not count this audit as scientific progress.",
+  "next_after_allowance_recovery": "Follow results/MM_PART1_RECOVERY_PROGRESS_20261025.json; no duplicate extraction or failed DriveFS restart",
+  "weekly_reset_observed_UTC": "2026-10-30T17:44:16+00:00",
+  "no_monitoring_after_stop_claimed": true
+}

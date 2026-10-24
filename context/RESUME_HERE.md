@@ -1,3 +1,7 @@
+<!-- RESERVE AUDIT -->
+2026-10-24T20:35:15.822036+00:00: Weekly20%reserve persists; checkpoint hashes and remote7edb9ec reverified, CPU notebook idle. No newjob. Current turn is no-progress, not a verified wait on live computation. Consecutive reserve observations2; exact audit `results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json`. Existing Goal active; completion unproven.
+<!-- /RESERVE AUDIT -->
+
 <!-- API RECOVERY RESERVE -->
 2026-10-24T20:33:14.771734+00:00: Weekly allowance20% (short69%) => user checkpoint reserve. All new API probe/inventory cells are terminal; no packing/training job is running. API receipt identity,150source metadata receipts/682170IDs, privateindexwrite/readback and4KiB originalTAR range checks passed. Packing remains319820/18; scientific0/2epochs,0/2validations,test0. Recovery `results/MM_PART1_RECOVERY_PROGRESS_20261025.json`; verified checkpoint Git `4b069d769593f63f7f48965ffb844aebb4f71dba`. Do not start long transfer/debugging/training while applicable allowance<=20%. Existing Goal remains incomplete; no unsupported pause/completion claim. No monitoring after this stop is promised. At10% follow the user's pause/handoff instruction; hardstop5%.
 <!-- /API RECOVERY RESERVE -->
