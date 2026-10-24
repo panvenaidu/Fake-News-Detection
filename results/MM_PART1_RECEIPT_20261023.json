@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T04:41:23.009393+00:00",
+  "updated_utc": "2026-10-24T04:48:17.720374+00:00",
   "plan": "MM-PART1-v2",
   "state": "active_reserve_preparation_existing_stream_job",
   "part1_complete": false,
@@ -59,9 +59,9 @@
     "notebooks/UROP_MM_PART1_CUDA_ENGINEERING_20261023.ipynb": "9072566aa987235a02c4060fa716b7d3bfeb72ad5f3856ea8a9dba1272f936af"
   },
   "assistant_usage_observed": {
-    "short_window_remaining_percent": 20,
+    "short_window_remaining_percent": 16,
     "weekly_remaining_percent": 72,
-    "action": "Reserve entered. No substantive changes/new jobs; essential verification and handoff only. Pause at10percent, hardstop5percent."
+    "action": "Reserve: checkpoint integrity and handoff only, no substantive work/new jobs. Existing bounded CPU job verified live. Pause at10percent."
   },
   "drive_access_approved": true,
   "full_trainer": "scripts/train_official_multimodal_v1.py",
@@ -178,15 +178,15 @@
   "latest_stream_job": "results/MM_PART1_STREAM_JOB_20261024.json",
   "metadata_committed_images": 505573,
   "latest_stream_observation": {
-    "utc": "2026-10-24T04:37:07.927993+00:00",
+    "elapsed_seconds": 1931.6008185469996,
+    "required": 682661,
+    "scratch_free": 76275085312,
+    "source_bytes_read": 21673050112,
+    "source_required_members_seen": 130000,
     "state": "replaying_verified_prefix",
     "usable_committed": 505573,
     "usable_in_open_shard": 0,
-    "required": 682661,
-    "source_bytes_read": 14977630208,
-    "source_required_members_seen": 90000,
-    "elapsed_seconds": 1367.9225147800003,
-    "scratch_free": 76275560448
+    "utc": "2026-10-24T04:46:31.606286+00:00"
   },
   "committed_shard_hash_audit": {
     "utc": "2026-10-24T04:14:19.999612+00:00",
@@ -203,5 +203,6 @@
   "registered_training_notebook": "https://www.kaggle.com/code/rocky62/urop-full-six-way-multimodal-part1/edit",
   "cloud_launch_source_imported": false,
   "cloud_launch_source_executed": false,
-  "git_backup_receipt": "results/MM_PART1_GIT_BACKUP_20261024.json"
+  "git_backup_receipt": "results/MM_PART1_GIT_BACKUP_20261024.json",
+  "reserve_integrity_receipt": "results/MM_PART1_RESERVE_VERIFICATION_20261024.json"
 }

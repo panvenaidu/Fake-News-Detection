@@ -1,3 +1,9 @@
+<!-- MM-PART1 RESERVE AUDIT -->
+## Latest reserve integrity check — 2026-10-24T04:48:17.720374+00:00
+
+All32listed engineering artifact hashes/bytes pass; Git checkpoint0c64122e0c3f2481e9397daba0399d4dc3071b70 matched remote main before this receipt. CPU job87f54da6 remains live: 2026-10-24T04:46:31.606286+00:00,130000requiredsourceIDs/21673050112compressedbytes replayed,76275085312scratchbytesfree. Durable image count remains505573; prefix replay does not add samples or scientific progress. No training/validation/test run, no duplicated job. Current16%short/72%weekly last observed; reserve-only verification. At10%pause goal after essential backup, hardstop5%. Receipt `results/MM_PART1_RESERVE_VERIFICATION_20261024.json`; exact long-job continuation below remains unchanged.
+<!-- /MM-PART1 RESERVE AUDIT -->
+
 <!-- MM-PART1 STATUS SNAPSHOT -->
 ## Current reserve-preparation checkpoint — 2026-10-24T04:41:23.009393+00:00
 

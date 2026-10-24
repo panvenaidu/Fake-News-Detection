@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T04:41:23.009393+00:00",
+  "updated_utc": "2026-10-24T04:48:17.720374+00:00",
   "status": "bounded_stream_recovery_running",
   "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
   "account": "panvee62@gmail.com",
@@ -133,15 +133,15 @@
   "state": "active_reserve_preparation_existing_stream_job",
   "latest_stream_job": "results/MM_PART1_STREAM_JOB_20261024.json",
   "latest_stream_observation": {
-    "utc": "2026-10-24T04:37:07.927993+00:00",
+    "elapsed_seconds": 1931.6008185469996,
+    "required": 682661,
+    "scratch_free": 76275085312,
+    "source_bytes_read": 21673050112,
+    "source_required_members_seen": 130000,
     "state": "replaying_verified_prefix",
     "usable_committed": 505573,
     "usable_in_open_shard": 0,
-    "required": 682661,
-    "source_bytes_read": 14977630208,
-    "source_required_members_seen": 90000,
-    "elapsed_seconds": 1367.9225147800003,
-    "scratch_free": 76275560448
+    "utc": "2026-10-24T04:46:31.606286+00:00"
   },
   "committed_shard_hash_audit": {
     "utc": "2026-10-24T04:14:19.999612+00:00",
@@ -157,9 +157,9 @@
   "transport_repacker_state": "Local prepared and synthetic checked; not run on real data",
   "next_action": "Verify exact live CPU stream job, no duplicate/restart. Complete full source/CRC/SHA and image gate, transport packing/full private input/runtime checks, actual CUDA and measured preflight before real epoch1. Prepared private training draft source import pending editor loading; existing engineering Version1 preserved.",
   "assistant_usage_observed": {
-    "short_window_remaining_percent": 20,
+    "short_window_remaining_percent": 16,
     "weekly_remaining_percent": 72,
-    "action": "Reserve entered. No substantive changes/new jobs; essential verification and handoff only. Pause at10percent, hardstop5percent."
+    "action": "Reserve: checkpoint integrity and handoff only, no substantive work/new jobs. Existing bounded CPU job verified live. Pause at10percent."
   },
   "registered_launch_preparation": "results/MM_PART1_REGISTERED_LAUNCHER_PREPARATION_20261024.json",
   "registered_training_notebook": "https://www.kaggle.com/code/rocky62/urop-full-six-way-multimodal-part1/edit",
@@ -168,5 +168,6 @@
   "epochs_completed": 0,
   "full_validations_completed": 0,
   "final_test_performed": false,
-  "git_backup_receipt": "results/MM_PART1_GIT_BACKUP_20261024.json"
+  "git_backup_receipt": "results/MM_PART1_GIT_BACKUP_20261024.json",
+  "reserve_integrity_receipt": "results/MM_PART1_RESERVE_VERIFICATION_20261024.json"
 }

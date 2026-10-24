@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-10-24T04:38:04.641Z",
+  "observed_utc": "2026-10-24T04:47:51.559Z",
   "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
   "cell_id": "CTwlzdeQDnsR",
   "source_commit": "8d77eca6544d6e6140b75d3f1f30355af578d4c9",
@@ -1016,6 +1016,17 @@
       "source_required_members_seen": 90000,
       "elapsed_seconds": 1367.9225147800003,
       "scratch_free": 76275560448
+    },
+    {
+      "elapsed_seconds": 1931.6008185469996,
+      "required": 682661,
+      "scratch_free": 76275085312,
+      "source_bytes_read": 21673050112,
+      "source_required_members_seen": 130000,
+      "state": "replaying_verified_prefix",
+      "usable_committed": 505573,
+      "usable_in_open_shard": 0,
+      "utc": "2026-10-24T04:46:31.606286+00:00"
     }
   ],
   "image_gate_passed": false,
