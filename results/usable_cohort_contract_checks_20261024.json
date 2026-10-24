@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-24T10:53:33.069845+00:00",
+  "status": "passed",
+  "cohort_id": "FACULTY-6W-USABLE-682170-v1",
+  "registration_sha256": "3fe0b622958a1eee6732789d4f7acf6b450c0e3bda87312e5cbb6500fb405ce5",
+  "usable": 682170,
+  "split_counts": {
+    "train": 563601,
+    "validation": 59299,
+    "test": 59270
+  },
+  "checks": [
+    "registration_tamper_rejected",
+    "approval_tamper_rejected",
+    "report_tamper_rejected",
+    "all_original_TSV_hashes_counts_IDs_labels_titles_verified",
+    "exact491approved_exclusions_only",
+    "all_three_usable_split_and_class_counts_verified",
+    "unchanged_architecture_engine_recovery_crop_eval_primitives",
+    "four_epoch_boundaries70452_warmup7046_registered"
+  ],
+  "image_bytes_verified": false,
+  "training": false,
+  "validation_inference": false,
+  "test_inference": false,
+  "test_source_sha256": "55ddf823c77312bdb2ed2309ce699f55db896e7bea9655ac142fb85a76661570"
+}

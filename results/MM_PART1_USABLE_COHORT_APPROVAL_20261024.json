@@ -1,0 +1,9 @@
+{
+  "utc": "2026-10-24T10:48:15.739437+00:00",
+  "status": "approved_by_user",
+  "question": "Proceed with Option1:682170usablefacultyimage-textpairs,originalsplitsand6labels,491documenteddecodingexclusions;changespriorall-rowrequirement",
+  "answer": "Yes, proceed with Option 1",
+  "scope": "Onlythe491failureIDsinthepinnedoriginalreport;nofurtherexclusions,noalternatesources,norepair,tolerantdecoding,resplittingorresampling",
+  "preserve": "OriginalTSVs,originalarchive/shards,historicalfull-cohorttextresults",
+  "no_test_in_part1": true
+}

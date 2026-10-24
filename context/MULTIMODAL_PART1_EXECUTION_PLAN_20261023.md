@@ -1,3 +1,15 @@
+# User-approved cohort amendment — 24 October 2026
+
+The user explicitly approved Option1 (682170usable original faculty image-text pairs, same official splits/six labels,491documented strict-decoding exclusions). This amendment supersedes ALL all-682661-usable and564000/59342/59319 evaluation/training row requirements later in this historical plan, including example commands and counts. The three ORIGINAL TSVs remain untouched at those full counts. New accepted scientific membership is563601train /59299validation /59270publictest, EXACTLY as pinned in results/MM_PART1_USABLE_COHORT_REGISTRATION_20261024.json (SHA3fe0b622958a1eee6732789d4f7acf6b450c0e3bda87312e5cbb6500fb405ce5). All other scientific, recovery, cloud, reserve, no-test-in-Part1 and reporting safeguards remain binding.
+
+Use scripts/usable_cohort_v2.py, scripts/verify_usable_image_shards_v2.py, scripts/train_usable_multimodal_v2.py, configs/multimodal_usable_6way_v2.json, scripts/verify_usable_multimodal_v2.py, scripts/check_usable_multimodal_cuda_v2.py and collab/measure_usable_multimodal_preflight_v2.py. Manifest is data/official_paired_v2/paired_manifest.csv; prepared coverage is results/usable_image_coverage_v2.json inside the immutable private input. Original failed extraction report is retained byte-for-byte, never flipped to passing. New runtime gate requires all682170approved IDs/images with exact joins and strict byte/hash/decode checks. Any additional failure halts; no further exclusion is approved. Repacker collab/repack_usable_images_v2.py preserves original image bytes and source shards. The old guarded Kaggle v1 draft cannot launch this experiment.
+
+Part1 still requires TWO full train epochs over563601pairs plus TWO full validations over59299pairs, next-epoch3recovery, private/local evidence and verified Git backup, with NO final test. Part2 continues the SAME four-epoch schedule and uses one selected-checkpoint test on59270pairs. Boundaries17613/epoch,70452total,7046warmup; allotherbatch/LR/architecture/seed/selectionsettingsunchanged. Clearly label the changed available-image cohort and class-skewed exclusions in every paper comparison; preserve the original full-cohort text results, with separately labelled same-cohort metrics from saved text predictions if used. No performance target is guaranteed.
+
+Current execution record: results/MM_PART1_USABLE_RECEIPT_20261024.json. This approval registers a new protocol, not scientific completion. Earlier plan paragraphs below are historical where counts/paths conflict.
+
+---
+
 # UROP · Text + image · Part 1
 
 Execution handoff · MM-PART1-v2 · 23 October 2026

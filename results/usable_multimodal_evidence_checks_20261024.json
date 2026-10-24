@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "scope": "Synthetic59299-row export verification only; no faculty data inference, no task metrics",
+  "checks": [
+    "Complete IDs/labels/supports and all requested metrics independently recomputed",
+    "All-six probabilities, loss, reports and confusions checked",
+    "Invalid probability rejected",
+    "Duplicate ID rejected",
+    "Altered gold label rejected",
+    "Altered per-row CE rejected"
+  ]
+}

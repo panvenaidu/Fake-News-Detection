@@ -1,0 +1,33 @@
+{
+  "state": "DRAFT_NOT_LAUNCHABLE",
+  "stage": "part1",
+  "final_test": false,
+  "source_commit": "UNRELEASED",
+  "stop_after_epoch": 1,
+  "resume": false,
+  "prior_job_verified_terminal": null,
+  "input_root": null,
+  "private_input_version": null,
+  "output": null,
+  "warmstart": null,
+  "coverage": {
+    "path": null,
+    "sha256": null
+  },
+  "cuda_fixture": {
+    "path": null,
+    "sha256": null
+  },
+  "throughput": {
+    "path": null,
+    "sha256": null
+  },
+  "active_job_check_utc": null,
+  "conflicting_attempt_jobs": null,
+  "wall_seconds": null,
+  "verified_session_seconds_remaining": null,
+  "measured_versions": null,
+  "instructions": "Populate only from actual verified full input/runtime, GPU recovery and10minute train-only measured preflight. Stage1 epoch1, then verified same-run resume for epoch2. Never fabricate release evidence or set state merely to bypass a failed gate. No final test.",
+  "cohort_id": "FACULTY-6W-USABLE-682170-v1",
+  "cohort_registration_sha256": "3fe0b622958a1eee6732789d4f7acf6b450c0e3bda87312e5cbb6500fb405ce5"
+}

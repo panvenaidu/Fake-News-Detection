@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-24T10:44:11.024556+00:00",
+  "updated_utc": "2026-10-24T11:09:18.479087+00:00",
   "plan": "MM-PART1-v2",
-  "state": "blocked_pending_explicit_cohort_decision",
+  "state": "superseded_by_approved_usable_cohort_v2_see_new_receipt",
   "part1_complete": false,
   "scientific_training_started": false,
   "epochs_completed": 0,
@@ -27,7 +27,7 @@
     "Full private immutable input and actual production GPU preflight remain pending",
     "Proposed cohort change unapproved; original all-pairs image gate stays false"
   ],
-  "next_action": "Await explicit approval for versioned usable-image cohort in context/MM_PART1_IMAGE_POLICY_DECISION_20261024.md; do not repeat extraction/diagnosis or start scientific training",
+  "next_action": "Followapprovedusablecohortv2receipt/currentCPUtransportjob;nooriginalextractionrestart",
   "progress": {
     "text": 100,
     "multimodal": 40,
@@ -190,7 +190,7 @@
   "goal_pause_requested": false,
   "original_specimen_diagnostic": "results/MM_PART1_ORIGINAL_SPECIMEN_DIAGNOSTIC_20261024.json",
   "protocol_decision_proposal": "context/MM_PART1_IMAGE_POLICY_DECISION_20261024.md",
-  "protocol_decision": "User requested recommendation;Option1recommendedbutexplicitapprovalstillpending.Noexclusionsapplied.",
+  "protocol_decision": "APPROVED:Yes,proceedwithOption1",
   "historical_cpu_extraction_job": {
     "id": "CPU_IMAGE_PREP_7128d94997e84072a77aca9a66bc46c6",
     "started_utc": "2026-10-23T18:05:05.015258+00:00",
@@ -238,5 +238,6 @@
     "scope": "Diagnosis/context/protocolproposal; this updated receipt is a separate child commit"
   },
   "original_specimen_private_backup_byte_verified": true,
-  "goal_status": "blocked"
+  "goal_status": "active",
+  "current_receipt": "results/MM_PART1_USABLE_RECEIPT_20261024.json"
 }

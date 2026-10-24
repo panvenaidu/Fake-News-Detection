@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T10:44:11.024556+00:00",
+  "updated_utc": "2026-10-24T11:09:18.479087+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -78,7 +78,7 @@
         "validation": 0,
         "final_test_and_result_archive": 0
       },
-      "state": "Full trainer and recovery engineering implemented/checked;491original source decode failures block all-pairs gate; explicit cohort decision pending;0scientific epochs",
+      "state": "Approved682170usablecohortregistered;v2trainer/recovery/evidencechecksPASS;CPUtransportpreparationinprogress;runtimefullimagegate/realGPUpreflightandscientifictrainingpending",
       "checkpoint_completion_percent": 40,
       "epochs_trained": 0,
       "epochs_validated": 0,
@@ -448,6 +448,17 @@
   },
   "part1_execution_receipt": "results/MM_PART1_RECEIPT_20261023.json",
   "last_cpu_preparation_note": "Original source CRC/SHA terminal,682170/682661 usable,491failures; all3 inspected failed .jpg files areHTML; no data changes. Bounded diagnostic terminal/private backup saved. Await explicit protocol decision; scientific epochs0/2,val0/2,test0.",
-  "latest_operational_note": "Goalblockedafter3consecutiveturnsawaitingprotocoldecision.Option1recommendedinplainlanguage;explicitapprovalpending.Noexclusionsapplied;epochs0,val0,test0;allbarsunchanged.",
-  "original_specimen_diagnostic": "results/MM_PART1_ORIGINAL_SPECIMEN_DIAGNOSTIC_20261024.json"
+  "latest_operational_note": "Userapproved682170usablefacultycohort;v2engineeringchecksPASS;CPUboundedtransportjob3bcc65e9activewith19184images/1packobserved;terminalflushpending.No scientificepoch/validation/test. Goalresumedactive.",
+  "original_specimen_diagnostic": "results/MM_PART1_ORIGINAL_SPECIMEN_DIAGNOSTIC_20261024.json",
+  "approved_multimodal_cohort": {
+    "id": "FACULTY-6W-USABLE-682170-v1",
+    "registration_sha256": "3fe0b622958a1eee6732789d4f7acf6b450c0e3bda87312e5cbb6500fb405ce5",
+    "counts": {
+      "train": 563601,
+      "validation": 59299,
+      "test": 59270
+    },
+    "exclusions": 491,
+    "receipt": "results/MM_PART1_USABLE_RECEIPT_20261024.json"
+  }
 }

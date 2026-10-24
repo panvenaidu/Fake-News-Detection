@@ -1,3 +1,5 @@
+APPROVED24October2026: user explicitly answered “Yes, proceed with Option1.” See the immutable approval/registration receipts and amended Part1/2plans. The proposal below is retained as approval scope; implementation and actual scientific completion are separate.
+
 # Image policy decision — approval required before training
 
 Status: PROPOSAL ONLY. No exclusions, replacements, decoder changes or scientific training have been applied.

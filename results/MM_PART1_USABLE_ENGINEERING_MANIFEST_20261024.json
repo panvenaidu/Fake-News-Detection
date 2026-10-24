@@ -1,0 +1,126 @@
+{
+  "utc": "2026-10-24T11:10:21.367797+00:00",
+  "status": "Versionedapprovalandengineeringcheckpoint;notacceptedPart1",
+  "artifact_count": 23,
+  "artifacts": [
+    {
+      "path": "scripts/usable_cohort_v2.py",
+      "bytes": 4907,
+      "sha256": "22bff1eb0fa14d102ad07786f936c5c1ed1582ec7bd5cee2b8e8dc5eb3520092"
+    },
+    {
+      "path": "scripts/verify_usable_image_shards_v2.py",
+      "bytes": 13902,
+      "sha256": "68dda30d098ae24ce0dcee928ae250cb05526fd9a3bfa92665a57062e60e5eb6"
+    },
+    {
+      "path": "scripts/train_usable_multimodal_v2.py",
+      "bytes": 20158,
+      "sha256": "88412d918b77f8a54569b25a8c469618c028ebaeeeb0b6050385dc55bd20ac1e"
+    },
+    {
+      "path": "scripts/verify_usable_multimodal_v2.py",
+      "bytes": 5944,
+      "sha256": "bc314502833835a42bba8bab2d069074018bafc807106a3eb503386e2671139b"
+    },
+    {
+      "path": "scripts/check_usable_cohort_v2.py",
+      "bytes": 2608,
+      "sha256": "55ddf823c77312bdb2ed2309ce699f55db896e7bea9655ac142fb85a76661570"
+    },
+    {
+      "path": "scripts/check_usable_image_shards_v2.py",
+      "bytes": 7197,
+      "sha256": "7909f377cb0a128e4de8230b40ab26c3455c7bb7d2b836aca00decf1c4f0e13b"
+    },
+    {
+      "path": "scripts/check_usable_multimodal_v2.py",
+      "bytes": 8021,
+      "sha256": "96934bfad33360fd60c44a7bc232a0756148f55886e1c67144171e84bc92bbb4"
+    },
+    {
+      "path": "scripts/check_usable_multimodal_evidence_v2.py",
+      "bytes": 1936,
+      "sha256": "08cc4d3f2ccafb3e13a63f7f6cb1814f95ef60eb5aca54d31ca97bccb54a1936"
+    },
+    {
+      "path": "scripts/check_usable_multimodal_cuda_v2.py",
+      "bytes": 11182,
+      "sha256": "0317d959710522a6b69f97f059ea78b23f41042e5c0500f934f3f0d4a048e8f6"
+    },
+    {
+      "path": "collab/repack_usable_images_v2.py",
+      "bytes": 2827,
+      "sha256": "fb3e4289b013e2ea9ad7e1c08c702f46cfd1dd4ad8e14c687d3590bf43a2b229"
+    },
+    {
+      "path": "collab/run_usable_transport_job_v2.py",
+      "bytes": 5326,
+      "sha256": "8ac949c105d34ce87d7d58a144231556cff772ad7751f7273657f1dbc7b13917"
+    },
+    {
+      "path": "collab/usable_transport_launch_cell_20261024.py",
+      "bytes": 27948,
+      "sha256": "4a921c06e15f6df780b63f81da699032c2273561d02e1a057b8a4d2fa1927c2e"
+    },
+    {
+      "path": "collab/resume_usable_transport_inkernel_20261024.py",
+      "bytes": 2005,
+      "sha256": "9047a9487e4b66d5c4a20933369e0b55f40b5b42f32082c0f81eb11aa8591685"
+    },
+    {
+      "path": "collab/measure_usable_multimodal_preflight_v2.py",
+      "bytes": 11599,
+      "sha256": "e8a3b4f4826d9de2549b369588ce578d71a79fa9fb51a87a0e75c0a782fd4dab"
+    },
+    {
+      "path": "collab/kaggle_usable_part1_cell_v2.py",
+      "bytes": 11417,
+      "sha256": "667dbfe7ca0b839d485228824822fd1899f5f5eb49ed2d6f0d9c38dfd6936612"
+    },
+    {
+      "path": "configs/multimodal_usable_6way_v2.json",
+      "bytes": 1383,
+      "sha256": "ad8f86f86b1fef453ae3bccda0aeb13cc50b298dc0d5d502f87c9ac4b041b483"
+    },
+    {
+      "path": "configs/usable_part1_cloud_release_TEMPLATE.json",
+      "bytes": 1066,
+      "sha256": "199f29747b0ffd30cfb83b6f95ed935b0b1f1ecea1963611a97f63a84682c7e9"
+    },
+    {
+      "path": "results/MM_PART1_USABLE_COHORT_APPROVAL_20261024.json",
+      "bytes": 546,
+      "sha256": "4d6d76204a168743cfe641b85cdc0eda2a40286b07e77c7c4da4375fb43ed9f2"
+    },
+    {
+      "path": "results/MM_PART1_USABLE_COHORT_REGISTRATION_20261024.json",
+      "bytes": 2865,
+      "sha256": "3fe0b622958a1eee6732789d4f7acf6b450c0e3bda87312e5cbb6500fb405ce5"
+    },
+    {
+      "path": "results/usable_cohort_contract_checks_20261024.json",
+      "bytes": 924,
+      "sha256": "ad06e48cc9c630feb697c75b8a34751de191adc72e3afdd205d7a2990bcae923"
+    },
+    {
+      "path": "results/usable_image_shard_verifier_checks_20261024.json",
+      "bytes": 973,
+      "sha256": "5ad9b15021b3a3e622674a50e3773f0c2313d38c1d33d2919e793776110b42c5"
+    },
+    {
+      "path": "results/usable_multimodal_engine_checks_20261024.json",
+      "bytes": 1016,
+      "sha256": "284293d02694a4d1804f11c1168440084f543cfe006eadf71aedd5f85afa1468"
+    },
+    {
+      "path": "results/usable_multimodal_evidence_checks_20261024.json",
+      "bytes": 434,
+      "sha256": "ce488c36924273308215d6ca00d0e54273920b4ddd9aa47fbd4fc06b5d13bd2b"
+    }
+  ],
+  "real_CUDA_preflight": false,
+  "scientific_epochs": 0,
+  "full_validations": 0,
+  "test_inference": false
+}

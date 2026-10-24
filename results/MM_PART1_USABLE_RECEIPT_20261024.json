@@ -1,0 +1,74 @@
+{
+  "updated_utc": "2026-10-24T11:09:18.479087+00:00",
+  "plan": "MM-PART1-v2+approved-usable-cohort-amendment20261024",
+  "goal_status": "active_verified_after_user_resume",
+  "approval": "results/MM_PART1_USABLE_COHORT_APPROVAL_20261024.json",
+  "registration": "results/MM_PART1_USABLE_COHORT_REGISTRATION_20261024.json",
+  "cohort_id": "FACULTY-6W-USABLE-682170-v1",
+  "cohort_registration_sha256": "3fe0b622958a1eee6732789d4f7acf6b450c0e3bda87312e5cbb6500fb405ce5",
+  "official_TSV_rows_unchanged": 682661,
+  "approved_usable_pairs": 682170,
+  "split_counts": {
+    "train": 563601,
+    "validation": 59299,
+    "test": 59270
+  },
+  "exact_exclusions": 491,
+  "original_all_row_image_gate_passed": false,
+  "approved_runtime_image_gate_passed": false,
+  "scientific_epochs_completed": 0,
+  "full_validations_completed": 0,
+  "final_test_performed": false,
+  "code": "scripts/train_usable_multimodal_v2.py",
+  "config": "configs/multimodal_usable_6way_v2.json",
+  "tests": [
+    "results/usable_cohort_contract_checks_20261024.json",
+    "results/usable_image_shard_verifier_checks_20261024.json",
+    "results/usable_multimodal_engine_checks_20261024.json",
+    "results/usable_multimodal_evidence_checks_20261024.json"
+  ],
+  "CPU_job": {
+    "utc": "2026-10-24T11:03:14.760861+00:00",
+    "state": "approved_usable_transport_started",
+    "job_id": "CPU_USABLE_TRANSPORT_3bcc65e9a0c747288ae516a87ee6ccce",
+    "pid": 4659,
+    "cohort_id": "FACULTY-6W-USABLE-682170-v1",
+    "cohort_registration_sha256": "3fe0b622958a1eee6732789d4f7acf6b450c0e3bda87312e5cbb6500fb405ce5",
+    "required": 682170,
+    "max_pack_seconds": 1800,
+    "source_originals_retained": true,
+    "training": false,
+    "test_inference": false,
+    "checkpoint": "Closed immutable original-byte TARs and per-image SHA receipts; open orphans never trusted",
+    "recovery": "Inspect exact terminal receipt/PID; verify original committed packs before an explicitly recorded bounded continuation",
+    "source_file_sha256": "8ac949c105d34ce87d7d58a144231556cff772ad7751f7273657f1dbc7b13917"
+  },
+  "last_observation": {
+    "utc": "2026-10-24T11:06:10.241594+00:00",
+    "state": "packed_shard_committed",
+    "images_committed": 19184,
+    "required": 682170,
+    "packed_shards": 1
+  },
+  "terminal_flush_verified": false,
+  "no_GPU_allocated": true,
+  "next": "Inspect exact CPU job terminal result and flush; never restart extraction. Resume bounded lossless packing from verified closed receipts if partial; complete approved metadata and private immutable input/runtime verification, v2CUDAfixture/measuredpreflight, then registered epochs1\u20132/fullvalidations. Old v1 draft/coverage/config must not launch this cohort.",
+  "bars": {
+    "text_only": 100,
+    "text_plus_image": 40,
+    "image_only": 20,
+    "overall": 53
+  },
+  "usage_observation": {
+    "short_remaining": 24,
+    "weekly_remaining": 43,
+    "policy": "At20prepare/checkpoint;10handoffandpauseGoal;5hardstop"
+  },
+  "limitations": [
+    "Transportcopyonly;firstpackcommittedbutterminalflushstillpending",
+    "No scientific multimodal training/validation/test",
+    "Actualv2CUDAandfullmodelthroughputnotrun",
+    "NewscientificlauncherpreparedUNRELEASEDuntilsourcecommitpin;releaseJSONremainsDRAFT",
+    "OldCLIchildfailedcode1withoutcapturedstderr;PIDmissing/no packs verified; guard preserved and same-source in-kernel recovery started"
+  ]
+}

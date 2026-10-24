@@ -1,0 +1,52 @@
+{
+  "status": "prepared_not_yet_launched",
+  "bundle": "data/official_paired_v2/UROP_USABLE_TRANSPORT_SOURCE_20261024.zip",
+  "bytes": 19409,
+  "sha256": "dc57564d8ffbc819c67b01290fef6fe5d49ad09eeedf674cfdf8f24bd01eb36e",
+  "manifest": [
+    {
+      "path": "scripts/usable_cohort_v2.py",
+      "bytes": 4907,
+      "sha256": "22bff1eb0fa14d102ad07786f936c5c1ed1582ec7bd5cee2b8e8dc5eb3520092"
+    },
+    {
+      "path": "scripts/verify_usable_image_shards_v2.py",
+      "bytes": 13902,
+      "sha256": "68dda30d098ae24ce0dcee928ae250cb05526fd9a3bfa92665a57062e60e5eb6"
+    },
+    {
+      "path": "collab/prepare_official_images_drive_v1.py",
+      "bytes": 10039,
+      "sha256": "543c60d78d61182b10052cfd061d90c5bb764f99138a8bc09ae72dbfe93d7354"
+    },
+    {
+      "path": "collab/repack_official_images_kaggle_v1.py",
+      "bytes": 7532,
+      "sha256": "b8703658a25655b7523c15cd5493321b727a8da63539ffbf651965a6e84de3e8"
+    },
+    {
+      "path": "collab/repack_usable_images_v2.py",
+      "bytes": 2827,
+      "sha256": "fb3e4289b013e2ea9ad7e1c08c702f46cfd1dd4ad8e14c687d3590bf43a2b229"
+    },
+    {
+      "path": "collab/run_usable_transport_job_v2.py",
+      "bytes": 5326,
+      "sha256": "8ac949c105d34ce87d7d58a144231556cff772ad7751f7273657f1dbc7b13917"
+    },
+    {
+      "path": "provenance/MM_PART1_USABLE_COHORT_REGISTRATION_20261024.json",
+      "bytes": 2865,
+      "sha256": "3fe0b622958a1eee6732789d4f7acf6b450c0e3bda87312e5cbb6500fb405ce5"
+    },
+    {
+      "path": "provenance/MM_PART1_USABLE_COHORT_APPROVAL_20261024.json",
+      "bytes": 546,
+      "sha256": "4d6d76204a168743cfe641b85cdc0eda2a40286b07e77c7c4da4375fb43ed9f2"
+    }
+  ],
+  "max_pack_seconds": 1800,
+  "training": false,
+  "bundle_contains_raw_data": false,
+  "original_extraction_report": "Read existing pinned report from approved Drive root; never included in source bundle"
+}
