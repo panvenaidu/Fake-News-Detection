@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-24T07:32:53.860261+00:00",
+  "updated_utc": "2026-10-24T10:37:01.821847+00:00",
   "plan": "MM-PART1-v2",
-  "state": "source_finished_image_gate_failed_reserve_pause_requested",
+  "state": "original_html_payloads_verified_awaiting_protocol_decision",
   "part1_complete": false,
   "scientific_training_started": false,
   "epochs_completed": 0,
@@ -10,24 +10,24 @@
   "cloud_profile": "Rocky",
   "google_account_verified": "panvee62@gmail.com",
   "kaggle_login_verified": "Rocky 62",
-  "gpu_quota_observed": "00:00 used /30 hrs",
+  "gpu_quota_observed": "Historical23October observation:00:00/30h used; not refreshed during24OctoberCPU-onlydiagnosis",
   "gpu_training_started": false,
   "source_archive_display_size": "106G",
   "source_archive_download_confirmed": false,
-  "drive_storage_observed": "185.53 GB of5.39 TB after cloud source copy; historical UI snapshot, later shards increase usage",
+  "drive_storage_observed": "260.31GB of5.39TB used, visible in approved Drive folder24October16:04IST",
   "cpu_prep_notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
-  "cpu_runtime": "Source job terminal and Drive unmounted; CPU notebook connected but idle after metadata capture; no GPU",
+  "cpu_runtime": "CPU connected; bounded diagnostic terminal, no scientific training or GPU",
   "image_gate_passed": false,
   "image_coverage": "results/official_image_coverage_v1.json",
   "recovery_checks": "results/multimodal_recovery_primitives_checks_20261023.json",
   "warmstart_checks": "results/multimodal_warmstart_verification_20261023.json",
   "limitations": [
-    "Full paired image extraction/coverage still pending; only75995 images audited locally",
-    "No real multimodal checkpoint, no training epochs or full validations, no final test",
-    "Private Kaggle full-image input import/storage route still needs measured verification",
-    "CUDA fixture passed; full pretrained-model/image I/O throughput and durable scientific checkpoint export remain pending"
+    "491 of682661 original image files fail the strict decoder; three sampled .jpg files proven HTML",
+    "No multimodal epochs/full validations/final test",
+    "Full private immutable input and actual production GPU preflight remain pending",
+    "Proposed cohort change unapproved; original all-pairs image gate stays false"
   ],
-  "next_action": "Verify exact live CPU stream job, no duplicate/restart. Complete full source/CRC/SHA and image gate, transport packing/full private input/runtime checks, actual CUDA and measured preflight before real epoch1. Prepared private training draft source import pending editor loading; existing engineering Version1 preserved.",
+  "next_action": "Await explicit approval for versioned usable-image cohort in context/MM_PART1_IMAGE_POLICY_DECISION_20261024.md; do not repeat extraction/diagnosis or start scientific training",
   "progress": {
     "text": 100,
     "multimodal": 40,
@@ -59,9 +59,9 @@
     "notebooks/UROP_MM_PART1_CUDA_ENGINEERING_20261023.ipynb": "9072566aa987235a02c4060fa716b7d3bfeb72ad5f3856ea8a9dba1272f936af"
   },
   "assistant_usage_observed": {
-    "short_window_remaining_percent": 10,
-    "weekly_remaining_percent": 71,
-    "action": "Essential final sync and requested goal pause; no substantive work/new jobs. Existing bounded CPU preparation left intact; no continued monitoring claimed."
+    "short_window_remaining_percent": 68,
+    "weekly_remaining_percent": 50,
+    "action": "No reserve threshold reached; protocol decision handoff, not usage pause"
   },
   "drive_access_approved": true,
   "full_trainer": "scripts/train_official_multimodal_v1.py",
@@ -72,7 +72,7 @@
   "archive_private_copy_id": "12YYAoTT2Mnb1eEoIRhuVJ3WmTvFoJXoi",
   "archive_bytes": 113623359224,
   "archive_path": "/content/drive/MyDrive/UROP/official_images_v1/public_images.tar.bz2",
-  "cloud_source_state": "Private Drive-native copy; exact size and BZh9 header observed; full compressed SHA/CRC/coverage still unverified",
+  "cloud_source_state": "Original public author stream complete113623359224 bytes/fullCRC/SHAe3f8fd7d...; private Drive copy lineage retained, not independently fully rehashed",
   "cloud_script_sha256": "543c60d78d61182b10052cfd061d90c5bb764f99138a8bc09ae72dbfe93d7354",
   "cloud_storage_probe": {
     "fsync_rename_readback": true,
@@ -99,33 +99,12 @@
     "verified_utc": "2026-10-23T18:40:47.975847+00:00",
     "scope": "Previous verified engineering backup receipt and exact continuation commands; this live checkpoint update will be a separate child commit"
   },
-  "github_backup": {
-    "status": "verified",
-    "commit": "2bc75feaf9603545327b1caabcfa1e55810be61e",
-    "remote_sha_observed": "2bc75feaf9603545327b1caabcfa1e55810be61e",
-    "verified_utc": "2026-10-23T18:43:31.056768+00:00",
-    "scope": "Live CPU checkpoint observation and all named context/progress/log records; this Git receipt is a separate child update"
-  },
   "source_preflight": "results/MM_PART1_CLOUD_IMAGE_PREP_20261023.json",
-  "cpu_extraction_job": {
-    "id": "CPU_IMAGE_PREP_7128d94997e84072a77aca9a66bc46c6",
-    "started_utc": "2026-10-23T18:05:05.015258+00:00",
-    "max_seconds": 28800,
-    "committed_images_at_restart": 24220,
-    "committed_shards_at_restart": 6,
-    "ignored_orphan": "images_20ad5ec99d0c4f59990dc54e195383b7.tar",
-    "scientific_training": false,
-    "last_live_output_utc": "2026-10-23T18:38:52.150294+00:00",
-    "usable_committed_observed": 60829,
-    "usable_in_open_shard_observed": 4171,
-    "required": 682661,
-    "full_image_gate_passed": false
-  },
   "kaggle_engineering_notebook": {
     "url": "https://www.kaggle.com/code/rocky62/urop-mm-part1-engineering-preflight/edit",
     "title": "UROP MM Part1 engineering preflight",
     "privacy_verified": "Private, only collaborators",
-    "state": "Editor Loading, no code/session started; reCAPTCHA service error visible",
+    "state": "Historical loading issue resolved;Version1CPU640-imageintegritysavedandCPUsessionreleased;see results/MM_PART1_PRIVATE_STAGING_ENGINEERING_20261024.json",
     "user_verification_requested": true
   },
   "cloud_cuda_regression": {
@@ -153,26 +132,15 @@
     "observed_unpacked_prefix": "images_590bbadd6dcd433b83059f13e85137bc/images/",
     "readme": "STAGING_README.md states INCOMPLETE/no benchmark training",
     "compression_observed": "ZIP export still awaiting compression",
-    "status": "Saved version/file tree verified; all-byte Kaggle roundtrip/runtime audit pending"
+    "status": "640-imageVersion1only;CPUruntimehash/decodeengineeringverificationpassedandsaved;fullinputnotstaged"
   },
   "source_byte_comparison": "results/multimodal_first_shard_byte_comparison_20261023.json",
   "full_input_verifier": "scripts/verify_official_image_shards_v1.py",
   "full_input_layout": "kaggle-tar, observed archive-name wrapper",
   "independent_continuation": {
-    "allowed_existing_job": "CPU_IMAGE_PREP_7128d94997e84072a77aca9a66bc46c6",
-    "started_utc": "2026-10-23T18:05:05.015258+00:00",
-    "max_seconds_between_members": 28800,
-    "persistence": "Completed TAR plus matching receipt in private Drive; one preceding uncommitted orphan ignored; first640 shard verified by local download/hash/decode",
-    "scope": "CPU image preparation only; no GPU scientific job active",
-    "monitoring_note": "After an assistant handoff, the job may continue independently. No scheduled monitor or guaranteed completion is claimed. Revalidate the exact existing job/result on resume; never duplicate it from a spinner alone."
-  },
-  "latest_cpu_observation": {
-    "utc": "2026-10-23T18:50:21.292939+00:00",
-    "state": "extracting",
-    "usable_committed": 83925,
-    "usable_in_open_shard": 75,
-    "required": 682661,
-    "elapsed_seconds": 2696.805649424
+    "allowed_existing_job": null,
+    "scope": "No active cloud scientific/extraction job; do not claim monitoring after handoff",
+    "next": "Read pending protocol decision, never duplicate terminal jobs"
   },
   "latest_heartbeat": "results/MM_PART1_HEARTBEAT_20261024T0508Z.json",
   "latest_stream_job": "results/MM_PART1_STREAM_JOB_20261024.json",
@@ -210,14 +178,60 @@
   "measured_preflight_preparation": "results/MM_PART1_MEASURED_PREFLIGHT_PREPARATION_20261024.json",
   "latest_stream_observation_receipt": "results/MM_PART1_NEW_SHARDS_OBSERVATION_20261024.json",
   "source_terminal_flush_verified": true,
-  "cloud_cpu_preparation": "Current original source stream advancing; no scientific training",
+  "cloud_cpu_preparation": "Original extraction and bounded specimen diagnostic terminal; no active source extraction",
   "post_extraction_source_bundle": "results/MM_PART1_SOURCE_BUNDLE_20261024.json",
   "required": 682661,
   "decode_failures": 491,
   "source_job_terminal": true,
   "source_failure_audit": "results/MM_PART1_IMAGE_FAILURE_AUDIT_20261024.json",
   "source_failure_report": "results/MM_PART1_SOURCE_FAILURE_REPORT_20261024.md",
-  "usage_short_remaining": 9,
-  "usage_weekly_remaining": 56,
-  "goal_pause_requested": true
+  "usage_short_remaining": 68,
+  "usage_weekly_remaining": 50,
+  "goal_pause_requested": false,
+  "original_specimen_diagnostic": "results/MM_PART1_ORIGINAL_SPECIMEN_DIAGNOSTIC_20261024.json",
+  "protocol_decision_proposal": "context/MM_PART1_IMAGE_POLICY_DECISION_20261024.md",
+  "protocol_decision": "pending; no data changes",
+  "historical_cpu_extraction_job": {
+    "id": "CPU_IMAGE_PREP_7128d94997e84072a77aca9a66bc46c6",
+    "started_utc": "2026-10-23T18:05:05.015258+00:00",
+    "max_seconds": 28800,
+    "committed_images_at_restart": 24220,
+    "committed_shards_at_restart": 6,
+    "ignored_orphan": "images_20ad5ec99d0c4f59990dc54e195383b7.tar",
+    "scientific_training": false,
+    "last_live_output_utc": "2026-10-23T18:38:52.150294+00:00",
+    "usable_committed_observed": 60829,
+    "usable_in_open_shard_observed": 4171,
+    "required": 682661,
+    "full_image_gate_passed": false
+  },
+  "cpu_extraction_job": {
+    "id": "CPU_STREAM_PREP_87f54da6a55c47349ba79a6f6ab33747",
+    "state": "terminal",
+    "finished_utc": "2026-10-24T07:23:45.611341+00:00",
+    "usable": 682170,
+    "required": 682661,
+    "failed": 491,
+    "drive_flush_verified": true,
+    "scientific_training": false
+  },
+  "historical_latest_cpu_observation": {
+    "utc": "2026-10-23T18:50:21.292939+00:00",
+    "state": "extracting",
+    "usable_committed": 83925,
+    "usable_in_open_shard": 75,
+    "required": 682661,
+    "elapsed_seconds": 2696.805649424
+  },
+  "historical_github_backup": {
+    "status": "verified",
+    "commit": "2bc75feaf9603545327b1caabcfa1e55810be61e",
+    "remote_sha_observed": "2bc75feaf9603545327b1caabcfa1e55810be61e",
+    "verified_utc": "2026-10-23T18:43:31.056768+00:00",
+    "scope": "Live CPU checkpoint observation and all named context/progress/log records; this Git receipt is a separate child update"
+  },
+  "github_backup": {
+    "status": "Pendingthischeckpointpush;see results/MM_PART1_GIT_BACKUP_20261024.json",
+    "prior_remote_commit": "bf11e0c63c353b2952aea7c23fc8f7fb98ea0324"
+  }
 }

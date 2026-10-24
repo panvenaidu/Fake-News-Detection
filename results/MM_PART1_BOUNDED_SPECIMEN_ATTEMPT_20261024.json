@@ -1,0 +1,33 @@
+{
+  "utc": "2026-10-24T10:26:31.311288+00:00",
+  "state": "bounded_stateless_original_diagnostic_finished",
+  "specimens": [],
+  "requested": 3,
+  "captured": 0,
+  "uncaptured_ids": [
+    "dhgu9qk",
+    "c74xt4o",
+    "c964b6s"
+  ],
+  "stop_reason": "diagnostic failed; inspect error",
+  "error": {
+    "type": "ValueError",
+    "message": "Source range/total mismatch; refuse HTML or restarted response"
+  },
+  "source_reader_sha256": "5b9be91021d4d397d8f3bd74c0354d0496b7cfb685723cf2c3c3ee24ea6266e6",
+  "compressed_bytes_consumed": 0,
+  "byte_budget": 536870912,
+  "elapsed_seconds": 0.951929994000011,
+  "source_id": "1cjY6HsHaSZuLVHywIxD5xQqng33J5S2b",
+  "parent_archive_sha256": "e3f8fd7dfae6d864585affd0729ac06544471c93f6dc713c6f78d0bbe4a00abd",
+  "failure_report_sha256": "262a40e9e04629cda8c13388478a112016ba17ef42ed2d423bc517dc8911ebe0",
+  "full_crc_this_diagnostic": false,
+  "image_gate_passed": false,
+  "dataset_modified": false,
+  "decoder_policy_changed": false,
+  "training": false,
+  "test_inference": false,
+  "evidence_method": "Copied from visible plain-text inspection of cloud diagnostic.json; original cloud file download pending",
+  "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
+  "cell": "OLr8jkkvce1K"
+}

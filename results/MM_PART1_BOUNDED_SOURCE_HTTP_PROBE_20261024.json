@@ -1,0 +1,13 @@
+{
+  "state": "bounded_original_http_probe",
+  "status": 206,
+  "content_range": "bytes 0-4095/113623359224",
+  "content_length": "4096",
+  "content_type": "application/octet-stream",
+  "bytes_read": 4096,
+  "bzh9": true,
+  "sha256": "cce9d03b8ea171e60644133bb5a38fa84f1d99bd56517825e7cb4a006f6bb573",
+  "text_if_html": null,
+  "observed_utc": "2026-10-24T10:31:04.258Z",
+  "evidence": "Visible CPU notebook cell P2UzlvKEdPon; original source prefix matches prior verified fingerprint"
+}

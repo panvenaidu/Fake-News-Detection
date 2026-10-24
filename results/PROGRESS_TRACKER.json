@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T07:32:53.860261+00:00",
+  "updated_utc": "2026-10-24T10:37:01.821847+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -78,8 +78,11 @@
         "validation": 0,
         "final_test_and_result_archive": 0
       },
-      "state": "Implementation demonstrated by pilot; full-cohort image coverage/protocol and full training pending",
-      "checkpoint_completion_percent": 40
+      "state": "Full trainer and recovery engineering implemented/checked;491original source decode failures block all-pairs gate; explicit cohort decision pending;0scientific epochs",
+      "checkpoint_completion_percent": 40,
+      "epochs_trained": 0,
+      "epochs_validated": 0,
+      "registered_max_epochs": 4
     },
     "image_only": {
       "scope": "Standalone image-only six-way benchmark",
@@ -444,6 +447,7 @@
     "progress_unchanged": true
   },
   "part1_execution_receipt": "results/MM_PART1_RECEIPT_20261023.json",
-  "last_cpu_preparation_note": "Source CRC/SHA complete and terminal Drive flush verified;682170usable/682661,491failed. Full image gate failed; no scientific epochs/validations/test. Goal reserve pause requested at9percent; exact next action is original-byte/decoder diagnosis, not automatic filtering or training.",
-  "latest_operational_note": "Source CRC/SHA complete and terminal Drive flush verified;682170usable/682661,491failed. Full image gate failed; no scientific epochs/validations/test. Goal reserve pause requested at9percent; exact next action is original-byte/decoder diagnosis, not automatic filtering or training."
+  "last_cpu_preparation_note": "Original source CRC/SHA terminal,682170/682661 usable,491failures; all3 inspected failed .jpg files areHTML; no data changes. Bounded diagnostic terminal/private backup saved. Await explicit protocol decision; scientific epochs0/2,val0/2,test0.",
+  "latest_operational_note": "Original source CRC/SHA terminal,682170/682661 usable,491failures; all3 inspected failed .jpg files areHTML; no data changes. Bounded diagnostic terminal/private backup saved. Await explicit protocol decision; scientific epochs0/2,val0/2,test0.",
+  "original_specimen_diagnostic": "results/MM_PART1_ORIGINAL_SPECIMEN_DIAGNOSTIC_20261024.json"
 }
