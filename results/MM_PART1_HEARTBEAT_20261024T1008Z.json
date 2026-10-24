@@ -1,0 +1,19 @@
+{
+  "checked_utc": "2026-10-24T10:10:54.937085+00:00",
+  "automation_id": "audit-urop-dataset-and-models",
+  "goal_status": "paused",
+  "usage_remaining_percent": {
+    "short_window": 99,
+    "weekly": 55
+  },
+  "goal_resume_controls": "Goal API exposes no resume operation; attempted native Codex app access was refused by computer-use safety restrictions. No bypass or duplicate goal created.",
+  "source_job_status": "Previously verified terminal, CRC/SHA and Drive flush passed; no new live cloud activity checked or claimed in this heartbeat.",
+  "saved_full_image_gate": false,
+  "saved_usable_images": 682170,
+  "required_images": 682661,
+  "failed_image_count": 491,
+  "scientific_epochs_completed": 0,
+  "full_validations_completed": 0,
+  "new_cloud_jobs_started": false,
+  "needed_action": "Resume the existing goal using the app. Then follow saved bounded original-byte/decoder diagnosis; preserve all official rows and do not bypass failed image gate."
+}
