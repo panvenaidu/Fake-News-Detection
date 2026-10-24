@@ -1,0 +1,70 @@
+{
+  "created_utc": "2026-10-24T05:19:30.867072+00:00",
+  "local_bundle": "data/official_paired_v1/source_bundles/UROP_MM_PART1_SOURCE_BUNDLE_20261024.zip",
+  "bytes": 33313,
+  "sha256": "e52dc84c4f05ec8f712bedd0fdc624d00c3fc32cd659e869e11749d8a972aa20",
+  "source_commit": "1d1f47c87bf351625d4d907183c690a7ee529612",
+  "files": [
+    {
+      "path": "collab/prepare_official_images_drive_v1.py",
+      "bytes": 10039,
+      "sha256": "543c60d78d61182b10052cfd061d90c5bb764f99138a8bc09ae72dbfe93d7354"
+    },
+    {
+      "path": "collab/repack_official_images_kaggle_v1.py",
+      "bytes": 7532,
+      "sha256": "b8703658a25655b7523c15cd5493321b727a8da63539ffbf651965a6e84de3e8"
+    },
+    {
+      "path": "scripts/verify_official_image_shards_v1.py",
+      "bytes": 13050,
+      "sha256": "ae0f169efd81c682f910de70cde44766c545486b05bc03f54534c862baf21aa0"
+    },
+    {
+      "path": "scripts/train_official_multimodal_v1.py",
+      "bytes": 19705,
+      "sha256": "e0e2ace518f8232ca250c7185b89b56a645c12125666630cace4a2876e520026"
+    },
+    {
+      "path": "scripts/multimodal_recovery_v1.py",
+      "bytes": 4567,
+      "sha256": "2f5f67ce79289c69279040d21b483e28535895f5c99c63e0021da3eee6d3d1c8"
+    },
+    {
+      "path": "scripts/verify_official_multimodal_v1.py",
+      "bytes": 5701,
+      "sha256": "338e41f3978465ecf5832916b1ec80dad66386e5cd1ef6097d82de4e7137e03f"
+    },
+    {
+      "path": "scripts/check_multimodal_cuda_v1.py",
+      "bytes": 11186,
+      "sha256": "cb8bf1c28d1d2bee547eb9bfbb27f9a8171cbf6e1f684444eb59e3a98c665244"
+    },
+    {
+      "path": "collab/measure_multimodal_preflight_v1.py",
+      "bytes": 11419,
+      "sha256": "54e8a2b04ca293fbe0d276f80d6c6fcc0ee8ce846084367db6cefedd238d4c6c"
+    },
+    {
+      "path": "configs/multimodal_official_6way_v1.json",
+      "bytes": 1101,
+      "sha256": "19e3c78288aa7a5eb7ee657900583a3cb2984637354fc43b742302816aea049b"
+    }
+  ],
+  "cloud_upload_verified": true,
+  "executed": false,
+  "includes_raw_data_or_weights": false,
+  "purpose": "Deploy source for post-extraction repack/metadata and actual runtime preflight; complete-image gates still required",
+  "cloud_folder": "https://drive.google.com/drive/u/0/folders/13VA4aO8-5dmt6en9JKrnyBPJ5_Cg4HRf",
+  "ui_evidence": "Drive showed33KBsource bundle and1upload complete; runtime SHA verification still required before loading",
+  "screenshot": "results/mm_part1_source_bundle_uploaded_20261024.png",
+  "post_extraction_cell": "collab/multimodal_post_extraction_pack_cell_v1.py",
+  "post_extraction_cell_sha256": "8e37393808f1f70836fadb6f0a5171862802091e4077782bda41396d7aa0bd87",
+  "post_extraction_cell_executed": false,
+  "checks": [
+    "ZIP CRC and per-source checksums",
+    "Python syntax",
+    "Reject missing/incomplete original source evidence"
+  ],
+  "updated_utc": "2026-10-24T05:24:43.107365+00:00"
+}
