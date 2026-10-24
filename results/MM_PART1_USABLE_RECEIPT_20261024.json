@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-24T11:25:25.682063+00:00",
+  "updated_utc": "2026-10-24T15:16:55.834196+00:00",
   "plan": "MM-PART1-v2+approved-usable-cohort-amendment20261024",
-  "goal_status": "active_verified_after_user_resume",
+  "goal_status": "active_verified",
   "approval": "results/MM_PART1_USABLE_COHORT_APPROVAL_20261024.json",
   "registration": "results/MM_PART1_USABLE_COHORT_REGISTRATION_20261024.json",
   "cohort_id": "FACULTY-6W-USABLE-682170-v1",
@@ -28,27 +28,26 @@
     "results/usable_multimodal_evidence_checks_20261024.json"
   ],
   "CPU_job": {
-    "utc": "2026-10-24T11:03:14.760861+00:00",
-    "state": "approved_usable_transport_started",
-    "job_id": "CPU_USABLE_TRANSPORT_3bcc65e9a0c747288ae516a87ee6ccce",
-    "pid": 4659,
-    "cohort_id": "FACULTY-6W-USABLE-682170-v1",
-    "cohort_registration_sha256": "3fe0b622958a1eee6732789d4f7acf6b450c0e3bda87312e5cbb6500fb405ce5",
-    "required": 682170,
-    "max_pack_seconds": 1800,
-    "source_originals_retained": true,
+    "job_id": "CPU_USABLE_TRANSPORT_8091318e6b994f829ef34b62ce9ca587",
+    "utc": "2026-10-24T15:15:21.095646+00:00",
+    "pid": 1568,
+    "pid_role": "notebook_kernel_not_dedicated_trainer",
+    "cell": "hasAItotepXo",
+    "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=hasAItotepXo",
+    "max_pack_seconds": 3600,
+    "source_file": "collab/run_usable_transport_job_v3.py",
+    "source_sha256": "60a0175d5faaba66e76752827e9a9052564351b0a0d15b35ce0803ae9f6fee94",
+    "phase": "rehash prior closed packs before any new copy",
     "training": false,
-    "test_inference": false,
-    "checkpoint": "Closed immutable original-byte TARs and per-image SHA receipts; open orphans never trusted",
-    "recovery": "Inspect exact terminal receipt/PID; verify original committed packs before an explicitly recorded bounded continuation",
-    "source_file_sha256": "8ac949c105d34ce87d7d58a144231556cff772ad7751f7273657f1dbc7b13917"
+    "test_inference": false
   },
   "last_observation": {
-    "utc": "2026-10-24T11:23:36.006288+00:00",
-    "state": "packed_shard_committed",
-    "images_committed": 201962,
-    "required": 682170,
-    "packed_shards": 11
+    "utc": "2026-10-24T15:16:55.834196+00:00",
+    "state": "new_cpu_continuation_executing",
+    "verified_notebook_cell_running": true,
+    "last_committed_images": 319820,
+    "last_committed_packs": 18,
+    "new_pack_counter_not_observed_yet": true
   },
   "terminal_flush_verified": false,
   "no_GPU_allocated": true,
@@ -60,38 +59,48 @@
     "overall": 53
   },
   "usage_observation": {
-    "short_remaining": 10,
-    "weekly_remaining": 41,
-    "action": "Essentialhandoff/GitthenpauseGoalperuserinstruction;nonewlongjobs/transfers/debugging"
+    "short_remaining": 91,
+    "weekly_remaining": 39,
+    "action": "continue approved bounded work; use smaller applicable remaining percentage"
   },
   "limitations": [
-    "Transportcopyonly;firstpackcommittedbutterminalflushstillpending",
     "No scientific multimodal training/validation/test",
-    "Actualv2CUDAandfullmodelthroughputnotrun",
-    "OldCLIchildfailedcode1withoutcapturedstderr;PIDmissing/no packs verified; guard preserved and same-source in-kernel recovery started",
-    "V2scientificsourcespinnedto5aa5c87a2620b3c7763401e845dad45a935dd621;releaseJSONremainsDRAFT,fullinput/CUDA/measuredpreflightpending"
+    "Actual v2 CUDA and full-model throughput remain pending",
+    "Private Kaggle input Version1 contains only640images; no full dataset upload yet",
+    "Current transport is preparation only; hashes and actual destination runtime decode gates still required"
   ],
   "scientific_source_commit": "5aa5c87a2620b3c7763401e845dad45a935dd621",
   "guarded_draft_release_refusal_verified": true,
   "independent_continuation": {
-    "job_id": "CPU_USABLE_TRANSPORT_3bcc65e9a0c747288ae516a87ee6ccce",
-    "bounded_pack_seconds": 1800,
+    "job_id": "CPU_USABLE_TRANSPORT_8091318e6b994f829ef34b62ce9ca587",
+    "utc": "2026-10-24T15:15:21.095646+00:00",
+    "pid": 1568,
+    "pid_role": "notebook_kernel_not_dedicated_trainer",
+    "cell": "hasAItotepXo",
+    "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=hasAItotepXo",
+    "max_pack_seconds": 3600,
+    "source_file": "collab/run_usable_transport_job_v3.py",
+    "source_sha256": "60a0175d5faaba66e76752827e9a9052564351b0a0d15b35ce0803ae9f6fee94",
+    "phase": "rehash prior closed packs before any new copy",
+    "training": false,
+    "test_inference": false,
     "already_submitted": true,
     "closed_TAR_SHA_and_per_image_receipts": true,
     "source_shards_preserved": true,
     "terminal_flush_required": true,
-    "observed_advancing_counter": {
-      "utc": "2026-10-24T11:23:36.006288+00:00",
-      "state": "packed_shard_committed",
-      "images_committed": 201962,
-      "required": 682170,
-      "packed_shards": 11
-    },
-    "note": "Existingjobmaycontinueindependentlyafterassistantstop;noongoingmonitoringorguaranteedcompletionclaimed.Inspectterminal/flushbeforeanyresume.",
-    "original_source_recoverability": "Originalcompleteauthorarchive/shardsandpinnedsource/failure/approvalreceiptsretained;copy-onlyprogresscanberebuiltfromverifiedoriginalswithoutanotherfullextraction"
+    "note": "May continue to bounded checkpoint independently; final flush must be observed. No monitoring is promised after assistant stops."
   },
-  "state": "ten_percent_reserve_handoff_pause_requested",
-  "goal_pause_requested": true,
-  "previous_goal_turn_classification": "Progress:approvedcohortregistered,versionedguards/tests/sourcepinandcloudjobstarted",
-  "current_goal_turn_classification": "Verifiedwait:polledexactsameexecutingColabcellandadvancingpackcounters;nowuser10percentpauseboundary"
+  "state": "active_cpu_transport_continuation",
+  "goal_pause_requested": false,
+  "previous_goal_turn_classification": "Progress: verified and pushed essential reserve handoff; paused per user10percent instruction",
+  "current_goal_turn_classification": "Progress: verified prior terminal and flush; pinned one-hour transport runner; launched same-cohort continuation after terminal/lock checks",
+  "prior_terminal": {
+    "job_id": "CPU_USABLE_TRANSPORT_3bcc65e9a0c747288ae516a87ee6ccce",
+    "images_committed": 319820,
+    "packed_shards": 18,
+    "terminal_utc": "2026-10-24T11:34:56.925103+00:00",
+    "flush_utc": "2026-10-24T11:35:10.638934+00:00",
+    "terminal_and_flush_observed": true,
+    "evidence": "data/official_paired_v2/TRANSPORT_JOB_TERMINAL_3bcc65e9_20261024.txt"
+  }
 }

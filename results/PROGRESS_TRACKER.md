@@ -1,3 +1,15 @@
+<!-- USABLE TRANSPORT RESUMED -->
+## Active CPU transport continuation — 2026-10-24T15:16:55.834196+00:00
+
+Existing Goal is ACTIVE; allowance was91% short /39% weekly remaining at launch checks. Previous goal turn made progress by saving and verifying Git reserve handoff. Prior job3bcc65e9 is genuinely TERMINAL:319,820 images /18 closed packs, terminal11:34:56UTC and Drive flush11:35:10UTC. Exact saved notebook output is retained privately under `data/official_paired_v2/TRANSPORT_JOB_TERMINAL_3bcc65e9_20261024.txt`. Colab later disconnected for inactivity; do not confuse that with an interrupted pack operation.
+
+Fresh CPU runtime1568 mounted the SAME approved Drive/account; no scope expansion. New job **CPU_USABLE_TRANSPORT_8091318e6b994f829ef34b62ce9ca587** started15:15:21UTC in cell `hasAItotepXo`: https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=hasAItotepXo . One-hour packing cap, plus prior-pack hash audit/input checks/metadata/flush. Registered `collab/run_usable_transport_job_v3.py` SHA60a0175d5faaba66e76752827e9a9052564351b0a0d15b35ce0803ae9f6fee94 changes only wall cap from1800to3600seconds; source/model/cohort unchanged. Commit2662488499fd8d0c6ea1f32aa1bbc67843211aac verified against remote BEFORE launch. Prior terminal/guard/free lock/exact18receipts319820uniqueIDs checked; guard retired once. Shared packer rehashes all prior TARs and joins before new copy. Do NOT rerun the one-shot continuation cell. Check exact job terminal/failure+Drive flush first.
+
+Kaggle Rocky62 existing private staging remains Version1:640images/66.74MB; private storage panel2.31GB/214.75GB. Full immutable staging/upload has NOT completed. Production scientific source pin remains5aa5c87a2620b3c7763401e845dad45a935dd621. Actual682170-runtime image gate, actualv2CUDA recovery/measured throughput, scientific epochs1–2/fullvalidation all PENDING. No GPU allocated, no finaltest, epochs0/2, fullvalidations0/2. Bars unchanged text100/MM40/image20/overall53. Approved491exclusions/563601train59299validation59270test unchanged.
+
+NEXT: inspect this SAME job/cell counters and terminal flush, verify complete pack/metadata if produced, establish private immutable full training input without duplicating source extraction, then destination runtime hash/decode, CUDA recovery and full-model measured preflight before registered epochs. At20% reserve start no new long jobs; handoff/pause10%, hardstop5%. Receipt `results/MM_PART1_USABLE_RECEIPT_20261024.json`.
+<!-- /USABLE TRANSPORT RESUMED -->
+
 <!-- USABLE TEN PERCENT HANDOFF -->
 ## Ten-percent handoff requested — 2026-10-24T11:25:25.682063+00:00
 
