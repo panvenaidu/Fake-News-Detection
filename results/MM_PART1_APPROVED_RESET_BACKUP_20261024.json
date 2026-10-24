@@ -1,0 +1,40 @@
+{
+  "utc": "2026-10-24T15:44:51.961616+00:00",
+  "user_approved_reset": true,
+  "user_instruction": "Choose Option1; verify important backups first; reset ColabCPU; continue preparation; KaggleGPU training; do not delete unsaved project data",
+  "reset_not_yet_performed": true,
+  "pre_reset_check_passed": true,
+  "unique_unsaved_project_files_in_CPU_scratch": 0,
+  "only_scratch_project_item": "empty lockfile",
+  "cloud_notebook_all_changes_saved_observed": true,
+  "cloud_notebook_downloaded_and_JSON_valid": true,
+  "local_original_TSV_SHA_verified": 3,
+  "local_text_selected_weight_SHA_verified": true,
+  "source_evidence_code_artifact_hashes_verified": 31,
+  "remote_git_commit_verified": "855377a428f831efea183019a77ffa52785b8c9e",
+  "drive_archives_visible": 18,
+  "drive_receipts_visible": 18,
+  "prior_terminal_flush_verified": "2026-10-24T11:35:10.638934+00:00",
+  "archive_hash_recheck_at_this_boundary": false,
+  "archive_note": "Previous fsync/hash receipts and terminal flush retained; fresh Drive UI existence check completed. Full archive/image byte verification still required before training.",
+  "local_unsaved_user_edits": "Preserved in UROP; outside cloud runtime reset scope; not staged as unrelated work",
+  "uncommitted_local_v4_draft": "collab/run_usable_transport_job_v4.py; local file preserved; not yet released or cloud executed",
+  "artifacts": [
+    {
+      "path": "data/official_paired_v2/PRE_RESET_RUNTIME_INVENTORY_20261024.txt",
+      "bytes": 317,
+      "sha256": "9ce3c0af4ef2e326150de7b9cd01a3173f790a368ef14d5cd36fc2bc1874d69a"
+    },
+    {
+      "path": "data/official_paired_v2/CPU_NOTEBOOK_BEFORE_APPROVED_RESET_20261024.ipynb",
+      "bytes": 546373,
+      "sha256": "e3f7a69e72849158a8268f9ef6e893acf654395ce6b555c5964da707b28bee54"
+    },
+    {
+      "path": "data/official_paired_v2/PRE_RESET_DRIVE_PACK_LIST_20261024.json",
+      "bytes": 9069,
+      "sha256": "d12e921dd4c4741fe14e4e3062bcab1f8356279f292949addf7470bffdefd800"
+    }
+  ],
+  "no_GPU_training_started": true
+}
