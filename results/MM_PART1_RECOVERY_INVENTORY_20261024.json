@@ -1,0 +1,44 @@
+{
+  "state": "recovery_inventory_saved",
+  "receipt": "recovery_inventory_20261024T035135Z.json",
+  "summary": {
+    "utc": "2026-10-24T03:51:34.445701+00:00",
+    "state": "metadata_recovery_inventory",
+    "committed_images_in_receipts": 505573,
+    "counts": {
+      "train": 417790,
+      "validation": 43838,
+      "test": 43945
+    },
+    "shard_count": 111,
+    "shard_bytes": 59466014720,
+    "orphans_untrusted": [
+      {
+        "name": "images_20ad5ec99d0c4f59990dc54e195383b7.tar",
+        "bytes": 154449920
+      },
+      {
+        "name": "images_3d24f1ea619648fd9138ea942cffbe25.tar",
+        "bytes": 288389120
+      }
+    ],
+    "scratch_free": 93283307520,
+    "source_bytes": 113623359224,
+    "source_sha256_not_recomputed": true,
+    "full_image_gate_passed": false,
+    "no_extraction": true,
+    "no_training": true,
+    "hash_verification_pending": true,
+    "result_files": [],
+    "public_stream_probe": {
+      "http_status": 206,
+      "content_length": "4096",
+      "content_range": "bytes 0-4095/113623359224",
+      "content_type": "application/octet-stream",
+      "sample_bytes": 4096,
+      "sample_sha256": "cce9d03b8ea171e60644133bb5a38fa84f1d99bd56517825e7cb4a006f6bb573",
+      "magic_bzh9": true,
+      "bounded_read_only": true
+    }
+  }
+}

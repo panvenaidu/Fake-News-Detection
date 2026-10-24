@@ -73,3 +73,6 @@ results/bert_completion_gpu_quota_20261009.png
 
 # Current Part1 browser screenshots stay local (account/UI context).
 results/mm_part1_*_20261023.png
+
+# Current recovery UI evidence stays local.
+results/mm_part1_*_20261024.png

@@ -1,0 +1,16 @@
+{
+  "observed_utc": "2026-10-24T03:47:44.670Z",
+  "job_id": "CPU_IMAGE_PREP_7128d94997e84072a77aca9a66bc46c6",
+  "error_type": "RuntimeError",
+  "error": "Scratch margin fell below8GiB; preserve committed shards",
+  "last_saved_status": {
+    "utc": "2026-10-23T23:03:52.017584+00:00",
+    "state": "extracting",
+    "usable_committed": 505573,
+    "usable_in_open_shard": 2427,
+    "required": 682661,
+    "elapsed_seconds": 17907.530402623
+  },
+  "scope": "Saved notebook output; current durable cloud shard revalidation pending",
+  "scientific_training": false
+}

@@ -1,0 +1,14 @@
+{
+  "utc": "2026-10-24T03:55:19.929839+00:00",
+  "state": "same_author_public_stream_probe_passed",
+  "source_id": "1cjY6HsHaSZuLVHywIxD5xQqng33J5S2b",
+  "source_bytes": 113623359224,
+  "head_and_tail_match_private_copy": true,
+  "head_sha256": "cce9d03b8ea171e60644133bb5a38fa84f1d99bd56517825e7cb4a006f6bb573",
+  "tail_sha256": "0f95c3e0a7e17923ce677e9153e3f8b6b7893bcdc1d74a288912f275db612d92",
+  "etag_hash": null,
+  "stream_script_sha256": "5b9be91021d4d397d8f3bd74c0354d0496b7cfb685723cf2c3c3ee24ea6266e6",
+  "full_source_hash_pending": true,
+  "image_gate_passed": false,
+  "extraction_started": false
+}
