@@ -1,3 +1,7 @@
+<!-- MM-PART1 DECISION HANDOFF -->
+Goal status is **blocked**, verified 2026-10-24T10:44:11.024556+00:00, after the same protocol decision remained unresolved for three consecutive goal turns. User asked which option is recommended; Option1 was explained as682170usablefacultyimage-textpairs, same official splits/six labels,491explicitstrict-decodingexclusions. A new plain approval question is pending; recommendation is not approval. No exclusion/source/decoder/model change, no GPU launch, no scientific epoch/validation/test. Resume only after a clear decision and supported Goal resume; do not repeat extraction/diagnosis/backup downloads while waiting.
+<!-- /MM-PART1 DECISION HANDOFF -->
+
 <!-- MM-PART1 BACKUP READBACK -->
 Private specimen backup read back through Chrome at 2026-10-24T10:41:30.824485+00:00. Actual137,784-byte ZIP matches SHA256`1389e967e5fbf31d444acf34c881c314803bf57542aca323137e41aa88733ef6` and passes ZIP CRC. Download-event observation expired, but the actual completed file was verified; no retry/duplicate download. Private readback: `data/official_paired_v1/source_recovery/urop_failed_specimens_stateless_v2_DRIVE_READBACK.zip`. Evidence `results/MM_PART1_ORIGINAL_SPECIMEN_DIAGNOSTIC_20261024.json`. Cohort approval remains pending; no new extraction/training, no data/policy changes.
 <!-- /MM-PART1 BACKUP READBACK -->

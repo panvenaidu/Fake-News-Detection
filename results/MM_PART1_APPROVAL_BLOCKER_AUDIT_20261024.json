@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-24T10:41:30.824485+00:00",
+  "updated_utc": "2026-10-24T10:44:11.024556+00:00",
   "blocker_id": "approval_required_to_change_all_682661_usable_pair_requirement",
-  "consecutive_goal_turns_with_same_blocker": 2,
+  "consecutive_goal_turns_with_same_blocker": 3,
   "first_turn": "Original-byte diagnostic proved3HTMLfiles;reviewablecohortproposalpreparedanduserapprovalrequested;Git/privatebackupcompleted",
   "second_turn": "Revalidatedpendingdecision;completedindependentprivatebackupbyte/CRCreadback;noapprovalreceived",
   "previous_turn_classification": "progress: neworiginal-payloadevidencechangednextactiontoscopedecision",
@@ -10,5 +10,7 @@
   "goal_complete": false,
   "source_or_training_jobs_active": false,
   "no_repeated_diagnostics": "Do not repeat source extraction, raw specimen scanning, backup downloads or full engineering tests while awaiting same decision",
-  "next": "Atnextconsecutivegoalturn,revalidatependingdecisionandrecords;ifunchangedandnoindependentmeaningfulworkremains,blockedthreshold3issatisfied;useupdate_goalblocked. Anapprovalresumesdecisiondependentwork;neverinfersilenceasapproval."
+  "next": "Wait for explicit cohort decision. User asks to use only faculty dataset; do not infer approval to exclude rows. Recommendation is Option1 available-image cohort with all491exclusions documented, same faculty sources/splits/labels. After approval, resume through supported Goal controls and preregister exact amended cohort/protocol before training. Do not repeat terminal jobs or raw scans.",
+  "goal_status": "blocked",
+  "third_turn": "Revalidatedall-pairsgatefailedandpendingdecision;noindependentmeaningfulworkremains.GoalAPIreturnedblocked.Useraskedwhichoptionrecommended;clarifiedOption1andrequestedplainexplicitapproval.Noapprovalreceivedyet."
 }

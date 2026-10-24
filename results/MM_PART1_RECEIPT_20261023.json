@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-24T10:41:30.824485+00:00",
+  "updated_utc": "2026-10-24T10:44:11.024556+00:00",
   "plan": "MM-PART1-v2",
-  "state": "original_html_payloads_verified_awaiting_protocol_decision",
+  "state": "blocked_pending_explicit_cohort_decision",
   "part1_complete": false,
   "scientific_training_started": false,
   "epochs_completed": 0,
@@ -190,7 +190,7 @@
   "goal_pause_requested": false,
   "original_specimen_diagnostic": "results/MM_PART1_ORIGINAL_SPECIMEN_DIAGNOSTIC_20261024.json",
   "protocol_decision_proposal": "context/MM_PART1_IMAGE_POLICY_DECISION_20261024.md",
-  "protocol_decision": "pending; no data changes",
+  "protocol_decision": "User requested recommendation;Option1recommendedbutexplicitapprovalstillpending.Noexclusionsapplied.",
   "historical_cpu_extraction_job": {
     "id": "CPU_IMAGE_PREP_7128d94997e84072a77aca9a66bc46c6",
     "started_utc": "2026-10-23T18:05:05.015258+00:00",
@@ -237,5 +237,6 @@
     "verified_utc": "2026-10-24T10:38:52.274309+00:00",
     "scope": "Diagnosis/context/protocolproposal; this updated receipt is a separate child commit"
   },
-  "original_specimen_private_backup_byte_verified": true
+  "original_specimen_private_backup_byte_verified": true,
+  "goal_status": "blocked"
 }
