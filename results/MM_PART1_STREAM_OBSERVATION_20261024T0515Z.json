@@ -1,0 +1,40 @@
+{
+  "observed_utc": "2026-10-24T05:14:07.367Z",
+  "job_id": "CPU_STREAM_PREP_87f54da6a55c47349ba79a6f6ab33747",
+  "basis": "Visible output from existing Colab Cell CTwlzdeQDnsR; no new job launched",
+  "records": [
+    {
+      "elapsed_seconds": 3298.1802358829996,
+      "required": 682661,
+      "scratch_free": 76272893952,
+      "source_bytes_read": 38304792576,
+      "source_required_members_seen": 230000,
+      "state": "replaying_verified_prefix",
+      "usable_committed": 505573,
+      "usable_in_open_shard": 0,
+      "utc": "2026-10-24T05:09:18.185712+00:00"
+    },
+    {
+      "elapsed_seconds": 3434.120995715,
+      "required": 682661,
+      "scratch_free": 76272762880,
+      "source_bytes_read": 39955185664,
+      "source_required_members_seen": 240000,
+      "state": "replaying_verified_prefix",
+      "usable_committed": 505573,
+      "usable_in_open_shard": 0,
+      "utc": "2026-10-24T05:11:34.126473+00:00"
+    },
+    {
+      "elapsed_seconds": 3586.362006023,
+      "required": 682661,
+      "scratch_free": 76272644096,
+      "source_bytes_read": 41695297536,
+      "source_required_members_seen": 250000,
+      "state": "replaying_verified_prefix",
+      "usable_committed": 505573,
+      "usable_in_open_shard": 0,
+      "utc": "2026-10-24T05:14:06.367467+00:00"
+    }
+  ]
+}

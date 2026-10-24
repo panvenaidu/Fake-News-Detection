@@ -1,7 +1,7 @@
 {
-  "utc": "2026-10-24T04:41:23.009393+00:00",
+  "utc": "2026-10-24T05:15:42.854287+00:00",
   "status": "Engineering/recovery checkpoint; not accepted Part1",
-  "artifact_count": 32,
+  "artifact_count": 34,
   "artifacts": [
     {
       "path": "scripts/train_official_multimodal_v1.py",
@@ -194,6 +194,18 @@
       "bytes": 1436,
       "sha256": "027bc977d199ec964beb1fc7947a1e7826937d33fc9ab5b8d65a7ca5ac0e2109",
       "role": "Local launch preparation/mock guard check only; not cloud training or scientific evidence"
+    },
+    {
+      "path": "collab/measure_multimodal_preflight_v1.py",
+      "bytes": 11419,
+      "sha256": "54e8a2b04ca293fbe0d276f80d6c6fcc0ee8ce846084367db6cefedd238d4c6c",
+      "role": "Prepared measured-preflight helper and syntax/refusal proof only; actual cloud/model throughput not yet executed"
+    },
+    {
+      "path": "results/MM_PART1_MEASURED_PREFLIGHT_PREPARATION_20261024.json",
+      "bytes": 561,
+      "sha256": "4e30168852d3d6782c33533933d6c2fc8fd67a2d85cb368721c910e030b75ede",
+      "role": "Prepared measured-preflight helper and syntax/refusal proof only; actual cloud/model throughput not yet executed"
     }
   ],
   "excluded_from_git": [

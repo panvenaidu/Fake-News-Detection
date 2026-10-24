@@ -1,0 +1,18 @@
+{
+  "status": "prepared_not_cloud_executed",
+  "script": "collab/measure_multimodal_preflight_v1.py",
+  "sha256": "54e8a2b04ca293fbe0d276f80d6c6fcc0ee8ce846084367db6cefedd238d4c6c",
+  "checks": [
+    "Python syntax",
+    "Refuses local input",
+    "Refuses output outside dedicated Kaggle working folder"
+  ],
+  "not_verified": [
+    "Actual full-cohort CUDA throughput",
+    "Real model checkpoint timing",
+    "Cloud output export timing and persistence"
+  ],
+  "scientific_epochs_completed": 0,
+  "full_validations_completed": 0,
+  "test_performed": false
+}

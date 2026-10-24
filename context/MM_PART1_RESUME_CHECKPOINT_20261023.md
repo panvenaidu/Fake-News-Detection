@@ -1,3 +1,15 @@
+<!-- MM-PART1 ACTIVE CONTINUATION -->
+## Active goal resumed — 2026-10-24T05:14:49.150134+00:00
+
+The existing goal is active again (verified through goal controls). The earlier paused-goal handoff is historical. Existing bounded CPU source job `CPU_STREAM_PREP_87f54da6a55c47349ba79a6f6ab33747` remains intact in Colab Cell `CTwlzdeQDnsR`; latest observed output 2026-10-24T05:14:06.367467+00:00: 250000 source IDs replayed / 41695297536 compressed bytes. Verified committed images remain **505573/682661**, with no new images claimed from prefix replay. Source CRC/SHA/full input gate remains pending. Scientific epochs **0/2**, full validations **0/2**, no final test.
+
+Existing private Kaggle training draft now imported the guarded source-only notebook successfully: https://www.kaggle.com/code/rocky62/urop-full-six-way-multimodal-part1/edit . Draft saved, accelerator None, session off, `RELEASE_PATH=None`; no runtime allocated or code executed. Private selection verified; source import is preparation only. Screenshot `results/mm_part1_guarded_draft_imported_20261024.png` (ignored). Actual cloud bootstrap/release remains unverified.
+
+New `collab/measure_multimodal_preflight_v1.py` prepares the required disposable full-model 600–900s train-only measurement plus60–120s evaluation-path timing on train images. It requires full immutable Kaggle image proof, registered source/config/warm-start hashes, matching actual CUDA fixture, and a fresh dedicated output folder. Uses the unchanged production Engine, effective batch32 and four-epoch scheduler. It records loader wait, peak VRAM and full checkpoint roundtrip timing; it does not compute validation/test scores or advance registered epochs. Syntax and cloud/path refusal checks passed only; actual CUDA/throughput/export checks remain pending. Receipt `results/MM_PART1_MEASURED_PREFLIGHT_PREPARATION_20261024.json`.
+
+Next: continue observing the SAME bounded source stream until actual terminal proof. Then finish original source CRC/SHA/682661 coverage, flush/durability, lossless repacking, private immutable full-input upload/runtime verification, actual installed-GPU recovery and measured preflight, and registered epoch1 followed by full validation and durable export, then same-run epoch2. Do not launch from template defaults or fill missing receipts with assumptions. Progress unchanged: text100%, text+image40%, image-only20%, overall53%.
+<!-- /MM-PART1 ACTIVE CONTINUATION -->
+
 <!-- SCHEDULED CONTINUATION POLICY -->
 User-confirmed scheduled-message instructions: [SCHEDULED_CONTINUATION_INSTRUCTIONS.md](SCHEDULED_CONTINUATION_INSTRUCTIONS.md). Read these with each scheduled continuation; they do not themselves restart a paused goal or establish current cloud status.
 <!-- /SCHEDULED CONTINUATION POLICY -->

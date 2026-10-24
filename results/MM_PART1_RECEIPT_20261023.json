@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-24T04:51:32.106907+00:00",
+  "updated_utc": "2026-10-24T05:14:49.150134+00:00",
   "plan": "MM-PART1-v2",
-  "state": "pause_requested_at_user10percent_handoff",
+  "state": "active_waiting_for_existing_source_stream",
   "part1_complete": false,
   "scientific_training_started": false,
   "epochs_completed": 0,
@@ -16,7 +16,7 @@
   "source_archive_download_confirmed": false,
   "drive_storage_observed": "185.53 GB of5.39 TB after cloud source copy; historical UI snapshot, later shards increase usage",
   "cpu_prep_notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
-  "cpu_runtime": "Current CPU stream job CPU_STREAM_PREP_87f54da6a55c47349ba79a6f6ab33747 live; committed-shard SHA revalidation advancing",
+  "cpu_runtime": "Existing bounded CPU stream live at05:14UTC; verified prefix replay advancing, no new committed images in this observation",
   "image_gate_passed": false,
   "image_coverage": "results/official_image_coverage_v1.json",
   "recovery_checks": "results/multimodal_recovery_primitives_checks_20261023.json",
@@ -174,19 +174,19 @@
     "required": 682661,
     "elapsed_seconds": 2696.805649424
   },
-  "latest_heartbeat": "results/MM_PART1_HEARTBEAT_20261024.json",
+  "latest_heartbeat": "results/MM_PART1_HEARTBEAT_20261024T0508Z.json",
   "latest_stream_job": "results/MM_PART1_STREAM_JOB_20261024.json",
   "metadata_committed_images": 505573,
   "latest_stream_observation": {
-    "elapsed_seconds": 2062.383349731,
+    "elapsed_seconds": 3586.362006023,
     "required": 682661,
-    "scratch_free": 76274929664,
-    "source_bytes_read": 23322632192,
-    "source_required_members_seen": 140000,
+    "scratch_free": 76272644096,
+    "source_bytes_read": 41695297536,
+    "source_required_members_seen": 250000,
     "state": "replaying_verified_prefix",
     "usable_committed": 505573,
     "usable_in_open_shard": 0,
-    "utc": "2026-10-24T04:48:42.388828+00:00"
+    "utc": "2026-10-24T05:14:06.367467+00:00"
   },
   "committed_shard_hash_audit": {
     "utc": "2026-10-24T04:14:19.999612+00:00",
@@ -201,8 +201,12 @@
   "transport_repacker_state": "Local prepared and synthetic checked; not run on real data",
   "registered_launch_preparation": "results/MM_PART1_REGISTERED_LAUNCHER_PREPARATION_20261024.json",
   "registered_training_notebook": "https://www.kaggle.com/code/rocky62/urop-full-six-way-multimodal-part1/edit",
-  "cloud_launch_source_imported": false,
+  "cloud_launch_source_imported": true,
   "cloud_launch_source_executed": false,
   "git_backup_receipt": "results/MM_PART1_GIT_BACKUP_20261024.json",
-  "reserve_integrity_receipt": "results/MM_PART1_RESERVE_VERIFICATION_20261024.json"
+  "reserve_integrity_receipt": "results/MM_PART1_RESERVE_VERIFICATION_20261024.json",
+  "training_notebook": "https://www.kaggle.com/code/rocky62/urop-full-six-way-multimodal-part1/edit",
+  "training_notebook_state": "Guarded source imported; Private, None accelerator, session off, RELEASE_PATH None; no execution",
+  "measured_preflight_preparation": "results/MM_PART1_MEASURED_PREFLIGHT_PREPARATION_20261024.json",
+  "latest_stream_observation_receipt": "results/MM_PART1_STREAM_OBSERVATION_20261024T0515Z.json"
 }

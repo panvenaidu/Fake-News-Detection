@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-23T15:07:15.125612+00:00",
+  "updated_utc": "2026-10-24T05:14:49.150134+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -444,5 +444,6 @@
     "progress_unchanged": true
   },
   "part1_execution_receipt": "results/MM_PART1_RECEIPT_20261023.json",
-  "last_cpu_preparation_note": "10percent handoff2026-10-24T04:51:32.106907+00:00: existingCPUstreamjobleftintact, last140000IDs/23322632192bytesprefixreplay;505573committedimages.0scientificepochs;barsunchanged. Pause requested; verify exact job on resume."
+  "last_cpu_preparation_note": "Active goal resumed2026-10-24T05:14UTC; same CPU stream has replayed250000required source IDs/41695297536compressed bytes;505573committed. Full source and runtime image gates pending. No scientific epochs/validations.",
+  "latest_operational_note": "Existing goal resumed. Source prefix replay advancing; no new scientific epochs/validations. Private guarded Kaggle draft imported with session off. Full image gate and actual preflight remain pending."
 }
