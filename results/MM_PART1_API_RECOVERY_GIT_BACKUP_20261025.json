@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-24T20:33:14.771734+00:00",
+  "verified_checkpoint_commit": "4b069d769593f63f7f48965ffb844aebb4f71dba",
+  "remote_main_commit": "4b069d769593f63f7f48965ffb844aebb4f71dba",
+  "verified_match": true,
+  "repository": "https://github.com/panvenaidu/Fake-News-Detection",
+  "scope": "Recovery sources, sanitized small evidence, required context/log/status/progress records. Raw images/weights/credentials/private API index IDs excluded.",
+  "this_receipt_note": "Verifies parent checkpoint. Reserve-note child push must be checked separately.",
+  "usage_remaining": {
+    "short": 69,
+    "weekly": 20
+  },
+  "scientific_epochs": 0,
+  "full_validations": 0,
+  "final_test": false,
+  "part1_complete": false,
+  "no_active_packing_or_training_job": true
+}

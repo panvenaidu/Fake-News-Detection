@@ -1,5 +1,5 @@
 {
-  "utc": "2026-10-24T20:32:00.012867+00:00",
+  "utc": "2026-10-24T20:33:14.771734+00:00",
   "state": "local_recovery_artifacts_verified",
   "artifacts": [
     {
@@ -39,12 +39,16 @@
     },
     {
       "path": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
-      "bytes": 4941,
-      "sha256": "974de5fa811755f69eb8cec270f6f1d3cd7b10a3051d246d025d49c6596b1206"
+      "bytes": 5156,
+      "sha256": "568b7178e1b9a44d20c9466bf94070fe4dc250225d23d8b80c29b09979ccab6f"
     }
   ],
   "private_raw_index_identifier": "data/official_paired_v2/API_METADATA_INDEX_RECEIPT_20261025.json",
   "raw_data_and_weights_excluded": true,
   "science_incomplete": true,
-  "remote_backup": "pending_this_checkpoint"
+  "remote_backup": {
+    "verified_checkpoint_commit": "4b069d769593f63f7f48965ffb844aebb4f71dba",
+    "remote_match": true,
+    "reserve_child": "Verify separately after push"
+  }
 }

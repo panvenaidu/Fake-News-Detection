@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T20:32:00.012867+00:00",
+  "updated_utc": "2026-10-24T20:33:14.771734+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -461,6 +461,7 @@
     "exclusions": 491,
     "receipt": "results/MM_PART1_USABLE_RECEIPT_20261024.json"
   },
-  "current_execution_note": "API recovery verified: all150source receipts/682170metadata IDs, durableindexreadback, originalTAR4KiB HTTP206. CloudDriveOOMproved. No activepacking/training; durable319820images18packs;scientific0/2train0/2val,test0.",
-  "latest_recovery_receipt": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json"
+  "current_execution_note": "20percent weeklyreserve: all API diagnostics terminal and durablemetadataindexverified; no newlongjob. Packing319820/18,scientific0/2train0/2val,test0. Exact recovery receipt20261025.",
+  "latest_recovery_receipt": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
+  "latest_api_backup_receipt": "results/MM_PART1_API_RECOVERY_GIT_BACKUP_20261025.json"
 }

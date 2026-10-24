@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T20:32:00.012867+00:00",
+  "updated_utc": "2026-10-24T20:33:14.771734+00:00",
   "plan": "MM-PART1-v2+approved-usable-cohort-amendment20261024",
   "goal_status": "active_verified_20261025",
   "approval": "results/MM_PART1_USABLE_COHORT_APPROVAL_20261024.json",
@@ -109,5 +109,6 @@
   "latest_reserve_handoff": "results/MM_PART1_TEN_PERCENT_HANDOFF_20261024.json",
   "goal_pause_requested_at10percent": false,
   "latest_recovery_receipt": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
-  "current_execution_note": "API recovery verified: all150source receipts/682170metadata IDs, durableindexreadback, originalTAR4KiB HTTP206. CloudDriveOOMproved. No activepacking/training; durable319820images18packs;scientific0/2train0/2val,test0."
+  "current_execution_note": "20percent weeklyreserve: all API diagnostics terminal and durablemetadataindexverified; no newlongjob. Packing319820/18,scientific0/2train0/2val,test0. Exact recovery receipt20261025.",
+  "latest_api_backup_receipt": "results/MM_PART1_API_RECOVERY_GIT_BACKUP_20261025.json"
 }
