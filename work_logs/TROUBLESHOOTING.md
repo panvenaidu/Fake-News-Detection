@@ -1,3 +1,23 @@
+## Approved reset reproduced same Drive read failure
+
+<!-- APPROVED RESET RESERVE HANDOFF -->
+## Current recovery handoff — 2026-10-24T15:55:24.809235+00:00
+
+**User approved Option1 CPU reset after backup verification. RESET COMPLETED; no unsaved project data was deleted.** Pre-reset runtime inventory found only one empty project lockfile outside standardfolders; originalDrive not reset. Fresh CPU notebook JSON backed up locally(546373bytes,SHAe3f7a69e72849158a8268f9ef6e893acf654395ce6b555c5964da707b28bee54), all33cells/terminal/inventory evidence retained. Original3TSVs and438031077byte selectedtextweightsSHA verified; all31existing engineering/recoveryartifact hashes passed; Git9c526ed verified before reset. DriveUI confirmed18TARs+18receipts; originalarchive/shards and fullTSVs preserved. Exactreceipt `results/MM_PART1_APPROVED_RESET_BACKUP_20261024.json`.
+
+**The reset did NOT resolve the Drive issue.** FreshCPU PID6223, bootIDae273ba2-88f2-4c3a-bf05-e8481a0895be, mountedsameapprovedDrive. Boundedread-onlyinventory ended15:49:16UTC after31seconds at exactsame source receipt4 (`images_0784678d477441dd9378373cf7830aad.receipt.json`),OSError107. No newcopyjob/trainer/GPU allocation. Last genuinely durable point remains319820images/18transportTARs, successfulpriorflush11:35:10UTC. Originalmetadata/labels/splits/exact491approvedexclusions unchanged. Do not loop CPU resets or source extraction.
+
+Small derived diagnosis: via normalDriveUI made ONE copy of the failing1.7MB receipt, then moved ONLY that newcopy outoforiginalshards intoofficial_images_v1root as `Copy of images_0784678d477441dd9378373cf7830aad.receipt.json`. Creation andmove success observed; originalfile remains untouched. Copy has NOT been read/hash-verified, is NOT an authorized/appliedreplacement, and does not pass any imagegate. Sourcefolder temporarycopy was removed bymove; no originalfile was moved/deleted. Screenshots saved locally. Fullbytes/semantic/sourcehash reconciliation required before any alternative metadata path.
+
+Failure-reporting runner`collab/run_usable_transport_job_v4.py` (SHA6f416ccd7878ed59377787ba8ec5fb232b237c6e787a7b11c100d5b6b0027152) preserves original error ifDrivefailurewritesfail;5faultinjectioncasespassed,scratchnevercalleddurable. This is engineeringonly; not cloudlaunched. Sameone-hourpackingcap/sharedpacker/model/cohort. New diagnosticsource`collab/post_reset_image_inventory_20261024.py`. Git sourcecheckpoint e1f02fa saved/pushed; verify currentbackupreceipt for latesthead.
+
+Usage19%short/28%weekly => checkpointreserve: no newlongjob/largetransfer/major debugging. ExistingGoalAPI STILLreportsPAUSED evenafteruseranswer“Existing Goal resumed”; do not fabricateactive status/createanotherGoal. Manualauthorizedwork above was performed; supportedGoalresume must bechecked afterallowance recovers. No independentcloudjob or inactive-agentmonitoring claimed.
+
+NEXT afterallowancerecovery: inspectexistingGoalactualstatus; boundedread of newlycopiedreceipt throughsameapprovedDrive only; do not rerunthefailedloop. Comparefullcopybytes/hashes or explicit source/packedrowevidence before any metadata alternative. Ifcopyalsounreadable, inspectsupportedprivatecloudtransfer/service route; no repeatedreset,scopeexpansion,accountmigration or publicexposure. Then completeoriginal-bytepacking/metadata/privateimmutablefullKaggleinput, runtime682170imagehash+decode, actualCUDArecovery/measuredpreflight, registeredepochs1–2/fullvalidations. NoPart1finaltest. V2scientificsourcepin5aa5c87 unchanged;Kaggledraftprivateguardedv2saved/readbackverified,Version1imageinputstill640images. Freshquotaearlier00:00/30GPUhours; recheckbeforelaunch.
+
+Scientificepochs0/2,fullvalidations0/2,test0. Barsunchanged:text100/MM40/image20/overall53. Authoritativecurrentreceipt`results/MM_PART1_POST_RESET_HANDOFF_20261024.json` and`results/MM_PART1_USABLE_RECEIPT_20261024.json`; raw notebook/output/weights/dataremainprivate/ignored. UserHTML/literature/unrelatedfilespreserved.
+<!-- /APPROVED RESET RESERVE HANDOFF -->
+
 ## 2026-10-24: CPU Drive connection abort during source receipt reads
 
 

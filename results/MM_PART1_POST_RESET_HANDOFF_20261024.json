@@ -1,0 +1,64 @@
+{
+  "utc": "2026-10-24T15:55:24.809235+00:00",
+  "state": "approved_reset_complete_same_Drive_failure_reproduced_reserve_handoff",
+  "reset_backup_receipt": "results/MM_PART1_APPROVED_RESET_BACKUP_20261024.json",
+  "user_reset_approval": true,
+  "no_unsaved_project_data_deleted": true,
+  "fresh_runtime": {
+    "utc": "2026-10-24T15:48:44.801641+00:00",
+    "state": "post_reset_CPU_mounted",
+    "pid": 6223,
+    "boot_id": "ae273ba2-88f2-4c3a-bf05-e8481a0895be",
+    "scratch_free": 93634527232,
+    "root_exists": true
+  },
+  "post_reset_read_only_diagnostic": {
+    "utc": "2026-10-24T15:49:16.136815+00:00",
+    "state": "post_reset_receipt_inventory_failed",
+    "active": {
+      "role": "original_source",
+      "n": 4,
+      "file": "images_0784678d477441dd9378373cf7830aad.receipt.json"
+    },
+    "error": "[Errno 107] Transport endpoint is not connected",
+    "traceback": "Traceback (most recent call last):\n  File \"/usr/lib/python3.13/pathlib/_abc.py\", line 626, in read_bytes\n    return f.read()\n           ~~~~~~^^\nOSError: [Errno 107] Transport endpoint is not connected\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/tmp/ipykernel_6223/3638153272.py\", line 20, in <cell line: 0>\n    raw=path.read_bytes();v=json.loads(raw);archive=folder/v['archive']\n  File \"/usr/lib/python3.13/pathlib/_abc.py\", line 625, in read_bytes\n    with self.open(mode='rb') as f:\n         ~~~~~~~~~^^^^^^^^^^^\nOSError: [Errno 107] Transport endpoint is not connected\n",
+    "seconds": 31.039329609999868,
+    "training": false
+  },
+  "source_originals_unchanged": true,
+  "current_scientific_epochs": 0,
+  "full_validations": 0,
+  "test_inference": false,
+  "current_live_CPU_copy_job": false,
+  "GPU_allocated": false,
+  "last_durable_images": 319820,
+  "last_durable_closed_packs": 18,
+  "prior_durable_flush_utc": "2026-10-24T11:35:10.638934+00:00",
+  "derived_receipt_copy": {
+    "state": "created_and_moved_in_UI_not_yet_read_or_hashed",
+    "original": "/content/drive/MyDrive/UROP/official_images_v1/shards/images_0784678d477441dd9378373cf7830aad.receipt.json",
+    "original_Drive_file_id": "1i5d6pQvshJuQlwr1sQBskXClI0VtYXdX",
+    "copy": "/content/drive/MyDrive/UROP/official_images_v1/Copy of images_0784678d477441dd9378373cf7830aad.receipt.json",
+    "operation": "Drive Make a copy, then moved ONLY newlycreatedcopy fromshards toofficial_images_v1; UI success confirmed",
+    "original_shard_folder_copy_removed_by_move": true,
+    "source_metadata_substitution_authorized_or_applied": false,
+    "original_bytes_identity_not_yet_verified": true,
+    "new_images_downloaded_or_substituted": false
+  },
+  "v4_failure_reporting": "Five injected-failure cases passed; no cloud launch; source/model/cohort unchanged",
+  "v4_runner_sha256": "6f416ccd7878ed59377787ba8ec5fb232b237c6e787a7b11c100d5b6b0027152",
+  "private_raw_output": {
+    "path": "data/official_paired_v2/POST_RESET_INVENTORY_OUTPUT_20261024.txt",
+    "bytes": 1213,
+    "sha256": "fd3ce46c313140af6d58f542fbb4ac56218d2a42e33a7fd7b600170f12dee055"
+  },
+  "usage": {
+    "short_remaining": 19,
+    "weekly_remaining": 28,
+    "action": "Reserve: no new longjob/largetransfer/major debugging; save evidence, sync and handoff"
+  },
+  "goal_status_observed": "paused",
+  "user_said_existing_goal_resumed": true,
+  "goal_resume_API_available": false,
+  "next": "After allowance recovers, check existingGoal supported resume status without duplication. No active imagecopy/trainer exists. Inspect new derived1.7MB receiptcopy through same approved Drive, with a boundedread only. Preserve original source metadata; compare full bytes/hash or explicit source/packed-row evidence before any alternative metadata path. If copy read also fails, do not loop resets: inspect supported private transfer/service route. Only resume pinned one-hour transport after reads/guards pass; then metadata/full immutable Kaggle input/runtimeimagehashdecode/CUDA/measuredpreflight/epochs1\u20132validation. No finaltest."
+}

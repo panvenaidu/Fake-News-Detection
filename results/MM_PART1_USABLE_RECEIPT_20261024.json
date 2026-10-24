@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-24T15:32:18.793134+00:00",
+  "updated_utc": "2026-10-24T15:55:24.809235+00:00",
   "plan": "MM-PART1-v2+approved-usable-cohort-amendment20261024",
-  "goal_status": "active_verified",
+  "goal_status": "paused",
   "approval": "results/MM_PART1_USABLE_COHORT_APPROVAL_20261024.json",
   "registration": "results/MM_PART1_USABLE_COHORT_REGISTRATION_20261024.json",
   "cohort_id": "FACULTY-6W-USABLE-682170-v1",
@@ -37,7 +37,7 @@
     "max_pack_seconds": 3600,
     "source_file": "collab/run_usable_transport_job_v3.py",
     "source_sha256": "60a0175d5faaba66e76752827e9a9052564351b0a0d15b35ce0803ae9f6fee94",
-    "phase": "terminal_error",
+    "phase": "historical_terminal_error",
     "training": false,
     "test_inference": false,
     "terminal_confirmed_by_current_notebook_output": true,
@@ -45,15 +45,15 @@
     "flush_verified": false
   },
   "last_observation": {
-    "utc": "2026-10-24T15:32:18.793134+00:00",
-    "state": "terminal_failure_no_new_images",
+    "utc": "2026-10-24T15:49:16.136815+00:00",
+    "state": "read_only_fresh_runtime_failed_no_copy_job",
     "images_committed": 319820,
     "packed_shards": 18,
     "live_job": false
   },
   "terminal_flush_verified": false,
   "no_GPU_allocated": true,
-  "next": "After reset approval, confirm runtime reset, connect one CPU session and same existing Drive scope, read all150 source receipts and all18 pack receipts in bounded diagnostics. If they pass, verify failed guard+terminal evidence+free lock and pin an explicit new continuation; no repeat extraction. Current one-shot wrappers must not be rerun.",
+  "next": "After allowance recovers, check existingGoal supported resume status without duplication. No active imagecopy/trainer exists. Inspect new derived1.7MB receiptcopy through same approved Drive, with a boundedread only. Preserve original source metadata; compare full bytes/hash or explicit source/packed-row evidence before any alternative metadata path. If copy read also fails, do not loop resets: inspect supported private transfer/service route. Only resume pinned one-hour transport after reads/guards pass; then metadata/full immutable Kaggle input/runtimeimagehashdecode/CUDA/measuredpreflight/epochs1\u20132validation. No finaltest.",
   "bars": {
     "text_only": 100,
     "text_plus_image": 40,
@@ -61,27 +61,28 @@
     "overall": 53
   },
   "usage_observation": {
-    "short_remaining": 91,
-    "weekly_remaining": 39,
-    "action": "continue approved bounded work; use smaller applicable remaining percentage"
+    "short_remaining": 19,
+    "weekly_remaining": 28,
+    "action": "Reserve: no new longjob/largetransfer/major debugging; save evidence, sync and handoff"
   },
   "limitations": [
-    "No scientific multimodal training/validation/test",
-    "Both current CPU continuation cells ended before copying new images because Drive service disconnected; not a live job",
-    "Current runtime reset requires user confirmation",
-    "Actual v2 CUDA/measured throughput/full immutable input remain pending"
+    "Fresh ColabCPU reset did not fix Drivefile4readabort",
+    "No new usable images packed beyond durable319820/18packs",
+    "Derived receiptcopy is not yet read/hash-verified and is not an appliedmetadatareplacement",
+    "No actualv2CUDA/fullmodelpreflight or scientificepochs/fullvalidation/test",
+    "Kaggleprivateimageinput remains incomplete Version1/640images"
   ],
   "scientific_source_commit": "5aa5c87a2620b3c7763401e845dad45a935dd621",
   "guarded_draft_release_refusal_verified": true,
   "independent_continuation": {
     "already_submitted": false,
     "live_job": false,
-    "note": "Both continuation cells are terminal; no cloud job remains running. Source/closed packs are preserved. Reset approval is pending."
+    "note": "No copy/training job remains live. No claim of monitoring or independent continuation."
   },
-  "state": "terminal_cpu_drive_service_failures_reset_confirmation_pending",
+  "state": "approved_reset_complete_same_Drive_failure_reproduced_reserve_handoff",
   "goal_pause_requested": false,
   "previous_goal_turn_classification": "Progress: verified and pushed essential reserve handoff; paused per user10percent instruction",
-  "current_goal_turn_classification": "Progress: prior terminal/flush verified; exact failed continuation diagnosed; v2 private Kaggle draft updated and source readback verified. No scientific progress; runtime reset needs confirmation.",
+  "current_goal_turn_classification": "Progress: userapprovedreset completed after verifiedbackup/emptyprojectscratch; freshboot reproduces exactfile failure; tested originalerror fallback; derived smallreceiptcopy preserved; no scientific progress",
   "prior_terminal": {
     "job_id": "CPU_USABLE_TRANSPORT_3bcc65e9a0c747288ae516a87ee6ccce",
     "images_committed": 319820,
@@ -92,5 +93,15 @@
     "evidence": "data/official_paired_v2/TRANSPORT_JOB_TERMINAL_3bcc65e9_20261024.txt"
   },
   "failure_receipt": "results/MM_PART1_CPU_DRIVE_FAILURE_20261024.json",
-  "kaggle_draft_receipt": "results/MM_PART1_USABLE_KAGGLE_DRAFT_20261024.json"
+  "kaggle_draft_receipt": "results/MM_PART1_USABLE_KAGGLE_DRAFT_20261024.json",
+  "post_reset_handoff": "results/MM_PART1_POST_RESET_HANDOFF_20261024.json",
+  "reset_completed": true,
+  "current_runtime_diagnostic": {
+    "utc": "2026-10-24T15:48:44.801641+00:00",
+    "state": "post_reset_CPU_mounted",
+    "pid": 6223,
+    "boot_id": "ae273ba2-88f2-4c3a-bf05-e8481a0895be",
+    "scratch_free": 93634527232,
+    "root_exists": true
+  }
 }
