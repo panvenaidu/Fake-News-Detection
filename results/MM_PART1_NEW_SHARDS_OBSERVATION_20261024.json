@@ -1,0 +1,66 @@
+{
+  "observed_utc": "2026-10-24T06:42:24.366Z",
+  "job_id": "CPU_STREAM_PREP_87f54da6a55c47349ba79a6f6ab33747",
+  "basis": "Visible current Colab output, source job not restarted",
+  "records": [
+    {
+      "elapsed_seconds": 8818.023742974001,
+      "required": 682661,
+      "scratch_free": 76057243648,
+      "source_bytes_read": 95706505216,
+      "source_required_members_seen": 575406,
+      "state": "extracting_from_public_author_stream",
+      "usable_committed": 573286,
+      "usable_in_open_shard": 1714,
+      "utc": "2026-10-24T06:41:18.029226+00:00"
+    },
+    {
+      "elapsed_seconds": 8838.400061389,
+      "required": 682661,
+      "scratch_free": 76476514304,
+      "source_bytes_read": 95863668736,
+      "source_required_members_seen": 576406,
+      "state": "extracting_from_public_author_stream",
+      "usable_committed": 573286,
+      "usable_in_open_shard": 2714,
+      "utc": "2026-10-24T06:41:38.405531+00:00"
+    },
+    {
+      "elapsed_seconds": 8858.695925934,
+      "required": 682661,
+      "scratch_free": 76371984384,
+      "source_bytes_read": 96026763264,
+      "source_required_members_seen": 577407,
+      "state": "extracting_from_public_author_stream",
+      "usable_committed": 573286,
+      "usable_in_open_shard": 3714,
+      "utc": "2026-10-24T06:41:58.701392+00:00"
+    },
+    {
+      "elapsed_seconds": 8883.385353229,
+      "required": 682661,
+      "scratch_free": 76248403968,
+      "source_bytes_read": 96203563008,
+      "source_required_members_seen": 578407,
+      "state": "extracting_from_public_author_stream",
+      "usable_committed": 577828,
+      "usable_in_open_shard": 172,
+      "utc": "2026-10-24T06:42:23.390836+00:00"
+    }
+  ],
+  "source_crc_and_full_coverage_pending": true,
+  "terminal_drive_flush_verified": false,
+  "scientific_training_started": false,
+  "interpretation": "Counters distinguish committed generations from open shard images. Source-vs-usable gap requires terminal failure/ID audit; no exclusions authorized.",
+  "cloud_file_listing_observed": {
+    "folder": "https://drive.google.com/drive/u/0/folders/1tY3NP96gcuHQwGUponsxRlqLD-sfXo9U",
+    "new_generations_visible": [
+      "images_8a06ec976d3448c88b51cce06cc0d559",
+      "images_def9cc7b69be4636ad1215a09945da5a"
+    ],
+    "tar_and_receipt_visible": true,
+    "note": "Drive lists new TAR+receipt pairs. No independent new-TAR byte readback or terminal flush claimed.",
+    "screenshot": "results/mm_part1_new_shards_visible_20261024.png"
+  },
+  "updated_utc": "2026-10-24T06:20:19.981662+00:00"
+}

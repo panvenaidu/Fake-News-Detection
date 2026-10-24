@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-24T05:14:49.150134+00:00",
+  "updated_utc": "2026-10-24T06:42:55.466584+00:00",
   "plan": "MM-PART1-v2",
-  "state": "active_waiting_for_existing_source_stream",
+  "state": "active_new_images_extracting_full_gate_pending",
   "part1_complete": false,
   "scientific_training_started": false,
   "epochs_completed": 0,
@@ -176,17 +176,17 @@
   },
   "latest_heartbeat": "results/MM_PART1_HEARTBEAT_20261024T0508Z.json",
   "latest_stream_job": "results/MM_PART1_STREAM_JOB_20261024.json",
-  "metadata_committed_images": 505573,
+  "metadata_committed_images": 577828,
   "latest_stream_observation": {
-    "elapsed_seconds": 3586.362006023,
+    "elapsed_seconds": 8883.385353229,
     "required": 682661,
-    "scratch_free": 76272644096,
-    "source_bytes_read": 41695297536,
-    "source_required_members_seen": 250000,
-    "state": "replaying_verified_prefix",
-    "usable_committed": 505573,
-    "usable_in_open_shard": 0,
-    "utc": "2026-10-24T05:14:06.367467+00:00"
+    "scratch_free": 76248403968,
+    "source_bytes_read": 96203563008,
+    "source_required_members_seen": 578407,
+    "state": "extracting_from_public_author_stream",
+    "usable_committed": 577828,
+    "usable_in_open_shard": 172,
+    "utc": "2026-10-24T06:42:23.390836+00:00"
   },
   "committed_shard_hash_audit": {
     "utc": "2026-10-24T04:14:19.999612+00:00",
@@ -208,5 +208,8 @@
   "training_notebook": "https://www.kaggle.com/code/rocky62/urop-full-six-way-multimodal-part1/edit",
   "training_notebook_state": "Guarded source imported; Private, None accelerator, session off, RELEASE_PATH None; no execution",
   "measured_preflight_preparation": "results/MM_PART1_MEASURED_PREFLIGHT_PREPARATION_20261024.json",
-  "latest_stream_observation_receipt": "results/MM_PART1_STREAM_OBSERVATION_20261024T0515Z.json"
+  "latest_stream_observation_receipt": "results/MM_PART1_NEW_SHARDS_OBSERVATION_20261024.json",
+  "source_terminal_flush_verified": false,
+  "cloud_cpu_preparation": "Current original source stream advancing; no scientific training",
+  "post_extraction_source_bundle": "results/MM_PART1_SOURCE_BUNDLE_20261024.json"
 }
