@@ -1,0 +1,37 @@
+{
+  "utc": "2026-10-24T20:18:19.297868+00:00",
+  "state": "drive_failure_resource_diagnostic",
+  "pid": 3272,
+  "files": {
+    "/sys/fs/cgroup/memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+    "/sys/fs/cgroup/memory.current": "402038784\n",
+    "/sys/fs/cgroup/memory.max": "max\n",
+    "/proc/meminfo": "MemTotal:       13286944 kB\nMemFree:        11724540 kB\nMemAvailable:   12231560 kB\nBuffers:           39444 kB\nCached:           677040 kB\nSwapCached:            0 kB\nActive:           366336 kB\nInactive:         952588 kB\nActive(anon):       1496 kB\nInactive(anon):   603332 kB\nActive(file):     364840 kB\nInactive(file):   349256 kB\nUnevictable:          20 kB\nMlocked:              20 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:               424 kB\nWriteback:             0 kB\nAnonPages:        602536 kB\nMapped:           370952 kB\nShmem:              2376 kB\nKReclaimable:      67952 kB\nSlab:             108992 kB\nSReclaimable:      67952 kB\nSUnreclaim:        41040 kB\nKernelStack:       10752 kB\nPageTables:         8460 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     6643472 kB\nCommitted_AS:    3357768 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       17220 kB\nVmallocChunk:          0 kB\nPercpu:             1096 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       62236 kB\nDirectMap2M:     5177344 kB\nDirectMap1G:    10485760 kB\n"
+  },
+  "training": false,
+  "kernel_oom_lines": [
+    "[Sat Oct 24 20:16:49 2026] kworker/u4:5 invoked oom-killer: gfp_mask=0xc00(GFP_NOIO), order=0, oom_score_adj=0",
+    "[Sat Oct 24 20:16:49 2026]  oom_kill_process+0x10c/0x210",
+    "[Sat Oct 24 20:16:50 2026] Memory cgroup stats for /jupyter-children:",
+    "[Sat Oct 24 20:16:50 2026] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=/,mems_allowed=0,oom_memcg=/jupyter-children,task_memcg=/jupyter-children,task=node,pid=30650,uid=0",
+    "[Sat Oct 24 20:16:50 2026] Memory cgroup out of memory: Killed process 30650 (node) total-vm:1741904kB, anon-rss:203508kB, file-rss:37888kB, shmem-rss:0kB, UID:0 pgtables:5316kB oom_score_adj:1000",
+    "[Sat Oct 24 20:16:51 2026] kworker/u4:4 invoked oom-killer: gfp_mask=0xc00(GFP_NOIO), order=0, oom_score_adj=0",
+    "[Sat Oct 24 20:16:51 2026]  oom_kill_process+0x10c/0x210",
+    "[Sat Oct 24 20:16:51 2026] Memory cgroup stats for /jupyter-children:",
+    "[Sat Oct 24 20:16:52 2026] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=/,mems_allowed=0,oom_memcg=/jupyter-children,task_memcg=/jupyter-children,task=language_servic,pid=30643,uid=0",
+    "[Sat Oct 24 20:16:52 2026] Memory cgroup out of memory: Killed process 30643 (language_servic) total-vm:1274996kB, anon-rss:10180kB, file-rss:11392kB, shmem-rss:0kB, UID:0 pgtables:148kB oom_score_adj:1000",
+    "[Sat Oct 24 20:16:52 2026] kworker/u4:4 invoked oom-killer: gfp_mask=0xc00(GFP_NOIO), order=0, oom_score_adj=0",
+    "[Sat Oct 24 20:16:52 2026]  oom_kill_process+0x10c/0x210",
+    "[Sat Oct 24 20:16:52 2026] Memory cgroup stats for /jupyter-children:",
+    "[Sat Oct 24 20:16:52 2026] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=/,mems_allowed=0,oom_memcg=/jupyter-children,task_memcg=/jupyter-children,task=drive,pid=36308,uid=0",
+    "[Sat Oct 24 20:16:52 2026] Memory cgroup out of memory: Killed process 36308 (drive) total-vm:15675536kB, anon-rss:11281852kB, file-rss:2688kB, shmem-rss:0kB, UID:0 pgtables:23764kB oom_score_adj:0"
+  ],
+  "dmesg_returncode": 0,
+  "drive_failure_line_count": 10,
+  "raw_private_evidence": {
+    "path": "data/official_paired_v2/DRIVE_RESOURCE_DIAGNOSTIC_FULL_20261025.json",
+    "bytes": 8750,
+    "sha256": "d589ec02cea1cc162a7a9049b4ad177b8ad6b8a2d818d4d37850901c0b1bc923",
+    "reason": "Keep source-service account identifiers in private storage"
+  }
+}

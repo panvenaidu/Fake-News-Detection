@@ -1,0 +1,44 @@
+{
+  "utc": "2026-10-24T20:15:03.542135+00:00",
+  "state": "receipt_copy_probe_complete",
+  "reads": [
+    {
+      "role": "derived_copy",
+      "state": "read_ok",
+      "bytes": 1778013,
+      "sha256": "92008e69c84c7485965def2c5a7c2d29663d9c18feb587d1bcf9fef5d69108c4",
+      "archive": "images_0784678d477441dd9378373cf7830aad.tar",
+      "archive_sha256": "eff931cf4bcb6294c2be3ece8c5795780b860dc99cad5b95d5c9895e472879d9",
+      "images": 5022,
+      "keys": [
+        "archive",
+        "bytes",
+        "images",
+        "sha256",
+        "utc"
+      ],
+      "seconds": 0.950626801999988
+    },
+    {
+      "role": "original",
+      "state": "read_ok",
+      "bytes": 1778013,
+      "sha256": "92008e69c84c7485965def2c5a7c2d29663d9c18feb587d1bcf9fef5d69108c4",
+      "archive": "images_0784678d477441dd9378373cf7830aad.tar",
+      "archive_sha256": "eff931cf4bcb6294c2be3ece8c5795780b860dc99cad5b95d5c9895e472879d9",
+      "images": 5022,
+      "keys": [
+        "archive",
+        "bytes",
+        "images",
+        "sha256",
+        "utc"
+      ],
+      "seconds": 0.961543855000059
+    }
+  ],
+  "byte_identity_verified": true,
+  "metadata_replacement_applied": false,
+  "training": false,
+  "test_inference": false
+}

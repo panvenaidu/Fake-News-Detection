@@ -1,0 +1,13 @@
+{
+  "utc": "2026-10-24T20:16:54.136442+00:00",
+  "state": "post_reset_receipt_inventory_failed",
+  "active": {
+    "role": "original_source",
+    "n": 5,
+    "file": "images_0815e56788bc42a0bb8131ed62405642.receipt.json"
+  },
+  "error": "[Errno 107] Transport endpoint is not connected",
+  "traceback": "Traceback (most recent call last):\n  File \"/usr/lib/python3.13/pathlib/_abc.py\", line 626, in read_bytes\n    return f.read()\n           ~~~~~~^^\nOSError: [Errno 107] Transport endpoint is not connected\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/tmp/ipykernel_3272/3638153272.py\", line 20, in <cell line: 0>\n    raw=path.read_bytes();v=json.loads(raw);archive=folder/v['archive']\n  File \"/usr/lib/python3.13/pathlib/_abc.py\", line 625, in read_bytes\n    with self.open(mode='rb') as f:\n         ~~~~~~~~~^^^^^^^^^^^\nOSError: [Errno 107] Transport endpoint is not connected\n",
+  "seconds": 47.79947213399987,
+  "training": false
+}

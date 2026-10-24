@@ -1,0 +1,18 @@
+{
+  "state": "offline_rejection_checks_passed",
+  "cases": [
+    "unauthorized",
+    "wrong_source",
+    "wrong_length",
+    "wrong_range",
+    "truncated",
+    "oversized",
+    "hash_corruption"
+  ],
+  "count": 7,
+  "real_API_called": false,
+  "credentials_accessed": false,
+  "cloud_probe_passed": false,
+  "source": "collab/probe_drive_api_receipt_v1.py",
+  "source_sha256": "4299cf46e616847ce97fe3673d008101bccef73fa093a2ac16f6fe9020af9940"
+}

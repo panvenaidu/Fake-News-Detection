@@ -1,0 +1,16 @@
+{
+  "state": "bounded_drive_api_receipt_passed",
+  "file": "images_0784678d477441dd9378373cf7830aad.receipt.json",
+  "bytes": 1778013,
+  "sha256": "92008e69c84c7485965def2c5a7c2d29663d9c18feb587d1bcf9fef5d69108c4",
+  "images": 5022,
+  "archive_sha256": "eff931cf4bcb6294c2be3ece8c5795780b860dc99cad5b95d5c9895e472879d9",
+  "chunk_bytes": 262144,
+  "new_auth_invoked": false,
+  "source_modified": false,
+  "training": false,
+  "test_inference": false,
+  "observed_utc": "2026-10-24T20:25:32.069Z",
+  "notebook_cell": "u0BRab4TlcBe",
+  "authorization_approved_separately": true
+}
