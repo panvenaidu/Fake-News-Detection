@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-24T15:12:54.343454+00:00",
+  "state": "preregistered_cpu_transport_continuation",
+  "prior_job": "CPU_USABLE_TRANSPORT_3bcc65e9a0c747288ae516a87ee6ccce",
+  "prior_terminal_utc": "2026-10-24T11:34:56.925103+00:00",
+  "prior_flush_observed_utc": "2026-10-24T11:35:10.638934+00:00",
+  "prior_committed_images": 319820,
+  "prior_closed_packs": 18,
+  "cohort_id": "FACULTY-6W-USABLE-682170-v1",
+  "new_packing_cap_seconds": 3600,
+  "additional_time": "Existing pack hash verification, cohort/input checks, metadata if complete, and Drive flush are separate from packing cap.",
+  "change": "Versioned transport wall cap only; same shared packer rehashes closed TARs and per-image/TSV joins before new copy.",
+  "new_runner": "collab/run_usable_transport_job_v3.py",
+  "new_runner_sha256": "60a0175d5faaba66e76752827e9a9052564351b0a0d15b35ce0803ae9f6fee94",
+  "new_runner_bytes": 5558,
+  "training": false,
+  "test_inference": false,
+  "original_shards_preserved": true,
+  "scientific_protocol_changed": false,
+  "launch_status": "not_launched"
+}
