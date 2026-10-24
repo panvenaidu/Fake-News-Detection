@@ -1,8 +1,19 @@
 {
-  "verified_utc": "2026-10-24T11:25:25.682063+00:00",
-  "status": "verified_parent_commit",
-  "commit": "e2483747c19bf1a90c9c6b0b8fc40854536d1b23",
-  "remote_main_observed": "e2483747c19bf1a90c9c6b0b8fc40854536d1b23",
-  "scope": "Approvedcohort/amendedplans/v2trainer/verifiers/CPUtransport/recovery/syntheticchecks;no rawdata/weights/privateoriginalreports",
-  "note": "Tenpercentlivejob/context/receiptupdateisaseparatechildcommit;verifyremotematcheschildafterpush.Noownfuturehashclaim."
+  "utc": "2026-10-24T15:33:34.567396+00:00",
+  "verified_commit": "cbb592d3169b2f19c1dda59d339e9d8dd20357dd",
+  "remote_main_commit": "cbb592d3169b2f19c1dda59d339e9d8dd20357dd",
+  "verified_match": true,
+  "repository": "https://github.com/panvenaidu/Fake-News-Detection",
+  "status": "Recovery boundary saved; CPU reset confirmation pending, Part1 incomplete",
+  "verified_artifact_sets": [
+    "results/MM_PART1_USABLE_ENGINEERING_MANIFEST_20261024.json",
+    "results/MM_PART1_TRANSPORT_RECOVERY_MANIFEST_20261024.json"
+  ],
+  "new_guarded_notebook_source_readback_verified": true,
+  "scientific_epochs": 0,
+  "full_validations": 0,
+  "final_test": false,
+  "raw_data_weights_archives_credentials_in_Git": false,
+  "unrelated_work_preserved": true,
+  "receipt_note": "This receipt records its verified parent commit. Its own child commit is verified separately after push; no self-referential hash claim."
 }
