@@ -8,7 +8,7 @@ import datetime, hashlib, importlib.metadata, importlib.util, json, math, os
 from pathlib import Path
 import subprocess, sys, time
 
-SOURCE_COMMIT='UNRELEASED'
+SOURCE_COMMIT='5aa5c87a2620b3c7763401e845dad45a935dd621'
 SOURCE_HASHES={'scripts/train_usable_multimodal_v2.py': '88412d918b77f8a54569b25a8c469618c028ebaeeeb0b6050385dc55bd20ac1e', 'scripts/multimodal_recovery_v1.py': '2f5f67ce79289c69279040d21b483e28535895f5c99c63e0021da3eee6d3d1c8', 'scripts/verify_usable_multimodal_v2.py': 'bc314502833835a42bba8bab2d069074018bafc807106a3eb503386e2671139b', 'scripts/usable_cohort_v2.py': '22bff1eb0fa14d102ad07786f936c5c1ed1582ec7bd5cee2b8e8dc5eb3520092', 'configs/multimodal_usable_6way_v2.json': 'ad8f86f86b1fef453ae3bccda0aeb13cc50b298dc0d5d502f87c9ac4b041b483'}
 COUNTS={'train':563601,'validation':59299,'test':59270}
 COHORT='FACULTY-6W-USABLE-682170-v1'

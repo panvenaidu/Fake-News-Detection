@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T11:09:18.479087+00:00",
+  "updated_utc": "2026-10-24T11:12:37.426918+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -448,7 +448,7 @@
   },
   "part1_execution_receipt": "results/MM_PART1_RECEIPT_20261023.json",
   "last_cpu_preparation_note": "Original source CRC/SHA terminal,682170/682661 usable,491failures; all3 inspected failed .jpg files areHTML; no data changes. Bounded diagnostic terminal/private backup saved. Await explicit protocol decision; scientific epochs0/2,val0/2,test0.",
-  "latest_operational_note": "Userapproved682170usablefacultycohort;v2engineeringchecksPASS;CPUboundedtransportjob3bcc65e9activewith19184images/1packobserved;terminalflushpending.No scientificepoch/validation/test. Goalresumedactive.",
+  "latest_operational_note": "ApprovedusablecohortCPUtransport74143images/4closedpacksat11:11UTC;terminalflushpending.Reserve20%;newv2sourcespinned/engineeringchecksverified.Scientificepoch0,val0,test0;barsunchanged.",
   "original_specimen_diagnostic": "results/MM_PART1_ORIGINAL_SPECIMEN_DIAGNOSTIC_20261024.json",
   "approved_multimodal_cohort": {
     "id": "FACULTY-6W-USABLE-682170-v1",

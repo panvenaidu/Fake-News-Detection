@@ -1,3 +1,7 @@
+<!-- USABLE RESERVE CHECKPOINT -->
+2026-10-24T11:12:37.426918+00:00: Usage reserve reached20%short/43%weekly. Same bounded CPU job3bcc65e9 advanced to74143images/4closed packs at11:11:21UTC; terminal Drive flush still pending. Production source pinned to5aa5c87a2620b3c7763401e845dad45a935dd621; v2launcher draft-release refusal and23engineering artifact hashes verified. Current receipt `results/MM_PART1_USABLE_RECEIPT_20261024.json`. No new long job/debug/large transfer in reserve. Job may continue independently to its1800s pack boundary plus checks/flush; preserve exact receipts, inspect real terminal state before recovery. Scientific epochs0/2,validations0/2,test0; bars unchanged.
+<!-- /USABLE RESERVE CHECKPOINT -->
+
 <!-- MM-PART1 USABLE COHORT ACTIVE -->
 ## Approved usable-image cohort continuation — 2026-10-24T11:09:18.479087+00:00
 

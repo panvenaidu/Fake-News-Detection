@@ -75,8 +75,8 @@
     },
     {
       "path": "collab/kaggle_usable_part1_cell_v2.py",
-      "bytes": 11417,
-      "sha256": "667dbfe7ca0b839d485228824822fd1899f5f5eb49ed2d6f0d9c38dfd6936612"
+      "bytes": 11447,
+      "sha256": "4711d38946a933c8053009c7d16e2af9e567f571d3d04be43de61ce937465682"
     },
     {
       "path": "configs/multimodal_usable_6way_v2.json",
@@ -85,8 +85,8 @@
     },
     {
       "path": "configs/usable_part1_cloud_release_TEMPLATE.json",
-      "bytes": 1066,
-      "sha256": "199f29747b0ffd30cfb83b6f95ed935b0b1f1ecea1963611a97f63a84682c7e9"
+      "bytes": 1096,
+      "sha256": "7498da4be939e1ebd1b98fc02410a23dc680eb291605f9cd7259f4457656f714"
     },
     {
       "path": "results/MM_PART1_USABLE_COHORT_APPROVAL_20261024.json",
@@ -122,5 +122,7 @@
   "real_CUDA_preflight": false,
   "scientific_epochs": 0,
   "full_validations": 0,
-  "test_inference": false
+  "test_inference": false,
+  "scientific_source_commit": "5aa5c87a2620b3c7763401e845dad45a935dd621",
+  "guarded_draft_release_refusal_verified": true
 }

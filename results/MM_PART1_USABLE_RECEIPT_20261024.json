@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T11:09:18.479087+00:00",
+  "updated_utc": "2026-10-24T11:12:37.426918+00:00",
   "plan": "MM-PART1-v2+approved-usable-cohort-amendment20261024",
   "goal_status": "active_verified_after_user_resume",
   "approval": "results/MM_PART1_USABLE_COHORT_APPROVAL_20261024.json",
@@ -44,11 +44,11 @@
     "source_file_sha256": "8ac949c105d34ce87d7d58a144231556cff772ad7751f7273657f1dbc7b13917"
   },
   "last_observation": {
-    "utc": "2026-10-24T11:06:10.241594+00:00",
+    "utc": "2026-10-24T11:11:21.060680+00:00",
     "state": "packed_shard_committed",
-    "images_committed": 19184,
+    "images_committed": 74143,
     "required": 682170,
-    "packed_shards": 1
+    "packed_shards": 4
   },
   "terminal_flush_verified": false,
   "no_GPU_allocated": true,
@@ -60,15 +60,33 @@
     "overall": 53
   },
   "usage_observation": {
-    "short_remaining": 24,
+    "short_remaining": 20,
     "weekly_remaining": 43,
-    "policy": "At20prepare/checkpoint;10handoffandpauseGoal;5hardstop"
+    "action": "Reservecheckpoint/synchronization;no newlongjobs/debug/transfers"
   },
   "limitations": [
     "Transportcopyonly;firstpackcommittedbutterminalflushstillpending",
     "No scientific multimodal training/validation/test",
     "Actualv2CUDAandfullmodelthroughputnotrun",
-    "NewscientificlauncherpreparedUNRELEASEDuntilsourcecommitpin;releaseJSONremainsDRAFT",
-    "OldCLIchildfailedcode1withoutcapturedstderr;PIDmissing/no packs verified; guard preserved and same-source in-kernel recovery started"
-  ]
+    "OldCLIchildfailedcode1withoutcapturedstderr;PIDmissing/no packs verified; guard preserved and same-source in-kernel recovery started",
+    "V2scientificsourcespinnedto5aa5c87a2620b3c7763401e845dad45a935dd621;releaseJSONremainsDRAFT,fullinput/CUDA/measuredpreflightpending"
+  ],
+  "scientific_source_commit": "5aa5c87a2620b3c7763401e845dad45a935dd621",
+  "guarded_draft_release_refusal_verified": true,
+  "independent_continuation": {
+    "job_id": "CPU_USABLE_TRANSPORT_3bcc65e9a0c747288ae516a87ee6ccce",
+    "bounded_pack_seconds": 1800,
+    "already_submitted": true,
+    "closed_TAR_SHA_and_per_image_receipts": true,
+    "source_shards_preserved": true,
+    "terminal_flush_required": true,
+    "observed_advancing_counter": {
+      "utc": "2026-10-24T11:11:21.060680+00:00",
+      "state": "packed_shard_committed",
+      "images_committed": 74143,
+      "required": 682170,
+      "packed_shards": 4
+    },
+    "note": "Existingjobmaycontinueindependentlyafterassistantstop;noongoingmonitoringorguaranteedcompletionclaimed.Inspectterminal/flushbeforeanyresume."
+  }
 }

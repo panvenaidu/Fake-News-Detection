@@ -2,7 +2,7 @@
   "state": "DRAFT_NOT_LAUNCHABLE",
   "stage": "part1",
   "final_test": false,
-  "source_commit": "UNRELEASED",
+  "source_commit": "5aa5c87a2620b3c7763401e845dad45a935dd621",
   "stop_after_epoch": 1,
   "resume": false,
   "prior_job_verified_terminal": null,
