@@ -1,19 +1,44 @@
 {
-  "utc": "2026-10-24T15:33:34.567396+00:00",
-  "verified_commit": "cbb592d3169b2f19c1dda59d339e9d8dd20357dd",
-  "remote_main_commit": "cbb592d3169b2f19c1dda59d339e9d8dd20357dd",
+  "utc": "2026-10-24T15:56:35.931119+00:00",
+  "verified_commit": "f4f94c9c7c1c0d1ebcc499dbdd0bb5119e08f41a",
+  "remote_main_commit": "f4f94c9c7c1c0d1ebcc499dbdd0bb5119e08f41a",
   "verified_match": true,
   "repository": "https://github.com/panvenaidu/Fake-News-Detection",
-  "status": "Recovery boundary saved; CPU reset confirmation pending, Part1 incomplete",
-  "verified_artifact_sets": [
-    "results/MM_PART1_USABLE_ENGINEERING_MANIFEST_20261024.json",
-    "results/MM_PART1_TRANSPORT_RECOVERY_MANIFEST_20261024.json"
+  "status": "Approved CPUreset complete; freshboot sameDrivefailure; reserve handoff; no livecopy or training",
+  "current_handoff": "results/MM_PART1_POST_RESET_HANDOFF_20261024.json",
+  "previous31_engineering_recovery_hashes_reverified": true,
+  "new_artifacts": [
+    {
+      "path": "collab/run_usable_transport_job_v4.py",
+      "bytes": 7001,
+      "sha256": "6f416ccd7878ed59377787ba8ec5fb232b237c6e787a7b11c100d5b6b0027152"
+    },
+    {
+      "path": "scripts/check_transport_failure_evidence_v1.py",
+      "bytes": 2902,
+      "sha256": "f9525028d73111336887ca881a7524b1ef9caa791fbb014c13def86cdd031c42"
+    },
+    {
+      "path": "results/transport_failure_evidence_checks_20261024.json",
+      "bytes": 424,
+      "sha256": "1955beb1a81d406cc37770beffde580f893d3cb8b25b60256bf8d4bc46890568"
+    },
+    {
+      "path": "collab/post_reset_image_inventory_20261024.py",
+      "bytes": 2975,
+      "sha256": "8768513c788e43d8ff0c6fc6f7cb0ac703a712b16ec54befe4ad74034a459cb8"
+    },
+    {
+      "path": "results/MM_PART1_TRANSPORT_V4_PREPARATION_20261024.json",
+      "bytes": 884,
+      "sha256": "59e83c9b3ae0c6cfc875a8030d168b4e94287aba60b975d8ed150cdbfeb46993"
+    }
   ],
-  "new_guarded_notebook_source_readback_verified": true,
+  "local_raw_backups_hashed_in_reset_receipt": true,
   "scientific_epochs": 0,
   "full_validations": 0,
   "final_test": false,
   "raw_data_weights_archives_credentials_in_Git": false,
-  "unrelated_work_preserved": true,
-  "receipt_note": "This receipt records its verified parent commit. Its own child commit is verified separately after push; no self-referential hash claim."
+  "unrelated_user_changes_preserved": true,
+  "receipt_note": "Verified parent commit; the receipt child is verified separately after push."
 }
