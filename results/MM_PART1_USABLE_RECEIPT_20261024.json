@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T11:12:37.426918+00:00",
+  "updated_utc": "2026-10-24T11:25:25.682063+00:00",
   "plan": "MM-PART1-v2+approved-usable-cohort-amendment20261024",
   "goal_status": "active_verified_after_user_resume",
   "approval": "results/MM_PART1_USABLE_COHORT_APPROVAL_20261024.json",
@@ -44,11 +44,11 @@
     "source_file_sha256": "8ac949c105d34ce87d7d58a144231556cff772ad7751f7273657f1dbc7b13917"
   },
   "last_observation": {
-    "utc": "2026-10-24T11:11:21.060680+00:00",
+    "utc": "2026-10-24T11:23:36.006288+00:00",
     "state": "packed_shard_committed",
-    "images_committed": 74143,
+    "images_committed": 201962,
     "required": 682170,
-    "packed_shards": 4
+    "packed_shards": 11
   },
   "terminal_flush_verified": false,
   "no_GPU_allocated": true,
@@ -60,9 +60,9 @@
     "overall": 53
   },
   "usage_observation": {
-    "short_remaining": 20,
-    "weekly_remaining": 43,
-    "action": "Reservecheckpoint/synchronization;no newlongjobs/debug/transfers"
+    "short_remaining": 10,
+    "weekly_remaining": 41,
+    "action": "Essentialhandoff/GitthenpauseGoalperuserinstruction;nonewlongjobs/transfers/debugging"
   },
   "limitations": [
     "Transportcopyonly;firstpackcommittedbutterminalflushstillpending",
@@ -81,12 +81,17 @@
     "source_shards_preserved": true,
     "terminal_flush_required": true,
     "observed_advancing_counter": {
-      "utc": "2026-10-24T11:11:21.060680+00:00",
+      "utc": "2026-10-24T11:23:36.006288+00:00",
       "state": "packed_shard_committed",
-      "images_committed": 74143,
+      "images_committed": 201962,
       "required": 682170,
-      "packed_shards": 4
+      "packed_shards": 11
     },
-    "note": "Existingjobmaycontinueindependentlyafterassistantstop;noongoingmonitoringorguaranteedcompletionclaimed.Inspectterminal/flushbeforeanyresume."
-  }
+    "note": "Existingjobmaycontinueindependentlyafterassistantstop;noongoingmonitoringorguaranteedcompletionclaimed.Inspectterminal/flushbeforeanyresume.",
+    "original_source_recoverability": "Originalcompleteauthorarchive/shardsandpinnedsource/failure/approvalreceiptsretained;copy-onlyprogresscanberebuiltfromverifiedoriginalswithoutanotherfullextraction"
+  },
+  "state": "ten_percent_reserve_handoff_pause_requested",
+  "goal_pause_requested": true,
+  "previous_goal_turn_classification": "Progress:approvedcohortregistered,versionedguards/tests/sourcepinandcloudjobstarted",
+  "current_goal_turn_classification": "Verifiedwait:polledexactsameexecutingColabcellandadvancingpackcounters;nowuser10percentpauseboundary"
 }

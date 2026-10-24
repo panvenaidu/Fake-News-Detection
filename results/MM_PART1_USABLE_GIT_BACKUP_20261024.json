@@ -1,8 +1,8 @@
 {
-  "verified_utc": "2026-10-24T11:12:37.426918+00:00",
+  "verified_utc": "2026-10-24T11:25:25.682063+00:00",
   "status": "verified_parent_commit",
-  "commit": "5aa5c87a2620b3c7763401e845dad45a935dd621",
-  "remote_main_observed": "5aa5c87a2620b3c7763401e845dad45a935dd621",
+  "commit": "e2483747c19bf1a90c9c6b0b8fc40854536d1b23",
+  "remote_main_observed": "e2483747c19bf1a90c9c6b0b8fc40854536d1b23",
   "scope": "Approvedcohort/amendedplans/v2trainer/verifiers/CPUtransport/recovery/syntheticchecks;no rawdata/weights/privateoriginalreports",
-  "note": "Launcher revision pin/reserve/livejobreceipt are a separate child commit; verify remote after pushing that child. No self-referential future hash claim."
+  "note": "Tenpercentlivejob/context/receiptupdateisaseparatechildcommit;verifyremotematcheschildafterpush.Noownfuturehashclaim."
 }
