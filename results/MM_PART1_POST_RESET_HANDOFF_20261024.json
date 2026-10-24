@@ -73,5 +73,13 @@
     "no_new_cloud_job": true,
     "previous_goal_turn_classification": "Progress: approved reset/backup performed, freshboot reproduced failure, safe diagnostic copy created, source/evidence backedup",
     "current_goal_turn_classification": "Progress: revalidated runtime terminal status and corrected authoritative Goalresume state; substantive work held at userreserve"
-  }
+  },
+  "latest_reserve_handoff": "results/MM_PART1_TEN_PERCENT_HANDOFF_20261024.json",
+  "goal_pause_requested_at10percent": true,
+  "usage_observation": {
+    "short_remaining": 10,
+    "weekly_remaining": 26,
+    "action": "Essentialcheckpoint/pushthenpauseGoalperuserinstruction"
+  },
+  "updated_utc": "2026-10-24T16:01:42.326460+00:00"
 }

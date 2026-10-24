@@ -1,10 +1,10 @@
 {
-  "utc": "2026-10-24T15:56:35.931119+00:00",
-  "verified_commit": "f4f94c9c7c1c0d1ebcc499dbdd0bb5119e08f41a",
-  "remote_main_commit": "f4f94c9c7c1c0d1ebcc499dbdd0bb5119e08f41a",
+  "utc": "2026-10-24T16:01:42.326460+00:00",
+  "verified_commit": "960b1aa7e932608665deb964b401931b1e7bac0d",
+  "remote_main_commit": "960b1aa7e932608665deb964b401931b1e7bac0d",
   "verified_match": true,
   "repository": "https://github.com/panvenaidu/Fake-News-Detection",
-  "status": "Approved CPUreset complete; freshboot sameDrivefailure; reserve handoff; no livecopy or training",
+  "status": "Tenpercenthandoffpause requested; this receipt verifies itsparent; childpush verified separately",
   "current_handoff": "results/MM_PART1_POST_RESET_HANDOFF_20261024.json",
   "previous31_engineering_recovery_hashes_reverified": true,
   "new_artifacts": [

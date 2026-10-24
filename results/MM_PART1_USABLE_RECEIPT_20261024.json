@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T16:00:10.459603+00:00",
+  "updated_utc": "2026-10-24T16:01:42.326460+00:00",
   "plan": "MM-PART1-v2+approved-usable-cohort-amendment20261024",
   "goal_status": "active_verified_after_delayed_resume",
   "approval": "results/MM_PART1_USABLE_COHORT_APPROVAL_20261024.json",
@@ -61,9 +61,9 @@
     "overall": 53
   },
   "usage_observation": {
-    "short_remaining": 13,
-    "weekly_remaining": 27,
-    "action": "Reserve checkpoint only; no new longjob/transfer/major debugging"
+    "short_remaining": 10,
+    "weekly_remaining": 26,
+    "action": "Essentialcheckpoint/pushthenpauseGoalperuserinstruction"
   },
   "limitations": [
     "Fresh ColabCPU reset did not fix Drivefile4readabort",
@@ -103,5 +103,7 @@
     "boot_id": "ae273ba2-88f2-4c3a-bf05-e8481a0895be",
     "scratch_free": 93634527232,
     "root_exists": true
-  }
+  },
+  "latest_reserve_handoff": "results/MM_PART1_TEN_PERCENT_HANDOFF_20261024.json",
+  "goal_pause_requested_at10percent": true
 }

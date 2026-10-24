@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-24T16:01:42.326460+00:00",
+  "state": "ten_percent_handoff_pause_requested",
+  "short_remaining": 10,
+  "weekly_remaining": 26,
+  "goal_status_before_pause": "active",
+  "pause_authorized_by": "User standing instruction: checkpoint and pause at10percent; hardstop5percent",
+  "verified_backup_parent": "960b1aa7e932608665deb964b401931b1e7bac0d",
+  "last_durable_images": 319820,
+  "last_durable_transport_archives": 18,
+  "last_runtime_observation": "No executing notebook cells; postresetinventoryterminalat15:49:16UTC withsameDrivefile4error, verifiedpreviousgoalturn",
+  "no_new_job_launched": true,
+  "scientific_epochs_completed": 0,
+  "full_validations_completed": 0,
+  "test_inference": false,
+  "reset_completed_safely": true,
+  "unsaved_project_data_deleted": false,
+  "current_recovery": "results/MM_PART1_POST_RESET_HANDOFF_20261024.json",
+  "exact_next": "After allowance recovers and existingGoal resumes: boundedread of derivedreceiptcopy; reconcile bytes/hashes/source evidence before alternative metadata; recover exact approved682170cohort without newexclusions/duplicateextraction, finish private immutableKaggleinput/runtime checks/CUDA/preflight, then epochs1\u20132fullvalidation. NoPart1test.",
+  "no_monitoring_after_stop_claimed": true,
+  "current_goal_turn_classification": "Progress: essential10percentcheckpoint and remoteverifiedhandoff before userrequestedpause"
+}
