@@ -1,3 +1,15 @@
+<!-- API RECOVERY 20261025 -->
+## Current Part 1 recovery — 2026-10-24T20:28:30.121784+00:00
+
+Existing Goal verified **active**. Still Part 1: **0/2 scientific epochs, 0/2 full validations, no final test**. Durable packing remains **319,820 images / 18 archives** of the approved 682,170 original faculty pairs. Text-only results and the 491 approved exclusions remain unchanged.
+
+New verified evidence: original and copied receipt are byte-identical (SHA `92008e69c84c7485965def2c5a7c2d29663d9c18feb587d1bcf9fef5d69108c4`); no replacement applied. Full DriveFS inventory failed at receipt 5. Kernel logs prove cloud Drive process PID36308 was OOM-killed at20:16:52UTC with11281852KiB anonymous RSS. The exact trigger for this memory growth is not proven; root-cgroup zero counters do not negate the child-cgroup kernel OOM evidence. This is cloud RAM, not laptop RAM. Do not loop resets/remounts or repeat source extraction.
+
+User explicitly approved new notebook Drive+Cloud API access. Standard Colab authorization finished, and the bounded 1.7MB Drive API specimen passed exact size/SHA and membership verification without DriveFS. Seven offline rejection checks passed. The metadata-only API inventory PASSED all150source receipts /682170IDs with exact approved split/class counts in86seconds. A115527byte private index was created and byte-readback verified (SHA `291a2c5b27aa39f1b1b16b3726655609927a08cee03a34e35d9fe7e47670a87a`). Colab displayed1.06GB RAM at terminal observation. This is NOT image-byte verification, original-TSV title joining, packing or training. The bounded4KiB originalTAR range check PASSED HTTP206/exactContentRange/TARmagic in cell `xNddVqfSmtsV`. It does not verify the full archive hash. All new cells are terminal; no packing/training is running. Source checkpoint `7530a33` was pushed and remote-verified before launch. Kaggle draft remains session off / accelerator None / no input attached / release unset at this run's observation.
+
+Authoritative run receipt: `results/MM_PART1_RECOVERY_PROGRESS_20261025.json`; new evidence files are listed there. No other new cloud job was launched. Next: implement and fault-test bounded original-byte API transport using the durable private index (privateID in ignored `data/official_paired_v2/API_METADATA_INDEX_RECEIPT_20261025.json`); preserve all source shards and18closedpacks. The prepared DriveFS recovery script was NOT executed and must not bypass its failed inventory gate. Full immutable input/runtime hash+decode, actual CUDA/preflight and epochs1–2 validations remain required. Bars unchanged: text100/MM40/image20/overall53. At20% enter checkpoint reserve; handoff10%, hardstop5%. Older active/paused and fault-cause notes below are historical.
+<!-- /API RECOVERY 20261025 -->
+
 ## Approved reset reproduced same Drive read failure
 
 <!-- APPROVED RESET RESERVE HANDOFF -->

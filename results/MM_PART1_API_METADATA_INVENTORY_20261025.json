@@ -1,0 +1,53 @@
+{
+  "utc": "2026-10-24T20:29:02.003601+00:00",
+  "state": "api_source_metadata_inventory_passed",
+  "cohort_id": "FACULTY-6W-USABLE-682170-v1",
+  "receipt_files": 150,
+  "images": 682170,
+  "split_counts": {
+    "train": 563601,
+    "validation": 59299,
+    "test": 59270
+  },
+  "class_counts": {
+    "train": {
+      "0": 222081,
+      "1": 33480,
+      "2": 107221,
+      "3": 11784,
+      "4": 167459,
+      "5": 21576
+    },
+    "validation": {
+      "0": 23320,
+      "1": 3520,
+      "2": 11277,
+      "3": 1238,
+      "4": 17768,
+      "5": 2176
+    },
+    "test": {
+      "0": 23507,
+      "1": 3514,
+      "2": 11297,
+      "3": 1224,
+      "4": 17423,
+      "5": 2305
+    }
+  },
+  "image_bytes_verified_this_run": false,
+  "original_TSV_join_this_run": false,
+  "packing": false,
+  "training": false,
+  "test_inference": false,
+  "private_index": "API_SOURCE_METADATA_INDEX_20261024T202737Z.json",
+  "index_sha256": "291a2c5b27aa39f1b1b16b3726655609927a08cee03a34e35d9fe7e47670a87a",
+  "index_bytes": 115527,
+  "durable_readback_verified": true,
+  "seconds": 86.00560123800005,
+  "observed_utc": "2026-10-24T20:30:22.425291+00:00",
+  "private_id_location": "data/official_paired_v2/API_METADATA_INDEX_RECEIPT_20261025.json",
+  "original_source_unchanged": true,
+  "scope": "Metadata only. No image-byte rehash/decode, original TSV title join, packing or training completed by this check.",
+  "cloud_RAM_display_GB_observed": 1.06
+}

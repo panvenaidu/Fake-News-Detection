@@ -1,0 +1,13 @@
+{
+  "utc": "2026-10-24T20:30:00.472333+00:00",
+  "state": "bounded_original_archive_API_range_passed",
+  "archive": "images_05935bd766c74643ae6dd8b960579947.tar",
+  "bytes_read": 4096,
+  "http_status": 206,
+  "content_range": "bytes 0-4095/540272640",
+  "sample_sha256": "c417bbe8fa2a440ff3972e5481f6eb603398bf9b774df309be87b0eddd54cc06",
+  "tar_ustar_magic": true,
+  "full_archive_hash_verified": false,
+  "packing": false,
+  "training": false
+}

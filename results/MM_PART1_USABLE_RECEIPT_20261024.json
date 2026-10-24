@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-24T16:01:42.326460+00:00",
+  "updated_utc": "2026-10-24T20:32:00.012867+00:00",
   "plan": "MM-PART1-v2+approved-usable-cohort-amendment20261024",
-  "goal_status": "active_verified_after_delayed_resume",
+  "goal_status": "active_verified_20261025",
   "approval": "results/MM_PART1_USABLE_COHORT_APPROVAL_20261024.json",
   "registration": "results/MM_PART1_USABLE_COHORT_REGISTRATION_20261024.json",
   "cohort_id": "FACULTY-6W-USABLE-682170-v1",
@@ -45,15 +45,17 @@
     "flush_verified": false
   },
   "last_observation": {
-    "utc": "2026-10-24T15:49:16.136815+00:00",
-    "state": "read_only_fresh_runtime_failed_no_copy_job",
+    "utc": "2026-10-24T20:32:00.012867+00:00",
+    "state": "API_metadata_and_range_probes_terminal_passed",
     "images_committed": 319820,
     "packed_shards": 18,
-    "live_job": false
+    "live_packing_job": false,
+    "live_metadata_inventory": false,
+    "metadata_images_verified": 682170
   },
   "terminal_flush_verified": false,
   "no_GPU_allocated": true,
-  "next": "ExistingGoal is now ACTIVE; do not ask user to resume again unless actual status changes. Wait for allowance to recover above20percent before new debugging/transfer/job. Then follow preserved derivedreceiptcopy read/reconciliation and full privateinput/runtime verification, CUDA/measuredpreflight, epochs1\u20132validation. No finaltest.",
+  "next": "Use private API index receipt under data/official_paired_v2 to locate durable115527byte index (SHA291a2c5b27aa39f1b1b16b3726655609927a08cee03a34e35d9fe7e47670a87a). Verify current credentials/session first. Implement/fault-test bounded lossless Drive API transport avoiding DriveFS: inventory existing18pack receipts against original source, hash source/packed archives and every copied image, preserve originals and prior packs, upload closed archives/receipts with verified private readback and resumable checkpoints. Do not duplicate extraction, change cohort or run tests. Then complete full immutable Kaggle input, runtime image gate, actual CUDA recovery/preflight and epochs1\u20132/fullvalidation. The old DriveFS resume script remains unexecuted and must not bypass its gate.",
   "bars": {
     "text_only": 100,
     "text_plus_image": 40,
@@ -79,7 +81,7 @@
     "live_job": false,
     "note": "No copy/training job remains live. No claim of monitoring or independent continuation."
   },
-  "state": "approved_reset_complete_same_Drive_failure_reproduced_reserve_handoff",
+  "state": "API_recovery_route_verified_metadata_checkpoint_saved",
   "goal_pause_requested": false,
   "previous_goal_turn_classification": "Progress: verified and pushed essential reserve handoff; paused per user10percent instruction",
   "current_goal_turn_classification": "Progress: revalidated runtime terminal status and corrected authoritative Goalresume state; substantive work held at userreserve",
@@ -105,5 +107,7 @@
     "root_exists": true
   },
   "latest_reserve_handoff": "results/MM_PART1_TEN_PERCENT_HANDOFF_20261024.json",
-  "goal_pause_requested_at10percent": true
+  "goal_pause_requested_at10percent": false,
+  "latest_recovery_receipt": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
+  "current_execution_note": "API recovery verified: all150source receipts/682170metadata IDs, durableindexreadback, originalTAR4KiB HTTP206. CloudDriveOOMproved. No activepacking/training; durable319820images18packs;scientific0/2train0/2val,test0."
 }

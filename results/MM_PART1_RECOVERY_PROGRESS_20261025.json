@@ -1,0 +1,94 @@
+{
+  "updated_utc": "2026-10-24T20:32:00.012867+00:00",
+  "local_date": "2026-10-25",
+  "state": "API_recovery_route_verified_metadata_checkpoint_saved",
+  "goal_status": "active_verified",
+  "previous_goal_turn_classification": "Progress: created evidence-grounded status dashboard; did not train",
+  "current_goal_turn_classification": "Progress: proved cloud Drive OOM; user-authorized API specimen, all150source receipt membership/count/class checks, durable private index readback, and originalTAR4KiB range verification passed. No scientific training claimed.",
+  "cohort_id": "FACULTY-6W-USABLE-682170-v1",
+  "approved_pairs": 682170,
+  "durable_packed_images": 319820,
+  "durable_packs": 18,
+  "scientific_epochs": 0,
+  "full_validations": 0,
+  "final_test": false,
+  "runtime": {
+    "platform": "Colab CPU",
+    "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
+    "pid": 3272,
+    "boot_id": "3cab16c0-993c-482e-81d2-caf17e5a421a",
+    "RAM_GiB_approx": 12.67
+  },
+  "receipt_copy": {
+    "read_ok": true,
+    "identical_original_bytes": true,
+    "bytes": 1778013,
+    "sha256": "92008e69c84c7485965def2c5a7c2d29663d9c18feb587d1bcf9fef5d69108c4",
+    "replacement_applied": false
+  },
+  "inventory": {
+    "state": "failed",
+    "receipt_index": 5,
+    "file": "images_0815e56788bc42a0bb8131ed62405642.receipt.json",
+    "error": "OSError 107 Transport endpoint is not connected"
+  },
+  "cause": {
+    "verified": "Kernel OOM killed cloud Drive process pid36308 at20:16:52UTC, anon_rss11281852KiB",
+    "cloud_not_laptop": true,
+    "root_cgroup_oom_zero_does_not_disprove_child_oom": true,
+    "specific_internal_memory_growth_trigger": "unproven"
+  },
+  "api": {
+    "existing_ADC_was_unusable": true,
+    "user_approved_opening_auth": true,
+    "user_confirmed_Drive_and_Cloud_access": true,
+    "helper_finished_observed": true,
+    "bounded_reader": "collab/probe_drive_api_receipt_v1.py",
+    "reader_cloud_success": true,
+    "tests": "results/drive_api_receipt_probe_checks_20261025.json",
+    "verified_receipt": "results/MM_PART1_DRIVE_API_RECEIPT_VERIFICATION_20261025.json",
+    "inventory_cell": "g069b1OumNlk",
+    "inventory_state": "terminal_passed",
+    "inventory_source": "collab/inventory_drive_api_metadata_v1.py",
+    "inventory_source_sha256": "cd232c07f339647b378ec858c0addaf3f1dbdbcc596bde87b2f42a4f236b03b6",
+    "inventory_receipt": "results/MM_PART1_API_METADATA_INVENTORY_20261025.json",
+    "metadata_images": 682170,
+    "metadata_receipts": 150,
+    "metadata_index_sha256": "291a2c5b27aa39f1b1b16b3726655609927a08cee03a34e35d9fe7e47670a87a",
+    "metadata_index_readback_verified": true,
+    "archive_range_cell": "xNddVqfSmtsV",
+    "archive_range_state": "passed",
+    "archive_range_receipt": "results/MM_PART1_ORIGINAL_ARCHIVE_API_RANGE_20261025.json",
+    "scope": "Metadata and one4KiB TAR range only; no full archive/image hash gate this run"
+  },
+  "Kaggle": {
+    "workspace": "https://www.kaggle.com/code/rocky62/urop-full-six-way-multimodal-part1/edit",
+    "session": "off observed",
+    "accelerator": "None observed",
+    "input": "No input attached observed",
+    "release_path": null,
+    "no_training_launched": true
+  },
+  "resume_script": "collab/resume_verified_transport_v4_20261025.py",
+  "resume_script_executed": false,
+  "full_source_inventory_passed": false,
+  "no_source_extraction_repeated": true,
+  "no_new_exclusions": true,
+  "evidence": [
+    "results/MM_PART1_RECEIPT_COPY_PROBE_20261025.json",
+    "results/MM_PART1_RECEIPT_INVENTORY_FAILURE_20261025.json",
+    "results/MM_PART1_DRIVE_RESOURCE_DIAGNOSTIC_20261025.json",
+    "results/MM_PART1_EXISTING_API_CREDENTIALS_20261025.json",
+    "results/MM_PART1_DRIVE_API_RECEIPT_VERIFICATION_20261025.json",
+    "results/MM_PART1_API_METADATA_INVENTORY_20261025.json",
+    "results/MM_PART1_ORIGINAL_ARCHIVE_API_RANGE_20261025.json"
+  ],
+  "usage_observed": {
+    "short_remaining": 71,
+    "weekly_remaining": 21
+  },
+  "next": "Use private API index receipt under data/official_paired_v2 to locate durable115527byte index (SHA291a2c5b27aa39f1b1b16b3726655609927a08cee03a34e35d9fe7e47670a87a). Verify current credentials/session first. Implement/fault-test bounded lossless Drive API transport avoiding DriveFS: inventory existing18pack receipts against original source, hash source/packed archives and every copied image, preserve originals and prior packs, upload closed archives/receipts with verified private readback and resumable checkpoints. Do not duplicate extraction, change cohort or run tests. Then complete full immutable Kaggle input, runtime image gate, actual CUDA recovery/preflight and epochs1\u20132/fullvalidation. The old DriveFS resume script remains unexecuted and must not bypass its gate.",
+  "source_backup_commit": "7530a33c7a97ca3db70e0a8ed45348258ccf28b2",
+  "no_active_packing_or_training_job": true,
+  "source_metadata_inventory_passed": true
+}
