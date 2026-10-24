@@ -1,3 +1,7 @@
+<!-- SCHEDULED CONTINUATION POLICY -->
+User-confirmed scheduled-message instructions: [SCHEDULED_CONTINUATION_INSTRUCTIONS.md](SCHEDULED_CONTINUATION_INSTRUCTIONS.md). Read these with each scheduled continuation; they do not themselves restart a paused goal or establish current cloud status.
+<!-- /SCHEDULED CONTINUATION POLICY -->
+
 <!-- MM-PART1 RESERVE AUDIT -->
 ## Latest reserve integrity check — 2026-10-24T04:48:17.720374+00:00
 
