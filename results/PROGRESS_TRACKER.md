@@ -1,3 +1,5 @@
+Latest source result:682170usable/682661,491decode failures; image gate FAILED. Source CRC/SHA and Drive flush passed. Source job finished; no training/validation/test.9percent reserve handoff; bars unchanged: text100%,MM40%,image20%,overall53%. See MM_PART1_SOURCE_FAILURE_REPORT_20261024.md.
+
 Latest image checkpoint 2026-10-24T06:42:55.466584+00:00: 577828committed +172open; complete image gate/terminal flush pending. Scientific epochs0/2, validations0/2, no test; bars unchanged.
 
 Latest operational check 2026-10-24T05:14:49.150134+00:00: goal active; original CPU source job advancing, image gate pending. Private training draft imported with no runtime. Scientific epochs0/2 and validations0/2; headline bars unchanged. See results/MM_PART1_STREAM_OBSERVATION_20261024T0515Z.json.

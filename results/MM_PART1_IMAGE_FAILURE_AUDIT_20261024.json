@@ -1,0 +1,90 @@
+{
+  "utc": "2026-10-24T07:26:20.615103+00:00",
+  "job_id": "CPU_STREAM_PREP_87f54da6a55c47349ba79a6f6ab33747",
+  "source_transport_complete": true,
+  "compressed_archive_bytes": 113623359224,
+  "compressed_archive_sha256": "e3f8fd7dfae6d864585affd0729ac06544471c93f6dc713c6f78d0bbe4a00abd",
+  "source_crc_consumed": true,
+  "source_id": "1cjY6HsHaSZuLVHywIxD5xQqng33J5S2b",
+  "terminal_drive_flush_verified": true,
+  "required": 682661,
+  "usable": 682170,
+  "failed": 491,
+  "failed_percent": 0.07192442515391972,
+  "image_gate_passed": false,
+  "failure_categories": {
+    "Unrecognized by current Pillow decoder": 475,
+    "Truncated image/file read": 14,
+    "Pillow pixel-count safety limit": 2
+  },
+  "official_split_counts": {
+    "train": 564000,
+    "validation": 59342,
+    "test": 59319
+  },
+  "failed_split_counts": {
+    "train": 399,
+    "validation": 43,
+    "test": 49
+  },
+  "failed_class_counts": {
+    "train": {
+      "0": 0,
+      "1": 1,
+      "2": 0,
+      "3": 0,
+      "4": 398,
+      "5": 0
+    },
+    "validation": {
+      "0": 0,
+      "1": 1,
+      "2": 0,
+      "3": 0,
+      "4": 42,
+      "5": 0
+    },
+    "test": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 49,
+      "5": 0
+    }
+  },
+  "verified_old_subset_overlap_count": 0,
+  "raw_browser_observation": "data/official_paired_v1/source_recovery/CPU_STREAM_PREP_87f54da6a55c47349ba79a6f6ab33747_BROWSER_OBSERVATION.json",
+  "raw_browser_observation_sha256": "856cafae83a3cbf88f62fb7097d61c88601e7d5f51dcc5d907319ae43a8f9ddb",
+  "private_failed_id_details": "data/official_paired_v1/source_recovery/FAILED_IMAGE_ROWS_20261024.json",
+  "private_failed_id_details_sha256": "7eff5f2f6a2eaa57f4d1c54c36540975fba0399ff438ac84378012b377d57c2f",
+  "interpretation": "Source completed successfully, but strict decoder/full682661 usable-image requirement did not pass. Unrecognized does not prove irreparably corrupt: inspect actual formats/codec support before deciding recovery policy. Do not substitute old cached image bytes or silently drop rows.",
+  "scientific_epochs_completed": 0,
+  "full_validations_completed": 0,
+  "test_performed": false,
+  "next": "Preserve exact original bytes. Diagnose failing formats and Pillow environment in a bounded CPU-only step when allowance permits; obtain approval before consequential decoder/source/exclusion changes. No repacking or training gate bypass.",
+  "original_extraction_report": "data/official_paired_v1/source_recovery/extraction_7f55c34bcfa94cf09b61e3884590e49d.json",
+  "original_extraction_report_sha256": "262a40e9e04629cda8c13388478a112016ba17ef42ed2d423bc517dc8911ebe0",
+  "original_extraction_report_bytes": 66185,
+  "cloud_receipt_downloaded_after_unmount": true,
+  "original_receipt_matches_visible_terminal_result": true,
+  "roundtrip_comparison_note": "All fields exactly equal except elapsed_seconds JavaScript serialization roundoff of 1.8189894035458565e-12seconds; original downloaded JSON authoritative.",
+  "source_decoder_environment": "results/MM_PART1_SOURCE_DECODER_ENVIRONMENT_20261024.json",
+  "offline_url_hints": {
+    "distinct_domains": 177,
+    "top_domains": {
+      "www.dropbox.com": 69,
+      "picturevip.com": 59,
+      "i.imgur.com": 43,
+      "en.wikipedia.org": 27,
+      "www.ericw.me": 20
+    },
+    "suffix_jpg": 388,
+    "suffix_png": 1,
+    "suffix_absent": 94,
+    "suffix_other": 8,
+    "scope": "Metadata hints only; no alternative URL fetched and no file-format cause established"
+  },
+  "class_skew_note": "489 failures are False Connection(label4),2 are Satire/Parody(label1); silent filtering would be class-skewed.",
+  "decoder_environment_note": "Pillow11.3.0 reports JPEG, JPEG2000, WebP and AVIF support; unsupported codec is not established as the cause. Source extraction and flush finished before environment-only diagnostic. Initial metadata-only cell SyntaxError was corrected; source job was not rerun or changed."
+}

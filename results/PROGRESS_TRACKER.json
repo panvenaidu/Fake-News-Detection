@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T06:42:55.466584+00:00",
+  "updated_utc": "2026-10-24T07:32:53.860261+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -444,6 +444,6 @@
     "progress_unchanged": true
   },
   "part1_execution_receipt": "results/MM_PART1_RECEIPT_20261023.json",
-  "last_cpu_preparation_note": "Same CPU job new image extraction; 577828committed and172open at2026-10-24T06:42:23.390836+00:00; full source/runtime gates and terminal flush pending. No scientific training/validation/test; bars unchanged.",
-  "latest_operational_note": "Existing goal resumed. Source prefix replay advancing; no new scientific epochs/validations. Private guarded Kaggle draft imported with session off. Full image gate and actual preflight remain pending."
+  "last_cpu_preparation_note": "Source CRC/SHA complete and terminal Drive flush verified;682170usable/682661,491failed. Full image gate failed; no scientific epochs/validations/test. Goal reserve pause requested at9percent; exact next action is original-byte/decoder diagnosis, not automatic filtering or training.",
+  "latest_operational_note": "Source CRC/SHA complete and terminal Drive flush verified;682170usable/682661,491failed. Full image gate failed; no scientific epochs/validations/test. Goal reserve pause requested at9percent; exact next action is original-byte/decoder diagnosis, not automatic filtering or training."
 }

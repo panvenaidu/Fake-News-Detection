@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-10-24T04:50:45.060Z",
+  "observed_utc": "2026-10-24T07:32:53.860261+00:00",
   "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
   "cell_id": "CTwlzdeQDnsR",
   "source_commit": "8d77eca6544d6e6140b75d3f1f30355af578d4c9",
@@ -1042,5 +1042,14 @@
   ],
   "image_gate_passed": false,
   "scientific_training_started": false,
-  "assistant_handoff": "Pause at user10percent threshold; bounded cloud CPU job left intact; no continued monitoring claimed"
+  "assistant_handoff": "Pause requested at9percent; job finished, no continued monitoring claimed",
+  "state": "terminal_source_complete_image_gate_failed",
+  "usable": 682170,
+  "required": 682661,
+  "decode_failure_count": 491,
+  "source_crc_consumed": true,
+  "compressed_archive_sha256": "e3f8fd7dfae6d864585affd0729ac06544471c93f6dc713c6f78d0bbe4a00abd",
+  "compressed_archive_bytes": 113623359224,
+  "drive_flush_and_unmount_completed": true,
+  "source_failure_audit": "results/MM_PART1_IMAGE_FAILURE_AUDIT_20261024.json"
 }

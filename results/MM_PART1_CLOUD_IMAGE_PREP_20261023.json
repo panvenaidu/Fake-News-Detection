@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T04:51:32.106907+00:00",
+  "updated_utc": "2026-10-24T07:32:53.860261+00:00",
   "status": "bounded_stream_recovery_running",
   "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
   "account": "panvee62@gmail.com",
@@ -129,8 +129,8 @@
     "usable_verified": 46752,
     "scratch_free": 87699030016
   },
-  "metadata_committed_images": 505573,
-  "state": "pause_requested_at_user10percent_handoff",
+  "metadata_committed_images": 682170,
+  "state": "source_finished_image_gate_failed_reserve_pause_requested",
   "latest_stream_job": "results/MM_PART1_STREAM_JOB_20261024.json",
   "latest_stream_observation": {
     "elapsed_seconds": 2062.383349731,
@@ -169,5 +169,16 @@
   "full_validations_completed": 0,
   "final_test_performed": false,
   "git_backup_receipt": "results/MM_PART1_GIT_BACKUP_20261024.json",
-  "reserve_integrity_receipt": "results/MM_PART1_RESERVE_VERIFICATION_20261024.json"
+  "reserve_integrity_receipt": "results/MM_PART1_RESERVE_VERIFICATION_20261024.json",
+  "part1_complete": false,
+  "required": 682661,
+  "decode_failures": 491,
+  "source_job_terminal": true,
+  "source_terminal_flush_verified": true,
+  "source_failure_audit": "results/MM_PART1_IMAGE_FAILURE_AUDIT_20261024.json",
+  "source_failure_report": "results/MM_PART1_SOURCE_FAILURE_REPORT_20261024.md",
+  "cpu_runtime": "Source job terminal and Drive unmounted; CPU notebook connected but idle after metadata capture; no GPU",
+  "usage_short_remaining": 9,
+  "usage_weekly_remaining": 56,
+  "goal_pause_requested": true
 }
