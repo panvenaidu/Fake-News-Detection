@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-24T15:48:58.368277+00:00",
+  "state": "prepared_failure_reporting_fix_not_cloud_launched",
+  "runner": "collab/run_usable_transport_job_v4.py",
+  "runner_sha256": "6f416ccd7878ed59377787ba8ec5fb232b237c6e787a7b11c100d5b6b0027152",
+  "packing_cap_seconds": 3600,
+  "difference_from_v3": "Print original failure before any report write; independently attempt scratch and Drive immutable evidence; never label scratch durable; do not lose original error if Drive is disconnected",
+  "scientific_protocol_changed": false,
+  "cohort_changed": false,
+  "original_packer_unchanged": true,
+  "checks": "results/transport_failure_evidence_checks_20261024.json",
+  "cases_passed": 5,
+  "training": false,
+  "release_condition": "Fresh reset source/pack receipt reads must pass before any new bounded transport continuation. Preserve failed guard4239 and original source."
+}

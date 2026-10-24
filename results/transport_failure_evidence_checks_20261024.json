@@ -1,0 +1,11 @@
+{
+  "status": "passed_transport_failure_fault_checks",
+  "cases": 5,
+  "original_exception_printed_before_all_writes": true,
+  "both_destinations_failing_does_not_hide_original_error": true,
+  "immutable_existing_evidence_not_overwritten": true,
+  "scratch_never_claimed_durable": true,
+  "cloud_execution": false,
+  "training": false,
+  "runner_sha256": "6f416ccd7878ed59377787ba8ec5fb232b237c6e787a7b11c100d5b6b0027152"
+}

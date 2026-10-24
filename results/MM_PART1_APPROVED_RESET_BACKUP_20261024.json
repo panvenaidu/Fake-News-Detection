@@ -2,7 +2,7 @@
   "utc": "2026-10-24T15:44:51.961616+00:00",
   "user_approved_reset": true,
   "user_instruction": "Choose Option1; verify important backups first; reset ColabCPU; continue preparation; KaggleGPU training; do not delete unsaved project data",
-  "reset_not_yet_performed": true,
+  "reset_not_yet_performed": false,
   "pre_reset_check_passed": true,
   "unique_unsaved_project_files_in_CPU_scratch": 0,
   "only_scratch_project_item": "empty lockfile",
@@ -36,5 +36,10 @@
       "sha256": "d12e921dd4c4741fe14e4e3062bcab1f8356279f292949addf7470bffdefd800"
     }
   ],
-  "no_GPU_training_started": true
+  "no_GPU_training_started": true,
+  "reset_confirmed_by_user_and_performed": true,
+  "post_reset_UI": "Reconnect observed after Yes; fresh CPU backend connected12.67GBRAM/107.72GBdisk",
+  "reset_backup_remote_commit_verified": "9c526ed7e0db9ea0baace3765dc8da17dc4b33eb",
+  "reset_completed_screenshot": "results/mm_part1_cpu_reset_completed_20261024.png",
+  "updated_utc": "2026-10-24T15:48:58.368277+00:00"
 }
