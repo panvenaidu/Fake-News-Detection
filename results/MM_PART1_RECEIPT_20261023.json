@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T10:37:01.821847+00:00",
+  "updated_utc": "2026-10-24T10:38:52.274309+00:00",
   "plan": "MM-PART1-v2",
   "state": "original_html_payloads_verified_awaiting_protocol_decision",
   "part1_complete": false,
@@ -174,7 +174,7 @@
   "git_backup_receipt": "results/MM_PART1_GIT_BACKUP_20261024.json",
   "reserve_integrity_receipt": "results/MM_PART1_RESERVE_VERIFICATION_20261024.json",
   "training_notebook": "https://www.kaggle.com/code/rocky62/urop-full-six-way-multimodal-part1/edit",
-  "training_notebook_state": "Guarded source imported; Private, None accelerator, session off, RELEASE_PATH None; no execution",
+  "training_notebook_state": "Fresh24Octobercheck:DraftSessionoff(runacelltostart),Noneaccelerator,RELEASE_PATHNone; no training",
   "measured_preflight_preparation": "results/MM_PART1_MEASURED_PREFLIGHT_PREPARATION_20261024.json",
   "latest_stream_observation_receipt": "results/MM_PART1_NEW_SHARDS_OBSERVATION_20261024.json",
   "source_terminal_flush_verified": true,
@@ -231,7 +231,10 @@
     "scope": "Live CPU checkpoint observation and all named context/progress/log records; this Git receipt is a separate child update"
   },
   "github_backup": {
-    "status": "Pendingthischeckpointpush;see results/MM_PART1_GIT_BACKUP_20261024.json",
-    "prior_remote_commit": "bf11e0c63c353b2952aea7c23fc8f7fb98ea0324"
+    "status": "verified",
+    "commit": "0cd9783972636bd8618882253ae896a877205eb8",
+    "remote_sha_observed": "0cd9783972636bd8618882253ae896a877205eb8",
+    "verified_utc": "2026-10-24T10:38:52.274309+00:00",
+    "scope": "Diagnosis/context/protocolproposal; this updated receipt is a separate child commit"
   }
 }
