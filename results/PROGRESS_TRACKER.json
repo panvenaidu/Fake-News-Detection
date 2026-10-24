@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T20:33:14.771734+00:00",
+  "updated_utc": "2026-10-24T20:36:43.467016+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -461,7 +461,8 @@
     "exclusions": 491,
     "receipt": "results/MM_PART1_USABLE_RECEIPT_20261024.json"
   },
-  "current_execution_note": "20percent weeklyreserve: all API diagnostics terminal and durablemetadataindexverified; no newlongjob. Packing319820/18,scientific0/2train0/2val,test0. Exact recovery receipt20261025.",
+  "current_execution_note": "Goal BLOCKED by tool after3consecutive20percentweeklyreserveobservations. Verified recovery/hashes/Git; no newlongjob. Scientific0/2train0/2val,test0;packing319820/18 unchanged.",
   "latest_recovery_receipt": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
-  "latest_api_backup_receipt": "results/MM_PART1_API_RECOVERY_GIT_BACKUP_20261025.json"
+  "latest_api_backup_receipt": "results/MM_PART1_API_RECOVERY_GIT_BACKUP_20261025.json",
+  "latest_reserve_audit": "results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json"
 }
