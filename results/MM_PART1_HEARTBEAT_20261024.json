@@ -1,0 +1,34 @@
+{
+  "observed_utc": "2026-10-24T00:05:13.928027+00:00",
+  "automation_id": "audit-urop-dataset-and-models",
+  "goal_status": "paused",
+  "allowance_remaining_percent": 100,
+  "weekly_remaining_percent": 85,
+  "kaggle_editor": {
+    "state": "Loaded; default code cell and Run/Start session controls visible; draft session off; no input attached",
+    "url": "https://www.kaggle.com/code/rocky62/urop-mm-part1-engineering-preflight/edit",
+    "no_session_started": true,
+    "screenshot": "results/mm_part1_kaggle_editor_ready_20261024.png"
+  },
+  "cpu_preparation": {
+    "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
+    "job_id": "CPU_IMAGE_PREP_7128d94997e84072a77aca9a66bc46c6",
+    "state": "Colab explicitly reports Runtime disconnected due to inactivity or maximum duration. Saved Cell6 shows a traceback inside imageprep.extract; exact terminal exception not retrieved because desktop control became unavailable. Completion and latest durable count unverified.",
+    "last_previously_verified_committed_images": 83925,
+    "last_previously_verified_utc": "2026-10-23T18:50:21.292939+00:00",
+    "required": 682661,
+    "screenshot": "results/mm_part1_cpu_disconnected_20261024.png",
+    "reconnected": false,
+    "restarted": false
+  },
+  "next_action": "Human must resume the paused goal through supported goal controls; this tool cannot resume it. Then recover desktop control, inspect exact job result and durable shard receipts before any extraction restart; no duplicate job. Full image gate and runtime verification required before scientific epochs1\u20132. No final test in Part1.",
+  "scientific_epochs_completed": 0,
+  "full_validations_completed": 0,
+  "part1_complete": false,
+  "progress": {
+    "text": 100,
+    "multimodal": 40,
+    "image_only": 20,
+    "overall": 53
+  }
+}

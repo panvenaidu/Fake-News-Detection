@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-23T18:51:15.639847+00:00",
+  "updated_utc": "2026-10-24T00:05:13.928027+00:00",
   "plan": "MM-PART1-v2",
-  "state": "paused_at_user_usage_handoff",
+  "state": "paused_goal_requires_human_resume_cloud_runtime_disconnected",
   "part1_complete": false,
   "scientific_training_started": false,
   "epochs_completed": 0,
@@ -16,7 +16,7 @@
   "source_archive_download_confirmed": false,
   "drive_storage_observed": "185.53 GB of5.39 TB after cloud source copy; historical UI snapshot, later shards increase usage",
   "cpu_prep_notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
-  "cpu_runtime": "Existing CPU job7128d949 advanced at 2026-10-23T18:50:21.292939+00:00",
+  "cpu_runtime": "Colab explicitly reports Runtime disconnected due to inactivity or maximum duration. Saved Cell6 shows a traceback inside imageprep.extract; exact terminal exception not retrieved because desktop control became unavailable. Completion and latest durable count unverified.",
   "image_gate_passed": false,
   "image_coverage": "results/official_image_coverage_v1.json",
   "recovery_checks": "results/multimodal_recovery_primitives_checks_20261023.json",
@@ -27,7 +27,7 @@
     "Private Kaggle full-image input import/storage route still needs measured verification",
     "CUDA fixture passed; full pretrained-model/image I/O throughput and durable scientific checkpoint export remain pending"
   ],
-  "next_action": "After allowance recovers, verify exact existing CPU job/result and committed receipts. Do not duplicate or restart. Require complete682661 image/source SHA/CRC gate, private input runtime verification and throughput before epochs1\u20132; no final test. Kaggle editor still loading after direct desktop/extension inspection; no CAPTCHA challenge exposed.",
+  "next_action": "Human must resume the paused goal through supported goal controls; this tool cannot resume it. Then recover desktop control, inspect exact job result and durable shard receipts before any extraction restart; no duplicate job. Full image gate and runtime verification required before scientific epochs1\u20132. No final test in Part1.",
   "progress": {
     "text": 100,
     "multimodal": 40,
@@ -59,9 +59,9 @@
     "notebooks/UROP_MM_PART1_CUDA_ENGINEERING_20261023.ipynb": "9072566aa987235a02c4060fa716b7d3bfeb72ad5f3856ea8a9dba1272f936af"
   },
   "assistant_usage_observed": {
-    "short_window_remaining_percent": 9,
-    "weekly_remaining_percent": 86,
-    "action": "User10% handoff triggered; essential synchronization then pause; hardstop5%"
+    "short_window_remaining_percent": 100,
+    "weekly_remaining_percent": 85,
+    "action": "Allowance reset; paused goal cannot be resumed with available tools; notify human."
   },
   "drive_access_approved": true,
   "full_trainer": "scripts/train_official_multimodal_v1.py",
@@ -173,5 +173,6 @@
     "usable_in_open_shard": 75,
     "required": 682661,
     "elapsed_seconds": 2696.805649424
-  }
+  },
+  "latest_heartbeat": "results/MM_PART1_HEARTBEAT_20261024.json"
 }
