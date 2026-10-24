@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T15:16:55.834196+00:00",
+  "updated_utc": "2026-10-24T15:32:18.793134+00:00",
   "plan": "MM-PART1-v2+approved-usable-cohort-amendment20261024",
   "goal_status": "active_verified",
   "approval": "results/MM_PART1_USABLE_COHORT_APPROVAL_20261024.json",
@@ -28,30 +28,32 @@
     "results/usable_multimodal_evidence_checks_20261024.json"
   ],
   "CPU_job": {
-    "job_id": "CPU_USABLE_TRANSPORT_8091318e6b994f829ef34b62ce9ca587",
-    "utc": "2026-10-24T15:15:21.095646+00:00",
+    "job_id": "CPU_USABLE_TRANSPORT_4239db2e543d4215bfe7f48f8517c0ae",
+    "utc": "2026-10-24T15:19:43.391493+00:00",
     "pid": 1568,
     "pid_role": "notebook_kernel_not_dedicated_trainer",
-    "cell": "hasAItotepXo",
+    "cell": "78Z17KaSftw1",
     "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=hasAItotepXo",
     "max_pack_seconds": 3600,
     "source_file": "collab/run_usable_transport_job_v3.py",
     "source_sha256": "60a0175d5faaba66e76752827e9a9052564351b0a0d15b35ce0803ae9f6fee94",
-    "phase": "rehash prior closed packs before any new copy",
+    "phase": "terminal_error",
     "training": false,
-    "test_inference": false
+    "test_inference": false,
+    "terminal_confirmed_by_current_notebook_output": true,
+    "failure_receipt_write_failed": true,
+    "flush_verified": false
   },
   "last_observation": {
-    "utc": "2026-10-24T15:16:55.834196+00:00",
-    "state": "new_cpu_continuation_executing",
-    "verified_notebook_cell_running": true,
-    "last_committed_images": 319820,
-    "last_committed_packs": 18,
-    "new_pack_counter_not_observed_yet": true
+    "utc": "2026-10-24T15:32:18.793134+00:00",
+    "state": "terminal_failure_no_new_images",
+    "images_committed": 319820,
+    "packed_shards": 18,
+    "live_job": false
   },
   "terminal_flush_verified": false,
   "no_GPU_allocated": true,
-  "next": "Inspect exact CPU job terminal result and flush; never restart extraction. Resume bounded lossless packing from verified closed receipts if partial; complete approved metadata and private immutable input/runtime verification, v2CUDAfixture/measuredpreflight, then registered epochs1\u20132/fullvalidations. Old v1 draft/coverage/config must not launch this cohort.",
+  "next": "After reset approval, confirm runtime reset, connect one CPU session and same existing Drive scope, read all150 source receipts and all18 pack receipts in bounded diagnostics. If they pass, verify failed guard+terminal evidence+free lock and pin an explicit new continuation; no repeat extraction. Current one-shot wrappers must not be rerun.",
   "bars": {
     "text_only": 100,
     "text_plus_image": 40,
@@ -65,35 +67,21 @@
   },
   "limitations": [
     "No scientific multimodal training/validation/test",
-    "Actual v2 CUDA and full-model throughput remain pending",
-    "Private Kaggle input Version1 contains only640images; no full dataset upload yet",
-    "Current transport is preparation only; hashes and actual destination runtime decode gates still required"
+    "Both current CPU continuation cells ended before copying new images because Drive service disconnected; not a live job",
+    "Current runtime reset requires user confirmation",
+    "Actual v2 CUDA/measured throughput/full immutable input remain pending"
   ],
   "scientific_source_commit": "5aa5c87a2620b3c7763401e845dad45a935dd621",
   "guarded_draft_release_refusal_verified": true,
   "independent_continuation": {
-    "job_id": "CPU_USABLE_TRANSPORT_8091318e6b994f829ef34b62ce9ca587",
-    "utc": "2026-10-24T15:15:21.095646+00:00",
-    "pid": 1568,
-    "pid_role": "notebook_kernel_not_dedicated_trainer",
-    "cell": "hasAItotepXo",
-    "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=hasAItotepXo",
-    "max_pack_seconds": 3600,
-    "source_file": "collab/run_usable_transport_job_v3.py",
-    "source_sha256": "60a0175d5faaba66e76752827e9a9052564351b0a0d15b35ce0803ae9f6fee94",
-    "phase": "rehash prior closed packs before any new copy",
-    "training": false,
-    "test_inference": false,
-    "already_submitted": true,
-    "closed_TAR_SHA_and_per_image_receipts": true,
-    "source_shards_preserved": true,
-    "terminal_flush_required": true,
-    "note": "May continue to bounded checkpoint independently; final flush must be observed. No monitoring is promised after assistant stops."
+    "already_submitted": false,
+    "live_job": false,
+    "note": "Both continuation cells are terminal; no cloud job remains running. Source/closed packs are preserved. Reset approval is pending."
   },
-  "state": "active_cpu_transport_continuation",
+  "state": "terminal_cpu_drive_service_failures_reset_confirmation_pending",
   "goal_pause_requested": false,
   "previous_goal_turn_classification": "Progress: verified and pushed essential reserve handoff; paused per user10percent instruction",
-  "current_goal_turn_classification": "Progress: verified prior terminal and flush; pinned one-hour transport runner; launched same-cohort continuation after terminal/lock checks",
+  "current_goal_turn_classification": "Progress: prior terminal/flush verified; exact failed continuation diagnosed; v2 private Kaggle draft updated and source readback verified. No scientific progress; runtime reset needs confirmation.",
   "prior_terminal": {
     "job_id": "CPU_USABLE_TRANSPORT_3bcc65e9a0c747288ae516a87ee6ccce",
     "images_committed": 319820,
@@ -102,5 +90,7 @@
     "flush_utc": "2026-10-24T11:35:10.638934+00:00",
     "terminal_and_flush_observed": true,
     "evidence": "data/official_paired_v2/TRANSPORT_JOB_TERMINAL_3bcc65e9_20261024.txt"
-  }
+  },
+  "failure_receipt": "results/MM_PART1_CPU_DRIVE_FAILURE_20261024.json",
+  "kaggle_draft_receipt": "results/MM_PART1_USABLE_KAGGLE_DRAFT_20261024.json"
 }

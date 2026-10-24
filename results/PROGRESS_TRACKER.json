@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T15:16:55.834196+00:00",
+  "updated_utc": "2026-10-24T15:32:18.793134+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -461,5 +461,5 @@
     "exclusions": 491,
     "receipt": "results/MM_PART1_USABLE_RECEIPT_20261024.json"
   },
-  "current_execution_note": "CPU transport continuation8091318e started from verified319820images18packs; no scientific epochs/validations. Full immutable runtime input gate pending."
+  "current_execution_note": "319820images18packs durable; both subsequent CPU attempts terminal Drive errors/no newimages. Reset confirmation pending. V2Kaggle guarded draft source readback verified; epochs0,validations0."
 }

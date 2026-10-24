@@ -1,0 +1,59 @@
+{
+  "utc": "2026-10-24T15:32:18.793134+00:00",
+  "state": "terminal_cpu_drive_service_failures_reset_confirmation_pending",
+  "job_ids": [
+    "CPU_USABLE_TRANSPORT_8091318e6b994f829ef34b62ce9ca587",
+    "CPU_USABLE_TRANSPORT_4239db2e543d4215bfe7f48f8517c0ae"
+  ],
+  "both_notebook_cells_terminal_verified": true,
+  "new_images_committed": 0,
+  "last_verified_durable_images": 319820,
+  "last_verified_durable_packs": 18,
+  "last_verified_durable_prior_job": "CPU_USABLE_TRANSPORT_3bcc65e9a0c747288ae516a87ee6ccce",
+  "last_prior_flush_utc": "2026-10-24T11:35:10.638934+00:00",
+  "current_guard": "CPU_USABLE_TRANSPORT_4239db2e543d4215bfe7f48f8517c0ae",
+  "failed_recovery_cell": "78Z17KaSftw1",
+  "diagnostic_cell": "Wy68DsERgY4F",
+  "failed_source_receipt": "images_0784678d477441dd9378373cf7830aad.receipt.json",
+  "receipt_bytes": 1778013,
+  "read_only_diagnostic_fail_at_receipt": 4,
+  "observed_errors": [
+    "OSError107 Transport endpoint is not connected",
+    "ConnectionAbortedError103 Software caused connection abort",
+    "Failure receipt write and Drive flush also failed"
+  ],
+  "root_cause": "Unproven: Drive daemon restarts and cancelled network writes observed; no demonstrated dataset corruption or OOM",
+  "resource_evidence": {
+    "mem_available_kB": 12008320,
+    "cgroup_oom": 0,
+    "cgroup_oom_kill": 0,
+    "kernel_RSS_kB": 340700
+  },
+  "drive_web_receipt_preview_accessible": true,
+  "receipt_download_attempt": "Clicked once; no completed download found, no retry or readback claim",
+  "runtime_reset": "Confirmation pending; not accepted; current CPU session not deleted",
+  "confirmation_screenshot": "results/mm_part1_cpu_runtime_reset_confirmation_20261024.png",
+  "no_GPU_allocated": true,
+  "scientific_epochs": 0,
+  "full_validations": 0,
+  "test_inference": false,
+  "raw_private_evidence": [
+    {
+      "path": "data/official_paired_v2/TRANSPORT_JOB_8091318e_OUTPUT_20261024.txt",
+      "bytes": 5169,
+      "sha256": "29b23ecb5bc19dba3f0c5f4aad68d6bc492964718c592a4f7872dd3269425ac8"
+    },
+    {
+      "path": "data/official_paired_v2/TRANSPORT_JOB_4239db2e_OUTPUT_20261024.txt",
+      "bytes": 4466,
+      "sha256": "9c9960332ed795b3f787dd961af6357590b4a081a2b9c3fdf16b4cfb43c0c20d"
+    },
+    {
+      "path": "data/official_paired_v2/DRIVE_RECEIPT_READ_DIAGNOSTIC_20261024.txt",
+      "bytes": 5257,
+      "sha256": "fc4146ce5cc78bc13236af568e920722e2f05939311e07d47f7c2cd13429c79a"
+    }
+  ],
+  "kaggle_draft_receipt": "results/MM_PART1_USABLE_KAGGLE_DRAFT_20261024.json",
+  "next": "After reset approval, confirm runtime reset, connect one CPU session and same existing Drive scope, read all150 source receipts and all18 pack receipts in bounded diagnostics. If they pass, verify failed guard+terminal evidence+free lock and pin an explicit new continuation; no repeat extraction. Current one-shot wrappers must not be rerun."
+}

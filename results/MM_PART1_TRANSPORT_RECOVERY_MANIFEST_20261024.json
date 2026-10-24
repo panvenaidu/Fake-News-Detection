@@ -1,0 +1,52 @@
+{
+  "utc": "2026-10-24T15:32:43.793440+00:00",
+  "status": "recovery_and_prepared_draft_only_not_accepted_Part1",
+  "artifacts": [
+    {
+      "path": "collab/run_usable_transport_job_v3.py",
+      "bytes": 5558,
+      "sha256": "60a0175d5faaba66e76752827e9a9052564351b0a0d15b35ce0803ae9f6fee94"
+    },
+    {
+      "path": "collab/resume_usable_transport_1h_20261024.py",
+      "bytes": 10525,
+      "sha256": "940183872cafe6dfe6084e4d2461759cfaea756cccdc83fe2bea505f87218774"
+    },
+    {
+      "path": "collab/recover_usable_transport_mount_20261024.py",
+      "bytes": 2643,
+      "sha256": "ee11af7c4b1912da18778032b3aaad6a7a2503a8bdbaeb85638cb13a4607723d"
+    },
+    {
+      "path": "collab/diagnose_drive_receipt_reads_20261024.py",
+      "bytes": 2093,
+      "sha256": "1ecef72d0bafbc74f5a50841a416f7488ad893af2b00dfd9b2433bef2bd4c72c"
+    },
+    {
+      "path": "notebooks/UROP_MM_PART1_USABLE_EPOCH_TEMPLATE_20261024.ipynb",
+      "bytes": 14916,
+      "sha256": "70f3cbeeceefc8acf896be26f1c15349026cf3496072b84ae6092491fbfb8818"
+    },
+    {
+      "path": "results/MM_PART1_USABLE_KAGGLE_DRAFT_20261024.json",
+      "bytes": 1320,
+      "sha256": "3725c28c874d29e2ce7161e7e834e0760353120be31f4be3cde52f44104776e0"
+    },
+    {
+      "path": "results/MM_PART1_CPU_DRIVE_FAILURE_20261024.json",
+      "bytes": 2876,
+      "sha256": "0cd3dfc204245c0d70307a6ffba1c26f4d6c95dd3ce91d94a65f54e70f3f165d"
+    },
+    {
+      "path": "results/MM_PART1_TRANSPORT_CONTINUATION_20261024.json",
+      "bytes": 1060,
+      "sha256": "793d9bc0c816554ed776765f79844eea4dc738dea0a83180632e72a2f4094b21"
+    }
+  ],
+  "artifact_count": 8,
+  "existing23_artifact_manifest_reverified_unchanged": true,
+  "training_epochs": 0,
+  "full_validations": 0,
+  "test_inference": false,
+  "runtime_reset_confirmed": false
+}

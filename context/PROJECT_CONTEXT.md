@@ -1,3 +1,17 @@
+<!-- CPU DRIVE RECOVERY PENDING -->
+## Current CPU recovery boundary — 2026-10-24T15:32:18.793134+00:00
+
+**No cloud training or CPU copy job is currently running.** Usable-cohort continuation8091318e and its recovered job4239db2e both terminated with Drive endpoint errors before any new images. Same150source receipts diagnostic failed on receipt4 (`images_0784678d477441dd9378373cf7830aad.receipt.json`,1778013bytes) with connection-aborted103. Its normal Drive web preview is accessible; this does NOT prove the full receipt byte hash or a data corruption cause. A single browser download attempt has no completed file observation; do not claim success/retry blindly. AmpleRAM/no recordedOOM; Drive daemon restarts/cancelled writes seen, exact underlying cause unproven. Failure receipt writes and flush also failed; exact notebook outputs saved privately and hashed in `results/MM_PART1_CPU_DRIVE_FAILURE_20261024.json`.
+
+**Last verified durable image preparation remains319,820images/18archives**, job3bcc65e9 with successful11:35:10UTC flush. Failed guard is4239db2e; notebookkernel1568 was not a trainer. Source archive/shards/originalTSVs/approved682170cohort unchanged. No extra exclusion, alternate image, weaker decoder, extraction repeat or GPU allocation.
+
+Supported Colab "Disconnect and delete runtime" dialog is open in the CPU notebook; **confirmation is pending**, not accepted. Browser policy requires action-time permission for permanent scratch reset. All needed original data,18closedpacks, ownedsource and diagnostic evidence are in Drive/local/Git. If approved: reset this idle CPU runtime, reconnect one CPU instance with existing approved Drive scope, bounded-read all150source receipts/18pack receipts, then explicitly retire4239guard only after actual terminal/lock checks and resume same pinned one-hour runner. Do NOT rerun either one-shot recovery cell or old extraction cells. If reads still fail, preserve exact evidence and inspect transport/service route rather than cycling launches.
+
+Independent progress: existing PRIVATE Kaggle draft updated to approved usable v2 template; full code-cell source readback equals local template afterCRLFnormalization, no execution counts/outputs. Draft saved, sessionoff, acceleratorNone, RELEASE_PATH=None. Receipt `results/MM_PART1_USABLE_KAGGLE_DRAFT_20261024.json`. Kagglequota fresh UI00:00/30GPUhours used and2.31GB/214.75GBprivate storage; workspace remains previouslyauthorizedRocky62. Privateimageinput Version1 is still640images, full immutable staging/runtimebytegate pending. New notebook is guarded preparation, not a result.
+
+Scientific epochs0/2, fullvalidations0/2, test0. Bars unchanged text100/MM40/image20/overall53. Existing GoalACTIVE. Next dependent action needs reset confirmation; independent evidence/docs/source backup can continue. At20%reserve no new long jobs; handoff10%,hardstop5%.
+<!-- /CPU DRIVE RECOVERY PENDING -->
+
 <!-- USABLE TRANSPORT RESUMED -->
 ## Active CPU transport continuation — 2026-10-24T15:16:55.834196+00:00
 
