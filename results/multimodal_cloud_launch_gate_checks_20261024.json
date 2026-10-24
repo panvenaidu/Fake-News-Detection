@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "scope": "Mock metadata release-gate rejection checks only; no real data/CUDA/throughput/model execution",
+  "checks": [
+    "Reject draft, test inference, Part2 and epoch3",
+    "Reject conflicting/stale job evidence",
+    "Reject input/output path escapes and invalid input version",
+    "Reject missing save margin or insufficient measured epoch budget",
+    "Reject unverified resume and tampered/incomplete evidence"
+  ],
+  "source_sha256": "04b4ae9f338b519f1410caad45d32661f72216fafb3cd57e3b3b4c6070f3ef1f",
+  "actual_cloud_launch_tested": false
+}

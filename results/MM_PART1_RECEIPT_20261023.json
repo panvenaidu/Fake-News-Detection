@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-24T04:22:16.420799+00:00",
+  "updated_utc": "2026-10-24T04:41:23.009393+00:00",
   "plan": "MM-PART1-v2",
-  "state": "active_stream_recovery_verified_prefix_replay",
+  "state": "active_reserve_preparation_existing_stream_job",
   "part1_complete": false,
   "scientific_training_started": false,
   "epochs_completed": 0,
@@ -27,7 +27,7 @@
     "Private Kaggle full-image input import/storage route still needs measured verification",
     "CUDA fixture passed; full pretrained-model/image I/O throughput and durable scientific checkpoint export remain pending"
   ],
-  "next_action": "Keep exact existing bounded CPU job; source CRC/SHA/cohort gate, then lossless larger transport packs, immutable full private Kaggle input/runtime audit, actual CUDA/throughput preflight, registered epochs1\u20132. No final test. See exact continuation section in resume checkpoint.",
+  "next_action": "Verify exact live CPU stream job, no duplicate/restart. Complete full source/CRC/SHA and image gate, transport packing/full private input/runtime checks, actual CUDA and measured preflight before real epoch1. Prepared private training draft source import pending editor loading; existing engineering Version1 preserved.",
   "progress": {
     "text": 100,
     "multimodal": 40,
@@ -59,9 +59,9 @@
     "notebooks/UROP_MM_PART1_CUDA_ENGINEERING_20261023.ipynb": "9072566aa987235a02c4060fa716b7d3bfeb72ad5f3856ea8a9dba1272f936af"
   },
   "assistant_usage_observed": {
-    "short_window_remaining_percent": 43,
-    "weekly_remaining_percent": 76,
-    "action": "Goal active; CPU-only bounded recovery. Preserve thresholds20/10/5."
+    "short_window_remaining_percent": 21,
+    "weekly_remaining_percent": 73,
+    "action": "Early reserve synchronization. No new long jobs. User20/10/5 thresholds remain."
   },
   "drive_access_approved": true,
   "full_trainer": "scripts/train_official_multimodal_v1.py",
@@ -178,15 +178,15 @@
   "latest_stream_job": "results/MM_PART1_STREAM_JOB_20261024.json",
   "metadata_committed_images": 505573,
   "latest_stream_observation": {
-    "utc": "2026-10-24T04:19:38.734678+00:00",
+    "utc": "2026-10-24T04:37:07.927993+00:00",
     "state": "replaying_verified_prefix",
     "usable_committed": 505573,
     "usable_in_open_shard": 0,
     "required": 682661,
-    "source_bytes_read": 3260915712,
-    "source_required_members_seen": 20000,
-    "elapsed_seconds": 318.72920587199997,
-    "scratch_free": 76276768768
+    "source_bytes_read": 14977630208,
+    "source_required_members_seen": 90000,
+    "elapsed_seconds": 1367.9225147800003,
+    "scratch_free": 76275560448
   },
   "committed_shard_hash_audit": {
     "utc": "2026-10-24T04:14:19.999612+00:00",
@@ -198,5 +198,9 @@
   },
   "private_staging_engineering": "results/MM_PART1_PRIVATE_STAGING_ENGINEERING_20261024.json",
   "transport_repacker": "collab/repack_official_images_kaggle_v1.py",
-  "transport_repacker_state": "Local prepared and synthetic checked; not run on real data"
+  "transport_repacker_state": "Local prepared and synthetic checked; not run on real data",
+  "registered_launch_preparation": "results/MM_PART1_REGISTERED_LAUNCHER_PREPARATION_20261024.json",
+  "registered_training_notebook": "https://www.kaggle.com/code/rocky62/urop-full-six-way-multimodal-part1/edit",
+  "cloud_launch_source_imported": false,
+  "cloud_launch_source_executed": false
 }

@@ -1,7 +1,7 @@
 {
-  "utc": "2026-10-24T04:22:16.420799+00:00",
+  "utc": "2026-10-24T04:41:23.009393+00:00",
   "status": "Engineering/recovery checkpoint; not accepted Part1",
-  "artifact_count": 26,
+  "artifact_count": 32,
   "artifacts": [
     {
       "path": "scripts/train_official_multimodal_v1.py",
@@ -158,6 +158,42 @@
       "bytes": 490,
       "sha256": "d79340eedb2f1b697b99e7600980c1d88a47cd7a89a9255a62ba82ad2ec28317",
       "role": "Synthetic check receipt"
+    },
+    {
+      "path": "collab/kaggle_multimodal_part1_cell_v1.py",
+      "bytes": 11023,
+      "sha256": "04b4ae9f338b519f1410caad45d32661f72216fafb3cd57e3b3b4c6070f3ef1f",
+      "role": "Local launch preparation/mock guard check only; not cloud training or scientific evidence"
+    },
+    {
+      "path": "configs/multimodal_part1_cloud_release_TEMPLATE.json",
+      "bytes": 950,
+      "sha256": "dbf9307d4375aec20421ff942d84eae0edbf885b55581519e7b2b2facea63370",
+      "role": "Local launch preparation/mock guard check only; not cloud training or scientific evidence"
+    },
+    {
+      "path": "notebooks/UROP_MM_PART1_REGISTERED_EPOCH_TEMPLATE_20261024.ipynb",
+      "bytes": 14065,
+      "sha256": "001323a5bc84beec88336daa3c999a656f6d4fe8b9023b1a025d22b6f3c49b95",
+      "role": "Local launch preparation/mock guard check only; not cloud training or scientific evidence"
+    },
+    {
+      "path": "scripts/check_multimodal_cloud_launch_gate_v1.py",
+      "bytes": 4089,
+      "sha256": "5144613651797ddb9a9257cf1a867ac4751db7e91b7182f8e3e77c8479fa1181",
+      "role": "Local launch preparation/mock guard check only; not cloud training or scientific evidence"
+    },
+    {
+      "path": "results/multimodal_cloud_launch_gate_checks_20261024.json",
+      "bytes": 580,
+      "sha256": "e6e441d8e291db99151220f9b6bb479de0155243537d92bb16eb29eab36c7d39",
+      "role": "Local launch preparation/mock guard check only; not cloud training or scientific evidence"
+    },
+    {
+      "path": "results/MM_PART1_REGISTERED_LAUNCHER_PREPARATION_20261024.json",
+      "bytes": 1436,
+      "sha256": "027bc977d199ec964beb1fc7947a1e7826937d33fc9ab5b8d65a7ca5ac0e2109",
+      "role": "Local launch preparation/mock guard check only; not cloud training or scientific evidence"
     }
   ],
   "excluded_from_git": [

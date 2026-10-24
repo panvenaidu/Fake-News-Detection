@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-10-24T04:20:04.383Z",
+  "observed_utc": "2026-10-24T04:38:04.641Z",
   "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
   "cell_id": "CTwlzdeQDnsR",
   "source_commit": "8d77eca6544d6e6140b75d3f1f30355af578d4c9",
@@ -939,6 +939,83 @@
       "source_required_members_seen": 20000,
       "elapsed_seconds": 318.72920587199997,
       "scratch_free": 76276768768
+    },
+    {
+      "utc": "2026-10-24T04:22:10.948924+00:00",
+      "state": "replaying_verified_prefix",
+      "usable_committed": 505573,
+      "usable_in_open_shard": 0,
+      "required": 682661,
+      "source_bytes_read": 4956045312,
+      "source_required_members_seen": 30000,
+      "elapsed_seconds": 470.943447956,
+      "scratch_free": 76276678656
+    },
+    {
+      "utc": "2026-10-24T04:24:46.628674+00:00",
+      "state": "replaying_verified_prefix",
+      "usable_committed": 505573,
+      "usable_in_open_shard": 0,
+      "required": 682661,
+      "source_bytes_read": 6655713280,
+      "source_required_members_seen": 40000,
+      "elapsed_seconds": 626.6232108229997,
+      "scratch_free": 76276535296
+    },
+    {
+      "utc": "2026-10-24T04:27:13.525649+00:00",
+      "state": "replaying_verified_prefix",
+      "usable_committed": 505573,
+      "usable_in_open_shard": 0,
+      "required": 682661,
+      "source_bytes_read": 8322334720,
+      "source_required_members_seen": 50000,
+      "elapsed_seconds": 773.5201780079997,
+      "scratch_free": 76276428800
+    },
+    {
+      "utc": "2026-10-24T04:29:36.849219+00:00",
+      "state": "replaying_verified_prefix",
+      "usable_committed": 505573,
+      "usable_in_open_shard": 0,
+      "required": 682661,
+      "source_bytes_read": 9954820096,
+      "source_required_members_seen": 60000,
+      "elapsed_seconds": 916.8437560269999,
+      "scratch_free": 76276273152
+    },
+    {
+      "utc": "2026-10-24T04:32:07.743296+00:00",
+      "state": "replaying_verified_prefix",
+      "usable_committed": 505573,
+      "usable_in_open_shard": 0,
+      "required": 682661,
+      "source_bytes_read": 11646394368,
+      "source_required_members_seen": 70000,
+      "elapsed_seconds": 1067.7378273680001,
+      "scratch_free": 76276162560
+    },
+    {
+      "utc": "2026-10-24T04:34:32.162152+00:00",
+      "state": "replaying_verified_prefix",
+      "usable_committed": 505573,
+      "usable_in_open_shard": 0,
+      "required": 682661,
+      "source_bytes_read": 13301874688,
+      "source_required_members_seen": 80000,
+      "elapsed_seconds": 1212.1566744259994,
+      "scratch_free": 76275646464
+    },
+    {
+      "utc": "2026-10-24T04:37:07.927993+00:00",
+      "state": "replaying_verified_prefix",
+      "usable_committed": 505573,
+      "usable_in_open_shard": 0,
+      "required": 682661,
+      "source_bytes_read": 14977630208,
+      "source_required_members_seen": 90000,
+      "elapsed_seconds": 1367.9225147800003,
+      "scratch_free": 76275560448
     }
   ],
   "image_gate_passed": false,

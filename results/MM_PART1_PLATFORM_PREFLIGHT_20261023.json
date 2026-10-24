@@ -27,7 +27,7 @@
     "Private dataset first version saved, but ZIP compression/roundtrip still pending",
     "Full pretrained/data I/O throughput not measured"
   ],
-  "updated_utc": "2026-10-24T04:22:16.420799+00:00",
+  "updated_utc": "2026-10-24T04:41:23.009393+00:00",
   "private_quota_observed_before_upload": {
     "used_gb_display": 2.31,
     "total_gb_display": 214.75,
@@ -56,5 +56,8 @@
   "editor_screenshot": "results/mm_part1_kaggle_editor_loading_20261023.png",
   "private_staging_runtime_verification": "results/MM_PART1_PRIVATE_STAGING_ENGINEERING_20261024.json",
   "saved_engineering_output": "https://www.kaggle.com/code/rocky62/urop-mm-part1-engineering-preflight/output",
-  "saved_engineering_version": 1
+  "saved_engineering_version": 1,
+  "registered_training_draft": "https://www.kaggle.com/code/rocky62/urop-full-six-way-multimodal-part1/edit",
+  "registered_training_draft_privacy": "Private, Rocky62 Owner",
+  "registered_training_draft_state": "Editor loading; source not imported; no session started"
 }
