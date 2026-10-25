@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-10-25T14:30:00Z",
+  "observed_utc": "2026-10-25T14:32:23Z",
   "state": "bounded_continuation_running_observed",
   "predecessor_terminated_utc": "2026-10-25T14:25:40.183019+00:00",
   "predecessor_proofs_logged": 3,
@@ -20,9 +20,10 @@
   "training": false,
   "final_test": false,
   "next": "Inspect process/log/private proof count; verify metadata terminal receipt before Kaggle transfer index. Do not duplicate live process.",
-  "log_observed_archives": 7,
+  "log_observed_archives": 11,
   "required_archives": 39,
-  "five_hour_remaining_percent": 20,
+  "five_hour_remaining_percent": 14,
   "existing_job_may_continue_independently": true,
-  "completion_unverified": true
+  "completion_unverified": true,
+  "process_confirmed_alive": true
 }
