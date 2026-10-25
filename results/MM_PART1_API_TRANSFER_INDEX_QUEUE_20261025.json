@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-25T05:15:44.365021+00:00",
+  "state": "submitted_to_busy_kernel_execution_pending",
+  "cell": "GlyMDaD-e-AL",
+  "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=GlyMDaD-e-AL",
+  "source": "collab/export_private_kaggle_transfer_manifest_v1.py",
+  "source_sha256": "359d3c4192115f13c53ca434233c4893311f293ff11672a4c561ac17289dd90c",
+  "source_commit": "2137d74637ed387fac71205bcf51d33352ff0d0b",
+  "bound_seconds": 600,
+  "requirements": [
+    "Transport complete682170/pendingNone",
+    "Metadata job complete with same exact transport-state hash",
+    "Current archive version/size/MD5 equals saved full-SHA mapping",
+    "File count<=50"
+  ],
+  "no_new_authentication": true,
+  "training": false,
+  "test_inference": false,
+  "recovery": "Inspect existing cell and private KAGGLE_TRANSFER_MANIFEST.json before any resubmission. Do not print upload session URIs. Retrieve raw file-ID manifest only into ignored private data/."
+}

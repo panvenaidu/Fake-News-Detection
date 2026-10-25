@@ -1,5 +1,5 @@
 {
-  "utc": "2026-10-25T05:11:23.367602+00:00",
+  "utc": "2026-10-25T05:21:27.612786+00:00",
   "state": "local_recovery_artifacts_verified",
   "artifacts": [
     {
@@ -43,6 +43,11 @@
       "sha256": "e96718a2cf6cde24fc01b62fc7edd200a6ec07982e5f59263fbad2847184ecaf"
     },
     {
+      "path": "context/MM_PART1_API_PIPELINE_HANDOFF_20261025.md",
+      "bytes": 5312,
+      "sha256": "74a35fbec33a1e76232dbd1eb78cb3dc04a8fcc05dc5ae435f51d3f19e07ad24"
+    },
+    {
       "path": "results/MM_PART1_API_METADATA_INVENTORY_20261025.json",
       "bytes": 1442,
       "sha256": "60b265135164c8a29bb1de6ae9ae6783c878645fdff17ed5b086340048d65ccb"
@@ -64,8 +69,13 @@
     },
     {
       "path": "results/MM_PART1_API_PACK_JOB_20261025.json",
-      "bytes": 3373,
-      "sha256": "1b39c6284c47a31e23129364ad218c96dc72746ab288791b0f2abfa73d1de0ad"
+      "bytes": 3372,
+      "sha256": "b3efa99276ad68b8e6260502cf8396746d845e2cf5a1de0c9547c0059cc8d43f"
+    },
+    {
+      "path": "results/MM_PART1_API_TRANSFER_INDEX_QUEUE_20261025.json",
+      "bytes": 996,
+      "sha256": "fb4b7fa24e3003ab839de826f19fd7f474461ed4e23ba3480266f55bb4d571a8"
     },
     {
       "path": "results/MM_PART1_DRIVE_API_RECEIPT_VERIFICATION_20261025.json",
@@ -94,13 +104,13 @@
     },
     {
       "path": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
-      "bytes": 5269,
-      "sha256": "4b5f4f9eb862bfbb56d9ecacd2c038b1bbd90a289e857228edb8c4c2ccbdf2e1"
+      "bytes": 5459,
+      "sha256": "30297c39b919a321dfddb9e84a8a7c2f98840b31642db5a6ef72386df019227c"
     },
     {
       "path": "results/PROGRESS_TRACKER.json",
       "bytes": 23008,
-      "sha256": "40d7b09ed9a68834a6c3fd986df26cee2943507ffa8a5a6ae11e3148e6104071"
+      "sha256": "4c34400bd5bd8b945d59b9c3969be6adb94f10b00278b17a80081afbeffc0272"
     },
     {
       "path": "results/api_metadata_bridge_checks_20261025.json",
@@ -117,9 +127,9 @@
   "raw_data_and_weights_excluded": true,
   "science_incomplete": true,
   "remote_backup": {
-    "verified_checkpoint_commit": "a6cd1d3bb01f9416875a09f3030464699d257c91",
+    "verified_checkpoint_commit": "df793b6813ca36123d105dd86086b31124fa4de1",
     "remote_match": true,
-    "note": "Current receipt changes form a child; verify that push separately"
+    "note": "Current transfer-index submission and updated measurements are a child; verify push separately"
   },
   "live_job_receipt": "results/MM_PART1_API_PACK_JOB_20261025.json",
   "usage_policy": "context/USAGE_POLICY_OVERRIDE_20261025.json"

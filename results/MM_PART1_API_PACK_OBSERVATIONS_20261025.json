@@ -782,6 +782,107 @@
       "file": "images_pack_7b52825cf2024161b484649b6e598d86.tar",
       "bytes": 1166016512,
       "total": 2142832640
+    },
+    {
+      "utc": "2026-10-25T05:10:57.233273+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_7b52825cf2024161b484649b6e598d86.tar",
+      "bytes": 2080374784,
+      "total": 2142832640
+    },
+    {
+      "utc": "2026-10-25T05:11:13.769904+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 429223,
+      "required": 682170,
+      "packed_shards": 24,
+      "new_packs": 5
+    },
+    {
+      "utc": "2026-10-25T05:12:25.643106+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_a5891bd1699b480a8531a42c8795a43a_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 10173487
+    },
+    {
+      "utc": "2026-10-25T05:12:55.932124+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_a5891bd1699b480a8531a42c8795a43a.tar",
+      "bytes": 268435456,
+      "total": 2142341120
+    },
+    {
+      "utc": "2026-10-25T05:13:26.272517+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_a5891bd1699b480a8531a42c8795a43a.tar",
+      "bytes": 1191182336,
+      "total": 2142341120
+    },
+    {
+      "utc": "2026-10-25T05:13:56.569688+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_a5891bd1699b480a8531a42c8795a43a.tar",
+      "bytes": 2105540608,
+      "total": 2142341120
+    },
+    {
+      "utc": "2026-10-25T05:14:12.093387+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 447374,
+      "required": 682170,
+      "packed_shards": 25,
+      "new_packs": 6
+    },
+    {
+      "utc": "2026-10-25T05:15:32.778898+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_b7b461394a16450e9283714fd42f399f_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 10292665
+    },
+    {
+      "utc": "2026-10-25T05:16:06.866411+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_b7b461394a16450e9283714fd42f399f.tar",
+      "bytes": 33554432,
+      "total": 2142464000
+    },
+    {
+      "utc": "2026-10-25T05:16:37.058849+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_b7b461394a16450e9283714fd42f399f.tar",
+      "bytes": 872415232,
+      "total": 2142464000
+    },
+    {
+      "utc": "2026-10-25T05:17:07.119391+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_b7b461394a16450e9283714fd42f399f.tar",
+      "bytes": 1828716544,
+      "total": 2142464000
+    },
+    {
+      "utc": "2026-10-25T05:17:32.518209+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 465726,
+      "required": 682170,
+      "packed_shards": 26,
+      "new_packs": 7
+    },
+    {
+      "utc": "2026-10-25T05:18:43.807815+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_91f91e1cc0cb48ecb56ec7f92b43e52d_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 10280575
+    },
+    {
+      "utc": "2026-10-25T05:19:14.067268+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_91f91e1cc0cb48ecb56ec7f92b43e52d.tar",
+      "bytes": 243269632,
+      "total": 2142392320
     }
   ]
 }
