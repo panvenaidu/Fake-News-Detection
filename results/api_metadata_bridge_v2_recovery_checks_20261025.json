@@ -1,0 +1,7 @@
+{
+  "state": "passed",
+  "cases": 6,
+  "scope": "same-generation v2 source migration; preserve archive proofs; reject unrelated state",
+  "adapter_sha256": "f1e9b82e5f31e557c51c2eb25d0923f42d7a570f279c5ab01698edcdddc3231b",
+  "training": false
+}

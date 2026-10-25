@@ -21,6 +21,7 @@ from usable_cohort_v2 import REGISTRATION, REGISTRATION_SHA
 import verify_usable_image_shards_v2 as verifier
 
 JOB_NAME = 'METADATA_JOB_V2.json'
+PREDECESSOR_ADAPTER_SHA = 'f7c3622b04f6ebc38e6d12c9d581c9f29be90adb7d73f1bd0198da5ee1128d9d'
 
 
 def metadata_job(store, control, state_raw):
@@ -32,8 +33,17 @@ def metadata_job(store, control, state_raw):
     if old:
         if old['transport_control_sha256'] != digest:
             raise ValueError('Preserve metadata job for different transport generation')
-        if old['adapter_sha256'] != hashes(__file__)[0] or old['verifier_sha256'] != hashes(verifier.__file__)[0]:
-            raise ValueError('Metadata source changed; audit existing generation before resuming')
+        current_adapter_sha = hashes(__file__)[0]
+        if old['verifier_sha256'] != hashes(verifier.__file__)[0]:
+            raise ValueError('Metadata verifier changed; audit existing generation before resuming')
+        if old['adapter_sha256'] != current_adapter_sha:
+            if (old['phase'] != 'preparing' or old['adapter_sha256'] != PREDECESSOR_ADAPTER_SHA
+                    or old.get('adapter_predecessor_sha256')):
+                raise ValueError('Metadata source changed; audit existing generation before resuming')
+            # Narrow recovery from the v2 missing-legacy-commit bug. Existing
+            # archive proofs remain bound to their remote version and receipt.
+            old['adapter_predecessor_sha256'] = old['adapter_sha256']
+            old['adapter_sha256'] = current_adapter_sha
         return old, existing
     generation = store.folder(control, 'METADATA_' + uuid.uuid4().hex, create=True)
     value = {'phase':'preparing', 'generation':generation, 'created_utc':verifier.prep.now(),
@@ -131,10 +141,11 @@ def prepare_api(store, scratch):
         receipt_sha = hashlib.sha256(raw).hexdigest()
         mapped = current_proof(archive, state['archive_checks'].get(archive['id']), receipt, receipt_sha)
         committed_name = name.replace('.tar', '_committed.json')
-        committed = json.loads(store.read_small(controls[committed_name]))
-        if (committed.get('archive_sha256') != receipt['sha256']
-                or committed.get('archive', {}).get('id') != archive['id']
-                or committed.get('receipt', {}).get('id') != meta['id']):
+        committed_meta = controls.get(committed_name)
+        committed = json.loads(store.read_small(committed_meta)) if committed_meta else None
+        if committed and (committed.get('archive_sha256') != receipt['sha256']
+                          or committed.get('archive', {}).get('id') != archive['id']
+                          or committed.get('receipt', {}).get('id') != meta['id']):
             raise ValueError('Committed archive provenance differs')
         prior = job['archive_proofs'].get(name)
         if prior:
@@ -142,7 +153,8 @@ def prepare_api(store, scratch):
                    ('id', 'name', 'bytes', 'sha256', 'md5Checksum', 'version', 'receipt_sha256')):
                 raise ValueError('Saved full archive proof differs from current Drive version')
             proof = prior
-        elif committed['job_id'] == state['job_id'] or mapped['verified_current_metadata'] is False:
+        elif (committed is None or committed['job_id'] == state['job_id']
+              or mapped['verified_current_metadata'] is False):
             proof = full_remote_proof(store, archive, mapped, receipt, receipt_sha)
         else:
             # The current terminal's audit_packs() full-hashed every prior pack

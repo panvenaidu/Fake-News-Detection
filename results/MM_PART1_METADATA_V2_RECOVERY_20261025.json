@@ -1,0 +1,23 @@
+{
+  "observed_utc": "2026-10-25T14:28:48Z",
+  "state": "bounded_continuation_running_observed",
+  "predecessor_terminated_utc": "2026-10-25T14:25:40.183019+00:00",
+  "predecessor_proofs_logged": 3,
+  "predecessor_error_type": "KeyError",
+  "predecessor_error": "Legacy packed archive lacks newer _committed.json record",
+  "private_job": "api_transport_v1/METADATA_JOB_V2.json",
+  "existing_proofs_preserved": true,
+  "corrected_source_sha256": "f1e9b82e5f31e557c51c2eb25d0923f42d7a570f279c5ab01698edcdddc3231b",
+  "corrected_bundle_sha256": "120c0612cdf302898e1bd2f931bfe1fb067e3394ae0a8e0d3081c73e4d1c1e69",
+  "recovery_checks": 6,
+  "original_proof_checks": 7,
+  "runtime": "Colab CPU",
+  "process_pid": 7632,
+  "bound_seconds": 1800,
+  "cloud_log": "/content/urop_metadata_bridge_v2_run/job_fix.log",
+  "scientific_epochs": 0,
+  "full_validations": 0,
+  "training": false,
+  "final_test": false,
+  "next": "Inspect process/log/private proof count; verify metadata terminal receipt before Kaggle transfer index. Do not duplicate live process."
+}

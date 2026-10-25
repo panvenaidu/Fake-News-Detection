@@ -2,7 +2,7 @@
   "state": "passed",
   "cases": 7,
   "scope": "v2 metadata proof/version and separate recovery generation; offline synthetic only",
-  "adapter_sha256": "f7c3622b04f6ebc38e6d12c9d581c9f29be90adb7d73f1bd0198da5ee1128d9d",
+  "adapter_sha256": "f1e9b82e5f31e557c51c2eb25d0923f42d7a570f279c5ab01698edcdddc3231b",
   "runtime_image_gate_passed": false,
   "training": false
 }
