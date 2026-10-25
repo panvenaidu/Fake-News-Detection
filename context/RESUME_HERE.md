@@ -1,3 +1,7 @@
+<!-- CURRENT RESUMED GOAL BLOCKED -->
+2026-10-25T04:09:26.752532+00:00: Supported Goal status **BLOCKED**, after3consecutive observations in this resumed sequence. Short94% / weekly19%; registered20%weeklyreserve applies and explicit override question remains unanswered. No newjob/scientificprogress; packing319820/18,scientific0/2epochs/0/2validations,test0. Recovery and original data preserved. Resume the SAME Goal only after allowance recovers above20% or the user explicitly changes the reserve rule; do not repeat polling/commit cycles or create another Goal. Audit `results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json`; exact recovery `results/MM_PART1_RECOVERY_PROGRESS_20261025.json`. Older active/blocked counts below are historical.
+<!-- /CURRENT RESUMED GOAL BLOCKED -->
+
 <!-- FRESH RESUMED RESERVE AUDIT -->
 2026-10-25T04:07:11.569856+00:00: Goal API is ACTIVE after resume; fresh blocked audit count2 (prior3count is historical). Latest five-hour allowance96%, weekly19%; the registered smaller-balance20%reserve still applies. User clarification requested: keep weeklyreserve, or explicitly authorize using it this run down to10%handoff/5%hardstop. No answer/override applied yet, no newlongjob, no scientific progress. Recovery `results/MM_PART1_RECOVERY_PROGRESS_20261025.json`; audit `results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json`. Do not reuse the old blocked count or create another Goal. Part1 remains0/2epochs,0/2validations,test0; durablepacking319820/18unchanged.
 <!-- /FRESH RESUMED RESERVE AUDIT -->
