@@ -1,6 +1,6 @@
 {
   "utc": "2026-10-25T04:59:55.579627+00:00",
-  "state": "submitted_to_busy_kernel_execution_pending",
+  "state": "cloud_executed_failed_full_remote_sha_gate",
   "pack_cell": "TsntdBFXaDvn",
   "metadata_seconds": 1200,
   "only_after_images": 682170,
@@ -14,5 +14,5 @@
   "cell": "NSTnGXJMbpAt",
   "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=NSTnGXJMbpAt",
   "source_commit": "a6cd1d3bb01f9416875a09f3030464699d257c91",
-  "observation": "Control+Return submitted; new cell has pending run circle with no execution count while the existing packing cell continues. No metadata output yet. Do not resubmit."
+  "observation": "Historical submission completed after image packing. The v1 metadata job failed at archive 5 because the current Drive version lacked a full remote SHA proof. Preserve the v1 generation; use reviewed v2 recovery only after checking its private control. See results/MM_PART1_API_METADATA_FAILURE_20261025.json."
 }

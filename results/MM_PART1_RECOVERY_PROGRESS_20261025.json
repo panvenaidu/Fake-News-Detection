@@ -1,14 +1,14 @@
 {
-  "updated_utc": "2026-10-25T05:42:14.819292+00:00",
+  "updated_utc": "2026-10-25T14:19:09.930703+00:00",
   "local_date": "2026-10-25",
-  "state": "real_API_transport_live",
+  "state": "api_transport_terminal",
   "goal_status": "active",
   "previous_goal_turn_classification": "Progress: saved30durable archives and verified reserve backup",
-  "current_goal_turn_classification": "Verified wait and essential checkpoint: same live CPU job advanced to608835/34; no new lengthy job/GPU/model experiment",
+  "current_goal_turn_classification": "Progress: all682170approved images packed in39durable archives; metadata v1 cloud failure identified; resumable full-remote-audit v2 implemented and synthetic checked",
   "cohort_id": "FACULTY-6W-USABLE-682170-v1",
   "approved_pairs": 682170,
-  "durable_packed_images": 608835,
-  "durable_packs": 34,
+  "durable_packed_images": 682170,
+  "durable_packs": 39,
   "scientific_epochs": 0,
   "full_validations": 0,
   "final_test": false,
@@ -18,7 +18,8 @@
     "pid": 4387,
     "boot_id": "5e215fb9-807d-4c5f-9eeb-03276837af96",
     "RAM_GB_observed_approx": 1.9,
-    "DriveFS_mounted": false
+    "DriveFS_mounted": false,
+    "status": "historical disconnected after terminal"
   },
   "receipt_copy": {
     "read_ok": true,
@@ -86,17 +87,17 @@
     "results/MM_PART1_ORIGINAL_ARCHIVE_API_RANGE_20261025.json"
   ],
   "usage_observed": {
-    "short_remaining": 11,
-    "weekly_remaining": 6,
-    "utc": "2026-10-25T05:42:14.819292+00:00"
+    "short_remaining": 49,
+    "weekly_remaining": 92,
+    "utc": "2026-10-25T14:19:09.930703+00:00"
   },
-  "next": "Inspect same cell/process/private control before continuation; never duplicate live packing. After the first durable transaction, verify terminal archive/receipt and recovery, then resume remaining lossless packing. Full private Kaggle input, actual runtime image SHA/decode, CUDA recovery/preflight, epochs1\u20132 and full validations remain pending. No Part1 final test.",
+  "next": "Transport complete; do not restart image extraction or packing. Metadata v1 failed on one stale Drive version; all20new packs also require full remote SHA rereads. Use the versioned, resumable metadata v2 audit after verifying current private control and authorization; then build the private transfer index and stage the full Kaggle input. Runtime image SHA/decode, CUDA recovery/preflight, epochs1\u20132 and full validations remain pending. No Part1 final test.",
   "source_backup_commit": "7530a33c7a97ca3db70e0a8ed45348258ccf28b2",
-  "no_active_packing_or_training_job": false,
+  "no_active_packing_or_training_job": true,
   "source_metadata_inventory_passed": true,
   "reserve_state": "essential_handoff_for_user10percent_pause",
   "backup_receipt": "results/MM_PART1_API_RECOVERY_GIT_BACKUP_20261025.json",
-  "independent_job_running": true,
+  "independent_job_running": false,
   "reserve_audit": "results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json",
   "usage_policy_override": "context/USAGE_POLICY_OVERRIDE_20261025.json",
   "current_API_job_receipt": "results/MM_PART1_API_PACK_JOB_20261025.json",
@@ -109,5 +110,6 @@
   },
   "transfer_index_queue": "results/MM_PART1_API_TRANSFER_INDEX_QUEUE_20261025.json",
   "reserve_receipt": "results/MM_PART1_PRIMARY20_RESERVE_20261025.json",
-  "ten_percent_handoff": "results/MM_PART1_PRIMARY10_HANDOFF_20261025.json"
+  "ten_percent_handoff": "results/MM_PART1_PRIMARY10_HANDOFF_20261025.json",
+  "metadata_state": "failed"
 }

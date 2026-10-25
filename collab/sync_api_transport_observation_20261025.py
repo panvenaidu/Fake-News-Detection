@@ -10,6 +10,7 @@ parser.add_argument('--short',type=int,required=True)
 parser.add_argument('--weekly',type=int,required=True)
 parser.add_argument('--cell',required=True)
 parser.add_argument('--goal-status',choices=['active','blocked','paused'],required=True)
+parser.add_argument('--metadata-state',choices=['pending','failed','complete'],default='pending')
 args=parser.parse_args()
 if not 0<=args.short<=100 or not 0<=args.weekly<=100:raise ValueError('Invalid actual allowance')
 now=datetime.now(timezone.utc).isoformat()
@@ -43,19 +44,28 @@ job.update(utc=now,state=state,latest_counter=latest,source_joins=joined,prior_p
            latest_measured_durable_images=images,latest_measured_durable_packs=packs)
 if terminal and terminal.get('job_id'):job['registered_job_id']=terminal['job_id']
 save('results/MM_PART1_API_PACK_JOB_20261025.json',job)
-next_action=('Inspect same cell/process/private control before continuation; never duplicate live packing. After the first durable transaction, '
-             'verify terminal archive/receipt and recovery, then resume remaining lossless packing. Full private Kaggle input, actual runtime '
-             'image SHA/decode, CUDA recovery/preflight, epochs1–2 and full validations remain pending. No Part1 final test.')
+if terminal and terminal.get('complete'):
+    next_action=('Transport complete; do not restart image extraction or packing. Metadata v1 failed on one stale Drive version; '
+                 'all20new packs also require full remote SHA rereads. '
+                 'Use the versioned, resumable metadata v2 audit after verifying current private control and authorization; then build the private transfer index '
+                 'and stage the full Kaggle input. Runtime image SHA/decode, CUDA recovery/preflight, epochs1–2 and full validations remain pending. No Part1 final test.')
+else:
+    next_action=('Inspect same cell/process/private control before continuation; never duplicate live packing. '
+                 'Full private Kaggle input, actual runtime image SHA/decode, CUDA recovery/preflight, epochs1–2 and full validations remain pending. No Part1 final test.')
 recovery=read('results/MM_PART1_RECOVERY_PROGRESS_20261025.json')
 recovery.update(updated_utc=now,state=state,durable_packed_images=images,durable_packs=packs,
                 goal_status=args.goal_status,
                 full_source_inventory_passed=bool(joined),source_metadata_inventory_passed=True,
                 no_active_packing_or_training_job=not live,independent_job_running=live,next=next_action,
                 usage_observed={'short_remaining':args.short,'weekly_remaining':args.weekly,'utc':now},
-                current_goal_turn_classification='Progress: full original TSV/source joins passed; old archives being full-hash audited; API metadata bridge prepared and synthetic-tested')
+                current_goal_turn_classification=('Progress: all682170approved images packed in39durable archives; metadata v1 cloud failure identified; '
+                                                  'resumable full-remote-audit v2 implemented and synthetic checked' if terminal and terminal.get('complete')
+                                                  else 'Progress: original TSV/source joins verified; bounded image packing observed'))
 if 'historical_runtime' not in recovery:recovery['historical_runtime']=recovery['runtime']
 recovery['runtime']={'platform':'Colab CPU','notebook':job['notebook'],'pid':job['runtime_pid'],
-                     'boot_id':job['boot_id'],'RAM_GB_observed_approx':1.9,'DriveFS_mounted':False}
+                     'boot_id':job['boot_id'],'RAM_GB_observed_approx':1.9,'DriveFS_mounted':False,
+                     'status':'historical disconnected after terminal' if terminal else 'current observation required'}
+recovery['metadata_state']=args.metadata_state
 recovery['api']['scope']='Source joins, archive audits and commits are separately recorded per job; full image runtime gate still pending.'
 recovery['api']['current_job_receipt']='results/MM_PART1_API_PACK_JOB_20261025.json'
 save('results/MM_PART1_RECOVERY_PROGRESS_20261025.json',recovery)
@@ -66,7 +76,8 @@ usable.update(updated_utc=now,state=state,goal_status=recovery['goal_status'],CP
               usage_observation=recovery['usage_observed'],limitations=[
                   'Full private Kaggle input and actual runtime image verification pending',
                   'Scientific0/2epochs,0/2fullvalidations; no final test',
-                  'Metadata API adapter prepared/synthetic tested, not cloud executed'],
+                  ('Metadata v1 cloud-executed and failed its full-remote-SHA gate; v2 is locally synthetic tested, not cloud executed'
+                   if args.metadata_state=='failed' else 'Metadata state requires separate cloud receipt verification')],
               independent_continuation={'already_submitted':True,'live_job':live,'note':'Bounded CPU data transport only; no monitoring claim after assistant stops'})
 save('results/MM_PART1_USABLE_RECEIPT_20261024.json',usable)
 tracker=read('results/PROGRESS_TRACKER.json')
@@ -84,8 +95,9 @@ text=(f'{now}: Full682170original TSV/source metadata joins passed. Prior pack a
       f'{audit["packs_checked"] if audit else 0}/{audit["total_packs"] if audit else job["prior_durable_packs"]}; durable{images}images/{packs}packs. '
       f'CPU API job status={state}; exact latest counter in its JSON receipt; no duplicate launch. '
       'Source/bundle/pid/boot/cell in results/MM_PART1_API_PACK_JOB_20261025.json. '
-      'Metadata API bridge15synthetic guards and existing six-image runtime-gate regression passed; '
-      'adapter not cloud executed. Scientific0/2epochs,0/2fullvalidations,test0; bars100/40/20/53 unchanged. '
+      f'Metadata state={args.metadata_state}; v1 stopped after four archives because one Drive version changed; '
+      'v2 audits that version plus all20new archives and is synthetic tested but not cloud executed. '
+      'Scientific0/2epochs,0/2fullvalidations,test0; bars100/40/20/53 unchanged. '
       'Five-hour reserve applies; weekly monitored as total availability. '
       f'Supported Goal API verified {args.goal_status}; existing Goal preserved. '+next_action)
 for relative in ['context/RESUME_HERE.md','context/PROJECT_CONTEXT.md','context/DECISIONS.md','context/EXPERIMENT_LOG.md',

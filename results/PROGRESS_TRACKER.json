@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-25T05:42:14.819292+00:00",
+  "updated_utc": "2026-10-25T14:19:09.930703+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -85,9 +85,9 @@
       "registered_max_epochs": 4,
       "data_preparation": {
         "approved_images": 682170,
-        "durable_packed_images": 608835,
-        "durable_packs": 34,
-        "transport_percent": 89.25,
+        "durable_packed_images": 682170,
+        "durable_packs": 39,
+        "transport_percent": 100.0,
         "image_runtime_gate_passed": false,
         "training_epochs_completed": 0,
         "full_validations_completed": 0,
@@ -150,10 +150,10 @@
     "reserve_at_remaining_percent": 20,
     "action": "At20 checkpoint/export/update records and Git; at10 essential handoff only; at5 hard-stop; bounded durable cloud jobs only; no inactive monitoring promise",
     "latest_observed_remaining_percent": {
-      "five_hour": 11,
-      "weekly": 6
+      "five_hour": 49,
+      "weekly": 92
     },
-    "observation_utc": "2026-10-25T05:42:14.819292+00:00",
+    "observation_utc": "2026-10-25T14:19:09.930703+00:00",
     "stop_substantive_at_remaining_percent": 10,
     "hard_stop_at_remaining_percent": 5,
     "threshold_scope": "five_hour_primary_only_per_user_override"
@@ -460,7 +460,7 @@
   },
   "part1_execution_receipt": "results/MM_PART1_RECEIPT_20261023.json",
   "last_cpu_preparation_note": "Original source CRC/SHA terminal,682170/682661 usable,491failures; all3 inspected failed .jpg files areHTML; no data changes. Bounded diagnostic terminal/private backup saved. Await explicit protocol decision; scientific epochs0/2,val0/2,test0.",
-  "latest_operational_note": "real_API_transport_live",
+  "latest_operational_note": "api_transport_terminal",
   "original_specimen_diagnostic": "results/MM_PART1_ORIGINAL_SPECIMEN_DIAGNOSTIC_20261024.json",
   "approved_multimodal_cohort": {
     "id": "FACULTY-6W-USABLE-682170-v1",
@@ -473,7 +473,7 @@
     "exclusions": 491,
     "receipt": "results/MM_PART1_USABLE_RECEIPT_20261024.json"
   },
-  "current_execution_note": "Inspect same cell/process/private control before continuation; never duplicate live packing. After the first durable transaction, verify terminal archive/receipt and recovery, then resume remaining lossless packing. Full private Kaggle input, actual runtime image SHA/decode, CUDA recovery/preflight, epochs1\u20132 and full validations remain pending. No Part1 final test.",
+  "current_execution_note": "Transport complete; do not restart image extraction or packing. Metadata v1 failed on one stale Drive version; all20new packs also require full remote SHA rereads. Use the versioned, resumable metadata v2 audit after verifying current private control and authorization; then build the private transfer index and stage the full Kaggle input. Runtime image SHA/decode, CUDA recovery/preflight, epochs1\u20132 and full validations remain pending. No Part1 final test.",
   "latest_recovery_receipt": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
   "latest_api_backup_receipt": "results/MM_PART1_API_RECOVERY_GIT_BACKUP_20261025.json",
   "latest_reserve_audit": "results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json",

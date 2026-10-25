@@ -1,4 +1,16 @@
-Latest essential checkpoint: `results/MM_PART1_PRIMARY10_HANDOFF_20261025.json`. At user10% pause the existing Goal with supported tools after Git verification, then stop; do not mark complete. Cloud pipeline was verified advancing, not stopped or restarted.
+# Current checkpoint, 25 October 2026
+
+The existing Colab packing job **finished** at 05:54:08 UTC: all 682,170 approved pairs are in 39 committed private TARs. This is image transport, not the Kaggle runtime image hash/decode gate. Source originals and three official TSVs were retained. The old Colab runtime later disconnected; its terminal output was inspected in the saved notebook. See `results/MM_PART1_API_PACK_JOB_20261025.json` and `results/MM_PART1_API_METADATA_FAILURE_20261025.json`.
+
+The queued v1 metadata cell executed at 05:54:33 UTC and failed at its fifth archive. A fresh authenticated read-only API audit at 14:17:36 UTC found all 39 receipts and archive mappings, with **one archive whose Drive version changed although its size and MD5 did not**. The strict v1 gate correctly rejected that stale version. Separately, the 20 newly packed archives still need full remote SHA rereads; their local SHA/remote MD5 mapping alone is insufficient for metadata publication. The transfer-index cell has no verified successful output. **Do not restart packing or extraction.** Versioned recovery code `collab/prepare_api_kaggle_metadata_v2.py` now rehashes every new archive and any archive whose Drive version changed, saving each proof in separate `METADATA_JOB_V2.json` state. `collab/export_private_kaggle_transfer_manifest_v2.py` consumes only that completed generation. Seven focused synthetic checks passed; v2 has **not** run on cloud. Same-scope Google API authorization was refreshed and a Drive API read returned HTTP 200. Preserve failed v1 metadata job and all existing packs.
+
+Scientific training remains **0/2 Part 1 epochs** and validation **0/2**. Kaggle still has no verified full input or GPU run. Next: recover authorized API access, inspect the current private control without printing session URIs, run bounded v2 remote audits/metadata, verify the transfer index, stage private Kaggle input, pass full runtime image and CUDA/recovery gates, then train and fully validate epochs 1–2. No Part 1 test.
+
+The older paragraphs below record earlier checkpoints and are historical where they call the pack job live or the metadata cell pending. Current five-hour usage was 76% remaining at the last check; recheck before significant work. The user20/10/5 reserve applies to five-hour usage only, with weekly availability as a ceiling.
+
+---
+
+Latest essential checkpoint before this turn: `results/MM_PART1_PRIMARY10_HANDOFF_20261025.json`. At user10% pause the existing Goal with supported tools after Git verification, then stop; do not mark complete. Cloud pipeline was verified advancing at that earlier checkpoint.
 
 Reserve receipt `results/MM_PART1_PRIMARY20_RESERVE_20261025.json`: no new lengthy work. Current Goal remains active; Part1 is NOT complete.
 

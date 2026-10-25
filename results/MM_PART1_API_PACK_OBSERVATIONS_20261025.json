@@ -1157,6 +1157,175 @@
       "required": 682170,
       "packed_shards": 34,
       "new_packs": 15
+    },
+    {
+      "utc": "2026-10-25T05:42:37.952375+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_db47f48daa8e4fac99850925792693b4_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 10490082
+    },
+    {
+      "utc": "2026-10-25T05:43:08.045668+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_db47f48daa8e4fac99850925792693b4.tar",
+      "bytes": 260046848,
+      "total": 2142607360
+    },
+    {
+      "utc": "2026-10-25T05:43:38.052903+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_db47f48daa8e4fac99850925792693b4.tar",
+      "bytes": 1166016512,
+      "total": 2142607360
+    },
+    {
+      "utc": "2026-10-25T05:44:08.304826+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_db47f48daa8e4fac99850925792693b4.tar",
+      "bytes": 2088763392,
+      "total": 2142607360
+    },
+    {
+      "utc": "2026-10-25T05:44:24.378916+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 627545,
+      "required": 682170,
+      "packed_shards": 35,
+      "new_packs": 16
+    },
+    {
+      "utc": "2026-10-25T05:45:45.850016+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_3a930ebb8d81421d927c4081bc3dbe19_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 10349445
+    },
+    {
+      "utc": "2026-10-25T05:46:16.037126+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_3a930ebb8d81421d927c4081bc3dbe19.tar",
+      "bytes": 260046848,
+      "total": 2142535680
+    },
+    {
+      "utc": "2026-10-25T05:46:46.133113+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_3a930ebb8d81421d927c4081bc3dbe19.tar",
+      "bytes": 1166016512,
+      "total": 2142535680
+    },
+    {
+      "utc": "2026-10-25T05:47:16.162056+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_3a930ebb8d81421d927c4081bc3dbe19.tar",
+      "bytes": 2105540608,
+      "total": 2142535680
+    },
+    {
+      "utc": "2026-10-25T05:47:31.490334+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 646013,
+      "required": 682170,
+      "packed_shards": 36,
+      "new_packs": 17
+    },
+    {
+      "utc": "2026-10-25T05:48:40.145366+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_6b00844c537d4221ba3bd5a13fdc5550_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 9927190
+    },
+    {
+      "utc": "2026-10-25T05:49:10.236052+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_6b00844c537d4221ba3bd5a13fdc5550.tar",
+      "bytes": 209715200,
+      "total": 2142597120
+    },
+    {
+      "utc": "2026-10-25T05:49:40.311854+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_6b00844c537d4221ba3bd5a13fdc5550.tar",
+      "bytes": 1124073472,
+      "total": 2142597120
+    },
+    {
+      "utc": "2026-10-25T05:50:10.341314+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_6b00844c537d4221ba3bd5a13fdc5550.tar",
+      "bytes": 2038431744,
+      "total": 2142597120
+    },
+    {
+      "utc": "2026-10-25T05:50:27.908046+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 663714,
+      "required": 682170,
+      "packed_shards": 37,
+      "new_packs": 18
+    },
+    {
+      "utc": "2026-10-25T05:51:48.799603+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_0d8cb3ef4c7847ff9eac07e6ea0ee4e2_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 10160556
+    },
+    {
+      "utc": "2026-10-25T05:52:18.980757+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_0d8cb3ef4c7847ff9eac07e6ea0ee4e2.tar",
+      "bytes": 243269632,
+      "total": 2140856320
+    },
+    {
+      "utc": "2026-10-25T05:52:49.001875+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_0d8cb3ef4c7847ff9eac07e6ea0ee4e2.tar",
+      "bytes": 1207959552,
+      "total": 2140856320
+    },
+    {
+      "utc": "2026-10-25T05:53:19.046030+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_0d8cb3ef4c7847ff9eac07e6ea0ee4e2.tar",
+      "bytes": 2130706432,
+      "total": 2140856320
+    },
+    {
+      "utc": "2026-10-25T05:53:33.171027+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 681841,
+      "required": 682170,
+      "packed_shards": 38,
+      "new_packs": 19
+    },
+    {
+      "utc": "2026-10-25T05:54:00.326205+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 682170,
+      "required": 682170,
+      "packed_shards": 39,
+      "new_packs": 20
+    },
+    {
+      "utc": "2026-10-25T05:54:08.076997+00:00",
+      "state": "api_transport_terminal",
+      "job_id": "CPU_API_PACK_f977eba6d05740cd84912d5735489b33",
+      "phase": "complete",
+      "images_committed": 682170,
+      "required": 682170,
+      "packed_shards": 39,
+      "new_packs": 20,
+      "prior_pack_audit_complete": true,
+      "complete": true,
+      "seconds": 3616.3702928189996,
+      "source_originals_unchanged": true,
+      "runtime_image_gate_passed": false,
+      "training": false,
+      "test_inference": false
     }
   ]
 }

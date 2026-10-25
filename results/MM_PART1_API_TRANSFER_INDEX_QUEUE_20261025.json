@@ -1,6 +1,6 @@
 {
   "utc": "2026-10-25T05:15:44.365021+00:00",
-  "state": "submitted_to_busy_kernel_execution_pending",
+  "state": "v1_queue_not_verified_complete_after_metadata_failure",
   "cell": "GlyMDaD-e-AL",
   "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=GlyMDaD-e-AL",
   "source": "collab/export_private_kaggle_transfer_manifest_v1.py",
@@ -16,5 +16,5 @@
   "no_new_authentication": true,
   "training": false,
   "test_inference": false,
-  "recovery": "Inspect existing cell and private KAGGLE_TRANSFER_MANIFEST.json before any resubmission. Do not print upload session URIs. Retrieve raw file-ID manifest only into ignored private data/."
+  "recovery": "Metadata v1 failed, so the v1 transfer index has no verified successful output. Inspect existing cell and private KAGGLE_TRANSFER_MANIFEST.json before any resubmission. Use v2 index only after a completed METADATA_JOB_V2.json receipt. Keep private file IDs and upload session URIs out of Git."
 }

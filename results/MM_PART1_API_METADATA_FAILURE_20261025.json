@@ -1,0 +1,46 @@
+{
+  "observed_utc": "2026-10-25T14:17:36.121011+00:00",
+  "observation_note": "Saved Colab terminal plus a fresh authenticated read-only API diagnosis",
+  "source_event_utc": "2026-10-25T05:54:33.906610+00:00",
+  "state": "api_kaggle_metadata_failed",
+  "cell": "NSTnGXJMbpAt",
+  "cloud_error_type": "ValueError",
+  "cloud_error": "Archive must be fully hash-audited at its current Drive version",
+  "archives_accepted_before_failure": 4,
+  "transport_terminal": {
+    "utc": "2026-10-25T05:54:08.076997+00:00",
+    "job_id": "CPU_API_PACK_f977eba6d05740cd84912d5735489b33",
+    "phase": "complete",
+    "images_committed": 682170,
+    "packed_shards": 39
+  },
+  "cloud_read_only_diagnosis": {
+    "transport_phase": "complete",
+    "transport_images": 682170,
+    "transport_archives": 39,
+    "receipt_count": 39,
+    "cached_archive_checks": 39,
+    "metadata_phase": "preparing",
+    "metadata_control_sha_matches": true,
+    "pending_exists": false,
+    "mismatch_count": 1,
+    "mismatches": [
+      {
+        "archive": "images_pack_220964e5d7a046c0a2f946b7b75f983b.tar",
+        "fields": ["version"]
+      }
+    ]
+  },
+  "cause_verified": "One Drive archive version changed without a size or MD5 change, so the strict v1 version gate correctly stopped metadata publication. A fresh full remote SHA audit is required for that current version.",
+  "additional_v1_proof_gap": "The 20 newly packed archives have full local SHA plus remote size/MD5 and receipt readback, but not a full remote SHA reread. Metadata v2 must perform that audit even when their Drive version has not changed.",
+  "v1_metadata_complete": false,
+  "v1_transfer_index_complete": false,
+  "v2_candidate": "collab/prepare_api_kaggle_metadata_v2.py",
+  "v2_candidate_test": "results/api_metadata_bridge_v2_checks_20261025.json",
+  "v2_cloud_executed": false,
+  "image_runtime_gate_passed": false,
+  "scientific_epochs_completed": 0,
+  "full_validations_completed": 0,
+  "final_test_performed": false,
+  "no_source_deletion_or_repacking": true
+}
