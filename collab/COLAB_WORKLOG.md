@@ -1,3 +1,6 @@
+<!-- 2026-10-25 PRIMARY9 HANDOFF -->
+**25 Oct 14:33 UTC:** Colab CPU PID 7632 still live; `job_fix.log` 13/39 proofs, 30-minute timeout, private `METADATA_JOB_V2.json` per-proof recovery. Assistant usage 9%; do not restart or duplicate while paused. Inspect terminal first on resume.
+
 <!-- 2026-10-25 METADATA V2 RECOVERY -->
 **25 Oct 14:30 UTC:** Existing CPU notebook ran corrected metadata bridge (`/content/urop_metadata_bridge_v2_fix`, PID 7632, 30-minute bound); log `/content/urop_metadata_bridge_v2_run/job_fix.log` showed 7/39. Private `METADATA_JOB_V2.json` holds per-archive proofs. Do not duplicate the process; inspect terminal first.
 

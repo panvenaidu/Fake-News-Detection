@@ -1,3 +1,6 @@
+<!-- 2026-10-25 PRIMARY9 HANDOFF -->
+**25 Oct 14:33 UTC handoff:** primary allowance 9%; existing Goal will pause. Colab CPU metadata PID 7632 alive, log 13/39 proofs, bounded through about 14:58 UTC; completion unverified. Check `context/MM_PART1_API_PIPELINE_HANDOFF_20261025.md` and the private job before any retry. Scientific Part 1 training/validation 0/2.
+
 <!-- 2026-10-25 METADATA V2 RECOVERY -->
 **25 Oct 14:30 UTC:** Colab CPU metadata v2 recovery PID 7632 alive, log 7/39 archive proofs; inspect its process/log/private `METADATA_JOB_V2.json` before any restart. Five-hour allowance 20% remaining: no new lengthy work. Full Kaggle input, image runtime gate and Part 1 epochs/validations remain pending. See `context/MM_PART1_API_PIPELINE_HANDOFF_20261025.md`.
 
