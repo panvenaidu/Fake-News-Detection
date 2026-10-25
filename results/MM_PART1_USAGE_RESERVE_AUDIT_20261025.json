@@ -1,26 +1,14 @@
 {
-  "utc": "2026-10-24T20:36:43.467016+00:00",
-  "condition": "Applicable weekly allowance at20percent; user prohibits new long transfer, major debugging or training at/below20percent",
-  "consecutive_goal_turns_observed": 3,
+  "utc": "2026-10-25T04:07:11.569856+00:00",
+  "condition": "Weekly19percent remains below the binding20percentreserve despite five-hour100percent reset",
+  "consecutive_goal_turns_observed": 1,
   "observations": [
     {
-      "evidence": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
-      "goal_turn": "previous",
-      "weekly_remaining": 20,
-      "classification": "progress: verified API recovery and completed reserve checkpoint"
-    },
-    {
-      "goal_turn": "current",
-      "short_remaining": 67,
-      "weekly_remaining": 20,
-      "classification": "no_progress: allowance and same recovery state revalidated; no new scientific or transport work"
-    },
-    {
-      "goal_turn": "current_third_observation",
-      "short_remaining": 64,
-      "weekly_remaining": 20,
+      "goal_turn": "first_after_resume",
+      "short_remaining": 100,
+      "weekly_remaining": 19,
       "classification": "no_progress",
-      "blocked_tool_returned": true
+      "new_long_job": false
     }
   ],
   "current_cloud_observation": "Existing Rocky62 Colab CPU notebook is connected/idle; no Executing status. Exact metadata/range outputs remain terminal. No new job submitted.",
@@ -31,10 +19,38 @@
   "full_validations": 0,
   "packing_images": 319820,
   "part1_complete": false,
-  "goal_state": "blocked_verified_tool_result",
-  "blocked_audit": "Threshold satisfied: reserve condition observed across3consecutivegoalturns; latest short64percent/weekly20percent. Recovery handoff and hash/remote verification complete. Next required activity is a new transfer/major implementation/training, prohibited under the standing reserve instruction. Requires allowance recovery above20percent or an explicit user change to that constraint. Supported Goal tool returned blocked; no completion claim.",
-  "next_after_allowance_recovery": "Follow results/MM_PART1_RECOVERY_PROGRESS_20261025.json; no duplicate extraction or failed DriveFS restart",
+  "goal_state": "active_verified_after_resume_fresh_audit",
+  "blocked_audit": "Fresh resumed audit starts at1. Do not reuse the prior3turn count. No premature blocked status.",
+  "next_after_allowance_recovery": "Follow results/MM_PART1_RECOVERY_PROGRESS_20261025.json once allowance or explicit user authorization permits. No new Goal/extraction/DriveFS loop.",
   "weekly_reset_observed_UTC": "2026-10-30T17:44:16+00:00",
   "no_monitoring_after_stop_claimed": true,
-  "current_turn_classification": "no_progress: same binding reserve condition; completion requirements remain unmet"
+  "current_turn_classification": "No progress on transport/training: fresh resumed audit; reserve clarification pending",
+  "prior_blocked_audit": {
+    "utc": "2026-10-24T20:36:43.467016+00:00",
+    "consecutive_goal_turns_observed": 3,
+    "goal_state": "blocked_verified_tool_result",
+    "blocked_audit": "Threshold satisfied: reserve condition observed across3consecutivegoalturns; latest short64percent/weekly20percent. Recovery handoff and hash/remote verification complete. Next required activity is a new transfer/major implementation/training, prohibited under the standing reserve instruction. Requires allowance recovery above20percent or an explicit user change to that constraint. Supported Goal tool returned blocked; no completion claim.",
+    "observations": [
+      {
+        "evidence": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
+        "goal_turn": "previous",
+        "weekly_remaining": 20,
+        "classification": "progress: verified API recovery and completed reserve checkpoint"
+      },
+      {
+        "goal_turn": "current",
+        "short_remaining": 67,
+        "weekly_remaining": 20,
+        "classification": "no_progress: allowance and same recovery state revalidated; no new scientific or transport work"
+      },
+      {
+        "goal_turn": "current_third_observation",
+        "short_remaining": 64,
+        "weekly_remaining": 20,
+        "classification": "no_progress",
+        "blocked_tool_returned": true
+      }
+    ]
+  },
+  "user_decision_pending": "Keep20percentweeklyreserve OR explicitly permit using weeklyreserve for this run with10percenthandoff/5percenthardstop. No override applied."
 }

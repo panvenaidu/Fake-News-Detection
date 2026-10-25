@@ -1,10 +1,10 @@
 {
-  "updated_utc": "2026-10-24T20:36:43.467016+00:00",
+  "updated_utc": "2026-10-25T04:07:11.569856+00:00",
   "local_date": "2026-10-25",
-  "state": "API_recovery_checkpoint_saved_Goal_blocked_usage_reserve",
-  "goal_status": "blocked_verified_20261025",
+  "state": "API_recovery_saved_weekly_reserve_decision_pending",
+  "goal_status": "active_verified_after_resume_fresh_audit",
   "previous_goal_turn_classification": "Progress: created evidence-grounded status dashboard; did not train",
-  "current_goal_turn_classification": "No progress:3rd binding reserve observation; supported Goal marked blocked after verified handoff.",
+  "current_goal_turn_classification": "No scientific progress: resumed Goal and allowance revalidated; required reserve clarification pending.",
   "cohort_id": "FACULTY-6W-USABLE-682170-v1",
   "approved_pairs": 682170,
   "durable_packed_images": 319820,
@@ -84,8 +84,8 @@
     "results/MM_PART1_ORIGINAL_ARCHIVE_API_RANGE_20261025.json"
   ],
   "usage_observed": {
-    "short_remaining": 64,
-    "weekly_remaining": 20
+    "short_remaining": 100,
+    "weekly_remaining": 19
   },
   "next": "Use private API index receipt under data/official_paired_v2 to locate durable115527byte index (SHA291a2c5b27aa39f1b1b16b3726655609927a08cee03a34e35d9fe7e47670a87a). Verify current credentials/session first. Implement/fault-test bounded lossless Drive API transport avoiding DriveFS: inventory existing18pack receipts against original source, hash source/packed archives and every copied image, preserve originals and prior packs, upload closed archives/receipts with verified private readback and resumable checkpoints. Do not duplicate extraction, change cohort or perform final model-test inference. Then complete full immutable Kaggle input, runtime image gate, actual CUDA recovery/preflight and epochs1\u20132/fullvalidation. The old DriveFS resume script remains unexecuted and must not bypass its gate.",
   "source_backup_commit": "7530a33c7a97ca3db70e0a8ed45348258ccf28b2",

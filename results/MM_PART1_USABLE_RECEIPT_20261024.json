@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-24T20:36:43.467016+00:00",
+  "updated_utc": "2026-10-25T04:07:11.569856+00:00",
   "plan": "MM-PART1-v2+approved-usable-cohort-amendment20261024",
-  "goal_status": "blocked_verified_20261025",
+  "goal_status": "active_verified_after_resume_fresh_audit",
   "approval": "results/MM_PART1_USABLE_COHORT_APPROVAL_20261024.json",
   "registration": "results/MM_PART1_USABLE_COHORT_REGISTRATION_20261024.json",
   "cohort_id": "FACULTY-6W-USABLE-682170-v1",
@@ -81,7 +81,7 @@
     "live_job": false,
     "note": "No copy/training job remains live. No claim of monitoring or independent continuation."
   },
-  "state": "API_recovery_checkpoint_saved_Goal_blocked_usage_reserve",
+  "state": "API_recovery_saved_weekly_reserve_decision_pending",
   "goal_pause_requested": false,
   "previous_goal_turn_classification": "Progress: verified and pushed essential reserve handoff; paused per user10percent instruction",
   "current_goal_turn_classification": "Progress: revalidated runtime terminal status and corrected authoritative Goalresume state; substantive work held at userreserve",
@@ -109,7 +109,7 @@
   "latest_reserve_handoff": "results/MM_PART1_TEN_PERCENT_HANDOFF_20261024.json",
   "goal_pause_requested_at10percent": false,
   "latest_recovery_receipt": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
-  "current_execution_note": "Goal BLOCKED by tool after3consecutive20percentweeklyreserveobservations. Verified recovery/hashes/Git; no newlongjob. Scientific0/2train0/2val,test0;packing319820/18 unchanged.",
+  "current_execution_note": "ResumedGoalACTIVE/freshaudit1;short100/weekly19. Registeredreserveapplies; userclarificationpending,nolongjob/scientificprogress. Recoveryreceipt20261025.",
   "latest_api_backup_receipt": "results/MM_PART1_API_RECOVERY_GIT_BACKUP_20261025.json",
   "latest_reserve_audit": "results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json"
 }
