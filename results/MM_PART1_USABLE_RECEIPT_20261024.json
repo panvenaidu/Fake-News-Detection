@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-25T05:20:42.282666+00:00",
+  "updated_utc": "2026-10-25T05:27:47.612873+00:00",
   "plan": "MM-PART1-v2+approved-usable-cohort-amendment20261024",
   "goal_status": "active",
   "approval": "results/MM_PART1_USABLE_COHORT_APPROVAL_20261024.json",
@@ -28,7 +28,7 @@
     "results/usable_multimodal_evidence_checks_20261024.json"
   ],
   "CPU_job": {
-    "utc": "2026-10-25T05:20:42.282666+00:00",
+    "utc": "2026-10-25T05:27:47.612873+00:00",
     "state": "real_API_transport_live",
     "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=TsntdBFXaDvn",
     "cell": "TsntdBFXaDvn",
@@ -45,15 +45,16 @@
     "pack_seconds": 3600,
     "max_new_packs": 47,
     "latest_counter": {
-      "utc": "2026-10-25T05:19:14.067268+00:00",
-      "state": "upload_progress",
-      "file": "images_pack_91f91e1cc0cb48ecb56ec7f92b43e52d.tar",
-      "bytes": 243269632,
-      "total": 2142392320
+      "utc": "2026-10-25T05:26:26.392728+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 520158,
+      "required": 682170,
+      "packed_shards": 29,
+      "new_packs": 10
     },
     "prior_durable_images": 337907,
     "prior_durable_packs": 19,
-    "new_committed_packs_observed": 7,
+    "new_committed_packs_observed": 10,
     "checkpoint": "API private control/STATE plus immutable pending image receipts, committed TARs and exact-byte receipts; source shards unchanged",
     "recovery": "Never blindly rerun launch. Inspect exact notebook/process/control phase and terminal output first; same boot uses local flock; any still-running control requires explicit observed-terminal job identity. Pending pack replays at most one transport pack from durable originals if scratch lost. Session URIs remain private.",
     "old_packs_verified_by": "Full remote SHA+MD5 initially; reuse only same fileID/size/MD5/version bound to saved full-SHA proof",
@@ -82,8 +83,8 @@
       "cached_unchanged": true
     },
     "terminal": null,
-    "latest_measured_durable_images": 465726,
-    "latest_measured_durable_packs": 26,
+    "latest_measured_durable_images": 520158,
+    "latest_measured_durable_packs": 29,
     "predecessor_terminal": {
       "utc": "2026-10-25T04:50:34.190955+00:00",
       "state": "api_transport_terminal",
@@ -103,11 +104,12 @@
     }
   },
   "last_observation": {
-    "utc": "2026-10-25T05:19:14.067268+00:00",
-    "state": "upload_progress",
-    "file": "images_pack_91f91e1cc0cb48ecb56ec7f92b43e52d.tar",
-    "bytes": 243269632,
-    "total": 2142392320
+    "utc": "2026-10-25T05:26:26.392728+00:00",
+    "state": "api_pack_committed",
+    "images_committed": 520158,
+    "required": 682170,
+    "packed_shards": 29,
+    "new_packs": 10
   },
   "terminal_flush_verified": false,
   "no_GPU_allocated": true,
@@ -119,9 +121,9 @@
     "overall": 53
   },
   "usage_observation": {
-    "short_remaining": 26,
-    "weekly_remaining": 8,
-    "utc": "2026-10-25T05:20:42.282666+00:00"
+    "short_remaining": 22,
+    "weekly_remaining": 7,
+    "utc": "2026-10-25T05:27:47.612873+00:00"
   },
   "limitations": [
     "Full private Kaggle input and actual runtime image verification pending",

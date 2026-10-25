@@ -883,6 +883,100 @@
       "file": "images_pack_91f91e1cc0cb48ecb56ec7f92b43e52d.tar",
       "bytes": 243269632,
       "total": 2142392320
+    },
+    {
+      "utc": "2026-10-25T05:19:44.445582+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_91f91e1cc0cb48ecb56ec7f92b43e52d.tar",
+      "bytes": 1174405120,
+      "total": 2142392320
+    },
+    {
+      "utc": "2026-10-25T05:20:14.519571+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_91f91e1cc0cb48ecb56ec7f92b43e52d.tar",
+      "bytes": 2088763392,
+      "total": 2142392320
+    },
+    {
+      "utc": "2026-10-25T05:20:30.167950+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 484054,
+      "required": 682170,
+      "packed_shards": 27,
+      "new_packs": 8
+    },
+    {
+      "utc": "2026-10-25T05:21:39.916041+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_1c31510b01074d3fb18a25cc63aca962_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 10103190
+    },
+    {
+      "utc": "2026-10-25T05:22:10.192165+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_1c31510b01074d3fb18a25cc63aca962.tar",
+      "bytes": 260046848,
+      "total": 2142504960
+    },
+    {
+      "utc": "2026-10-25T05:22:40.497470+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_1c31510b01074d3fb18a25cc63aca962.tar",
+      "bytes": 1199570944,
+      "total": 2142504960
+    },
+    {
+      "utc": "2026-10-25T05:23:10.791697+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_1c31510b01074d3fb18a25cc63aca962.tar",
+      "bytes": 2130706432,
+      "total": 2142504960
+    },
+    {
+      "utc": "2026-10-25T05:23:24.989735+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 502069,
+      "required": 682170,
+      "packed_shards": 28,
+      "new_packs": 9
+    },
+    {
+      "utc": "2026-10-25T05:24:41.550355+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_ed94d3ab844048ab88fdb91c01dc7a28_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 10141185
+    },
+    {
+      "utc": "2026-10-25T05:25:11.692096+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_ed94d3ab844048ab88fdb91c01dc7a28.tar",
+      "bytes": 276824064,
+      "total": 2142720000
+    },
+    {
+      "utc": "2026-10-25T05:25:41.706414+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_ed94d3ab844048ab88fdb91c01dc7a28.tar",
+      "bytes": 1216348160,
+      "total": 2142720000
+    },
+    {
+      "utc": "2026-10-25T05:26:11.751181+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_ed94d3ab844048ab88fdb91c01dc7a28.tar",
+      "bytes": 2122317824,
+      "total": 2142720000
+    },
+    {
+      "utc": "2026-10-25T05:26:26.392728+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 520158,
+      "required": 682170,
+      "packed_shards": 29,
+      "new_packs": 10
     }
   ]
 }
