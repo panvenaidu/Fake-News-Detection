@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-25T04:53:28.869483+00:00",
+  "state": "continuation_prepared_not_yet_launched",
+  "predecessor": "CPU_API_PACK_af175d22e92d4a0caecf8a850bf94a3f",
+  "first_pack_recovery": "results/MM_PART1_FIRST_API_PACK_RECOVERY_20261025.json",
+  "audit_seconds": 1800,
+  "pack_seconds": 3600,
+  "max_new_packs": 47,
+  "training": false,
+  "test_inference": false,
+  "source": [
+    {
+      "path": "collab/continue_api_pack_20261025.py",
+      "sha256": "bd6c3c14406960281aaeadebd3b1498dca39af628d830c154fbf27fbb847473b"
+    },
+    {
+      "path": "collab/verify_first_api_pack_checkpoint_20261025.py",
+      "sha256": "9a9f861fa14f9e941e567090595dba7e54769cc89b694c2db824999752a9f60e"
+    }
+  ],
+  "recovery": "Only closed archive commits count. Private pending receipt/upload state permits at most one pack rebuild. Existing19packs, original150source shards, TSVs and model results retained. Inspect actual terminal/process/control before any next launch."
+}

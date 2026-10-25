@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-25T04:52:43.318485+00:00",
+  "state": "first_API_pack_recovery_readback_passed",
+  "job_id": "CPU_API_PACK_af175d22e92d4a0caecf8a850bf94a3f",
+  "phase": "bounded_checkpoint",
+  "pending": false,
+  "durable_images": 337907,
+  "durable_packs": 19,
+  "new_images_independently_joined_to_original_receipts": 18087,
+  "archive": "images_pack_e3061b6ff9044fdebd9b3fb98d180368.tar",
+  "archive_bytes": 2142074880,
+  "archive_sha256": "39ef73261f43e82abbe380760ee97f317f8167715666700b7a85dcc1aecb80ed",
+  "receipt_bytes": 10135904,
+  "receipt_sha256": "ac7d212eb3bcf312f042c9e89bbcabd00a6f8c617a7c35bb8e7c38bdc1969896",
+  "control_sha256": "a131d256731c03dd7d641c3d3719854837d41c9803ab2c01620c22190c0a6f62",
+  "full_remote_SHA_MD5_readback_verified": true,
+  "runtime_image_gate_passed": false,
+  "source_originals_preserved": true,
+  "training": false,
+  "test_inference": false
+}
