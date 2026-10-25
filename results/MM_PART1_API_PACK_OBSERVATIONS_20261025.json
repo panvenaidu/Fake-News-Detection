@@ -977,6 +977,42 @@
       "required": 682170,
       "packed_shards": 29,
       "new_packs": 10
+    },
+    {
+      "utc": "2026-10-25T05:27:34.952703+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_153b942b3d7145049221696019aec966_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 9947197
+    },
+    {
+      "utc": "2026-10-25T05:28:05.122117+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_153b942b3d7145049221696019aec966.tar",
+      "bytes": 276824064,
+      "total": 2142801920
+    },
+    {
+      "utc": "2026-10-25T05:28:35.310892+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_153b942b3d7145049221696019aec966.tar",
+      "bytes": 1216348160,
+      "total": 2142801920
+    },
+    {
+      "utc": "2026-10-25T05:29:05.394157+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_153b942b3d7145049221696019aec966.tar",
+      "bytes": 2130706432,
+      "total": 2142801920
+    },
+    {
+      "utc": "2026-10-25T05:29:20.066390+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 537904,
+      "required": 682170,
+      "packed_shards": 30,
+      "new_packs": 11
     }
   ]
 }

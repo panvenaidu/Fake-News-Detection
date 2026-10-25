@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-25T05:27:47.612873+00:00",
+  "updated_utc": "2026-10-25T05:30:22.531094+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -85,9 +85,9 @@
       "registered_max_epochs": 4,
       "data_preparation": {
         "approved_images": 682170,
-        "durable_packed_images": 520158,
-        "durable_packs": 29,
-        "transport_percent": 76.25,
+        "durable_packed_images": 537904,
+        "durable_packs": 30,
+        "transport_percent": 78.85,
         "image_runtime_gate_passed": false,
         "training_epochs_completed": 0,
         "full_validations_completed": 0,
@@ -150,10 +150,10 @@
     "reserve_at_remaining_percent": 20,
     "action": "At20 checkpoint/export/update records and Git; at10 essential handoff only; at5 hard-stop; bounded durable cloud jobs only; no inactive monitoring promise",
     "latest_observed_remaining_percent": {
-      "five_hour": 22,
+      "five_hour": 20,
       "weekly": 7
     },
-    "observation_utc": "2026-10-25T05:27:47.612873+00:00",
+    "observation_utc": "2026-10-25T05:30:22.531094+00:00",
     "stop_substantive_at_remaining_percent": 10,
     "hard_stop_at_remaining_percent": 5,
     "threshold_scope": "five_hour_primary_only_per_user_override"

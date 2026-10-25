@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-25T05:30:22.576578+00:00",
+  "state": "primary20percent_checkpoint_reserve",
+  "usage_observed": {
+    "short_remaining": 20,
+    "weekly_remaining": 7
+  },
+  "policy": "context/USAGE_POLICY_OVERRIDE_20261025.json",
+  "goal_status": "active; not complete; pause only at user10percent boundary",
+  "previous_goal_turn_classification": "progress",
+  "current_goal_turn_classification": "progress and verified wait on same live packing cell; new archive commits observed",
+  "packing_cell": "TsntdBFXaDvn",
+  "metadata_submitted_cell": "NSTnGXJMbpAt",
+  "transfer_index_submitted_cell": "GlyMDaD-e-AL",
+  "latest_durable_images": 537904,
+  "latest_durable_archives": 30,
+  "required": 682170,
+  "scientific_epochs": 0,
+  "full_validations": 0,
+  "final_test": false,
+  "new_lengthy_work_permitted": false,
+  "already_submitted_pipeline": "Original-byte packing<=3600s after setup/audit; metadata<=1200s only after complete; index<=600s only after complete metadata. No new sessions, GPU, authentication or dataset/model changes.",
+  "persistence": "Original150source shards and committed30archives preserved; exact pending receipt/upload state private; first real checkpoint independently read/hash/source-join verified. No monitoring after assistant stops claimed.",
+  "next": "Inspect same cloud handle, timestamped logs and private controls/queued outputs; never resubmit because output observation timed out. Complete remaining packing then metadata/index, full private Kaggle staging/runtime gate/CUDA/preflight and scientific epochs1\u20132 when allowance permits. At10% essential handoff and pause per user; hardstop5%.",
+  "verified_backup_parent": "2d3cd029520aea3a4defb331301a3e3c1c37f5c0",
+  "unrelated_changes_preserved": true
+}

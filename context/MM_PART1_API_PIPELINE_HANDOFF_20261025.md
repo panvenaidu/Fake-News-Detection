@@ -1,10 +1,12 @@
-Current reserve preparation 2026-10-25T05:27:47.643874+00:00: primary22% /weekly7%; no new lengthy task. Existing bounded CPU packing and the submitted guarded metadata/index steps are the same pipeline. No GPU allocated. At10% complete essential handoff and pause per user; hardstop5%.
+Reserve receipt `results/MM_PART1_PRIMARY20_RESERVE_20261025.json`: no new lengthy work. Current Goal remains active; Part1 is NOT complete.
+
+Current reserve preparation 2026-10-25T05:27:47.643874+00:00: primary20% /weekly7%; no new lengthy task. Existing bounded CPU packing and the submitted guarded metadata/index steps are the same pipeline. No GPU allocated. At10% complete essential handoff and pause per user; hardstop5%.
 
 # Current API pipeline handoff
 
 Existing Goal was verified ACTIVE after the user resumed it. User usage override: apply20/10/5 thresholds to the five-hour PRIMARY window only; weekly is an availability ceiling, not a20%reserve. Latest actual allowance is in results/MM_PART1_RECOVERY_PROGRESS_20261025.json; thresholds apply only to the five-hour window. Recheck before more work; never purchase/reset usage.
 
-Verified saved checkpoint:520158 of682170 approved images,29 closed TARs (05:26:26UTC). Original150source shards, original TSVs and491approved exclusions preserved. All18old packs passed full remote SHA+MD5. The first new pack independently passed full remote SHA+MD5 and18087source-row joins; durable checkpoint337907/19 then resumed. No new image source, resampling or extraction.
+Verified saved checkpoint:537904 of682170 approved images,30 closed TARs (05:29:20UTC). Original150source shards, original TSVs and491approved exclusions preserved. All18old packs passed full remote SHA+MD5. The first new pack independently passed full remote SHA+MD5 and18087source-row joins; durable checkpoint337907/19 then resumed. No new image source, resampling or extraction.
 
 ## Existing live queue — inspect, never blindly resubmit
 
