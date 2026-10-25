@@ -1,7 +1,7 @@
 {
-  "utc": "2026-10-25T04:07:11.569856+00:00",
+  "utc": "2026-10-25T04:08:45.311313+00:00",
   "condition": "Weekly19percent remains below the binding20percentreserve despite five-hour100percent reset",
-  "consecutive_goal_turns_observed": 1,
+  "consecutive_goal_turns_observed": 2,
   "observations": [
     {
       "goal_turn": "first_after_resume",
@@ -9,6 +9,14 @@
       "weekly_remaining": 19,
       "classification": "no_progress",
       "new_long_job": false
+    },
+    {
+      "goal_turn": "second_after_resume",
+      "short_remaining": 96,
+      "weekly_remaining": 19,
+      "classification": "no_progress",
+      "new_long_job": false,
+      "user_override_received": false
     }
   ],
   "current_cloud_observation": "Existing Rocky62 Colab CPU notebook is connected/idle; no Executing status. Exact metadata/range outputs remain terminal. No new job submitted.",
@@ -19,12 +27,12 @@
   "full_validations": 0,
   "packing_images": 319820,
   "part1_complete": false,
-  "goal_state": "active_verified_after_resume_fresh_audit",
+  "goal_state": "active_second_resumed_reserve_observation",
   "blocked_audit": "Fresh resumed audit starts at1. Do not reuse the prior3turn count. No premature blocked status.",
   "next_after_allowance_recovery": "Follow results/MM_PART1_RECOVERY_PROGRESS_20261025.json once allowance or explicit user authorization permits. No new Goal/extraction/DriveFS loop.",
   "weekly_reset_observed_UTC": "2026-10-30T17:44:16+00:00",
   "no_monitoring_after_stop_claimed": true,
-  "current_turn_classification": "No progress on transport/training: fresh resumed audit; reserve clarification pending",
+  "current_turn_classification": "No progress: second observation after resume; weekly19percent still below20percentreserve; explicit user reserve choice remains unanswered",
   "prior_blocked_audit": {
     "utc": "2026-10-24T20:36:43.467016+00:00",
     "consecutive_goal_turns_observed": 3,
