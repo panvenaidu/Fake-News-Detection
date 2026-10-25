@@ -39,8 +39,8 @@
     },
     {
       "path": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
-      "bytes": 5132,
-      "sha256": "47a5b9f91446a94da0b872f390a20b1ff5216484c97fd6aeef7cbe8a58cb8d81"
+      "bytes": 5326,
+      "sha256": "40e152fad8e84ec3f9269e63dc220fe8cac5a84f60deb8adf7986164a984260d"
     }
   ],
   "private_raw_index_identifier": "data/official_paired_v2/API_METADATA_INDEX_RECEIPT_20261025.json",
@@ -50,5 +50,7 @@
     "verified_checkpoint_commit": "68f78346c7a571d7e2aa51cc57f5461bd94f16ad",
     "remote_match": true,
     "blocked_status_child": "Verify separately after push"
-  }
+  },
+  "live_job_receipt": "results/MM_PART1_API_PACK_JOB_20261025.json",
+  "usage_policy": "context/USAGE_POLICY_OVERRIDE_20261025.json"
 }

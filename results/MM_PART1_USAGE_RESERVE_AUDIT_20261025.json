@@ -1,7 +1,7 @@
 {
-  "utc": "2026-10-25T04:09:26.752532+00:00",
-  "condition": "Weekly19percent remains below the binding20percentreserve despite five-hour100percent reset",
-  "consecutive_goal_turns_observed": 3,
+  "utc": "2026-10-25T04:32:56.378513+00:00",
+  "condition": "Old weekly20percentreserve superseded by explicit user five-hour policy",
+  "consecutive_goal_turns_observed": 0,
   "observations": [
     {
       "goal_turn": "first_after_resume",
@@ -36,12 +36,12 @@
   "full_validations": 0,
   "packing_images": 319820,
   "part1_complete": false,
-  "goal_state": "blocked_verified_after_third_resumed_observation",
+  "goal_state": "API initially blocked; manual authorized execution continuing; user asked to resume same Goal",
   "blocked_audit": "Fresh resumed3turn threshold satisfied; supported Goal tool returned blocked. Next required work needs allowance>20percent or explicit reserve override. No other independent authorized substantive action remains before that decision.",
   "next_after_allowance_recovery": "Follow results/MM_PART1_RECOVERY_PROGRESS_20261025.json once allowance or explicit user authorization permits. No new Goal/extraction/DriveFS loop.",
   "weekly_reset_observed_UTC": "2026-10-30T17:44:16+00:00",
   "no_monitoring_after_stop_claimed": true,
-  "current_turn_classification": "No progress: third resumed observation; user-required weeklyreserve prevents next major transport/implementation/training; no override received",
+  "current_turn_classification": "Progress on real API transport; no current reserve block",
   "prior_blocked_audit": {
     "utc": "2026-10-24T20:36:43.467016+00:00",
     "consecutive_goal_turns_observed": 3,
@@ -69,5 +69,6 @@
       }
     ]
   },
-  "user_decision_pending": "Keep20percentweeklyreserve OR explicitly permit using weeklyreserve for this run with10percenthandoff/5percenthardstop. No override applied."
+  "user_decision_pending": false,
+  "policy_override_received": true
 }

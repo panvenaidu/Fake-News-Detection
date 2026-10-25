@@ -1,10 +1,10 @@
 {
-  "updated_utc": "2026-10-25T04:15:24.900979+00:00",
+  "updated_utc": "2026-10-25T04:32:56.378513+00:00",
   "local_date": "2026-10-25",
-  "state": "user_authorized_five_hour_policy_API_transport_resuming",
+  "state": "real_API_pack_job_live_source_join_phase",
   "goal_status": "blocked_verified_after_third_resumed_observation",
   "previous_goal_turn_classification": "Progress: created evidence-grounded status dashboard; did not train",
-  "current_goal_turn_classification": "No progress: supported Goal blocked after fresh3turn reserve audit; user decision still pending.",
+  "current_goal_turn_classification": "Progress: user policy changed, source implemented,11faultchecks and live9MiB preflight passed; bounded realdata API job launched and source join counters advancing",
   "cohort_id": "FACULTY-6W-USABLE-682170-v1",
   "approved_pairs": 682170,
   "durable_packed_images": 319820,
@@ -84,16 +84,17 @@
     "results/MM_PART1_ORIGINAL_ARCHIVE_API_RANGE_20261025.json"
   ],
   "usage_observed": {
-    "short_remaining": 94,
-    "weekly_remaining": 19
+    "short_remaining": 76,
+    "weekly_remaining": 16
   },
   "next": "Use private API index receipt under data/official_paired_v2 to locate durable115527byte index (SHA291a2c5b27aa39f1b1b16b3726655609927a08cee03a34e35d9fe7e47670a87a). Verify current credentials/session first. Implement/fault-test bounded lossless Drive API transport avoiding DriveFS: inventory existing18pack receipts against original source, hash source/packed archives and every copied image, preserve originals and prior packs, upload closed archives/receipts with verified private readback and resumable checkpoints. Do not duplicate extraction, change cohort or perform final model-test inference. Then complete full immutable Kaggle input, runtime image gate, actual CUDA recovery/preflight and epochs1\u20132/fullvalidation. The old DriveFS resume script remains unexecuted and must not bypass its gate.",
   "source_backup_commit": "7530a33c7a97ca3db70e0a8ed45348258ccf28b2",
-  "no_active_packing_or_training_job": true,
+  "no_active_packing_or_training_job": false,
   "source_metadata_inventory_passed": true,
   "reserve_state": "five_hour_thresholds_only_per_user_override",
   "backup_receipt": "results/MM_PART1_API_RECOVERY_GIT_BACKUP_20261025.json",
-  "independent_job_running": false,
+  "independent_job_running": true,
   "reserve_audit": "results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json",
-  "usage_policy_override": "context/USAGE_POLICY_OVERRIDE_20261025.json"
+  "usage_policy_override": "context/USAGE_POLICY_OVERRIDE_20261025.json",
+  "current_API_job_receipt": "results/MM_PART1_API_PACK_JOB_20261025.json"
 }
