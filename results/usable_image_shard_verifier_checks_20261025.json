@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-25T04:40:45.290769+00:00",
+  "status": "passed",
+  "scope": "Six synthetic images test metadata/runtime-byte guards; policy loader is mocked ONLY here and separately checked against all real TSVs; no model inference",
+  "verifier_sha256": "c24164ec26e9e3d3b490a2eb1b698d78ac807d0a67414e8b93428e3f4ee0b656",
+  "test_sha256": "7909f377cb0a128e4de8230b40ab26c3455c7bb7d2b836aca00decf1c4f0e13b",
+  "input_layout_tested": "kaggle-tar",
+  "checks": [
+    "Metadata preparation never opens image gate",
+    "Actual unpacked images all hashed/decoded before runtime gate",
+    "RGB, grayscale, palette and RGBA decode",
+    "Official title/label/split joins including multiline CSV text",
+    "Corrupt/missing image and symlink escape rejected",
+    "Runtime receipt cannot mutate immutable input",
+    "Altered receipt labels and incomplete extraction rejected"
+  ],
+  "limitations": [
+    "Real full-cohort manifest/private Kaggle import still pending"
+  ]
+}

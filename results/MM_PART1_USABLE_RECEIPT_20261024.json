@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-25T04:09:26.752532+00:00",
+  "updated_utc": "2026-10-25T04:44:30.032515+00:00",
   "plan": "MM-PART1-v2+approved-usable-cohort-amendment20261024",
-  "goal_status": "blocked_verified_after_third_resumed_observation",
+  "goal_status": "User reported existing Goal resumed; supported API still blocked at latest check; manual turn authorized",
   "approval": "results/MM_PART1_USABLE_COHORT_APPROVAL_20261024.json",
   "registration": "results/MM_PART1_USABLE_COHORT_REGISTRATION_20261024.json",
   "cohort_id": "FACULTY-6W-USABLE-682170-v1",
@@ -28,34 +28,75 @@
     "results/usable_multimodal_evidence_checks_20261024.json"
   ],
   "CPU_job": {
-    "job_id": "CPU_USABLE_TRANSPORT_4239db2e543d4215bfe7f48f8517c0ae",
-    "utc": "2026-10-24T15:19:43.391493+00:00",
-    "pid": 1568,
-    "pid_role": "notebook_kernel_not_dedicated_trainer",
-    "cell": "78Z17KaSftw1",
-    "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=hasAItotepXo",
-    "max_pack_seconds": 3600,
-    "source_file": "collab/run_usable_transport_job_v3.py",
-    "source_sha256": "60a0175d5faaba66e76752827e9a9052564351b0a0d15b35ce0803ae9f6fee94",
-    "phase": "historical_terminal_error",
-    "training": false,
-    "test_inference": false,
-    "terminal_confirmed_by_current_notebook_output": true,
-    "failure_receipt_write_failed": true,
-    "flush_verified": false
+    "utc": "2026-10-25T04:44:30.032515+00:00",
+    "state": "real_API_transport_live",
+    "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=cz6Cgm4DUm8r",
+    "cell": "cz6Cgm4DUm8r",
+    "runtime_pid": 4387,
+    "boot_id": "5e215fb9-807d-4c5f-9eeb-03276837af96",
+    "registered_job_id": "Retrieve from private api_transport_v1/STATE.json or terminal output; not yet printed",
+    "source_commit": "9e5e63c3013b38dded9cafd68f26933acff21776",
+    "bundle_sha256": "e9efc3742d3a3e618f1689e922da991c94bb91c2428fc6f537c9c0330a4c1b96",
+    "release_utc": "2026-10-25T04:29:59.534168+00:00",
+    "account_verified": true,
+    "Drive_free_bytes": 5609842502981,
+    "conservative_free_required": 84505061376,
+    "audit_seconds": 1800,
+    "pack_seconds": 3600,
+    "max_new_packs": 1,
+    "latest_counter": {
+      "utc": "2026-10-25T04:43:56.484745+00:00",
+      "state": "api_prior_pack_verified",
+      "packs_checked": 13,
+      "total_packs": 18,
+      "images": 227416,
+      "cached_unchanged": false
+    },
+    "prior_durable_images": 319820,
+    "prior_durable_packs": 18,
+    "new_committed_packs_observed": 0,
+    "checkpoint": "API private control/STATE plus immutable pending image receipts, committed TARs and exact-byte receipts; source shards unchanged",
+    "recovery": "Never blindly rerun launch. Inspect exact notebook/process/control phase and terminal output first; same boot uses local flock; any still-running control requires explicit observed-terminal job identity. Pending pack replays at most one transport pack from durable originals if scratch lost. Session URIs remain private.",
+    "old_packs_verified_by": "Full remote SHA+MD5 initially; reuse only same fileID/size/MD5/version bound to saved full-SHA proof",
+    "new_archive_durability": "Full local SHA+MD5 plus remote size/MD5 and byte-readback of per-image receipt; full target runtime SHA/decode remains required",
+    "scientific_epochs": 0,
+    "full_validations": 0,
+    "final_test": false,
+    "GPU_allocated": false,
+    "Kaggle_observed": "Draft session off; accelerator None; no input attached. GPU quota not exposed by inspected menu; do not reuse old quota as current.",
+    "usage_policy": "context/USAGE_POLICY_OVERRIDE_20261025.json",
+    "unattended_continuation_claimed": false,
+    "source_joins": {
+      "utc": "2026-10-25T04:34:45.146941+00:00",
+      "state": "api_original_TSV_and_source_metadata_joins_passed",
+      "images": 682170,
+      "target_pack_bytes": 2147483648,
+      "source_receipts": 150,
+      "training": false
+    },
+    "prior_pack_audit": {
+      "utc": "2026-10-25T04:43:56.484745+00:00",
+      "state": "api_prior_pack_verified",
+      "packs_checked": 13,
+      "total_packs": 18,
+      "images": 227416,
+      "cached_unchanged": false
+    },
+    "terminal": null,
+    "latest_measured_durable_images": 319820,
+    "latest_measured_durable_packs": 18
   },
   "last_observation": {
-    "utc": "2026-10-24T20:32:00.012867+00:00",
-    "state": "API_metadata_and_range_probes_terminal_passed",
-    "images_committed": 319820,
-    "packed_shards": 18,
-    "live_packing_job": false,
-    "live_metadata_inventory": false,
-    "metadata_images_verified": 682170
+    "utc": "2026-10-25T04:43:56.484745+00:00",
+    "state": "api_prior_pack_verified",
+    "packs_checked": 13,
+    "total_packs": 18,
+    "images": 227416,
+    "cached_unchanged": false
   },
   "terminal_flush_verified": false,
   "no_GPU_allocated": true,
-  "next": "Use private API index receipt under data/official_paired_v2 to locate durable115527byte index (SHA291a2c5b27aa39f1b1b16b3726655609927a08cee03a34e35d9fe7e47670a87a). Verify current credentials/session first. Implement/fault-test bounded lossless Drive API transport avoiding DriveFS: inventory existing18pack receipts against original source, hash source/packed archives and every copied image, preserve originals and prior packs, upload closed archives/receipts with verified private readback and resumable checkpoints. Do not duplicate extraction, change cohort or perform final model-test inference. Then complete full immutable Kaggle input, runtime image gate, actual CUDA recovery/preflight and epochs1\u20132/fullvalidation. The old DriveFS resume script remains unexecuted and must not bypass its gate.",
+  "next": "Inspect same cell/process/private control before continuation; never duplicate live packing. After the first durable transaction, verify terminal archive/receipt and recovery, then resume remaining lossless packing. Full private Kaggle input, actual runtime image SHA/decode, CUDA recovery/preflight, epochs1\u20132 and full validations remain pending. No Part1 final test.",
   "bars": {
     "text_only": 100,
     "text_plus_image": 40,
@@ -63,25 +104,23 @@
     "overall": 53
   },
   "usage_observation": {
-    "short_remaining": 10,
-    "weekly_remaining": 26,
-    "action": "Essentialcheckpoint/pushthenpauseGoalperuserinstruction"
+    "short_remaining": 60,
+    "weekly_remaining": 13,
+    "utc": "2026-10-25T04:44:30.032515+00:00"
   },
   "limitations": [
-    "Fresh ColabCPU reset did not fix Drivefile4readabort",
-    "No new usable images packed beyond durable319820/18packs",
-    "Derived receiptcopy is not yet read/hash-verified and is not an appliedmetadatareplacement",
-    "No actualv2CUDA/fullmodelpreflight or scientificepochs/fullvalidation/test",
-    "Kaggleprivateimageinput remains incomplete Version1/640images"
+    "Full private Kaggle input and actual runtime image verification pending",
+    "Scientific0/2epochs,0/2fullvalidations; no final test",
+    "Metadata API adapter prepared/synthetic tested, not cloud executed"
   ],
   "scientific_source_commit": "5aa5c87a2620b3c7763401e845dad45a935dd621",
   "guarded_draft_release_refusal_verified": true,
   "independent_continuation": {
-    "already_submitted": false,
-    "live_job": false,
-    "note": "No copy/training job remains live. No claim of monitoring or independent continuation."
+    "already_submitted": true,
+    "live_job": true,
+    "note": "Bounded CPU data transport only; no monitoring claim after assistant stops"
   },
-  "state": "API_recovery_saved_Goal_blocked_weekly_reserve_choice_pending",
+  "state": "real_API_transport_live",
   "goal_pause_requested": false,
   "previous_goal_turn_classification": "Progress: verified and pushed essential reserve handoff; paused per user10percent instruction",
   "current_goal_turn_classification": "Progress: revalidated runtime terminal status and corrected authoritative Goalresume state; substantive work held at userreserve",
@@ -109,7 +148,24 @@
   "latest_reserve_handoff": "results/MM_PART1_TEN_PERCENT_HANDOFF_20261024.json",
   "goal_pause_requested_at10percent": false,
   "latest_recovery_receipt": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
-  "current_execution_note": "GoalBLOCKED afterfresh3turnreserveaudit;short94/weekly19;overrideunanswered.No newjob/scientificprogress.Recoveryandsourcespreserved.",
+  "current_execution_note": "Inspect same cell/process/private control before continuation; never duplicate live packing. After the first durable transaction, verify terminal archive/receipt and recovery, then resume remaining lossless packing. Full private Kaggle input, actual runtime image SHA/decode, CUDA recovery/preflight, epochs1\u20132 and full validations remain pending. No Part1 final test.",
   "latest_api_backup_receipt": "results/MM_PART1_API_RECOVERY_GIT_BACKUP_20261025.json",
-  "latest_reserve_audit": "results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json"
+  "latest_reserve_audit": "results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json",
+  "historical_CPU_job": {
+    "job_id": "CPU_USABLE_TRANSPORT_4239db2e543d4215bfe7f48f8517c0ae",
+    "utc": "2026-10-24T15:19:43.391493+00:00",
+    "pid": 1568,
+    "pid_role": "notebook_kernel_not_dedicated_trainer",
+    "cell": "78Z17KaSftw1",
+    "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=hasAItotepXo",
+    "max_pack_seconds": 3600,
+    "source_file": "collab/run_usable_transport_job_v3.py",
+    "source_sha256": "60a0175d5faaba66e76752827e9a9052564351b0a0d15b35ce0803ae9f6fee94",
+    "phase": "historical_terminal_error",
+    "training": false,
+    "test_inference": false,
+    "terminal_confirmed_by_current_notebook_output": true,
+    "failure_receipt_write_failed": true,
+    "flush_verified": false
+  }
 }

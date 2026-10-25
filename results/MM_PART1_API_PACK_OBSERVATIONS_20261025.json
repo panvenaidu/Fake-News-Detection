@@ -1,0 +1,246 @@
+{
+  "scope": "Observed current Colab cell cz6Cgm4DUm8r; printed JSON only, no private control URIs",
+  "observations": [
+    {
+      "utc": "2026-10-25T04:29:59.534168+00:00",
+      "state": "bounded_API_pack_release_verified",
+      "account_matches_approved": true,
+      "Drive_free": 5609842502981,
+      "conservative_free_required": 84505061376,
+      "pack_seconds": 3600,
+      "audit_seconds": 1800,
+      "max_new_packs": 1,
+      "source_originals_retained": true,
+      "runtime_pid": 4387,
+      "boot_id": "5e215fb9-807d-4c5f-9eeb-03276837af96",
+      "training": false,
+      "test_inference": false
+    },
+    {
+      "utc": "2026-10-25T04:31:22.350534+00:00",
+      "state": "api_source_join_verified",
+      "receipts": 30,
+      "images": 139813
+    },
+    {
+      "utc": "2026-10-25T04:32:12.618123+00:00",
+      "state": "api_source_join_verified",
+      "receipts": 60,
+      "images": 276989
+    },
+    {
+      "utc": "2026-10-25T04:33:03.734523+00:00",
+      "state": "api_source_join_verified",
+      "receipts": 90,
+      "images": 409357
+    },
+    {
+      "utc": "2026-10-25T04:33:53.529674+00:00",
+      "state": "api_source_join_verified",
+      "receipts": 120,
+      "images": 545877
+    },
+    {
+      "utc": "2026-10-25T04:34:43.822125+00:00",
+      "state": "api_source_join_verified",
+      "receipts": 150,
+      "images": 682170
+    },
+    {
+      "utc": "2026-10-25T04:34:45.146941+00:00",
+      "state": "api_original_TSV_and_source_metadata_joins_passed",
+      "images": 682170,
+      "target_pack_bytes": 2147483648,
+      "source_receipts": 150,
+      "training": false
+    },
+    {
+      "utc": "2026-10-25T04:35:17.368778+00:00",
+      "state": "archive_hash_progress",
+      "file": "images_pack_21d22db9eb4d4151ba7bf99eaa173dd5.tar",
+      "bytes": 1744830464,
+      "total": 2142095360
+    },
+    {
+      "utc": "2026-10-25T04:35:26.442668+00:00",
+      "state": "api_prior_pack_verified",
+      "packs_checked": 1,
+      "total_packs": 18,
+      "images": 18753,
+      "cached_unchanged": false
+    },
+    {
+      "utc": "2026-10-25T04:35:58.777198+00:00",
+      "state": "archive_hash_progress",
+      "file": "images_pack_33c1d075b0c34fcfa7e45ca22998ce86.tar",
+      "bytes": 1426063360,
+      "total": 2142187520
+    },
+    {
+      "utc": "2026-10-25T04:36:14.102399+00:00",
+      "state": "api_prior_pack_verified",
+      "packs_checked": 2,
+      "total_packs": 18,
+      "images": 37162,
+      "cached_unchanged": false
+    },
+    {
+      "utc": "2026-10-25T04:36:46.355250+00:00",
+      "state": "archive_hash_progress",
+      "file": "images_pack_3479dc01c83d4e44bd2b67671a70f664.tar",
+      "bytes": 1904214016,
+      "total": 2142750720
+    },
+    {
+      "utc": "2026-10-25T04:36:52.642305+00:00",
+      "state": "api_prior_pack_verified",
+      "packs_checked": 3,
+      "total_packs": 18,
+      "images": 55323,
+      "cached_unchanged": false
+    },
+    {
+      "utc": "2026-10-25T04:37:24.655888+00:00",
+      "state": "archive_hash_progress",
+      "file": "images_pack_37931bd7953044b38675617bbe584947.tar",
+      "bytes": 1644167168,
+      "total": 2142310400
+    },
+    {
+      "utc": "2026-10-25T04:37:36.391742+00:00",
+      "state": "api_prior_pack_verified",
+      "packs_checked": 4,
+      "total_packs": 18,
+      "images": 73589,
+      "cached_unchanged": false
+    },
+    {
+      "utc": "2026-10-25T04:38:08.886872+00:00",
+      "state": "archive_hash_progress",
+      "file": "images_pack_3b3f39e7cdb449c4ac2d73ce1cd9aa2b.tar",
+      "bytes": 1920991232,
+      "total": 2142607360
+    },
+    {
+      "utc": "2026-10-25T04:38:14.410612+00:00",
+      "state": "api_prior_pack_verified",
+      "packs_checked": 5,
+      "total_packs": 18,
+      "images": 91652,
+      "cached_unchanged": false
+    },
+    {
+      "utc": "2026-10-25T04:38:29.902658+00:00",
+      "state": "api_prior_pack_verified",
+      "packs_checked": 6,
+      "total_packs": 18,
+      "images": 99540,
+      "cached_unchanged": false
+    },
+    {
+      "utc": "2026-10-25T04:39:02.185651+00:00",
+      "state": "archive_hash_progress",
+      "file": "images_pack_55deef7569b540d4bf7bec46f233feed.tar",
+      "bytes": 1300234240,
+      "total": 2142392320
+    },
+    {
+      "utc": "2026-10-25T04:39:18.909371+00:00",
+      "state": "api_prior_pack_verified",
+      "packs_checked": 7,
+      "total_packs": 18,
+      "images": 117842,
+      "cached_unchanged": false
+    },
+    {
+      "utc": "2026-10-25T04:39:51.498351+00:00",
+      "state": "archive_hash_progress",
+      "file": "images_pack_6a864736393444a8b33917599cb510fb.tar",
+      "bytes": 1040187392,
+      "total": 2142525440
+    },
+    {
+      "utc": "2026-10-25T04:40:21.486712+00:00",
+      "state": "api_prior_pack_verified",
+      "packs_checked": 8,
+      "total_packs": 18,
+      "images": 136092,
+      "cached_unchanged": false
+    },
+    {
+      "utc": "2026-10-25T04:40:53.914800+00:00",
+      "state": "archive_hash_progress",
+      "file": "images_pack_7842ef2f45174a8ca466f362b40882c3.tar",
+      "bytes": 1417674752,
+      "total": 2142412800
+    },
+    {
+      "utc": "2026-10-25T04:41:09.082959+00:00",
+      "state": "api_prior_pack_verified",
+      "packs_checked": 9,
+      "total_packs": 18,
+      "images": 154132,
+      "cached_unchanged": false
+    },
+    {
+      "utc": "2026-10-25T04:41:41.106642+00:00",
+      "state": "archive_hash_progress",
+      "file": "images_pack_7ad586818d044261851590ab1b0b5d5c.tar",
+      "bytes": 2122317824,
+      "total": 2142679040
+    },
+    {
+      "utc": "2026-10-25T04:41:44.196320+00:00",
+      "state": "api_prior_pack_verified",
+      "packs_checked": 10,
+      "total_packs": 18,
+      "images": 172644,
+      "cached_unchanged": false
+    },
+    {
+      "utc": "2026-10-25T04:42:16.447522+00:00",
+      "state": "archive_hash_progress",
+      "file": "images_pack_8032d83fd6fb4d51ab72e89aa2ee8fdf.tar",
+      "bytes": 1434451968,
+      "total": 2142689280
+    },
+    {
+      "utc": "2026-10-25T04:42:31.739002+00:00",
+      "state": "api_prior_pack_verified",
+      "packs_checked": 11,
+      "total_packs": 18,
+      "images": 191028,
+      "cached_unchanged": false
+    },
+    {
+      "utc": "2026-10-25T04:43:03.995127+00:00",
+      "state": "archive_hash_progress",
+      "file": "images_pack_8ef0ce70f31c48018fa293b08542536e.tar",
+      "bytes": 1920991232,
+      "total": 2142556160
+    },
+    {
+      "utc": "2026-10-25T04:43:10.514943+00:00",
+      "state": "api_prior_pack_verified",
+      "packs_checked": 12,
+      "total_packs": 18,
+      "images": 209113,
+      "cached_unchanged": false
+    },
+    {
+      "utc": "2026-10-25T04:43:43.066202+00:00",
+      "state": "archive_hash_progress",
+      "file": "images_pack_9dc8a68036f744bfa52ffe224c7f54ca.tar",
+      "bytes": 1543503872,
+      "total": 2142627840
+    },
+    {
+      "utc": "2026-10-25T04:43:56.484745+00:00",
+      "state": "api_prior_pack_verified",
+      "packs_checked": 13,
+      "total_packs": 18,
+      "images": 227416,
+      "cached_unchanged": false
+    }
+  ]
+}

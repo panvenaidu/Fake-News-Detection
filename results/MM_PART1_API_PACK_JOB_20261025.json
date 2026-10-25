@@ -1,6 +1,6 @@
 {
-  "utc": "2026-10-25T04:32:56.378513+00:00",
-  "state": "real_CPU_API_pack_job_observed_live_source_join_phase",
+  "utc": "2026-10-25T04:44:30.032515+00:00",
+  "state": "real_API_transport_live",
   "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=cz6Cgm4DUm8r",
   "cell": "cz6Cgm4DUm8r",
   "runtime_pid": 4387,
@@ -16,10 +16,12 @@
   "pack_seconds": 3600,
   "max_new_packs": 1,
   "latest_counter": {
-    "utc": "2026-10-25T04:31:22.350534+00:00",
-    "state": "api_source_join_verified",
-    "receipts": 30,
-    "images": 139813
+    "utc": "2026-10-25T04:43:56.484745+00:00",
+    "state": "api_prior_pack_verified",
+    "packs_checked": 13,
+    "total_packs": 18,
+    "images": 227416,
+    "cached_unchanged": false
   },
   "prior_durable_images": 319820,
   "prior_durable_packs": 18,
@@ -34,5 +36,24 @@
   "GPU_allocated": false,
   "Kaggle_observed": "Draft session off; accelerator None; no input attached. GPU quota not exposed by inspected menu; do not reuse old quota as current.",
   "usage_policy": "context/USAGE_POLICY_OVERRIDE_20261025.json",
-  "unattended_continuation_claimed": false
+  "unattended_continuation_claimed": false,
+  "source_joins": {
+    "utc": "2026-10-25T04:34:45.146941+00:00",
+    "state": "api_original_TSV_and_source_metadata_joins_passed",
+    "images": 682170,
+    "target_pack_bytes": 2147483648,
+    "source_receipts": 150,
+    "training": false
+  },
+  "prior_pack_audit": {
+    "utc": "2026-10-25T04:43:56.484745+00:00",
+    "state": "api_prior_pack_verified",
+    "packs_checked": 13,
+    "total_packs": 18,
+    "images": 227416,
+    "cached_unchanged": false
+  },
+  "terminal": null,
+  "latest_measured_durable_images": 319820,
+  "latest_measured_durable_packs": 18
 }

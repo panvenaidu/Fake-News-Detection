@@ -58,7 +58,7 @@ def write_json(path, value):
     os.replace(temporary, path)
 
 
-def receipt_rows(source, expected, layout='flat'):
+def receipt_rows(source, expected, layout='flat', archive_proofs=None):
     """Strict semantic joins; existing TAR bytes are verified in the runtime."""
     if layout not in ['flat', 'kaggle-tar']:
         raise ValueError('Unknown private input layout')
@@ -69,8 +69,19 @@ def receipt_rows(source, expected, layout='flat'):
         archive = safe_path(Path(source) / 'shards', receipt['archive'])
         if archive.name != receipt['archive'] or archive.suffix != '.tar':
             raise ValueError('Unexpected shard path')
-        if not archive.is_file() or archive.stat().st_size != receipt['bytes']:
-            raise ValueError('Committed shard missing/size mismatch: ' + archive.name)
+        if archive_proofs is None:
+            if not archive.is_file() or archive.stat().st_size != receipt['bytes']:
+                raise ValueError('Committed shard missing/size mismatch: ' + archive.name)
+        else:
+            # Explicit API metadata route: no fake/sparse TARs. The caller must
+            # match a durable full-hash receipt to current immutable Drive metadata.
+            proof = archive_proofs.get(archive.name, {})
+            if (proof.get('bytes') != receipt['bytes'] or proof.get('sha256') != receipt['sha256']
+                    or proof.get('receipt_sha256') != prep.sha(path)
+                    or proof.get('verified_current_metadata') is not True
+                    or not proof.get('id') or not proof.get('version')
+                    or not proof.get('md5Checksum')):
+                raise ValueError('API archive proof missing/mismatch: ' + archive.name)
         if not digest_valid(receipt['sha256']):
             raise ValueError('Invalid shard checksum')
         for row in receipt['images']:
@@ -99,10 +110,12 @@ def receipt_rows(source, expected, layout='flat'):
     if set(rows) != set(expected):
         missing = sorted(set(expected) - set(rows))
         raise ValueError('Incomplete committed cohort: %d missing; first IDs %s' % (len(missing), missing[:20]))
+    if archive_proofs is not None and set(archive_proofs) != {s['file'] for s in shards}:
+        raise ValueError('API archive proof set differs from committed receipts')
     return rows, shards
 
 
-def prepare(source, output, extraction_report, layout='kaggle-tar'):
+def prepare(source, output, extraction_report, layout='kaggle-tar', archive_proofs=None):
     source, output = Path(source).resolve(), Path(output).resolve()
     if source == output or source.is_relative_to(output) or output.is_relative_to(source):
         raise ValueError('Metadata output must be separate from original source/shards')
@@ -114,7 +127,7 @@ def prepare(source, output, extraction_report, layout='kaggle-tar'):
     complete = json.loads(extraction_report.read_text())
     if prep.sha(extraction_report) != reg['extraction_report_sha256']:
         raise ValueError('Original failed gate proof differs from approved cohort lineage')
-    rows, shards = receipt_rows(source, expected, layout)
+    rows, shards = receipt_rows(source, expected, layout, archive_proofs)
     # Original archive is not copied into the private training input.
     output.mkdir(parents=True, exist_ok=True)
     tsvdir = output / 'data/official_multimodal_v2'
@@ -168,6 +181,7 @@ def prepare(source, output, extraction_report, layout='kaggle-tar'):
         'utc': prep.now(), 'image_gate_passed': False,
         'shard_metadata_gate_passed': True, 'runtime_image_bytes_verified': False,
         'input_layout': layout,
+        'metadata_source': 'verified_Drive_API' if archive_proofs is not None else 'local_shards',
         'required': REQUIRED, 'split_counts': COUNTS, 'manifest_sha256': prep.sha(manifest),
         'shards': shards, 'image_bytes': sum(row['bytes'] for row in rows.values()),
         'cross_split_content_duplicate_groups': len(cross_split),
