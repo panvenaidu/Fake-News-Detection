@@ -1,6 +1,6 @@
 {
   "utc": "2026-10-25T19:59:28.087126+00:00",
-  "state": "corrected_cloud_continuation_started_first_archive_download",
+  "state": "live_private_cloud_transfer_recovery_verified",
   "cohort": "FACULTY-6W-USABLE-682170-v1",
   "token_generated": true,
   "token_value_saved_in_project": false,
@@ -27,19 +27,35 @@
     "phase": "stopped_recoverable",
     "private_drive_readback_verified": true
   },
-  "updated_utc": "2026-10-25T20:06:12.939744+00:00",
+  "updated_utc": "2026-10-25T20:09:43.687056+00:00",
   "full_continuation": {
     "submitted": true,
-    "process_verified": false,
+    "process_verified": true,
     "log": "/content/urop_kaggle_transfer_full_v2.log",
     "max_seconds": 14400,
     "finalize_private_after_all_41_uploads": true,
     "timeout_pid": 14122,
     "log_initial_recovery_files": 2,
-    "first_image_download_started": true
+    "first_image_download_started": true,
+    "python_pid": 14123,
+    "observed_process_state": "R",
+    "observed_elapsed": "02:42",
+    "private_drive_readback_phase": "running",
+    "private_drive_heartbeat": 1792958790.7101202,
+    "completed_files_at_readback": 3,
+    "completed_bytes_at_readback": 2516162560,
+    "next_file": "images_pack_153b942b3d7145049221696019aec966.tar",
+    "may_continue_independently": true,
+    "assistant_monitoring_after_turn": false
   },
   "metadata_files_uploaded": 2,
   "metadata_bytes_uploaded": 375306240,
   "stopped_cause_verified": "First image archive Drive version-only revision; name size MD5 unchanged",
-  "metadata_revision_policy": "Full pinned source SHA/MD5/size readback required before upload; original index unchanged"
+  "metadata_revision_policy": "Full pinned source SHA/MD5/size readback required before upload; original index unchanged",
+  "uploaded_blob_files_verified": 3,
+  "uploaded_blob_bytes_verified": 2516162560,
+  "private_dataset_created_verified": false,
+  "private_blob_retention_is_not_saved_dataset_persistence": true,
+  "evidence_screenshot": "results/mm_part1_direct_transfer_live_20261026.png",
+  "backup_commit_verified": "3e7b246973ca00d7cead7390be16f3116a165c06"
 }
