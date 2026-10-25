@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "empty resumable session remains incomplete",
+    "server acknowledged offset resumes correctly",
+    "errors and invalid ranges never become completion",
+    "private signed upload destination constrained to official HTTPS hosts",
+    "real41-file private index hash and cohort totals pass; tampering fails",
+    "completed server size mismatch fails",
+    "version-only revision requires full pinned-byte readback; changed name size MD5 hard-stop"
+  ],
+  "passed": 7,
+  "cloud_upload_executed": false,
+  "training": false
+}

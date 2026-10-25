@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-25T19:44:14.155036+00:00",
+  "state": "download_verified_and_moved",
+  "file": "images_pack_0d8cb3ef4c7847ff9eac07e6ea0ee4e2.tar",
+  "bytes": 2140856320,
+  "sha256": "4ca0d3906d5af0307ebd925a726df223974d7dedded2d76be4fe4b474e5402c1",
+  "local_path": "/Users/panveenaidu/Downloads/SEM7/UROP/data/official_paired_v2/kaggle_transfer/images_pack_0d8cb3ef4c7847ff9eac07e6ea0ee4e2.tar",
+  "files_verified": 1,
+  "required_transfer_files": 41,
+  "training": false
+}

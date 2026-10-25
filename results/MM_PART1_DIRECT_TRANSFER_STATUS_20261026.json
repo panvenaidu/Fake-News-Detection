@@ -1,0 +1,45 @@
+{
+  "utc": "2026-10-25T19:59:28.087126+00:00",
+  "state": "corrected_cloud_continuation_started_first_archive_download",
+  "cohort": "FACULTY-6W-USABLE-682170-v1",
+  "token_generated": true,
+  "token_value_saved_in_project": false,
+  "credential_input": "non-echoed approved Colab CPU terminal; runtime environment only",
+  "private_blob_state": "api_transport_v1/KAGGLE_PRIVATE_TRANSFER_V1.json",
+  "source": "collab/transfer_verified_packs_to_kaggle_v1.py",
+  "source_sha256": "dd41a5af0eed5ace2ce6f18b8dff8d5cc4910053f470f2b93c18eca1cf1d1ba2",
+  "libraries": {
+    "kagglehub": "1.0.2",
+    "kagglesdk": "0.1.37",
+    "kaggle": "2.0.2"
+  },
+  "full_kaggle_dataset_verified": false,
+  "training_epochs_completed": 0,
+  "full_validations_completed": 0,
+  "final_test_performed": false,
+  "goal_tool_returned_null": true,
+  "temporary_browser_upload_canceled": true,
+  "probe": {
+    "file": "data.tar",
+    "bytes": 375214080,
+    "completed": true,
+    "private_checkpoint_readback_pending": false,
+    "phase": "stopped_recoverable",
+    "private_drive_readback_verified": true
+  },
+  "updated_utc": "2026-10-25T20:06:12.939744+00:00",
+  "full_continuation": {
+    "submitted": true,
+    "process_verified": false,
+    "log": "/content/urop_kaggle_transfer_full_v2.log",
+    "max_seconds": 14400,
+    "finalize_private_after_all_41_uploads": true,
+    "timeout_pid": 14122,
+    "log_initial_recovery_files": 2,
+    "first_image_download_started": true
+  },
+  "metadata_files_uploaded": 2,
+  "metadata_bytes_uploaded": 375306240,
+  "stopped_cause_verified": "First image archive Drive version-only revision; name size MD5 unchanged",
+  "metadata_revision_policy": "Full pinned source SHA/MD5/size readback required before upload; original index unchanged"
+}

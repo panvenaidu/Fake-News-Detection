@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-25T14:19:09.930703+00:00",
+  "updated_utc": "2026-10-25T20:02:51.749321+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -78,7 +78,7 @@
         "validation": 0,
         "final_test_and_result_archive": 0
       },
-      "state": "All682170imagespacked;39archiveproofs/metadata/41filetransferindexverified;Chromeprivateinputtransferblocked;runtimeimagegate/GPUpreflight/trainingpending",
+      "state": "39archiveproofs_and_metadata_complete;direct_private_Kaggle_transfer_probe_and_recovery_passed;full_transfer_submitted;scientific_training_pending",
       "checkpoint_completion_percent": 40,
       "epochs_trained": 0,
       "epochs_validated": 0,
@@ -97,7 +97,9 @@
         "metadata_phase": "complete",
         "transfer_index_verified": true,
         "transfer_files": 41,
-        "transfer_bytes": 80584734720
+        "transfer_bytes": 80584734720,
+        "kaggle_transfer_verified_files": 1,
+        "kaggle_transfer_verified_bytes": 375214080
       }
     },
     "image_only": {
