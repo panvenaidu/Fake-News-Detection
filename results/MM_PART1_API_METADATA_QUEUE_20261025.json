@@ -1,6 +1,6 @@
 {
   "utc": "2026-10-25T04:59:55.579627+00:00",
-  "state": "prepared_not_submitted",
+  "state": "submitted_to_busy_kernel_execution_pending",
   "pack_cell": "TsntdBFXaDvn",
   "metadata_seconds": 1200,
   "only_after_images": 682170,
@@ -9,5 +9,10 @@
   "launch_sha256": "e96718a2cf6cde24fc01b62fc7edd200a6ec07982e5f59263fbad2847184ecaf",
   "recovery": "Same cloud scratch/private METADATA_JOB.json contains exact source/transport hashes, generation, acknowledged resumable state and completion receipt. No cloud originals deleted. A bounded incomplete pack causes metadata defer, not training. Inspect existing queue/control before resubmission. Upload session URIs remain private.",
   "training": false,
-  "test_inference": false
+  "test_inference": false,
+  "submitted_observed_utc": "2026-10-25T05:02:01.077138+00:00",
+  "cell": "NSTnGXJMbpAt",
+  "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=NSTnGXJMbpAt",
+  "source_commit": "a6cd1d3bb01f9416875a09f3030464699d257c91",
+  "observation": "Control+Return submitted; new cell has pending run circle with no execution count while the existing packing cell continues. No metadata output yet. Do not resubmit."
 }

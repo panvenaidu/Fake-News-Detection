@@ -1,14 +1,14 @@
 {
-  "updated_utc": "2026-10-25T04:59:55.534485+00:00",
+  "updated_utc": "2026-10-25T05:11:23.321691+00:00",
   "local_date": "2026-10-25",
   "state": "real_API_transport_live",
-  "goal_status": "User reported existing Goal resumed; supported API still blocked at latest check; manual turn authorized",
+  "goal_status": "active",
   "previous_goal_turn_classification": "Progress: created evidence-grounded status dashboard; did not train",
   "current_goal_turn_classification": "Progress: full original TSV/source joins passed; old archives being full-hash audited; API metadata bridge prepared and synthetic-tested",
   "cohort_id": "FACULTY-6W-USABLE-682170-v1",
   "approved_pairs": 682170,
-  "durable_packed_images": 356489,
-  "durable_packs": 20,
+  "durable_packed_images": 411208,
+  "durable_packs": 23,
   "scientific_epochs": 0,
   "full_validations": 0,
   "final_test": false,
@@ -86,9 +86,9 @@
     "results/MM_PART1_ORIGINAL_ARCHIVE_API_RANGE_20261025.json"
   ],
   "usage_observed": {
-    "short_remaining": 45,
-    "weekly_remaining": 11,
-    "utc": "2026-10-25T04:59:55.534485+00:00"
+    "short_remaining": 34,
+    "weekly_remaining": 9,
+    "utc": "2026-10-25T05:11:23.321691+00:00"
   },
   "next": "Inspect same cell/process/private control before continuation; never duplicate live packing. After the first durable transaction, verify terminal archive/receipt and recovery, then resume remaining lossless packing. Full private Kaggle input, actual runtime image SHA/decode, CUDA recovery/preflight, epochs1\u20132 and full validations remain pending. No Part1 final test.",
   "source_backup_commit": "7530a33c7a97ca3db70e0a8ed45348258ccf28b2",

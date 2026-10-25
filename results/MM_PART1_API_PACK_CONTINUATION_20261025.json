@@ -1,6 +1,6 @@
 {
   "utc": "2026-10-25T04:53:28.869483+00:00",
-  "state": "continuation_prepared_not_yet_launched",
+  "state": "live_observed_advancing_commits",
   "predecessor": "CPU_API_PACK_af175d22e92d4a0caecf8a850bf94a3f",
   "first_pack_recovery": "results/MM_PART1_FIRST_API_PACK_RECOVERY_20261025.json",
   "audit_seconds": 1800,
@@ -18,5 +18,11 @@
       "sha256": "9a9f861fa14f9e941e567090595dba7e54769cc89b694c2db824999752a9f60e"
     }
   ],
-  "recovery": "Only closed archive commits count. Private pending receipt/upload state permits at most one pack rebuild. Existing19packs, original150source shards, TSVs and model results retained. Inspect actual terminal/process/control before any next launch."
+  "recovery": "Only closed archive commits count. Private pending receipt/upload state permits at most one pack rebuild. Existing19packs, original150source shards, TSVs and model results retained. Inspect actual terminal/process/control before any next launch.",
+  "observed_utc": "2026-10-25T05:11:23.362782+00:00",
+  "cell": "TsntdBFXaDvn",
+  "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=TsntdBFXaDvn",
+  "release_utc": "2026-10-25T04:53:51.693255+00:00",
+  "source_commit": "f8175f65a390c442a34e705dfb20dbe36c07756a",
+  "latest_receipt": "results/MM_PART1_API_PACK_JOB_20261025.json"
 }

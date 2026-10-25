@@ -653,6 +653,135 @@
       "required": 682170,
       "packed_shards": 20,
       "new_packs": 1
+    },
+    {
+      "utc": "2026-10-25T05:00:28.394335+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_a1c5c56c24ad403d82c17c5e2f68afb1_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 10220445
+    },
+    {
+      "utc": "2026-10-25T05:00:58.671812+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_a1c5c56c24ad403d82c17c5e2f68afb1.tar",
+      "bytes": 268435456,
+      "total": 2142248960
+    },
+    {
+      "utc": "2026-10-25T05:01:28.899489+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_a1c5c56c24ad403d82c17c5e2f68afb1.tar",
+      "bytes": 1207959552,
+      "total": 2142248960
+    },
+    {
+      "utc": "2026-10-25T05:01:59.097763+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_a1c5c56c24ad403d82c17c5e2f68afb1.tar",
+      "bytes": 2105540608,
+      "total": 2142248960
+    },
+    {
+      "utc": "2026-10-25T05:02:14.275643+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 374718,
+      "required": 682170,
+      "packed_shards": 21,
+      "new_packs": 2
+    },
+    {
+      "utc": "2026-10-25T05:03:30.793932+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_facd10b33325498eb5c35a76a514971e_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 10216430
+    },
+    {
+      "utc": "2026-10-25T05:04:00.873037+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_facd10b33325498eb5c35a76a514971e.tar",
+      "bytes": 268435456,
+      "total": 2142730240
+    },
+    {
+      "utc": "2026-10-25T05:04:31.201540+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_facd10b33325498eb5c35a76a514971e.tar",
+      "bytes": 1191182336,
+      "total": 2142730240
+    },
+    {
+      "utc": "2026-10-25T05:05:01.255434+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_facd10b33325498eb5c35a76a514971e.tar",
+      "bytes": 2097152000,
+      "total": 2142730240
+    },
+    {
+      "utc": "2026-10-25T05:05:17.136704+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 392928,
+      "required": 682170,
+      "packed_shards": 22,
+      "new_packs": 3
+    },
+    {
+      "utc": "2026-10-25T05:06:27.491790+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_be5743a12abb42959d4a2d8a43964208_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 10248935
+    },
+    {
+      "utc": "2026-10-25T05:06:57.842271+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_be5743a12abb42959d4a2d8a43964208.tar",
+      "bytes": 251658240,
+      "total": 2142453760
+    },
+    {
+      "utc": "2026-10-25T05:07:28.148578+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_be5743a12abb42959d4a2d8a43964208.tar",
+      "bytes": 1166016512,
+      "total": 2142453760
+    },
+    {
+      "utc": "2026-10-25T05:07:58.174558+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_be5743a12abb42959d4a2d8a43964208.tar",
+      "bytes": 2088763392,
+      "total": 2142453760
+    },
+    {
+      "utc": "2026-10-25T05:08:14.435598+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 411208,
+      "required": 682170,
+      "packed_shards": 23,
+      "new_packs": 4
+    },
+    {
+      "utc": "2026-10-25T05:09:26.722337+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_7b52825cf2024161b484649b6e598d86_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 10101775
+    },
+    {
+      "utc": "2026-10-25T05:09:56.976525+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_7b52825cf2024161b484649b6e598d86.tar",
+      "bytes": 268435456,
+      "total": 2142832640
+    },
+    {
+      "utc": "2026-10-25T05:10:26.978536+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_7b52825cf2024161b484649b6e598d86.tar",
+      "bytes": 1166016512,
+      "total": 2142832640
     }
   ]
 }

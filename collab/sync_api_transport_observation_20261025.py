@@ -9,6 +9,7 @@ parser=argparse.ArgumentParser()
 parser.add_argument('--short',type=int,required=True)
 parser.add_argument('--weekly',type=int,required=True)
 parser.add_argument('--cell',required=True)
+parser.add_argument('--goal-status',choices=['active','blocked','paused'],required=True)
 args=parser.parse_args()
 if not 0<=args.short<=100 or not 0<=args.weekly<=100:raise ValueError('Invalid actual allowance')
 now=datetime.now(timezone.utc).isoformat()
@@ -47,7 +48,7 @@ next_action=('Inspect same cell/process/private control before continuation; nev
              'image SHA/decode, CUDA recovery/preflight, epochs1–2 and full validations remain pending. No Part1 final test.')
 recovery=read('results/MM_PART1_RECOVERY_PROGRESS_20261025.json')
 recovery.update(updated_utc=now,state=state,durable_packed_images=images,durable_packs=packs,
-                goal_status='User reported existing Goal resumed; supported API still blocked at latest check; manual turn authorized',
+                goal_status=args.goal_status,
                 full_source_inventory_passed=bool(joined),source_metadata_inventory_passed=True,
                 no_active_packing_or_training_job=not live,independent_job_running=live,next=next_action,
                 usage_observed={'short_remaining':args.short,'weekly_remaining':args.weekly,'utc':now},
@@ -85,8 +86,8 @@ text=(f'{now}: Full682170original TSV/source metadata joins passed. Prior pack a
       'Source/bundle/pid/boot/cell in results/MM_PART1_API_PACK_JOB_20261025.json. '
       'Metadata API bridge15synthetic guards and existing six-image runtime-gate regression passed; '
       'adapter not cloud executed. Scientific0/2epochs,0/2fullvalidations,test0; bars100/40/20/53 unchanged. '
-      'Five-hour reserve applies; weekly monitored as total availability. User reported Goal resumed, '
-      'but supported API stillblocked at last check; manual authorized work continues. '+next_action)
+      'Five-hour reserve applies; weekly monitored as total availability. '
+      f'Supported Goal API verified {args.goal_status}; existing Goal preserved. '+next_action)
 for relative in ['context/RESUME_HERE.md','context/PROJECT_CONTEXT.md','context/DECISIONS.md','context/EXPERIMENT_LOG.md',
                  'context/TASK_REPORT.md','context/MM_PART1_RESUME_CHECKPOINT_20261023.md','collab/COLAB_WORKLOG.md',
                  'work_logs/MODEL_STATUS.md','README.md','results/PROGRESS_TRACKER.md']:
