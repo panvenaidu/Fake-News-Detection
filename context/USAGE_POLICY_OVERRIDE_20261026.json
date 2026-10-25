@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-26",
+  "status": "explicit_user_override",
+  "five_hour_stop_percent": 5,
+  "supersedes": "20 percent reserve and 10 percent handoff rules",
+  "instruction": "Use allowance until 5 percent; prepare and save a recovery checkpoint at that boundary, update project records and push appropriate files to GitHub. Resume later. Weekly availability remains a ceiling.",
+  "scientific_protocol_changed": false
+}

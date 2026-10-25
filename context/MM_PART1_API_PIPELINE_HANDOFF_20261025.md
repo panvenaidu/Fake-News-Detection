@@ -1,3 +1,11 @@
+<!-- CURRENT PART1 CHECKPOINT 20261026 -->
+**26 October checkpoint:** All682170approved images packed;39/39archive proofs and2metadata packages complete. Private41-file transfer index (80,584,734,720bytes) retrieved to ignored data/official_paired_v2 and SHA-verified. BERT warm-start SHA matches registration. No repeated extraction/repacking/audit. Chrome blocked first pack download with ERR_BLOCKED_BY_CLIENT; user handoff requested. Kaggle editor became blank and extension debugger unattached. No GPU allocated, scientific epochs0/2 and full validations0/2. New user5percentprimary hardstop supersedes old20/10rules. Exact evidence: results/MM_PART1_PREPARATION_VERIFIED_20261026.json. Next: resolve browser access, stage exact private Kaggle input, full image/runtime/preflight gates, then train/validate epochs1-2.
+<!-- /CURRENT PART1 CHECKPOINT 20261026 -->
+
+# Current continuation, 26 October 2026
+
+New user allowance rule: use primary allowance until 5 percent, checkpoint/handoff at that boundary; old20/10stops superseded. New runtime read of private METADATA_JOB_V2.json verified phase complete,39archive proofs,data/results packages and receipt present. No transfer index existed; guarded v2 exporter submitted now. Do not repeat any archive hash audit, packing or extraction. Kaggle training still pending. Goal tool returned no current Goal; do not create a duplicate.
+
 # Current checkpoint, 25 October 2026
 
 **Primary-allowance handoff, 14:33:03 UTC:** five-hour assistant allowance is **9% remaining**, below the user-requested 10% pause threshold. Same Colab CPU PID 7632 was verified alive (`S`, elapsed 04:27) and `job_fix.log` advanced to **13/39** proofs. No training or full validation has started. The process is bounded to 30 minutes from 14:28 UTC and writes each proof to private `api_transport_v1/METADATA_JOB_V2.json`; it may continue independently, but final completion is unverified. After allowance resets and the user resumes the existing Goal, inspect current process/log and private job/receipt before any retry. Do not duplicate image packing, metadata audit or training. If metadata succeeds, run the guarded v2 private transfer index; then stage/verify full Kaggle input and complete the Part 1 runtime and 2-epoch gates. Preserve all existing outputs and no final test.

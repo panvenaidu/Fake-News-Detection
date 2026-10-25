@@ -1,0 +1,36 @@
+{
+  "updated_utc": "2026-10-25T19:25:47.220711+00:00",
+  "local_date": "2026-10-26",
+  "state": "metadata_and_transfer_index_verified_cloud_browser_staging_blocked",
+  "cohort": "FACULTY-6W-USABLE-682170-v1",
+  "approved_images": 682170,
+  "archive_proofs": 39,
+  "metadata_phase": "complete",
+  "metadata_packages": [
+    "data",
+    "results"
+  ],
+  "transfer_files": 41,
+  "transfer_bytes": 80584734720,
+  "transfer_index_sha256": "5608291805e241d662d24db576d860a129d995e45b7a31b3651130f1a73780ee",
+  "private_index_local": "data/official_paired_v2/KAGGLE_TRANSFER_MANIFEST_V2.json",
+  "warmstart_sha256_verified": "870bea50fa608dddd20421c21fd1786e244b1323e22734093214b87023666753",
+  "image_runtime_gate_passed": false,
+  "part1_train_epochs": 0,
+  "part1_full_validations": 0,
+  "final_test": false,
+  "GPU_allocated": false,
+  "blockers": [
+    "Chrome blocked first archive transfer: ERR_BLOCKED_BY_CLIENT; human handoff requested, no bypass",
+    "Kaggle editor blank after reload; Chrome extension reports Debugger unattached; native AX old elements have no frame"
+  ],
+  "next": "Resolve browser transfer/control access; stage immutable private Kaggle input using exact 41-file index, verify full image byte/hash/decode gate, run CUDA/recovery/throughput gates, then registered epochs1-2/full validation. Do not repeat extraction, packing or metadata hashing.",
+  "usage_policy": "Primary5percenthardstop; prepare checkpoint before boundary. Older20/10thresholds superseded.",
+  "goal_API": "No current Goal returned; no duplicate created",
+  "progress": {
+    "text_only": 100,
+    "text_plus_image": 40,
+    "image_only": 20,
+    "overall": 53
+  }
+}

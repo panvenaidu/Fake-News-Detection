@@ -78,7 +78,7 @@
         "validation": 0,
         "final_test_and_result_archive": 0
       },
-      "state": "Approved682170usablecohortregistered;v2trainer/recovery/evidencechecksPASS;CPUtransportpreparationinprogress;runtimefullimagegate/realGPUpreflightandscientifictrainingpending",
+      "state": "All682170imagespacked;39archiveproofs/metadata/41filetransferindexverified;Chromeprivateinputtransferblocked;runtimeimagegate/GPUpreflight/trainingpending",
       "checkpoint_completion_percent": 40,
       "epochs_trained": 0,
       "epochs_validated": 0,
@@ -92,7 +92,12 @@
         "training_epochs_completed": 0,
         "full_validations_completed": 0,
         "final_test_performed": false,
-        "note": "Transport percentage is not workflow or scientific completion"
+        "note": "Transport percentage is not workflow or scientific completion",
+        "archive_proofs": 39,
+        "metadata_phase": "complete",
+        "transfer_index_verified": true,
+        "transfer_files": 41,
+        "transfer_bytes": 80584734720
       }
     },
     "image_only": {

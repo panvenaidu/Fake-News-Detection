@@ -1,3 +1,7 @@
+<!-- CURRENT PART1 CHECKPOINT 20261026 -->
+**26 October checkpoint:** All682170approved images packed;39/39archive proofs and2metadata packages complete. Private41-file transfer index (80,584,734,720bytes) retrieved to ignored data/official_paired_v2 and SHA-verified. BERT warm-start SHA matches registration. No repeated extraction/repacking/audit. Chrome blocked first pack download with ERR_BLOCKED_BY_CLIENT; user handoff requested. Kaggle editor became blank and extension debugger unattached. No GPU allocated, scientific epochs0/2 and full validations0/2. New user5percentprimary hardstop supersedes old20/10rules. Exact evidence: results/MM_PART1_PREPARATION_VERIFIED_20261026.json. Next: resolve browser access, stage exact private Kaggle input, full image/runtime/preflight gates, then train/validate epochs1-2.
+<!-- /CURRENT PART1 CHECKPOINT 20261026 -->
+
 <!-- 2026-10-25 METADATA V2 RECOVERY -->
 **Current multimodal Part 1 status (25 Oct, 14:30 UTC):** Faculty usable cohort images are packed (682,170/682,170); private metadata archive audit reached 7/39 observed proofs and remains incomplete. Full Kaggle input, runtime image verification, and Part 1 two training epochs/two full validations are pending. See `context/MM_PART1_API_PIPELINE_HANDOFF_20261025.md` for exact recovery.
 

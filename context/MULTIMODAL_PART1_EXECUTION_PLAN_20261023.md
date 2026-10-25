@@ -1,3 +1,6 @@
+<!-- LATEST USER USAGE OVERRIDE 20261026 -->
+Primary allowance may be used until5percent; prepare/save verified handoff by that boundary and stop. Earlier20percentreserve/10percentpause rules are superseded. Weekly availability remains a ceiling. See context/USAGE_POLICY_OVERRIDE_20261026.json. Scientific scope unchanged.
+
 <!-- USER USAGE POLICY OVERRIDE -->
 2026-10-25T04:15:24.900979+00:00: User explicitly instructed continuing and applying20%reserve/10%handoff/5%hardstop to the **five-hour primary allowance only** (called daily/firewall by user). Weekly balance is a hard availability constraint to avoid exhausting it, not a20%reserve trigger. Current primary92%,weekly18%. This supersedes earlier smaller-balance instructions and reserve-block notes. No dataset/model/split/test policy change. Exact instruction `context/USAGE_POLICY_OVERRIDE_20261025.json`. Existing Goal API initially stillBLOCKED; manual authorized work continues without creating another Goal. Next: verified lossless API transport; never restart failed DriveFS or extraction.
 <!-- /USER USAGE POLICY OVERRIDE -->
