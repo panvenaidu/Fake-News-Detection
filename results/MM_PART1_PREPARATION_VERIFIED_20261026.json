@@ -32,5 +32,13 @@
     "text_plus_image": 40,
     "image_only": 20,
     "overall": 53
+  },
+  "Kaggle_recovery_attempt": {
+    "fresh_editor_tab": 719303086,
+    "text_recovery_output_add_requested": true,
+    "Remove_control_observed": true,
+    "attachment_persistence_and_version_verified": false,
+    "editor": "Loading; code cells unavailable",
+    "GPU_allocated": false
   }
 }
