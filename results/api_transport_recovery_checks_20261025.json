@@ -1,0 +1,30 @@
+{
+  "state": "offline_api_transport_recovery_checks_passed",
+  "cases": [
+    "interrupted_download_exact_offset",
+    "wrong_range_rejected",
+    "conflicting_scratch_preserved",
+    "upload_full_integrity",
+    "upload_partial_acceptance_recovery",
+    "bad_server_acknowledgements_rejected",
+    "unsafe_members_rejected",
+    "normal_exact_recovery",
+    "response_lost_exact_recovery",
+    "scratch_lost_before_archive_upload_exact_recovery",
+    "already_committed_receipt_exact_recovery"
+  ],
+  "count": 11,
+  "real_network": false,
+  "credentials_accessed": false,
+  "scientific_training": false,
+  "sources": [
+    {
+      "path": "collab/drive_api_storage_v1.py",
+      "sha256": "d7603e6bad1af1560a9422caccf7846de0ca73e37b4d10cbb6249744c2568be4"
+    },
+    {
+      "path": "collab/pack_usable_images_api_v1.py",
+      "sha256": "9adbb9f1b00aaeaed5fc35de8dc23b3574f20b9a0af601b25b51737bcf5a2e54"
+    }
+  ]
+}

@@ -1,3 +1,7 @@
+<!-- USER USAGE POLICY OVERRIDE -->
+2026-10-25T04:15:24.900979+00:00: User explicitly instructed continuing and applying20%reserve/10%handoff/5%hardstop to the **five-hour primary allowance only** (called daily/firewall by user). Weekly balance is a hard availability constraint to avoid exhausting it, not a20%reserve trigger. Current primary92%,weekly18%. This supersedes earlier smaller-balance instructions and reserve-block notes. No dataset/model/split/test policy change. Exact instruction `context/USAGE_POLICY_OVERRIDE_20261025.json`. Existing Goal API initially stillBLOCKED; manual authorized work continues without creating another Goal. Next: verified lossless API transport; never restart failed DriveFS or extraction.
+<!-- /USER USAGE POLICY OVERRIDE -->
+
 # User-approved cohort amendment — 24 October 2026
 
 The user explicitly approved Option1 (682170usable original faculty image-text pairs, same official splits/six labels,491documented strict-decoding exclusions). This amendment supersedes ALL all-682661-usable and564000/59342/59319 evaluation/training row requirements later in this historical plan, including example commands and counts. The three ORIGINAL TSVs remain untouched at those full counts. New accepted scientific membership is563601train /59299validation /59270publictest, EXACTLY as pinned in results/MM_PART1_USABLE_COHORT_REGISTRATION_20261024.json (SHA3fe0b622958a1eee6732789d4f7acf6b450c0e3bda87312e5cbb6500fb405ce5). All other scientific, recovery, cloud, reserve, no-test-in-Part1 and reporting safeguards remain binding.

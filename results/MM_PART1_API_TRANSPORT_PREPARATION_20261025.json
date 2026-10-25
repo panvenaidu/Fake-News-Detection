@@ -1,0 +1,25 @@
+{
+  "utc": "2026-10-25T04:24:51.066391+00:00",
+  "state": "prepared_reviewed_source_not_yet_cloud_deployed",
+  "bundle": "data/official_paired_v2/UROP_API_TRANSPORT_SOURCE_20261025.zip",
+  "bytes": 12788,
+  "sha256": "e9efc3742d3a3e618f1689e922da991c94bb91c2428fc6f537c9c0330a4c1b96",
+  "files": [
+    {
+      "path": "collab/drive_api_storage_v1.py",
+      "sha256": "d7603e6bad1af1560a9422caccf7846de0ca73e37b4d10cbb6249744c2568be4"
+    },
+    {
+      "path": "collab/pack_usable_images_api_v1.py",
+      "sha256": "9adbb9f1b00aaeaed5fc35de8dc23b3574f20b9a0af601b25b51737bcf5a2e54"
+    },
+    {
+      "path": "scripts/usable_cohort_v2.py",
+      "sha256": "22bff1eb0fa14d102ad07786f936c5c1ed1582ec7bd5cee2b8e8dc5eb3520092"
+    }
+  ],
+  "checks": "results/api_transport_recovery_checks_20261025.json",
+  "deployment_cell": "collab/deploy_api_transport_source_20261025.py",
+  "scientific_source_unchanged": true,
+  "training": false
+}

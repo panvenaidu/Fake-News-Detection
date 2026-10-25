@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-25T04:09:26.752532+00:00",
+  "updated_utc": "2026-10-25T04:15:24.900979+00:00",
   "local_date": "2026-10-25",
-  "state": "API_recovery_saved_Goal_blocked_weekly_reserve_choice_pending",
+  "state": "user_authorized_five_hour_policy_API_transport_resuming",
   "goal_status": "blocked_verified_after_third_resumed_observation",
   "previous_goal_turn_classification": "Progress: created evidence-grounded status dashboard; did not train",
   "current_goal_turn_classification": "No progress: supported Goal blocked after fresh3turn reserve audit; user decision still pending.",
@@ -91,8 +91,9 @@
   "source_backup_commit": "7530a33c7a97ca3db70e0a8ed45348258ccf28b2",
   "no_active_packing_or_training_job": true,
   "source_metadata_inventory_passed": true,
-  "reserve_state": "20percent_checkpoint_reserve_no_new_long_jobs",
+  "reserve_state": "five_hour_thresholds_only_per_user_override",
   "backup_receipt": "results/MM_PART1_API_RECOVERY_GIT_BACKUP_20261025.json",
   "independent_job_running": false,
-  "reserve_audit": "results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json"
+  "reserve_audit": "results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json",
+  "usage_policy_override": "context/USAGE_POLICY_OVERRIDE_20261025.json"
 }

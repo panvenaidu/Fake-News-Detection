@@ -1,0 +1,13 @@
+{
+  "utc": "2026-10-25T04:15:24.900979+00:00",
+  "status": "explicit_user_override",
+  "user_instruction": "Do not consider the weekly limit. Only consider the daily limit (I mean the firewall's limit). Do not exceed the weekly limit, okay? And continue the work.",
+  "interpretation": "Apply20percentreserve/10percenthandoff/5percenthardstop to five-hour primary allowance only. Weekly balance is monitored as a hard availability constraint; no20percentweekly reserve. Never purchase/reset credits or knowingly exhaust the weekly allowance.",
+  "current_usage_remaining": {
+    "five_hour": 92,
+    "weekly": 18
+  },
+  "supersedes": "Earlier smaller-of-short-and-weekly reserve rule, for continued authorized UROP work",
+  "goal_API_status": "blocked at initial check; current manual work authorized; no duplicate Goal",
+  "scientific_scope_changed": false
+}

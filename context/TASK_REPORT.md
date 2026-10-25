@@ -1,3 +1,7 @@
+<!-- USER USAGE POLICY OVERRIDE -->
+2026-10-25T04:15:24.900979+00:00: User explicitly instructed continuing and applying20%reserve/10%handoff/5%hardstop to the **five-hour primary allowance only** (called daily/firewall by user). Weekly balance is a hard availability constraint to avoid exhausting it, not a20%reserve trigger. Current primary92%,weekly18%. This supersedes earlier smaller-balance instructions and reserve-block notes. No dataset/model/split/test policy change. Exact instruction `context/USAGE_POLICY_OVERRIDE_20261025.json`. Existing Goal API initially stillBLOCKED; manual authorized work continues without creating another Goal. Next: verified lossless API transport; never restart failed DriveFS or extraction.
+<!-- /USER USAGE POLICY OVERRIDE -->
+
 <!-- CURRENT RESUMED GOAL BLOCKED -->
 2026-10-25T04:09:26.752532+00:00: Supported Goal status **BLOCKED**, after3consecutive observations in this resumed sequence. Short94% / weekly19%; registered20%weeklyreserve applies and explicit override question remains unanswered. No newjob/scientificprogress; packing319820/18,scientific0/2epochs/0/2validations,test0. Recovery and original data preserved. Resume the SAME Goal only after allowance recovers above20% or the user explicitly changes the reserve rule; do not repeat polling/commit cycles or create another Goal. Audit `results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json`; exact recovery `results/MM_PART1_RECOVERY_PROGRESS_20261025.json`. Older active/blocked counts below are historical.
 <!-- /CURRENT RESUMED GOAL BLOCKED -->
