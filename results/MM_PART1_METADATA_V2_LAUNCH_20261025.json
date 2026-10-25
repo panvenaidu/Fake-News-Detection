@@ -1,0 +1,20 @@
+{
+  "observed_utc": "2026-10-25T14:25:09Z",
+  "state": "running_observed_not_complete",
+  "platform": "Colab CPU",
+  "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU",
+  "process_pid": 6362,
+  "bound_seconds": 1800,
+  "source_bundle_sha256": "298e84efe8493efb91146e0b916eada7a626d706473ebd06568b1a0344206235",
+  "source_bundle_files": 7,
+  "source_compiled": true,
+  "log_observed_archives": 2,
+  "required_archives": 39,
+  "private_checkpoint": "api_transport_v1/METADATA_JOB_V2.json",
+  "log_path_cloud": "/content/urop_metadata_bridge_v2_run/job.log",
+  "scientific_epochs": 0,
+  "full_validations": 0,
+  "training": false,
+  "image_runtime_gate_passed": false,
+  "next": "Inspect live process/log and private v2 proof count before any retry. Do not launch another audit concurrently. Verify final metadata receipt before transfer index."
+}
