@@ -1013,6 +1013,150 @@
       "required": 682170,
       "packed_shards": 30,
       "new_packs": 11
+    },
+    {
+      "utc": "2026-10-25T05:30:34.713999+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_3ab562e3f2d74fde8fe5f909a3ea1713_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 9869597
+    },
+    {
+      "utc": "2026-10-25T05:31:05.054136+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_3ab562e3f2d74fde8fe5f909a3ea1713.tar",
+      "bytes": 251658240,
+      "total": 2142791680
+    },
+    {
+      "utc": "2026-10-25T05:31:35.086301+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_3ab562e3f2d74fde8fe5f909a3ea1713.tar",
+      "bytes": 1166016512,
+      "total": 2142791680
+    },
+    {
+      "utc": "2026-10-25T05:32:05.168470+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_3ab562e3f2d74fde8fe5f909a3ea1713.tar",
+      "bytes": 2080374784,
+      "total": 2142791680
+    },
+    {
+      "utc": "2026-10-25T05:32:21.362330+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 555507,
+      "required": 682170,
+      "packed_shards": 31,
+      "new_packs": 12
+    },
+    {
+      "utc": "2026-10-25T05:33:33.565704+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_f534fad1956e4210b4944fe4edea12fb_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 10082145
+    },
+    {
+      "utc": "2026-10-25T05:34:03.658178+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_f534fad1956e4210b4944fe4edea12fb.tar",
+      "bytes": 285212672,
+      "total": 2142208000
+    },
+    {
+      "utc": "2026-10-25T05:34:33.954803+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_f534fad1956e4210b4944fe4edea12fb.tar",
+      "bytes": 1199570944,
+      "total": 2142208000
+    },
+    {
+      "utc": "2026-10-25T05:35:04.019384+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_f534fad1956e4210b4944fe4edea12fb.tar",
+      "bytes": 2130706432,
+      "total": 2142208000
+    },
+    {
+      "utc": "2026-10-25T05:35:18.997705+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 573491,
+      "required": 682170,
+      "packed_shards": 32,
+      "new_packs": 13
+    },
+    {
+      "utc": "2026-10-25T05:36:32.972172+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_51c74bf7eaa84197961036740f5abc2e_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 9782791
+    },
+    {
+      "utc": "2026-10-25T05:37:03.049352+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_51c74bf7eaa84197961036740f5abc2e.tar",
+      "bytes": 260046848,
+      "total": 2142822400
+    },
+    {
+      "utc": "2026-10-25T05:37:33.244737+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_51c74bf7eaa84197961036740f5abc2e.tar",
+      "bytes": 1182793728,
+      "total": 2142822400
+    },
+    {
+      "utc": "2026-10-25T05:38:03.359062+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_51c74bf7eaa84197961036740f5abc2e.tar",
+      "bytes": 2130706432,
+      "total": 2142822400
+    },
+    {
+      "utc": "2026-10-25T05:38:17.539356+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 590939,
+      "required": 682170,
+      "packed_shards": 33,
+      "new_packs": 14
+    },
+    {
+      "utc": "2026-10-25T05:39:29.163160+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_3d258bc4369340239b6aeed73277be8e_pending.receipt.json",
+      "bytes": 8388608,
+      "total": 10038855
+    },
+    {
+      "utc": "2026-10-25T05:39:59.515966+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_3d258bc4369340239b6aeed73277be8e.tar",
+      "bytes": 251658240,
+      "total": 2142709760
+    },
+    {
+      "utc": "2026-10-25T05:40:29.747461+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_3d258bc4369340239b6aeed73277be8e.tar",
+      "bytes": 1166016512,
+      "total": 2142709760
+    },
+    {
+      "utc": "2026-10-25T05:40:59.785472+00:00",
+      "state": "upload_progress",
+      "file": "images_pack_3d258bc4369340239b6aeed73277be8e.tar",
+      "bytes": 2105540608,
+      "total": 2142709760
+    },
+    {
+      "utc": "2026-10-25T05:41:15.196892+00:00",
+      "state": "api_pack_committed",
+      "images_committed": 608835,
+      "required": 682170,
+      "packed_shards": 34,
+      "new_packs": 15
     }
   ]
 }

@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-25T05:42:14.900539+00:00",
+  "state": "essential_handoff_prepared_for_user10percent_pause",
+  "usage_observed": {
+    "short_remaining": 11,
+    "weekly_remaining": 6,
+    "utc": "2026-10-25T05:42:14.819292+00:00"
+  },
+  "current_goal_status": "active observed; call supported pause only at user10percent boundary after verified backup",
+  "scientific_epochs": 0,
+  "full_validations": 0,
+  "final_test": false,
+  "durable_packed_images": 608835,
+  "durable_archives": 34,
+  "required": 682170,
+  "latest_commit_utc": "2026-10-25T05:41:15.196892+00:00",
+  "packing_cell": "TsntdBFXaDvn",
+  "metadata_submitted_cell": "NSTnGXJMbpAt",
+  "index_submitted_cell": "GlyMDaD-e-AL",
+  "kernel_pid": 4387,
+  "boot_id": "5e215fb9-807d-4c5f-9eeb-03276837af96",
+  "live_proof": "Timestamped upload bytes advanced to2105540608 then archive committed608835/34; not inferred from spinner or lock",
+  "model_checkpoint_applicability": "No scientific multimodal training started; no real multimodal optimizer/scheduler/scaler state exists yet. Existing completed text checkpoints and all original data preserved.",
+  "transport_recovery": "Private api_transport_v1/STATE.json and committed archive+receipt pairs; pending receipt durable before upload; exact resumable URI private. Scratch-loss replay bounded to one uncommitted pack from preserved sources.",
+  "pipeline_limits": "Packing3600s after setup/audit1800s; submitted metadata1200s only after phasecomplete682170; index600s only after completed metadata generation. Do not duplicate or restart based on old UI output.",
+  "next": "Inspect current job/control and both queued cells after allowance recovers. Verify eventual full transport/metadata/index, retrieve private transfer manifest into ignored data/, stage full private Kaggle input, verify all image bytes/decode, actual CUDA/preflight, then train/fullvalidateepochs1\u20132. No final test in Part1.",
+  "no_monitoring_after_stop_claimed": true,
+  "verified_backup_parent": "95526625b4bb7b41519bf803e6646513bc3ede1f"
+}

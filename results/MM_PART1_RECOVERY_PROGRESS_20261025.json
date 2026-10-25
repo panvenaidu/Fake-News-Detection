@@ -1,14 +1,14 @@
 {
-  "updated_utc": "2026-10-25T05:30:22.531094+00:00",
+  "updated_utc": "2026-10-25T05:42:14.819292+00:00",
   "local_date": "2026-10-25",
   "state": "real_API_transport_live",
   "goal_status": "active",
-  "previous_goal_turn_classification": "Progress: verified recovery/continuation/metadata and Git backup",
-  "current_goal_turn_classification": "progress and verified wait on same live packing cell; new archive commits observed",
+  "previous_goal_turn_classification": "Progress: saved30durable archives and verified reserve backup",
+  "current_goal_turn_classification": "Verified wait and essential checkpoint: same live CPU job advanced to608835/34; no new lengthy job/GPU/model experiment",
   "cohort_id": "FACULTY-6W-USABLE-682170-v1",
   "approved_pairs": 682170,
-  "durable_packed_images": 537904,
-  "durable_packs": 30,
+  "durable_packed_images": 608835,
+  "durable_packs": 34,
   "scientific_epochs": 0,
   "full_validations": 0,
   "final_test": false,
@@ -86,15 +86,15 @@
     "results/MM_PART1_ORIGINAL_ARCHIVE_API_RANGE_20261025.json"
   ],
   "usage_observed": {
-    "short_remaining": 20,
-    "weekly_remaining": 7,
-    "utc": "2026-10-25T05:30:22.531094+00:00"
+    "short_remaining": 11,
+    "weekly_remaining": 6,
+    "utc": "2026-10-25T05:42:14.819292+00:00"
   },
   "next": "Inspect same cell/process/private control before continuation; never duplicate live packing. After the first durable transaction, verify terminal archive/receipt and recovery, then resume remaining lossless packing. Full private Kaggle input, actual runtime image SHA/decode, CUDA recovery/preflight, epochs1\u20132 and full validations remain pending. No Part1 final test.",
   "source_backup_commit": "7530a33c7a97ca3db70e0a8ed45348258ccf28b2",
   "no_active_packing_or_training_job": false,
   "source_metadata_inventory_passed": true,
-  "reserve_state": "five_hour_primary20percent_reserve",
+  "reserve_state": "essential_handoff_for_user10percent_pause",
   "backup_receipt": "results/MM_PART1_API_RECOVERY_GIT_BACKUP_20261025.json",
   "independent_job_running": true,
   "reserve_audit": "results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json",
@@ -108,5 +108,6 @@
     "RAM_GiB_approx": 12.67
   },
   "transfer_index_queue": "results/MM_PART1_API_TRANSFER_INDEX_QUEUE_20261025.json",
-  "reserve_receipt": "results/MM_PART1_PRIMARY20_RESERVE_20261025.json"
+  "reserve_receipt": "results/MM_PART1_PRIMARY20_RESERVE_20261025.json",
+  "ten_percent_handoff": "results/MM_PART1_PRIMARY10_HANDOFF_20261025.json"
 }
