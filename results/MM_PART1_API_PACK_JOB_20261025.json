@@ -1,39 +1,30 @@
 {
-  "utc": "2026-10-25T04:52:46.656423+00:00",
-  "state": "api_transport_terminal",
-  "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=cz6Cgm4DUm8r",
-  "cell": "cz6Cgm4DUm8r",
+  "utc": "2026-10-25T04:59:55.534485+00:00",
+  "state": "real_API_transport_live",
+  "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=TsntdBFXaDvn",
+  "cell": "TsntdBFXaDvn",
   "runtime_pid": 4387,
   "boot_id": "5e215fb9-807d-4c5f-9eeb-03276837af96",
-  "registered_job_id": "CPU_API_PACK_af175d22e92d4a0caecf8a850bf94a3f",
-  "source_commit": "9e5e63c3013b38dded9cafd68f26933acff21776",
+  "registered_job_id": "Retrieve from private api_transport_v1/STATE.json or current terminal output; not printed yet",
+  "source_commit": "f8175f65a390c442a34e705dfb20dbe36c07756a",
   "bundle_sha256": "e9efc3742d3a3e618f1689e922da991c94bb91c2428fc6f537c9c0330a4c1b96",
-  "release_utc": "2026-10-25T04:29:59.534168+00:00",
+  "release_utc": "2026-10-25T04:53:51.693255+00:00",
   "account_verified": true,
   "Drive_free_bytes": 5609842502981,
   "conservative_free_required": 84505061376,
   "audit_seconds": 1800,
   "pack_seconds": 3600,
-  "max_new_packs": 1,
+  "max_new_packs": 47,
   "latest_counter": {
-    "utc": "2026-10-25T04:50:34.190955+00:00",
-    "state": "api_transport_terminal",
-    "job_id": "CPU_API_PACK_af175d22e92d4a0caecf8a850bf94a3f",
-    "phase": "bounded_checkpoint",
-    "images_committed": 337907,
+    "utc": "2026-10-25T04:59:14.767324+00:00",
+    "state": "api_pack_committed",
+    "images_committed": 356489,
     "required": 682170,
-    "packed_shards": 19,
-    "new_packs": 1,
-    "prior_pack_audit_complete": true,
-    "complete": false,
-    "seconds": 1234.628148501,
-    "source_originals_unchanged": true,
-    "runtime_image_gate_passed": false,
-    "training": false,
-    "test_inference": false
+    "packed_shards": 20,
+    "new_packs": 1
   },
-  "prior_durable_images": 319820,
-  "prior_durable_packs": 18,
+  "prior_durable_images": 337907,
+  "prior_durable_packs": 19,
   "new_committed_packs_observed": 1,
   "checkpoint": "API private control/STATE plus immutable pending image receipts, committed TARs and exact-byte receipts; source shards unchanged",
   "recovery": "Never blindly rerun launch. Inspect exact notebook/process/control phase and terminal output first; same boot uses local flock; any still-running control requires explicit observed-terminal job identity. Pending pack replays at most one transport pack from durable originals if scratch lost. Session URIs remain private.",
@@ -47,7 +38,7 @@
   "usage_policy": "context/USAGE_POLICY_OVERRIDE_20261025.json",
   "unattended_continuation_claimed": false,
   "source_joins": {
-    "utc": "2026-10-25T04:34:45.146941+00:00",
+    "utc": "2026-10-25T04:55:37.367649+00:00",
     "state": "api_original_TSV_and_source_metadata_joins_passed",
     "images": 682170,
     "target_pack_bytes": 2147483648,
@@ -55,14 +46,17 @@
     "training": false
   },
   "prior_pack_audit": {
-    "utc": "2026-10-25T04:47:26.499425+00:00",
+    "utc": "2026-10-25T04:56:13.060746+00:00",
     "state": "api_prior_pack_verified",
-    "packs_checked": 18,
-    "total_packs": 18,
-    "images": 319820,
-    "cached_unchanged": false
+    "packs_checked": 19,
+    "total_packs": 19,
+    "images": 337907,
+    "cached_unchanged": true
   },
-  "terminal": {
+  "terminal": null,
+  "latest_measured_durable_images": 356489,
+  "latest_measured_durable_packs": 20,
+  "predecessor_terminal": {
     "utc": "2026-10-25T04:50:34.190955+00:00",
     "state": "api_transport_terminal",
     "job_id": "CPU_API_PACK_af175d22e92d4a0caecf8a850bf94a3f",
@@ -78,7 +72,5 @@
     "runtime_image_gate_passed": false,
     "training": false,
     "test_inference": false
-  },
-  "latest_measured_durable_images": 337907,
-  "latest_measured_durable_packs": 19
+  }
 }

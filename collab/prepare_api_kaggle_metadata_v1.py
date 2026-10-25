@@ -15,7 +15,7 @@ import tarfile
 import uuid
 
 sys.path[:0] = [str(Path(__file__).resolve().parent), str(Path(__file__).resolve().parents[1] / 'scripts')]
-from drive_api_storage_v1 import DriveStore, hashes, atomic_json
+from drive_api_storage_v1 import DriveStore, hashes, atomic_json, safe_error
 from pack_usable_images_api_v1 import SOURCE_FOLDER, INDEX_SHA, SCHEMA, COHORT, emit
 from usable_cohort_v2 import REGISTRATION, REGISTRATION_SHA
 import verify_usable_image_shards_v2 as verifier
@@ -176,5 +176,10 @@ if __name__ == '__main__':
     p.add_argument('--scratch', type=Path, required=True)
     args = p.parse_args()
     credentials, _ = google.auth.default()
-    with AuthorizedSession(credentials) as session:
-        prepare_api(DriveStore(session), args.scratch)
+    try:
+        with AuthorizedSession(credentials) as session:
+            prepare_api(DriveStore(session), args.scratch)
+    except Exception as error:
+        emit(state='api_kaggle_metadata_failed', error_type=type(error).__name__,
+             error=safe_error(error), training=False, test_inference=False)
+        sys.exit(1)

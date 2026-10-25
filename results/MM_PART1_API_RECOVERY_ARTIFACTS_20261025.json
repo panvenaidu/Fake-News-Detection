@@ -1,11 +1,31 @@
 {
-  "utc": "2026-10-25T04:09:26.752532+00:00",
+  "utc": "2026-10-25T04:59:55.582608+00:00",
   "state": "local_recovery_artifacts_verified",
   "artifacts": [
+    {
+      "path": "collab/continue_api_pack_20261025.py",
+      "bytes": 4061,
+      "sha256": "bd6c3c14406960281aaeadebd3b1498dca39af628d830c154fbf27fbb847473b"
+    },
+    {
+      "path": "collab/drive_api_storage_v1.py",
+      "bytes": 14069,
+      "sha256": "d7603e6bad1af1560a9422caccf7846de0ca73e37b4d10cbb6249744c2568be4"
+    },
     {
       "path": "collab/inventory_drive_api_metadata_v1.py",
       "bytes": 7056,
       "sha256": "cd232c07f339647b378ec858c0addaf3f1dbdbcc596bde87b2f42a4f236b03b6"
+    },
+    {
+      "path": "collab/pack_usable_images_api_v1.py",
+      "bytes": 23541,
+      "sha256": "9adbb9f1b00aaeaed5fc35de8dc23b3574f20b9a0af601b25b51737bcf5a2e54"
+    },
+    {
+      "path": "collab/prepare_api_kaggle_metadata_v1.py",
+      "bytes": 10901,
+      "sha256": "c3e50bfdb72ee80928c7faa55ec494830d69fc3b9f7b870d591eaed8510056b1"
     },
     {
       "path": "collab/probe_original_archive_api_range_20261025.py",
@@ -13,19 +33,9 @@
       "sha256": "d075ad4f78bb2508e27a9fa5ddf2612cd89b844fbfe9e843e56c6d5ccfc3d233"
     },
     {
-      "path": "results/MM_PART1_RECEIPT_COPY_PROBE_20261025.json",
-      "bytes": 1228,
-      "sha256": "3bf37edb932d1ee6115c32422104311df90dd214ba455d71b2e198c858333055"
-    },
-    {
-      "path": "results/MM_PART1_DRIVE_RESOURCE_DIAGNOSTIC_20261025.json",
-      "bytes": 4326,
-      "sha256": "e50446f2ba703aacbcdb13d1803242e44ede124c5bef00de3e72f642264dea2c"
-    },
-    {
-      "path": "results/MM_PART1_DRIVE_API_RECEIPT_VERIFICATION_20261025.json",
-      "bytes": 578,
-      "sha256": "3e954742b2a6e5932817cb4371005f876c409f6c230d02b2b9edbb192564f774"
+      "path": "collab/queue_api_metadata_after_transport_20261025.py",
+      "bytes": 37206,
+      "sha256": "e96718a2cf6cde24fc01b62fc7edd200a6ec07982e5f59263fbad2847184ecaf"
     },
     {
       "path": "results/MM_PART1_API_METADATA_INVENTORY_20261025.json",
@@ -33,23 +43,63 @@
       "sha256": "60b265135164c8a29bb1de6ae9ae6783c878645fdff17ed5b086340048d65ccb"
     },
     {
+      "path": "results/MM_PART1_API_METADATA_SOURCE_20261025.json",
+      "bytes": 1034,
+      "sha256": "7f9d3836488a14c1a9c87e6a7518a92be711e677104e9e39f19b1c5dd1aca1b3"
+    },
+    {
+      "path": "results/MM_PART1_API_PACK_JOB_20261025.json",
+      "bytes": 3363,
+      "sha256": "0a7333537f159ac145de7d9ecad2c06e9b358a2e7d4059cc56f5da27fa96d73c"
+    },
+    {
+      "path": "results/MM_PART1_DRIVE_API_RECEIPT_VERIFICATION_20261025.json",
+      "bytes": 578,
+      "sha256": "3e954742b2a6e5932817cb4371005f876c409f6c230d02b2b9edbb192564f774"
+    },
+    {
+      "path": "results/MM_PART1_DRIVE_RESOURCE_DIAGNOSTIC_20261025.json",
+      "bytes": 4326,
+      "sha256": "e50446f2ba703aacbcdb13d1803242e44ede124c5bef00de3e72f642264dea2c"
+    },
+    {
+      "path": "results/MM_PART1_FIRST_API_PACK_RECOVERY_20261025.json",
+      "bytes": 894,
+      "sha256": "1452dcb5c1a811d2dc73eca7cb3cd666d5f082c137df0c23f841664f2057d503"
+    },
+    {
       "path": "results/MM_PART1_ORIGINAL_ARCHIVE_API_RANGE_20261025.json",
       "bytes": 447,
       "sha256": "8419d4c4b7f6caf33ba967b08d4db75174d3b0794c5b39c987a357eaf04fe947"
     },
     {
+      "path": "results/MM_PART1_RECEIPT_COPY_PROBE_20261025.json",
+      "bytes": 1228,
+      "sha256": "3bf37edb932d1ee6115c32422104311df90dd214ba455d71b2e198c858333055"
+    },
+    {
       "path": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
-      "bytes": 5326,
-      "sha256": "40e152fad8e84ec3f9269e63dc220fe8cac5a84f60deb8adf7986164a984260d"
+      "bytes": 5368,
+      "sha256": "49f8f38cdcdebd625237be849693edfa9233a840d7d2a9735acdde8335a9c69e"
+    },
+    {
+      "path": "results/api_metadata_bridge_checks_20261025.json",
+      "bytes": 483,
+      "sha256": "48f45d92453fbc03de88d6c1ceb147ed4d7574d985f9725525ce4096c5f5288a"
+    },
+    {
+      "path": "scripts/verify_usable_image_shards_v2.py",
+      "bytes": 14965,
+      "sha256": "c24164ec26e9e3d3b490a2eb1b698d78ac807d0a67414e8b93428e3f4ee0b656"
     }
   ],
   "private_raw_index_identifier": "data/official_paired_v2/API_METADATA_INDEX_RECEIPT_20261025.json",
   "raw_data_and_weights_excluded": true,
   "science_incomplete": true,
   "remote_backup": {
-    "verified_checkpoint_commit": "68f78346c7a571d7e2aa51cc57f5461bd94f16ad",
+    "verified_checkpoint_commit": "f8175f65a390c442a34e705dfb20dbe36c07756a",
     "remote_match": true,
-    "blocked_status_child": "Verify separately after push"
+    "note": "Current source/evidence changes are a child; verify that push separately"
   },
   "live_job_receipt": "results/MM_PART1_API_PACK_JOB_20261025.json",
   "usage_policy": "context/USAGE_POLICY_OVERRIDE_20261025.json"

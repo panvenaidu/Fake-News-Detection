@@ -1,20 +1,20 @@
 {
-  "updated_utc": "2026-10-25T04:52:46.656423+00:00",
+  "updated_utc": "2026-10-25T04:59:55.534485+00:00",
   "local_date": "2026-10-25",
-  "state": "api_transport_terminal",
+  "state": "real_API_transport_live",
   "goal_status": "User reported existing Goal resumed; supported API still blocked at latest check; manual turn authorized",
   "previous_goal_turn_classification": "Progress: created evidence-grounded status dashboard; did not train",
   "current_goal_turn_classification": "Progress: full original TSV/source joins passed; old archives being full-hash audited; API metadata bridge prepared and synthetic-tested",
   "cohort_id": "FACULTY-6W-USABLE-682170-v1",
   "approved_pairs": 682170,
-  "durable_packed_images": 337907,
-  "durable_packs": 19,
+  "durable_packed_images": 356489,
+  "durable_packs": 20,
   "scientific_epochs": 0,
   "full_validations": 0,
   "final_test": false,
   "runtime": {
     "platform": "Colab CPU",
-    "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=cz6Cgm4DUm8r",
+    "notebook": "https://colab.research.google.com/drive/1EQr8BSZEzyMpoGyQweXE3rRCkOHPbesU#scrollTo=TsntdBFXaDvn",
     "pid": 4387,
     "boot_id": "5e215fb9-807d-4c5f-9eeb-03276837af96",
     "RAM_GB_observed_approx": 1.9,
@@ -60,7 +60,7 @@
     "archive_range_cell": "xNddVqfSmtsV",
     "archive_range_state": "passed",
     "archive_range_receipt": "results/MM_PART1_ORIGINAL_ARCHIVE_API_RANGE_20261025.json",
-    "scope": "All682170 original TSV/source metadata joins passed; current archive hash audit in progress. Runtime full-image gate still pending.",
+    "scope": "Source joins, archive audits and commits are separately recorded per job; full image runtime gate still pending.",
     "current_job_receipt": "results/MM_PART1_API_PACK_JOB_20261025.json"
   },
   "Kaggle": {
@@ -86,17 +86,17 @@
     "results/MM_PART1_ORIGINAL_ARCHIVE_API_RANGE_20261025.json"
   ],
   "usage_observed": {
-    "short_remaining": 52,
-    "weekly_remaining": 12,
-    "utc": "2026-10-25T04:52:46.656423+00:00"
+    "short_remaining": 45,
+    "weekly_remaining": 11,
+    "utc": "2026-10-25T04:59:55.534485+00:00"
   },
   "next": "Inspect same cell/process/private control before continuation; never duplicate live packing. After the first durable transaction, verify terminal archive/receipt and recovery, then resume remaining lossless packing. Full private Kaggle input, actual runtime image SHA/decode, CUDA recovery/preflight, epochs1\u20132 and full validations remain pending. No Part1 final test.",
   "source_backup_commit": "7530a33c7a97ca3db70e0a8ed45348258ccf28b2",
-  "no_active_packing_or_training_job": true,
+  "no_active_packing_or_training_job": false,
   "source_metadata_inventory_passed": true,
   "reserve_state": "five_hour_thresholds_only_per_user_override",
   "backup_receipt": "results/MM_PART1_API_RECOVERY_GIT_BACKUP_20261025.json",
-  "independent_job_running": false,
+  "independent_job_running": true,
   "reserve_audit": "results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json",
   "usage_policy_override": "context/USAGE_POLICY_OVERRIDE_20261025.json",
   "current_API_job_receipt": "results/MM_PART1_API_PACK_JOB_20261025.json",

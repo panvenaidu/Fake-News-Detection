@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-25T04:55:46.265688+00:00",
+  "state": "source_prepared_synthetic_tested_not_cloud_executed",
+  "bundle_bytes": 25546,
+  "bundle_sha256": "81ec493be768b9e7d2d711944c2f4aa6bfcb3cb20e677d53679101d783ed8c8c",
+  "deployment": "/content/urop_api_metadata_source_81ec493be768b9e7",
+  "manifest": {
+    "collab/drive_api_storage_v1.py": "d7603e6bad1af1560a9422caccf7846de0ca73e37b4d10cbb6249744c2568be4",
+    "collab/pack_usable_images_api_v1.py": "9adbb9f1b00aaeaed5fc35de8dc23b3574f20b9a0af601b25b51737bcf5a2e54",
+    "collab/prepare_api_kaggle_metadata_v1.py": "c3e50bfdb72ee80928c7faa55ec494830d69fc3b9f7b870d591eaed8510056b1",
+    "collab/prepare_official_images_drive_v1.py": "543c60d78d61182b10052cfd061d90c5bb764f99138a8bc09ae72dbfe93d7354",
+    "scripts/usable_cohort_v2.py": "22bff1eb0fa14d102ad07786f936c5c1ed1582ec7bd5cee2b8e8dc5eb3520092",
+    "scripts/verify_usable_image_shards_v2.py": "c24164ec26e9e3d3b490a2eb1b698d78ac807d0a67414e8b93428e3f4ee0b656"
+  },
+  "training": false,
+  "test_inference": false
+}

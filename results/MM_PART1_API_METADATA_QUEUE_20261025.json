@@ -1,0 +1,13 @@
+{
+  "utc": "2026-10-25T04:59:55.579627+00:00",
+  "state": "prepared_not_submitted",
+  "pack_cell": "TsntdBFXaDvn",
+  "metadata_seconds": 1200,
+  "only_after_images": 682170,
+  "source_receipt": "results/MM_PART1_API_METADATA_SOURCE_20261025.json",
+  "launch_path": "collab/queue_api_metadata_after_transport_20261025.py",
+  "launch_sha256": "e96718a2cf6cde24fc01b62fc7edd200a6ec07982e5f59263fbad2847184ecaf",
+  "recovery": "Same cloud scratch/private METADATA_JOB.json contains exact source/transport hashes, generation, acknowledged resumable state and completion receipt. No cloud originals deleted. A bounded incomplete pack causes metadata defer, not training. Inspect existing queue/control before resubmission. Upload session URIs remain private.",
+  "training": false,
+  "test_inference": false
+}

@@ -1,9 +1,9 @@
 {
-  "utc": "2026-10-25T04:43:37.965757+00:00",
+  "utc": "2026-10-25T04:55:46.213107+00:00",
   "state": "passed",
   "cases": 15,
   "scope": "Synthetic API metadata-proof guards only; no network, images, model or runtime gate",
-  "adapter_sha256": "3837db9c49e74f96f9308068c79d7ab48f50b72c344a09b80165516d581f9c42",
+  "adapter_sha256": "c3e50bfdb72ee80928c7faa55ec494830d69fc3b9f7b870d591eaed8510056b1",
   "verifier_sha256": "c24164ec26e9e3d3b490a2eb1b698d78ac807d0a67414e8b93428e3f4ee0b656",
   "limitations": [
     "Adapter is not yet cloud executed",
