@@ -1,0 +1,14 @@
+{
+  "utc": "2026-10-25T04:25:57.219957+00:00",
+  "state": "live_API_transport_engineering_passed",
+  "bytes": 9437184,
+  "sha256": "b8b5dabaa3454f7fa46a97c51cec9ccd118ffc0d61df6e46d845ef200a2fd1bb",
+  "md5": "2a43a3f3d5b1a13f0b4c3369040d0919",
+  "full_remote_archive_SHA_verified": true,
+  "control_PATCH_and_readback_passed": true,
+  "seconds": 13.188116347999994,
+  "synthetic_only": true,
+  "real_image_packing": false,
+  "training": false,
+  "test_inference": false
+}

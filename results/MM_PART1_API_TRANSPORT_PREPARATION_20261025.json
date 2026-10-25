@@ -1,6 +1,6 @@
 {
   "utc": "2026-10-25T04:24:51.066391+00:00",
-  "state": "prepared_reviewed_source_not_yet_cloud_deployed",
+  "state": "offline_checks_and_live_API_preflight_passed_ready_for_bounded_real_job",
   "bundle": "data/official_paired_v2/UROP_API_TRANSPORT_SOURCE_20261025.zip",
   "bytes": 12788,
   "sha256": "e9efc3742d3a3e618f1689e922da991c94bb91c2428fc6f537c9c0330a4c1b96",
@@ -21,5 +21,13 @@
   "checks": "results/api_transport_recovery_checks_20261025.json",
   "deployment_cell": "collab/deploy_api_transport_source_20261025.py",
   "scientific_source_unchanged": true,
-  "training": false
+  "training": false,
+  "runtime_access": "results/MM_PART1_API_RECONNECTED_20261025.json",
+  "live_preflight": "results/MM_PART1_LIVE_API_PREFLIGHT_20261025.json",
+  "first_launch_source": "collab/launch_api_pack_first_checkpoint_20261025.py",
+  "first_launch_sha256": "ee396f8d0379bd205121dd3744972d91cc81f4d8f77a6cd8a3151d4a4f79f0c4",
+  "max_new_packs": 1,
+  "pack_seconds": 3600,
+  "audit_seconds": 1800,
+  "full_multimodal_scientific_training_started": false
 }
