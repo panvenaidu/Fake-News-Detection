@@ -4,10 +4,11 @@
     "RGB grayscale palette RGBA bytes and RGB pixels identical",
     "Changed SHA archive size and unknown ID rejected",
     "Index checksum mismatch rejected",
+    "Committed archive resumes after failure in next archive",
     "Changed archive image payload rejected"
   ],
   "official_images_tested": 0,
   "scientific_training": false,
   "production_integration": false,
-  "source_sha256": "17146ec798164654cacf469ef4a0cbf9f34009ef6e977306066e10ae0ce93057"
+  "source_sha256": "ce570b906d8f5bb0c3d1b2d8b7e07f8654589bae3557ed91c9e84cde484cdc30"
 }

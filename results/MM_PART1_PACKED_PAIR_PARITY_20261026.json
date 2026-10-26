@@ -1,0 +1,11 @@
+{
+  "status": "passed_cpu_production_pair_storage_parity",
+  "checks": [
+    "production train crop tensors identical",
+    "production validation tensors identical"
+  ],
+  "official_rows_tested": 0,
+  "scientific_training": false,
+  "trainer_sha256": "7f7fb90deb08a5901d1ca8343b780f6d82dd42b3e278d51f333568435becee0e",
+  "adapter_sha256": "ce570b906d8f5bb0c3d1b2d8b7e07f8654589bae3557ed91c9e84cde484cdc30"
+}

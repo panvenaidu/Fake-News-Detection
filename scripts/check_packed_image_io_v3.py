@@ -52,6 +52,27 @@ with tempfile.TemporaryDirectory(dir='data/official_paired_v2', prefix='packed-i
     checks.append('Changed SHA archive size and unknown ID rejected')
     rejected(lambda: ArchiveStore(root, root / 'index.sqlite', '0' * 64))
     checks.append('Index checksum mismatch rejected')
+    second_archive = 'images_pack_' + 'b' * 32 + '.tar'
+    second_target = root / (second_archive[:-4] + '.bin')
+    extra = Image.new('RGB', (29, 27))
+    extra_buffer = io.BytesIO()
+    extra.save(extra_buffer, format='PNG')
+    extra_raw = extra_buffer.getvalue()
+    with tarfile.open(second_target, 'w') as tar:
+        member = tarfile.TarInfo('images/fixture_extra.png')
+        member.size = len(extra_raw)
+        tar.addfile(member, io.BytesIO(extra_raw))
+    extra_row = {'id': 'fixture_extra', 'source_shard': second_archive,
+                 'image_path': Path(second_archive).stem + '/images/fixture_extra.png',
+                 'bytes': str(len(extra_raw)), 'image_sha256': hashlib.sha256(extra_raw).hexdigest()}
+    extra_proof = {'file': second_archive, 'bytes': second_target.stat().st_size,
+                   'sha256': sha(second_target)}
+    rejected(lambda: create_index(root, [proof, dict(extra_proof, sha256='0' * 64)],
+                                  rows + [extra_row], root / 'resume.sqlite'))
+    resumed = create_index(root, [proof, extra_proof], rows + [extra_row], root / 'resume.sqlite')
+    assert resumed['images'] == 5
+    assert ArchiveStore(root, root / 'resume.sqlite', resumed['index_sha256']).read(extra_row) == extra_raw
+    checks.append('Committed archive resumes after failure in next archive')
     with target.open('r+b') as stream:
         stream.seek(512)
         stream.write(b'X')

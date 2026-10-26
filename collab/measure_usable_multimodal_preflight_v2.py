@@ -18,7 +18,7 @@ os.environ.setdefault('CUDA_VISIBLE_DEVICES', '0')
 os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG', ':4096:8')
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-TRAINER_SHA = '88412d918b77f8a54569b25a8c469618c028ebaeeeb0b6050385dc55bd20ac1e'
+TRAINER_SHA = '7f7fb90deb08a5901d1ca8343b780f6d82dd42b3e278d51f333568435becee0e'
 RECOVERY_SHA = '2f5f67ce79289c69279040d21b483e28535895f5c99c63e0021da3eee6d3d1c8'
 CONFIG_SHA = 'ad8f86f86b1fef453ae3bccda0aeb13cc50b298dc0d5d502f87c9ac4b041b483'
 
@@ -72,7 +72,7 @@ def run(args):
     cfg = json.loads(args.config.read_text())
     # This repeats the production exact-ID/title/label/hash gate. Test files are
     # checked for integrity only; only the train frame reaches any model loader.
-    frames, inputs = t.verified_frames(args.root, args.coverage)
+    frames, inputs = t.verified_frames(args.root, args.coverage, args.packed_index)
     if sha(args.warmstart) != cfg['warmstart_sha256']:
         raise ValueError('Selected text warm-start checksum mismatch')
     out.mkdir(parents=True, exist_ok=False)
@@ -105,7 +105,8 @@ def run(args):
     contract = {'purpose': 'disposable_train_only_preflight_not_scientific_run',
                 'inputs': inputs, 'config_sha256': CONFIG_SHA, 'trainer_sha256': TRAINER_SHA}
     engine = t.Engine(model, opt, scheduler, scaler, cfg, out, torch.device('cuda'), contract)
-    data = t.Pairs(frames['train'], args.root, tokenizer, cfg, True)
+    data = t.Pairs(frames['train'], args.root, tokenizer, cfg, True,
+                   args.packed_index, inputs['packed_index_sha256'])
     loader = t.build_loader(data, tokenizer, cfg, True)
     # Prime CUDA/data workers and optimizer state outside the timed interval.
     engine.train_epoch(loader, len(data),
@@ -153,7 +154,8 @@ def run(args):
     del payload
     # Measure the production evaluation preprocessing/inference path on TRAIN
     # images only. No validation/test model inference, probabilities or scores.
-    eval_data = t.Pairs(frames['train'], args.root, tokenizer, cfg, False)
+    eval_data = t.Pairs(frames['train'], args.root, tokenizer, cfg, False,
+                        args.packed_index, inputs['packed_index_sha256'])
     model.eval(); count = 0
     eval_loader = t.build_loader(eval_data, tokenizer, cfg, False)
     torch.cuda.synchronize(); eval_start = time.monotonic()
@@ -204,6 +206,7 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     for name in ['root', 'coverage', 'config', 'output', 'warmstart', 'cuda-fixture']:
         ap.add_argument('--' + name, type=Path, required=True)
+    ap.add_argument('--packed-index', type=Path)
     ap.add_argument('--seconds', type=int, default=600)
     ap.add_argument('--eval-seconds', type=int, default=60)
     run(ap.parse_args())

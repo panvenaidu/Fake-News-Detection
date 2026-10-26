@@ -90,8 +90,6 @@ def create_index(root, shards, rows, output):
         raise ValueError('Preserve an existing index; explicit recovery required')
     output.parent.mkdir(parents=True, exist_ok=True)
     temporary = output.with_suffix('.building.sqlite')
-    if temporary.exists():
-        raise ValueError('Preserve incomplete index for recovery inspection')
     groups = {}
     for row in rows:
         groups.setdefault(row['source_shard'], []).append(row)
@@ -100,10 +98,45 @@ def create_index(root, shards, rows, output):
     count = 0
     with sqlite3.connect(temporary) as db:
         db.execute('PRAGMA synchronous=FULL')
-        db.execute('CREATE TABLE images (id TEXT PRIMARY KEY, archive TEXT NOT NULL, offset INTEGER NOT NULL, size INTEGER NOT NULL, sha256 TEXT NOT NULL)')
-        for shard in shards:
-            count += index_archive(root, shard['file'], shard, groups[shard['file']], db)
+        if not db.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='images'").fetchone():
+            db.execute('CREATE TABLE images (id TEXT PRIMARY KEY, archive TEXT NOT NULL, offset INTEGER NOT NULL, size INTEGER NOT NULL, sha256 TEXT NOT NULL)')
+            db.execute('CREATE TABLE archives (name TEXT PRIMARY KEY, bytes INTEGER NOT NULL, sha256 TEXT NOT NULL, images INTEGER NOT NULL)')
             db.commit()
+        if {x[0] for x in db.execute("SELECT name FROM sqlite_master WHERE type='table'")} != {'images', 'archives'}:
+            raise ValueError('Unrecognized incomplete index schema; preserve for inspection')
+        if db.execute('PRAGMA integrity_check').fetchone()[0] != 'ok':
+            raise ValueError('Incomplete SQLite index failed integrity check')
+        completed = {name: (size, digest, n) for name, size, digest, n in
+                     db.execute('SELECT name,bytes,sha256,images FROM archives')}
+        if set(completed) - set(groups):
+            raise ValueError('Incomplete index contains an unexpected archive')
+        for shard in shards:
+            name = shard['file']
+            if name in completed:
+                size, digest, n = completed[name]
+                actual = list(db.execute('SELECT id,offset,size,sha256 FROM images WHERE archive=?', (packed_name(name),)))
+                expected = {r['id']: (int(r['bytes']), r['image_sha256']) for r in groups[name]}
+                if (size, digest, n) != (shard['bytes'], shard['sha256'], len(expected)) or len(actual) != n:
+                    raise ValueError('Incomplete index archive proof differs from pinned source')
+                if any(ident not in expected or offset < 0 or (length, image_sha) != expected[ident]
+                       for ident, offset, length, image_sha in actual):
+                    raise ValueError('Incomplete index image rows differ from pinned manifest')
+                path = Path(root) / packed_name(name)
+                if path.stat().st_size != size or sha(path) != digest:
+                    raise ValueError('Previously indexed archive bytes changed')
+                count += n
+                print(json.dumps({'state': 'previous_packed_archive_reverified', 'archive': name,
+                                  'verified_images': count}), flush=True)
+                continue
+            try:
+                db.execute('BEGIN')
+                n = index_archive(root, name, shard, groups[name], db)
+                db.execute('INSERT INTO archives VALUES (?,?,?,?)', (name, shard['bytes'], shard['sha256'], n))
+                db.commit()
+            except BaseException:
+                db.rollback()
+                raise
+            count += n
             print(json.dumps({'state': 'packed_archive_fully_verified', 'archive': shard['file'],
                               'verified_images': count}), flush=True)
         assert db.execute('SELECT count(*) FROM images').fetchone()[0] == count == len(rows)

@@ -8,6 +8,7 @@ import argparse
 import copy
 import csv
 import hashlib
+import io
 import json
 import math
 import os
@@ -58,18 +59,27 @@ class MaximumFusion(nn.Module):
   return self.classifier(torch.maximum(self.text_projection(t),self.image_projection(v)))
 
 class Pairs(Dataset):
- def __init__(self,frame,root,tokenizer,cfg,training):
+ def __init__(self,frame,root,tokenizer,cfg,training,packed_index=None,packed_index_sha256=None):
   self.frame=frame.reset_index(drop=True);self.root=Path(root).resolve();self.cfg=cfg;self.training=training;self.epoch=1
+  self.store=None
+  if packed_index is not None:
+   from packed_image_io_v3 import ArchiveStore
+   if not packed_index_sha256:raise ValueError('Pinned packed index checksum required')
+   self.store=ArchiveStore(self.root,packed_index,packed_index_sha256)
   self.tokens={'input_ids':[],'attention_mask':[]}
   for start in range(0,len(frame),8192):
    chunk=tokenizer(frame.clean_title.iloc[start:start+8192].tolist(),truncation=True,max_length=cfg['max_length'],padding=False)
    for k in self.tokens:self.tokens[k].extend(chunk[k])
  def __len__(self):return len(self.frame)
  def __getitem__(self,index):
-  row=self.frame.iloc[index];p=(self.root/row.image_path).resolve()
-  if not p.is_relative_to(self.root):raise ValueError('Image path escapes root: '+row.id)
+  row=self.frame.iloc[index]
   try:
-   with Image.open(p) as im:
+   if self.store is None:
+    p=(self.root/row.image_path).resolve()
+    if not p.is_relative_to(self.root):raise ValueError('Image path escapes root: '+row.id)
+    source=p
+   else:source=io.BytesIO(self.store.read(row))
+   with Image.open(source) as im:
     im=im.convert('RGB')
     if self.training:
      i,j,h,w=crop(im,self.cfg['seed'],self.epoch,row.id)
@@ -85,7 +95,7 @@ class Collate:
   tokens=self.tokenizer.pad([{k:r[k] for k in ['input_ids','attention_mask']} for r in rows],padding=True,pad_to_multiple_of=8,return_tensors='pt')
   return {**tokens,'images':torch.stack([r['images'] for r in rows]),'labels':torch.tensor([r['labels'] for r in rows]),'ids':[r['id'] for r in rows]}
 
-def verified_frames(root,coverage_path):
+def verified_frames(root,coverage_path,packed_index=None):
  root=Path(root);coverage=json.loads(Path(coverage_path).read_text())
  if (coverage.get('image_gate_passed') is not True or coverage.get('cohort_id')!=COHORT
      or coverage.get('cohort_registration_sha256')!=REGISTRATION_SHA
@@ -94,6 +104,13 @@ def verified_frames(root,coverage_path):
  expected,reg=load_input(root)
  manifest=root/'data/official_paired_v2/paired_manifest.csv'
  if sha(manifest)!=coverage['manifest_sha256']:raise ValueError('Manifest hash mismatch')
+ if packed_index is not None:
+  from packed_image_io_v3 import ArchiveStore
+  if (coverage.get('input_layout')!='kaggle-packed-bin' or
+      coverage.get('runtime_root')!=str(root.resolve()) or
+      coverage.get('runtime_image_bytes_verified') is not True):
+   raise ValueError('Approved full packed-image runtime gate required')
+  ArchiveStore(root,packed_index,coverage['packed_index_sha256'])
  frame=pd.read_csv(manifest,dtype=str,keep_default_na=False)
  if frame.id.duplicated().any() or set(frame.id)!=set(expected):raise ValueError('Wrong/duplicate paired cohort IDs')
  canonical=pd.DataFrame(expected.values());canonical['6_way_label']=canonical['6_way_label'].astype(str)
@@ -105,16 +122,19 @@ def verified_frames(root,coverage_path):
   for key in ['clean_title','6_way_label']:
    if not np.array_equal(paired[key].to_numpy(),official[key].to_numpy()):raise ValueError('Official '+key+' differs')
   if set(paired['6_way_label'])!=set(map(str,range(6))) or paired.clean_title.str.strip().eq('').any():raise ValueError('Invalid text/labels')
-  for row in paired[['id','image_path','image_sha256']].itertuples(index=False):
-   q=(root/row.image_path).resolve()
-   if not q.is_relative_to(root.resolve()) or not q.is_file():raise ValueError('Missing/escaping image '+row.id)
-   if sha(q)!=row.image_sha256:raise ValueError('Runtime image hash mismatch '+row.id)
+  if packed_index is None:
+   for row in paired[['id','image_path','image_sha256']].itertuples(index=False):
+    q=(root/row.image_path).resolve()
+    if not q.is_relative_to(root.resolve()) or not q.is_file():raise ValueError('Missing/escaping image '+row.id)
+    if sha(q)!=row.image_sha256:raise ValueError('Runtime image hash mismatch '+row.id)
   if split!='test':frames[split]=paired
  return frames,{'manifest_sha256':sha(manifest),'coverage_sha256':sha(coverage_path),
   'tsv_sha256':{x['filename']:x['sha256'] for x in reg['original_files']},
   'cohort_id':COHORT,'cohort_registration_sha256':REGISTRATION_SHA,
   'excluded_ids_sha256':reg['excluded_ids_sha256'],'split_counts':COUNTS,
-  'extraction_report_sha256':reg['extraction_report_sha256']}
+  'extraction_report_sha256':reg['extraction_report_sha256'],
+  'storage_mode':'packed' if packed_index is not None else 'unpacked',
+  'packed_index_sha256':coverage.get('packed_index_sha256') if packed_index is not None else None}
 
 def measure(y,pred,ce):
  return {'accuracy':float(accuracy_score(y,pred)),'micro_f1':float(f1_score(y,pred,average='micro')),
@@ -223,7 +243,7 @@ def run(args):
  stop=args.stop_after_epoch
  if args.stage=='part1' and stop not in [1,2]:raise ValueError('Part1 hard limit is epoch2; no test in this executable')
  if args.stage=='part2' and (not args.resume or stop not in [3,4]):raise ValueError('Part2 must resume same run')
- frames,inputs=verified_frames(args.root,args.coverage)
+ frames,inputs=verified_frames(args.root,args.coverage,args.packed_index)
  if not torch.cuda.is_available():raise RuntimeError('Cloud CUDA required; local scientific training refused')
  out=Path(args.output);out.mkdir(parents=True,exist_ok=args.resume)
  lock=out/'trainer.lock'
@@ -232,6 +252,7 @@ def run(args):
  os.write(fd,str(os.getpid()).encode());os.close(fd)
  try:
   source_files=[Path(__file__),Path(__file__).with_name('multimodal_recovery_v1.py'),Path(__file__).with_name('usable_cohort_v2.py')]
+  if args.packed_index is not None:source_files.append(Path(__file__).with_name('packed_image_io_v3.py'))
   versions={'python':sys.version,'torch':torch.__version__,'torchvision':torchvision.__version__,'transformers':transformers.__version__,'numpy':np.__version__,'pillow':PIL.__version__}
   contract={'config':cfg,'config_sha256':sha(args.config),'inputs':inputs,'versions':versions,'sources':{p.name:sha(p) for p in source_files}}
   protocol=out/'protocol.json'
@@ -250,7 +271,7 @@ def run(args):
   opt=torch.optim.AdamW([{'params':p,'lr':lr,'weight_decay':wd} for (lr,wd),p in groups.items()],betas=(.9,.999),eps=1e-8)
   budget=math.ceil(math.ceil(len(frames['train'])/cfg['micro_batch'])/cfg['accumulation'])*cfg['planned_epochs'];scheduler=get_linear_schedule_with_warmup(opt,math.ceil(budget*cfg['warmup_fraction']),budget);scaler=torch.amp.GradScaler('cuda')
   if budget!=cfg['planned_update_boundaries'] or math.ceil(budget*cfg['warmup_fraction'])!=cfg['warmup_boundaries']:raise ValueError('Registered cohort schedule mismatch')
-  data={k:Pairs(f,args.root,tokenizer,cfg,k=='train') for k,f in frames.items()}
+  data={k:Pairs(f,args.root,tokenizer,cfg,k=='train',args.packed_index,inputs['packed_index_sha256']) for k,f in frames.items()}
   engine=Engine(model,opt,scheduler,scaler,cfg,out,torch.device('cuda'),contract)
   if args.resume:atomic_json(out/'last_resume_verification.json',engine.resume())
   else:tokenizer.save_pretrained(out/'tokenizer');engine.save()
@@ -270,4 +291,4 @@ def run(args):
  finally:lock.unlink(missing_ok=True)
 
 if __name__=='__main__':
- ap=argparse.ArgumentParser();ap.add_argument('--root',required=True,type=Path);ap.add_argument('--coverage',required=True,type=Path);ap.add_argument('--config',required=True,type=Path);ap.add_argument('--output',required=True,type=Path);ap.add_argument('--warmstart',required=True,type=Path);ap.add_argument('--stage',choices=['part1','part2'],default='part1');ap.add_argument('--stop-after-epoch',type=int,default=2);ap.add_argument('--resume',action='store_true');run(ap.parse_args())
+ ap=argparse.ArgumentParser();ap.add_argument('--root',required=True,type=Path);ap.add_argument('--coverage',required=True,type=Path);ap.add_argument('--packed-index',type=Path);ap.add_argument('--config',required=True,type=Path);ap.add_argument('--output',required=True,type=Path);ap.add_argument('--warmstart',required=True,type=Path);ap.add_argument('--stage',choices=['part1','part2'],default='part1');ap.add_argument('--stop-after-epoch',type=int,default=2);ap.add_argument('--resume',action='store_true');run(ap.parse_args())
