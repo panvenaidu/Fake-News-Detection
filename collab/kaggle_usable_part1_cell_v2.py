@@ -8,8 +8,8 @@ import datetime, hashlib, importlib.metadata, importlib.util, json, math, os
 from pathlib import Path
 import subprocess, sys, time
 
-SOURCE_COMMIT='5aa5c87a2620b3c7763401e845dad45a935dd621'
-SOURCE_HASHES={'scripts/train_usable_multimodal_v2.py': '88412d918b77f8a54569b25a8c469618c028ebaeeeb0b6050385dc55bd20ac1e', 'scripts/multimodal_recovery_v1.py': '2f5f67ce79289c69279040d21b483e28535895f5c99c63e0021da3eee6d3d1c8', 'scripts/verify_usable_multimodal_v2.py': 'bc314502833835a42bba8bab2d069074018bafc807106a3eb503386e2671139b', 'scripts/usable_cohort_v2.py': '22bff1eb0fa14d102ad07786f936c5c1ed1582ec7bd5cee2b8e8dc5eb3520092', 'configs/multimodal_usable_6way_v2.json': 'ad8f86f86b1fef453ae3bccda0aeb13cc50b298dc0d5d502f87c9ac4b041b483'}
+SOURCE_COMMIT='b4378dd4213dec255a82f5400fb26bb4426f59d7'
+SOURCE_HASHES={'scripts/train_usable_multimodal_v2.py': '7f7fb90deb08a5901d1ca8343b780f6d82dd42b3e278d51f333568435becee0e', 'scripts/packed_image_io_v3.py': 'ce570b906d8f5bb0c3d1b2d8b7e07f8654589bae3557ed91c9e84cde484cdc30', 'scripts/multimodal_recovery_v1.py': '2f5f67ce79289c69279040d21b483e28535895f5c99c63e0021da3eee6d3d1c8', 'scripts/verify_usable_multimodal_v2.py': 'bc314502833835a42bba8bab2d069074018bafc807106a3eb503386e2671139b', 'scripts/usable_cohort_v2.py': '22bff1eb0fa14d102ad07786f936c5c1ed1582ec7bd5cee2b8e8dc5eb3520092', 'configs/multimodal_usable_6way_v2.json': 'ad8f86f86b1fef453ae3bccda0aeb13cc50b298dc0d5d502f87c9ac4b041b483'}
 COUNTS={'train':563601,'validation':59299,'test':59270}
 COHORT='FACULTY-6W-USABLE-682170-v1'
 COHORT_SHA='3fe0b622958a1eee6732789d4f7acf6b450c0e3bda87312e5cbb6500fb405ce5'
@@ -45,6 +45,10 @@ def check_release(release,working_root=Path('/kaggle/working')):
  if type(release.get('private_input_version')) is not int or release['private_input_version']<1:raise ValueError('Immutable private input version required')
  coverage=evidence(release['coverage'])
  if coverage.get('image_gate_passed') is not True or coverage.get('required')!=682170 or coverage.get('usable')!=682170 or coverage.get('cohort_id')!=COHORT or coverage.get('cohort_registration_sha256')!=COHORT_SHA or coverage.get('split_counts')!=COUNTS:raise ValueError('Fullapproved682170runtimeimagegaterequired')
+ if coverage.get('input_layout')!='kaggle-packed-bin' or coverage.get('runtime_image_bytes_verified') is not True or coverage.get('dataset_version')!=release['private_input_version']:raise ValueError('Pinned packed image gate required')
+ if coverage.get('runtime_root')!=str(Path(release['input_root']).resolve()):raise ValueError('Gate root differs from registered input')
+ packed_index=Path(release['packed_index']).resolve()
+ if not packed_index.is_file() or sha(packed_index)!=coverage.get('packed_index_sha256'):raise ValueError('Verified packed index required')
  fixture=evidence(release['cuda_fixture'])
  if fixture.get('status')!='passed_cuda_engineering_fixture' or fixture.get('trainer_sha256')!=SOURCE_HASHES['scripts/train_usable_multimodal_v2.py'] or fixture.get('recovery_sha256')!=SOURCE_HASHES['scripts/multimodal_recovery_v1.py']:raise ValueError('Actual production CUDA recovery fixture required')
  measured=evidence(release['throughput'])
@@ -102,7 +106,7 @@ def run(release_path):
   if output.exists():raise ValueError('Existing attempt requires verified resume')
  output.mkdir(parents=True,exist_ok=True)
  write(output/'cloud_job_release.json',release)
- command=[sys.executable,str(workspace/'scripts/train_usable_multimodal_v2.py'),'--root',release['input_root'],'--coverage',release['coverage']['path'],'--config',str(cfg),'--output',str(output),'--warmstart',release['warmstart'],'--stage','part1','--stop-after-epoch',str(release['stop_after_epoch'])]
+ command=[sys.executable,str(workspace/'scripts/train_usable_multimodal_v2.py'),'--root',release['input_root'],'--coverage',release['coverage']['path'],'--packed-index',release['packed_index'],'--config',str(cfg),'--output',str(output),'--warmstart',release['warmstart'],'--stage','part1','--stop-after-epoch',str(release['stop_after_epoch'])]
  if release['resume']:command.append('--resume')
  # Trainer owns creation of a new attempt directory.
  if not release['resume']:(output/'cloud_job_release.json').unlink();output.rmdir()

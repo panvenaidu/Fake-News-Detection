@@ -18,21 +18,26 @@ os.environ['CUBLAS_WORKSPACE_CONFIG'] = ':4096:8'
 import torch
 assert torch.cuda.is_available() and torch.cuda.device_count() == 1, 'One used cloud CUDA device required'
 BASE = Path('/kaggle/working/urop_mm_part1_20261026')
-COVERAGE = BASE / 'runtime_image_gate.json'
+COVERAGE_CANDIDATES = list(Path('/kaggle/input').rglob('packed_runtime_coverage.json'))
+assert len(COVERAGE_CANDIDATES) == 1, 'Attach exactly one saved full packed-image gate output'
+COVERAGE = COVERAGE_CANDIDATES[0]
 coverage = json.loads(COVERAGE.read_text())
-assert coverage['image_gate_passed'] and coverage['runtime_image_bytes_verified'] and coverage['usable'] == 682170
+assert coverage['image_gate_passed'] and coverage['runtime_image_bytes_verified'] and coverage['usable'] == 682170 and coverage['input_layout'] == 'kaggle-packed-bin'
+PACKED_INDEX = COVERAGE.with_name('packed_image_index.sqlite')
+assert PACKED_INDEX.is_file()
 ROOT = Path(coverage['runtime_root'])
 assert ROOT.is_relative_to('/kaggle/input') and ROOT.is_dir()
 SOURCE = BASE / 'registered_source'
-COMMIT = '5aa5c87a2620b3c7763401e845dad45a935dd621'
+COMMIT = 'b4378dd4213dec255a82f5400fb26bb4426f59d7'
 HASHES = {
-    'scripts/train_usable_multimodal_v2.py': '88412d918b77f8a54569b25a8c469618c028ebaeeeb0b6050385dc55bd20ac1e',
+    'scripts/train_usable_multimodal_v2.py': '7f7fb90deb08a5901d1ca8343b780f6d82dd42b3e278d51f333568435becee0e',
+    'scripts/packed_image_io_v3.py': 'ce570b906d8f5bb0c3d1b2d8b7e07f8654589bae3557ed91c9e84cde484cdc30',
     'scripts/multimodal_recovery_v1.py': '2f5f67ce79289c69279040d21b483e28535895f5c99c63e0021da3eee6d3d1c8',
     'scripts/usable_cohort_v2.py': '22bff1eb0fa14d102ad07786f936c5c1ed1582ec7bd5cee2b8e8dc5eb3520092',
     'scripts/verify_usable_multimodal_v2.py': 'bc314502833835a42bba8bab2d069074018bafc807106a3eb503386e2671139b',
     'scripts/check_usable_multimodal_cuda_v2.py': '0317d959710522a6b69f97f059ea78b23f41042e5c0500f934f3f0d4a048e8f6',
     'configs/multimodal_usable_6way_v2.json': 'ad8f86f86b1fef453ae3bccda0aeb13cc50b298dc0d5d502f87c9ac4b041b483',
-    'collab/measure_usable_multimodal_preflight_v2.py': 'e8a3b4f4826d9de2549b369588ce578d71a79fa9fb51a87a0e75c0a782fd4dab',
+    'collab/measure_usable_multimodal_preflight_v2.py': '65f1a8dac090bb867b3e5abec16ac1c44a8c7c7bd96ae1bb6483aa80ff5e48d3',
 }
 
 
@@ -42,6 +47,9 @@ def sha(path):
         for block in iter(lambda: stream.read(4 * 1024**2), b''):
             digest.update(block)
     return digest.hexdigest()
+
+
+assert sha(PACKED_INDEX) == coverage['packed_index_sha256'], 'Packed index changed after full gate'
 
 
 for relative, expected in HASHES.items():
@@ -82,7 +90,7 @@ print('ACTUAL_CUDA_RECOVERY_FIXTURE_PASSED', flush=True)
 
 preflight = BASE / ('disposable_preflight_' + str(int(time.time())))
 command = [sys.executable, str(SOURCE / 'collab/measure_usable_multimodal_preflight_v2.py'),
-           '--root', str(ROOT), '--coverage', str(COVERAGE), '--config', str(config),
+           '--root', str(ROOT), '--coverage', str(COVERAGE), '--packed-index', str(PACKED_INDEX), '--config', str(config),
            '--output', str(preflight), '--warmstart', str(warmstart),
            '--cuda-fixture', str(fixture), '--seconds', '600', '--eval-seconds', '60']
 with (BASE / 'measured_gpu_preflight.log').open('a') as log:
@@ -94,6 +102,7 @@ summary = {'state': 'gpu_preflight_verified', 'fixture': str(fixture),
            'fixture_sha256': sha(fixture), 'throughput': str(preflight / 'measured_preflight.json'),
            'throughput_sha256': sha(preflight / 'measured_preflight.json'),
            'coverage': str(COVERAGE), 'coverage_sha256': sha(COVERAGE),
+           'packed_index': str(PACKED_INDEX), 'packed_index_sha256': sha(PACKED_INDEX),
            'input_root': str(ROOT), 'warmstart': str(warmstart),
            'estimated_epoch_seconds': epoch,
            'estimated_two_epochs_with20percent_margin_seconds': 2.4 * epoch,
