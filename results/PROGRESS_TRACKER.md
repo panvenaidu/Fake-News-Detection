@@ -1,3 +1,7 @@
+## 27 October 2026 live gate checkpoint
+
+The approved 682,170-image CPU gate completed once, but its no-persistence interactive index was lost after disconnection. Kaggle committed Version 2 is running the same gate to save durable artifacts. Multimodal training and full validation remain 0/2; the bars below are unchanged.
+
 ## Latest checkpoint — packed-input recovery, 26 October 2026
 
 Read context/MM_PART1_CURRENT_STATE_20261026.md first. Complete original private datasetVersion1 is preserved. Unpacked Kaggle CPU startup was cancelled after prolonged data attachment without Python execution. User approved the packed-reader recovery and replacement token; new private41-file staging is underway in the approved Colab CPU notebook. Same682170images/officialsplits/sixlabels/model/budget. Packed reader is tested on synthetic images but not yet production-integrated; original unpacked trainer must not be run on it. Scientific train0/2, validation0/2, no final test; all earlier conflicting live/job notes below are historical.

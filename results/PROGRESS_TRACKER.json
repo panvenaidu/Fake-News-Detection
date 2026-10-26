@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-26T17:44:46.160922+00:00",
+  "updated_utc": "2026-10-26T23:14:18.223870+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -476,7 +476,7 @@
   },
   "part1_execution_receipt": "results/MM_PART1_RECEIPT_20261023.json",
   "last_cpu_preparation_note": "Original source CRC/SHA terminal,682170/682661 usable,491failures; all3 inspected failed .jpg files areHTML; no data changes. Bounded diagnostic terminal/private backup saved. Await explicit protocol decision; scientific epochs0/2,val0/2,test0.",
-  "latest_operational_note": "packed_transfer_resumed_34_of_41",
+  "latest_operational_note": "interactive_full_682170_image_gate_completed_but_index_lost; durable_kaggle_version2_running",
   "original_specimen_diagnostic": "results/MM_PART1_ORIGINAL_SPECIMEN_DIAGNOSTIC_20261024.json",
   "approved_multimodal_cohort": {
     "id": "FACULTY-6W-USABLE-682170-v1",
@@ -489,10 +489,11 @@
     "exclusions": 491,
     "receipt": "results/MM_PART1_USABLE_RECEIPT_20261024.json"
   },
-  "current_execution_note": "Transport complete; do not restart image extraction or packing. Metadata v1 failed on one stale Drive version; all20new packs also require full remote SHA rereads. Use the versioned, resumable metadata v2 audit after verifying current private control and authorization; then build the private transfer index and stage the full Kaggle input. Runtime image SHA/decode, CUDA recovery/preflight, epochs1\u20132 and full validations remain pending. No Part1 final test.",
+  "current_execution_note": "Private packed faculty input Version1 published. First full682170-image Kaggle CPU gate finished and reported index SHA fc8dc03a4f773da5762891c8392375add5fb8087251b527f3b37a880308e6018, but no-persistence draft runtime expired and index/receipt were lost. Kaggle full gate Version2 Save & Run All is running to persist outputs. Do not relaunch or train until saved Version2 artifacts are independently read back. GPU draft prepared with packed input and text weights, accelerator off. Scientific epochs0/2, full validations0/2, no Part1 final test.",
   "latest_recovery_receipt": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
   "latest_api_backup_receipt": "results/MM_PART1_API_RECOVERY_GIT_BACKUP_20261025.json",
   "latest_reserve_audit": "results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json",
   "latest_API_job": "results/MM_PART1_API_PACK_JOB_20261025.json",
-  "usage_policy_override": "context/USAGE_POLICY_OVERRIDE_20261025.json"
+  "usage_policy_override": "context/USAGE_POLICY_OVERRIDE_20261025.json",
+  "latest_gate_observation": "results/MM_PART1_FULL_IMAGE_GATE_INTERACTIVE_OBSERVATION_20261027.json"
 }

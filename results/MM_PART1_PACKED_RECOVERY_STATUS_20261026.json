@@ -1,6 +1,6 @@
 {
-  "utc": "2026-10-26T17:58:22.066328+00:00",
-  "state": "private_packed_dataset_created_gate_pending",
+  "utc": "2026-10-26T23:14:09.564540+00:00",
+  "state": "durable_kaggle_full_gate_version2_running",
   "private_destination": "rocky62/urop-faculty-usable-packed-input-v3",
   "same_original_source_index_sha256": "5608291805e241d662d24db576d860a129d995e45b7a31b3651130f1a73780ee",
   "engine_sha256": "c7f6348b89111c5731814f8c1b82c4f73222b87b2e5715ec9e84a90ffe4af054",
@@ -29,5 +29,15 @@
   "fixture_url": "https://www.kaggle.com/datasets/rocky62/urop-packed-bin-engineering-fixture-20261026",
   "fixture_result": "Version 1, one 10.24 kB transport_fixture.bin; Kaggle preserved TAR bytes as binary",
   "probe_bytes_source": "exact total pending independent private receipt; Kaggle displays 80.58 GB",
-  "gpu_training_started": false
+  "gpu_training_started": false,
+  "gate_notebook": "https://www.kaggle.com/code/rocky62/urop-mm-packed-faculty-image-gate-20261026/edit",
+  "gate_runtime_root": "/kaggle/input/datasets/rocky62/urop-faculty-usable-packed-input-v3",
+  "gate_pid_observed": 107,
+  "gate_cloud_cpus_observed": 4,
+  "interactive_full_gate_verified_images": 682170,
+  "interactive_full_gate_index_sha256": "fc8dc03a4f773da5762891c8392375add5fb8087251b527f3b37a880308e6018",
+  "interactive_gate_output_durable": false,
+  "durable_gate_notebook_version": 2,
+  "durable_gate_commit_running": true,
+  "gpu_preflight_started": false
 }

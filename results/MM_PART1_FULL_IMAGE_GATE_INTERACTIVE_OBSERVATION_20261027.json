@@ -1,0 +1,12 @@
+{
+  "observed_utc": "2026-10-26T23:14:09.564540+00:00",
+  "source": "Kaggle notebook UI output, interactive draft",
+  "notebook": "https://www.kaggle.com/code/rocky62/urop-mm-packed-faculty-image-gate-20261026/edit",
+  "run_status": "complete_interactive_only",
+  "usable_images_verified": 682170,
+  "packed_index_sha256": "fc8dc03a4f773da5762891c8392375add5fb8087251b527f3b37a880308e6018",
+  "source_revision": "b4378dd4213dec255a82f5400fb26bb4426f59d7",
+  "scientific_training": false,
+  "durable_index_available": false,
+  "note": "Kaggle disconnected the interactive no-persistence runtime after the verification completed. The output line was observed, but the index/receipt disappeared on reconnect. Version 2 Save & Run All was launched to persist the full gate."
+}
