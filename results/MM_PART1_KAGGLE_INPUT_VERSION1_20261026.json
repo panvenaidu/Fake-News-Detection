@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-26T12:46:46.028131+00:00",
+  "state": "private_kaggle_dataset_version1_verified_in_ui",
+  "dataset_url": "https://www.kaggle.com/datasets/rocky62/urop-faculty-usable-image-transport-v2",
+  "private": true,
+  "version": 1,
+  "updated_local_observed": "2026-10-26 02:38:33 Asia/Kolkata",
+  "display_size": "80.06 GB",
+  "display_file_count": 682180,
+  "expected_images": 682170,
+  "image_runtime_gate_passed": false,
+  "source_transfer_index_sha256": "5608291805e241d662d24db576d860a129d995e45b7a31b3651130f1a73780ee",
+  "notebook_url": "https://www.kaggle.com/code/rocky62/urop-full-six-way-multimodal-part1/edit",
+  "input_attached_verified": true,
+  "input_attachment_signal": "Remove Dataset UROP faculty usable image transport v2",
+  "runtime_state": "Starting Draft Session Adding data",
+  "gpu_allocated": false,
+  "training_epochs_completed": 0,
+  "full_validations_completed": 0,
+  "test_inference": false,
+  "source_bootstrap": "collab/kaggle_full_input_gate_20261026.py"
+}

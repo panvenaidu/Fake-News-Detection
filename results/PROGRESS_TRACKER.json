@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-25T20:17:47.327777+00:00",
+  "updated_utc": "2026-10-26T12:56:44.337766+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -78,7 +78,7 @@
         "validation": 0,
         "final_test_and_result_archive": 0
       },
-      "state": "7of41private_uploaded_blobs_verified;terminal_save_recovery_verified;v3_continuation_submitted;scientific_training_pending",
+      "state": "FullprivateKaggledatasetVersion1saved_and_attached;CPUfullimageverificationpending;training_and_validation0of2",
       "checkpoint_completion_percent": 40,
       "epochs_trained": 0,
       "epochs_validated": 0,
@@ -98,9 +98,12 @@
         "transfer_index_verified": true,
         "transfer_files": 41,
         "transfer_bytes": 80584734720,
-        "kaggle_transfer_verified_files": 7,
-        "kaggle_transfer_verified_bytes": 8978237440,
-        "kaggle_private_dataset_version_verified": false
+        "kaggle_transfer_verified_files": 41,
+        "kaggle_transfer_verified_bytes": 80584734720,
+        "kaggle_private_dataset_version_verified": true,
+        "kaggle_private_dataset_version": 1,
+        "kaggle_private_dataset_files_displayed": 682180,
+        "kaggle_private_dataset_size_displayed": "80.06 GB"
       }
     },
     "image_only": {

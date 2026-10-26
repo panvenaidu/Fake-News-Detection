@@ -1,3 +1,7 @@
+## Current Part 1 continuation — 26 October 2026
+
+The complete private faculty input is saved as Kaggle datasetVersion1 (80.06GB,682180files) and attached to the existing full multimodal draft. Old7/41-upload/Colab-worker observations below are historical; do not repeat those transfers. Read context/MM_PART1_CURRENT_STATE_20261026.md and results/MM_PART1_KAGGLE_INPUT_VERSION1_20261026.json first. Full CPU runtime image verification is pending server data attachment; scientific train0/2 and validation0/2, no final test. Source/config/approved491exclusions are unchanged.
+
 <!-- CURRENT PART1 CHECKPOINT 20261026 -->
 **26 October checkpoint:** All682170approved images packed;39/39archive proofs and2metadata packages complete. Private41-file transfer index (80,584,734,720bytes) retrieved to ignored data/official_paired_v2 and SHA-verified. BERT warm-start SHA matches registration. No repeated extraction/repacking/audit. Chrome blocked first pack download with ERR_BLOCKED_BY_CLIENT; user handoff requested. Kaggle editor became blank and extension debugger unattached. No GPU allocated, scientific epochs0/2 and full validations0/2. New user5percentprimary hardstop supersedes old20/10rules. Exact evidence: results/MM_PART1_PREPARATION_VERIFIED_20261026.json. Next: resolve browser access, stage exact private Kaggle input, full image/runtime/preflight gates, then train/validate epochs1-2.
 <!-- /CURRENT PART1 CHECKPOINT 20261026 -->

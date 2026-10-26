@@ -1,3 +1,7 @@
+## Current continuation: full private Kaggle input saved
+
+Read context/MM_PART1_CURRENT_STATE_20261026.md first. Private datasetVersion1 exists and is attached;41-file transfer is complete. Old7/41 and live Colab transfer notes below are historical. No repeated transfer/extraction. CPU input verification is starting; Part1 training/validation remains0/2. Evidence results/MM_PART1_KAGGLE_INPUT_VERSION1_20261026.json.
+
 <!-- DIRECT_TRANSFER_CURRENT_20261026 -->
 ## Current direct-transfer checkpoint — 26 October 2026
 

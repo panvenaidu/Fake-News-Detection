@@ -1,3 +1,7 @@
+## Current Part 1 continuation — 26 October 2026
+
+The complete private faculty input is saved as Kaggle datasetVersion1 (80.06GB,682180files) and attached to the existing full multimodal draft. Old7/41-upload/Colab-worker observations below are historical; do not repeat those transfers. Read context/MM_PART1_CURRENT_STATE_20261026.md and results/MM_PART1_KAGGLE_INPUT_VERSION1_20261026.json first. Full CPU runtime image verification is pending server data attachment; scientific train0/2 and validation0/2, no final test. Source/config/approved491exclusions are unchanged.
+
 <!-- DIRECT_TRANSFER_CURRENT_20261026 -->
 ## Current direct-transfer checkpoint — 26 October 2026
 
