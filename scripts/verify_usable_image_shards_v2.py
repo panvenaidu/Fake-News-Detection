@@ -14,6 +14,7 @@ import os
 import shutil
 import uuid
 from collections import Counter, defaultdict
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path, PurePosixPath
 
 from PIL import Image
@@ -196,7 +197,7 @@ def prepare(source, output, extraction_report, layout='kaggle-tar', archive_proo
     return receipt
 
 
-def verify_unpacked(root, output):
+def verify_unpacked(root, output, workers=1):
     root = Path(root).resolve()
     if Path(output).resolve().is_relative_to(root):
         raise ValueError('Runtime receipt must be outside immutable private dataset input')
@@ -214,41 +215,66 @@ def verify_unpacked(root, output):
         raise ValueError('Runtime manifest checksum mismatch')
     seen = set()
     counts = Counter()
-    with manifest.open(newline='') as stream:
-        for row in csv.DictReader(stream):
-            ident = row['id']
-            if ident not in expected or ident in seen:
-                raise ValueError('Wrong/duplicate runtime image ID: ' + ident)
-            for key in ['split', 'clean_title', '6_way_label']:
-                if str(row[key]) != str(expected[ident][key]):
-                    raise ValueError('Official runtime metadata mismatch: ' + ident)
-            path = safe_path(root, row['image_path'])
-            member = PurePosixPath(row['image_path'])
-            expected_parent = (PurePosixPath('images') if coverage.get('input_layout') == 'flat'
-                               else PurePosixPath(Path(row['source_shard']).stem) / 'images')
-            if coverage.get('input_layout') not in ['flat', 'kaggle-tar']:
-                raise ValueError('Unknown runtime input layout')
-            if member.parent != expected_parent or member.stem != ident:
-                raise ValueError('Invalid image path: ' + ident)
-            if not path.is_file() or path.stat().st_size != int(row['bytes']):
-                raise ValueError('Missing/size-mismatched runtime image: ' + ident)
-            raw = path.read_bytes()
-            if hashlib.sha256(raw).hexdigest() != row['image_sha256']:
-                raise ValueError('Runtime image checksum mismatch: ' + ident)
-            with Image.open(io.BytesIO(raw)) as image:
-                image.load()
-                image.convert('RGB').load()
-            seen.add(ident)
-            counts[row['split']] += 1
-            if len(seen) % 10000 == 0:
-                print(json.dumps({'utc': prep.now(), 'state': 'verifying_unpacked_input',
-                                  'verified': len(seen), 'required': REQUIRED}), flush=True)
+    if not 1 <= workers <= 4:
+        raise ValueError('Runtime integrity workers must be1..4')
+
+    def verify_image(row):
+        ident = row['id']
+        path = safe_path(root, row['image_path'])
+        member = PurePosixPath(row['image_path'])
+        expected_parent = (PurePosixPath('images') if coverage.get('input_layout') == 'flat'
+                           else PurePosixPath(Path(row['source_shard']).stem) / 'images')
+        if coverage.get('input_layout') not in ['flat', 'kaggle-tar']:
+            raise ValueError('Unknown runtime input layout')
+        if member.parent != expected_parent or member.stem != ident:
+            raise ValueError('Invalid image path: ' + ident)
+        if not path.is_file() or path.stat().st_size != int(row['bytes']):
+            raise ValueError('Missing/size-mismatched runtime image: ' + ident)
+        raw = path.read_bytes()
+        if hashlib.sha256(raw).hexdigest() != row['image_sha256']:
+            raise ValueError('Runtime image checksum mismatch: ' + ident)
+        with Image.open(io.BytesIO(raw)) as image:
+            image.load()
+            image.convert('RGB').load()
+        return ident, row['split']
+
+    # Bounded batches avoid creating682170 futures or holding image bytes in RAM.
+    # The same file/path/hash/strict-decode checks run for every approved row.
+    with manifest.open(newline='') as stream, ThreadPoolExecutor(max_workers=workers) as pool:
+        rows = csv.DictReader(stream)
+        while True:
+            batch = []
+            batch_ids = set()
+            for _ in range(256):
+                try:
+                    row = next(rows)
+                except StopIteration:
+                    break
+                batch.append(row)
+            if not batch:
+                break
+            for row in batch:
+                ident = row['id']
+                if ident not in expected or ident in seen or ident in batch_ids:
+                    raise ValueError('Wrong/duplicate runtime image ID: ' + ident)
+                batch_ids.add(ident)
+                for key in ['split', 'clean_title', '6_way_label']:
+                    if str(row[key]) != str(expected[ident][key]):
+                        raise ValueError('Official runtime metadata mismatch: ' + ident)
+            for ident, split in pool.map(verify_image, batch):
+                seen.add(ident)
+                counts[split] += 1
+                if len(seen) % 10000 == 0:
+                    print(json.dumps({'utc': prep.now(), 'state': 'verifying_unpacked_input',
+                                      'verified': len(seen), 'required': REQUIRED,
+                                      'workers': workers}), flush=True)
     if seen != set(expected) or dict(counts) != COUNTS:
         raise ValueError('Incomplete runtime image cohort')
     receipt = {**coverage, 'utc': prep.now(), 'image_gate_passed': True,
                'runtime_image_bytes_verified': True, 'runtime_root': str(root),
                'usable': len(seen), 'split_counts': dict(counts),
                'verifier_sha256': prep.sha(__file__),
+               'verification_workers': workers,
                'status': 'Every approved usable-cohort runtime image hashed and decoded; no model inference'}
     write_json(output, receipt)
     print(json.dumps({k: v for k, v in receipt.items() if k != 'shards'}, indent=2))
@@ -266,8 +292,9 @@ if __name__ == '__main__':
     runtime = subparsers.add_parser('verify-unpacked')
     runtime.add_argument('--root', type=Path, required=True)
     runtime.add_argument('--output', type=Path, required=True)
+    runtime.add_argument('--workers', type=int, default=1, choices=range(1, 5))
     args = parser.parse_args()
     if args.mode == 'prepare-metadata':
         prepare(args.source_root, args.output_root, args.extraction_report, args.layout)
     else:
-        verify_unpacked(args.root, args.output)
+        verify_unpacked(args.root, args.output, args.workers)

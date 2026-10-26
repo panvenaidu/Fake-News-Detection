@@ -1,0 +1,74 @@
+{
+  "utc": "2026-10-26T13:33:37.231314+00:00",
+  "image_gate_passed": false,
+  "shard_metadata_gate_passed": true,
+  "runtime_image_bytes_verified": false,
+  "input_layout": "kaggle-tar",
+  "metadata_source": "local_shards",
+  "required": 6,
+  "split_counts": {
+    "train": 2,
+    "validation": 2,
+    "test": 2
+  },
+  "manifest_sha256": "d8f6feee304414414798c208cc4f977123d54655d9ddb2af31db5a1ef3a92484",
+  "image_bytes": 455,
+  "cross_split_content_duplicate_groups": 2,
+  "exclusions_or_resampling": true,
+  "exclusions_applied": 491,
+  "resampling": false,
+  "cohort_id": "FACULTY-6W-USABLE-682170-v1",
+  "cohort_registration_sha256": "3fe0b622958a1eee6732789d4f7acf6b450c0e3bda87312e5cbb6500fb405ce5",
+  "approved_excluded_ids_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "original_all_row_image_gate_passed": false,
+  "status": "Metadata prepared only. Upload shards plus this metadata privately, then verify actual unpacked input before training."
+}
+{
+  "utc": "2026-10-26T13:33:37.234332+00:00",
+  "image_gate_passed": true,
+  "shard_metadata_gate_passed": true,
+  "runtime_image_bytes_verified": true,
+  "input_layout": "kaggle-tar",
+  "metadata_source": "local_shards",
+  "required": 6,
+  "split_counts": {
+    "train": 2,
+    "validation": 2,
+    "test": 2
+  },
+  "manifest_sha256": "d8f6feee304414414798c208cc4f977123d54655d9ddb2af31db5a1ef3a92484",
+  "image_bytes": 455,
+  "cross_split_content_duplicate_groups": 2,
+  "exclusions_or_resampling": true,
+  "exclusions_applied": 491,
+  "resampling": false,
+  "cohort_id": "FACULTY-6W-USABLE-682170-v1",
+  "cohort_registration_sha256": "3fe0b622958a1eee6732789d4f7acf6b450c0e3bda87312e5cbb6500fb405ce5",
+  "approved_excluded_ids_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "original_all_row_image_gate_passed": false,
+  "status": "Every approved usable-cohort runtime image hashed and decoded; no model inference",
+  "runtime_root": "/Users/panveenaidu/Downloads/SEM7/UROP/data/official_paired_v2/input-gate-01mrdgg8/metadata",
+  "usable": 6,
+  "verifier_sha256": "f8147134fab8c331dbf2bdf7701a68594c682732bbdd01e0c0083a8e6a399a23",
+  "verification_workers": 1
+}
+{
+  "utc": "2026-10-26T13:33:37.239060+00:00",
+  "status": "passed",
+  "scope": "Six synthetic images test metadata/runtime-byte guards; policy loader is mocked ONLY here and separately checked against all real TSVs; no model inference",
+  "verifier_sha256": "f8147134fab8c331dbf2bdf7701a68594c682732bbdd01e0c0083a8e6a399a23",
+  "test_sha256": "7909f377cb0a128e4de8230b40ab26c3455c7bb7d2b836aca00decf1c4f0e13b",
+  "input_layout_tested": "kaggle-tar",
+  "checks": [
+    "Metadata preparation never opens image gate",
+    "Actual unpacked images all hashed/decoded before runtime gate",
+    "RGB, grayscale, palette and RGBA decode",
+    "Official title/label/split joins including multiline CSV text",
+    "Corrupt/missing image and symlink escape rejected",
+    "Runtime receipt cannot mutate immutable input",
+    "Altered receipt labels and incomplete extraction rejected"
+  ],
+  "limitations": [
+    "Real full-cohort manifest/private Kaggle import still pending"
+  ]
+}
