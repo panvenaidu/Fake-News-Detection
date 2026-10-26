@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-26T12:56:44.337766+00:00",
+  "updated_utc": "2026-10-26T17:44:46.160922+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -78,7 +78,7 @@
         "validation": 0,
         "final_test_and_result_archive": 0
       },
-      "state": "FullprivateKaggledatasetVersion1saved_and_attached;CPUfullimageverificationpending;training_and_validation0of2",
+      "state": "Full original private input preserved; packed private transfer recovered at 34/41; no scientific training",
       "checkpoint_completion_percent": 40,
       "epochs_trained": 0,
       "epochs_validated": 0,
@@ -103,7 +103,12 @@
         "kaggle_private_dataset_version_verified": true,
         "kaggle_private_dataset_version": 1,
         "kaggle_private_dataset_files_displayed": 682180,
-        "kaggle_private_dataset_size_displayed": "80.06 GB"
+        "kaggle_private_dataset_size_displayed": "80.06 GB",
+        "packed_transfer_submitted": true,
+        "packed_transfer_verified_files": 34,
+        "packed_transfer_verified_bytes": 65587118080,
+        "packed_reader_production_integration_complete": false,
+        "packed_binary_fixture_verified": true
       }
     },
     "image_only": {
@@ -471,7 +476,7 @@
   },
   "part1_execution_receipt": "results/MM_PART1_RECEIPT_20261023.json",
   "last_cpu_preparation_note": "Original source CRC/SHA terminal,682170/682661 usable,491failures; all3 inspected failed .jpg files areHTML; no data changes. Bounded diagnostic terminal/private backup saved. Await explicit protocol decision; scientific epochs0/2,val0/2,test0.",
-  "latest_operational_note": "api_transport_terminal",
+  "latest_operational_note": "packed_transfer_resumed_34_of_41",
   "original_specimen_diagnostic": "results/MM_PART1_ORIGINAL_SPECIMEN_DIAGNOSTIC_20261024.json",
   "approved_multimodal_cohort": {
     "id": "FACULTY-6W-USABLE-682170-v1",

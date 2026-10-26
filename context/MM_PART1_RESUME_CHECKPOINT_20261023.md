@@ -1,3 +1,7 @@
+## Latest checkpoint — packed-input recovery, 26 October 2026
+
+Read context/MM_PART1_CURRENT_STATE_20261026.md first. Complete original private datasetVersion1 is preserved. Unpacked Kaggle CPU startup was cancelled after prolonged data attachment without Python execution. User approved the packed-reader recovery and replacement token; new private41-file staging is underway in the approved Colab CPU notebook. Same682170images/officialsplits/sixlabels/model/budget. Packed reader is tested on synthetic images but not yet production-integrated; original unpacked trainer must not be run on it. Scientific train0/2, validation0/2, no final test; all earlier conflicting live/job notes below are historical.
+
 ## Current continuation: full private Kaggle input saved
 
 Read context/MM_PART1_CURRENT_STATE_20261026.md first. Private datasetVersion1 exists and is attached;41-file transfer is complete. Old7/41 and live Colab transfer notes below are historical. No repeated transfer/extraction. CPU input verification is starting; Part1 training/validation remains0/2. Evidence results/MM_PART1_KAGGLE_INPUT_VERSION1_20261026.json.

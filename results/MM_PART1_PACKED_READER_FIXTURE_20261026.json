@@ -1,0 +1,13 @@
+{
+  "state": "passed_lossless_archive_reader_engineering_fixture",
+  "checks": [
+    "RGB grayscale palette RGBA bytes and RGB pixels identical",
+    "Changed SHA archive size and unknown ID rejected",
+    "Index checksum mismatch rejected",
+    "Changed archive image payload rejected"
+  ],
+  "official_images_tested": 0,
+  "scientific_training": false,
+  "production_integration": false,
+  "source_sha256": "17146ec798164654cacf469ef4a0cbf9f34009ef6e977306066e10ae0ce93057"
+}

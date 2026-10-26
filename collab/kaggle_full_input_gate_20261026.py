@@ -11,9 +11,9 @@ import requests
 import sys
 import time
 
-REVISION = '220317a6b92241ca2943996a6966cb3e5c9cfa7b'
+REVISION = '367b75bd571498c496fed4c51307398f19f2239a'
 HASHES = {
-    'scripts/verify_usable_image_shards_v2.py': 'c24164ec26e9e3d3b490a2eb1b698d78ac807d0a67414e8b93428e3f4ee0b656',
+    'scripts/verify_usable_image_shards_v2.py': 'f8147134fab8c331dbf2bdf7701a68594c682732bbdd01e0c0083a8e6a399a23',
     'scripts/usable_cohort_v2.py': '22bff1eb0fa14d102ad07786f936c5c1ed1582ec7bd5cee2b8e8dc5eb3520092',
     'collab/prepare_official_images_drive_v1.py': '543c60d78d61182b10052cfd061d90c5bb764f99138a8bc09ae72dbfe93d7354',
 }
@@ -56,5 +56,5 @@ if receipt.exists():
     assert hashlib.sha256((root / 'data/official_paired_v2/paired_manifest.csv').read_bytes()).hexdigest() == prior['manifest_sha256']
     print('EXISTING_IMMUTABLE_INPUT_GATE_REUSED', flush=True)
 else:
-    gate.verify_unpacked(root, receipt)
+    gate.verify_unpacked(root, receipt, workers=min(4, os.cpu_count() or 1))
 print('FULL_INPUT_GATE_COMPLETE', flush=True)

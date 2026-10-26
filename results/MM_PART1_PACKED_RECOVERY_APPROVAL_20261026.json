@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-26T13:49:20.197639+00:00",
+  "status": "approved_by_user",
+  "specific_request": "packed input recovery and one replacement Kaggle API token for rocky62 used only in the approved Colab CPU notebook",
+  "user_reply": "idk do which is faster , i need u to complete work today itself",
+  "data_or_model_change": false,
+  "storage_reader_change": true,
+  "original_private_dataset_preserved": true,
+  "stalled_interactive_cpu_session": "Cancelled;0ActiveEvents verified in Kaggle UI",
+  "scientific_training": false,
+  "replacement_token_generated": true,
+  "token_value_in_project": false,
+  "live_private_dataset_quota_used_GB": 82.37,
+  "live_private_dataset_quota_total_GB": 214.75,
+  "live_gpu_quota_display": "00:00 / 30 hrs",
+  "live_gpu_usage_indicator_percent": 0,
+  "source_sha256": "6446a4184ac37a360d65eee0582fa78962fd7e2aba427cb0775754e744ffe207"
+}

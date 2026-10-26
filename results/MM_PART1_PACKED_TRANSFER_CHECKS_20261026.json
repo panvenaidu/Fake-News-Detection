@@ -1,0 +1,8 @@
+{
+  "state": "passed_destination_mapping_checks",
+  "image_tar_renamed_to_binary": true,
+  "metadata_packages_unchanged": true,
+  "source_entries_unchanged": true,
+  "mixed_generations_rejected": true,
+  "actual_cloud_upload_tested": false
+}

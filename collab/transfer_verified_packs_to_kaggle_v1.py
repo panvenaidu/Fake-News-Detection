@@ -25,6 +25,7 @@ COHORT = 'FACULTY-6W-USABLE-682170-v1'
 STATE_NAME = 'KAGGLE_PRIVATE_TRANSFER_V1.json'
 OWNER = 'rocky62'
 SLUG = 'urop-faculty-usable-image-transport-v2'
+TITLE = 'UROP faculty usable image transport v2'
 CHUNK = 32 * 1024**2
 
 
@@ -196,7 +197,18 @@ def run(args):
             nonlocal existing
             state['heartbeat'] = time.time()
             atomic_json(scratch / 'PRIVATE_TRANSFER_STATE.json', state)
-            existing = store.put_json(control, STATE_NAME, state, existing)
+            # Updating an existing control ID is idempotent. A first create is
+            # never blindly retried: its result can be ambiguous after a timeout.
+            for attempt in range(3):
+                try:
+                    existing = store.put_json(control, STATE_NAME, state, existing)
+                    break
+                except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as error:
+                    response = getattr(error, 'response', None)
+                    transient = response is None or response.status_code in (429, 500, 502, 503, 504)
+                    if existing is None or not transient or attempt == 2:
+                        raise
+                    time.sleep(2 ** attempt)
 
         state['phase'] = 'running'
         state['source_sha256'] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
@@ -250,7 +262,7 @@ def run(args):
                 proto = UploadDirectoryInfo(name='root', files=[state['files'][e['name']]['token'] for e in index['files']]).to_proto()
                 request = ApiCreateDatasetRequest()
                 request.owner_slug, request.slug = OWNER, SLUG
-                request.title = 'UROP faculty usable image transport v2'
+                request.title = TITLE
                 request.files, request.directories, request.is_private = proto.files, proto.directories, True
                 state['phase'] = 'create_submitted'
                 save()
