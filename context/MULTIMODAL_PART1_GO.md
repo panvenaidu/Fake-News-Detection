@@ -1,3 +1,9 @@
+<!-- PART1_ACCEPTED_20261027 -->
+## Verified Part1 completion — 27 October 2026
+
+Two full epochs + two full59299-pair validations accepted; selected epoch2 validation accuracy88.358994%, Macro-F1 .82266654; epoch3/cursor0 recovery verified. No final test. Part1 package100%; full text+image60%. Current evidence and Part2 resume instructions: `context/MM_PART1_PIPELINE_CURRENT_20261027.md`, `results/MM_PART1_REPORT_20261027.md`, `results/MM_PART1_RECEIPT_20261027.json`, `results/MM_PART1_FINAL_GIT_BACKUP_20261027.json`. Older statuses below are historical where they conflict. Preserve the approved usable cohort and frozen v2 protocol.
+<!-- /PART1_ACCEPTED_20261027 -->
+
 > Superseded execution handoff: read `context/MULTIMODAL_PART1_EXECUTION_PLAN_20261023.md` and `context/MULTIMODAL_PART2_EXECUTION_PLAN_20261023.md`. The October23 revision changes the minimum target to +1pp, adds20/10/5% reserve rules and Rocky/panvee62@gmail.com instructions. Original plan retained below as history.
 
 # Go: full text+image Part1

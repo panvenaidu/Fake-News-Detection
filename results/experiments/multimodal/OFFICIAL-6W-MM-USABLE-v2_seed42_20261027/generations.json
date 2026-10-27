@@ -1,0 +1,17 @@
+{
+  "schema": "MM-RECOVERY-v1",
+  "generations": [
+    {
+      "file": "2b57a4d8c3ca422f8c2e3773fdd845b7.pt",
+      "sha256": "357c0707a80ef97f485cfe1824b537327aeb6810b89890055e6d18866e1f1819",
+      "bytes": 1608464438,
+      "cursor": 0
+    },
+    {
+      "file": "0fe6dca2e8fd4275a61f3fc8b1baa03c.pt",
+      "sha256": "80f6e4938ae4e40a769f72fda10b586d9ed9760a333a869f763661d9f777af67",
+      "bytes": 1608464182,
+      "cursor": 563601
+    }
+  ]
+}

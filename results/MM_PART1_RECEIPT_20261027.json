@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "utc": "2026-10-27T11:22:20.808615+00:00",
+  "state": "verified_part1_science_and_recovery",
+  "attempt": "OFFICIAL-6W-MM-USABLE-v2_seed42_20261027",
+  "cohort": "FACULTY-6W-USABLE-682170-v1",
+  "split_counts": {
+    "train": 563601,
+    "validation": 59299,
+    "test": 59270
+  },
+  "original_rows": 682661,
+  "approved_usable_pairs": 682170,
+  "approved_exclusions": 491,
+  "registered_epochs": 4,
+  "epochs_trained": 2,
+  "epochs_validated": 2,
+  "scientific_experiments": 1,
+  "scientific_cloud_jobs": 2,
+  "seed": 42,
+  "model": "BERT-base-uncased + ResNet-50 maximum fusion",
+  "text_warmstart_epoch": 4,
+  "classification": "six-way",
+  "validation": [
+    {
+      "epoch": 1,
+      "metrics": {
+        "accuracy": 0.8770636941601039,
+        "micro_f1": 0.8770636941601039,
+        "macro_f1": 0.8131828985153033,
+        "weighted_f1": 0.8761821010555645,
+        "balanced_accuracy": 0.7891082369022498,
+        "loss": 0.499369034053496,
+        "samples": 59299
+      },
+      "predictions_sha256": "f3b4225e7ecd08879415d1a1f1dc29050c5a020493c8cd2a69f5f377257fa82b"
+    },
+    {
+      "epoch": 2,
+      "metrics": {
+        "accuracy": 0.8835899424948144,
+        "micro_f1": 0.8835899424948144,
+        "macro_f1": 0.822666539045316,
+        "weighted_f1": 0.882874012571488,
+        "balanced_accuracy": 0.8019416054634788,
+        "loss": 0.5648601171493689,
+        "samples": 59299
+      },
+      "predictions_sha256": "33585aae46f01982bd3adb17f1a4d4aca5baf796eec8fba9ca3480c7645f8e99"
+    }
+  ],
+  "selected_epoch": 2,
+  "selected_weights": {
+    "predictions_file": "validation_epoch2_predictions.csv",
+    "predictions_sha256": "33585aae46f01982bd3adb17f1a4d4aca5baf796eec8fba9ca3480c7645f8e99",
+    "metrics": {
+      "accuracy": 0.8835899424948144,
+      "micro_f1": 0.8835899424948144,
+      "macro_f1": 0.822666539045316,
+      "weighted_f1": 0.882874012571488,
+      "balanced_accuracy": 0.8019416054634788,
+      "loss": 0.5648601171493689,
+      "samples": 59299
+    },
+    "epoch": 2,
+    "weights_file": "selected_epoch2_f9d1f5e980e74a1ba68c6432b9a6bba1.pt",
+    "weights_sha256": "fe3f78e27a77410884bddd2f0929e2fc4b9717424251adbbaa325441989dda40"
+  },
+  "recovery_next_epoch": 3,
+  "recovery_next_cursor": 0,
+  "recovery": {
+    "loaded": {
+      "file": "2b57a4d8c3ca422f8c2e3773fdd845b7.pt",
+      "sha256": "357c0707a80ef97f485cfe1824b537327aeb6810b89890055e6d18866e1f1819",
+      "bytes": 1608464438,
+      "cursor": 0
+    },
+    "fallback_errors": []
+  },
+  "successful_optimizer_updates": 35211,
+  "amp_skipped_updates": 15,
+  "no_test_performed": true,
+  "part2_started": false,
+  "private_output": {
+    "kernel": "rocky62/urop-mm-part1-science-epoch2-20261027/1",
+    "url": "https://www.kaggle.com/code/rocky62/urop-mm-part1-science-epoch2-20261027",
+    "kernel_id": 141129725,
+    "retrieved_files": 31,
+    "independent_readback": true
+  },
+  "independent_verification_receipt": "results/MM_PART1_EPOCH2_VERIFIED_20261027.json",
+  "aggregate_artifact_manifest": "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/aggregate_artifact_manifest.json",
+  "private_large_artifact_manifest": "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/private_large_artifact_manifest.json",
+  "paper_validation_accuracy": 0.86,
+  "paper_test_accuracy": 0.8588,
+  "selected_validation_accuracy_gain_pp": 2.3589942494814387,
+  "minimum_plus1pp_validation_target_met": true,
+  "final_test_target_status": "Pending Part2; not measured in Part1",
+  "cloud_gpu": "Tesla T4; one visible/used device, T4x2 allocation",
+  "environment": {
+    "utc": "2026-10-27T08:26:48.589248+00:00",
+    "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+    "torch": "2.11.0+cu128",
+    "gpu": "Tesla T4",
+    "used_devices": 1,
+    "cuda_visible_devices": "0",
+    "planned_update_boundaries": 70452
+  },
+  "actual_docker_image": "gcr.io/kaggle-private-byod/python@sha256:9a6bcfda6d03b2cd9aa347ee8c1bae62043328ed0f4afe9bda014e4f8bbf9435",
+  "gpu_quota_observed": {
+    "utc": "2026-10-27T11:10:56.541106+00:00",
+    "action": "inspect",
+    "gpu_quota": {
+      "time_used": 23203.243,
+      "time_reserved": 0.0,
+      "total_time_allowed": 108000.0
+    },
+    "quota_refresh_utc": "2026-10-31T00:00:00",
+    "kernels": {
+      "rocky62/urop-mm-part1-science-usable-20261027/1": "KernelWorkerStatus.COMPLETE",
+      "rocky62/urop-mm-part1-science-epoch2-20261027/1": "KernelWorkerStatus.COMPLETE",
+      "rocky62/urop-mm-raw-cache-preflight-20261027/1": "KernelWorkerStatus.COMPLETE",
+      "rocky62/urop-mm-index-cache-preflight-20261027/1": "KernelWorkerStatus.COMPLETE",
+      "rocky62/urop-mm-part1-packed-gpu-20261026/4": "KernelWorkerStatus.COMPLETE",
+      "rocky62/urop-mm-packed-faculty-image-gate-20261026/2": "KernelWorkerStatus.COMPLETE"
+    },
+    "request_succeeded": true
+  },
+  "observed_gpu_hours_remaining": 23.55465472222222,
+  "workflow_percent": {
+    "text_only": 100,
+    "text_plus_image": 60,
+    "image_only": 20,
+    "overall": 60
+  },
+  "part1_package_percent": 100,
+  "final_documentation_git_backup_verified": false,
+  "final_git_backup_receipt": "results/MM_PART1_FINAL_GIT_BACKUP_20261027.json",
+  "limitations": [
+    "Approved usable-image cohort excludes491 strict decode failures; released cohort differs from paper count.",
+    "Our end-to-end BERT-base warmstart/projection/budget differs from paper fixed BERT feature and tuned classifier pipeline.",
+    "Single seed; validation numerical improvement is not a final-test or statistical-superiority claim."
+  ]
+}

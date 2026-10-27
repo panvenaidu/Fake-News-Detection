@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-27T11:19:23.157070+00:00",
+  "updated_utc": "2026-10-27T11:23:19.331947+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -70,7 +70,7 @@
       ]
     },
     "text_plus_image": {
-      "scope": "Full official-cohort benchmark; the completed 2600-row pilot is tracked separately",
+      "scope": "Faculty approved usable-image six-way cohort; official splits and491 documented decoding exclusions",
       "milestones": {
         "dataset_audit": 1,
         "model_implementation": 1,
@@ -78,7 +78,7 @@
         "validation": 0.5,
         "final_test_and_result_archive": 0
       },
-      "state": "Verified Part1 epoch2 training validation and recovery",
+      "state": "Part1 accepted: two complete epochs and validations; epoch3 recovery; final test pending Part2",
       "checkpoint_completion_percent": 60,
       "epochs_trained": 2,
       "epochs_validated": 2,
@@ -87,28 +87,44 @@
         "approved_images": 682170,
         "durable_packed_images": 682170,
         "durable_packs": 39,
-        "transport_percent": 100.0,
+        "transport_percent": 100,
         "image_runtime_gate_passed": true,
+        "metadata_phase": "complete",
+        "packed_reader_production_integration_complete": true,
+        "verified_raw_archive_bytes": 80209428480,
+        "verified_raw_archive_count": 39,
         "training_epochs_completed": 2,
         "full_validations_completed": 2,
         "final_test_performed": false,
-        "note": "Transport percentage is not workflow or scientific completion",
-        "archive_proofs": 39,
-        "metadata_phase": "complete",
-        "transfer_index_verified": true,
-        "transfer_files": 41,
-        "transfer_bytes": 80584734720,
-        "kaggle_transfer_verified_files": 41,
-        "kaggle_transfer_verified_bytes": 80584734720,
-        "kaggle_private_dataset_version_verified": true,
-        "kaggle_private_dataset_version": 1,
-        "kaggle_private_dataset_files_displayed": 682180,
-        "kaggle_private_dataset_size_displayed": "80.06 GB",
-        "packed_transfer_submitted": true,
-        "packed_transfer_verified_files": 49,
-        "packed_transfer_verified_bytes": 65587118080,
-        "packed_reader_production_integration_complete": true,
-        "packed_binary_fixture_verified": true
+        "private_input": "rocky62/urop-faculty-usable-packed-input-v3/1",
+        "coverage_sha256": "afe8c723f91fe74f791908e0c16fab94d919af64c7cb7c9b5a37e676361d95e5",
+        "historical_transport_observations": {
+          "approved_images": 682170,
+          "durable_packed_images": 682170,
+          "durable_packs": 39,
+          "transport_percent": 100.0,
+          "image_runtime_gate_passed": true,
+          "training_epochs_completed": 2,
+          "full_validations_completed": 2,
+          "final_test_performed": false,
+          "note": "Transport percentage is not workflow or scientific completion",
+          "archive_proofs": 39,
+          "metadata_phase": "complete",
+          "transfer_index_verified": true,
+          "transfer_files": 41,
+          "transfer_bytes": 80584734720,
+          "kaggle_transfer_verified_files": 41,
+          "kaggle_transfer_verified_bytes": 80584734720,
+          "kaggle_private_dataset_version_verified": true,
+          "kaggle_private_dataset_version": 1,
+          "kaggle_private_dataset_files_displayed": 682180,
+          "kaggle_private_dataset_size_displayed": "80.06 GB",
+          "packed_transfer_submitted": true,
+          "packed_transfer_verified_files": 49,
+          "packed_transfer_verified_bytes": 65587118080,
+          "packed_reader_production_integration_complete": true,
+          "packed_binary_fixture_verified": true
+        }
       },
       "historical_runtime_observation": {
         "recorded_utc": "2026-10-27T06:36:16.946055+00:00",
@@ -135,8 +151,16 @@
         "controller_pid": 22245,
         "no_test_performed": true
       },
-      "current_cloud_job": "rocky62/urop-mm-part1-science-epoch2-20261027/1",
-      "verified_epoch1_receipt": "results/MM_PART1_EPOCH1_VERIFIED_20261027.json"
+      "verified_epoch1_receipt": "results/MM_PART1_EPOCH1_VERIFIED_20261027.json",
+      "part1_package_percent": 100,
+      "final_test_completed": false,
+      "selected_epoch": 2,
+      "latest_recovery_next_epoch": 3,
+      "latest_recovery_next_cursor": 0,
+      "receipt": "results/MM_PART1_RECEIPT_20261027.json",
+      "final_report": "results/MM_PART1_REPORT_20261027.md",
+      "registered_cloud_jobs_complete": true,
+      "current_cloud_job": null
     },
     "image_only": {
       "scope": "Standalone image-only six-way benchmark",
@@ -187,7 +211,7 @@
   "recovery_note": "Original checkpoint retained; final epoch6 recovery state and selected epoch4 weights retrieved and verified locally; final test/archives complete. No active GPU job.",
   "recovery_files_location": "data/cloud_recovery/",
   "current_plan": "context/MULTIMODAL_PART1_EXECUTION_PLAN_20261023.md",
-  "execution_approval": "Part1 authorized; full trainer CPU-tested, private cloud source staged; reserve checkpoint, no scientific multimodal training",
+  "execution_approval": "Part1 completed and verified; no Part2 or image-only training performed in this task",
   "usage_reserve_policy": {
     "prepare_at_remaining_percent": 25,
     "reserve_at_remaining_percent": 20,
@@ -525,5 +549,5 @@
   "latest_gate_observation": "results/MM_PART1_FULL_IMAGE_GATE_INTERACTIVE_OBSERVATION_20261027.json",
   "latest_gate_readback": "results/MM_PART1_SAVED_GATE_READBACK_20261027.json",
   "current_capacity_checkpoint": "context/MM_PART1_IO_RECOVERY_20261027.md",
-  "current_verified_part1_receipt": "results/MM_PART1_EPOCH2_VERIFIED_20261027.json"
+  "current_verified_part1_receipt": "results/MM_PART1_RECEIPT_20261027.json"
 }

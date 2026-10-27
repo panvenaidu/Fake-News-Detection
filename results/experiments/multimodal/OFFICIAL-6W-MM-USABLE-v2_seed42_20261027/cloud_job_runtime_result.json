@@ -1,0 +1,47 @@
+{
+  "utc": "2026-10-27T11:01:46.823437+00:00",
+  "state": "epoch_job_finished",
+  "epochs_validated": 2,
+  "next_epoch": 3,
+  "cursor": 0,
+  "recovery": {
+    "loaded": {
+      "file": "2b57a4d8c3ca422f8c2e3773fdd845b7.pt",
+      "sha256": "357c0707a80ef97f485cfe1824b537327aeb6810b89890055e6d18866e1f1819",
+      "bytes": 1608464438,
+      "cursor": 0
+    },
+    "fallback_errors": []
+  },
+  "validation": [
+    {
+      "epoch": 1,
+      "metrics": {
+        "accuracy": 0.8770636941601039,
+        "micro_f1": 0.8770636941601039,
+        "macro_f1": 0.8131828985153033,
+        "weighted_f1": 0.8761821010555645,
+        "balanced_accuracy": 0.7891082369022498,
+        "loss": 0.499369034053496,
+        "samples": 59299
+      },
+      "predictions_sha256": "f3b4225e7ecd08879415d1a1f1dc29050c5a020493c8cd2a69f5f377257fa82b"
+    },
+    {
+      "epoch": 2,
+      "metrics": {
+        "accuracy": 0.8835899424948144,
+        "micro_f1": 0.8835899424948144,
+        "macro_f1": 0.822666539045316,
+        "weighted_f1": 0.882874012571488,
+        "balanced_accuracy": 0.8019416054634788,
+        "loss": 0.5648601171493689,
+        "samples": 59299
+      },
+      "predictions_sha256": "33585aae46f01982bd3adb17f1a4d4aca5baf796eec8fba9ca3480c7645f8e99"
+    }
+  ],
+  "no_test_performed": true,
+  "private_cloud_durability_verified": false,
+  "next": "Save private Kaggle output/version, verify after runtime loss, retrieve/hash recovery and update Git before claiming accepted Part1"
+}

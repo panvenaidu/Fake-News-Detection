@@ -1,0 +1,78 @@
+{
+  "utc": "2026-10-27T11:22:20.808289+00:00",
+  "files": {
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/cloud_job_runtime_result.json": {
+      "bytes": 1485,
+      "sha256": "743f0ee306091cbbe699319d7c2c4a862f752ea54a76eec5e4a32374d0d6274f"
+    },
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/environment.json": {
+      "bytes": 252,
+      "sha256": "96776cfd7f585f4d6af91d64d81dc912060979be2206fb7cd999bcdd03c885ce"
+    },
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/generations.json": {
+      "bytes": 451,
+      "sha256": "e4f62a7c113f62355eb23d94cdb2fa5b264025d12cf524e89490385779930029"
+    },
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/history.json": {
+      "bytes": 774,
+      "sha256": "c29d6a1b92de404776a08eb3523408eba0932f563fdca7ae0bdb4580e10a56b8"
+    },
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/private_large_artifact_manifest.json": {
+      "bytes": 3132,
+      "sha256": "db53ca1b1dcd6122cab7db5698dbf0c3328d1d862288a9814b95f5743b856a6f"
+    },
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/protocol.json": {
+      "bytes": 3301,
+      "sha256": "bcb36efe3383c7ecfcc4c94b0c5943df570435bb6debe2dcb04d808a67502e43"
+    },
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/runtime_recovery.json": {
+      "bytes": 2140,
+      "sha256": "cdbf824718b7425bcd2d29087011a8d54159ae2498a9554c6589efd8e1172641"
+    },
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/selected_checkpoint.json": {
+      "bytes": 592,
+      "sha256": "6c17779f4b7654b09d40fbe7240a5168f07cac12edecf92fa77c463b1071398b"
+    },
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/validation_epoch1_classification_report.json": {
+      "bytes": 1283,
+      "sha256": "db24ae46acff23d39039556eab36268f4a34280942067e949bf136989709a5bb"
+    },
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/validation_epoch1_confusion_raw.csv": {
+      "bytes": 346,
+      "sha256": "2bdb499543ed1b7ce69a9c909a7cec9f334805bce0af1a18609f2e4c90997afb"
+    },
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/validation_epoch1_confusion_row_normalized.csv": {
+      "bytes": 944,
+      "sha256": "43614829f16939200703998050c559012221ea21a86aaf26ecfe62ba5550f4be"
+    },
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/validation_epoch1_confusions.json": {
+      "bytes": 1718,
+      "sha256": "c75bc9fc819ffc27c28ef933083410003a017301a674d38e49521d17cb146f91"
+    },
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/validation_epoch1_metrics.json": {
+      "bytes": 234,
+      "sha256": "f9ac3fd41e0ef9eff9e52bf32491e50ad0392897714db8e59a721ef12e8b7224"
+    },
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/validation_epoch2_classification_report.json": {
+      "bytes": 1279,
+      "sha256": "cdf201e73e1a080de03b1ddc1a11d77bf1d2b9e7d646a7c9b0d72b534aa13aa9"
+    },
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/validation_epoch2_confusion_raw.csv": {
+      "bytes": 345,
+      "sha256": "6be8bc619ca0ad678ded3b17d785856d5045092ae943966128bbede3e0d3e944"
+    },
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/validation_epoch2_confusion_row_normalized.csv": {
+      "bytes": 918,
+      "sha256": "0007b7a9468c829c25982d51a0fd936f4eff71f3caed73e5d41ac77a5d719895"
+    },
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/validation_epoch2_confusions.json": {
+      "bytes": 1691,
+      "sha256": "8a76e5576335cfa0f14cc039a33c1354b6d7c85275c9b461467260597083bb1d"
+    },
+    "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/validation_epoch2_metrics.json": {
+      "bytes": 233,
+      "sha256": "1eb5d9feb7f1f8bd478b6b0efb73f551c283e8454bb8534c7da74967f8a597eb"
+    }
+  },
+  "manifest_excludes_itself": true
+}

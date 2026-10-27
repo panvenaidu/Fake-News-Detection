@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-27T05:04:59.755317+00:00",
+  "action": "watch",
+  "kernel": "rocky62/urop-mm-raw-cache-preflight-20261027/1",
+  "status": "KernelWorkerStatus.COMPLETE",
+  "failure_message": "",
+  "terminal_observed": true,
+  "files": [
+    "/Users/panveenaidu/Downloads/SEM7/UROP/data/cloud_recovery/KAGGLE_RAW_CACHE_PREFLIGHT_v1_20261027/urop_mm_part1_20261026/GPU_PREFLIGHT_SUMMARY.json",
+    "/Users/panveenaidu/Downloads/SEM7/UROP/data/cloud_recovery/KAGGLE_RAW_CACHE_PREFLIGHT_v1_20261027/urop_mm_part1_20261026/actual_cuda_fixture.json",
+    "/Users/panveenaidu/Downloads/SEM7/UROP/data/cloud_recovery/KAGGLE_RAW_CACHE_PREFLIGHT_v1_20261027/urop_mm_part1_20261026/disposable_preflight_1793076124/measured_preflight.json",
+    "/Users/panveenaidu/Downloads/SEM7/UROP/data/cloud_recovery/KAGGLE_RAW_CACHE_PREFLIGHT_v1_20261027/urop_mm_part1_20261026/disposable_preflight_1793076124/preflight_state.json",
+    "/Users/panveenaidu/Downloads/SEM7/UROP/data/cloud_recovery/KAGGLE_RAW_CACHE_PREFLIGHT_v1_20261027/urop_mm_part1_20261026/disposable_preflight_1793076124/recovery/generations.json",
+    "/Users/panveenaidu/Downloads/SEM7/UROP/data/cloud_recovery/KAGGLE_RAW_CACHE_PREFLIGHT_v1_20261027/urop_mm_part1_20261026/disposable_preflight_1793076124/runtime_recovery.json",
+    "/Users/panveenaidu/Downloads/SEM7/UROP/data/cloud_recovery/KAGGLE_RAW_CACHE_PREFLIGHT_v1_20261027/urop_mm_part1_20261026/disposable_preflight_1793076124/status.json",
+    "/Users/panveenaidu/Downloads/SEM7/UROP/data/cloud_recovery/KAGGLE_RAW_CACHE_PREFLIGHT_v1_20261027/urop_mm_part1_20261026/measured_gpu_preflight.log",
+    "/Users/panveenaidu/Downloads/SEM7/UROP/data/cloud_recovery/KAGGLE_RAW_CACHE_PREFLIGHT_v1_20261027/urop_mm_part1_20261026/raw_archive_cache_receipt.json",
+    "/Users/panveenaidu/Downloads/SEM7/UROP/data/cloud_recovery/KAGGLE_RAW_CACHE_PREFLIGHT_v1_20261027/urop_mm_part1_20261026/registered_source/configs/multimodal_usable_6way_v2.json",
+    "/Users/panveenaidu/Downloads/SEM7/UROP/data/cloud_recovery/KAGGLE_RAW_CACHE_PREFLIGHT_v1_20261027/urop-mm-raw-cache-preflight-20261027.log"
+  ],
+  "next_page": false,
+  "metadata_folder": "/Users/panveenaidu/Downloads/SEM7/UROP/data/cloud_recovery/KAGGLE_RAW_CACHE_PREFLIGHT_v1_20261027/notebook_metadata",
+  "gpu_quota": {
+    "time_used": 3252.003,
+    "time_reserved": 0.0,
+    "total_time_allowed": 108000.0
+  },
+  "request_succeeded": true
+}

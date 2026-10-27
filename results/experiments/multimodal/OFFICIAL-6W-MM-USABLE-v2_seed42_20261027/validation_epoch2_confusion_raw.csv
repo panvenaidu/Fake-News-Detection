@@ -1,0 +1,7 @@
+Gold / predicted,True,Satire/Parody,Misleading Content,Imposter Content,False Connection,Manipulated Content
+True,21053,227,1608,71,158,203
+Satire/Parody,482,2586,180,22,187,63
+Misleading Content,1515,89,9396,19,202,56
+Imposter Content,338,44,115,674,32,35
+False Connection,385,131,348,24,16840,40
+Manipulated Content,197,39,76,5,12,1847

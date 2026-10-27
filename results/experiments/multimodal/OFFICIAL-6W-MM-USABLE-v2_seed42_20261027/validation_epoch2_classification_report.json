@@ -1,0 +1,51 @@
+{
+  "True": {
+    "precision": 0.8783062161034627,
+    "recall": 0.90278730703259,
+    "f1-score": 0.890378515542398,
+    "support": 23320.0
+  },
+  "Satire/Parody": {
+    "precision": 0.8299101412066753,
+    "recall": 0.7346590909090909,
+    "f1-score": 0.779385171790235,
+    "support": 3520.0
+  },
+  "Misleading Content": {
+    "precision": 0.8015013221871534,
+    "recall": 0.8332003192338387,
+    "f1-score": 0.8170434782608695,
+    "support": 11277.0
+  },
+  "Imposter Content": {
+    "precision": 0.8269938650306748,
+    "recall": 0.5444264943457189,
+    "f1-score": 0.6566000974184121,
+    "support": 1238.0
+  },
+  "False Connection": {
+    "precision": 0.9660948884171877,
+    "recall": 0.9477712742008104,
+    "f1-score": 0.9568453649251399,
+    "support": 17768.0
+  },
+  "Manipulated Content": {
+    "precision": 0.8230837789661319,
+    "recall": 0.8488051470588235,
+    "f1-score": 0.8357466063348417,
+    "support": 2176.0
+  },
+  "accuracy": 0.8835899424948144,
+  "macro avg": {
+    "precision": 0.8543150353185477,
+    "recall": 0.8019416054634788,
+    "f1-score": 0.822666539045316,
+    "support": 59299.0
+  },
+  "weighted avg": {
+    "precision": 0.8840340942042807,
+    "recall": 0.8835899424948144,
+    "f1-score": 0.882874012571488,
+    "support": 59299.0
+  }
+}

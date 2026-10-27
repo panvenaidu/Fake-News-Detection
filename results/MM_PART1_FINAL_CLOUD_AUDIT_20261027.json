@@ -1,0 +1,19 @@
+{
+  "utc": "2026-10-27T11:10:56.541106+00:00",
+  "action": "inspect",
+  "gpu_quota": {
+    "time_used": 23203.243,
+    "time_reserved": 0.0,
+    "total_time_allowed": 108000.0
+  },
+  "quota_refresh_utc": "2026-10-31T00:00:00",
+  "kernels": {
+    "rocky62/urop-mm-part1-science-usable-20261027/1": "KernelWorkerStatus.COMPLETE",
+    "rocky62/urop-mm-part1-science-epoch2-20261027/1": "KernelWorkerStatus.COMPLETE",
+    "rocky62/urop-mm-raw-cache-preflight-20261027/1": "KernelWorkerStatus.COMPLETE",
+    "rocky62/urop-mm-index-cache-preflight-20261027/1": "KernelWorkerStatus.COMPLETE",
+    "rocky62/urop-mm-part1-packed-gpu-20261026/4": "KernelWorkerStatus.COMPLETE",
+    "rocky62/urop-mm-packed-faculty-image-gate-20261026/2": "KernelWorkerStatus.COMPLETE"
+  },
+  "request_succeeded": true
+}

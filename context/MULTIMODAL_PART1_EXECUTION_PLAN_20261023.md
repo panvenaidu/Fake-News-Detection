@@ -1,3 +1,9 @@
+<!-- PART1_ACCEPTED_20261027 -->
+## Verified Part1 completion — 27 October 2026
+
+Two full epochs + two full59299-pair validations accepted; selected epoch2 validation accuracy88.358994%, Macro-F1 .82266654; epoch3/cursor0 recovery verified. No final test. Part1 package100%; full text+image60%. Current evidence and Part2 resume instructions: `context/MM_PART1_PIPELINE_CURRENT_20261027.md`, `results/MM_PART1_REPORT_20261027.md`, `results/MM_PART1_RECEIPT_20261027.json`, `results/MM_PART1_FINAL_GIT_BACKUP_20261027.json`. Older statuses below are historical where they conflict. Preserve the approved usable cohort and frozen v2 protocol.
+<!-- /PART1_ACCEPTED_20261027 -->
+
 <!-- LATEST USER USAGE OVERRIDE 20261026 -->
 Primary allowance may be used until5percent; prepare/save verified handoff by that boundary and stop. Earlier20percentreserve/10percentpause rules are superseded. Weekly availability remains a ceiling. See context/USAGE_POLICY_OVERRIDE_20261026.json. Scientific scope unchanged.
 
