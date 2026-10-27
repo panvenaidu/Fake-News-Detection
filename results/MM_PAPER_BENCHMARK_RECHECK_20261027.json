@@ -1,0 +1,21 @@
+{
+  "verified_utc": "2026-10-27T04:47:06.838803+00:00",
+  "source": "https://arxiv.org/html/1911.03854v2",
+  "paper": "r/Fakeddit: A New Multimodal Benchmark Dataset for Fine-grained Fake News Detection",
+  "table": 4,
+  "classification": "6-way",
+  "fusion": "maximum",
+  "text_model": "BERT (paper describes pretrained BERT-Large uncased fixed features)",
+  "image_model": "ResNet50",
+  "validation_accuracy": 0.86,
+  "test_accuracy": 0.8588,
+  "minimum_target_validation_accuracy": 0.87,
+  "minimum_target_test_accuracy": 0.8688,
+  "other_aggregate_metrics": "not reported",
+  "table6_is": "per-gold-label error proportion, not class F1",
+  "comparison_limits": [
+    "Our BERT-base warm-start and end-to-end training differ from paper fixed feature/tuned dense classifier pipeline",
+    "Approved usable-image cohort excludes491 strict decoding failures and differs from full TSV cohort",
+    "Part1 has no test inference; validation does not establish final test superiority"
+  ]
+}

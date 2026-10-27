@@ -1,0 +1,40 @@
+{
+  "verified_utc": "2026-10-27T05:12:23.816259+00:00",
+  "launch": {
+    "utc": "2026-10-27T05:05:16.157658+00:00",
+    "submitted": true,
+    "version": 1,
+    "kernel_id": 141101810,
+    "url": "https://www.kaggle.com/code/rocky62/urop-mm-part1-science-usable-20261027",
+    "session_timeout_seconds": 18000,
+    "package_sha256": "482a5182b15b0259c14fc318fc5d694e27337e30d8c27a8c6a512c5476ef82b2"
+  },
+  "script_version_id": 362710475,
+  "actual_process_observation": {
+    "utc": "2026-10-27T05:11:54.956700+00:00",
+    "pid": 67,
+    "job_alive": true,
+    "safe_stop_requested": false,
+    "trainer_status": {
+      "state": "initializing"
+    },
+    "gpu": {
+      "query_returncode": 0,
+      "allocated_devices": [
+        "0, Tesla T4, 0, 3, 15360",
+        "1, Tesla T4, 0, 0, 15360"
+      ],
+      "used_cuda_visible_device": "0"
+    }
+  },
+  "preflight_receipt": "results/MM_PART1_RAW_CACHE_PREFLIGHT_VERIFIED_20261027.json",
+  "session_timeout_seconds": 18000,
+  "stop_after_epoch": 1,
+  "no_test": true,
+  "completed_training_epochs": 0,
+  "full_validations_completed": 0,
+  "controller": "collab/run_verified_part1_pipeline_v1.py",
+  "controller_status": "data/cloud_recovery/part1_verified_pipeline_20261027/status.json",
+  "registered_attempt": "OFFICIAL-6W-MM-USABLE-v2_seed42_20261027",
+  "note": "Initialization is not a scientific result. Epoch2 requires independently verified saved epoch1."
+}
