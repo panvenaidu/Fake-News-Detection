@@ -1,3 +1,7 @@
+## Allowance reset verified — same epoch2 job continues
+
+2026-10-27T09:15:28.445613+00:00 — primary usage0%, weekly62%used. The same local bounded controllerPID22245 is alive and reports private epoch2 version1 RUNNING at09:14UTC. No preparation, transfer, preflight or training job was restarted during the reserve pause. Epoch1 independent acceptance/remote backup remain valid. STOP_PIPELINE remains in place so no additional training can launch after this already-submitted final Part1 job. Next: verify complete epoch2 artifacts and epoch3 recovery, finalize reports/Git, and mark Part1 Goal complete only after acceptance. Evidence `results/MM_PART1_RESUMED_AFTER_RESERVE_20261027.json`.
+
 ## Reserve checkpoint — epoch1 accepted, epoch2 already submitted
 
 2026-10-27T08:18:29.433599+00:00 — see `results/MM_PART1_RESERVE_CHECKPOINT_20261027.json`. Epoch1 full training/validation and13required artifact hashes independently verified;24files retrieved privately/locally; Git remote48bd48b matched. Validation accuracy87.7064%,Macro-F1 .81318290,59299pairs. Epoch2 submitted08:16:31UTC as private `rocky62/urop-mm-part1-science-epoch2-20261027/1`,sameattempt/four-epochbudget,recoveryepoch2cursor0.

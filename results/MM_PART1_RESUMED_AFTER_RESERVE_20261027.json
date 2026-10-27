@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-27T09:15:28.445613+00:00",
+  "primary_used_percent": 0,
+  "secondary_used_percent": 62,
+  "controller_pid": 22245,
+  "same_controller_alive": true,
+  "cloud_job": {
+    "utc": "2026-10-27T09:15:09.662164+00:00",
+    "kernel": "rocky62/urop-mm-part1-science-epoch2-20261027/1",
+    "status": "KernelWorkerStatus.RUNNING",
+    "failure_message": ""
+  },
+  "no_training_restart": true,
+  "stop_marker_retained": "No additional launch beyond the already-submitted final Part1 epoch2",
+  "epoch1_receipt": "results/MM_PART1_EPOCH1_VERIFIED_20261027.json",
+  "next": "Verify completed epoch2 outputs and all Part1 acceptance criteria; no test or Part2 training"
+}
