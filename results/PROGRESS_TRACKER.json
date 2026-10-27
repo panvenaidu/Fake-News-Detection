@@ -78,7 +78,7 @@
         "validation": 1,
         "final_test_and_result_archive": 1
       },
-      "state": "Verified complete: four epochs, four full validations, frozen epoch4, full test and private/local artifacts; Git final receipt follows",
+      "state": "COMPLETE: four epochs, four validations, frozen epoch4 full test, independent artifacts and remote Git backup verified",
       "checkpoint_completion_percent": 100,
       "epochs_trained": 4,
       "epochs_validated": 4,
@@ -161,7 +161,7 @@
       "final_report": "results/MULTIMODAL_FINAL_REPORT_20261028.md",
       "registered_cloud_jobs_complete": true,
       "current_cloud_job": {
-        "url": "362955511",
+        "url": "https://www.kaggle.com/code/rocky62/urop-mm-final-continuation-20261028?scriptVersionId=362955511",
         "state": "Successful; all science independently verified; no active trainer",
         "script_version_id": 362955511
       },
@@ -557,12 +557,13 @@
   "current_capacity_checkpoint": "context/MM_PART1_IO_RECOVERY_20261027.md",
   "current_verified_part1_receipt": "results/MM_PART1_RECEIPT_20261027.json",
   "current_cloud_job": {
-    "url": "362955511",
+    "url": "https://www.kaggle.com/code/rocky62/urop-mm-final-continuation-20261028?scriptVersionId=362955511",
     "state": "Successful; all science independently verified; no active trainer",
     "script_version_id": 362955511
   },
   "latest_part2_status": "results/MULTIMODAL_FINAL_REPORT_20261028.md",
   "overall_three_modality_checkpoint_percent_exact": 73.33333333333334,
   "latest_verified_part2_receipt": "results/MM_FINAL_SAVED_VERIFIED_20261028.json",
-  "historical_previous_current_execution_note": "context/MM_PART1_IO_RECOVERY_20261027.md; all scientific fractions unchanged, zero epochs and full validations."
+  "historical_previous_current_execution_note": "context/MM_PART1_IO_RECOVERY_20261027.md; all scientific fractions unchanged, zero epochs and full validations.",
+  "multimodal_final_completion_receipt": "results/MM_FINAL_COMPLETION_RECEIPT_20261028.json"
 }

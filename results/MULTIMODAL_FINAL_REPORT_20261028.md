@@ -75,3 +75,5 @@ Overall         ███████▎░░  73%
 Five equally weighted workflow stages, all complete for multimodal; overall=(100+100+20)/3=73.333%. These are workflow percentages, not accuracy. Next research task is image-only; it has NOT started. Older partial/running/pending records below are historical and superseded by this verified completion.
 
 Private attempt: `data/cloud_recovery/final_saved_output_20261028_362955511/extracted/urop_mm_final_20261028/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027`. All sizes/SHA256: results/MM_FINAL_SAVED_VERIFIED_20261028.json.
+
+Final acceptance and remote readback: results/MM_FINAL_COMPLETION_RECEIPT_20261028.json; results commit `e88f596318ff248f4e6de626cef2a789243e67db` matched remote main at 2026-10-27T21:40:47.964450+00:00. No training/test rerun required.

@@ -1,0 +1,55 @@
+{
+  "utc": "2026-10-27T21:40:47.964450+00:00",
+  "status": "multimodal_part1_part2_complete_verified",
+  "scientific_attempt": "OFFICIAL-6W-MM-USABLE-v2_seed42_20261027",
+  "selected_epoch": 4,
+  "epochs_trained": 4,
+  "full_validations": 4,
+  "validation_rows": 59299,
+  "test_rows": 59270,
+  "validation_metrics": {
+    "accuracy": 0.8850739472841026,
+    "micro_f1": 0.8850739472841026,
+    "macro_f1": 0.8293028761296689,
+    "weighted_f1": 0.8848143052893319,
+    "balanced_accuracy": 0.8083023548802731,
+    "loss": 0.6947946472031342,
+    "samples": 59299
+  },
+  "test_metrics": {
+    "accuracy": 0.8814577357853889,
+    "micro_f1": 0.8814577357853889,
+    "macro_f1": 0.8264151321437674,
+    "weighted_f1": 0.8813174383536236,
+    "balanced_accuracy": 0.8082493600939357,
+    "loss": 0.7238658786110204,
+    "samples": 59270
+  },
+  "recovery": {
+    "loaded": {
+      "file": "e7d74710ee1f498e9511e63f9db4783e.pt",
+      "sha256": "0ebd4b001603802d26c2c48a03bccfa94afd95a6484536c2d14eb6bc5ecb7e26",
+      "bytes": 1608465078,
+      "cursor": 0
+    },
+    "fallback_errors": []
+  },
+  "selected_weights_sha256": "1c5c7bd312405589776776a1ea7aca33f1a18f5bb8a45d80652b022dc2b835a4",
+  "verification": "results/MM_FINAL_SAVED_VERIFIED_20261028.json",
+  "private_archive_manifest": "results/MM_FINAL_DOWNLOAD_READBACK_20261028.json",
+  "report": "results/MULTIMODAL_FINAL_REPORT_20261028.md",
+  "html": "results/UROP_Multimodal_Final_20261028.html",
+  "job_url": "https://www.kaggle.com/code/rocky62/urop-mm-final-continuation-20261028?scriptVersionId=362955511",
+  "results_commit": "e88f596318ff248f4e6de626cef2a789243e67db",
+  "remote_main_readback": "e88f596318ff248f4e6de626cef2a789243e67db",
+  "github_backup_verified": true,
+  "goal_api_state": null,
+  "image_only_started": false,
+  "legacy_automation_disabled_verified": false,
+  "files": {
+    "results/MM_FINAL_SAVED_VERIFIED_20261028.json": "d4b4a29a22468e9d54aa426e0925ca9ea39f56b323bf0232c6df6f92586d6621",
+    "results/MULTIMODAL_FINAL_REPORT_20261028.md": "c8bb00dd4449a10c85ddb7cf3209abd718efc4e7e69d9fd739d3d6afade9d012",
+    "results/UROP_Multimodal_Final_20261028.html": "9773af3586aed742ec6ff8bb07403c161c661049031d02717ecc615012dcadc1"
+  },
+  "note": "This receipt is committed as a child of the verified results commit; no future self-hash claim."
+}
