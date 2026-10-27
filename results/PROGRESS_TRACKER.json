@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-27T03:46:45.213363+00:00",
+  "updated_utc": "2026-10-27T04:29:30.485792+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -476,7 +476,7 @@
   },
   "part1_execution_receipt": "results/MM_PART1_RECEIPT_20261023.json",
   "last_cpu_preparation_note": "Original source CRC/SHA terminal,682170/682661 usable,491failures; all3 inspected failed .jpg files areHTML; no data changes. Bounded diagnostic terminal/private backup saved. Await explicit protocol decision; scientific epochs0/2,val0/2,test0.",
-  "latest_operational_note": "durable_full_image_gate_readback_passed; actual_cuda_fixture_passed; measured_preflight_v4_running",
+  "latest_operational_note": "preflight4_capacity_refused_due_84pct_IO_wait; verified_index_cache_preflight1_running",
   "original_specimen_diagnostic": "results/MM_PART1_ORIGINAL_SPECIMEN_DIAGNOSTIC_20261024.json",
   "approved_multimodal_cohort": {
     "id": "FACULTY-6W-USABLE-682170-v1",
@@ -489,7 +489,7 @@
     "exclusions": 491,
     "receipt": "results/MM_PART1_USABLE_RECEIPT_20261024.json"
   },
-  "current_execution_note": "Read context/MM_PART1_CURRENT_STATE_20261027.md. No repeat image acquisition/verification. Saved gate2 verified682170IDs. GPUpreflight4 actualTeslaT4+CUDA fixture passed; await measured output. Scientific train0/2,val0/2,no Part1 test.",
+  "current_execution_note": "context/MM_PART1_IO_RECOVERY_20261027.md; all scientific fractions unchanged, zero epochs and full validations.",
   "latest_recovery_receipt": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
   "latest_api_backup_receipt": "results/MM_PART1_API_RECOVERY_GIT_BACKUP_20261025.json",
   "latest_reserve_audit": "results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json",

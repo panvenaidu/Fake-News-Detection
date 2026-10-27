@@ -1,3 +1,7 @@
+## Current capacity checkpoint — 27 October 2026
+
+Read `context/MM_PART1_IO_RECOVERY_20261027.md` first. GPU preflight4 completed and passed CUDA/timing verification, but projected 16.34h per epoch because 84.27% of time waited for images; scientific release was correctly refused. The byte/tensor-equivalent index-cache reader is now being measured in private `urop-mm-index-cache-preflight-20261027/1`. Do not duplicate the image gate or GPU preflight4. Use its bounded watcher/final saved receipt. Scientific train 0/2, full validation 0/2, no Part1 test. The project Goal is now active for the user’s explicit completion request.
+
 ## Current verified checkpoint — 27 October 2026, GPU preflight
 
 Read `context/MM_PART1_CURRENT_STATE_20261027.md` first. The complete 682,170-image gate is now durably saved in Kaggle Version 2 (362643633) and independently verified locally. Do not repeat image preparation. Kaggle GPU preflight Version 4 (362691302) has confirmed Tesla T4/CUDA and passed the actual recovery fixture; its throughput measurement is running. Scientific train 0/2, full validation 0/2, no Part 1 test. Old CPU-image failure/transfer notes below are historical.

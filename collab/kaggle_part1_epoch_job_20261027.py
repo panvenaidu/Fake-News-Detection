@@ -7,9 +7,9 @@ preflight/previous-job artifacts. No test inference or protocol changes.
 from pathlib import Path
 import datetime,hashlib,importlib.metadata,json,math,os,shutil,subprocess,sys,time
 import requests
-LAUNCHER_COMMIT='406cf546b23cdef55ed66b1c513434d10ea98478'
-LAUNCHER_SHA='100f12659a0400e93139e14ee44b451c76c8d054219b08ea95a37a86a545b050'
-SCIENCE_COMMIT='b4378dd4213dec255a82f5400fb26bb4426f59d7'
+LAUNCHER_COMMIT='e92161dd737208bcb162736ff84d21fd67af8b4f'
+LAUNCHER_SHA='94caea5e8ecd4a2368978005df73253e43f4248b0599ac7c52934a168d73a3a6'
+SCIENCE_COMMIT='1b22467fc4d404e172e3d938f44e7d37e345e4bc'
 ATTEMPT='OFFICIAL-6W-MM-USABLE-v2_seed42_20261027'
 BASE=Path('/kaggle/working/urop_mm_science_20261027')
 
@@ -71,7 +71,7 @@ def run(audit):
  else:assert not output.exists(),'Existing attempt requires explicit verified resume'
  versions={n:importlib.metadata.version(n) for n in ['torch','torchvision','transformers','numpy','Pillow']}
  assert versions==summary['versions'],'Repeat preflight if actual environment changed'
- release={'state':'registered_after_verified_full_preflight','stage':'part1','stop_after_epoch':audit['stop_after_epoch'],'final_test':False,'source_commit':SCIENCE_COMMIT,'resume':resume,'prior_job_verified_terminal':resume,'input_root':summary['input_root'],'output':str(output),'conflicting_attempt_jobs':[],'active_job_check_utc':audit['api_check']['utc'],'private_input_version':1,'coverage':{'path':summary['coverage'],'sha256':summary['coverage_sha256']},'packed_index':summary['packed_index'],'cuda_fixture':{'path':str(fixture),'sha256':summary['fixture_sha256']},'throughput':{'path':str(throughput),'sha256':summary['throughput_sha256']},'wall_seconds':budget,'verified_session_seconds_remaining':min(cap,remaining)-(time.monotonic()-started),'warmstart':summary['warmstart'],'measured_versions':versions,'prelaunch_audit':audit,'launcher_sha256':LAUNCHER_SHA}
+ release={'state':'registered_after_verified_full_preflight','stage':'part1','stop_after_epoch':audit['stop_after_epoch'],'final_test':False,'source_commit':SCIENCE_COMMIT,'resume':resume,'prior_job_verified_terminal':resume,'input_root':summary['input_root'],'output':str(output),'conflicting_attempt_jobs':[],'active_job_check_utc':audit['api_check']['utc'],'private_input_version':1,'coverage':{'path':summary['coverage'],'sha256':summary['coverage_sha256']},'packed_index':summary['packed_index'],'cuda_fixture':{'path':str(fixture),'sha256':summary['fixture_sha256']},'throughput':{'path':str(throughput),'sha256':summary['throughput_sha256']},'wall_seconds':budget,'verified_session_seconds_remaining':min(cap,remaining)-(time.monotonic()-started),'warmstart':summary['warmstart'],'measured_versions':versions,'runtime_reader_sha256':summary['runtime_reader_sha256'],'prelaunch_audit':audit,'launcher_sha256':LAUNCHER_SHA}
  path=BASE/'registered_job_release.json';path.write_text(json.dumps(release,indent=2)+'\n')
  print(json.dumps({'state':'registered_epoch_job_released','stop_after_epoch':audit['stop_after_epoch'],'estimated_epoch_seconds':epoch,'wall_seconds':budget,'no_test':True}),flush=True)
  subprocess.run([sys.executable,'-u',str(launcher),'--release',str(path)],check=True,timeout=math.ceil(budget)+900)

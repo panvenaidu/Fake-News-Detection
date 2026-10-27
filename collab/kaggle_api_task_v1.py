@@ -2,7 +2,7 @@
 
 No credential file, token output, shell interpolation, or laptop model training.
 """
-import argparse,datetime,json,os,stat,sys
+import argparse,datetime,json,os,stat,sys,time
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('--token-fifo',type=Path,required=True);p.add_argument('--request',type=Path,required=True);p.add_argument('--receipt',type=Path,required=True);a=p.parse_args()
 project=Path(__file__).resolve().parents[1]
@@ -18,6 +18,13 @@ request=json.loads(a.request.read_text());result={'utc':datetime.datetime.now(da
 try:
  from kaggle.api.kaggle_api_extended import KaggleApi
  api=KaggleApi();api.authenticate()
+ def read_retry(operation):
+  for attempt in range(3):
+   try:return operation()
+   except Exception as error:
+    response=getattr(error,'response',None)
+    if attempt==2 or response is None or response.status_code not in [429,500,502,503,504]:raise
+    time.sleep(2**attempt)
  action=request['action']
  if action=='inspect':
   q=api.quota_view();g=q.gpu_quota
@@ -34,6 +41,25 @@ try:
   r=api.kernels_push(str(folder),timeout=str(request['timeout_seconds']),acc=request.get('accelerator'),no_run=bool(request.get('no_run',False)))
   result.update(ref=r.ref,url=r.url,version=r.version_number,kernel_id=r.kernel_id,error=r.error,invalid_kernel_sources=r.invalid_kernel_sources,invalid_dataset_sources=r.invalid_dataset_sources)
   if r.error or r.invalid_kernel_sources or r.invalid_dataset_sources:raise ValueError('Kaggle rejected submission')
+ elif action=='watch':
+  assert 60<=request['poll_seconds']<=600 and 60<=request['max_seconds']<=45000
+  destination=Path(request['folder']).resolve()
+  if not destination.is_relative_to(project):raise ValueError('Project watch folder required')
+  deadline=time.monotonic()+request['max_seconds'];previous=None
+  while True:
+   status=read_retry(lambda:api.kernels_status(request['kernel']))
+   result.update(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),kernel=request['kernel'],status=str(status.status),failure_message=status.failure_message)
+   a.receipt.write_text(json.dumps(result,indent=2)+'\n')
+   if result['status']!=previous:print(json.dumps({'utc':result['utc'],'kernel':result['kernel'],'status':result['status']}),flush=True);previous=result['status']
+   if result['status'] not in ['KernelWorkerStatus.RUNNING','KernelWorkerStatus.QUEUED'] or time.monotonic()>=deadline:break
+   time.sleep(min(request['poll_seconds'],max(0,deadline-time.monotonic())))
+  result['terminal_observed']=result['status'] not in ['KernelWorkerStatus.RUNNING','KernelWorkerStatus.QUEUED']
+  if result['terminal_observed']:
+   files,next_page=read_retry(lambda:api.kernels_output(request['kernel'],str(destination),file_pattern=request['pattern'],force=False,quiet=True,page_size=100))
+   result.update(files=files,next_page=bool(next_page))
+   metadata=destination/'notebook_metadata';read_retry(lambda:api.kernels_pull(request['kernel'],str(metadata),metadata=True,quiet=True));result['metadata_folder']=str(metadata)
+   q=read_retry(api.quota_view);g=q.gpu_quota;result['gpu_quota']={k:getattr(g,k).total_seconds() if getattr(g,k) is not None else None for k in ['time_used','time_reserved','total_time_allowed']}
+  else:result['watch_boundary']='bounded_watch_expired_preserve_cloud_job'
  elif action=='diagnose':
   r=api.kernels_status(request['kernel']);result.update(kernel=request['kernel'],status=str(r.status),failure_message=r.failure_message)
   destination=Path(request['folder']).resolve()
