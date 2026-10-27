@@ -4,5 +4,6 @@
   "seconds": 7200,
   "idle_system_sleep_only": true,
   "screen_lock_settings_unchanged": true,
-  "purpose": "Bounded local output retrieval and verification; cloud batch persists independently"
+  "purpose": "Bounded local output retrieval and verification; cloud batch persists independently",
+  "released_utc": "2026-10-27T21:40:15.822128+00:00"
 }

@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-27T21:12:27.487028+00:00",
+  "test": {
+    "status": "passed_independent_csv_verification",
+    "split": "test",
+    "metrics": {
+      "accuracy": 0.8814577357853889,
+      "micro_f1": 0.8814577357853889,
+      "macro_f1": 0.8264151321437674,
+      "weighted_f1": 0.8813174383536236,
+      "balanced_accuracy": 0.8082493600939357,
+      "loss": 0.7238658786110204,
+      "samples": 59270
+    },
+    "prediction_sha256": "9b987c5e2699b288dbdf0aabc57f15122776184fda81f1b972039807adce83ec",
+    "exact_order_ids_labels": true,
+    "probability_ce_confusion_checks": true,
+    "utc": "2026-10-27T21:12:25.673995+00:00",
+    "inference_seconds": 410.81303185800016,
+    "evaluation_export_verification_seconds": 412.2419107420001,
+    "peak_test_allocated_bytes": 783636992,
+    "gpu": "Tesla T4",
+    "parameters": 133977414,
+    "selected_epoch": 4,
+    "weights_sha256": "1c5c7bd312405589776776a1ea7aca33f1a18f5bb8a45d80652b022dc2b835a4"
+  },
+  "final_selected_epoch": 4,
+  "state": "runtime_verified_requires_saved_private_and_local_readback"
+}

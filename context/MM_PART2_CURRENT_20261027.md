@@ -1,3 +1,24 @@
+## VERIFIED text + image completion — 28 October2026
+
+Four full epochs and four full59,299-row validations completed in the SAME seed42 experiment. Epoch4 selected by validation Macro-F1, selection frozen BEFORE the single full59,270-row public test. Independent saved-byte verification passed: exact IDs/golds/probabilities/per-row CE, all six metrics, class reports, raw/normalized confusions, strict selected-model load, validation-only GPU reload/logit roundtrip, full recovery state and all artifact hashes. ZIP75members passed CRC/safe paths. No test-driven tuning, new seed/model/cohort or image-only training.
+
+Selected validation: accuracy88.5073947%,micro-F1.8850739473,Macro-F1.8293028761,weighted-F1.8848143053,balancedaccuracy80.8302355%,loss.6947946472. Test: accuracy88.1457736%,micro-F1.8814577358,Macro-F1.8264151321,weighted-F1.8813174384,balancedaccuracy80.8249360%,loss.7238658786. Epoch4 had slightly lower accuracy and worse loss than epoch3 but higher Macro-F1, so selection follows the registered rule. One experiment, not four independent replications.
+
+Paper matching accuracy86.00%validation/85.88%test: numerical deltas+2.5074/+2.2658percentagepoints, exceeding the+1-point aspiration on both splits. Different feature/fine-tuning pipeline, extra text warm start,491class-skewed exclusions,335paper/release discrepancy,3561cross-split image-byte groups and one seed prevent a controlled-superiority claim. Paper F1/loss values not reported.
+
+Authoritative report: results/MULTIMODAL_FINAL_REPORT_20261028.md. Faculty HTML: results/UROP_Multimodal_Final_20261028.html. Verification: results/MM_FINAL_SAVED_VERIFIED_20261028.json. Small numerical artifacts: results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/final_362955511/. Private archive manifest: results/MM_FINAL_DOWNLOAD_READBACK_20261028.json; tensors/per-ID outputs stay ignored/private. Recoveryepoch5/cursor0,70422successfulupdates+30AMPskips=70452registeredboundaries. Do not train epoch5 or rerun test.
+
+Kaggle https://www.kaggle.com/code/rocky62/urop-mm-final-continuation-20261028?scriptVersionId=362955511 : Successful,2929.7s batch, TeslaT4device0. Test inference410.813s; measured test peak allocated783636992bytes (not training peak). Fresh quota12:28/30h used, approximately17h32left. Original source/config/data/environment preserved. Current Goal API returnednull; no duplicate Goal/task/schedule created. Legacy automation view rendered a card but no local automation record was found; disabling it is NOT verified. This completion receipt must prevent duplicate work if an old heartbeat arrives.
+
+```text
+Text-only       ██████████ 100%
+Text + image    ██████████ 100%
+Image-only      ██░░░░░░░░  20%
+Overall         ███████▎░░  73%
+```
+
+Five equally weighted workflow stages, all complete for multimodal; overall=(100+100+20)/3=73.333%. These are workflow percentages, not accuracy. Next research task is image-only; it has NOT started. Older partial/running/pending records below are historical and superseded by this verified completion.
+
 ## Cloud complete; final download/readback pending — 2026-10-27T21:19:54.961431+00:00
 
 Final Kaggle362955511 Successful, four epochs/four full validations, selectedepoch4 by Macro-F1; full59270-row test exported and runtime-verified. Cloud validation accuracy88.5073947%,Macro-F1.8293028761; test accuracy88.1457736%,Macro-F1.8264151321. These new scores still require independent local saved-byte readback. Normal desktop Chrome archive download is running; a transient noWindowsAvailable/CDP timeout resolved after reopening Chrome. No human action now required; no security bypass/credentials/new training. Saved output private, no active trainer. Source results/MM_FINAL_CLOUD_TERMINAL_OBSERVATION_20261028.json. Next collect into data/cloud_recovery/final_saved_output_20261028_362955511, then scripts/verify_saved_mm_part2_v1.py, final report/HTML/context/Git acceptance. Do not rerun training/test.

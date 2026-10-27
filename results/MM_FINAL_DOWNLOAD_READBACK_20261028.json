@@ -1,0 +1,13 @@
+{
+  "utc": "2026-10-27T21:37:59.245848+00:00",
+  "method": "Normal desktop Chrome Kaggle output download; no new credentials or browser security bypass",
+  "archive": "data/cloud_recovery/final_saved_output_20261028_362955511/results_362955511.zip",
+  "bytes": 5632884936,
+  "sha256": "64a710c67f24ef66a7eb91047d5188a4307005d444d2ad914974f72ffb7f60d2",
+  "crc_all_members_passed": true,
+  "safe_member_paths": true,
+  "members": 75,
+  "uncompressed_bytes": 5530449586,
+  "scientific_attempt": "/Users/panveenaidu/Downloads/SEM7/UROP/data/cloud_recovery/final_saved_output_20261028_362955511/extracted/urop_mm_final_20261028/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027",
+  "independent_tensor_prediction_verification": "passed; results/MM_FINAL_SAVED_VERIFIED_20261028.json"
+}

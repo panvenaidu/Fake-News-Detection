@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-27T20:03:16.185634+00:00",
+  "updated_utc": "2026-10-27T21:40:15.822128+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -13,7 +13,7 @@
     "Three-modality overall progress uses equal modality weights; display rounded integer percentages and exact stage states.",
     "If tensor recovery is older than observed training history, training-stage fraction uses verified recoverable epoch/batch progress; original validation observations are retained separately."
   ],
-  "overall_three_modality_checkpoint_percent": 65,
+  "overall_three_modality_checkpoint_percent": 73,
   "models": {
     "text_only_bert": {
       "scope": "Official six-way faculty TSV cohort; BERT baseline",
@@ -74,14 +74,14 @@
       "milestones": {
         "dataset_audit": 1,
         "model_implementation": 1,
-        "training": 0.9785730507930256,
-        "validation": 0.75,
-        "final_test_and_result_archive": 0
+        "training": 1,
+        "validation": 1,
+        "final_test_and_result_archive": 1
       },
-      "state": "Part1 accepted; Part2 saved and independently verified partial epoch4/cursor515296; no active trainer; final test pending",
-      "checkpoint_completion_percent": 75,
-      "epochs_trained": 3,
-      "epochs_validated": 3,
+      "state": "Verified complete: four epochs, four full validations, frozen epoch4, full test and private/local artifacts; Git final receipt follows",
+      "checkpoint_completion_percent": 100,
+      "epochs_trained": 4,
+      "epochs_validated": 4,
       "registered_max_epochs": 4,
       "data_preparation": {
         "approved_images": 682170,
@@ -93,9 +93,9 @@
         "packed_reader_production_integration_complete": true,
         "verified_raw_archive_bytes": 80209428480,
         "verified_raw_archive_count": 39,
-        "training_epochs_completed": 3,
-        "full_validations_completed": 3,
-        "final_test_performed": false,
+        "training_epochs_completed": 4,
+        "full_validations_completed": 4,
+        "final_test_performed": true,
         "private_input": "rocky62/urop-faculty-usable-packed-input-v3/1",
         "coverage_sha256": "afe8c723f91fe74f791908e0c16fab94d919af64c7cb7c9b5a37e676361d95e5",
         "historical_transport_observations": {
@@ -153,25 +153,20 @@
       },
       "verified_epoch1_receipt": "results/MM_PART1_EPOCH1_VERIFIED_20261027.json",
       "part1_package_percent": 100,
-      "final_test_completed": false,
-      "selected_epoch": 3,
-      "latest_recovery_next_epoch": 4,
-      "latest_recovery_next_cursor": 515296,
-      "receipt": "results/MM_PART2_SAVED_PARTIAL_VERIFIED_20261027.json",
-      "final_report": "results/MM_PART2_STATUS_20261027.md",
-      "registered_cloud_jobs_complete": false,
+      "final_test_completed": true,
+      "selected_epoch": 4,
+      "latest_recovery_next_epoch": 5,
+      "latest_recovery_next_cursor": 0,
+      "receipt": "results/MM_FINAL_SAVED_VERIFIED_20261028.json",
+      "final_report": "results/MULTIMODAL_FINAL_REPORT_20261028.md",
+      "registered_cloud_jobs_complete": true,
       "current_cloud_job": {
-        "kernel": "rocky62/urop-mm-part2-continuation-20261027/1",
-        "script_version_id": 362859423,
-        "url": "https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027?scriptVersionId=362859423",
-        "state": "Successful saved partial;0ActiveEvents",
-        "runtime_observation_only": false,
-        "independent_local_readback": "passed",
-        "next_epoch": 4,
-        "cursor": 515296
+        "url": "362955511",
+        "state": "Successful; all science independently verified; no active trainer",
+        "script_version_id": 362955511
       },
-      "checkpoint_completion_percent_exact": 74.5714610158605,
-      "recoverable_training_percent": 97.85730507930256
+      "checkpoint_completion_percent_exact": 100,
+      "recoverable_training_percent": 100
     },
     "image_only": {
       "scope": "Standalone image-only six-way benchmark",
@@ -551,7 +546,7 @@
     "exclusions": 491,
     "receipt": "results/MM_PART1_USABLE_RECEIPT_20261024.json"
   },
-  "current_execution_note": "context/MM_PART2_CURRENT_20261027.md",
+  "current_execution_note": "results/MULTIMODAL_FINAL_REPORT_20261028.md",
   "latest_recovery_receipt": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
   "latest_api_backup_receipt": "results/MM_PART1_API_RECOVERY_GIT_BACKUP_20261025.json",
   "latest_reserve_audit": "results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json",
@@ -562,17 +557,12 @@
   "current_capacity_checkpoint": "context/MM_PART1_IO_RECOVERY_20261027.md",
   "current_verified_part1_receipt": "results/MM_PART1_RECEIPT_20261027.json",
   "current_cloud_job": {
-    "kernel": "rocky62/urop-mm-part2-continuation-20261027/1",
-    "script_version_id": 362859423,
-    "url": "https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027?scriptVersionId=362859423",
-    "state": "Successful saved partial;0ActiveEvents",
-    "runtime_observation_only": false,
-    "independent_local_readback": "passed",
-    "next_epoch": 4,
-    "cursor": 515296
+    "url": "362955511",
+    "state": "Successful; all science independently verified; no active trainer",
+    "script_version_id": 362955511
   },
-  "latest_part2_status": "results/MM_PART2_STATUS_20261027.md",
-  "overall_three_modality_checkpoint_percent_exact": 64.8571536719535,
-  "latest_verified_part2_receipt": "results/MM_PART2_SAVED_PARTIAL_VERIFIED_20261027.json",
+  "latest_part2_status": "results/MULTIMODAL_FINAL_REPORT_20261028.md",
+  "overall_three_modality_checkpoint_percent_exact": 73.33333333333334,
+  "latest_verified_part2_receipt": "results/MM_FINAL_SAVED_VERIFIED_20261028.json",
   "historical_previous_current_execution_note": "context/MM_PART1_IO_RECOVERY_20261027.md; all scientific fractions unchanged, zero epochs and full validations."
 }

@@ -1,0 +1,59 @@
+{
+  "utc": "2026-10-27T20:59:58.396639+00:00",
+  "state": "frozen_before_test",
+  "selection_rule": "validation macro-F1, lower loss, earlier epoch",
+  "selected": {
+    "predictions_file": "validation_epoch4_predictions.csv",
+    "predictions_sha256": "204081654f6f2a74f1e64ac0619adab1c2675fc7fc80c9f681e74ebaa0f6d7d7",
+    "metrics": {
+      "accuracy": 0.8850739472841026,
+      "micro_f1": 0.8850739472841026,
+      "macro_f1": 0.8293028761296689,
+      "weighted_f1": 0.8848143052893319,
+      "balanced_accuracy": 0.8083023548802731,
+      "loss": 0.6947946472031342,
+      "samples": 59299
+    },
+    "epoch": 4,
+    "weights_file": "selected_epoch4_096988c60f95448387c1413e57c690d5.pt",
+    "weights_sha256": "1c5c7bd312405589776776a1ea7aca33f1a18f5bb8a45d80652b022dc2b835a4"
+  },
+  "protocol_sha256": "bcb36efe3383c7ecfcc4c94b0c5943df570435bb6debe2dcb04d808a67502e43",
+  "config_sha256": "ad8f86f86b1fef453ae3bccda0aeb13cc50b298dc0d5d502f87c9ac4b041b483",
+  "source_hashes": {
+    "train_usable_multimodal_v2.py": "7f7fb90deb08a5901d1ca8343b780f6d82dd42b3e278d51f333568435becee0e",
+    "multimodal_recovery_v1.py": "2f5f67ce79289c69279040d21b483e28535895f5c99c63e0021da3eee6d3d1c8",
+    "usable_cohort_v2.py": "22bff1eb0fa14d102ad07786f936c5c1ed1582ec7bd5cee2b8e8dc5eb3520092",
+    "packed_image_io_v3.py": "a29e66d9c2962eb5bdfdce9abab02866fc77ad44aa5711ec8009a09dda7bb60d"
+  },
+  "inputs": {
+    "manifest_sha256": "96c84e9453401cc4a24999c41cdbeb182dafd08771383cf1c75feea9c3001caf",
+    "coverage_sha256": "afe8c723f91fe74f791908e0c16fab94d919af64c7cb7c9b5a37e676361d95e5",
+    "tsv_sha256": {
+      "multimodal_train.tsv": "9894cb4aa2f901c6f29b61ac3d95ce9f7e78c43be8062ae5deb1c219c82497bb",
+      "multimodal_validate.tsv": "c70140ec376e083e3780b5b488c96c8933678ca5800139bfb78c92e95df6946e",
+      "multimodal_test_public.tsv": "bc92378e070ca7b1a7497053d1c34cdc3f550be6232a76791a2c722d6d9bbf94"
+    },
+    "cohort_id": "FACULTY-6W-USABLE-682170-v1",
+    "cohort_registration_sha256": "3fe0b622958a1eee6732789d4f7acf6b450c0e3bda87312e5cbb6500fb405ce5",
+    "excluded_ids_sha256": "e5b32e3dc100460da857da499455c885f522b73059304233eb94b9b7d90fc065",
+    "split_counts": {
+      "train": 563601,
+      "validation": 59299,
+      "test": 59270
+    },
+    "extraction_report_sha256": "262a40e9e04629cda8c13388478a112016ba17ef42ed2d423bc517dc8911ebe0",
+    "storage_mode": "packed",
+    "packed_index_sha256": "fc8dc03a4f773da5762891c8392375add5fb8087251b527f3b37a880308e6018"
+  },
+  "training_complete": true,
+  "recovery": {
+    "loaded": {
+      "file": "e7d74710ee1f498e9511e63f9db4783e.pt",
+      "sha256": "0ebd4b001603802d26c2c48a03bccfa94afd95a6484536c2d14eb6bc5ecb7e26",
+      "bytes": 1608465078,
+      "cursor": 0
+    },
+    "fallback_errors": []
+  }
+}
