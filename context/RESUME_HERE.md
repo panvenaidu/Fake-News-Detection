@@ -1,3 +1,7 @@
+<!-- PART1_PIPELINE_CURRENT -->
+Latest verified checkpoint: `context/MM_PART1_PIPELINE_CURRENT_20261027.md`.
+<!-- /PART1_PIPELINE_CURRENT -->
+
 ## Current capacity checkpoint — 27 October 2026
 
 Read `context/MM_PART1_IO_RECOVERY_20261027.md` first. GPU preflight4 completed and passed CUDA/timing verification, but projected 16.34h per epoch because 84.27% of time waited for images; scientific release was correctly refused. The byte/tensor-equivalent index-cache reader is now being measured in private `urop-mm-index-cache-preflight-20261027/1`. Do not duplicate the image gate or GPU preflight4. Use its bounded watcher/final saved receipt. Scientific train 0/2, full validation 0/2, no Part1 test. The project Goal is now active for the user’s explicit completion request.
