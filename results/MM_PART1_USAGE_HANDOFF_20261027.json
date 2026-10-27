@@ -1,0 +1,16 @@
+{
+  "utc": "2026-10-27T03:57:28.070385+00:00",
+  "reason": "user_primary_5_percent_hard_stop",
+  "primary_used_percent": 95,
+  "primary_resets_unix": 1793074294,
+  "cloud_job": "rocky62/urop-mm-part1-packed-gpu-20261026/4",
+  "cloud_version_id": 362691302,
+  "last_observation": "running at 932.5 seconds; CUDA fixture passed; measured receipt pending",
+  "bounded_cloud_seconds": 7200,
+  "scientific_epochs_completed": 0,
+  "full_validations_completed": 0,
+  "no_part1_test": true,
+  "next": "context/MM_PART1_CURRENT_STATE_20261027.md",
+  "next_api_request": "data/cloud_recovery/kaggle_api_requests/preflight_release_readback.json",
+  "monitoring_after_stop": false
+}

@@ -1,3 +1,7 @@
+## Usage handoff — 2026-10-27T03:57:28.070385+00:00
+
+Primary allowance reached the user’s 5% hard stop (95% used; reset Unix 1793074294). Last live Kaggle observation: Version 4 GPU preflight 362691302 running at 932.5 seconds, actual Tesla T4/CUDA recovery fixture passed, final timing receipt not yet observed. This is a committed bounded 7,200-second Kaggle job; it can finish and save outputs independently. No assistant monitoring continues after this handoff. Scientific train 0/2 and validation 0/2. Next: inspect Version 4, run prepared `data/cloud_recovery/kaggle_api_requests/preflight_release_readback.json` through the FIFO credential controller, independently verify saved summary/fixture/throughput, and use `collab/build_kaggle_science_job_v1.py` plus `collab/kaggle_part1_epoch_job_20261027.py` to submit epoch 1 with its measured budget. Refresh the API quota/job audit immediately before submission; the bundle requires that timestamp to be fresh. Pin actual GPU Docker digest from successful preflight metadata. No image-gate rerun, no Part 1 test.
+
 # Part 1 live checkpoint — 27 October 2026
 
 ## Verified complete
