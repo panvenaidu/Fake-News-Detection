@@ -1,0 +1,72 @@
+{
+  "observed_utc": "2026-10-27T14:40:20.752Z",
+  "source": "fresh live trainer consumed-sample counters and UTC timestamps; no synthetic throughput run",
+  "script_version_id": 362859423,
+  "epoch": 3,
+  "points": [
+    {
+      "utc": "2026-10-27T14:37:31.832989+00:00",
+      "state": "training",
+      "epoch": 3,
+      "samples_seen": 1600,
+      "batches_seen": 200,
+      "optimizer_updates": 35261,
+      "amp_skips": 15,
+      "loss": 0.07454439088702201
+    },
+    {
+      "utc": "2026-10-27T14:37:57.832770+00:00",
+      "state": "training",
+      "epoch": 3,
+      "samples_seen": 3200,
+      "batches_seen": 400,
+      "optimizer_updates": 35311,
+      "amp_skips": 15,
+      "loss": 0.07031123865395784
+    },
+    {
+      "utc": "2026-10-27T14:38:23.340149+00:00",
+      "state": "training",
+      "epoch": 3,
+      "samples_seen": 4800,
+      "batches_seen": 600,
+      "optimizer_updates": 35361,
+      "amp_skips": 15,
+      "loss": 0.06811424824098745
+    },
+    {
+      "utc": "2026-10-27T14:39:13.589728+00:00",
+      "state": "training",
+      "epoch": 3,
+      "samples_seen": 8000,
+      "batches_seen": 1000,
+      "optimizer_updates": 35461,
+      "amp_skips": 15,
+      "loss": 0.06552402023971081
+    },
+    {
+      "utc": "2026-10-27T14:39:38.438929+00:00",
+      "state": "training",
+      "epoch": 3,
+      "samples_seen": 9600,
+      "batches_seen": 1200,
+      "optimizer_updates": 35511,
+      "amp_skips": 15,
+      "loss": 0.06488759058217207
+    },
+    {
+      "utc": "2026-10-27T14:40:04.263472+00:00",
+      "state": "training",
+      "epoch": 3,
+      "samples_seen": 11200,
+      "batches_seen": 1400,
+      "optimizer_updates": 35561,
+      "amp_skips": 15,
+      "loss": 0.06816611811518669
+    }
+  ],
+  "train_pairs_per_second": 62.97931523115376,
+  "estimated_remaining_epoch3_hours": 2.436430463859954,
+  "includes_checkpoint_waits_between_points": true,
+  "validation_rate_not_yet_refreshed": true
+}

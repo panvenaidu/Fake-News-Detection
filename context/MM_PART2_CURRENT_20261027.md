@@ -7,9 +7,13 @@ The user authorized continuation of the SAME four-epoch experiment within six ho
 Private Kaggle notebook `rocky62/urop-mm-part2-continuation-20261027`, version1/scriptVersion362859423:
 https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027?scriptVersionId=362859423
 
-Committed through the existing Rocky Chrome authenticated UI, not a new API token. Zero active events were observed before creation; UI quota06:26/30hours used (rounded minutes). Copied original environment22October/T4x2; actual source/dependency/Python/T4 device0 and recovery guards passed at14:25:43UTC. Latest saved heartbeat records a live child but copied old epoch2 status while startup/verified raw caching occurs; it is NOT evidence of replaying epoch2 or completing epoch3. Check fresh trainer UTC/counters before claiming advancement.
+Committed through the existing Rocky Chrome authenticated UI, not a new API token. Zero active events were observed before creation; UI quota06:26/30hours used (rounded minutes). Copied original environment22October/T4x2; actual source/dependency/Python/T4 device0 and recovery guards passed at14:25:43UTC. Initial startup heartbeats showed a live child with copied old epoch2 metadata during caching. This was not epoch2 replay; fresh epoch3 counters subsequently appeared. Always distinguish a current process heartbeat from the nested trainer timestamp.
 
 Fresh local Part1 tensor/selected weights/prediction recovery verification: `results/MM_PART2_START_RECOVERY_VERIFIED_20261027.json`. Correct initial next epoch3/cursor0, successful35211+15skips. Numeric trainer/config/reader hashes remain unchanged. The new orchestration, frozen evaluation-only exporter and independent CSV reader are separate files, not changes to scientific training logic.
+
+## Fresh training advancement — 14:40 UTC
+
+Epoch3 is actually advancing:11,200/563,601 pairs consumed,35561successfuloptimizerupdates,15totalAMPskips, current trainer UTC14:40:04.263472. Measured rate over fresh status points14:37:31–14:40:04 is62.979pairs/s; includes delays between those points but not a whole-epoch timing, and no fresh validation rate yet. This is observed runtime progress, not new durable epoch acceptance. The remaining two full epochs/validation/test plus output verification are tight against six hours; the job will save partial recovery if necessary. Source: `results/MM_PART2_THROUGHPUT_OBSERVATION_20261027.json`.
 
 ## Boundaries
 

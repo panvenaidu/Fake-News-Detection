@@ -1,6 +1,6 @@
 {
   "utc": "2026-10-27T14:29:11.219614+00:00",
-  "state": "committed_gpu_runtime_started_resume_guards_passed",
+  "state": "committed_gpu_job_epoch3_training_advancing",
   "same_scientific_attempt": "OFFICIAL-6W-MM-USABLE-v2_seed42_20261027",
   "prior_epochs_accepted": 2,
   "resume_epoch": 3,
@@ -34,5 +34,8 @@
   "actual_gpu": "Tesla T4",
   "used_devices": 1,
   "dependency_contract_verified": true,
-  "training_epoch3_advancement_not_yet_observed": true
+  "training_epoch3_advancement_not_yet_observed": false,
+  "first_fresh_epoch3_status_utc": "2026-10-27T14:37:31.832989+00:00",
+  "goal_tool_startup_state": null,
+  "duplicate_codex_task_created": false
 }
