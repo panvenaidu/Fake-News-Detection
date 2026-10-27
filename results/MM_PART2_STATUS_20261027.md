@@ -1,59 +1,85 @@
-# Part 2 — saved partial continuation, independent readback pending
+# Multimodal Part2 status
 
-As of 2026-10-27T19:42:11.943303+00:00 (UTC; local calendar date 28 October).
+2026-10-27T20:01:48.584573+00:00
 
-**Part 2 is incomplete.** Same seed-42 experiment, unchanged registered source/config/cohort. Kaggle version 1/scriptVersion362859423 finished successfully after the bounded wrapper requested a safe stop at 19:35 UTC. No final multimodal test was performed.
+PARTIAL Part2: final registered training and/or held-out testing remains unfinished.
 
-## Completion boundary and evidence levels
+## Protocol and completion
+- Same seed42 experiment; accepted Part1 plus continuation. Validated epochs:3; next epoch4, consumed cursor515296, phasetrain.
+- Selected epoch:3; validation Macro-F1, then lower loss, then earlier epoch. Weights SHA256 `360a436a1af6d5a9a6375dc26b2e8e8a0fa30e9cf3bafb157d027d39472d960d`.
+- [Faculty dataset](https://drive.google.com/drive/folders/1DuH0YaEox08ZwzZDpRMOaFpMCeRyxiEF): usable563601train/59299validation/59270test; exactly491approved strict decode exclusions; official splits/labels unchanged.
+- BERT-base selected text epoch4 warm start + ImageNetV2 ResNet50; both fine-tuned; independent512projections+LayerNorm; elementwise max;256GELU/dropout.2;6logits.
+- Kaggle TeslaT4 device0, original frozen source/config/environment; same four-epoch schedule; no new seed/model/data.
 
-- Accepted before this task: epochs 1–2, both full validations, locally verified tensors and predictions.
-- Cloud terminal result: epoch 3 trained and fully validated on 59,299 IDs; epoch 4 stopped at consumed-row cursor **515,296/563,601 (91.43%)**, phase train. This is **97.86% of the four-epoch training budget by consumed rows**, NOT completion of Part 2.
-- Three of four full validations are reported by the cloud controller; epoch 4 validation remains undone.
-- Runtime loaded and checked its saved recovery generation without fallback; private output tree exposes recovery, selected epoch-3 weights and validation exports. Local strict tensor/prediction verification is pending the output download.
-- The Kaggle UI showed Successful and **0 Active Events** at approximately 19:41 UTC. No additional trainer/session was allocated.
-- Chrome blocked the normal output ZIP URL with ERR_BLOCKED_BY_CLIENT. Human download handoff requested; do not bypass this browser block.
+## Validation and test metrics
+| Metric | Selected validation | Held-out public test | Paper validation | Paper test |
+|---|---:|---:|---:|---:|
+| Accuracy | 88.5344% | Pending | 86.00% | 85.88% |
+| Micro-F1 | 0.885344 | Pending | Not reported | Not reported |
+| Macro-F1 | 0.827924 | Pending | Not reported | Not reported |
+| Weighted-F1 | 0.884944 | Pending | Not reported | Not reported |
+| Balanced accuracy | 80.8381% | Pending | Not reported | Not reported |
+| Cross-entropy loss | 0.587545 | Pending | Not reported | Not reported |
 
-## Cloud-reported validation — provisional until independent local readback
+Selected validation is +2.5344 percentage points versus the paper’s86.00% reference. Final multimodal test is pending; no test improvement is claimed.
 
-| Metric | Epoch 2 (previously accepted) | Epoch 3 (cloud reported) | Matching paper validation |
-|---|---:|---:|---:|
-| Accuracy | 88.358994% | 88.534377% | 86.00% |
-| Micro-F1 | 0.8835899425 | 0.8853437663 | Not reported |
-| Macro-F1 | 0.8226665390 | 0.8279239414 | Not reported |
-| Weighted-F1 | 0.8828740126 | 0.8849443480 | Not reported |
-| Balanced accuracy | 80.194161% | 80.838108% | Not reported |
-| Loss | 0.5648601171 | 0.5875453333 | Not reported |
+## Class results: validation
+| Class | Precision | Recall | F1 | Support |
+|---|---:|---:|---:|---:|
+| True | 0.873281 | 0.909305 | 0.890929 | 23320 |
+| Satire/Parody | 0.815478 | 0.763352 | 0.788555 | 3520 |
+| Misleading Content | 0.808995 | 0.832668 | 0.820661 | 11277 |
+| Imposter Content | 0.829891 | 0.551696 | 0.662785 | 1238 |
+| False Connection | 0.976345 | 0.938485 | 0.957041 | 17768 |
+| Manipulated Content | 0.840488 | 0.854779 | 0.847573 | 2176 |
 
-Epoch 3 currently wins on validation Macro-F1 despite worse cross-entropy loss; this follows the declared primary selection rule. It is not the final frozen selection until epoch 4 and full validation finish. The numerical validation difference is +2.5344 percentage points versus the paper, with different cohort/feature/fine-tuning pipeline, extra text warm-start training, one seed, 491 class-skewed exclusions, unresolved 335-row release/paper discrepancy and 3,561 cross-split image-byte groups. No controlled-superiority or test-improvement claim. Final test accuracy/Micro-F1/Macro-F1/weighted-F1/balanced accuracy/loss/class report/confusions are **pending**; the paper's matching test accuracy is 85.88%.
+## Class results: held-out test
+Pending full held-out evaluation.
 
-## Private artifacts (runtime hashes; not yet independently read back locally)
+## Interpretation and limitations
+This is a numerical reference comparison, not a controlled paper reproduction or statistical superiority claim. The paper uses another feature/fine-tuning pipeline; one seed and extra text warm-start compute;335paper/release-row discrepancy;491class-skewed exclusions;3561cross-split image-byte hash groups. Dataset labels are weak supervision, not independent factual-truth verification. Paper Table6 error proportions are not class F1.
 
-Job: [https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027?scriptVersionId=362859423](https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027?scriptVersionId=362859423)
+Original source exports/private weights: `data/cloud_recovery/part2_saved_output_20261027_362859423/extracted/urop_mm_part2_20261027/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027`. Independent readback: `results/MM_PART2_SAVED_PARTIAL_VERIFIED_20261027.json`. Recovery proof: `{"loaded": {"file": "796d18b295fe4fd4b355417c98c04039.pt", "sha256": "6c7747e08f482d6e504e05fb6c7e1a8c4e1fe3bce7154961f9380ed7e3e6f68e", "bytes": 1608464758, "cursor": 515296}, "fallback_errors": []}`.
 
-Runtime attempt: `/kaggle/working/urop_mm_part2_20261027/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027`
+Paper: [https://arxiv.org/html/1911.03854v2](https://arxiv.org/html/1911.03854v2). Current cloud run/version and Git acceptance must be read from the latest Part2 receipts. No public/raw-data/weight publication is implied.
 
-- Recovery: `recovery/796d18b295fe4fd4b355417c98c04039.pt`, 1,608,464,758 bytes, SHA-256 `6c7747e08f482d6e504e05fb6c7e1a8c4e1fe3bce7154961f9380ed7e3e6f68e`.
-- Current selected weights: `selected_epoch3_f009f3c47f6e49eab7652f2823e3eb80.pt`, SHA-256 `360a436a1af6d5a9a6375dc26b2e8e8a0fa30e9cf3bafb157d027d39472d960d`.
-- Epoch-3 predictions: `validation_epoch3_predictions.csv`, SHA-256 `afb34b1f34f300c74c77309047e2e497846478d3a13863b56a904b8a96c3a3ca`.
-- Saved receipt: `part2_runtime_result.json`; runtime strict load and three CSV validations returned successfully. Parsed terminal observation: `results/MM_PART2_CLOUD_TERMINAL_OBSERVATION_20261027.json`.
+## Architecture size
+133977414 parameters, all 133977414 trainable, verified by strict checkpoint key/shape metadata; no local forward pass. Evidence: `results/MM_PART2_PARAMETER_METADATA_20261027.json`.
 
-## Quota, timing and unchanged protocol
+## Independently accepted partial Part 2 — 2026-10-27T20:03:16.185634+00:00
 
-Task started 14:08:54 UTC; training release 14:25:43; runtime result 19:36:42. Runtime controller elapsed 18,771.97 seconds (~5h13m); total task elapsed at runtime result ~5h28m. Hard task deadline20:08:54 UTC. Tesla T4 device0 used; Kaggle allocated T4x2 but the model used one. Starting live UI quota was06:26/30hours used; later editor retained that number and is not a fresh final balance. Fresh reloaded editor Session options at 2026-10-27T19:42:40.171301+00:00 displayed **11:40/30 hours used**, approximately **18h20 remaining** (UI rounded minutes). Receipt: `results/MM_PART2_CAPACITY_END_OBSERVATION_20261027.json`. Platform cap was not independently exposed; own UTC bounds were enforced. Source/config/data hashes are preserved in `results/MM_PART2_LAUNCH_RECORD_20261027.json`, original `protocol.json`, and Part1 accepted receipt.
+Same scientific run; **Part 2 remains incomplete**. Three full epochs and three full59,299-row validations accepted; epoch4 stopped safely at cursor515296/563601. Recovery:68,913 successful optimizer updates +29 AMP skips. No final held-out test or image-only training. Current provisional selected epoch3 VALIDATION accuracy88.5343766%, Macro-F1.8279239414; selection not yet frozen for final test.
 
-## Exact next safe actions
+CPU-only independent readback passed exact validation IDs/golds/probabilities/loss/metrics, original protocol hashes, generation SHA, optimizer/scheduler/scaler/RNG/history/sampler position and strict actual model-state load (527keys, no inference). Private ZIP CRC/member safety passed;53archive members,37run artifact hashes recorded. Source of truth: `results/MM_PART2_SAVED_PARTIAL_VERIFIED_20261027.json`, `results/MM_PART2_MANUAL_DOWNLOAD_READBACK_20261027.json`, `results/MM_PART2_STATUS_20261027.md`. The earlier Chrome-block/pending-readback notes below are historical; the user's normal download resolved that blocker.
 
-1. Human completes the normal private output ZIP download in Rocky Chrome: `https://www.kaggle.com/code/svzip/362859423`. Save in Downloads or project `data/cloud_recovery/`. Do not run/restart training to obtain it.
-2. Move only this owned archive into a NEW ignored Part2 recovery directory, verify safe archive members/CRC, extract without overwriting Part1, hash the archive and inventory.
-3. CPU-only readback from UROP: `.venv-urop/bin/python scripts/verify_saved_mm_part2_v1.py --project /Users/panveenaidu/Downloads/SEM7/UROP --run <retrieved attempt directory> --output <new verification receipt>`. This verifies all three validation exports, exact cohort/labels/probabilities/metrics, recovery tensors/optimizer/scheduler/scaler/RNG/sampler/crop/history and current selection. It performs no model inference/training.
-4. Only after successful readback, accept the new progress and generate the partial status/report HTML with `scripts/build_multimodal_final_report_v1.py`. Never pass the cloud-observation receipt to a verifier-dependent report builder as though it were a local acceptance receipt.
-5. A future authorized bounded continuation must use this SAME generation at epoch4/cursor515296, not the old epoch3/cursor0 launch guard. Preserve original state/schedule. Review the copied STOP_REQUESTED sentinel in the NEW continuation output; do not revive the protected Part1 STOP_PIPELINE. Never blindly rerun the existing Part2 launch notebook, which intentionally requires the original epoch2 recovery and would not resume the current cursor.
-6. Finish remaining **48,305** training rows, full59,299-row validation; freeze selection using all registered validation history, then run the single59,270-row held-out test. Independently verify predictions/weights, archive private evidence, final report/HTML/context and remote Git backup. No image-only/new seed/model/data changes.
+Workflow bars: text100 / text+image74.57 (display75) / image20 / overall64.86 (display65). Equal20% stages: dataset100%,implementation100%,recoverable training97.8573%,full validations75%,test+final archive0%. This measures checkpoints, not model accuracy or remaining time.
 
-At the observed ~63 training pairs/second, residual training alone is roughly13 minutes, excluding environment/cache/checkpoint setup, validation/test/export, downloads and verification. No complete-finish promise follows from that estimate.
+Private job: https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027?scriptVersionId=362859423. Saved batchSuccessful, zeroActiveEvents. Fresh quota19:42UTC11:40/30hours used (~18h20remaining, rounded). Actual model used TeslaT4 device0 from allocatedT4x2. No trainer is still running. No new account/OAuth/token/schedule/goal or scientific input changes.
 
-## Progress bars — accepted evidence versus observed work
+Next: resume **this exact current generation**, complete remaining48,305 training rows and full epoch4 validation, then freeze Macro-F1/loss/earlier-epoch selection and perform one full59,270-row test. Never rerun the old epoch2-guarded launcher or revive Part1 STOP_PIPELINE. Follow the exact handoff below. Training-budget estimate is not a completion promise.
 
-Accepted workflow remains text100 / text+image60 / image20 / overall60 pending local readback. This is intentionally conservative, not a claim training did nothing. Cloud-reported training fraction is97.86%, validation75%, test0%. If independent readback accepts the current partial recovery, the existing five-equal-stage method yields text+image about74.6% (40 setup +19.57 training +15 validation), overall64.9%; do not label that100%.
+## Exact private recovery
 
-Documentation backup verified against remote main: `51a85424c03a2ce9ae0f3bb4e0e3cc256c0fe60d`; receipt `results/MM_PART2_PARTIAL_GIT_BACKUP_20261027.json`. This verifies code/documentation backup, not pending private tensor/prediction readback.
+Local attempt: `data/cloud_recovery/part2_saved_output_20261027_362859423/extracted/urop_mm_part2_20261027/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027`
+Cloud attempt: `/kaggle/working/urop_mm_part2_20261027/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027`
+
+- `recovery/796d18b295fe4fd4b355417c98c04039.pt` —1,608,464,758bytes; SHA256 `6c7747e08f482d6e504e05fb6c7e1a8c4e1fe3bce7154961f9380ed7e3e6f68e`.
+- `selected_epoch3_f009f3c47f6e49eab7652f2823e3eb80.pt` —SHA256 `360a436a1af6d5a9a6375dc26b2e8e8a0fa30e9cf3bafb157d027d39472d960d`.
+- Epoch3 predictions SHA256 `afb34b1f34f300c74c77309047e2e497846478d3a13863b56a904b8a96c3a3ca`.
+- ZIP `data/cloud_recovery/part2_saved_output_20261027_362859423/results_362859423.zip` —5045725092bytes; SHA256 `dbabb68d61f643cb53ed5b646aec072de386e30376c3a3c7909d4348bc4b768d`.
+- All private artifact sizes/hashes: `results/MM_PART2_SAVED_PARTIAL_VERIFIED_20261027.json`.
+- Reviewable metrics/class report/confusions: `results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/part2_362859423/`.
+
+## Safe future continuation
+
+1. Inspect current usage, existing jobs, fresh Kaggle quota/environment and accepted protocol; no duplicate trainer.
+2. Attach saved private version362859423 alongside unchanged approved packed input/gate/source. Verify exact current generation/hash, source/config/data/dependency contract, epoch4/cursor515296, updates68913/skips29, full RNG/sampler/crop/history/BatchNorm state. This task's original epoch2-guarded wrapper is intentionally NOT reusable unchanged.
+3. Prepare a new bounded continuation wrapper that copies this current accepted output to a NEW working location without resetting state. Acknowledge the old STOP_REQUESTED sentinel only in that NEW continuation output after recovery validation; keep completed Part1 STOP_PIPELINE protected. Resume unchanged scientific trainer, same four-epoch schedule/seed/effective batch/weights and all state.
+4. Finish residual48,305rows, full validation; freeze selected weights using declared validation-only rule. Then one complete59,270-row test, independent metric/ID/probability/loss/confusion verification, selected-model round trip, durable private outputs, final report/HTML/context and Git readback. No tuning on test or early final test.
+5. Existing CSV/evaluation/report helpers are saved but their final-test runtime path has not yet been exercised on a completed model. Strictly inspect actual outputs and report any failure; code preparation is not final evaluation.
+
+Six-hour window began14:08:54UTC and ends20:08:54UTC. Graceful stop19:35, runtime terminal19:36:42, private/local verification20:01–20:02. Task deliberately preserves partial work within budget. At ~63trainingpairs/sec residualtraining alone~13minutes, excluding setup/cache/checkpoints, full validation/test, export/download/verification. No completed-finish guarantee.
+
+## Comparison and caution
+
+Epoch3 improves validation accuracy and Macro-F1 versus epoch2 but loss worsens(.564860→.587545), compatible with more confident mistakes. Macro-F1 is the registered primary criterion. Numerical validation difference+2.5344points versus paper86.00%; final test pending (paper85.88%). Different fine-tuning/feature pipeline, additional text warm start,491skewed exclusions,335paper/release-row discrepancy,3561cross-split byte-identical image groups and one seed prevent a controlled-superiority claim. F1/loss paper values are not reported. Original text-only and Part1 results remain intact.

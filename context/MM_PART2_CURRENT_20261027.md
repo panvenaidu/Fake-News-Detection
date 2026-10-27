@@ -1,37 +1,37 @@
-## Current terminal handoff — 2026-10-27T19:42:11.943303+00:00
+## Independently accepted partial Part 2 — 2026-10-27T20:03:16.185634+00:00
 
-**PARTIAL; no active training.** Cloud saved epoch4/cursor515296 and three full validations. Current cloud-selected epoch3 validation accuracy88.5343766%, Macro-F1.8279239414. Local tensor/prediction readback is BLOCKED on Chrome ERR_BLOCKED_BY_CLIENT; human normal download requested. No final test. Accepted workflow remains60% multimodal until readback. Read `results/MM_PART2_STATUS_20261027.md` and `results/MM_PART2_CLOUD_TERMINAL_OBSERVATION_20261027.json` before any next action. Do not rerun the epoch2-guarded launcher or revive Part1.
+Same scientific run; **Part 2 remains incomplete**. Three full epochs and three full59,299-row validations accepted; epoch4 stopped safely at cursor515296/563601. Recovery:68,913 successful optimizer updates +29 AMP skips. No final held-out test or image-only training. Current provisional selected epoch3 VALIDATION accuracy88.5343766%, Macro-F1.8279239414; selection not yet frozen for final test.
 
-# Part 2 current execution — 27 October 2026
+CPU-only independent readback passed exact validation IDs/golds/probabilities/loss/metrics, original protocol hashes, generation SHA, optimizer/scheduler/scaler/RNG/history/sampler position and strict actual model-state load (527keys, no inference). Private ZIP CRC/member safety passed;53archive members,37run artifact hashes recorded. Source of truth: `results/MM_PART2_SAVED_PARTIAL_VERIFIED_20261027.json`, `results/MM_PART2_MANUAL_DOWNLOAD_READBACK_20261027.json`, `results/MM_PART2_STATUS_20261027.md`. The earlier Chrome-block/pending-readback notes below are historical; the user's normal download resolved that blocker.
 
-The user authorized continuation of the SAME four-epoch experiment within six hours, starting2026-10-27T14:08:54UTC; hard task deadline20:08:54UTC. No new cohort, seed, model, account, purchase or schedule. Part1 STOP_PIPELINE is untouched.
+Workflow bars: text100 / text+image74.57 (display75) / image20 / overall64.86 (display65). Equal20% stages: dataset100%,implementation100%,recoverable training97.8573%,full validations75%,test+final archive0%. This measures checkpoints, not model accuracy or remaining time.
 
-## Current observed state
+Private job: https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027?scriptVersionId=362859423. Saved batchSuccessful, zeroActiveEvents. Fresh quota19:42UTC11:40/30hours used (~18h20remaining, rounded). Actual model used TeslaT4 device0 from allocatedT4x2. No trainer is still running. No new account/OAuth/token/schedule/goal or scientific input changes.
 
-Private Kaggle notebook `rocky62/urop-mm-part2-continuation-20261027`, version1/scriptVersion362859423:
-https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027?scriptVersionId=362859423
+Next: resume **this exact current generation**, complete remaining48,305 training rows and full epoch4 validation, then freeze Macro-F1/loss/earlier-epoch selection and perform one full59,270-row test. Never rerun the old epoch2-guarded launcher or revive Part1 STOP_PIPELINE. Follow the exact handoff below. Training-budget estimate is not a completion promise.
 
-Committed through the existing Rocky Chrome authenticated UI, not a new API token. Zero active events were observed before creation; UI quota06:26/30hours used (rounded minutes). Copied original environment22October/T4x2; actual source/dependency/Python/T4 device0 and recovery guards passed at14:25:43UTC. Initial startup heartbeats showed a live child with copied old epoch2 metadata during caching. This was not epoch2 replay; fresh epoch3 counters subsequently appeared. Always distinguish a current process heartbeat from the nested trainer timestamp.
+## Exact private recovery
 
-Fresh local Part1 tensor/selected weights/prediction recovery verification: `results/MM_PART2_START_RECOVERY_VERIFIED_20261027.json`. Correct initial next epoch3/cursor0, successful35211+15skips. Numeric trainer/config/reader hashes remain unchanged. The new orchestration, frozen evaluation-only exporter and independent CSV reader are separate files, not changes to scientific training logic.
+Local attempt: `data/cloud_recovery/part2_saved_output_20261027_362859423/extracted/urop_mm_part2_20261027/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027`
+Cloud attempt: `/kaggle/working/urop_mm_part2_20261027/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027`
 
-## Fresh training advancement — 14:40 UTC
+- `recovery/796d18b295fe4fd4b355417c98c04039.pt` —1,608,464,758bytes; SHA256 `6c7747e08f482d6e504e05fb6c7e1a8c4e1fe3bce7154961f9380ed7e3e6f68e`.
+- `selected_epoch3_f009f3c47f6e49eab7652f2823e3eb80.pt` —SHA256 `360a436a1af6d5a9a6375dc26b2e8e8a0fa30e9cf3bafb157d027d39472d960d`.
+- Epoch3 predictions SHA256 `afb34b1f34f300c74c77309047e2e497846478d3a13863b56a904b8a96c3a3ca`.
+- ZIP `data/cloud_recovery/part2_saved_output_20261027_362859423/results_362859423.zip` —5045725092bytes; SHA256 `dbabb68d61f643cb53ed5b646aec072de386e30376c3a3c7909d4348bc4b768d`.
+- All private artifact sizes/hashes: `results/MM_PART2_SAVED_PARTIAL_VERIFIED_20261027.json`.
+- Reviewable metrics/class report/confusions: `results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/part2_362859423/`.
 
-Epoch3 is actually advancing:11,200/563,601 pairs consumed,35561successfuloptimizerupdates,15totalAMPskips, current trainer UTC14:40:04.263472. Measured rate over fresh status points14:37:31–14:40:04 is62.979pairs/s; includes delays between those points but not a whole-epoch timing, and no fresh validation rate yet. This is observed runtime progress, not new durable epoch acceptance. The remaining two full epochs/validation/test plus output verification are tight against six hours; the job will save partial recovery if necessary. Source: `results/MM_PART2_THROUGHPUT_OBSERVATION_20261027.json`.
+## Safe future continuation
 
-## Boundaries
+1. Inspect current usage, existing jobs, fresh Kaggle quota/environment and accepted protocol; no duplicate trainer.
+2. Attach saved private version362859423 alongside unchanged approved packed input/gate/source. Verify exact current generation/hash, source/config/data/dependency contract, epoch4/cursor515296, updates68913/skips29, full RNG/sampler/crop/history/BatchNorm state. This task's original epoch2-guarded wrapper is intentionally NOT reusable unchanged.
+3. Prepare a new bounded continuation wrapper that copies this current accepted output to a NEW working location without resetting state. Acknowledge the old STOP_REQUESTED sentinel only in that NEW continuation output after recovery validation; keep completed Part1 STOP_PIPELINE protected. Resume unchanged scientific trainer, same four-epoch schedule/seed/effective batch/weights and all state.
+4. Finish residual48,305rows, full validation; freeze selected weights using declared validation-only rule. Then one complete59,270-row test, independent metric/ID/probability/loss/confusion verification, selected-model round trip, durable private outputs, final report/HTML/context and Git readback. No tuning on test or early final test.
+5. Existing CSV/evaluation/report helpers are saved but their final-test runtime path has not yet been exercised on a completed model. Strictly inspect actual outputs and report any failure; code preparation is not final evaluation.
 
-Training requests a graceful safe-boundary stop at19:35UTC and returns by19:43UTC, preserving two recovery generations and private batch output. The original four-epoch scheduler, RNG, order, crop, encoder/head states and validation selection are retained. It attempts registered epochs3–4, not a new warm start. Final test only runs if registered training/legitimate early stop is complete, validation selection is frozen and sufficient time remains. A partial run stays partial; no test on an incomplete budget.
+Six-hour window began14:08:54UTC and ends20:08:54UTC. Graceful stop19:35, runtime terminal19:36:42, private/local verification20:01–20:02. Task deliberately preserves partial work within budget. At ~63trainingpairs/sec residualtraining alone~13minutes, excluding setup/cache/checkpoints, full validation/test, export/download/verification. No completed-finish guarantee.
 
-## Exact next actions
+## Comparison and caution
 
-1. Inspect committed job logs for NEW epoch3 timestamps/counters and measured sample-rate; do not duplicate/restart a live job. Initial old status is copied metadata only.
-2. If it finishes or fails, inspect console/runtime result and saved private output/version. Retrieve into a NEW private `data/cloud_recovery/` folder; do not overwrite accepted Part1 output.
-3. Run `scripts/verify_saved_mm_part2_v1.py --project <UROP> --run <retrieved scientific attempt> --output <new receipt>` with `.venv-urop/bin/python`. This supports partial cursor recovery and distinguishes training complete versus final-test verified. Review actual saved private-version metadata separately.
-4. If complete, create the final report/HTML from verified exports and archive/backup. If partial by deadline, report exact tensor/history/test/backup boundary and next safe resume action. Do not create fake final results or reset the schedule.
-
-Evidence: `results/MM_PART2_LAUNCH_RECORD_20261027.json`, `results/MM_PART2_LIVE_OBSERVATION_20261027.json`, `results/MM_PART2_UI_START_AUDIT_20261027.json`, `results/MM_PART2_EVALUATION_ENGINEERING_CHECK_20261027.json`, `results/MM_PART2_READBACK_VERIFIER_CHECK_20261027.json`.
-
-Current workflow remains text100 / multimodal60 / image20 / overall60 until new durable verified training/validation evidence exists. Latest VERIFIED score remains epoch2 VALIDATION accuracy88.358994%, Macro-F1.82266654. Final multimodal test pending.
-
-Documentation backup verified against remote main: `51a85424c03a2ce9ae0f3bb4e0e3cc256c0fe60d`; receipt `results/MM_PART2_PARTIAL_GIT_BACKUP_20261027.json`. This verifies code/documentation backup, not pending private tensor/prediction readback.
+Epoch3 improves validation accuracy and Macro-F1 versus epoch2 but loss worsens(.564860→.587545), compatible with more confident mistakes. Macro-F1 is the registered primary criterion. Numerical validation difference+2.5344points versus paper86.00%; final test pending (paper85.88%). Different fine-tuning/feature pipeline, additional text warm start,491skewed exclusions,335paper/release-row discrepancy,3561cross-split byte-identical image groups and one seed prevent a controlled-superiority claim. F1/loss paper values are not reported. Original text-only and Part1 results remain intact.

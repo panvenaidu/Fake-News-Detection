@@ -1,0 +1,13 @@
+{
+  "utc": "2026-10-27T20:01:33.962517+00:00",
+  "method": "Human initiated normal Chrome download after security-block handoff; agent did not bypass block",
+  "archive": "data/cloud_recovery/part2_saved_output_20261027_362859423/results_362859423.zip",
+  "bytes": 5045725092,
+  "sha256": "dbabb68d61f643cb53ed5b646aec072de386e30376c3a3c7909d4348bc4b768d",
+  "crc_all_members_passed": true,
+  "safe_member_paths": true,
+  "members": 53,
+  "uncompressed_bytes": 4964298727,
+  "scientific_attempt": "/Users/panveenaidu/Downloads/SEM7/UROP/data/cloud_recovery/part2_saved_output_20261027_362859423/extracted/urop_mm_part2_20261027/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027",
+  "independent_tensor_prediction_verification": "passed; results/MM_PART2_SAVED_PARTIAL_VERIFIED_20261027.json"
+}

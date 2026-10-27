@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-27T19:42:11.943303+00:00",
+  "updated_utc": "2026-10-27T20:03:16.185634+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -13,7 +13,7 @@
     "Three-modality overall progress uses equal modality weights; display rounded integer percentages and exact stage states.",
     "If tensor recovery is older than observed training history, training-stage fraction uses verified recoverable epoch/batch progress; original validation observations are retained separately."
   ],
-  "overall_three_modality_checkpoint_percent": 60,
+  "overall_three_modality_checkpoint_percent": 65,
   "models": {
     "text_only_bert": {
       "scope": "Official six-way faculty TSV cohort; BERT baseline",
@@ -74,14 +74,14 @@
       "milestones": {
         "dataset_audit": 1,
         "model_implementation": 1,
-        "training": 0.5,
-        "validation": 0.5,
+        "training": 0.9785730507930256,
+        "validation": 0.75,
         "final_test_and_result_archive": 0
       },
-      "state": "Part1 accepted; Part2 epoch3 advancing on cloud; only two full epochs/validations durably accepted so far",
-      "checkpoint_completion_percent": 60,
-      "epochs_trained": 2,
-      "epochs_validated": 2,
+      "state": "Part1 accepted; Part2 saved and independently verified partial epoch4/cursor515296; no active trainer; final test pending",
+      "checkpoint_completion_percent": 75,
+      "epochs_trained": 3,
+      "epochs_validated": 3,
       "registered_max_epochs": 4,
       "data_preparation": {
         "approved_images": 682170,
@@ -93,8 +93,8 @@
         "packed_reader_production_integration_complete": true,
         "verified_raw_archive_bytes": 80209428480,
         "verified_raw_archive_count": 39,
-        "training_epochs_completed": 2,
-        "full_validations_completed": 2,
+        "training_epochs_completed": 3,
+        "full_validations_completed": 3,
         "final_test_performed": false,
         "private_input": "rocky62/urop-faculty-usable-packed-input-v3/1",
         "coverage_sha256": "afe8c723f91fe74f791908e0c16fab94d919af64c7cb7c9b5a37e676361d95e5",
@@ -154,22 +154,24 @@
       "verified_epoch1_receipt": "results/MM_PART1_EPOCH1_VERIFIED_20261027.json",
       "part1_package_percent": 100,
       "final_test_completed": false,
-      "selected_epoch": 2,
-      "latest_recovery_next_epoch": 3,
-      "latest_recovery_next_cursor": 0,
-      "receipt": "results/MM_PART1_RECEIPT_20261027.json",
-      "final_report": "results/MM_PART1_REPORT_20261027.md",
+      "selected_epoch": 3,
+      "latest_recovery_next_epoch": 4,
+      "latest_recovery_next_cursor": 515296,
+      "receipt": "results/MM_PART2_SAVED_PARTIAL_VERIFIED_20261027.json",
+      "final_report": "results/MM_PART2_STATUS_20261027.md",
       "registered_cloud_jobs_complete": false,
       "current_cloud_job": {
         "kernel": "rocky62/urop-mm-part2-continuation-20261027/1",
         "script_version_id": 362859423,
         "url": "https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027?scriptVersionId=362859423",
-        "observed_state": "Epoch3 training advancing, sample counters and optimizer updates verified live",
-        "runtime_observation_only": true,
-        "training_epoch_observed": 3,
-        "samples_seen_observed": 11200,
-        "trainer_status_utc": "2026-10-27T14:40:04.263472+00:00"
-      }
+        "state": "Successful saved partial;0ActiveEvents",
+        "runtime_observation_only": false,
+        "independent_local_readback": "passed",
+        "next_epoch": 4,
+        "cursor": 515296
+      },
+      "checkpoint_completion_percent_exact": 74.5714610158605,
+      "recoverable_training_percent": 97.85730507930256
     },
     "image_only": {
       "scope": "Standalone image-only six-way benchmark",
@@ -549,7 +551,7 @@
     "exclusions": 491,
     "receipt": "results/MM_PART1_USABLE_RECEIPT_20261024.json"
   },
-  "current_execution_note": "context/MM_PART1_IO_RECOVERY_20261027.md; all scientific fractions unchanged, zero epochs and full validations.",
+  "current_execution_note": "context/MM_PART2_CURRENT_20261027.md",
   "latest_recovery_receipt": "results/MM_PART1_RECOVERY_PROGRESS_20261025.json",
   "latest_api_backup_receipt": "results/MM_PART1_API_RECOVERY_GIT_BACKUP_20261025.json",
   "latest_reserve_audit": "results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json",
@@ -560,15 +562,17 @@
   "current_capacity_checkpoint": "context/MM_PART1_IO_RECOVERY_20261027.md",
   "current_verified_part1_receipt": "results/MM_PART1_RECEIPT_20261027.json",
   "current_cloud_job": {
-    "state": "successful_saved_partial_output_readback_blocked",
+    "kernel": "rocky62/urop-mm-part2-continuation-20261027/1",
+    "script_version_id": 362859423,
     "url": "https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027?scriptVersionId=362859423",
-    "scientific_run_complete": false,
-    "epochs_validated_cloud_reported": 3,
+    "state": "Successful saved partial;0ActiveEvents",
+    "runtime_observation_only": false,
+    "independent_local_readback": "passed",
     "next_epoch": 4,
-    "cursor": 515296,
-    "test_performed": false,
-    "receipt": "results/MM_PART2_CLOUD_TERMINAL_OBSERVATION_20261027.json",
-    "accepted_workflow_unchanged_pending_local_readback": true
+    "cursor": 515296
   },
-  "latest_part2_status": "results/MM_PART2_STATUS_20261027.md"
+  "latest_part2_status": "results/MM_PART2_STATUS_20261027.md",
+  "overall_three_modality_checkpoint_percent_exact": 64.8571536719535,
+  "latest_verified_part2_receipt": "results/MM_PART2_SAVED_PARTIAL_VERIFIED_20261027.json",
+  "historical_previous_current_execution_note": "context/MM_PART1_IO_RECOVERY_20261027.md; all scientific fractions unchanged, zero epochs and full validations."
 }
