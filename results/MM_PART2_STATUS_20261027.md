@@ -55,3 +55,5 @@ At the observed ~63 training pairs/second, residual training alone is roughly13 
 ## Progress bars — accepted evidence versus observed work
 
 Accepted workflow remains text100 / text+image60 / image20 / overall60 pending local readback. This is intentionally conservative, not a claim training did nothing. Cloud-reported training fraction is97.86%, validation75%, test0%. If independent readback accepts the current partial recovery, the existing five-equal-stage method yields text+image about74.6% (40 setup +19.57 training +15 validation), overall64.9%; do not label that100%.
+
+Documentation backup verified against remote main: `51a85424c03a2ce9ae0f3bb4e0e3cc256c0fe60d`; receipt `results/MM_PART2_PARTIAL_GIT_BACKUP_20261027.json`. This verifies code/documentation backup, not pending private tensor/prediction readback.

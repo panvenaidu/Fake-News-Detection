@@ -33,3 +33,5 @@ Training requests a graceful safe-boundary stop at19:35UTC and returns by19:43UT
 Evidence: `results/MM_PART2_LAUNCH_RECORD_20261027.json`, `results/MM_PART2_LIVE_OBSERVATION_20261027.json`, `results/MM_PART2_UI_START_AUDIT_20261027.json`, `results/MM_PART2_EVALUATION_ENGINEERING_CHECK_20261027.json`, `results/MM_PART2_READBACK_VERIFIER_CHECK_20261027.json`.
 
 Current workflow remains text100 / multimodal60 / image20 / overall60 until new durable verified training/validation evidence exists. Latest VERIFIED score remains epoch2 VALIDATION accuracy88.358994%, Macro-F1.82266654. Final multimodal test pending.
+
+Documentation backup verified against remote main: `51a85424c03a2ce9ae0f3bb4e0e3cc256c0fe60d`; receipt `results/MM_PART2_PARTIAL_GIT_BACKUP_20261027.json`. This verifies code/documentation backup, not pending private tensor/prediction readback.

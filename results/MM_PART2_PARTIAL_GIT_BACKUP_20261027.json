@@ -1,0 +1,17 @@
+{
+  "verified_utc": "2026-10-27T19:43:32.139642+00:00",
+  "repository": "https://github.com/panvenaidu/Fake-News-Detection",
+  "branch": "main",
+  "documentation_commit": "51a85424c03a2ce9ae0f3bb4e0e3cc256c0fe60d",
+  "remote_main_readback": "51a85424c03a2ce9ae0f3bb4e0e3cc256c0fe60d",
+  "status": "documentation_backup_verified_science_still_partial",
+  "local_part2_tensor_prediction_readback": "blocked_by_Chrome_ERR_BLOCKED_BY_CLIENT_human_download_pending",
+  "final_test_performed": false,
+  "files": {
+    "results/MM_PART2_STATUS_20261027.md": "2a7ba8a517291ec270a0da733e6cdcb014ba6df5d2e5be2c0d514d7b29d25019",
+    "results/UROP_Multimodal_Status_20261027.html": "c24f816e5cfff6386b3759f39d63de8b8fd21155c9cf9674dd606c5f1f8e6af2",
+    "results/MM_PART2_CLOUD_TERMINAL_OBSERVATION_20261027.json": "b8b1a27297774319a43323419372d9f3cf7230d4f5728b7829d76ce4b38f8b06",
+    "results/MM_PART2_CAPACITY_END_OBSERVATION_20261027.json": "702b33a015b721862eb8850b6576b75d7e7eba3290d8b67006655d34e9db2b81"
+  },
+  "note": "This receipt is committed after the verified documentation commit; it does not claim its own future hash or independent verification of unavailable private tensors."
+}
