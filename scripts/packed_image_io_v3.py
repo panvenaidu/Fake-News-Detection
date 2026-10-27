@@ -10,8 +10,11 @@ import os
 from pathlib import Path, PurePosixPath
 import sqlite3
 import tarfile
+import shutil
 from collections import OrderedDict
 from PIL import Image
+
+_INDEX_CACHE = {}
 
 
 def sha(path):
@@ -148,9 +151,33 @@ def create_index(root, shards, rows, output):
 
 class ArchiveStore:
     def __init__(self, root, index, index_sha256):
-        self.root, self.index = Path(root).resolve(), Path(index).resolve()
-        if sha(self.index) != index_sha256:
+        self.root, self.source_index = Path(root).resolve(), Path(index).resolve()
+        if sha(self.source_index) != index_sha256:
             raise ValueError('Archive index SHA mismatch')
+        self.index = self.source_index
+        # Kaggle inputs use a remote filesystem. SQLite's tiny random page reads
+        # were the measured bottleneck; cache only this exact 108 MB index.
+        if self.source_index.is_relative_to(Path('/kaggle/input')):
+            cache = Path('/kaggle/working/urop_verified_index_cache')
+            cache.mkdir(parents=True, exist_ok=True)
+            local = cache / (index_sha256 + '.sqlite')
+            if not local.exists():
+                temporary = local.with_suffix('.tmp-' + str(os.getpid()))
+                shutil.copyfile(self.source_index, temporary)
+                if sha(temporary) != index_sha256:
+                    raise ValueError('Copied index SHA mismatch')
+                os.replace(temporary, local)
+            if sha(local) != index_sha256:
+                raise ValueError('Preserve conflicting cached index')
+            self.index = local
+        key = (str(self.index), index_sha256)
+        if key not in _INDEX_CACHE:
+            with sqlite3.connect('file:' + str(self.index) + '?mode=ro&immutable=1', uri=True) as db:
+                rows = {ident: (name, offset, size, digest) for ident, name, offset, size, digest in
+                        db.execute('SELECT id,archive,offset,size,sha256 FROM images')}
+                sizes = {packed_name(name): size for name, size in db.execute('SELECT name,bytes FROM archives')}
+            _INDEX_CACHE[key] = rows, sizes
+        self.rows, self.sizes = _INDEX_CACHE[key]
         self.pid, self.db, self.handles = None, None, OrderedDict()
 
     def __getstate__(self):
@@ -158,20 +185,23 @@ class ArchiveStore:
 
     def read(self, row):
         if self.pid != os.getpid():
-            self.db = sqlite3.connect('file:' + str(self.index) + '?mode=ro&immutable=1', uri=True)
+            for handle in self.handles.values():
+                handle.close()
             self.handles, self.pid = OrderedDict(), os.getpid()
-        item = self.db.execute('SELECT archive,offset,size,sha256 FROM images WHERE id=?', (row['id'],)).fetchone()
+        item = self.rows.get(row['id'])
         if item is None:
             raise ValueError('Image missing from verified archive index')
         name, offset, size, digest = item
         if name != packed_name(row['source_shard']) or size != int(row['bytes']) or digest != row['image_sha256']:
             raise ValueError('Archive index differs from pinned original manifest')
-        path = (self.root / name).resolve()
-        if path.parent != self.root or offset < 0 or offset + size > path.stat().st_size:
+        if name not in self.sizes or offset < 0 or offset + size > self.sizes[name]:
             raise ValueError('Invalid indexed archive byte range')
         if name not in self.handles:
+            path = (self.root / name).resolve()
+            if path.parent != self.root or path.stat().st_size != self.sizes[name]:
+                raise ValueError('Packed archive path/size changed')
             self.handles[name] = path.open('rb', buffering=0)
-            if len(self.handles) > 8:
+            if len(self.handles) > 64:
                 _, old = self.handles.popitem(last=False)
                 old.close()
         stream = self.handles.pop(name)

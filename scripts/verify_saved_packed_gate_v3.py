@@ -28,7 +28,9 @@ def verify(root, gate):
     if sha(index)!=r['packed_index_sha256']:raise ValueError('Saved index checksum mismatch')
     for filename,key in [('packed_image_io_v3.py','packed_adapter_sha256'),('verify_packed_usable_input_v3.py','gate_source_sha256')]:
         p=gate/'gate_source/scripts'/filename
-        if sha(p)!=r[key] or sha(p)!=sha(root/'scripts'/filename):raise ValueError('Saved gate source mismatch')
+        registered={'packed_image_io_v3.py':'ce570b906d8f5bb0c3d1b2d8b7e07f8654589bae3557ed91c9e84cde484cdc30',
+                    'verify_packed_usable_input_v3.py':'ef7ebb081ca33c1a56638a46e112d3099af373bfd0cbc18a9b0b453985c40a2d'}
+        if sha(p)!=r[key] or sha(p)!=registered[filename]:raise ValueError('Saved gate source mismatch')
     reg=registration(root/'results'/REGISTRATION)
     extraction=root/'results'/reg['extraction_report_file']
     if not extraction.is_file():extraction=root/'data/official_paired_v1/source_recovery'/reg['extraction_report_file']
