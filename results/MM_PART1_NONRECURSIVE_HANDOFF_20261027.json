@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-27T05:24:45.307354+00:00",
+  "change": "Epoch2 uses a distinct private notebook that consumes immutable epoch1 output, avoiding self-dependency/version ambiguity",
+  "scientific_changes": false,
+  "epoch1_cloud_job_untouched": "rocky62/urop-mm-part1-science-usable-20261027/1",
+  "only_local_controller_restarted": true,
+  "previous_controller_pid": 21305,
+  "new_epoch2_notebook": "rocky62/urop-mm-part1-science-epoch2-20261027",
+  "same_attempt": "OFFICIAL-6W-MM-USABLE-v2_seed42_20261027",
+  "reference": "https://www.kaggle.com/docs/notebooks"
+}

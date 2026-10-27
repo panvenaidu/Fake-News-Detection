@@ -115,7 +115,8 @@ def run(api):
     verified=json.loads(pref_receipt.read_text());assert verified['full_epoch_fits_12h_with_margin']
     summary=next(PREF.rglob('GPU_PREFLIGHT_SUMMARY.json'));s=json.loads(summary.read_text())
     assert s['runtime_reader_sha256']==sha(ROOT/'scripts/packed_image_io_v3.py')
-    checkpoint('Verified cloud scratch throughput; scientific training not started',0,pref_receipt)
+    if not (BASE/'epoch1_launch.json').exists():
+        checkpoint('Verified cloud scratch throughput; scientific training not started',0,pref_receipt)
     prior_folder=None;prior_version=None
     for epoch in [1,2]:
         stopped()
@@ -143,7 +144,9 @@ def run(api):
             assert not r.error and not r.invalid_kernel_sources and not r.invalid_dataset_sources
             launch={'utc':utc(),'submitted':True,'version':r.version_number,'kernel_id':r.kernel_id,'url':r.url,'session_timeout_seconds':cap,'package_sha256':sha(package/'registered_epoch.ipynb')}
             write(launch_file,launch)
-        kernel=SLUG+'/'+str(launch['version'])
+        reference=launch['url'].split('/code/',1)[1].strip('/')
+        assert reference.startswith('rocky62/urop-mm-part1-science-') and reference.count('/')==1
+        kernel=reference+'/'+str(launch['version'])
         journal('scientific_epoch_submitted',epoch=epoch,kernel=kernel,launch=launch)
         wait(kernel,launch['session_timeout_seconds']+600)
         folder=BASE/('epoch%d_saved_output'%epoch)
@@ -176,5 +179,8 @@ if __name__=='__main__':
     except Exception as error:
         # Exception messages can contain provider details; record only safe type.
         journal('pipeline_stopped_preserve_artifacts',error_type=type(error).__name__,next='Inspect saved job/output and failing guard; never blindly resubmit')
-        raise
+        detail=(error.stderr if isinstance(error,subprocess.CalledProcessError) else str(error))
+        if 'token' in locals():detail=detail.replace(token,'[redacted]')
+        write(BASE/'failure_detail.json',{'utc':utc(),'type':type(error).__name__,'detail':detail[-6000:]})
+        sys.exit(1)
     finally:lock.unlink(missing_ok=True)
