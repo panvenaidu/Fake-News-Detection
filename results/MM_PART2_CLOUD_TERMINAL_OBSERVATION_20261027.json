@@ -1,0 +1,82 @@
+{
+  "cursor": 515296,
+  "elapsed_seconds": 18771.973468193,
+  "epochs_validated": 3,
+  "next_epoch": 4,
+  "no_test_performed": true,
+  "phase": "train",
+  "recovery": {
+    "fallback_errors": [],
+    "loaded": {
+      "bytes": 1608464758,
+      "cursor": 515296,
+      "file": "796d18b295fe4fd4b355417c98c04039.pt",
+      "sha256": "6c7747e08f482d6e504e05fb6c7e1a8c4e1fe3bce7154961f9380ed7e3e6f68e"
+    }
+  },
+  "requires_private_saved_version_and_independent_local_readback": true,
+  "selected": {
+    "epoch": 3,
+    "metrics": {
+      "accuracy": 0.8853437663367004,
+      "balanced_accuracy": 0.8083810776142958,
+      "loss": 0.587545333286567,
+      "macro_f1": 0.8279239413775588,
+      "micro_f1": 0.8853437663367004,
+      "samples": 59299,
+      "weighted_f1": 0.8849443479882918
+    },
+    "predictions_file": "validation_epoch3_predictions.csv",
+    "predictions_sha256": "afb34b1f34f300c74c77309047e2e497846478d3a13863b56a904b8a96c3a3ca",
+    "weights_file": "selected_epoch3_f009f3c47f6e49eab7652f2823e3eb80.pt",
+    "weights_sha256": "360a436a1af6d5a9a6375dc26b2e8e8a0fa30e9cf3bafb157d027d39472d960d"
+  },
+  "state": "partial_part2_durable_runtime_checkpoint",
+  "training_complete": false,
+  "utc": "2026-10-27T19:36:42.013550+00:00",
+  "validation": [
+    {
+      "epoch": 1,
+      "metrics": {
+        "accuracy": 0.8770636941601039,
+        "balanced_accuracy": 0.7891082369022498,
+        "loss": 0.499369034053496,
+        "macro_f1": 0.8131828985153033,
+        "micro_f1": 0.8770636941601039,
+        "samples": 59299,
+        "weighted_f1": 0.8761821010555645
+      },
+      "predictions_sha256": "f3b4225e7ecd08879415d1a1f1dc29050c5a020493c8cd2a69f5f377257fa82b"
+    },
+    {
+      "epoch": 2,
+      "metrics": {
+        "accuracy": 0.8835899424948144,
+        "balanced_accuracy": 0.8019416054634788,
+        "loss": 0.5648601171493689,
+        "macro_f1": 0.822666539045316,
+        "micro_f1": 0.8835899424948144,
+        "samples": 59299,
+        "weighted_f1": 0.882874012571488
+      },
+      "predictions_sha256": "33585aae46f01982bd3adb17f1a4d4aca5baf796eec8fba9ca3480c7645f8e99"
+    },
+    {
+      "epoch": 3,
+      "metrics": {
+        "accuracy": 0.8853437663367004,
+        "balanced_accuracy": 0.8083810776142958,
+        "loss": 0.587545333286567,
+        "macro_f1": 0.8279239413775588,
+        "micro_f1": 0.8853437663367004,
+        "samples": 59299,
+        "weighted_f1": 0.8849443479882918
+      },
+      "predictions_sha256": "afb34b1f34f300c74c77309047e2e497846478d3a13863b56a904b8a96c3a3ca"
+    }
+  ],
+  "evidence_scope": "Parsed terminal runtime JSON from visible Kaggle logs, NOT independent local tensor/prediction readback.",
+  "observed_utc": "2026-10-27T19:37:06.465Z",
+  "private_version": "https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027?scriptVersionId=362859423",
+  "local_readback_status": "blocked_browser_download_ERR_BLOCKED_BY_CLIENT; human handoff requested; do not bypass"
+}

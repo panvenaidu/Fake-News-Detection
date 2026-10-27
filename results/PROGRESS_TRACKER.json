@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-27T14:42:21.639185+00:00",
+  "updated_utc": "2026-10-27T19:42:11.943303+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -558,5 +558,17 @@
   "latest_gate_observation": "results/MM_PART1_FULL_IMAGE_GATE_INTERACTIVE_OBSERVATION_20261027.json",
   "latest_gate_readback": "results/MM_PART1_SAVED_GATE_READBACK_20261027.json",
   "current_capacity_checkpoint": "context/MM_PART1_IO_RECOVERY_20261027.md",
-  "current_verified_part1_receipt": "results/MM_PART1_RECEIPT_20261027.json"
+  "current_verified_part1_receipt": "results/MM_PART1_RECEIPT_20261027.json",
+  "current_cloud_job": {
+    "state": "successful_saved_partial_output_readback_blocked",
+    "url": "https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027?scriptVersionId=362859423",
+    "scientific_run_complete": false,
+    "epochs_validated_cloud_reported": 3,
+    "next_epoch": 4,
+    "cursor": 515296,
+    "test_performed": false,
+    "receipt": "results/MM_PART2_CLOUD_TERMINAL_OBSERVATION_20261027.json",
+    "accepted_workflow_unchanged_pending_local_readback": true
+  },
+  "latest_part2_status": "results/MM_PART2_STATUS_20261027.md"
 }

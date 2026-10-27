@@ -1,8 +1,6 @@
-## Latest runtime milestone — 2026-10-27T18:34:46UTC
+## Current terminal handoff — 2026-10-27T19:42:11.943303+00:00
 
-Epoch 4 observed 289,600/563,601 pairs (51.4%), successful updates 61,863, fresh trainer UTC18:34:44.246428, PID73 alive, no stop requested or visible traceback. Epoch3 consumed the full training split and controller advanced through validation into epoch4. New saved predictions/metrics have not yet been retrieved or independently accepted. Final test pending. Version1/scriptVersion362859423 remains the ONLY active scientific continuation.
-
-At measured speed, completion plus evaluation cannot fit before20:08:54UTC. The pre-registered runtime wrapper requests a safe partial stop19:35UTC and returns by19:43, allowing private output readback and handoff. Do not remove the budget safeguard, shrink the cohort or invent final results.
+**PARTIAL; no active training.** Cloud saved epoch4/cursor515296 and three full validations. Current cloud-selected epoch3 validation accuracy88.5343766%, Macro-F1.8279239414. Local tensor/prediction readback is BLOCKED on Chrome ERR_BLOCKED_BY_CLIENT; human normal download requested. No final test. Accepted workflow remains60% multimodal until readback. Read `results/MM_PART2_STATUS_20261027.md` and `results/MM_PART2_CLOUD_TERMINAL_OBSERVATION_20261027.json` before any next action. Do not rerun the epoch2-guarded launcher or revive Part1.
 
 # Part 2 current execution — 27 October 2026
 
