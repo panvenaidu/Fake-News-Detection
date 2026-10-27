@@ -31,10 +31,10 @@ assert PACKED_INDEX.is_file()
 ROOT = Path(coverage['runtime_root'])
 assert ROOT.is_relative_to('/kaggle/input') and ROOT.is_dir()
 SOURCE = BASE / 'registered_source'
-COMMIT = '1b22467fc4d404e172e3d938f44e7d37e345e4bc'
+COMMIT = '342d287007b7cbe795031228bdb4c2c5b4ee70b6'
 HASHES = {
     'scripts/train_usable_multimodal_v2.py': '7f7fb90deb08a5901d1ca8343b780f6d82dd42b3e278d51f333568435becee0e',
-    'scripts/packed_image_io_v3.py': '2a661546aab7969ae80329eff66d9667496c4e5db91d7b20993d168f70ee0b57',
+    'scripts/packed_image_io_v3.py': 'a29e66d9c2962eb5bdfdce9abab02866fc77ad44aa5711ec8009a09dda7bb60d',
     'scripts/multimodal_recovery_v1.py': '2f5f67ce79289c69279040d21b483e28535895f5c99c63e0021da3eee6d3d1c8',
     'scripts/usable_cohort_v2.py': '22bff1eb0fa14d102ad07786f936c5c1ed1582ec7bd5cee2b8e8dc5eb3520092',
     'scripts/verify_usable_multimodal_v2.py': 'bc314502833835a42bba8bab2d069074018bafc807106a3eb503386e2671139b',
@@ -104,7 +104,11 @@ with (BASE / 'measured_gpu_preflight.log').open('a') as log:
 result = json.loads((preflight / 'measured_preflight.json').read_text())
 assert result['status'] == 'passed_measured_multimodal_preflight'
 epoch = 563601 / result['train_examples_per_second'] + 59299 / result['eval_path_examples_per_second'] + result['checkpoint_seconds']
-summary = {'state': 'gpu_preflight_verified', 'fixture': str(fixture),
+cache_receipt_path = Path('/tmp/urop_verified_raw_archives') / sha(PACKED_INDEX) / 'raw_archive_cache_receipt.json'
+cache_receipt = json.loads(cache_receipt_path.read_text())
+assert cache_receipt['state'] == 'exact_raw_archive_cache_verified' and len(cache_receipt['archives']) == 39
+(BASE / 'raw_archive_cache_receipt.json').write_bytes(cache_receipt_path.read_bytes())
+summary = {'raw_archive_cache': cache_receipt, 'raw_archive_cache_receipt_sha256': sha(cache_receipt_path), 'state': 'gpu_preflight_verified', 'fixture': str(fixture),
            'fixture_sha256': sha(fixture), 'throughput': str(preflight / 'measured_preflight.json'),
            'throughput_sha256': sha(preflight / 'measured_preflight.json'),
            'coverage': str(COVERAGE), 'coverage_sha256': sha(COVERAGE),
@@ -114,7 +118,7 @@ summary = {'state': 'gpu_preflight_verified', 'fixture': str(fixture),
            'estimated_two_epochs_with20percent_margin_seconds': 2.4 * epoch,
            'versions': result['versions'], 'gpu': result['device'],
            'runtime_reader_sha256': HASHES['scripts/packed_image_io_v3.py'],
-           'index_cache_policy': 'Exact SHA local index and in-memory metadata; retain all39 verified archive handles; raw byte SHA checked on every image',
+           'index_cache_policy': 'Exact SHA local index and all39 exact raw archives in cloud /tmp; retain handles; raw byte SHA checked on every image',
            'scientific_epochs_completed': 0, 'full_validations_completed': 0,
            'test_performed': False}
 (BASE / 'GPU_PREFLIGHT_SUMMARY.json').write_text(json.dumps(summary, indent=2) + '\n')
