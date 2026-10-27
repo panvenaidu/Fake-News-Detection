@@ -1,3 +1,7 @@
+## Runtime halfway checkpoint — scientific completion still pending
+
+2026-10-27T06:36:16.946055+00:00 — actual epoch1 progress283200/563601pairs (50.2483%),8845successfulupdates+5AMPskips,trainerPID67alive,T4utilization57%. Full training0/2, fullvalidation0/2; no new accuracy/F1 yet. This is runtime observation, not independent verification of a private saved checkpoint. Evidence: `results/MM_PART1_RUNTIME_HALF_EPOCH_20261027.json`. Active local controller60613/PID22245 watches the SAME private scientific job version1 and will retrieve, verify and back up its full saved output before epoch2. Next actions are automatic; do not allocate another runtime or restart training.
+
 ## Validation comparison prepared from existing text predictions
 
 2026-10-27T06:13:05.770857+00:00 — derived text-only validation metrics on the SAME59299 approved usable validation IDs, without model inference or modifying historical text results. Accuracy82.73495%, Macro-F1 0.77867249. Filtered-cohort loss cannot be recovered from saved confidence-only predictions, so it is null, not estimated. All TSVs were checked for integrity; no test predictions or test inference were used. Source script `scripts/derive_text_usable_validation_v1.py`; result `results/MM_TEXT_SAME_USABLE_VALIDATION_20261027.json`. Text training still used564000 original rows versus563601 usable multimodal rows; disclose this remaining protocol difference. No workflow-stage increase for this analysis. Epoch1 training continues unchanged.
