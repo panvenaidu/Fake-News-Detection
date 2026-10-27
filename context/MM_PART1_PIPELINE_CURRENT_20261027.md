@@ -1,3 +1,7 @@
+## Validation comparison prepared from existing text predictions
+
+2026-10-27T06:13:05.770857+00:00 — derived text-only validation metrics on the SAME59299 approved usable validation IDs, without model inference or modifying historical text results. Accuracy82.73495%, Macro-F1 0.77867249. Filtered-cohort loss cannot be recovered from saved confidence-only predictions, so it is null, not estimated. All TSVs were checked for integrity; no test predictions or test inference were used. Source script `scripts/derive_text_usable_validation_v1.py`; result `results/MM_TEXT_SAME_USABLE_VALIDATION_20261027.json`. Text training still used564000 original rows versus563601 usable multimodal rows; disclose this remaining protocol difference. No workflow-stage increase for this analysis. Epoch1 training continues unchanged.
+
 ## Controller handoff updated without restarting the GPU job
 
 2026-10-27T05:25:06.058684+00:00 — local bounded controller session60613, PID22245. It reuses the saved epoch1 launch receipt and watches the SAME active private job; no cloud job or training was restarted. Epoch2 will use a separate private notebook `rocky62/urop-mm-part1-science-epoch2-20261027` consuming the immutable epoch1 output, avoiding a recursive notebook dependency. Numeric sources, registered attempt, four-epoch budget, images, splits, six labels and no-test policy are unchanged. Evidence `results/MM_PART1_NONRECURSIVE_HANDOFF_20261027.json`. Controller source617a72b is backed up. The temporary idle-sleep assertion ends with this controller.

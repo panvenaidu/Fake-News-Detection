@@ -1,0 +1,188 @@
+{
+  "utc": "2026-10-27T06:12:40.379524+00:00",
+  "state": "verified_derived_text_validation_same_usable_ids",
+  "cohort_id": "FACULTY-6W-USABLE-682170-v1",
+  "validation_samples": 59299,
+  "original_text_validation_samples": 59342,
+  "excluded_validation_ids": 43,
+  "source_predictions_file": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence/bert-base/validation_predictions.csv",
+  "source_predictions_sha256": "8c2482d63b79ee3506b2c111cfed4e054e3166c5f76b6cecae7f1463581eae86",
+  "selected_text_epoch": 4,
+  "selected_text_weights_sha256": "870bea50fa608dddd20421c21fd1786e244b1323e22734093214b87023666753",
+  "metrics": {
+    "accuracy": 0.8273495337189497,
+    "micro_f1": 0.8273495337189497,
+    "macro_f1": 0.7786724913437039,
+    "weighted_f1": 0.8258500315813645,
+    "balanced_accuracy": 0.7515262473938567,
+    "loss": null
+  },
+  "loss_status": "Not reconstructible for this filtered cohort from saved predicted-label confidence; do not reuse full-cohort loss",
+  "classification_report": {
+    "True": {
+      "precision": 0.8502379780075496,
+      "recall": 0.8885934819897084,
+      "f1-score": 0.8689927031787302,
+      "support": 23320.0
+    },
+    "Satire/Parody": {
+      "precision": 0.7891891891891892,
+      "recall": 0.7051136363636363,
+      "f1-score": 0.7447861965491372,
+      "support": 3520.0
+    },
+    "Misleading Content": {
+      "precision": 0.751857893782853,
+      "recall": 0.7356566462711714,
+      "f1-score": 0.7436690421765049,
+      "support": 11277.0
+    },
+    "Imposter Content": {
+      "precision": 0.7990255785627284,
+      "recall": 0.529886914378029,
+      "f1-score": 0.6372025254978144,
+      "support": 1238.0
+    },
+    "False Connection": {
+      "precision": 0.846991180082617,
+      "recall": 0.8539509230076542,
+      "f1-score": 0.8504568129589148,
+      "support": 17768.0
+    },
+    "Manipulated Content": {
+      "precision": 0.8604073522106309,
+      "recall": 0.7959558823529411,
+      "f1-score": 0.826927667701122,
+      "support": 2176.0
+    },
+    "accuracy": 0.8273495337189497,
+    "macro avg": {
+      "precision": 0.8162848619725946,
+      "recall": 0.7515262473938567,
+      "f1-score": 0.7786724913437039,
+      "support": 59299.0
+    },
+    "weighted avg": {
+      "precision": 0.8262361323740731,
+      "recall": 0.8273495337189497,
+      "f1-score": 0.8258500315813645,
+      "support": 59299.0
+    }
+  },
+  "confusions": {
+    "labels": [
+      "True",
+      "Satire/Parody",
+      "Misleading Content",
+      "Imposter Content",
+      "False Connection",
+      "Manipulated Content"
+    ],
+    "raw": [
+      [
+        20722,
+        257,
+        1297,
+        65,
+        835,
+        144
+      ],
+      [
+        455,
+        2482,
+        115,
+        18,
+        415,
+        35
+      ],
+      [
+        1538,
+        94,
+        8296,
+        22,
+        1289,
+        38
+      ],
+      [
+        337,
+        34,
+        73,
+        656,
+        120,
+        18
+      ],
+      [
+        1090,
+        233,
+        1180,
+        46,
+        15173,
+        46
+      ],
+      [
+        230,
+        45,
+        73,
+        14,
+        82,
+        1732
+      ]
+    ],
+    "row_normalized": [
+      [
+        0.8885934819897084,
+        0.011020583190394511,
+        0.05561749571183534,
+        0.0027873070325900515,
+        0.03580617495711835,
+        0.0061749571183533445
+      ],
+      [
+        0.12926136363636365,
+        0.7051136363636363,
+        0.032670454545454544,
+        0.005113636363636364,
+        0.11789772727272728,
+        0.009943181818181818
+      ],
+      [
+        0.13638379001507492,
+        0.008335550234991575,
+        0.7356566462711714,
+        0.0019508734592533475,
+        0.11430344949898022,
+        0.0033696905205285095
+      ],
+      [
+        0.27221324717285944,
+        0.027463651050080775,
+        0.05896607431340872,
+        0.529886914378029,
+        0.09693053311793215,
+        0.014539579967689823
+      ],
+      [
+        0.06134624043223773,
+        0.013113462404322377,
+        0.06641152633948672,
+        0.002588923908149482,
+        0.8539509230076542,
+        0.002588923908149482
+      ],
+      [
+        0.1056985294117647,
+        0.02068014705882353,
+        0.03354779411764706,
+        0.006433823529411764,
+        0.03768382352941176,
+        0.7959558823529411
+      ]
+    ]
+  },
+  "no_model_inference": true,
+  "test_prediction_file_read": false,
+  "test_inference_performed": false,
+  "all_split_tsv_integrity_checked": true,
+  "original_text_results_modified": false,
+  "limitation": "Same validation cohort only: original text training used564000 rows; multimodal training uses563601 usable rows"
+}
