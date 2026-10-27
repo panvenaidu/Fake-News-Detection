@@ -1,3 +1,7 @@
+## Final remote backup verified
+
+2026-10-27T11:26:25.532854+00:00 — scientific release `4aa051710930d31b82cdee63cd836aac9921ed6a` matches origin/main;21 report/aggregate/independent-receipt files matched their committed bytes. Final proof: `results/MM_PART1_FINAL_GIT_BACKUP_20261027.json`. Acceptance receipt is now `verified_part1_complete`; all steps4–7 passed. Part2/test remain unstarted.
+
 # Part 1 complete — verified handoff, 27 October 2026
 
 Updated 2026-10-27T11:23:19.331947+00:00. Both full training epochs and both full validations are independently verified. **Part 1 package: 100%.** The whole text+image workflow is60%; Part2 and final test have not started.

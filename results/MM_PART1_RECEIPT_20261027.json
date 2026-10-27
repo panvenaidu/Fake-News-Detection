@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "utc": "2026-10-27T11:22:20.808615+00:00",
-  "state": "verified_part1_science_and_recovery",
+  "state": "verified_part1_complete",
   "attempt": "OFFICIAL-6W-MM-USABLE-v2_seed42_20261027",
   "cohort": "FACULTY-6W-USABLE-682170-v1",
   "split_counts": {
@@ -134,11 +134,12 @@
     "overall": 60
   },
   "part1_package_percent": 100,
-  "final_documentation_git_backup_verified": false,
+  "final_documentation_git_backup_verified": true,
   "final_git_backup_receipt": "results/MM_PART1_FINAL_GIT_BACKUP_20261027.json",
   "limitations": [
     "Approved usable-image cohort excludes491 strict decode failures; released cohort differs from paper count.",
     "Our end-to-end BERT-base warmstart/projection/budget differs from paper fixed BERT feature and tuned classifier pipeline.",
     "Single seed; validation numerical improvement is not a final-test or statistical-superiority claim."
-  ]
+  ],
+  "scientific_release_commit": "4aa051710930d31b82cdee63cd836aac9921ed6a"
 }
