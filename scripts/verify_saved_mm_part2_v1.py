@@ -29,13 +29,24 @@ def run(project,folder):
  selected=max(values,key=lambda v:(v['metrics']['macro_f1'],-v['metrics']['loss'],-v['epoch']));best=state['best'];assert selected['epoch']==best['epoch']
  selected_path=folder/best['weights_file'];assert sha(selected_path)==best['weights_sha256'];weights=torch.load(selected_path,map_location='cpu',weights_only=True)
  assert set(weights)==set(payload['model']) and all(v.shape==payload['model'][k].shape and v.dtype==payload['model'][k].dtype for k,v in weights.items())
+ # Structural strict-load only: no pretrained download, forward pass or laptop GPU.
+ # Default BERT-base dimensions are checked against every actual saved tensor.
+ from transformers import BertConfig,BertModel
+ from torchvision.models import resnet50
+ from train_usable_multimodal_v2 import MaximumFusion
+ with torch.device('meta'):
+  image=resnet50(weights=None);image.fc=torch.nn.Identity()
+  model=MaximumFusion(BertModel(BertConfig(),add_pooling_layer=False),image)
+ loaded=model.load_state_dict(weights,strict=True,assign=True)
+ assert not loaded.missing_keys and not loaded.unexpected_keys
+ del model
  ref=-1.;stale=0
  for h in state['history']:
   if h['validation']['macro_f1']>=ref+.001:ref=h['validation']['macro_f1'];stale=0
   else:stale+=1
  assert abs(ref-state['patience_reference'])<1e-12 and stale==state['stale']
  assert state['early_stopped']==(len(state['history'])>=3 and stale>=2)
- complete=state['epoch']>4 or state['early_stopped'];result={'status':'verified_saved_part2_partial' if not complete else 'verified_saved_registered_training','training_complete':complete,'epochs_validated':len(values),'next_epoch':state['epoch'],'cursor':state['cursor'],'phase':state['phase'],'updates':state['updates'],'skips':state['skips'],'recovery':recovery,'selected':best,'validation':values,'test_verified':False,'selected_weight_strict_key_shape_dtype_check':True,'local_model_inference':False}
+ complete=state['epoch']>4 or state['early_stopped'];result={'status':'verified_saved_part2_partial' if not complete else 'verified_saved_registered_training','training_complete':complete,'epochs_validated':len(values),'next_epoch':state['epoch'],'cursor':state['cursor'],'phase':state['phase'],'updates':state['updates'],'skips':state['skips'],'recovery':recovery,'selected':best,'validation':values,'test_verified':False,'selected_weight_strict_key_shape_dtype_check':True,'selected_weight_strict_abstract_graph_load':True,'local_model_inference':False}
  train=[r['id'] for r in expected.values() if r['split']=='train'];indices=order(42,state['epoch'],len(train))[state['cursor']:state['cursor']+16].tolist();result['next_expected_ids_sha256']=hashlib.sha256(('\n'.join(train[i] for i in indices)+'\n').encode()).hexdigest();result['next_expected_ids_count']=len(indices)
  if (folder/'test_metrics.json').exists():
   assert complete

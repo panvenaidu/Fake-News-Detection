@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-27T19:48:54.477395+00:00",
+  "status": "passed_structural_strict_load_engineering_check",
+  "checkpoint": "accepted Part1 epoch2 weights; not the unavailable new Part2 weights",
+  "keys": 527,
+  "strict": true,
+  "inference": false,
+  "training": false,
+  "downloads": false,
+  "part2_new_artifact_acceptance": false
+}
