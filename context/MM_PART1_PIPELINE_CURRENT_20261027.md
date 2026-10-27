@@ -1,29 +1,9 @@
-## Runtime halfway checkpoint — scientific completion still pending
-
-2026-10-27T06:36:16.946055+00:00 — actual epoch1 progress283200/563601pairs (50.2483%),8845successfulupdates+5AMPskips,trainerPID67alive,T4utilization57%. Full training0/2, fullvalidation0/2; no new accuracy/F1 yet. This is runtime observation, not independent verification of a private saved checkpoint. Evidence: `results/MM_PART1_RUNTIME_HALF_EPOCH_20261027.json`. Active local controller60613/PID22245 watches the SAME private scientific job version1 and will retrieve, verify and back up its full saved output before epoch2. Next actions are automatic; do not allocate another runtime or restart training.
-
-## Validation comparison prepared from existing text predictions
-
-2026-10-27T06:13:05.770857+00:00 — derived text-only validation metrics on the SAME59299 approved usable validation IDs, without model inference or modifying historical text results. Accuracy82.73495%, Macro-F1 0.77867249. Filtered-cohort loss cannot be recovered from saved confidence-only predictions, so it is null, not estimated. All TSVs were checked for integrity; no test predictions or test inference were used. Source script `scripts/derive_text_usable_validation_v1.py`; result `results/MM_TEXT_SAME_USABLE_VALIDATION_20261027.json`. Text training still used564000 original rows versus563601 usable multimodal rows; disclose this remaining protocol difference. No workflow-stage increase for this analysis. Epoch1 training continues unchanged.
-
-## Controller handoff updated without restarting the GPU job
-
-2026-10-27T05:25:06.058684+00:00 — local bounded controller session60613, PID22245. It reuses the saved epoch1 launch receipt and watches the SAME active private job; no cloud job or training was restarted. Epoch2 will use a separate private notebook `rocky62/urop-mm-part1-science-epoch2-20261027` consuming the immutable epoch1 output, avoiding a recursive notebook dependency. Numeric sources, registered attempt, four-epoch budget, images, splits, six labels and no-test policy are unchanged. Evidence `results/MM_PART1_NONRECURSIVE_HANDOFF_20261027.json`. Controller source617a72b is backed up. The temporary idle-sleep assertion ends with this controller.
-
-## Actual scientific training is advancing
-
-2026-10-27T05:22:34.335045+00:00 — epoch1 actual sample and optimizer counters advanced; GPU active; zero AMP skips at the latest saved observation. Evidence `results/MM_PART1_FIRST_ADVANCING_TRAINING_20261027.json`. Full epoch and validation counts remain0/2 until complete durable outputs are independently verified. Runtime counters are not a private saved checkpoint. Controller session32185 is continuing the bounded two-epoch workflow.
-
-## Scientific epoch1 submitted and process confirmed
-
-2026-10-27T05:12:23.816259+00:00 — private notebook `rocky62/urop-mm-part1-science-usable-20261027/1`, script version362710475. Live UTC05:11:54 observation shows trainer PID67 alive, stateinitializing, TeslaT4 GPU0 visible/used. The exact-byte cloud archive cache is being rebuilt for this new runtime. Session cap18000seconds; registered stop after epoch1/fullvalidation. Source/config/reader unchanged from successful preflight. Evidence: `results/MM_PART1_SCIENTIFIC_LAUNCH_20261027.json`. Controller session32185 remains active and will independently retrieve/check/backup this output before epoch2. Do not duplicate it.
-
 # Verified Part1 pipeline checkpoint
 
-2026-10-27T05:05:08.788355+00:00 — Verified cloud scratch throughput; scientific training not started
+2026-10-27T08:16:24.069796+00:00 — Verified Part1 epoch1 training validation and recovery
 
-Completed full scientific training 0/2; full validation 0/2. No final test. This is one four-epoch experiment, stopped after epoch2.
+Completed full scientific training 1/2; full validation 1/2. No final test. This is one four-epoch experiment, stopped after epoch2.
 
-Evidence: `results/MM_PART1_RAW_CACHE_PREFLIGHT_VERIFIED_20261027.json`. 
+Evidence: `results/MM_PART1_EPOCH1_VERIFIED_20261027.json`. Private immutable output: rocky62/urop-mm-part1-science-usable-20261027/1. Recovery next epoch 2, cursor0. No final test.
 
 Bounded controller: `collab/run_verified_part1_pipeline_v1.py`; live journal `data/cloud_recovery/part1_verified_pipeline_20261027/status.json`. A STOP_PIPELINE file in that folder prevents the next job. Verify saved launch receipts before recovery; never duplicate a submitted notebook.
