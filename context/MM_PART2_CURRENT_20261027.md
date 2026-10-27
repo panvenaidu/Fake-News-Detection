@@ -1,6 +1,6 @@
-## Latest runtime milestone — 2026-10-27T15:28:19.441287+00:00
+## Latest runtime milestone — 2026-10-27T16:00:46UTC
 
-Epoch3 observed184000/563601pairs (32.6%), optimizer40958; fresh trainerUTC15:27:12.376006. Process alive and safe-stop false. Runtime observation only: accepted full epochs/validations remain2; final test pending. Continue the existing job, not another trainer. Source `results/MM_PART2_LIVE_OBSERVATION_20261027.json`.
+Epoch3 observed307200/563601pairs (54.5%); successfuloptimizer44806, live process and fresh trainerUTC16:00:30.349960. No new epoch has yet been independently retrieved/accepted; final test pending. Continue version1/scriptVersion362859423.
 
 # Part 2 current execution — 27 October 2026
 
