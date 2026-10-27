@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-27T08:18:29.433599+00:00",
+  "updated_utc": "2026-10-27T11:19:23.157070+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -13,7 +13,7 @@
     "Three-modality overall progress uses equal modality weights; display rounded integer percentages and exact stage states.",
     "If tensor recovery is older than observed training history, training-stage fraction uses verified recoverable epoch/batch progress; original validation observations are retained separately."
   ],
-  "overall_three_modality_checkpoint_percent": 57,
+  "overall_three_modality_checkpoint_percent": 60,
   "models": {
     "text_only_bert": {
       "scope": "Official six-way faculty TSV cohort; BERT baseline",
@@ -74,14 +74,14 @@
       "milestones": {
         "dataset_audit": 1,
         "model_implementation": 1,
-        "training": 0.25,
-        "validation": 0.25,
+        "training": 0.5,
+        "validation": 0.5,
         "final_test_and_result_archive": 0
       },
-      "state": "Epoch1 full training/validation independently verified and backed up; epoch2 committed bounded job submitted",
-      "checkpoint_completion_percent": 50,
-      "epochs_trained": 1,
-      "epochs_validated": 1,
+      "state": "Verified Part1 epoch2 training validation and recovery",
+      "checkpoint_completion_percent": 60,
+      "epochs_trained": 2,
+      "epochs_validated": 2,
       "registered_max_epochs": 4,
       "data_preparation": {
         "approved_images": 682170,
@@ -89,8 +89,8 @@
         "durable_packs": 39,
         "transport_percent": 100.0,
         "image_runtime_gate_passed": true,
-        "training_epochs_completed": 1,
-        "full_validations_completed": 1,
+        "training_epochs_completed": 2,
+        "full_validations_completed": 2,
         "final_test_performed": false,
         "note": "Transport percentage is not workflow or scientific completion",
         "archive_proofs": 39,
@@ -525,5 +525,5 @@
   "latest_gate_observation": "results/MM_PART1_FULL_IMAGE_GATE_INTERACTIVE_OBSERVATION_20261027.json",
   "latest_gate_readback": "results/MM_PART1_SAVED_GATE_READBACK_20261027.json",
   "current_capacity_checkpoint": "context/MM_PART1_IO_RECOVERY_20261027.md",
-  "current_verified_part1_receipt": "results/MM_PART1_EPOCH1_VERIFIED_20261027.json"
+  "current_verified_part1_receipt": "results/MM_PART1_EPOCH2_VERIFIED_20261027.json"
 }

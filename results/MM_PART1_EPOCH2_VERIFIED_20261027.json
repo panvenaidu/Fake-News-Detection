@@ -1,0 +1,126 @@
+{
+  "utc": "2026-10-27T11:19:22.823243+00:00",
+  "status": "passed_independent_retrieved_epoch_verification",
+  "epochs_trained": 2,
+  "epochs_validated": 2,
+  "next_epoch": 3,
+  "next_cursor": 0,
+  "selected_epoch": 2,
+  "validation": [
+    {
+      "epoch": 1,
+      "metrics": {
+        "accuracy": 0.8770636941601039,
+        "micro_f1": 0.8770636941601039,
+        "macro_f1": 0.8131828985153033,
+        "weighted_f1": 0.8761821010555645,
+        "balanced_accuracy": 0.7891082369022498,
+        "loss": 0.499369034053496,
+        "samples": 59299
+      },
+      "predictions_sha256": "f3b4225e7ecd08879415d1a1f1dc29050c5a020493c8cd2a69f5f377257fa82b"
+    },
+    {
+      "epoch": 2,
+      "metrics": {
+        "accuracy": 0.8835899424948144,
+        "micro_f1": 0.8835899424948144,
+        "macro_f1": 0.822666539045316,
+        "weighted_f1": 0.882874012571488,
+        "balanced_accuracy": 0.8019416054634788,
+        "loss": 0.5648601171493689,
+        "samples": 59299
+      },
+      "predictions_sha256": "33585aae46f01982bd3adb17f1a4d4aca5baf796eec8fba9ca3480c7645f8e99"
+    }
+  ],
+  "recovery": {
+    "loaded": {
+      "file": "2b57a4d8c3ca422f8c2e3773fdd845b7.pt",
+      "sha256": "357c0707a80ef97f485cfe1824b537327aeb6810b89890055e6d18866e1f1819",
+      "bytes": 1608464438,
+      "cursor": 0
+    },
+    "fallback_errors": []
+  },
+  "artifacts": {
+    "protocol.json": {
+      "bytes": 3301,
+      "sha256": "bcb36efe3383c7ecfcc4c94b0c5943df570435bb6debe2dcb04d808a67502e43"
+    },
+    "history.json": {
+      "bytes": 774,
+      "sha256": "c29d6a1b92de404776a08eb3523408eba0932f563fdca7ae0bdb4580e10a56b8"
+    },
+    "runtime_recovery.json": {
+      "bytes": 2140,
+      "sha256": "cdbf824718b7425bcd2d29087011a8d54159ae2498a9554c6589efd8e1172641"
+    },
+    "cloud_job_runtime_result.json": {
+      "bytes": 1485,
+      "sha256": "743f0ee306091cbbe699319d7c2c4a862f752ea54a76eec5e4a32374d0d6274f"
+    },
+    "cloud_job_release.json": {
+      "bytes": 2967,
+      "sha256": "166b78b84b66197dd0691f84f4a453a51b2ba905cd544bb62005007a8a35825a"
+    },
+    "recovery/generations.json": {
+      "bytes": 451,
+      "sha256": "e4f62a7c113f62355eb23d94cdb2fa5b264025d12cf524e89490385779930029"
+    },
+    "selected_epoch2_f9d1f5e980e74a1ba68c6432b9a6bba1.pt": {
+      "bytes": 536313761,
+      "sha256": "fe3f78e27a77410884bddd2f0929e2fc4b9717424251adbbaa325441989dda40"
+    },
+    "recovery/2b57a4d8c3ca422f8c2e3773fdd845b7.pt": {
+      "bytes": 1608464438,
+      "sha256": "357c0707a80ef97f485cfe1824b537327aeb6810b89890055e6d18866e1f1819"
+    },
+    "recovery/0fe6dca2e8fd4275a61f3fc8b1baa03c.pt": {
+      "bytes": 1608464182,
+      "sha256": "80f6e4938ae4e40a769f72fda10b586d9ed9760a333a869f763661d9f777af67"
+    },
+    "validation_epoch1_predictions.csv": {
+      "bytes": 9829227,
+      "sha256": "f3b4225e7ecd08879415d1a1f1dc29050c5a020493c8cd2a69f5f377257fa82b"
+    },
+    "validation_epoch1_metrics.json": {
+      "bytes": 234,
+      "sha256": "f9ac3fd41e0ef9eff9e52bf32491e50ad0392897714db8e59a721ef12e8b7224"
+    },
+    "validation_epoch1_classification_report.json": {
+      "bytes": 1283,
+      "sha256": "db24ae46acff23d39039556eab36268f4a34280942067e949bf136989709a5bb"
+    },
+    "validation_epoch1_confusions.json": {
+      "bytes": 1718,
+      "sha256": "c75bc9fc819ffc27c28ef933083410003a017301a674d38e49521d17cb146f91"
+    },
+    "validation_epoch2_predictions.csv": {
+      "bytes": 9764707,
+      "sha256": "33585aae46f01982bd3adb17f1a4d4aca5baf796eec8fba9ca3480c7645f8e99"
+    },
+    "validation_epoch2_metrics.json": {
+      "bytes": 233,
+      "sha256": "1eb5d9feb7f1f8bd478b6b0efb73f551c283e8454bb8534c7da74967f8a597eb"
+    },
+    "validation_epoch2_classification_report.json": {
+      "bytes": 1279,
+      "sha256": "cdf201e73e1a080de03b1ddc1a11d77bf1d2b9e7d646a7c9b0d72b534aa13aa9"
+    },
+    "validation_epoch2_confusions.json": {
+      "bytes": 1691,
+      "sha256": "8a76e5576335cfa0f14cc039a33c1354b6d7c85275c9b461467260597083bb1d"
+    }
+  },
+  "no_test_performed": true,
+  "local_model_inference": false,
+  "private_cloud_version_confirmation_required_separately": true,
+  "private_cloud_saved_version": {
+    "kernel": "rocky62/urop-mm-part1-science-epoch2-20261027/1",
+    "url": "https://www.kaggle.com/code/rocky62/urop-mm-part1-science-epoch2-20261027",
+    "kernel_id": 141129725,
+    "retrieved_files": 31,
+    "independent_readback": true
+  }
+}
