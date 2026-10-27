@@ -11,10 +11,65 @@ from pathlib import Path, PurePosixPath
 import sqlite3
 import tarfile
 import shutil
+import time
+from concurrent.futures import ThreadPoolExecutor
 from collections import OrderedDict
 from PIL import Image
 
 _INDEX_CACHE = {}
+_ARCHIVE_CACHE = {}
+
+
+def cache_raw_archives(root, proofs, cache, minimum_free=120 * 1024**3):
+    """Copy exact source archives into bounded cloud scratch; never re-encode.
+
+    A complete SHA proof, not a filename or prior receipt, authorizes reuse.
+    Originals remain read-only. Temporary writes are owned by this cache only.
+    """
+    root, cache = Path(root).resolve(), Path(cache).resolve()
+    total = sum(size for size, digest in proofs.values())
+    if not proofs or total > 100 * 1024**3:
+        raise ValueError('Raw archive cache exceeds registered storage bound')
+    cache.mkdir(parents=True, exist_ok=True)
+    if shutil.disk_usage(cache).free < minimum_free:
+        raise ValueError('Insufficient cloud scratch for verified raw archive cache')
+    started = time.monotonic()
+
+    def copy_one(item):
+        name, (size, digest) = item
+        source, target = root / name, cache / name
+        if source.parent != root or target.parent != cache or not name.endswith('.bin'):
+            raise ValueError('Unsafe raw archive cache name')
+        if source.stat().st_size != size:
+            raise ValueError('Source raw archive size changed')
+        if target.exists():
+            if target.stat().st_size != size or sha(target) != digest:
+                raise ValueError('Preserve conflicting cloud raw archive cache')
+            return {'file': name, 'bytes': size, 'sha256': digest, 'reused': True}
+        temporary = target.with_suffix('.copy-' + str(os.getpid()))
+        if temporary.exists():
+            raise ValueError('Preserve interrupted raw archive copy for inspection')
+        h, count = hashlib.sha256(), 0
+        with source.open('rb') as src, temporary.open('xb') as dst:
+            while block := src.read(16 * 1024**2):
+                if time.monotonic() - started > 3600:
+                    raise TimeoutError('Raw archive staging exceeded one-hour bound')
+                dst.write(block); h.update(block); count += len(block)
+            dst.flush(); os.fsync(dst.fileno())
+        if count != size or h.hexdigest() != digest:
+            raise ValueError('Raw archive cache copy SHA mismatch')
+        os.replace(temporary, target)
+        print(json.dumps({'state': 'raw_archive_cached', 'file': name,
+                          'bytes': count, 'seconds': time.monotonic()-started}), flush=True)
+        return {'file': name, 'bytes': count, 'sha256': digest, 'reused': False}
+
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        copied = list(pool.map(copy_one, sorted(proofs.items())))
+    receipt = {'state': 'exact_raw_archive_cache_verified', 'source': str(root),
+               'cache': str(cache), 'bytes': total, 'archives': copied,
+               'seconds': time.monotonic()-started, 'pixels_changed': False}
+    (cache / 'raw_archive_cache_receipt.json').write_text(json.dumps(receipt, indent=2)+'\n')
+    return cache
 
 
 def sha(path):
@@ -175,9 +230,16 @@ class ArchiveStore:
             with sqlite3.connect('file:' + str(self.index) + '?mode=ro&immutable=1', uri=True) as db:
                 rows = {ident: (name, offset, size, digest) for ident, name, offset, size, digest in
                         db.execute('SELECT id,archive,offset,size,sha256 FROM images')}
-                sizes = {packed_name(name): size for name, size in db.execute('SELECT name,bytes FROM archives')}
-            _INDEX_CACHE[key] = rows, sizes
-        self.rows, self.sizes = _INDEX_CACHE[key]
+                proofs = {packed_name(name): (size, digest) for name, size, digest in db.execute('SELECT name,bytes,sha256 FROM archives')}
+            _INDEX_CACHE[key] = rows, proofs
+        self.rows, proofs = _INDEX_CACHE[key]
+        self.sizes = {name: item[0] for name, item in proofs.items()}
+        if self.root.is_relative_to(Path('/kaggle/input')):
+            cache_key = (str(self.root), index_sha256)
+            if cache_key not in _ARCHIVE_CACHE:
+                _ARCHIVE_CACHE[cache_key] = cache_raw_archives(
+                    self.root, proofs, '/tmp/urop_verified_raw_archives/' + index_sha256)
+            self.root = _ARCHIVE_CACHE[cache_key]
         self.pid, self.db, self.handles = None, None, OrderedDict()
 
     def __getstate__(self):

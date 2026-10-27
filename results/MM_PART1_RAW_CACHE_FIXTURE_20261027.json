@@ -1,0 +1,12 @@
+{
+  "status": "passed_raw_archive_cache_and_production_tensor_parity",
+  "checks": [
+    "production train crop tensors identical",
+    "production validation tensors identical",
+    "corrupt cached archive rejected without overwriting"
+  ],
+  "official_rows_tested": 0,
+  "scientific_training": false,
+  "trainer_sha256": "7f7fb90deb08a5901d1ca8343b780f6d82dd42b3e278d51f333568435becee0e",
+  "adapter_sha256": "a29e66d9c2962eb5bdfdce9abab02866fc77ad44aa5711ec8009a09dda7bb60d"
+}
