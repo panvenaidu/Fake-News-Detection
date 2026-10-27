@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-27T08:16:24.073366+00:00",
+  "updated_utc": "2026-10-27T08:18:29.433599+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -78,7 +78,7 @@
         "validation": 0.25,
         "final_test_and_result_archive": 0
       },
-      "state": "Verified Part1 epoch1 training validation and recovery",
+      "state": "Epoch1 full training/validation independently verified and backed up; epoch2 committed bounded job submitted",
       "checkpoint_completion_percent": 50,
       "epochs_trained": 1,
       "epochs_validated": 1,
@@ -110,7 +110,7 @@
         "packed_reader_production_integration_complete": true,
         "packed_binary_fixture_verified": true
       },
-      "runtime_progress": {
+      "historical_runtime_observation": {
         "recorded_utc": "2026-10-27T06:36:16.946055+00:00",
         "source": "https://www.kaggle.com/code/rocky62/urop-mm-part1-science-usable-20261027/logs",
         "kernel_version": 1,
@@ -134,7 +134,9 @@
         "controller_session": 60613,
         "controller_pid": 22245,
         "no_test_performed": true
-      }
+      },
+      "current_cloud_job": "rocky62/urop-mm-part1-science-epoch2-20261027/1",
+      "verified_epoch1_receipt": "results/MM_PART1_EPOCH1_VERIFIED_20261027.json"
     },
     "image_only": {
       "scope": "Standalone image-only six-way benchmark",
