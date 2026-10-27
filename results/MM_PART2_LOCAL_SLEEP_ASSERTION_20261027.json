@@ -1,0 +1,9 @@
+{
+  "utc": "2026-10-27T15:03:05.571768+00:00",
+  "owned_pid": 40138,
+  "idle_system_sleep_only": true,
+  "screen_lock_settings_unchanged": true,
+  "expires_utc": "2026-10-27T20:08:54+00:00",
+  "seconds": 18348,
+  "purpose": "Keep authorized local verification/browser handoff available; cloud batch itself persists independently"
+}

@@ -1,3 +1,11 @@
+<!-- PART2_READBACK_LAYOUT_20261027 -->
+## Part2 readback layout and browser preparation — 27 October 2026
+
+- Raw saved cloud output need not contain `selected_checkpoint.json`; that small aggregate selection record was synthesized after independent verification. Resolve the selected tensor name/hash from the accepted Part1 receipt or the recovery payload's `state.best`, and resolve the private root from the large-artifact manifest. A local metadata inspection initially assumed the aggregate file existed in raw output, raised FileNotFoundError, then used those authoritative receipts. The verified model has133,977,414trainable parameters; no forward pass or local training occurred.
+- Kaggle file import did not accept the native file selection. The new private copied notebook's code cell was replaced using its normal editor paste; frozen source hashes, exact Python/dependency contract and accepted recovery were subsequently checked inside the committed GPU runtime before any continuation. No browser security bypass, new API token, account migration or Colab OAuth was used.
+- Startup heartbeats contained fresh parent UTC but copied epoch2 nested status. Do not call it epoch2 replay or advancing epoch3. Genuine new epoch3 samples first appeared with fresh trainerUTC14:37:31; sustained sample/update counters established training, separately from the process heartbeat.
+<!-- /PART2_READBACK_LAYOUT_20261027 -->
+
 <!-- CURRENT RESUMED GOAL BLOCKED -->
 2026-10-25T04:09:26.752532+00:00: Supported Goal status **BLOCKED**, after3consecutive observations in this resumed sequence. Short94% / weekly19%; registered20%weeklyreserve applies and explicit override question remains unanswered. No newjob/scientificprogress; packing319820/18,scientific0/2epochs/0/2validations,test0. Recovery and original data preserved. Resume the SAME Goal only after allowance recovers above20% or the user explicitly changes the reserve rule; do not repeat polling/commit cycles or create another Goal. Audit `results/MM_PART1_USAGE_RESERVE_AUDIT_20261025.json`; exact recovery `results/MM_PART1_RECOVERY_PROGRESS_20261025.json`. Older active/blocked counts below are historical.
 <!-- /CURRENT RESUMED GOAL BLOCKED -->
