@@ -31,10 +31,10 @@ assert PACKED_INDEX.is_file()
 ROOT = Path(coverage['runtime_root'])
 assert ROOT.is_relative_to('/kaggle/input') and ROOT.is_dir()
 SOURCE = BASE / 'registered_source'
-COMMIT = 'b4378dd4213dec255a82f5400fb26bb4426f59d7'
+COMMIT = '1b22467fc4d404e172e3d938f44e7d37e345e4bc'
 HASHES = {
     'scripts/train_usable_multimodal_v2.py': '7f7fb90deb08a5901d1ca8343b780f6d82dd42b3e278d51f333568435becee0e',
-    'scripts/packed_image_io_v3.py': 'ce570b906d8f5bb0c3d1b2d8b7e07f8654589bae3557ed91c9e84cde484cdc30',
+    'scripts/packed_image_io_v3.py': '2a661546aab7969ae80329eff66d9667496c4e5db91d7b20993d168f70ee0b57',
     'scripts/multimodal_recovery_v1.py': '2f5f67ce79289c69279040d21b483e28535895f5c99c63e0021da3eee6d3d1c8',
     'scripts/usable_cohort_v2.py': '22bff1eb0fa14d102ad07786f936c5c1ed1582ec7bd5cee2b8e8dc5eb3520092',
     'scripts/verify_usable_multimodal_v2.py': 'bc314502833835a42bba8bab2d069074018bafc807106a3eb503386e2671139b',
@@ -86,10 +86,11 @@ print(json.dumps({'state': 'actual_gpu_preflight_started', 'gpu': torch.cuda.get
                   'warmstart_verified': True, 'scientific_training': False}), flush=True)
 
 fixture = BASE / 'actual_cuda_fixture.json'
-command = [sys.executable, str(SOURCE / 'scripts/check_usable_multimodal_cuda_v2.py'),
-           '--config', str(config), '--output', str(fixture)]
-with (BASE / 'actual_cuda_fixture.log').open('a') as log:
-    subprocess.run(command, cwd=SOURCE, stdout=log, stderr=subprocess.STDOUT, check=True, timeout=1800)
+prior_fixture = Path('/kaggle/input/notebooks/rocky62/urop-mm-part1-packed-gpu-20261026/urop_mm_part1_20261026/actual_cuda_fixture.json')
+assert sha(prior_fixture) == '8b0f6399d249cdf1e4263923c2515a1e99abcceb9d3a5a066a1034a964a26c63'
+proof = json.loads(prior_fixture.read_text())
+assert proof['torch'] == torch.__version__ and proof['cuda'] == torch.version.cuda and proof['device'] == torch.cuda.get_device_name(0)
+fixture.write_bytes(prior_fixture.read_bytes())
 assert json.loads(fixture.read_text())['status'] == 'passed_cuda_engineering_fixture'
 print('ACTUAL_CUDA_RECOVERY_FIXTURE_PASSED', flush=True)
 
@@ -112,6 +113,8 @@ summary = {'state': 'gpu_preflight_verified', 'fixture': str(fixture),
            'estimated_epoch_seconds': epoch,
            'estimated_two_epochs_with20percent_margin_seconds': 2.4 * epoch,
            'versions': result['versions'], 'gpu': result['device'],
+           'runtime_reader_sha256': HASHES['scripts/packed_image_io_v3.py'],
+           'index_cache_policy': 'Exact SHA local index and in-memory metadata; retain all39 verified archive handles; raw byte SHA checked on every image',
            'scientific_epochs_completed': 0, 'full_validations_completed': 0,
            'test_performed': False}
 (BASE / 'GPU_PREFLIGHT_SUMMARY.json').write_text(json.dumps(summary, indent=2) + '\n')

@@ -8,8 +8,8 @@ import datetime, hashlib, importlib.metadata, importlib.util, json, math, os
 from pathlib import Path
 import subprocess, sys, time
 
-SOURCE_COMMIT='b4378dd4213dec255a82f5400fb26bb4426f59d7'
-SOURCE_HASHES={'scripts/train_usable_multimodal_v2.py': '7f7fb90deb08a5901d1ca8343b780f6d82dd42b3e278d51f333568435becee0e', 'scripts/packed_image_io_v3.py': 'ce570b906d8f5bb0c3d1b2d8b7e07f8654589bae3557ed91c9e84cde484cdc30', 'scripts/multimodal_recovery_v1.py': '2f5f67ce79289c69279040d21b483e28535895f5c99c63e0021da3eee6d3d1c8', 'scripts/verify_usable_multimodal_v2.py': 'bc314502833835a42bba8bab2d069074018bafc807106a3eb503386e2671139b', 'scripts/usable_cohort_v2.py': '22bff1eb0fa14d102ad07786f936c5c1ed1582ec7bd5cee2b8e8dc5eb3520092', 'configs/multimodal_usable_6way_v2.json': 'ad8f86f86b1fef453ae3bccda0aeb13cc50b298dc0d5d502f87c9ac4b041b483'}
+SOURCE_COMMIT='1b22467fc4d404e172e3d938f44e7d37e345e4bc'
+SOURCE_HASHES={'scripts/train_usable_multimodal_v2.py': '7f7fb90deb08a5901d1ca8343b780f6d82dd42b3e278d51f333568435becee0e', 'scripts/packed_image_io_v3.py': '2a661546aab7969ae80329eff66d9667496c4e5db91d7b20993d168f70ee0b57', 'scripts/multimodal_recovery_v1.py': '2f5f67ce79289c69279040d21b483e28535895f5c99c63e0021da3eee6d3d1c8', 'scripts/verify_usable_multimodal_v2.py': 'bc314502833835a42bba8bab2d069074018bafc807106a3eb503386e2671139b', 'scripts/usable_cohort_v2.py': '22bff1eb0fa14d102ad07786f936c5c1ed1582ec7bd5cee2b8e8dc5eb3520092', 'configs/multimodal_usable_6way_v2.json': 'ad8f86f86b1fef453ae3bccda0aeb13cc50b298dc0d5d502f87c9ac4b041b483'}
 COUNTS={'train':563601,'validation':59299,'test':59270}
 COHORT='FACULTY-6W-USABLE-682170-v1'
 COHORT_SHA='3fe0b622958a1eee6732789d4f7acf6b450c0e3bda87312e5cbb6500fb405ce5'
@@ -57,6 +57,7 @@ def check_release(release,working_root=Path('/kaggle/working')):
  fixture=evidence(release['cuda_fixture'])
  if fixture.get('status')!='passed_cuda_engineering_fixture' or fixture.get('trainer_sha256')!=SOURCE_HASHES['scripts/train_usable_multimodal_v2.py'] or fixture.get('recovery_sha256')!=SOURCE_HASHES['scripts/multimodal_recovery_v1.py']:raise ValueError('Actual production CUDA recovery fixture required')
  measured=evidence(release['throughput'])
+ if release.get('runtime_reader_sha256')!=SOURCE_HASHES['scripts/packed_image_io_v3.py']:raise ValueError('Measured packed reader differs from registered scientific reader')
  if measured.get('status')!='passed_measured_multimodal_preflight' or measured.get('train_only') is not True or measured.get('measurement_seconds',0)<600:raise ValueError('Measured10minute train-only preflight required')
  if measured.get('config_sha256')!=SOURCE_HASHES['configs/multimodal_usable_6way_v2.json'] or measured.get('trainer_sha256')!=SOURCE_HASHES['scripts/train_usable_multimodal_v2.py']:raise ValueError('Preflight config/source mismatch')
  train=float(measured['train_examples_per_second']);evaluate=float(measured['eval_path_examples_per_second']);checkpoint=float(measured['checkpoint_seconds'])

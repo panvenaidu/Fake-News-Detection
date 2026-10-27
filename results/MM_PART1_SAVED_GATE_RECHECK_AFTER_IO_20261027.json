@@ -1,0 +1,19 @@
+{
+  "utc": "2026-10-27T04:23:36.356571+00:00",
+  "status": "passed_independent_saved_gate_readback",
+  "usable_images": 682170,
+  "split_counts": {
+    "train": 563601,
+    "test": 59270,
+    "validation": 59299
+  },
+  "archives": 39,
+  "image_bytes": 79687306914,
+  "index_sha256": "fc8dc03a4f773da5762891c8392375add5fb8087251b527f3b37a880308e6018",
+  "receipt_sha256": "afe8c723f91fe74f791908e0c16fab94d919af64c7cb7c9b5a37e676361d95e5",
+  "cohort_registration_sha256": "3fe0b622958a1eee6732789d4f7acf6b450c0e3bda87312e5cbb6500fb405ce5",
+  "saved_gate": "/Users/panveenaidu/Downloads/SEM7/UROP/data/cloud_recovery/KAGGLE_PACKED_GATE_v2_362643633/urop_mm_packed_gate_20261026",
+  "scientific_training": false,
+  "test_inference": false,
+  "note": "All saved index IDs match approved official TSV membership; every image byte/decode was checked by the saved cloud gate. This readback does not repeat image decoding."
+}
