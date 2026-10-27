@@ -1,3 +1,7 @@
+## Active final continuation — 2026-10-27T20:25:02.679728+00:00
+
+New private Kaggle version1/scriptVersion362955511 is running setup; actual strict runtime release and new trainer counters must still be checked. Same experiment, resume epoch4/cursor515296, not fresh training. URL: https://www.kaggle.com/code/rocky62/urop-mm-final-continuation-20261028?scriptVersionId=362955511 . Prior tensors/predictions freshly reverified in results/MM_PART2_RESUME_REVERIFIED_20261028.json. Wrapper collab/kaggle_final_continuation_20261028.py reads exact prior generation and acknowledges only the copied STOP_REQUESTED after strict checks. Part1 STOP_PIPELINE is untouched. Do not start another trainer. Source/config/data unchanged. Full test remains pending. Current accepted progress is still75% until new saved outputs are independently verified. Launch/audit receipt: results/MM_FINAL_LAUNCH_PREPARATION_20261028.json.
+
 ## Independently accepted partial Part 2 — 2026-10-27T20:03:16.185634+00:00
 
 Same scientific run; **Part 2 remains incomplete**. Three full epochs and three full59,299-row validations accepted; epoch4 stopped safely at cursor515296/563601. Recovery:68,913 successful optimizer updates +29 AMP skips. No final held-out test or image-only training. Current provisional selected epoch3 VALIDATION accuracy88.5343766%, Macro-F1.8279239414; selection not yet frozen for final test.

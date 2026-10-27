@@ -1,0 +1,37 @@
+{
+  "utc": "2026-10-27T20:23:13.405889+00:00",
+  "same_attempt": "OFFICIAL-6W-MM-USABLE-v2_seed42_20261027",
+  "resume_epoch": 4,
+  "cursor": 515296,
+  "prior_private_version": 362859423,
+  "audit": {
+    "observed_utc": "2026-10-27T20:23:13.405889+00:00",
+    "account": "rocky62",
+    "active_jobs": 0,
+    "active_jobs_source": "Existing version Successful,0ActiveEvents; new copied DraftSessionoff",
+    "quota_used_hours": 11.666666666666666,
+    "quota_total_hours": 30,
+    "quota_display": "11:40/30hrs",
+    "original_environment": "2026-10-22",
+    "accelerator": "GPU T4x2, one used CUDA_VISIBLE_DEVICES0",
+    "accepted_previous_kernel_version": 362859423,
+    "input_version_id_observed": 21277535,
+    "prior_independent_reverification": "results/MM_PART2_RESUME_REVERIFIED_20261028.json"
+  },
+  "scientific_sources_unchanged": true,
+  "code_sha256": "0f51402741e320055655133280b49bafd4f96f5165605a2da63b57d9d098cec8",
+  "files": {
+    "collab/kaggle_final_continuation_20261028.py": "5cc7e9c73e27522e017178e78c106db6fa5f4e08d0e7c94a7b01b76d7d35f481",
+    "scripts/evaluate_frozen_multimodal_v2.py": "3ba4693f15a40d5c71453ff7883fc928767ae52da03fc3b6ef15c4abe12d3c94",
+    "notebooks/UROP_MM_FINAL_CONTINUATION_20261028.ipynb": "1adc6bd0122bea9286ec12764f42682da53906e2a99f926a313fd6dfc6897acb"
+  },
+  "state": "committed_version_running_setup_not_yet_scientific_resume_verified",
+  "training_deadline_utc": "2026-10-27T22:15:00+00:00",
+  "return_deadline_utc": "2026-10-27T22:45:00+00:00",
+  "launch_observed_utc": "2026-10-27T20:25:02.679728+00:00",
+  "kernel": "rocky62/urop-mm-final-continuation-20261028",
+  "version": 1,
+  "script_version_id": 362955511,
+  "url": "https://www.kaggle.com/code/rocky62/urop-mm-final-continuation-20261028?scriptVersionId=362955511",
+  "duplicate_active_job_before_launch": false
+}

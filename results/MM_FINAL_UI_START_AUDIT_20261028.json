@@ -1,0 +1,14 @@
+{
+  "observed_utc": "2026-10-27T20:23:13.405889+00:00",
+  "account": "rocky62",
+  "active_jobs": 0,
+  "active_jobs_source": "Existing version Successful,0ActiveEvents; new copied DraftSessionoff",
+  "quota_used_hours": 11.666666666666666,
+  "quota_total_hours": 30,
+  "quota_display": "11:40/30hrs",
+  "original_environment": "2026-10-22",
+  "accelerator": "GPU T4x2, one used CUDA_VISIBLE_DEVICES0",
+  "accepted_previous_kernel_version": 362859423,
+  "input_version_id_observed": 21277535,
+  "prior_independent_reverification": "results/MM_PART2_RESUME_REVERIFIED_20261028.json"
+}
