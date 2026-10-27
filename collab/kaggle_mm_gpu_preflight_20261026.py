@@ -16,6 +16,9 @@ import time
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 os.environ['CUBLAS_WORKSPACE_CONFIG'] = ':4096:8'
 import torch
+print(json.dumps({'state': 'cuda_runtime_observation', 'torch': torch.__version__,
+                  'cuda': torch.version.cuda, 'visible_devices': os.environ['CUDA_VISIBLE_DEVICES'],
+                  'available': torch.cuda.is_available(), 'visible_count': torch.cuda.device_count()}), flush=True)
 assert torch.cuda.is_available() and torch.cuda.device_count() == 1, 'One used cloud CUDA device required'
 BASE = Path('/kaggle/working/urop_mm_part1_20261026')
 COVERAGE_CANDIDATES = list(Path('/kaggle/input').rglob('packed_runtime_coverage.json'))

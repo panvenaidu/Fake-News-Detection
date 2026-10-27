@@ -24,6 +24,11 @@ def write(path,value):
  path=Path(path);temporary=path.with_suffix('.tmp')
  with temporary.open('w') as f:json.dump(value,f,indent=2,allow_nan=False);f.write('\n');f.flush();os.fsync(f.fileno())
  os.replace(temporary,path)
+def gpu_observation():
+ try:
+  result=subprocess.run(['nvidia-smi','--query-gpu=index,name,utilization.gpu,memory.used,memory.total','--format=csv,noheader,nounits'],capture_output=True,text=True,timeout=10)
+  return {'query_returncode':result.returncode,'allocated_devices':result.stdout.strip().splitlines(),'used_cuda_visible_device':'0'}
+ except (OSError,subprocess.TimeoutExpired) as error:return {'query_error':type(error).__name__}
 def evidence(reference):
  path=Path(reference['path'])
  if sha(path)!=reference['sha256']:raise ValueError('Evidence checksum mismatch '+path.name)
@@ -122,7 +127,7 @@ def run(release_path):
     except subprocess.TimeoutExpired:process.kill();process.wait()
     break
    status=json.loads((output/'status.json').read_text()) if (output/'status.json').exists() else {'state':'initializing'}
-   print(json.dumps({'utc':now(),'pid':process.pid,'job_alive':True,'safe_stop_requested':requested,'trainer_status':status}),flush=True)
+   print(json.dumps({'utc':now(),'pid':process.pid,'job_alive':True,'safe_stop_requested':requested,'trainer_status':status,'gpu':gpu_observation()}),flush=True)
    time.sleep(30)
  if process.returncode:raise RuntimeError('Trainer stopped unsuccessfully; preserve outputs and inspect console before restart')
  payload,recovered=recovery.load_generation(output/'recovery');state=payload['state']
