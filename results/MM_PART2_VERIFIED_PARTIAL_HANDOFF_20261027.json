@@ -1,0 +1,62 @@
+{
+  "utc": "2026-10-27T20:04:13.095829+00:00",
+  "status": "verified_partial_handoff_not_part2_completion",
+  "scientific_run": "OFFICIAL-6W-MM-USABLE-v2_seed42_20261027",
+  "epochs_trained_complete": 3,
+  "epochs_fully_validated": 3,
+  "next_epoch": 4,
+  "cursor": 515296,
+  "remaining_training_rows": 48305,
+  "updates": 68913,
+  "amp_skips": 29,
+  "test_performed": false,
+  "current_selected_epoch": 3,
+  "selection_finally_frozen": false,
+  "selected_validation_metrics": {
+    "accuracy": 0.8853437663367004,
+    "micro_f1": 0.8853437663367004,
+    "macro_f1": 0.8279239413775588,
+    "weighted_f1": 0.8849443479882918,
+    "balanced_accuracy": 0.8083810776142958,
+    "loss": 0.587545333286567,
+    "samples": 59299
+  },
+  "recovery": {
+    "loaded": {
+      "file": "796d18b295fe4fd4b355417c98c04039.pt",
+      "sha256": "6c7747e08f482d6e504e05fb6c7e1a8c4e1fe3bce7154961f9380ed7e3e6f68e",
+      "bytes": 1608464758,
+      "cursor": 515296
+    },
+    "fallback_errors": []
+  },
+  "selected_weights_sha256": "360a436a1af6d5a9a6375dc26b2e8e8a0fa30e9cf3bafb157d027d39472d960d",
+  "archive": {
+    "utc": "2026-10-27T20:01:33.962517+00:00",
+    "method": "Human initiated normal Chrome download after security-block handoff; agent did not bypass block",
+    "archive": "data/cloud_recovery/part2_saved_output_20261027_362859423/results_362859423.zip",
+    "bytes": 5045725092,
+    "sha256": "dbabb68d61f643cb53ed5b646aec072de386e30376c3a3c7909d4348bc4b768d",
+    "crc_all_members_passed": true,
+    "safe_member_paths": true,
+    "members": 53,
+    "uncompressed_bytes": 4964298727,
+    "scientific_attempt": "/Users/panveenaidu/Downloads/SEM7/UROP/data/cloud_recovery/part2_saved_output_20261027_362859423/extracted/urop_mm_part2_20261027/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027",
+    "independent_tensor_prediction_verification": "passed; results/MM_PART2_SAVED_PARTIAL_VERIFIED_20261027.json"
+  },
+  "local_strict_recovery_and_prediction_verification": "results/MM_PART2_SAVED_PARTIAL_VERIFIED_20261027.json",
+  "quota_observation": "results/MM_PART2_CAPACITY_END_OBSERVATION_20261027.json",
+  "hardware": "Tesla T4 device0, one used of allocatedT4x2",
+  "private_job_url": "https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027?scriptVersionId=362859423",
+  "documentation_results_commit": "f2488f3c4f2f3b53572721bdedff07d76063ec44",
+  "remote_main_readback": "f2488f3c4f2f3b53572721bdedff07d76063ec44",
+  "github_backup_verified": true,
+  "scope": "Reviewed code/docs/sanitized metrics/receipts only; images/TSVs/tensors/archives/per-ID outputs private and ignored",
+  "goal_at_start": null,
+  "duplicate_goal_or_task_created": false,
+  "six_hour_window": [
+    "2026-10-27T14:08:54+00:00",
+    "2026-10-27T20:08:54+00:00"
+  ],
+  "next_action": "Resume same verified generation at epoch4/cursor515296 under unchanged protocol, complete epoch4 plus full validation, freeze selection, then full final test and independent verification. Do not rerun epoch2-guarded launcher."
+}
