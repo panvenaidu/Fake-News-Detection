@@ -1,0 +1,120 @@
+{
+  "observed_utc": "2026-10-27T21:15:28.667Z",
+  "url": "https://www.kaggle.com/code/rocky62/urop-mm-final-continuation-20261028?scriptVersionId=362955511",
+  "row": {
+    "cursor": 0,
+    "elapsed_seconds": 2116.061848064,
+    "epochs_validated": 4,
+    "next_epoch": 5,
+    "no_test_performed": false,
+    "phase": "train",
+    "recovery": {
+      "fallback_errors": [],
+      "loaded": {
+        "bytes": 1608465078,
+        "cursor": 0,
+        "file": "e7d74710ee1f498e9511e63f9db4783e.pt",
+        "sha256": "0ebd4b001603802d26c2c48a03bccfa94afd95a6484536c2d14eb6bc5ecb7e26"
+      }
+    },
+    "requires_private_saved_version_and_independent_local_readback": true,
+    "selected": {
+      "epoch": 4,
+      "metrics": {
+        "accuracy": 0.8850739472841026,
+        "balanced_accuracy": 0.8083023548802731,
+        "loss": 0.6947946472031342,
+        "macro_f1": 0.8293028761296689,
+        "micro_f1": 0.8850739472841026,
+        "samples": 59299,
+        "weighted_f1": 0.8848143052893319
+      },
+      "predictions_file": "validation_epoch4_predictions.csv",
+      "predictions_sha256": "204081654f6f2a74f1e64ac0619adab1c2675fc7fc80c9f681e74ebaa0f6d7d7",
+      "weights_file": "selected_epoch4_096988c60f95448387c1413e57c690d5.pt",
+      "weights_sha256": "1c5c7bd312405589776776a1ea7aca33f1a18f5bb8a45d80652b022dc2b835a4"
+    },
+    "state": "runtime_train_validation_test_verified",
+    "training_complete": true,
+    "utc": "2026-10-27T20:59:34.670965+00:00",
+    "validation": [
+      {
+        "epoch": 1,
+        "metrics": {
+          "accuracy": 0.8770636941601039,
+          "balanced_accuracy": 0.7891082369022498,
+          "loss": 0.499369034053496,
+          "macro_f1": 0.8131828985153033,
+          "micro_f1": 0.8770636941601039,
+          "samples": 59299,
+          "weighted_f1": 0.8761821010555645
+        },
+        "predictions_sha256": "f3b4225e7ecd08879415d1a1f1dc29050c5a020493c8cd2a69f5f377257fa82b"
+      },
+      {
+        "epoch": 2,
+        "metrics": {
+          "accuracy": 0.8835899424948144,
+          "balanced_accuracy": 0.8019416054634788,
+          "loss": 0.5648601171493689,
+          "macro_f1": 0.822666539045316,
+          "micro_f1": 0.8835899424948144,
+          "samples": 59299,
+          "weighted_f1": 0.882874012571488
+        },
+        "predictions_sha256": "33585aae46f01982bd3adb17f1a4d4aca5baf796eec8fba9ca3480c7645f8e99"
+      },
+      {
+        "epoch": 3,
+        "metrics": {
+          "accuracy": 0.8853437663367004,
+          "balanced_accuracy": 0.8083810776142958,
+          "loss": 0.587545333286567,
+          "macro_f1": 0.8279239413775588,
+          "micro_f1": 0.8853437663367004,
+          "samples": 59299,
+          "weighted_f1": 0.8849443479882918
+        },
+        "predictions_sha256": "afb34b1f34f300c74c77309047e2e497846478d3a13863b56a904b8a96c3a3ca"
+      },
+      {
+        "epoch": 4,
+        "metrics": {
+          "accuracy": 0.8850739472841026,
+          "balanced_accuracy": 0.8083023548802731,
+          "loss": 0.6947946472031342,
+          "macro_f1": 0.8293028761296689,
+          "micro_f1": 0.8850739472841026,
+          "samples": 59299,
+          "weighted_f1": 0.8848143052893319
+        },
+        "predictions_sha256": "204081654f6f2a74f1e64ac0619adab1c2675fc7fc80c9f681e74ebaa0f6d7d7"
+      }
+    ]
+  },
+  "tail": "1026, \"macro_f1\": 0.8293028761296689, \"weighted_f1\": 0.8848143052893319, \"balanced_accuracy\": 0.8083023548802731, \"loss\": 0.6947946472031342, \"samples\": 59299}, \"epoch\": 4, \"weights_file\": \"selected_epoch4_096988c60f95448387c1413e57c690d5.pt\", \"weights_sha256\": \"1c5c7bd312405589776776a1ea7aca33f1a18f5bb8a45d80652b022dc2b835a4\"}, \"validation\": [{\"epoch\": 1, \"metrics\": {\"accuracy\": 0.8770636941601039, \"micro_f1\": 0.8770636941601039, \"macro_f1\": 0.8131828985153033, \"weighted_f1\": 0.8761821010555645, \"balanced_accuracy\": 0.7891082369022498, \"loss\": 0.499369034053496, \"samples\": 59299}, \"predictions_sha256\": \"f3b4225e7ecd08879415d1a1f1dc29050c5a020493c8cd2a69f5f377257fa82b\"}, {\"epoch\": 2, \"metrics\": {\"accuracy\": 0.8835899424948144, \"micro_f1\": 0.8835899424948144, \"macro_f1\": 0.822666539045316, \"weighted_f1\": 0.882874012571488, \"balanced_accuracy\": 0.8019416054634788, \"loss\": 0.5648601171493689, \"samples\": 59299}, \"predictions_sha256\": \"33585aae46f01982bd3adb17f1a4d4aca5baf796eec8fba9ca3480c7645f8e99\"}, {\"epoch\": 3, \"metrics\": {\"accuracy\": 0.8853437663367004, \"micro_f1\": 0.8853437663367004, \"macro_f1\": 0.8279239413775588, \"weighted_f1\": 0.8849443479882918, \"balanced_accuracy\": 0.8083810776142958, \"loss\": 0.587545333286567, \"samples\": 59299}, \"predictions_sha256\": \"afb34b1f34f300c74c77309047e2e497846478d3a13863b56a904b8a96c3a3ca\"}, {\"epoch\": 4, \"metrics\": {\"accuracy\": 0.8850739472841026, \"micro_f1\": 0.8850739472841026, \"macro_f1\": 0.8293028761296689, \"weighted_f1\": 0.8848143052893319, \"balanced_accuracy\": 0.8083023548802731, \"loss\": 0.6947946472031342, \"samples\": 59299}, \"predictions_sha256\": \"204081654f6f2a74f1e64ac0619adab1c2675fc7fc80c9f681e74ebaa0f6d7d7\"}], \"elapsed_seconds\": 2116.061848064, \"no_test_performed\": false, \"requires_private_saved_version_and_independent_local_readback\": true}\n\n2922.8s\t193\t/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n\n2922.8s\t194\t  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n\n2923.3s\t195\t/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n\n2923.3s\t196\t  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n\n2924.8s\t197\t[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n\n2924.9s\t198\t[NbConvertApp] Writing 117813 bytes to __notebook__.ipynb\n\n2927.6s\t199\t[NbConvertApp] Converting notebook __notebook__.ipynb to html\n\n2928.8s\t200\t[NbConvertApp] Writing 559423 bytes to __results__.html\n",
+  "traceback": false,
+  "evidence_scope": "Terminal visible Kaggle JSON, cloud validation/test verified; independent local saved-byte readback pending.",
+  "test_observation": {
+    "utc": "2026-10-27T21:12:25.673995+00:00",
+    "selected_epoch": 4,
+    "split": "test",
+    "status": "passed_independent_csv_verification",
+    "metrics": {
+      "accuracy": 0.8814577357853889,
+      "micro_f1": 0.8814577357853889,
+      "macro_f1": 0.8264151321437674,
+      "weighted_f1": 0.8813174383536236,
+      "balanced_accuracy": 0.8082493600939357,
+      "loss": 0.7238658786110204,
+      "samples": 59270
+    },
+    "prediction_sha256": "9b987c5e2699b288dbdf0aabc57f15122776184fda81f1b972039807adce83ec",
+    "inference_seconds": 410.81303185800016,
+    "evaluation_export_verification_seconds": 412.2419107420001,
+    "peak_test_allocated_bytes": 783636992,
+    "parameters": 133977414,
+    "weights_sha256": "1c5c7bd312405589776776a1ea7aca33f1a18f5bb8a45d80652b022dc2b835a4"
+  },
+  "job_runtime_seconds_UI": 2929.7
+}

@@ -1,3 +1,11 @@
+## Cloud complete; final download/readback pending — 2026-10-27T21:19:54.961431+00:00
+
+Final Kaggle362955511 Successful, four epochs/four full validations, selectedepoch4 by Macro-F1; full59270-row test exported and runtime-verified. Cloud validation accuracy88.5073947%,Macro-F1.8293028761; test accuracy88.1457736%,Macro-F1.8264151321. These new scores still require independent local saved-byte readback. Normal desktop Chrome archive download is running; a transient noWindowsAvailable/CDP timeout resolved after reopening Chrome. No human action now required; no security bypass/credentials/new training. Saved output private, no active trainer. Source results/MM_FINAL_CLOUD_TERMINAL_OBSERVATION_20261028.json. Next collect into data/cloud_recovery/final_saved_output_20261028_362955511, then scripts/verify_saved_mm_part2_v1.py, final report/HTML/context/Git acceptance. Do not rerun training/test.
+
+## Fresh final continuation milestone — 28 October2026,02:09IST
+
+Kaggle362955511 strict exact-generation/source/config/environment/GPU release passed at20:26:10UTC. Actual resumed epoch4 counters now521696/563601,69113successfulupdates,29AMPskips, fresh trainer20:39:21UTC. This proves new advancement from515296 rather than copied old515200status. Continue only this existing job. Training/validation/test remain unfinished until accepted saved exports.
+
 ## Active final continuation — 2026-10-27T20:25:02.679728+00:00
 
 New private Kaggle version1/scriptVersion362955511 is running setup; actual strict runtime release and new trainer counters must still be checked. Same experiment, resume epoch4/cursor515296, not fresh training. URL: https://www.kaggle.com/code/rocky62/urop-mm-final-continuation-20261028?scriptVersionId=362955511 . Prior tensors/predictions freshly reverified in results/MM_PART2_RESUME_REVERIFIED_20261028.json. Wrapper collab/kaggle_final_continuation_20261028.py reads exact prior generation and acknowledges only the copied STOP_REQUESTED after strict checks. Part1 STOP_PIPELINE is untouched. Do not start another trainer. Source/config/data unchanged. Full test remains pending. Current accepted progress is still75% until new saved outputs are independently verified. Launch/audit receipt: results/MM_FINAL_LAUNCH_PREPARATION_20261028.json.

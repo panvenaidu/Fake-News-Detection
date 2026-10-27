@@ -25,7 +25,7 @@
     "scripts/evaluate_frozen_multimodal_v2.py": "3ba4693f15a40d5c71453ff7883fc928767ae52da03fc3b6ef15c4abe12d3c94",
     "notebooks/UROP_MM_FINAL_CONTINUATION_20261028.ipynb": "1adc6bd0122bea9286ec12764f42682da53906e2a99f926a313fd6dfc6897acb"
   },
-  "state": "committed_version_running_setup_not_yet_scientific_resume_verified",
+  "state": "strict_runtime_release_passed_and_epoch4_advancing",
   "training_deadline_utc": "2026-10-27T22:15:00+00:00",
   "return_deadline_utc": "2026-10-27T22:45:00+00:00",
   "launch_observed_utc": "2026-10-27T20:25:02.679728+00:00",
@@ -33,5 +33,12 @@
   "version": 1,
   "script_version_id": 362955511,
   "url": "https://www.kaggle.com/code/rocky62/urop-mm-final-continuation-20261028?scriptVersionId=362955511",
-  "duplicate_active_job_before_launch": false
+  "duplicate_active_job_before_launch": false,
+  "strict_release_utc": "2026-10-27T20:26:10.778506+00:00",
+  "fresh_training_utc": "2026-10-27T20:39:21.646721+00:00",
+  "samples_seen": 521696,
+  "optimizer_updates": 69113,
+  "amp_skips": 29,
+  "used_gpu": "Tesla T4",
+  "cuda_visible_devices": "0"
 }
