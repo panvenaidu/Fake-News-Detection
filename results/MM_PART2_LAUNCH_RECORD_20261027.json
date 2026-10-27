@@ -1,0 +1,38 @@
+{
+  "utc": "2026-10-27T14:29:11.219614+00:00",
+  "state": "committed_gpu_runtime_started_resume_guards_passed",
+  "same_scientific_attempt": "OFFICIAL-6W-MM-USABLE-v2_seed42_20261027",
+  "prior_epochs_accepted": 2,
+  "resume_epoch": 3,
+  "resume_cursor": 0,
+  "recovery_reverified_receipt": "results/MM_PART2_START_RECOVERY_VERIFIED_20261027.json",
+  "notebook_url": "https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027",
+  "private": true,
+  "method": "Existing Rocky Chrome authenticated Kaggle UI; no new API token/OAuth",
+  "notebook_sources_include": "Accepted epoch2 output, version362761315; inherited immutable packed input/gate/preflight and text output",
+  "training_stop_utc": "2026-10-27T19:35:00+00:00",
+  "runtime_return_deadline_utc": "2026-10-27T19:43:00+00:00",
+  "task_hard_deadline_utc": "2026-10-27T20:08:54+00:00",
+  "platform_session_cap": "Not exposed by the observed UI; copied pinned environment and explicit wrapper/UTC bounds used; do not claim a fresh measured platform cap.",
+  "latest_verified_scores": {
+    "split": "validation",
+    "epoch": 2,
+    "accuracy": 0.8835899424948144,
+    "macro_f1": 0.822666539045316
+  },
+  "part2_results_not_yet_verified": true,
+  "sources": {
+    "collab/kaggle_part2_continuation_20261027.py": "a70c0b8405061406aaf47026384e8dfd5e273560167da3df2bc25a232d41a64b",
+    "scripts/evaluate_frozen_multimodal_v1.py": "2d1856e1e20b521741d1ab8c384c7e1b1180e328c4f9fbae39fc280ca612e6ed",
+    "scripts/verify_multimodal_final_v1.py": "2167e194447eacbcfd2c45cd70f07c524e8996b87fd1e702a9b4900de615065b",
+    "notebooks/UROP_MM_PART2_CONTINUATION_20261027.ipynb": "d6f52d23c84ed176728ff1c29a97d5bdfa9946a24fdcc75092c643674f3b252d"
+  },
+  "kaggle_version": 1,
+  "script_version_id": 362859423,
+  "job_url": "https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027?scriptVersionId=362859423",
+  "actual_resume_release_utc": "2026-10-27T14:25:43.429870+00:00",
+  "actual_gpu": "Tesla T4",
+  "used_devices": 1,
+  "dependency_contract_verified": true,
+  "training_epoch3_advancement_not_yet_observed": true
+}

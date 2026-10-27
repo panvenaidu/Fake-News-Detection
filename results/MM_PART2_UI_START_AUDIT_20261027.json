@@ -1,0 +1,15 @@
+{
+  "observed_utc": "2026-10-27T14:13:50+00:00",
+  "account": "rocky62",
+  "active_jobs": 0,
+  "active_jobs_source": "Kaggle Your Work: No Active Events, zero Active Events before draft creation",
+  "quota_used_hours": 6.433333333333334,
+  "quota_total_hours": 30,
+  "quota_precision": "UI rounded minutes;06:26/30h",
+  "original_environment": "2026-10-22",
+  "accelerator": "GPU T4 x2, one used CUDA_VISIBLE_DEVICES=0",
+  "input_version_id_observed": 21277535,
+  "accepted_previous_kernel_version": 362761315,
+  "task_started_utc": "2026-10-27T14:08:54+00:00",
+  "task_hard_deadline_utc": "2026-10-27T20:08:54+00:00"
+}

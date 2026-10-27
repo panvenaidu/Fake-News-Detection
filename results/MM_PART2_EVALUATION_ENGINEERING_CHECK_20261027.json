@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "ast_parse_files": 3,
+  "fixture_rows": 18,
+  "valid_export_accepted": true,
+  "corrupt_exports_rejected": [
+    "duplicate_id",
+    "bad_probabilities",
+    "wrong_loss"
+  ],
+  "scientific_training": false,
+  "test_inference": false
+}

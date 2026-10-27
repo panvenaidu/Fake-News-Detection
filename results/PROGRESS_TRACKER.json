@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-27T11:23:19.331947+00:00",
+  "updated_utc": "2026-10-27T14:30:41.173922+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -78,7 +78,7 @@
         "validation": 0.5,
         "final_test_and_result_archive": 0
       },
-      "state": "Part1 accepted: two complete epochs and validations; epoch3 recovery; final test pending Part2",
+      "state": "Part1 accepted; Part2 committed and resume guards passed; no new durable epoch/validation/test accepted yet",
       "checkpoint_completion_percent": 60,
       "epochs_trained": 2,
       "epochs_validated": 2,
@@ -159,8 +159,13 @@
       "latest_recovery_next_cursor": 0,
       "receipt": "results/MM_PART1_RECEIPT_20261027.json",
       "final_report": "results/MM_PART1_REPORT_20261027.md",
-      "registered_cloud_jobs_complete": true,
-      "current_cloud_job": null
+      "registered_cloud_jobs_complete": false,
+      "current_cloud_job": {
+        "kernel": "rocky62/urop-mm-part2-continuation-20261027/1",
+        "script_version_id": 362859423,
+        "url": "https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027?scriptVersionId=362859423",
+        "observed_state": "Running: verified restore/startup; awaiting fresh epoch3 counters"
+      }
     },
     "image_only": {
       "scope": "Standalone image-only six-way benchmark",

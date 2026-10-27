@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "verified_actual_accepted_part1_recovery": true,
+  "epochs_validated": 2,
+  "next_epoch": 3,
+  "cursor": 0,
+  "training_complete": false,
+  "test_verified": false,
+  "source": "existing trusted Part1 epoch2 private output; no training or inference"
+}

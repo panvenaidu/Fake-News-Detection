@@ -1,3 +1,8 @@
+<!-- MM_PART2_CURRENT_20261027 -->
+## Active Part 2 continuation
+Read `context/MM_PART2_CURRENT_20261027.md` and `results/MM_PART2_LAUNCH_RECORD_20261027.json` before any job action. Same accepted run resumes epoch3 on private Kaggle version1/scriptVersion362859423. No new epoch accepted yet; test pending. Do not restart a live trainer or the completed Part1 controller.
+<!-- /MM_PART2_CURRENT_20261027 -->
+
 <!-- PART1_ACCEPTED_20261027 -->
 ## Verified Part1 completion — 27 October 2026
 
