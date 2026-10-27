@@ -1,3 +1,7 @@
+## 2026-10-27 — live log presentation limit, not trainer inactivity
+
+The native accessibility tree stopped exposing rows after about 498. Returning the entire rendered page text also truncated before the newest rows. Screenshot showed later rows and a progressing trainer. Fixed monitoring by parsing the visible DOM log rows in the page and returning only the latest small JSON record. Fresh epoch-3 counters reached 460,800 at 16:41:45 UTC. No scientific process was restarted or changed. Old displayed counters alone do not prove a hang.
+
 <!-- PART2_READBACK_LAYOUT_20261027 -->
 ## Part2 readback layout and browser preparation — 27 October 2026
 
