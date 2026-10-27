@@ -1,3 +1,7 @@
+## Controller handoff updated without restarting the GPU job
+
+2026-10-27T05:25:06.058684+00:00 — local bounded controller session60613, PID22245. It reuses the saved epoch1 launch receipt and watches the SAME active private job; no cloud job or training was restarted. Epoch2 will use a separate private notebook `rocky62/urop-mm-part1-science-epoch2-20261027` consuming the immutable epoch1 output, avoiding a recursive notebook dependency. Numeric sources, registered attempt, four-epoch budget, images, splits, six labels and no-test policy are unchanged. Evidence `results/MM_PART1_NONRECURSIVE_HANDOFF_20261027.json`. Controller source617a72b is backed up. The temporary idle-sleep assertion ends with this controller.
+
 ## Actual scientific training is advancing
 
 2026-10-27T05:22:34.335045+00:00 — epoch1 actual sample and optimizer counters advanced; GPU active; zero AMP skips at the latest saved observation. Evidence `results/MM_PART1_FIRST_ADVANCING_TRAINING_20261027.json`. Full epoch and validation counts remain0/2 until complete durable outputs are independently verified. Runtime counters are not a private saved checkpoint. Controller session32185 is continuing the bounded two-epoch workflow.
