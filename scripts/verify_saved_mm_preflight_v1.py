@@ -20,4 +20,9 @@ train,evaluate,save=m['train_examples_per_second'],m['eval_path_examples_per_sec
 assert all(math.isfinite(x) for x in [train,evaluate,save]) and min(train,evaluate)>0 and save>=0
 epoch=563601/train+59299/evaluate+save;assert math.isclose(epoch,s['estimated_epoch_seconds'],rel_tol=1e-10)
 r={'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':'passed_saved_preflight_readback','summary_sha256':sha(path),'fixture_sha256':sha(fixture),'measured_sha256':sha(measured),'train_samples_per_second':train,'eval_path_samples_per_second':evaluate,'loader_wait_fraction':m['train_loader_wait_seconds']/m['measurement_seconds'],'estimated_epoch_hours':epoch/3600,'estimated_two_epochs_hours':2*epoch/3600,'full_epoch_fits_12h_with_margin':1.25*epoch+600+3600<43200,'gpu':m['device'],'versions':m['versions'],'runtime_reader_sha256':s.get('runtime_reader_sha256'),'scientific_training':False,'test_performed':False}
+if 'raw_archive_cache' in s:
+ cache=path.parent/'raw_archive_cache_receipt.json';assert sha(cache)==s['raw_archive_cache_receipt_sha256']
+ c=json.loads(cache.read_text());assert c==s['raw_archive_cache'] and c['state']=='exact_raw_archive_cache_verified' and c['pixels_changed'] is False and len(c['archives'])==39 and c['bytes']<=100*1024**3 and 0<=c['seconds']<=3600
+ r['raw_archive_staging_seconds']=c['seconds'];r['raw_archive_cache_receipt_sha256']=sha(cache)
+ r['full_epoch_fits_12h_with_margin']=1.25*(epoch+c['seconds'])+600+3600<43200
 a.output.write_text(json.dumps(r,indent=2)+'\n');print(json.dumps(r))

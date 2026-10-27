@@ -7,9 +7,9 @@ preflight/previous-job artifacts. No test inference or protocol changes.
 from pathlib import Path
 import datetime,hashlib,importlib.metadata,json,math,os,shutil,subprocess,sys,time
 import requests
-LAUNCHER_COMMIT='e92161dd737208bcb162736ff84d21fd67af8b4f'
-LAUNCHER_SHA='94caea5e8ecd4a2368978005df73253e43f4248b0599ac7c52934a168d73a3a6'
-SCIENCE_COMMIT='1b22467fc4d404e172e3d938f44e7d37e345e4bc'
+LAUNCHER_COMMIT='8b8bff48f46951202df219a3ba0d9e53fe978195'
+LAUNCHER_SHA='df54567b2e659dabfdd70151c707a3214f6040d374d928ea451c9881e0c87337'
+SCIENCE_COMMIT='342d287007b7cbe795031228bdb4c2c5b4ee70b6'
 ATTEMPT='OFFICIAL-6W-MM-USABLE-v2_seed42_20261027'
 BASE=Path('/kaggle/working/urop_mm_science_20261027')
 
@@ -49,7 +49,8 @@ def run(audit):
  assert summary['coverage_sha256']=='afe8c723f91fe74f791908e0c16fab94d919af64c7cb7c9b5a37e676361d95e5'
  assert summary['packed_index_sha256']=='fc8dc03a4f773da5762891c8392375add5fb8087251b527f3b37a880308e6018'
  measured=json.loads(throughput.read_text());epoch=563601/measured['train_examples_per_second']+59299/measured['eval_path_examples_per_second']+measured['checkpoint_seconds']
- budget=1.25*epoch+600
+ stage=summary['raw_archive_cache']['seconds'];assert 0<=stage<=3600 and len(summary['raw_archive_cache']['archives'])==39
+ budget=1.25*(epoch+stage)+600
  assert math.isfinite(budget) and budget+3600<min(cap,remaining),'Full registered epoch does not fit with reserve'
  try:transformers_version=importlib.metadata.version('transformers')
  except importlib.metadata.PackageNotFoundError:transformers_version=None

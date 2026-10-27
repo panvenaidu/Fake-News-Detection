@@ -7,7 +7,8 @@ def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 summary_path=next(a.preflight.rglob('GPU_PREFLIGHT_SUMMARY.json'));s=json.loads(summary_path.read_text());assert s['state']=='gpu_preflight_verified'
 check=json.loads(a.api_check.read_text());assert check['request_succeeded'] and all(v=='KernelWorkerStatus.COMPLETE' for v in check['kernels'].values())
 age=(datetime.datetime.now(datetime.timezone.utc)-datetime.datetime.fromisoformat(check['utc'])).total_seconds();assert 0<=age<300
-cap=math.ceil((1.25*s['estimated_epoch_seconds']+600+3600+300)/300)*300;assert cap<=43200
+stage=s['raw_archive_cache']['seconds'];assert 0<=stage<=3600 and len(s['raw_archive_cache']['archives'])==39
+cap=math.ceil((1.25*(s['estimated_epoch_seconds']+stage)+600+3600+300)/300)*300;assert cap<=43200
 m=json.loads(a.metadata.read_text());assert m['enable_gpu'] and m['machine_shape']=='NvidiaTeslaT4' and '@sha256:' in m['docker_image'],'Actual successful T4 Docker digest required'
 slug='rocky62/urop-mm-part1-science-usable-20261027'
 sources=['rocky62/urop-official-six-way-text-recovery','rocky62/urop-mm-packed-faculty-image-gate-20261026/2',a.preflight_kernel]
