@@ -2,7 +2,7 @@
 CPU-only verification; no model inference/training and no network calls.
 """
 from pathlib import Path
-import argparse,json,math,sys
+import argparse,json,math,sys,hashlib
 import pandas as pd
 import torch
 from usable_cohort_v2 import load_input
@@ -36,7 +36,7 @@ def run(project,folder):
  assert abs(ref-state['patience_reference'])<1e-12 and stale==state['stale']
  assert state['early_stopped']==(len(state['history'])>=3 and stale>=2)
  complete=state['epoch']>4 or state['early_stopped'];result={'status':'verified_saved_part2_partial' if not complete else 'verified_saved_registered_training','training_complete':complete,'epochs_validated':len(values),'next_epoch':state['epoch'],'cursor':state['cursor'],'phase':state['phase'],'updates':state['updates'],'skips':state['skips'],'recovery':recovery,'selected':best,'validation':values,'test_verified':False,'selected_weight_strict_key_shape_dtype_check':True,'local_model_inference':False}
- train=[r['id'] for r in expected.values() if r['split']=='train'];indices=order(42,state['epoch'],len(train))[state['cursor']:state['cursor']+16].tolist();result['next_expected_ids']=[train[i] for i in indices]
+ train=[r['id'] for r in expected.values() if r['split']=='train'];indices=order(42,state['epoch'],len(train))[state['cursor']:state['cursor']+16].tolist();result['next_expected_ids_sha256']=hashlib.sha256(('\n'.join(train[i] for i in indices)+'\n').encode()).hexdigest();result['next_expected_ids_count']=len(indices)
  if (folder/'test_metrics.json').exists():
   assert complete
   freeze=json.loads((folder/'final_selection_frozen.json').read_text());assert freeze['selected']==best and freeze['protocol_sha256']==sha(folder/'protocol.json')

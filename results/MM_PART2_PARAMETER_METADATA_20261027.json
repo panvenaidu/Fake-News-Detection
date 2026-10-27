@@ -1,0 +1,12 @@
+{
+  "utc": "2026-10-27T14:52:33.587158+00:00",
+  "status": "verified_metadata_only",
+  "basis": "Exact frozen architecture; meta graph and strict key/shape load of verified selected weights on CPU; no forward pass, training or GPU",
+  "weights_sha256": "fe3f78e27a77410884bddd2f0929e2fc4b9717424251adbbaa325441989dda40",
+  "parameters": 133977414,
+  "trainable_parameters": 133977414,
+  "text_encoder_parameters": 108891648,
+  "image_encoder_parameters": 23508032,
+  "model_inference": false,
+  "training": false
+}
