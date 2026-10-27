@@ -1,6 +1,8 @@
-## Latest runtime milestone — 2026-10-27T17:22:46UTC
+## Latest runtime milestone — 2026-10-27T18:34:46UTC
 
-Epoch 3 consumed all 563,601 training rows at 17:09:34 UTC. The unchanged trainer has advanced into epoch 4 (20,800 rows, 53,466 successful updates, fresh 17:22:26 UTC). This control-flow observation indicates the epoch-3 validation stage returned, but its saved predictions/metrics have NOT yet been retrieved or independently accepted. Do not invent an epoch-3 score. Final test pending. Job version 1/scriptVersion362859423 continues; do not duplicate it.
+Epoch 4 observed 289,600/563,601 pairs (51.4%), successful updates 61,863, fresh trainer UTC18:34:44.246428, PID73 alive, no stop requested or visible traceback. Epoch3 consumed the full training split and controller advanced through validation into epoch4. New saved predictions/metrics have not yet been retrieved or independently accepted. Final test pending. Version1/scriptVersion362859423 remains the ONLY active scientific continuation.
+
+At measured speed, completion plus evaluation cannot fit before20:08:54UTC. The pre-registered runtime wrapper requests a safe partial stop19:35UTC and returns by19:43, allowing private output readback and handoff. Do not remove the budget safeguard, shrink the cohort or invent final results.
 
 # Part 2 current execution — 27 October 2026
 

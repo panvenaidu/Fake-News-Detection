@@ -1,24 +1,24 @@
 {
-  "observed_utc": "2026-10-27T17:23:08.686Z",
+  "observed_utc": "2026-10-27T18:34:59.640Z",
   "source": "visible DOM logs parsed in page; native AX and full-text transfer truncate old rows",
   "url": "https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027?scriptVersionId=362859423",
   "rows": [
     {
       "pid": 73,
-      "remaining_task_compute_seconds": 7933.362604,
+      "remaining_task_compute_seconds": 3613.219946,
       "safe_stop_requested": false,
       "status": {
-        "amp_skips": 23,
-        "batches_seen": 2600,
+        "amp_skips": 26,
+        "batches_seen": 36200,
         "epoch": 4,
-        "loss": 0.05200665020025694,
-        "optimizer_updates": 53466,
-        "samples_seen": 20800,
+        "loss": 0.05411438264035059,
+        "optimizer_updates": 61863,
+        "samples_seen": 289600,
         "state": "training",
-        "utc": "2026-10-27T17:22:26.183293+00:00"
+        "utc": "2026-10-27T18:34:44.246428+00:00"
       },
       "trainer_alive": true,
-      "utc": "2026-10-27T17:22:46.637384+00:00"
+      "utc": "2026-10-27T18:34:46.780033+00:00"
     }
   ]
 }
