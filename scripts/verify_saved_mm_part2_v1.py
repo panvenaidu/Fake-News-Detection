@@ -47,15 +47,22 @@ def run(project,folder):
  assert abs(ref-state['patience_reference'])<1e-12 and stale==state['stale']
  assert state['early_stopped']==(len(state['history'])>=3 and stale>=2)
  complete=state['epoch']>4 or state['early_stopped'];result={'status':'verified_saved_part2_partial' if not complete else 'verified_saved_registered_training','training_complete':complete,'epochs_validated':len(values),'next_epoch':state['epoch'],'cursor':state['cursor'],'phase':state['phase'],'updates':state['updates'],'skips':state['skips'],'recovery':recovery,'selected':best,'validation':values,'test_verified':False,'selected_weight_strict_key_shape_dtype_check':True,'selected_weight_strict_abstract_graph_load':True,'local_model_inference':False}
- train=[r['id'] for r in expected.values() if r['split']=='train'];indices=order(42,state['epoch'],len(train))[state['cursor']:state['cursor']+16].tolist();result['next_expected_ids_sha256']=hashlib.sha256(('\n'.join(train[i] for i in indices)+'\n').encode()).hexdigest();result['next_expected_ids_count']=len(indices)
+ if not complete:
+  train=[r['id'] for r in expected.values() if r['split']=='train'];indices=order(42,state['epoch'],len(train))[state['cursor']:state['cursor']+16].tolist();result['next_expected_ids_sha256']=hashlib.sha256(('\n'.join(train[i] for i in indices)+'\n').encode()).hexdigest();result['next_expected_ids_count']=len(indices)
+ else:result['next_expected_ids_sha256']=None;result['next_expected_ids_count']=0
  if (folder/'test_metrics.json').exists():
   assert complete
   freeze=json.loads((folder/'final_selection_frozen.json').read_text());assert freeze['selected']==best and freeze['protocol_sha256']==sha(folder/'protocol.json')
+  assert freeze['training_complete'] and freeze['source_hashes']==protocol['sources'] and freeze['inputs']==protocol['inputs'] and freeze['config_sha256']==protocol['config_sha256']
+  start=json.loads((folder/'test_start.json').read_text());assert start['weights_sha256']==best['weights_sha256'] and start['selection_receipt_sha256']==sha(folder/'final_selection_frozen.json') and start['expected_rows']==59270
+  terminal=json.loads((folder/'final_evaluation_complete.json').read_text());assert terminal['state']=='runtime_verified_requires_saved_private_and_local_readback' and terminal['final_selected_epoch']==best['epoch']
   result['test']=verify(folder,'test',pd.DataFrame([r for r in expected.values() if r['split']=='test']),'test')
   result['selected_validation']=verify(folder,'validation',official,'validation')
+  assert all(abs(terminal['test']['metrics'][k]-v)<1e-10 for k,v in result['test']['metrics'].items()) and terminal['test']['weights_sha256']==best['weights_sha256']
   roundtrip=json.loads((folder/'selected_weight_roundtrip.json').read_text());assert roundtrip['strict_load'] and roundtrip['maximum_logit_delta']==0 and roundtrip['sha256']==best['weights_sha256']
   result['test_verified']=True;result['status']='verified_saved_train_validation_test'
  elif not complete:assert not (folder/'test_start.json').exists(),'Test was started before training complete'
+ result['independent_verifier_sha256']=sha(Path(__file__))
  files=[p for p in folder.rglob('*') if p.is_file()];result['artifacts']={str(p.relative_to(folder)):{'bytes':p.stat().st_size,'sha256':sha(p)} for p in files}
  return result
 if __name__=='__main__':

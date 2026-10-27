@@ -1,0 +1,23 @@
+{
+  "observed_utc": "2026-10-27T20:37:06.878Z",
+  "url": "https://www.kaggle.com/code/rocky62/urop-mm-final-continuation-20261028?scriptVersionId=362955511",
+  "row": {
+    "pid": 73,
+    "remaining_task_compute_seconds": 5894.052811,
+    "safe_stop_requested": false,
+    "status": {
+      "amp_skips": 29,
+      "batches_seen": 64400,
+      "epoch": 4,
+      "loss": 0.05231466796434259,
+      "optimizer_updates": 68910,
+      "samples_seen": 515200,
+      "state": "training",
+      "utc": "2026-10-27T19:35:15.399273+00:00"
+    },
+    "trainer_alive": true,
+    "utc": "2026-10-27T20:36:45.947172+00:00"
+  },
+  "tail": "s\": {\"utc\": \"2026-10-27T19:35:15.399273+00:00\", \"state\": \"training\", \"epoch\": 4, \"samples_seen\": 515200, \"batches_seen\": 64400, \"optimizer_updates\": 68910, \"amp_skips\": 29, \"loss\": 0.05231466796434259}, \"remaining_task_compute_seconds\": 5984.055421}\n\n704.4s\t61\t{\"utc\": \"2026-10-27T20:35:45.945568+00:00\", \"trainer_alive\": true, \"pid\": 73, \"safe_stop_requested\": false, \"status\": {\"utc\": \"2026-10-27T19:35:15.399273+00:00\", \"state\": \"training\", \"epoch\": 4, \"samples_seen\": 515200, \"batches_seen\": 64400, \"optimizer_updates\": 68910, \"amp_skips\": 29, \"loss\": 0.05231466796434259}, \"remaining_task_compute_seconds\": 5954.054416}\n\n704.6s\t62\t{\"utc\": \"2026-10-27T20:35:45.945568+00:00\", \"trainer_alive\": true, \"pid\": 73, \"safe_stop_requested\": false, \"status\": {\"utc\": \"2026-10-27T19:35:15.399273+00:00\", \"state\": \"training\", \"epoch\": 4, \"samples_seen\": 515200, \"batches_seen\": 64400, \"optimizer_updates\": 68910, \"amp_skips\": 29, \"loss\": 0.05231466796434259}, \"remaining_task_compute_seconds\": 5954.054416}\n\n734.4s\t63\t{\"utc\": \"2026-10-27T20:36:15.946451+00:00\", \"trainer_alive\": true, \"pid\": 73, \"safe_stop_requested\": false, \"status\": {\"utc\": \"2026-10-27T19:35:15.399273+00:00\", \"state\": \"training\", \"epoch\": 4, \"samples_seen\": 515200, \"batches_seen\": 64400, \"optimizer_updates\": 68910, \"amp_skips\": 29, \"loss\": 0.05231466796434259}, \"remaining_task_compute_seconds\": 5924.053533}\n\n734.6s\t64\t{\"utc\": \"2026-10-27T20:36:15.946451+00:00\", \"trainer_alive\": true, \"pid\": 73, \"safe_stop_requested\": false, \"status\": {\"utc\": \"2026-10-27T19:35:15.399273+00:00\", \"state\": \"training\", \"epoch\": 4, \"samples_seen\": 515200, \"batches_seen\": 64400, \"optimizer_updates\": 68910, \"amp_skips\": 29, \"loss\": 0.05231466796434259}, \"remaining_task_compute_seconds\": 5924.053533}\n\n764.4s\t65\t{\"utc\": \"2026-10-27T20:36:45.947172+00:00\", \"trainer_alive\": true, \"pid\": 73, \"safe_stop_requested\": false, \"status\": {\"utc\": \"2026-10-27T19:35:15.399273+00:00\", \"state\": \"training\", \"epoch\": 4, \"samples_seen\": 515200, \"batches_seen\": 64400, \"optimizer_updates\": 68910, \"amp_skips\": 29, \"loss\": 0.05231466796434259}, \"remaining_task_compute_seconds\": 5894.052811}\n\n764.6s\t66\t{\"utc\": \"2026-10-27T20:36:45.947172+00:00\", \"trainer_alive\": true, \"pid\": 73, \"safe_stop_requested\": false, \"status\": {\"utc\": \"2026-10-27T19:35:15.399273+00:00\", \"state\": \"training\", \"epoch\": 4, \"samples_seen\": 515200, \"batches_seen\": 64400, \"optimizer_updates\": 68910, \"amp_skips\": 29, \"loss\": 0.05231466796434259}, \"remaining_task_compute_seconds\": 5894.052811}\n",
+  "traceback": false
+}
