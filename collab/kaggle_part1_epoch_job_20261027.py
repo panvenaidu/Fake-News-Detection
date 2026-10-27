@@ -32,6 +32,11 @@ def run(audit):
  assert all(v in ['KernelWorkerStatus.COMPLETE','KernelWorkerStatus.ERROR','KernelWorkerStatus.CANCELLED'] for v in audit['api_check']['kernels'].values()),'Conflicting cloud job'
  quota=audit['api_check']['gpu_quota'];remaining=quota['total_time_allowed']-quota['time_used']-quota['time_reserved']-age
  assert remaining>3600,'Insufficient actual GPU allowance'
+ free=shutil.disk_usage('/kaggle/working').free
+ assert free>=12*1024**3,'Reserve disk for two recovery generations, temporary writes and exports'
+ active=subprocess.check_output(['ps','-eo','args'],text=True)
+ assert not any('train_usable_multimodal_v2.py' in line for line in active.splitlines()),'Existing scientific trainer in runtime'
+ print(json.dumps({'state':'cloud_capacity_verified','scratch_free_bytes':free,'gpu_quota_seconds_available':remaining,'requested_session_seconds':cap,'scientific_training':False}),flush=True)
  summaries=list(Path('/kaggle/input').rglob('GPU_PREFLIGHT_SUMMARY.json'))
  assert len(summaries)==1,'Exactly one immutable measured preflight output required'
  summary_path=summaries[0];assert sha(summary_path)==audit['preflight_summary_sha256']

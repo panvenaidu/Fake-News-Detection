@@ -40,6 +40,14 @@ try:
   if not destination.is_relative_to(project):raise ValueError('Project folder required')
   files,next_page=api.kernels_output(request['kernel'],str(destination),file_pattern=request.get('pattern',r'\.(json|log)$'),force=True,quiet=True,page_size=100)
   result.update(files=files,next_page=bool(next_page))
+  if request.get('pull_metadata_to'):
+   metadata=Path(request['pull_metadata_to']).resolve()
+   if not metadata.is_relative_to(project):raise ValueError('Project metadata folder required')
+   api.kernels_pull(request['kernel'],str(metadata),metadata=True,quiet=True);result['metadata_folder']=str(metadata)
+  if request.get('inspect_kernels'):
+   q=api.quota_view();g=q.gpu_quota
+   result['gpu_quota']={k:getattr(g,k).total_seconds() if getattr(g,k) is not None else None for k in ['time_used','time_reserved','total_time_allowed']}
+   result['kernels']={kernel:str(api.kernels_status(kernel).status) for kernel in request['inspect_kernels']}
  elif action=='status':
   r=api.kernels_status(request['kernel']);result.update(kernel=request['kernel'],status=str(r.status),failure_message=r.failure_message)
  elif action=='output':
