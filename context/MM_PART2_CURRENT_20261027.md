@@ -1,6 +1,6 @@
-## Latest runtime milestone — 2026-10-27T16:41:46UTC
+## Latest runtime milestone — 2026-10-27T17:22:46UTC
 
-Epoch 3 observed 460,800/563,601 pairs (81.8%); successful optimizer updates 49,605, live process and fresh trainer UTC 16:41:45.540320. No new epoch has yet been independently retrieved/accepted; final test pending. Continue version 1/scriptVersion 362859423.
+Epoch 3 consumed all 563,601 training rows at 17:09:34 UTC. The unchanged trainer has advanced into epoch 4 (20,800 rows, 53,466 successful updates, fresh 17:22:26 UTC). This control-flow observation indicates the epoch-3 validation stage returned, but its saved predictions/metrics have NOT yet been retrieved or independently accepted. Do not invent an epoch-3 score. Final test pending. Job version 1/scriptVersion362859423 continues; do not duplicate it.
 
 # Part 2 current execution — 27 October 2026
 
