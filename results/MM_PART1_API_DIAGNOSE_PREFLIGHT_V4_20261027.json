@@ -1,0 +1,10 @@
+{
+  "utc": "2026-10-27T03:41:50.195934+00:00",
+  "action": "diagnose",
+  "kernel": "rocky62/urop-mm-part1-packed-gpu-20261026/4",
+  "status": "KernelWorkerStatus.RUNNING",
+  "failure_message": "",
+  "files": [],
+  "next_page": false,
+  "request_succeeded": true
+}

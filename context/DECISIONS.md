@@ -1,3 +1,7 @@
+## Current verified checkpoint — 27 October 2026, GPU preflight
+
+Read `context/MM_PART1_CURRENT_STATE_20261027.md` first. The complete 682,170-image gate is now durably saved in Kaggle Version 2 (362643633) and independently verified locally. Do not repeat image preparation. Kaggle GPU preflight Version 4 (362691302) has confirmed Tesla T4/CUDA and passed the actual recovery fixture; its throughput measurement is running. Scientific train 0/2, full validation 0/2, no Part 1 test. Old CPU-image failure/transfer notes below are historical.
+
 ## Latest checkpoint — packed-input recovery, 26 October 2026
 
 Read context/MM_PART1_CURRENT_STATE_20261026.md first. Complete original private datasetVersion1 is preserved. Unpacked Kaggle CPU startup was cancelled after prolonged data attachment without Python execution. User approved the packed-reader recovery and replacement token; new private41-file staging is underway in the approved Colab CPU notebook. Same682170images/officialsplits/sixlabels/model/budget. Packed reader is tested on synthetic images but not yet production-integrated; original unpacked trainer must not be run on it. Scientific train0/2, validation0/2, no final test; all earlier conflicting live/job notes below are historical.

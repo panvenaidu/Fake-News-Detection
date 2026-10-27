@@ -1,3 +1,7 @@
+## Current verified checkpoint — 27 October 2026, GPU preflight
+
+Read `context/MM_PART1_CURRENT_STATE_20261027.md` first. The complete 682,170-image gate is now durably saved in Kaggle Version 2 (362643633) and independently verified locally. Do not repeat image preparation. Kaggle GPU preflight Version 4 (362691302) has confirmed Tesla T4/CUDA and passed the actual recovery fixture; its throughput measurement is running. Scientific train 0/2, full validation 0/2, no Part 1 test. Old CPU-image failure/transfer notes below are historical.
+
 ## 27 October 2026 live gate checkpoint
 
 The approved 682,170-image CPU gate completed once, but its no-persistence interactive index was lost after disconnection. Kaggle committed Version 2 is running the same gate to save durable artifacts. Multimodal training and full validation remain 0/2; the bars below are unchanged.

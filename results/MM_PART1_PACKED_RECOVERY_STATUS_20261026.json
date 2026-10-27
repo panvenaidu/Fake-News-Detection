@@ -1,6 +1,6 @@
 {
-  "utc": "2026-10-26T23:14:09.564540+00:00",
-  "state": "durable_kaggle_full_gate_version2_running",
+  "utc": "2026-10-27T03:46:45.214604+00:00",
+  "state": "durable_image_gate_verified_gpu_preflight_v4_running",
   "private_destination": "rocky62/urop-faculty-usable-packed-input-v3",
   "same_original_source_index_sha256": "5608291805e241d662d24db576d860a129d995e45b7a31b3651130f1a73780ee",
   "engine_sha256": "c7f6348b89111c5731814f8c1b82c4f73222b87b2e5715ec9e84a90ffe4af054",
@@ -14,7 +14,7 @@
   "live_process_verified": false,
   "original_dataset_preserved": true,
   "production_io_integration_complete": true,
-  "runtime_image_gate_passed": false,
+  "runtime_image_gate_passed": true,
   "scientific_epochs_completed": 0,
   "full_validations_completed": 0,
   "test_performed": false,
@@ -38,6 +38,10 @@
   "interactive_full_gate_index_sha256": "fc8dc03a4f773da5762891c8392375add5fb8087251b527f3b37a880308e6018",
   "interactive_gate_output_durable": false,
   "durable_gate_notebook_version": 2,
-  "durable_gate_commit_running": true,
-  "gpu_preflight_started": false
+  "durable_gate_commit_running": false,
+  "gpu_preflight_started": true,
+  "durable_gate_version_id": 362643633,
+  "saved_gate_readback": "results/MM_PART1_SAVED_GATE_READBACK_20261027.json",
+  "gpu_preflight_version": 4,
+  "cuda_recovery_fixture_observed_passed": true
 }
