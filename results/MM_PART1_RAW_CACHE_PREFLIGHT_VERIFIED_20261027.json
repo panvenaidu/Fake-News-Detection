@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-27T05:05:08.782205+00:00",
+  "status": "passed_saved_preflight_readback",
+  "summary_sha256": "41497c6cd184b5087e323492b14a789cda045cd76dcdb464b1f7847890d7ca88",
+  "fixture_sha256": "8b0f6399d249cdf1e4263923c2515a1e99abcceb9d3a5a066a1034a964a26c63",
+  "measured_sha256": "11a7991d2baaaf39dd0f20efb2b97ac9582dba89a693623c4e7969fcda094977",
+  "train_samples_per_second": 57.39633221240385,
+  "eval_path_samples_per_second": 140.31270818248498,
+  "loader_wait_fraction": 0.002532634434332175,
+  "estimated_epoch_hours": 2.8504273111216274,
+  "estimated_two_epochs_hours": 5.700854622243255,
+  "full_epoch_fits_12h_with_margin": true,
+  "gpu": "Tesla T4",
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "transformers": "4.48.3",
+    "numpy": "2.1.3",
+    "Pillow": "13.0.0"
+  },
+  "runtime_reader_sha256": "a29e66d9c2962eb5bdfdce9abab02866fc77ad44aa5711ec8009a09dda7bb60d",
+  "scientific_training": false,
+  "test_performed": false,
+  "raw_archive_staging_seconds": 443.807790629,
+  "raw_archive_cache_receipt_sha256": "916d7271d95ac178c5917b30b3e7f1acdddf28113c393facdab164dcc02a648e"
+}

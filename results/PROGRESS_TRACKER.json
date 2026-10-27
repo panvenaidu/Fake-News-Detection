@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-27T04:44:50.268868+00:00",
+  "updated_utc": "2026-10-27T05:05:08.791908+00:00",
   "method_version": "CHECKPOINT-PROGRESS-v1",
   "requested_by_user": "Use loading bars, percentages and train/validate/test checkpoints whenever asked for progress; save this preference for later sessions. No new scheduled task requested.",
   "rules": [
@@ -74,11 +74,11 @@
       "milestones": {
         "dataset_audit": 1,
         "model_implementation": 1,
-        "training": 0,
-        "validation": 0,
+        "training": 0.0,
+        "validation": 0.0,
         "final_test_and_result_archive": 0
       },
-      "state": "Full faculty image gate and actual CUDA recovery passed; raw archive cloud-scratch throughput measurement running; no scientific epochs yet",
+      "state": "Verified cloud scratch throughput; scientific training not started",
       "checkpoint_completion_percent": 40,
       "epochs_trained": 0,
       "epochs_validated": 0,
@@ -497,5 +497,6 @@
   "usage_policy_override": "context/USAGE_POLICY_OVERRIDE_20261025.json",
   "latest_gate_observation": "results/MM_PART1_FULL_IMAGE_GATE_INTERACTIVE_OBSERVATION_20261027.json",
   "latest_gate_readback": "results/MM_PART1_SAVED_GATE_READBACK_20261027.json",
-  "current_capacity_checkpoint": "context/MM_PART1_IO_RECOVERY_20261027.md"
+  "current_capacity_checkpoint": "context/MM_PART1_IO_RECOVERY_20261027.md",
+  "current_verified_part1_receipt": "results/MM_PART1_RAW_CACHE_PREFLIGHT_VERIFIED_20261027.json"
 }
