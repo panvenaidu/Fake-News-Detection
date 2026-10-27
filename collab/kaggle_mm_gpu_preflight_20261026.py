@@ -50,6 +50,8 @@ def sha(path):
 
 
 assert sha(PACKED_INDEX) == coverage['packed_index_sha256'], 'Packed index changed after full gate'
+assert sha(PACKED_INDEX) == 'fc8dc03a4f773da5762891c8392375add5fb8087251b527f3b37a880308e6018', 'Wrong saved gate index'
+assert sha(COVERAGE) == 'afe8c723f91fe74f791908e0c16fab94d919af64c7cb7c9b5a37e676361d95e5', 'Attach verified saved gate version 362643633'
 
 
 for relative, expected in HASHES.items():
