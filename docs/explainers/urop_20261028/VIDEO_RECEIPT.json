@@ -1,0 +1,48 @@
+{
+  "status": "verified_complete_local_fallback",
+  "plugin": "DevMotion attempted: backend Unknown tool; local fallback used",
+  "duration_seconds": 588.625,
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "fps": 24,
+  "audio_tracks": 1,
+  "chapters": 18,
+  "output": "data/presentations/urop_explainer_20261028/UROP_Beginner_to_Architecture.mp4",
+  "bytes": 14229862,
+  "sha256": "6c0a5abcfc020f2007f5574cf39051ab62be8e82da6789117b1208a9b9470f66",
+  "timing": "data/presentations/urop_explainer_20261028/timing.json",
+  "transcript": "docs/explainers/urop_20261028/TRANSCRIPT.md",
+  "evidence": [
+    "results/MM_FINAL_COMPLETION_RECEIPT_20261028.json",
+    "configs/multimodal_usable_6way_v2.json",
+    "scripts/train_usable_multimodal_v2.py",
+    "scripts/multimodal_recovery_v1.py"
+  ],
+  "model_or_dataset_changes": false,
+  "verified_utc": "2026-10-28T07:48:49.129362+00:00",
+  "video_decode": {
+    "status": "passed_full_video_decode",
+    "decoded_frames": 14127,
+    "container_frames": 14127,
+    "sampled_frame_std_min": 28.01097822682319,
+    "sampled_frames": 59,
+    "decode_seconds": 23.869037625
+  },
+  "audio_decode": {
+    "duration": 588.625,
+    "nonfinite": 0,
+    "peak": 0.8779321908950806,
+    "rms": 0.15559399299986104,
+    "samples": 14126305,
+    "status": "passed_full_encoded_audio_decode"
+  },
+  "visual_review": "18-chapter contact sheet visually inspected; no visible clipping; diagram/metric values checked against current project evidence",
+  "maximum_caption_lines": 2,
+  "captions": "Burned-in, sentence timing aligned to individually synthesized speech clips; SRT retained",
+  "render_backend": "Pillow + OpenCV H264 + native macOS AVFoundation export",
+  "voice": "macOS Samantha",
+  "devmotion_project_created": false,
+  "right_panel_layout_check": "Every chapter bottom verified below750px"
+}

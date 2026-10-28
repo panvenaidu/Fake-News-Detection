@@ -456,3 +456,7 @@ If using Fakeddit, please cite:
 ## License
 
 This project is for academic research purposes.
+
+## Project explanation video — 28 October 2026
+
+A verified9m49s narrated beginner-to-architecture explainer, chapter player, transcript and viva FAQ are indexed in `docs/explainers/urop_20261028/README.md`. Actual media stays private/ignored at `data/presentations/urop_explainer_20261028/UROP_Beginner_to_Architecture.mp4`. DevMotion returned backend Unknown tool, so the MP4 was rendered locally; no DevMotion project was created. Research experiments were unchanged.
