@@ -1,0 +1,459 @@
+1
+00:00:00,567 --> 00:00:04,863
+Our U R O P project studies multimodal fake news classification.
+
+2
+00:00:05,177 --> 00:00:12,044
+Multimodal simply means using more than one kind of input: here, a short post title and its associated image.
+
+3
+00:00:12,399 --> 00:00:16,826
+A model learns patterns from labelled examples and predicts one of six categories.
+
+4
+00:00:17,241 --> 00:00:21,445
+It does not search the internet or independently prove whether a claim is true.
+
+5
+00:00:21,860 --> 00:00:27,877
+This video builds from those basics to the actual architecture, decisions, results, and failure cases.
+
+6
+00:00:28,354 --> 00:00:35,922
+The six labels are True, Satire or Parody, Misleading Content, Imposter Content, False Connection, and Manipulated Content.
+
+7
+00:00:36,408 --> 00:00:39,720
+False Connection concerns a mismatch between text and image.
+
+8
+00:00:40,075 --> 00:00:42,688
+Manipulated Content includes edited images.
+
+9
+00:00:43,104 --> 00:00:49,354
+In Fakeddit, labels largely come from the source community rather than independent verification of every post.
+
+10
+00:00:49,770 --> 00:00:53,396
+A system can therefore learn community style and dataset shortcuts.
+
+11
+00:00:53,883 --> 00:00:59,109
+High benchmark accuracy does not automatically make it a reliable real world fact checker.
+
+12
+00:00:59,583 --> 00:01:06,968
+We used the faculty linked Fakeddit release with three files: multimodal train, multimodal validate, and multimodal test public.
+
+13
+00:01:07,384 --> 00:01:12,205
+The original files contain six hundred eighty two thousand six hundred sixty one rows.
+
+14
+00:01:12,621 --> 00:01:19,722
+Exactly four hundred ninety one images failed strict decoding and were excluded with approval, before model results were used.
+
+15
+00:01:20,137 --> 00:01:21,981
+The usable counts are on screen.
+
+16
+00:01:22,295 --> 00:01:27,319
+Original files, identities, titles, six labels, and split assignments were preserved.
+
+17
+00:01:27,734 --> 00:01:30,540
+We did not manually create replacement splits.
+
+18
+00:01:31,017 --> 00:01:32,810
+Training data teaches the model.
+
+19
+00:01:33,074 --> 00:01:36,599
+Validation data compares checkpoints without updating their weights.
+
+20
+00:01:36,862 --> 00:01:39,881
+The held out test is reserved for the final frozen choice.
+
+21
+00:01:40,145 --> 00:01:46,355
+If we repeatedly change a model after seeing its test result, that test stops being an honest final examination.
+
+22
+00:01:46,770 --> 00:01:53,557
+Separate post identities do not guarantee independent images: our audit found cross split byte identical image groups.
+
+23
+00:01:53,820 --> 00:01:57,761
+That is a remaining leakage and comparability risk, not something to hide.
+
+24
+00:01:58,235 --> 00:02:01,234
+A computer cannot feed raw words directly into BERT.
+
+25
+00:02:01,547 --> 00:02:06,196
+Its WordPiece tokenizer converts a title into integer token identifiers.
+
+26
+00:02:06,612 --> 00:02:09,783
+An attention mask identifies real tokens and padding.
+
+27
+00:02:10,097 --> 00:02:14,301
+We cap inputs at one hundred twenty eight tokens, then pad each batch.
+
+28
+00:02:14,656 --> 00:02:17,583
+BERT uses attention to relate words to their context.
+
+29
+00:02:17,846 --> 00:02:22,973
+Its special classification token produces a seven hundred sixty eight dimensional representation.
+
+30
+00:02:23,388 --> 00:02:29,071
+Changing tokenization or truncation changes the experiment and must be registered and checked.
+
+31
+00:02:29,532 --> 00:02:36,856
+Images are decoded, converted to red, green, and blue channels, and normalized using the expected ImageNet channel statistics.
+
+32
+00:02:37,271 --> 00:02:43,116
+Training uses a reproducible random resized crop, linked to the seed, epoch, and example identity.
+
+33
+00:02:43,532 --> 00:02:50,025
+Evaluation resizes the shorter side to two hundred thirty two, then center crops to two hundred twenty four pixels.
+
+34
+00:02:50,440 --> 00:02:53,267
+These rules prevent arbitrary evaluation changes.
+
+35
+00:02:53,683 --> 00:02:59,436
+Skipping normalization or using a different crop can shift the input distribution and change predictions.
+
+36
+00:02:59,895 --> 00:03:05,831
+The text encoder is BERT base uncased, initialized from our verified selected text only checkpoint.
+
+37
+00:03:06,145 --> 00:03:10,916
+The image encoder is ResNet fifty, initialized with ImageNet version two weights.
+
+38
+00:03:11,332 --> 00:03:16,802
+ResNet uses residual connections to help information and gradients flow through a deep network.
+
+39
+00:03:17,065 --> 00:03:21,928
+We remove its original image classifier and keep two thousand forty eight pooled features.
+
+40
+00:03:22,343 --> 00:03:25,209
+Both encoders and the fusion head are fine tuned.
+
+41
+00:03:25,564 --> 00:03:31,865
+Starting from useful pretrained representations reduces the burden compared with learning everything from random weights.
+
+42
+00:03:32,332 --> 00:03:34,995
+The two encoders produce different sized vectors.
+
+43
+00:03:35,259 --> 00:03:39,362
+Separate learned linear projections map each to five hundred twelve dimensions.
+
+44
+00:03:39,848 --> 00:03:42,431
+Layer normalization helps control feature scale.
+
+45
+00:03:42,745 --> 00:03:47,334
+These projections are learned adapters, not manually defined semantic coordinates.
+
+46
+00:03:47,597 --> 00:03:51,730
+Without matching sizes, elementwise maximum cannot combine the vectors.
+
+47
+00:03:52,146 --> 00:03:58,619
+Removing normalization or changing the projection size would be a different architecture requiring new training and validation.
+
+48
+00:03:59,034 --> 00:04:03,045
+We did not run an ablation proving this size is universally optimal.
+
+49
+00:04:03,515 --> 00:04:08,681
+Maximum fusion compares the two projected values at every position and keeps the larger one.
+
+50
+00:04:08,995 --> 00:04:14,759
+The small example on screen illustrates the operation; the real vectors have five hundred twelve positions.
+
+51
+00:04:15,073 --> 00:04:18,275
+Some positions can come from text and others from the image.
+
+52
+00:04:18,629 --> 00:04:21,142
+This is not voting between class predictions.
+
+53
+00:04:21,557 --> 00:04:23,836
+Addition changes the combined scale.
+
+54
+00:04:24,150 --> 00:04:28,152
+Concatenation creates a larger vector and needs a compatible head.
+
+55
+00:04:28,567 --> 00:04:34,107
+Those are legitimate alternatives, but comparing them requires separately controlled experiments.
+
+56
+00:04:34,584 --> 00:04:45,910
+The fused vector enters a linear layer with two hundred fifty six outputs, a GELU activation, dropout with probability zero point two, and a final layer producing six scores called logits.
+
+57
+00:04:46,396 --> 00:04:48,259
+GELU adds nonlinearity.
+
+58
+00:04:48,523 --> 00:04:54,227
+Dropout discourages dependence on particular activations during training and is off during evaluation.
+
+59
+00:04:54,642 --> 00:04:57,893
+For training, cross entropy takes the raw logits directly.
+
+60
+00:04:58,248 --> 00:05:03,474
+For reporting predictions, softmax converts logits into six probabilities that sum to one.
+
+61
+00:05:03,830 --> 00:05:06,271
+The largest probability gives the predicted label.
+
+62
+00:05:06,493 --> 00:05:10,525
+The network has about one hundred thirty four million trainable parameters.
+
+63
+00:05:10,987 --> 00:05:16,001
+Cross entropy penalizes the model when it gives too little probability to the correct training label.
+
+64
+00:05:16,417 --> 00:05:19,902
+Backpropagation calculates how weights contributed to that loss.
+
+65
+00:05:20,317 --> 00:05:24,348
+Adam W updates the parameters, with weight decay for regularization.
+
+66
+00:05:24,662 --> 00:05:34,346
+The learning rates differ: BERT uses one times ten to the minus five, the image encoder one times ten to the minus four, and the head one times ten to the minus three.
+
+67
+00:05:34,762 --> 00:05:38,135
+A warmup and decay scheduler controls their evolution.
+
+68
+00:05:38,615 --> 00:05:43,994
+We used one Tesla T four cloud GPU in Kaggle, even when two devices were allocated.
+
+69
+00:05:44,480 --> 00:05:46,932
+Eight examples fit into each microbatch.
+
+70
+00:05:47,347 --> 00:05:53,900
+Accumulating gradients over four microbatches produces an effective batch of thirty two before an optimizer boundary.
+
+71
+00:05:54,387 --> 00:06:01,650
+Mixed precision saves memory, a gradient scaler helps handle numerical range, and gradient clipping limits extreme updates.
+
+72
+00:06:02,136 --> 00:06:04,426
+These details affect learning and recovery.
+
+73
+00:06:04,841 --> 00:06:09,248
+Changing batch size or the schedule midway would break the controlled continuation.
+
+74
+00:06:09,707 --> 00:06:12,331
+One epoch is a complete pass over the training set.
+
+75
+00:06:12,594 --> 00:06:16,767
+Our registered budget was four epochs, each followed by a full validation.
+
+76
+00:06:17,081 --> 00:06:22,997
+The selection rule was highest validation macro F one, then lower loss, then earlier epoch if still tied.
+
+77
+00:06:23,413 --> 00:06:27,464
+An early stopping rule existed, but this run completed all four epochs.
+
+78
+00:06:27,779 --> 00:06:30,767
+Training interruptions were resumed within the same experiment.
+
+79
+00:06:31,182 --> 00:06:35,103
+After validation selection was frozen, we ran one full final test.
+
+80
+00:06:35,518 --> 00:06:39,449
+Independent metric recomputation is not an additional model test.
+
+81
+00:06:39,910 --> 00:06:44,883
+Epoch three had the highest validation accuracy, eighty eight point five three four four percent.
+
+82
+00:06:45,300 --> 00:06:52,947
+Epoch four had the highest macro F one, zero point eight two nine three zero three, so epoch four won under the declared rule.
+
+83
+00:06:53,363 --> 00:06:57,191
+Its validation accuracy was slightly lower, and its loss was higher.
+
+84
+00:06:57,546 --> 00:07:01,467
+Better class decisions can coexist with worse confidence on mistakes.
+
+85
+00:07:01,882 --> 00:07:08,922
+We retained that tradeoff rather than changing the rule after seeing results or picking whichever checkpoint looked best on the test.
+
+86
+00:07:09,384 --> 00:07:17,163
+Final test accuracy was eighty eight point one four five eight percent, and macro F one was zero point eight two six four one five.
+
+87
+00:07:17,650 --> 00:07:19,545
+Accuracy measures the fraction correct.
+
+88
+00:07:19,808 --> 00:07:23,840
+Micro F one equals accuracy in this exhaustive single label task.
+
+89
+00:07:24,255 --> 00:07:27,244
+Precision asks how many predicted class items were correct.
+
+90
+00:07:27,557 --> 00:07:30,343
+Recall asks how many actual class items were found.
+
+91
+00:07:30,830 --> 00:07:33,118
+F one balances precision and recall.
+
+92
+00:07:33,473 --> 00:07:37,981
+Macro F one weights classes equally; weighted F one uses class frequency.
+
+93
+00:07:38,335 --> 00:07:40,888
+Balanced accuracy averages class recalls.
+
+94
+00:07:41,304 --> 00:07:43,745
+Cross entropy also evaluates confidence.
+
+95
+00:07:44,160 --> 00:07:47,523
+Imposter Content remained the weakest class by test F one.
+
+96
+00:07:47,938 --> 00:07:51,443
+Confusion matrices show which classes were mistaken for each other.
+
+97
+00:07:51,918 --> 00:07:56,811
+The matching paper reference is six way BERT plus ResNet fifty with maximum fusion.
+
+98
+00:07:57,226 --> 00:08:04,043
+Our test accuracy is two point two six five eight percentage points higher, exceeding the numerical one point aspiration.
+
+99
+00:08:04,459 --> 00:08:07,974
+However, the paper used a different feature and training pipeline.
+
+100
+00:08:08,288 --> 00:08:13,951
+Our available image cohort excludes decoding failures, and we used extra text warm start training.
+
+101
+00:08:14,366 --> 00:08:20,860
+One seed, cross split image duplication, and the unresolved paper versus release row count difference limit the claim.
+
+102
+00:08:21,123 --> 00:08:24,537
+Comparable paper F one and loss values were not reported.
+
+103
+00:08:25,016 --> 00:08:32,390
+Preparation took time because image decoding, storage, transfers, and slow loading had to be resolved before trustworthy training.
+
+104
+00:08:32,806 --> 00:08:39,056
+We preserved original image bytes, verified packed inputs, and used a cached archive reader on the cloud runtime.
+
+105
+00:08:39,471 --> 00:08:47,282
+Recovery saved not just weights, but optimizer, scheduler, scaler, random states, sample cursor, crop rules, and selection history.
+
+106
+00:08:47,697 --> 00:08:50,979
+A spinner or old notebook output is not proof of activity.
+
+107
+00:08:51,334 --> 00:08:58,324
+Fresh counters, timestamps, saved outputs, checksums, and independent prediction checks establish what actually completed.
+
+108
+00:08:58,797 --> 00:08:59,800
+Why these models?
+
+109
+00:09:00,215 --> 00:09:07,154
+They give a recognizable paper aligned baseline, useful pretrained features, and a feasible T four implementation.
+
+110
+00:09:07,510 --> 00:09:10,356
+We did not prove they beat every newer alternative.
+
+111
+00:09:10,710 --> 00:09:16,778
+CLIP, vision transformers, and newer text encoders are possible future studies, not completed experiments.
+
+112
+00:09:17,194 --> 00:09:22,745
+Removing images, changing fusion, or freezing an encoder requires retraining and validation.
+
+113
+00:09:23,160 --> 00:09:26,271
+Skipping the held out test removes our final performance check.
+
+114
+00:09:26,686 --> 00:09:32,338
+Next is the image only baseline, followed by controlled ablations and repeated seeds if approved.
+
+115
+00:09:32,652 --> 00:09:36,887
+You now have the pipeline, its rationale, its evidence, and its limits.

@@ -1,0 +1,69 @@
+{
+  "status": "verified_complete_elevenlabs_narration",
+  "voice": "Alice \u2014 Clear, Engaging Educator",
+  "voice_id": "Xb7hH8MSUJpSbSDYk0k2",
+  "model_id": "eleven_multilingual_v2",
+  "provider": "ElevenLabs via Composio authorized connection",
+  "provider_settings": {
+    "stability": 0.65,
+    "similarity_boost": 0.75,
+    "style": 0,
+    "use_speaker_boost": true,
+    "speed": 1.08,
+    "seed": 42
+  },
+  "caption_alignment": "provider original-text character timestamps, scaled by pitch-preserving audio tempo factor",
+  "audio_processing": {
+    "provider_speed_setting": 1.08,
+    "raw_duration_seconds": 664.7185833333332,
+    "postproduction_tempo_factor": 1.1461,
+    "pitch_shift_semitones": 0,
+    "backend": "native macOS AVAudioEngine AVAudioUnitTimePitch offline",
+    "target_maximum_duration_seconds": 580,
+    "timing_basis": "original provider character alignment scaled by tempo factor"
+  },
+  "duration_seconds": 580,
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "fps": 24,
+  "chapters": 18,
+  "output": "data/presentations/urop_elevenlabs_20261028/UROP_Beginner_to_Architecture_ElevenLabs.mp4",
+  "bytes": 14226474,
+  "sha256": "adf3b075d36e2313cd18f9df4844d3d5f698452566818cb912c897fda70b3b0a",
+  "video_decode": {
+    "decoded_frames": 13920,
+    "container_frames": 13920,
+    "sampled_frame_std_min": 28.01097822682319
+  },
+  "audio_decode": {
+    "duration": 580,
+    "nonfinite": 0,
+    "peak": 0.7205674648284912,
+    "rms": 0.06486796261246201,
+    "samples": 13919592,
+    "status": "passed_full_encoded_audio_decode"
+  },
+  "maximum_caption_lines": 2,
+  "storyboard_sha256": "ab71db783abbb874ab876baa1135a6f450b26d0c1b57810de68f8124e0a19710",
+  "original_video_preserved": true,
+  "devmotion_render": false,
+  "model_or_dataset_changes": false,
+  "timing": "data/presentations/urop_elevenlabs_20261028/timing.json",
+  "verified_utc": "2026-10-28T08:54:43.951334+00:00",
+  "visual_review": "18-chapter contact sheet visually inspected; all captions within layout; scientific values unchanged from verified source storyboard",
+  "provider_quota": {
+    "before": 0,
+    "after": 9422,
+    "limit": 10000,
+    "remaining": 578,
+    "purchase_or_overage": false
+  },
+  "human_listening_review": false,
+  "private_asset_manifest": {
+    "path": "data/presentations/urop_elevenlabs_20261028/SOURCE_MANIFEST.json",
+    "sha256": "d575287a920f0b543b0fb54daac5ba8e4eca9e6458950aceec8cf636976924d6",
+    "file_count": 42
+  }
+}

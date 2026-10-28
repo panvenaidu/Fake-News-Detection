@@ -1,5 +1,7 @@
 # UROP explanation video
 
+**New voice edition:** [ElevenLabs Alice video and chapter player](../urop_elevenlabs_20261028/README.md). This original Samantha edition remains preserved.
+
 **9:49 · 1080p · English narration · 18 chapters · burned-in captions**
 
 - Watch MP4: `data/presentations/urop_explainer_20261028/UROP_Beginner_to_Architecture.mp4`
