@@ -1,0 +1,56 @@
+{
+  "status": "verified_complete",
+  "voice_name": "Bella - Professional, Bright, Warm",
+  "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+  "tts_model": "eleven_v4",
+  "composition": {
+    "renderer": "Remotion 4.0.539",
+    "id": "UROPTelugu",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "duration_seconds": 232.53783333333334,
+    "duration_frames": 6977,
+    "narration_speed_adjustment": false,
+    "transitions": "12-frame deterministic crossfades; overlap accounted for in duration",
+    "3d": "No 3D; clear SVG 2D architecture chosen",
+    "animation": "useCurrentFrame, deterministic interpolate/easing, no CSS animations or RAF"
+  },
+  "text_layout": {
+    "font": "Local OFL Noto Sans Telugu variable font",
+    "maximum_caption_lines": 1,
+    "maximum_caption_width": 1174.296875,
+    "caption_count": 67,
+    "font_load_blocking": true
+  },
+  "original_explainers_preserved": true,
+  "research_data_or_model_changes": false,
+  "output": "UROP_Telugu_English_Bella.mp4",
+  "bytes": 15334005,
+  "sha256": "22278649eb29af30d67ba2480ac5ac24c455b8540871297275222231d97eb36b",
+  "duration_seconds": 232.56666666666666,
+  "video_decode": {
+    "all_frames": 6977,
+    "container_frames": 6977,
+    "sampled_frame_std_min": 14.354414237686576,
+    "elapsed_seconds": 14.970987749999999
+  },
+  "audio_decode": {
+    "duration": 232.57466666666667,
+    "nonfinite": 0,
+    "peak": 0.86962890625,
+    "rms": 0.08497683846771772,
+    "samples": 22327296,
+    "status": "passed_full_encoded_audio_decode"
+  },
+  "visual_review": "Final decoded MP4: eight-scene contact sheet and full-size architecture/fusion frames inspected. Telugu glyphs render, labels and captions stay in bounds; no visible clipping. Transition staging and complete data flow checked.",
+  "audio_sync_check": {
+    "status": "independent_ASR_word_timing_readback",
+    "unique_English_terms_checked": 155,
+    "median_absolute_difference_seconds": 0.040000000000000036,
+    "maximum_absolute_difference_seconds": 0.35999999999999943,
+    "limitation": "ASR timestamps have their own uncertainty; this does not replace human perceptual/native-speaker review."
+  },
+  "subtitles_sha256": "0fc4908f5c7b6e857ed95b3d3bb4c176cb6e11c63d6b6b862252269e7e0bc5a2",
+  "narration_sha256": "fa78a031c31365513fb5a281c2b0c1fdd19e5fa5f731045596fa4218489249b5"
+}

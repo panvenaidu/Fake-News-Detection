@@ -1,0 +1,29 @@
+{
+  "name": "urop-telugu-research-explainer",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "node render.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.539",
+    "@remotion/captions": "4.0.539",
+    "@remotion/cli": "4.0.539",
+    "@remotion/fonts": "4.0.539",
+    "@remotion/layout-utils": "4.0.539",
+    "@remotion/media": "4.0.539",
+    "@remotion/renderer": "4.0.539",
+    "@remotion/transitions": "4.0.539",
+    "mediabunny": "1.62.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.0",
+    "typescript": "5.9.3"
+  }
+}

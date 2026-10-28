@@ -1,0 +1,21 @@
+{
+  "research_files_read_only": true,
+  "sources": [
+    {
+      "path": "results/MM_FINAL_COMPLETION_RECEIPT_20261028.json",
+      "sha256": "c95754fdbf8d9184aaa46f8e3db0ffca7cc81cca7da66c24954494581375e439"
+    },
+    {
+      "path": "results/MULTIMODAL_FINAL_REPORT_20261028.md",
+      "sha256": "94c31e062087db359169a25a59e48f32de37c7618406ff7c9f953aafbcecdfd1"
+    },
+    {
+      "path": "configs/multimodal_usable_6way_v2.json",
+      "sha256": "ad8f86f86b1fef453ae3bccda0aeb13cc50b298dc0d5d502f87c9ac4b041b483"
+    },
+    {
+      "path": "scripts/train_usable_multimodal_v2.py",
+      "sha256": "7f7fb90deb08a5901d1ca8343b780f6d82dd42b3e278d51f333568435becee0e"
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+1
+00:00:00,650 --> 00:00:04,010
+ఒక post‌ని చూసినప్పుడు caption మాత్రమే చదవం.
+
+2
+00:00:04,090 --> 00:00:07,690
+Image‌ని కూడా చూసి, రెండూ కలిపి ఏం చెబుతున్నాయో అర్థం
+
+3
+00:00:07,717 --> 00:00:08,810
+చేసుకుంటాం.
+
+4
+00:00:08,890 --> 00:00:12,970
+పాత photo‌కి కొత్త caption పెట్టినా, image‌కి సంబంధం లేని text
+
+5
+00:00:13,050 --> 00:00:17,370
+జోడించినా, ఒక్క input‌తో ముఖ్యమైన context మిస్ కావచ్చు.
+
+6
+00:00:17,397 --> 00:00:21,823
+మన research‌లో text, image patterns‌ని కలిపి, misinformation‌కి
+
+7
+00:00:21,850 --> 00:00:25,130
+సంబంధించిన research categories‌ని predict చేస్తాం.
+
+8
+00:00:25,701 --> 00:00:29,621
+మన research‌కి faculty-provided dataset‌ని వాడుతున్నాం.
+
+9
+00:00:29,648 --> 00:00:33,221
+ప్రతి example‌లో text, image జతగా ఉంటాయి.
+
+10
+00:00:33,352 --> 00:00:37,832
+Training, validation, test కోసం separate splits ఉంటాయి.
+
+11
+00:00:37,952 --> 00:00:41,192
+Pairing‌ని ఒకే post identifier‌తో check చేస్తాం.
+
+12
+00:00:41,421 --> 00:00:43,981
+Labels research categories మాత్రమే;
+
+13
+00:00:44,061 --> 00:00:46,381
+అవి independent fact-check కాదు.
+
+14
+00:00:46,461 --> 00:00:48,941
+ఈ visuals అన్నీ illustrations.
+
+15
+00:00:49,492 --> 00:00:53,652
+Text pathway‌లో tokenizer title‌ని tokens‌గా మార్చి,
+
+16
+00:00:53,732 --> 00:00:56,532
+IDs, attention mask ఇస్తుంది.
+
+17
+00:00:56,612 --> 00:01:00,452
+BERT-base వాటిని context‌తో కలిపి process చేస్తుంది.
+
+18
+00:01:00,492 --> 00:01:05,092
+దాని CLS representation‌ని title feature vector‌గా తీసుకుంటాం.
+
+19
+00:01:05,172 --> 00:01:09,199
+Learned projection, LayerNorm దాన్ని fusion‌కి సరిపోయే
+
+20
+00:01:09,252 --> 00:01:10,852
+size‌లోకి మారుస్తాయి.
+
+21
+00:01:11,092 --> 00:01:15,092
+Context‌ని capture చేసే pretrained representation కోసం BERT‌ని
+
+22
+00:01:15,132 --> 00:01:16,052
+వాడుతున్నాం;
+
+23
+00:01:16,079 --> 00:01:19,092
+అన్ని tasks‌కి ఇదే best model అని కాదు.
+
+24
+00:01:19,662 --> 00:01:24,142
+Image‌ని RGB format‌లోకి మార్చి, resize, crop,
+
+25
+00:01:24,222 --> 00:01:25,902
+normalization చేస్తాం.
+
+26
+00:01:26,262 --> 00:01:29,182
+Evaluation‌లో fixed preprocessing ఉంటుంది.
+
+27
+00:01:29,262 --> 00:01:33,662
+ResNet-50 visual patterns‌ని feature vector‌గా మారుస్తుంది.
+
+28
+00:01:33,862 --> 00:01:37,022
+Original classifier బదులు pooled features వాడతాం.
+
+29
+00:01:37,062 --> 00:01:40,622
+వీటికీ separate projection, LayerNorm ఉంటాయి.
+
+30
+00:01:40,702 --> 00:01:44,622
+BERT, ResNet backbones రెండూ fine-tune అవుతాయి;
+
+31
+00:01:44,702 --> 00:01:48,302
+అంటే వాటి weights కూడా training‌లో update అవుతాయి.
+
+32
+00:01:48,866 --> 00:01:52,866
+Text, image features dimensions మొదట వేర్వేరుగా
+
+33
+00:01:52,946 --> 00:01:53,666
+ఉంటాయి.
+
+34
+00:01:53,786 --> 00:01:57,026
+Projections వాటిని ఒకే size‌కి తెస్తాయి.
+
+35
+00:01:57,106 --> 00:02:01,346
+Max fusion ప్రతి position‌లో text value, image value
+
+36
+00:02:01,666 --> 00:02:03,746
+రెండింటిలో పెద్దదాన్ని ఉంచుతుంది.
+
+37
+00:02:03,826 --> 00:02:07,906
+మొత్తం ఒక stream‌ని ఎంచుకోకుండా, position by position combine
+
+38
+00:02:07,986 --> 00:02:08,786
+చేస్తుంది.
+
+39
+00:02:08,866 --> 00:02:12,786
+ఉపయోగపడే features‌ని encoders, projections training‌లో
+
+40
+00:02:12,826 --> 00:02:13,906
+నేర్చుకుంటాయి.
+
+41
+00:02:13,986 --> 00:02:18,546
+Fusion అనేది direct fact-check లేదా reasoning proof కాదు.
+
+42
+00:02:19,115 --> 00:02:22,315
+Fused features classification head‌లోకి వెళ్తాయి.
+
+43
+00:02:22,342 --> 00:02:26,875
+ఇందులో linear layer, GELU, dropout,
+
+44
+00:02:26,955 --> 00:02:30,555
+చివరగా category scores ఇచ్చే layer ఉంటాయి.
+
+45
+00:02:30,635 --> 00:02:34,475
+Cross-entropy loss ఆ scores‌ని correct label‌తో పోల్చి
+
+46
+00:02:34,875 --> 00:02:36,875
+training‌ని guide చేస్తుంది.
+
+47
+00:02:36,955 --> 00:02:41,515
+Softmax‌తో scores‌ని probabilities‌గా మార్చి, ఎక్కువ probability
+
+48
+00:02:41,595 --> 00:02:45,035
+ఉన్న research category‌ని output‌గా తీసుకోవచ్చు.
+
+49
+00:02:45,115 --> 00:02:48,075
+ఆ probability నిజానికి certificate కాదు;
+
+50
+00:02:48,155 --> 00:02:51,835
+learned patterns ఆధారంగా model ఇచ్చే confidence.
+
+51
+00:02:52,395 --> 00:02:54,835
+Train split‌తో weights నేర్చుకుంటాం.
+
+52
+00:02:55,115 --> 00:02:59,195
+Validation‌తో checkpoint‌ని select చేసి, selection freeze అయిన
+
+53
+00:02:59,275 --> 00:03:02,315
+తర్వాత held-out test‌ని evaluate చేస్తాం.
+
+54
+00:03:02,795 --> 00:03:06,795
+Test చూసి model‌ని tune చేస్తే అది independent check‌గా
+
+55
+00:03:06,875 --> 00:03:07,515
+ఉండదు.
+
+56
+00:03:07,755 --> 00:03:12,155
+Accuracy‌తో పాటు Macro-F1, class-wise precision,
+
+57
+00:03:12,235 --> 00:03:13,555
+recall చూస్తాం.
+
+58
+00:03:13,755 --> 00:03:17,355
+Confusion matrix ఏ categories మధ్య mistakes వస్తున్నాయో
+
+59
+00:03:17,435 --> 00:03:18,475
+చూపిస్తుంది.
+
+60
+00:03:18,555 --> 00:03:22,235
+ఒకే score అన్ని situations‌లో performance‌ని చెప్పదు.
+
+61
+00:03:22,800 --> 00:03:27,280
+Text ఏం చెబుతోంది, image‌లో ఏ patterns ఉన్నాయి, రెండింటినీ
+
+62
+00:03:27,307 --> 00:03:30,760
+ఒక shared representation‌లోకి తీసుకురావడమే ఈ design.
+
+63
+00:03:31,040 --> 00:03:35,440
+Text encoder, image encoder, projections, max fusion,
+
+64
+00:03:35,880 --> 00:03:38,080
+classification head కలిసి పనిచేస్తాయి.
+
+65
+00:03:38,320 --> 00:03:42,240
+Clear pairing, separate evaluation, careful interpretation
+
+66
+00:03:42,560 --> 00:03:45,920
+ఉంటేనే prediction‌కి research meaning ఉంటుంది.
+
+67
+00:03:45,947 --> 00:03:50,480
+ఇది independent factual verification‌కి ప్రత్యామ్నాయం మాత్రం కాదు.

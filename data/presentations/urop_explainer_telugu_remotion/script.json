@@ -1,0 +1,105 @@
+{
+  "title": "Beyond the caption",
+  "subtitle": "Multimodal misinformation classification",
+  "language_style": "Contemporary Telugu-English, Telugu structure and script, common English technical terms",
+  "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+  "voice_name": "Bella - Professional, Bright, Warm",
+  "model_id": "eleven_v4",
+  "preview": "ఈ project‌లో text కోసం BERT, image కోసం ResNet-50 వాడుతున్నాం. రెండు streams నుంచి వచ్చిన features, projection layers ద్వారా ఒకే size‌కి వస్తాయి. Max fusion వాటిని combine చేస్తుంది. ఇది research prediction మాత్రమే; ఒక post నిజమా కాదా అని నిరూపించే తీర్పు కాదు.",
+  "scenes": [
+    {
+      "section": "Context",
+      "heading": "Text ఒక్కటే సరిపోతుందా?",
+      "kind": "context",
+      "narration": "ఒక post‌ని చూసినప్పుడు caption మాత్రమే చదవం. Image‌ని కూడా చూసి, రెండూ కలిపి ఏం చెబుతున్నాయో అర్థం చేసుకుంటాం. పాత photo‌కి కొత్త caption పెట్టినా, image‌కి సంబంధం లేని text జోడించినా, ఒక్క input‌తో ముఖ్యమైన context మిస్ కావచ్చు. మన research‌లో text, image patterns‌ని కలిపి, misinformation‌కి సంబంధించిన research categories‌ని predict చేస్తాం.",
+      "beats": [
+        "caption మాత్రమే చదవం",
+        "పాత photo",
+        "research categories"
+      ]
+    },
+    {
+      "section": "Inputs",
+      "heading": "ఒక pair, రెండు inputs",
+      "kind": "inputs",
+      "narration": "మన research‌కి faculty-provided dataset‌ని వాడుతున్నాం. ప్రతి example‌లో text, image జతగా ఉంటాయి. Training, validation, test కోసం separate splits ఉంటాయి. Pairing‌ని ఒకే post identifier‌తో check చేస్తాం. Labels research categories మాత్రమే; అవి independent fact-check కాదు. ఈ visuals అన్నీ illustrations.",
+      "beats": [
+        "faculty-provided dataset",
+        "IDs ద్వారా check",
+        "independent fact-check"
+      ]
+    },
+    {
+      "section": "Model",
+      "heading": "Text → contextual features",
+      "kind": "text",
+      "narration": "Text pathway‌లో tokenizer title‌ని tokens‌గా మార్చి, IDs, attention mask ఇస్తుంది. BERT-base వాటిని context‌తో కలిపి process చేస్తుంది. దాని CLS representation‌ని title feature vector‌గా తీసుకుంటాం. Learned projection, LayerNorm దాన్ని fusion‌కి సరిపోయే size‌లోకి మారుస్తాయి. Context‌ని capture చేసే pretrained representation కోసం BERT‌ని వాడుతున్నాం; అన్ని tasks‌కి ఇదే best model అని కాదు.",
+      "beats": [
+        "tokenizer",
+        "BERT-base",
+        "CLS representation",
+        "projection layer"
+      ]
+    },
+    {
+      "section": "Model",
+      "heading": "Image → visual features",
+      "kind": "image",
+      "narration": "Image‌ని RGB format‌లోకి మార్చి, resize, crop, normalization చేస్తాం. Evaluation‌లో fixed preprocessing ఉంటుంది. ResNet-50 visual patterns‌ని feature vector‌గా మారుస్తుంది. Original classifier బదులు pooled features వాడతాం. వీటికీ separate projection, LayerNorm ఉంటాయి. BERT, ResNet backbones రెండూ fine-tune అవుతాయి; అంటే వాటి weights కూడా training‌లో update అవుతాయి.",
+      "beats": [
+        "RGB format",
+        "ResNet-50",
+        "pooled features",
+        "fine-tune"
+      ]
+    },
+    {
+      "section": "Fusion",
+      "heading": "రెండు streams, ఒక representation",
+      "kind": "fusion",
+      "narration": "Text, image features dimensions మొదట వేర్వేరుగా ఉంటాయి. Projections వాటిని ఒకే size‌కి తెస్తాయి. Max fusion ప్రతి position‌లో text value, image value రెండింటిలో పెద్దదాన్ని ఉంచుతుంది. మొత్తం ఒక stream‌ని ఎంచుకోకుండా, position by position combine చేస్తుంది. ఉపయోగపడే features‌ని encoders, projections training‌లో నేర్చుకుంటాయి. Fusion అనేది direct fact-check లేదా reasoning proof కాదు.",
+      "beats": [
+        "Projections",
+        "Max fusion",
+        "position by position",
+        "direct fact-check కాదు"
+      ]
+    },
+    {
+      "section": "Output",
+      "heading": "Features నుంచి category prediction",
+      "kind": "output",
+      "narration": "Fused features classification head‌లోకి వెళ్తాయి. ఇందులో linear layer, GELU, dropout, చివరగా category scores ఇచ్చే layer ఉంటాయి. Cross-entropy loss ఆ scores‌ని correct label‌తో పోల్చి training‌ని guide చేస్తుంది. Softmax‌తో scores‌ని probabilities‌గా మార్చి, ఎక్కువ probability ఉన్న research category‌ని output‌గా తీసుకోవచ్చు. ఆ probability నిజానికి certificate కాదు; learned patterns ఆధారంగా model ఇచ్చే confidence.",
+      "beats": [
+        "classification head",
+        "cross-entropy loss",
+        "softmax",
+        "certificate కాదు"
+      ]
+    },
+    {
+      "section": "Evaluation",
+      "heading": "Prediction‌ని ఎలా పరీక్షిస్తాం?",
+      "kind": "evaluation",
+      "narration": "Train split‌తో weights నేర్చుకుంటాం. Validation‌తో checkpoint‌ని select చేసి, selection freeze అయిన తర్వాత held-out test‌ని evaluate చేస్తాం. Test చూసి model‌ని tune చేస్తే అది independent check‌గా ఉండదు. Accuracy‌తో పాటు Macro-F1, class-wise precision, recall చూస్తాం. Confusion matrix ఏ categories మధ్య mistakes వస్తున్నాయో చూపిస్తుంది. ఒకే score అన్ని situations‌లో performance‌ని చెప్పదు.",
+      "beats": [
+        "Train split",
+        "Validation split",
+        "held-out test",
+        "Macro-F1",
+        "Confusion matrix"
+      ]
+    },
+    {
+      "section": "Takeaway",
+      "heading": "Context‌ని కలిసి చూడటం",
+      "kind": "takeaway",
+      "narration": "Text ఏం చెబుతోంది, image‌లో ఏ patterns ఉన్నాయి, రెండింటినీ ఒక shared representation‌లోకి తీసుకురావడమే ఈ design. Text encoder, image encoder, projections, max fusion, classification head కలిసి పనిచేస్తాయి. Clear pairing, separate evaluation, careful interpretation ఉంటేనే prediction‌కి research meaning ఉంటుంది. ఇది independent factual verification‌కి ప్రత్యామ్నాయం మాత్రం కాదు.",
+      "beats": [
+        "shared representation",
+        "Clear data pairing",
+        "ప్రత్యామ్నాయం మాత్రం కాదు"
+      ]
+    }
+  ]
+}

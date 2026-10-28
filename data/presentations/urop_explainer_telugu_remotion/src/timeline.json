@@ -1,0 +1,533 @@
+{
+  "duration": 232.53783333333334,
+  "fps": 30,
+  "scenes": [
+    {
+      "section": "Context",
+      "heading": "Text ఒక్కటే సరిపోతుందా?",
+      "kind": "context",
+      "narration": "ఒక post‌ని చూసినప్పుడు caption మాత్రమే చదవం. Image‌ని కూడా చూసి, రెండూ కలిపి ఏం చెబుతున్నాయో అర్థం చేసుకుంటాం. పాత photo‌కి కొత్త caption పెట్టినా, image‌కి సంబంధం లేని text జోడించినా, ఒక్క input‌తో ముఖ్యమైన context మిస్ కావచ్చు. మన research‌లో text, image patterns‌ని కలిపి, misinformation‌కి సంబంధించిన research categories‌ని predict చేస్తాం.",
+      "beats": {},
+      "audioStart": 0.65,
+      "start": 0,
+      "end": 25.700625,
+      "audioDuration": 24.450625
+    },
+    {
+      "section": "Inputs",
+      "heading": "ఒక pair, రెండు inputs",
+      "kind": "inputs",
+      "narration": "మన research‌కి faculty-provided dataset‌ని వాడుతున్నాం. ప్రతి example‌లో text, image జతగా ఉంటాయి. Training, validation, test కోసం separate splits ఉంటాయి. Pairing‌ని ఒకే post identifier‌తో check చేస్తాం. Labels research categories మాత్రమే; అవి independent fact-check కాదు. ఈ visuals అన్నీ illustrations.",
+      "beats": {
+        "Validation": 1025
+      },
+      "audioStart": 25.700625,
+      "start": 25.700625,
+      "end": 49.491708333333335,
+      "audioDuration": 23.191083333333335
+    },
+    {
+      "section": "Model",
+      "heading": "Text → contextual features",
+      "kind": "text",
+      "narration": "Text pathway‌లో tokenizer title‌ని tokens‌గా మార్చి, IDs, attention mask ఇస్తుంది. BERT-base వాటిని context‌తో కలిపి process చేస్తుంది. దాని CLS representation‌ని title feature vector‌గా తీసుకుంటాం. Learned projection, LayerNorm దాన్ని fusion‌కి సరిపోయే size‌లోకి మారుస్తాయి. Context‌ని capture చేసే pretrained representation కోసం BERT‌ని వాడుతున్నాం; అన్ని tasks‌కి ఇదే best model అని కాదు.",
+      "beats": {
+        "tokenizer": 1523,
+        "BERT-base": 1698,
+        "CLS": 1828,
+        "projection": 1965
+      },
+      "audioStart": 49.491708333333335,
+      "start": 49.491708333333335,
+      "end": 79.66233333333334,
+      "audioDuration": 29.570625
+    },
+    {
+      "section": "Model",
+      "heading": "Image → visual features",
+      "kind": "image",
+      "narration": "Image‌ని RGB format‌లోకి మార్చి, resize, crop, normalization చేస్తాం. Evaluation‌లో fixed preprocessing ఉంటుంది. ResNet-50 visual patterns‌ని feature vector‌గా మారుస్తుంది. Original classifier బదులు pooled features వాడతాం. వీటికీ separate projection, LayerNorm ఉంటాయి. BERT, ResNet backbones రెండూ fine-tune అవుతాయి; అంటే వాటి weights కూడా training‌లో update అవుతాయి.",
+      "beats": {
+        "projection": 2954,
+        "RGB": 2416,
+        "ResNet-50": 2678,
+        "pooled": 2860,
+        "fine-tune": 3098
+      },
+      "audioStart": 79.66233333333334,
+      "start": 79.66233333333334,
+      "end": 108.86641666666667,
+      "audioDuration": 28.60408333333333
+    },
+    {
+      "section": "Fusion",
+      "heading": "రెండు streams, ఒక representation",
+      "kind": "fusion",
+      "narration": "Text, image features dimensions మొదట వేర్వేరుగా ఉంటాయి. Projections వాటిని ఒకే size‌కి తెస్తాయి. Max fusion ప్రతి position‌లో text value, image value రెండింటిలో పెద్దదాన్ని ఉంచుతుంది. మొత్తం ఒక stream‌ని ఎంచుకోకుండా, position by position combine చేస్తుంది. ఉపయోగపడే features‌ని encoders, projections training‌లో నేర్చుకుంటాయి. Fusion అనేది direct fact-check లేదా reasoning proof కాదు.",
+      "beats": {
+        "projection": 3414,
+        "Projections": 3414,
+        "Max fusion": 3513,
+        "position by position": 3792
+      },
+      "audioStart": 108.86641666666667,
+      "start": 108.86641666666667,
+      "end": 139.11541666666668,
+      "audioDuration": 29.649
+    },
+    {
+      "section": "Output",
+      "heading": "Features నుంచి category prediction",
+      "kind": "output",
+      "narration": "Fused features classification head‌లోకి వెళ్తాయి. ఇందులో linear layer, GELU, dropout, చివరగా category scores ఇచ్చే layer ఉంటాయి. Cross-entropy loss ఆ scores‌ని correct label‌తో పోల్చి training‌ని guide చేస్తుంది. Softmax‌తో scores‌ని probabilities‌గా మార్చి, ఎక్కువ probability ఉన్న research category‌ని output‌గా తీసుకోవచ్చు. ఆ probability నిజానికి certificate కాదు; learned patterns ఆధారంగా model ఇచ్చే confidence.",
+      "beats": {
+        "classification head": 4202,
+        "GELU": 4332,
+        "Cross-entropy": 4519,
+        "Softmax": 4709
+      },
+      "audioStart": 139.11541666666668,
+      "start": 139.11541666666668,
+      "end": 172.39458333333334,
+      "audioDuration": 32.67916666666667
+    },
+    {
+      "section": "Evaluation",
+      "heading": "Prediction‌ని ఎలా పరీక్షిస్తాం?",
+      "kind": "evaluation",
+      "narration": "Train split‌తో weights నేర్చుకుంటాం. Validation‌తో checkpoint‌ని select చేసి, selection freeze అయిన తర్వాత held-out test‌ని evaluate చేస్తాం. Test చూసి model‌ని tune చేస్తే అది independent check‌గా ఉండదు. Accuracy‌తో పాటు Macro-F1, class-wise precision, recall చూస్తాం. Confusion matrix ఏ categories మధ్య mistakes వస్తున్నాయో చూపిస్తుంది. ఒకే score అన్ని situations‌లో performance‌ని చెప్పదు.",
+      "beats": {
+        "Train split": 5172,
+        "Validation": 5253,
+        "selection freeze": 5349,
+        "held-out test": 5402,
+        "Accuracy": 5633,
+        "Confusion matrix": 5813
+      },
+      "audioStart": 172.39458333333334,
+      "start": 172.39458333333334,
+      "end": 202.80029166666668,
+      "audioDuration": 29.80570833333333
+    },
+    {
+      "section": "Takeaway",
+      "heading": "Context‌ని కలిసి చూడటం",
+      "kind": "takeaway",
+      "narration": "Text ఏం చెబుతోంది, image‌లో ఏ patterns ఉన్నాయి, రెండింటినీ ఒక shared representation‌లోకి తీసుకురావడమే ఈ design. Text encoder, image encoder, projections, max fusion, classification head కలిసి పనిచేస్తాయి. Clear pairing, separate evaluation, careful interpretation ఉంటేనే prediction‌కి research meaning ఉంటుంది. ఇది independent factual verification‌కి ప్రత్యామ్నాయం మాత్రం కాదు.",
+      "beats": {
+        "projection": 6398,
+        "Projections": 6398,
+        "Max fusion": 6430,
+        "classification head": 6476
+      },
+      "audioStart": 202.80029166666668,
+      "start": 202.80029166666668,
+      "end": 231.03783333333334,
+      "audioDuration": 27.637541666666667
+    }
+  ],
+  "cues": [
+    {
+      "start": 0.65,
+      "end": 4.01,
+      "text": "ఒక post‌ని చూసినప్పుడు caption మాత్రమే చదవం.",
+      "scene": 0
+    },
+    {
+      "start": 4.09,
+      "end": 7.69,
+      "text": "Image‌ని కూడా చూసి, రెండూ కలిపి ఏం చెబుతున్నాయో అర్థం",
+      "scene": 0
+    },
+    {
+      "start": 7.7170000000000005,
+      "end": 8.81,
+      "text": "చేసుకుంటాం.",
+      "scene": 0
+    },
+    {
+      "start": 8.89,
+      "end": 12.97,
+      "text": "పాత photo‌కి కొత్త caption పెట్టినా, image‌కి సంబంధం లేని text",
+      "scene": 0
+    },
+    {
+      "start": 13.05,
+      "end": 17.369999999999997,
+      "text": "జోడించినా, ఒక్క input‌తో ముఖ్యమైన context మిస్ కావచ్చు.",
+      "scene": 0
+    },
+    {
+      "start": 17.397,
+      "end": 21.822999999999997,
+      "text": "మన research‌లో text, image patterns‌ని కలిపి, misinformation‌కి",
+      "scene": 0
+    },
+    {
+      "start": 21.849999999999998,
+      "end": 25.13,
+      "text": "సంబంధించిన research categories‌ని predict చేస్తాం.",
+      "scene": 0
+    },
+    {
+      "start": 25.700625,
+      "end": 29.620624999999997,
+      "text": "మన research‌కి faculty-provided dataset‌ని వాడుతున్నాం.",
+      "scene": 1
+    },
+    {
+      "start": 29.647624999999998,
+      "end": 33.220625,
+      "text": "ప్రతి example‌లో text, image జతగా ఉంటాయి.",
+      "scene": 1
+    },
+    {
+      "start": 33.35166666666667,
+      "end": 37.83166666666666,
+      "text": "Training, validation, test కోసం separate splits ఉంటాయి.",
+      "scene": 1
+    },
+    {
+      "start": 37.95166666666667,
+      "end": 41.19166666666666,
+      "text": "Pairing‌ని ఒకే post identifier‌తో check చేస్తాం.",
+      "scene": 1
+    },
+    {
+      "start": 41.42066666666666,
+      "end": 43.980666666666664,
+      "text": "Labels research categories మాత్రమే;",
+      "scene": 1
+    },
+    {
+      "start": 44.06066666666666,
+      "end": 46.38066666666667,
+      "text": "అవి independent fact-check కాదు.",
+      "scene": 1
+    },
+    {
+      "start": 46.46066666666667,
+      "end": 48.940666666666665,
+      "text": "ఈ visuals అన్నీ illustrations.",
+      "scene": 1
+    },
+    {
+      "start": 49.491708333333335,
+      "end": 53.65170833333333,
+      "text": "Text pathway‌లో tokenizer title‌ని tokens‌గా మార్చి,",
+      "scene": 2
+    },
+    {
+      "start": 53.73170833333334,
+      "end": 56.531708333333334,
+      "text": "IDs, attention mask ఇస్తుంది.",
+      "scene": 2
+    },
+    {
+      "start": 56.61170833333333,
+      "end": 60.451708333333336,
+      "text": "BERT-base వాటిని context‌తో కలిపి process చేస్తుంది.",
+      "scene": 2
+    },
+    {
+      "start": 60.491708333333335,
+      "end": 65.09170833333333,
+      "text": "దాని CLS representation‌ని title feature vector‌గా తీసుకుంటాం.",
+      "scene": 2
+    },
+    {
+      "start": 65.17170833333333,
+      "end": 69.19870833333334,
+      "text": "Learned projection, LayerNorm దాన్ని fusion‌కి సరిపోయే",
+      "scene": 2
+    },
+    {
+      "start": 69.25170833333334,
+      "end": 70.85170833333333,
+      "text": "size‌లోకి మారుస్తాయి.",
+      "scene": 2
+    },
+    {
+      "start": 71.09170833333334,
+      "end": 75.09170833333334,
+      "text": "Context‌ని capture చేసే pretrained representation కోసం BERT‌ని",
+      "scene": 2
+    },
+    {
+      "start": 75.13170833333334,
+      "end": 76.05170833333334,
+      "text": "వాడుతున్నాం;",
+      "scene": 2
+    },
+    {
+      "start": 76.07870833333334,
+      "end": 79.09170833333334,
+      "text": "అన్ని tasks‌కి ఇదే best model అని కాదు.",
+      "scene": 2
+    },
+    {
+      "start": 79.66233333333334,
+      "end": 84.14233333333334,
+      "text": "Image‌ని RGB format‌లోకి మార్చి, resize, crop,",
+      "scene": 3
+    },
+    {
+      "start": 84.22233333333334,
+      "end": 85.90233333333333,
+      "text": "normalization చేస్తాం.",
+      "scene": 3
+    },
+    {
+      "start": 86.26233333333333,
+      "end": 89.18233333333333,
+      "text": "Evaluation‌లో fixed preprocessing ఉంటుంది.",
+      "scene": 3
+    },
+    {
+      "start": 89.26233333333333,
+      "end": 93.66233333333334,
+      "text": "ResNet-50 visual patterns‌ని feature vector‌గా మారుస్తుంది.",
+      "scene": 3
+    },
+    {
+      "start": 93.86233333333334,
+      "end": 97.02233333333334,
+      "text": "Original classifier బదులు pooled features వాడతాం.",
+      "scene": 3
+    },
+    {
+      "start": 97.06233333333333,
+      "end": 100.62233333333333,
+      "text": "వీటికీ separate projection, LayerNorm ఉంటాయి.",
+      "scene": 3
+    },
+    {
+      "start": 100.70233333333334,
+      "end": 104.62233333333333,
+      "text": "BERT, ResNet backbones రెండూ fine-tune అవుతాయి;",
+      "scene": 3
+    },
+    {
+      "start": 104.70233333333334,
+      "end": 108.30233333333334,
+      "text": "అంటే వాటి weights కూడా training‌లో update అవుతాయి.",
+      "scene": 3
+    },
+    {
+      "start": 108.86641666666667,
+      "end": 112.86641666666667,
+      "text": "Text, image features dimensions మొదట వేర్వేరుగా",
+      "scene": 4
+    },
+    {
+      "start": 112.94641666666666,
+      "end": 113.66641666666666,
+      "text": "ఉంటాయి.",
+      "scene": 4
+    },
+    {
+      "start": 113.78641666666667,
+      "end": 117.02641666666666,
+      "text": "Projections వాటిని ఒకే size‌కి తెస్తాయి.",
+      "scene": 4
+    },
+    {
+      "start": 117.10641666666666,
+      "end": 121.34641666666667,
+      "text": "Max fusion ప్రతి position‌లో text value, image value",
+      "scene": 4
+    },
+    {
+      "start": 121.66641666666666,
+      "end": 123.74641666666666,
+      "text": "రెండింటిలో పెద్దదాన్ని ఉంచుతుంది.",
+      "scene": 4
+    },
+    {
+      "start": 123.82641666666666,
+      "end": 127.90641666666667,
+      "text": "మొత్తం ఒక stream‌ని ఎంచుకోకుండా, position by position combine",
+      "scene": 4
+    },
+    {
+      "start": 127.98641666666667,
+      "end": 128.78641666666667,
+      "text": "చేస్తుంది.",
+      "scene": 4
+    },
+    {
+      "start": 128.86641666666668,
+      "end": 132.78641666666667,
+      "text": "ఉపయోగపడే features‌ని encoders, projections training‌లో",
+      "scene": 4
+    },
+    {
+      "start": 132.82641666666666,
+      "end": 133.90641666666667,
+      "text": "నేర్చుకుంటాయి.",
+      "scene": 4
+    },
+    {
+      "start": 133.98641666666666,
+      "end": 138.54641666666666,
+      "text": "Fusion అనేది direct fact-check లేదా reasoning proof కాదు.",
+      "scene": 4
+    },
+    {
+      "start": 139.11541666666668,
+      "end": 142.31541666666666,
+      "text": "Fused features classification head‌లోకి వెళ్తాయి.",
+      "scene": 5
+    },
+    {
+      "start": 142.34241666666668,
+      "end": 146.87541666666667,
+      "text": "ఇందులో linear layer, GELU, dropout,",
+      "scene": 5
+    },
+    {
+      "start": 146.95541666666668,
+      "end": 150.55541666666667,
+      "text": "చివరగా category scores ఇచ్చే layer ఉంటాయి.",
+      "scene": 5
+    },
+    {
+      "start": 150.63541666666669,
+      "end": 154.47541666666666,
+      "text": "Cross-entropy loss ఆ scores‌ని correct label‌తో పోల్చి",
+      "scene": 5
+    },
+    {
+      "start": 154.87541666666667,
+      "end": 156.87541666666667,
+      "text": "training‌ని guide చేస్తుంది.",
+      "scene": 5
+    },
+    {
+      "start": 156.95541666666668,
+      "end": 161.51541666666668,
+      "text": "Softmax‌తో scores‌ని probabilities‌గా మార్చి, ఎక్కువ probability",
+      "scene": 5
+    },
+    {
+      "start": 161.59541666666667,
+      "end": 165.03541666666666,
+      "text": "ఉన్న research category‌ని output‌గా తీసుకోవచ్చు.",
+      "scene": 5
+    },
+    {
+      "start": 165.11541666666668,
+      "end": 168.07541666666668,
+      "text": "ఆ probability నిజానికి certificate కాదు;",
+      "scene": 5
+    },
+    {
+      "start": 168.15541666666667,
+      "end": 171.83541666666667,
+      "text": "learned patterns ఆధారంగా model ఇచ్చే confidence.",
+      "scene": 5
+    },
+    {
+      "start": 172.39458333333334,
+      "end": 174.83458333333334,
+      "text": "Train split‌తో weights నేర్చుకుంటాం.",
+      "scene": 6
+    },
+    {
+      "start": 175.11458333333334,
+      "end": 179.19458333333336,
+      "text": "Validation‌తో checkpoint‌ని select చేసి, selection freeze అయిన",
+      "scene": 6
+    },
+    {
+      "start": 179.27458333333334,
+      "end": 182.31458333333333,
+      "text": "తర్వాత held-out test‌ని evaluate చేస్తాం.",
+      "scene": 6
+    },
+    {
+      "start": 182.79458333333335,
+      "end": 186.79458333333335,
+      "text": "Test చూసి model‌ని tune చేస్తే అది independent check‌గా",
+      "scene": 6
+    },
+    {
+      "start": 186.87458333333333,
+      "end": 187.51458333333335,
+      "text": "ఉండదు.",
+      "scene": 6
+    },
+    {
+      "start": 187.75458333333336,
+      "end": 192.15458333333333,
+      "text": "Accuracy‌తో పాటు Macro-F1, class-wise precision,",
+      "scene": 6
+    },
+    {
+      "start": 192.23458333333335,
+      "end": 193.55458333333334,
+      "text": "recall చూస్తాం.",
+      "scene": 6
+    },
+    {
+      "start": 193.75458333333336,
+      "end": 197.35458333333335,
+      "text": "Confusion matrix ఏ categories మధ్య mistakes వస్తున్నాయో",
+      "scene": 6
+    },
+    {
+      "start": 197.43458333333334,
+      "end": 198.47458333333333,
+      "text": "చూపిస్తుంది.",
+      "scene": 6
+    },
+    {
+      "start": 198.55458333333334,
+      "end": 202.23458333333335,
+      "text": "ఒకే score అన్ని situations‌లో performance‌ని చెప్పదు.",
+      "scene": 6
+    },
+    {
+      "start": 202.80029166666668,
+      "end": 207.28029166666667,
+      "text": "Text ఏం చెబుతోంది, image‌లో ఏ patterns ఉన్నాయి, రెండింటినీ",
+      "scene": 7
+    },
+    {
+      "start": 207.30729166666669,
+      "end": 210.7602916666667,
+      "text": "ఒక shared representation‌లోకి తీసుకురావడమే ఈ design.",
+      "scene": 7
+    },
+    {
+      "start": 211.0402916666667,
+      "end": 215.44029166666667,
+      "text": "Text encoder, image encoder, projections, max fusion,",
+      "scene": 7
+    },
+    {
+      "start": 215.8802916666667,
+      "end": 218.08029166666668,
+      "text": "classification head కలిసి పనిచేస్తాయి.",
+      "scene": 7
+    },
+    {
+      "start": 218.3202916666667,
+      "end": 222.24029166666668,
+      "text": "Clear pairing, separate evaluation, careful interpretation",
+      "scene": 7
+    },
+    {
+      "start": 222.56029166666667,
+      "end": 225.92029166666669,
+      "text": "ఉంటేనే prediction‌కి research meaning ఉంటుంది.",
+      "scene": 7
+    },
+    {
+      "start": 225.94729166666667,
+      "end": 230.4802916666667,
+      "text": "ఇది independent factual verification‌కి ప్రత్యామ్నాయం మాత్రం కాదు.",
+      "scene": 7
+    }
+  ]
+}
