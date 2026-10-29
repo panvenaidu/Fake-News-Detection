@@ -1,0 +1,298 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "UROP · Multimodal misinformation workflow",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "output": ".archify/workflow-urop-20261029-220000/urop-workflow.html",
+    "repository": {
+      "url": "https://github.com/panvenaidu/Fake-News-Detection.git",
+      "revision": "91941721b7175ea7e9ad1940fa4b42443b691233"
+    }
+  },
+  "lanes": [
+    {
+      "id": "dataset",
+      "label": "Dataset"
+    },
+    {
+      "id": "text",
+      "label": "Text-only · complete"
+    },
+    {
+      "id": "multi",
+      "label": "Text + image · complete"
+    },
+    {
+      "id": "future",
+      "label": "Image-only · pending"
+    }
+  ],
+  "mainPath": [
+    "source",
+    "pair",
+    "encoders",
+    "fusion",
+    "selection",
+    "test"
+  ],
+  "nodes": [
+    {
+      "id": "source",
+      "lane": "dataset",
+      "col": 0,
+      "type": "database",
+      "label": "Dataset",
+      "sublabel": "(provided by the faculty)",
+      "sources": [
+        {
+          "path": "results/TEXT_ONLY_FINAL_REPORT_20261009.md",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "id": "pair",
+      "lane": "dataset",
+      "col": 1,
+      "type": "backend",
+      "label": "Prepare pairs",
+      "sublabel": "ID + split + six labels",
+      "sources": [
+        {
+          "path": "results/MULTIMODAL_FINAL_REPORT_20261028.md",
+          "line": 10
+        }
+      ]
+    },
+    {
+      "id": "textprep",
+      "lane": "text",
+      "col": 1,
+      "type": "backend",
+      "label": "Text preparation",
+      "sublabel": "clean_title → tokens",
+      "sources": [
+        {
+          "path": "results/TEXT_ONLY_FINAL_REPORT_20261009.md",
+          "line": 5,
+          "end_line": 7
+        }
+      ]
+    },
+    {
+      "id": "bert",
+      "lane": "text",
+      "col": 2,
+      "type": "backend",
+      "label": "BERT-base",
+      "sublabel": "text-only model",
+      "sources": [
+        {
+          "path": "results/TEXT_ONLY_FINAL_REPORT_20261009.md",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "id": "texttrain",
+      "lane": "text",
+      "col": 3,
+      "type": "cloud",
+      "label": "Train + validate",
+      "sublabel": "6 epochs · select epoch 4",
+      "sources": [
+        {
+          "path": "results/TEXT_ONLY_FINAL_REPORT_20261009.md",
+          "line": 7,
+          "end_line": 13
+        }
+      ]
+    },
+    {
+      "id": "texttest",
+      "lane": "text",
+      "col": 4,
+      "type": "security",
+      "label": "Text test",
+      "sublabel": "82.3901% accuracy",
+      "sources": [
+        {
+          "path": "results/TEXT_ONLY_FINAL_REPORT_20261009.md",
+          "line": 9,
+          "end_line": 13
+        }
+      ]
+    },
+    {
+      "id": "textsave",
+      "lane": "text",
+      "col": 5,
+      "type": "database",
+      "label": "Saved results",
+      "sublabel": "verified text report",
+      "sources": [
+        {
+          "path": "results/TEXT_ONLY_FINAL_REPORT_20261009.md",
+          "line": 38,
+          "end_line": 38
+        }
+      ]
+    },
+    {
+      "id": "encoders",
+      "lane": "multi",
+      "col": 2,
+      "type": "backend",
+      "label": "Two encoders",
+      "sublabel": "BERT + ResNet-50",
+      "sources": [
+        {
+          "path": "results/MULTIMODAL_FINAL_REPORT_20261028.md",
+          "line": 10,
+          "end_line": 12
+        }
+      ]
+    },
+    {
+      "id": "fusion",
+      "lane": "multi",
+      "col": 3,
+      "type": "backend",
+      "label": "Max fusion",
+      "sublabel": "512 projections → head",
+      "sources": [
+        {
+          "path": "results/MULTIMODAL_FINAL_REPORT_20261028.md",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "id": "selection",
+      "lane": "multi",
+      "col": 4,
+      "type": "cloud",
+      "label": "Kaggle training",
+      "sublabel": "4 validations · select epoch 4",
+      "sources": [
+        {
+          "path": "results/MULTIMODAL_FINAL_REPORT_20261028.md",
+          "line": 56,
+          "end_line": 60
+        }
+      ]
+    },
+    {
+      "id": "test",
+      "lane": "multi",
+      "col": 5,
+      "type": "security",
+      "label": "Frozen test",
+      "sublabel": "88.1458% accuracy",
+      "sources": [
+        {
+          "path": "results/MM_FINAL_COMPLETION_RECEIPT_20261028.json",
+          "line": 19,
+          "end_line": 26
+        }
+      ]
+    },
+    {
+      "id": "imageonly",
+      "lane": "future",
+      "col": 3,
+      "type": "external",
+      "label": "Image-only",
+      "sublabel": "training not started",
+      "sources": [
+        {
+          "path": "results/MM_FINAL_COMPLETION_RECEIPT_20261028.json",
+          "line": 46,
+          "end_line": 47
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "source",
+      "to": "pair"
+    },
+    {
+      "from": "pair",
+      "to": "textprep",
+      "role": "branch"
+    },
+    {
+      "from": "textprep",
+      "to": "bert"
+    },
+    {
+      "from": "bert",
+      "to": "texttrain"
+    },
+    {
+      "from": "texttrain",
+      "to": "texttest"
+    },
+    {
+      "from": "texttest",
+      "to": "textsave"
+    },
+    {
+      "from": "pair",
+      "to": "encoders"
+    },
+    {
+      "from": "bert",
+      "to": "encoders",
+      "label": "warm start",
+      "role": "branch"
+    },
+    {
+      "from": "encoders",
+      "to": "fusion"
+    },
+    {
+      "from": "fusion",
+      "to": "selection"
+    },
+    {
+      "from": "selection",
+      "to": "test"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Dataset and preparation",
+      "items": [
+        "Fakeddit dataset (provided by the faculty): multimodal_train.tsv, multimodal_validate.tsv and multimodal_test_public.tsv preserve official split assignments.",
+        "Text uses all 682,661 rows: 564,000 train / 59,342 validation / 59,319 test. For image pairing, 491 approved strict-decode failures are excluded; usable pairs: 563,601 / 59,299 / 59,270.",
+        "Six weakly supervised categories: True, Satire/Parody, Misleading, Imposter, False Connection, Manipulated. Labels do not prove factual truth.",
+        "Dataset (provided by the faculty): https://drive.google.com/drive/folders/1DuH0YaEox08ZwzZDpRMOaFpMCeRyxiEF"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Verified results and evaluation",
+      "items": [
+        "Text-only BERT validation accuracy 82.7407%, test accuracy 82.3901%; selected by validation Macro-F1.",
+        "Text + image epoch 4 validation accuracy 88.5074%, Macro-F1 0.829303; frozen public-test accuracy 88.1458%, Macro-F1 0.826415.",
+        "Kaggle Tesla T4: four multimodal epochs and validations; frozen selection before final test. Results, predictions, checksums and reports were independently checked; private weights remain in cloud/local storage."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Uncertainties and interpretation",
+      "items": [
+        "Paper and released sample counts differ by 335; cohort exclusions and training pipeline differ from the original benchmark.",
+        "3,561 cross-split image-byte groups present a leakage risk; one seed does not establish statistical superiority.",
+        "Image-only training has not started. ModernBERT was prepared but not trained in the text experiment.",
+        "Paper: https://arxiv.org/abs/1911.03854 · Dataset release: https://github.com/entitize/Fakeddit"
+      ]
+    }
+  ]
+}

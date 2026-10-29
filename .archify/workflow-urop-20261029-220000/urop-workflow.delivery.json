@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "8240faea-f00e-4e76-bbdc-b236b37ee628",
+  "status": "current",
+  "command": "deliver",
+  "type": "workflow",
+  "input": "/Users/panveenaidu/Downloads/SEM7/UROP/.archify/workflow-urop-20261029-220000/candidate.json",
+  "output": "/Users/panveenaidu/Downloads/SEM7/UROP/.archify/workflow-urop-20261029-220000/urop-workflow.html",
+  "specification": {
+    "sha256": "cd3756b4efc5b69b174365cc4a15fd1f4337e441347ad6064b8418d52dbd8fc9",
+    "bytes": 7411
+  },
+  "artifact": {
+    "sha256": "7d9ad12564ad5c51534417bdfbf315088e36ee5992a78acef32d17ca1be9d59e",
+    "bytes": 848801
+  }
+}

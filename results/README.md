@@ -1,5 +1,7 @@
 # Results and evidence
 
+[Main workflow diagram](../.archify/workflow-urop-20261029-220000/urop-workflow.html)
+
 ## Current faculty results
 
 | Modality | Dashboard | Full report | Completion evidence |

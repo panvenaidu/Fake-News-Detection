@@ -147,3 +147,12 @@ All 11 titles were verified in Your Work. Six private dataset names/versions wer
 To reverse a move: stop any related editing, consult local_moves.json, check the recorded hash/current reference-update hash, ensure the old path is free, and move the file back. Restore only the corresponding reference text from the private reference_backups/ copy if needed. Never overwrite a newer revision. Browser title changes are reversible through Kaggle's Edit title control; changing back may also change its slug.
 
 No training, new notebook versions, dataset versions or sharing changes were requested by this organization task. Historical launchers may contain old notebook slugs/input mounts; they are intentionally byte-preserved. A future execution must resolve current URLs and verify pinned inputs, not blindly run an archived launcher.
+
+## Workflow cleanup — 29 October 2026
+
+The [Archify workflow](../.archify/workflow-urop-20261029-220000/urop-workflow.html) is the main project workflow diagram. Superseded status dashboards were moved out of the main results folder into a recoverable archive; their bytes remain unchanged. The older partial-backup receipt records its original historical path.
+
+| Old path | Archived path | SHA-256 |
+|---|---|---|
+| `results/UROP_PROGRESS_DASHBOARD_20261024.html` | `results/archive/superseded_dashboards/UROP_PROGRESS_DASHBOARD_20261024.html` | `8a4bf8c7f2053a035126e1a97504d0a9002de24ff4bd53dc73140e08ffd6f626` |
+| `results/UROP_Multimodal_Status_20261027.html` | `results/archive/superseded_dashboards/UROP_Multimodal_Status_20261027.html` | `4303317ebbf6845f32c1a64570901b7f158c797f21bcd17d3ae2419ccb225fb7` |
