@@ -76,3 +76,9 @@ results/mm_part1_*_20261023.png
 
 # Current recovery UI evidence stays local.
 results/mm_part1_*_20261024.png
+
+# Organization audit private UI/reference backups
+context/organization_20261029/*.png
+context/organization_20261029/reference_backups/
+results/archive/screenshots/
+results/archive/observations/

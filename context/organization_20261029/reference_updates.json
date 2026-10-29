@@ -1,0 +1,67 @@
+[
+  {
+    "path": "README.md",
+    "sha256_before": "7c50d055862b6a5c16919530fd747c7a741ce86297b61b14b8f91fe6b3bbdd05",
+    "sha256_after": "0adce619dfcb1bc11a3d2c93513de6dbef323f6681d8a75dd8ba41531dcd031f"
+  },
+  {
+    "path": "docs/README.md",
+    "sha256_before": "0c8c6ca8685725ad6d24924930d524d41dcf8b5461f5889d112ffef7a891d6cc",
+    "sha256_after": "7eaeac00a84c650b7c1a6b072a97942571b5440cfc41107a79ea9f3b6ac0f63a"
+  },
+  {
+    "path": "docs/explainers/english_elevenlabs/README.md",
+    "sha256_before": "88d60e2e9ad32c358c713f8ab9be06d0b48e67512b8803157a5c87a6a0abaeaf",
+    "sha256_after": "2d089d224f32cff19a21c038258de413f380e61bd5c462da67f7393e56addc82"
+  },
+  {
+    "path": "docs/explainers/english_basic/README.md",
+    "sha256_before": "402359f3fe4c4b239f3a1f49f9b575ae483418b56ee02802641e8fa66aba3bae",
+    "sha256_after": "e20c7f11bd350c709d66a706a8b816a997bdbf5096da160f119cb05cfbe8a233"
+  },
+  {
+    "path": "docs/explainers/english_elevenlabs/watch_video.html",
+    "sha256_before": "31c454a74ffcb2f2f34c3afdfd60fa022d03d55f2c814e748e622e7d802e364c",
+    "sha256_after": "f9957ce17af2a58f2b998fdf714807523826b0244d575edbc664ff6cdbfd68ab"
+  },
+  {
+    "path": "docs/explainers/english_basic/watch_video.html",
+    "sha256_before": "53648faea8e52384efdbfed4215b4c981a34b8a26f0d3ddceb9e1b38c177c88c",
+    "sha256_after": "8e8ee169adcb46a27f2346ff8d4d402b2dcae83a99c635d807cb95e822a98356"
+  },
+  {
+    "path": "docs/reports/historical/text_dashboard_export/index.html",
+    "sha256_before": "b488bfa5f1dce799f0487cb2a12d7618771a7ba1eafacc49fb8ce84008373f01",
+    "sha256_after": "b4a80d65d90b1398bc42e1dfb5fdccf3acecd32b6014cd91a871236eb027f975"
+  },
+  {
+    "path": "clicky_handoff/15_EVIDENCE_CATALOG.md",
+    "sha256_before": "cc0ae2bbb6d0bb4c4a82f66819849a3f7782a5bc1d13378e1458ecdbcb417c1c",
+    "sha256_after": "d7479d0818e9db4847e4047197216d8048eee4e347a74ec14bec6d2533d35f01"
+  },
+  {
+    "path": "clicky_handoff/01_OVERVIEW.md",
+    "sha256_before": "7166833270816ea614f3337c72505e038cf43130d9a344befba8a2e32bc1e1a8",
+    "sha256_after": "057059ec4c33ccc18da89dab043663dfed9d26609f577e2f8422cb508fbee3cd"
+  },
+  {
+    "path": "clicky_handoff/08_REPOSITORY_AND_ARTIFACTS.md",
+    "sha256_before": "98d173ac6c371abc9d6bebe261bbc1a372a897d53d319e063d171c9a30a1a7e3",
+    "sha256_after": "5bcb272731cea782b3559c335c2ba30df214ee2dd019bad6cdfe0fa59a786277"
+  },
+  {
+    "path": "clicky_handoff/13_GIT_TIMELINE.md",
+    "sha256_before": "6d48dc9f18a102622bae0102db5ef70a42f6df3784a15447ada0db8e196556fe",
+    "sha256_after": "b5e4a8f1981977441803b73191529e8be4101f13bbefa1e0a2242a98884259cc"
+  },
+  {
+    "path": "docs/explainers/english_basic/render_elevenlabs_video.py",
+    "sha256_before": "21b5d0f93ae093c73c5219cf949e1cfc544626d2726d3117441582552d0c1f0a",
+    "sha256_after": "d798c95d7cd883c1d539eeb4d3695ec9790ec0412223b0b4613fef06a9a75925"
+  },
+  {
+    "path": "docs/explainers/english_basic/render_english_video.py",
+    "sha256_before": "5069e3f0a69ba5734dfa313c4cb44f02493f23523fe8eb8112b74d639ba834af",
+    "sha256_after": "dc4c9dd9be113edf00bd38e994818ce4449927d948176634cab70f7293947b05"
+  }
+]

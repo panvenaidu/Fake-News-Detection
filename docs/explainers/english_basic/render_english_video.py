@@ -6,7 +6,7 @@ import json,re,subprocess,wave,hashlib,math,bisect,time
 import numpy as np
 import cv2
 from PIL import Image,ImageDraw,ImageFont
-P=Path('/Users/panveenaidu/Downloads/SEM7/UROP');D=P/'docs/explainers/urop_20261028';O=P/'data/presentations/urop_explainer_20261028';O.mkdir(parents=True,exist_ok=True)
+P=Path('/Users/panveenaidu/Downloads/SEM7/UROP');D=P/'docs/explainers/english_basic';O=P/'data/presentations/urop_explainer_20261028';O.mkdir(parents=True,exist_ok=True)
 SC=json.loads((D/'storyboard.json').read_text());R=json.loads((P/'results/MM_FINAL_COMPLETION_RECEIPT_20261028.json').read_text());assert R['status']=='multimodal_part1_part2_complete_verified' and R['selected_epoch']==4
 W,H,FPS=1920,1080,24
 BG='#F5F5F1';INK='#182D3A';MUT='#536879';BLUE='#246FE5';CORAL='#DB6355';GREEN='#138677';LINE='#D9E1E7';WHITE='#FFFFFF'
@@ -181,9 +181,9 @@ def main():
  rate=175;cues,chapters,duration=build_audio(rate)
  if duration>=590:rate=190;cues,chapters,duration=build_audio(rate)
  assert 300<duration<600,f'Unexpected duration {duration}'
- (D/'captions.srt').write_text('\n\n'.join(f'{i+1}\n{srt_time(c["start"])} --> {srt_time(c["end"])}\n{c["text"]}' for i,c in enumerate(cues))+'\n')
+ (D/'subtitles.srt').write_text('\n\n'.join(f'{i+1}\n{srt_time(c["start"])} --> {srt_time(c["end"])}\n{c["text"]}' for i,c in enumerate(cues))+'\n')
  (O/'timing.json').write_text(json.dumps({'duration':duration,'voice':'Samantha','words_per_minute_setting':rate,'chapters':chapters,'cues':cues},indent=2)+'\n')
- (D/'TRANSCRIPT.md').write_text('# UROP: beginner to architecture\n\nLocal narrated-video fallback: DevMotion returned Unknown tool for design guide and create_project. No DevMotion project or hosted video was created.\n\n'+ '\n\n'.join(f'## {int(c["start"])//60:02d}:{int(c["start"])%60:02d} — {s["title"]}\n\n{s["narration"]}\n\n**What if?** {s["whatif"]}' for s,c in zip(SC,chapters)))
+ (D/'narration.md').write_text('# UROP: beginner to architecture\n\nLocal narrated-video fallback: DevMotion returned Unknown tool for design guide and create_project. No DevMotion project or hosted video was created.\n\n'+ '\n\n'.join(f'## {int(c["start"])//60:02d}:{int(c["start"])%60:02d} — {s["title"]}\n\n{s["narration"]}\n\n**What if?** {s["whatif"]}' for s,c in zip(SC,chapters)))
  bases=[base_image(i) for i in range(len(SC))]
  for i,b in enumerate(bases):b.save(O/f'chapter_{i+1:02d}.png')
  caption_images=[]
@@ -210,6 +210,6 @@ def main():
   cap.set(cv2.CAP_PROP_POS_MSEC,(c['start']+min(4,(c['end']-c['start'])/2))*1000);ok,frame=cap.read();assert ok
   tile=Image.fromarray(cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)).resize((480,270));thumb.paste(tile,((i%4)*480,(i//4)*270))
  cap.release();thumb.save(O/'contact_sheet.jpg',quality=92)
- manifest={'status':'rendered_pending_visual_and_full_decode_review','plugin':'DevMotion attempted: backend Unknown tool; local fallback used','duration_seconds':info['duration'],'dimensions':[info['width'],info['height']],'fps':info['fps'],'audio_tracks':info['audioTracks'],'chapters':len(chapters),'output':str(final.relative_to(P)),'bytes':final.stat().st_size,'sha256':hashlib.sha256(final.read_bytes()).hexdigest(),'timing':str((O/'timing.json').relative_to(P)),'transcript':str((D/'TRANSCRIPT.md').relative_to(P)),'evidence':['results/MM_FINAL_COMPLETION_RECEIPT_20261028.json','configs/multimodal_usable_6way_v2.json','scripts/train_usable_multimodal_v2.py','scripts/multimodal_recovery_v1.py'],'model_or_dataset_changes':False}
- (D/'VIDEO_RECEIPT.json').write_text(json.dumps(manifest,indent=2)+'\n');print(json.dumps(manifest),flush=True)
+ manifest={'status':'rendered_pending_visual_and_full_decode_review','plugin':'DevMotion attempted: backend Unknown tool; local fallback used','duration_seconds':info['duration'],'dimensions':[info['width'],info['height']],'fps':info['fps'],'audio_tracks':info['audioTracks'],'chapters':len(chapters),'output':str(final.relative_to(P)),'bytes':final.stat().st_size,'sha256':hashlib.sha256(final.read_bytes()).hexdigest(),'timing':str((O/'timing.json').relative_to(P)),'transcript':str((D/'narration.md').relative_to(P)),'evidence':['results/MM_FINAL_COMPLETION_RECEIPT_20261028.json','configs/multimodal_usable_6way_v2.json','scripts/train_usable_multimodal_v2.py','scripts/multimodal_recovery_v1.py'],'model_or_dataset_changes':False}
+ (D/'video_verification.json').write_text(json.dumps(manifest,indent=2)+'\n');print(json.dumps(manifest),flush=True)
 if __name__=='__main__':main()

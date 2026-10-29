@@ -1,0 +1,96 @@
+{
+  "created_utc": "2026-10-29T16:27:01.697532+00:00",
+  "account": "rocky62",
+  "title_changes_only": true,
+  "rows": [
+    {
+      "old_name": "UROP MM final continuation 20261028",
+      "new_name": "UROP Text + Image - Final Results",
+      "old_url": "https://www.kaggle.com/code/rocky62/urop-mm-final-continuation-20261028",
+      "saved_version_id": "362955511",
+      "status": "verified_renamed",
+      "new_url": "https://www.kaggle.com/code/rocky62/urop-text-image-final-results"
+    },
+    {
+      "old_name": "UROP MM Part2 continuation 20261027",
+      "new_name": "UROP Text + Image - Training Part 2",
+      "old_url": "https://www.kaggle.com/code/rocky62/urop-mm-part2-continuation-20261027",
+      "saved_version_id": "362859423",
+      "status": "verified_renamed",
+      "new_url": "https://www.kaggle.com/code/rocky62/urop-text-image-training-part-2"
+    },
+    {
+      "old_name": "UROP MM Part1 science epoch2 20261027",
+      "new_name": "UROP Text + Image - Training Epoch 2",
+      "old_url": "https://www.kaggle.com/code/rocky62/urop-mm-part1-science-epoch2-20261027",
+      "saved_version_id": "362761315",
+      "status": "verified_renamed",
+      "new_url": "https://www.kaggle.com/code/rocky62/urop-text-image-training-epoch-2"
+    },
+    {
+      "old_name": "UROP MM Part1 science usable 20261027",
+      "new_name": "UROP Text + Image - Training Epoch 1",
+      "old_url": "https://www.kaggle.com/code/rocky62/urop-mm-part1-science-usable-20261027",
+      "saved_version_id": null,
+      "status": "verified_renamed",
+      "new_url": "https://www.kaggle.com/code/rocky62/urop-text-image-training-epoch-1"
+    },
+    {
+      "old_name": "UROP MM raw cache preflight 20261027",
+      "new_name": "UROP Images - Loader Speed Check",
+      "old_url": "https://www.kaggle.com/code/rocky62/urop-mm-raw-cache-preflight-20261027",
+      "saved_version_id": null,
+      "status": "verified_renamed",
+      "new_url": "https://www.kaggle.com/code/rocky62/urop-images-loader-speed-check"
+    },
+    {
+      "old_name": "UROP MM index cache preflight 20261027",
+      "new_name": "UROP Images - Index Speed Check",
+      "old_url": "https://www.kaggle.com/code/rocky62/urop-mm-index-cache-preflight-20261027",
+      "saved_version_id": null,
+      "status": "verified_renamed",
+      "new_url": "https://www.kaggle.com/code/rocky62/urop-images-index-speed-check"
+    },
+    {
+      "old_name": "UROP MM Part1 packed GPU 20261026",
+      "new_name": "UROP Text + Image - GPU Readiness Check",
+      "old_url": "https://www.kaggle.com/code/rocky62/urop-mm-part1-packed-gpu-20261026",
+      "saved_version_id": null,
+      "status": "verified_renamed",
+      "new_url": "https://www.kaggle.com/code/rocky62/urop-text-image-gpu-readiness-check"
+    },
+    {
+      "old_name": "UROP MM packed faculty image gate 20261026",
+      "new_name": "UROP Images - Quality Check",
+      "old_url": "https://www.kaggle.com/code/rocky62/urop-mm-packed-faculty-image-gate-20261026",
+      "saved_version_id": "362643633",
+      "status": "verified_renamed",
+      "new_url": "https://www.kaggle.com/code/rocky62/urop-images-quality-check"
+    },
+    {
+      "old_name": "UROP full six-way multimodal Part1",
+      "new_name": "UROP Text + Image - Old Training Draft",
+      "old_url": "https://www.kaggle.com/code/rocky62/urop-full-six-way-multimodal-part1",
+      "saved_version_id": null,
+      "status": "verified_renamed",
+      "new_url": "https://www.kaggle.com/code/rocky62/urop-text-image-old-training-draft"
+    },
+    {
+      "old_name": "UROP MM Part1 engineering preflight",
+      "new_name": "UROP Text + Image - Engineering Check",
+      "old_url": "https://www.kaggle.com/code/rocky62/urop-mm-part1-engineering-preflight",
+      "saved_version_id": null,
+      "status": "verified_renamed",
+      "new_url": "https://www.kaggle.com/code/rocky62/urop-text-image-engineering-check"
+    },
+    {
+      "old_name": "UROP official six-way text recovery",
+      "new_name": "UROP Text Only - Final Results",
+      "old_url": "https://www.kaggle.com/code/rocky62/urop-official-six-way-text-recovery",
+      "saved_version_id": "356721456",
+      "status": "verified_renamed",
+      "new_url": "https://www.kaggle.com/code/rocky62/urop-text-only-final-results"
+    }
+  ],
+  "verified_utc": "2026-10-29T16:34:25.919Z"
+}

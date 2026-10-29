@@ -8,10 +8,10 @@ import bisect, hashlib, html, json, math, subprocess, time
 import cv2
 import numpy as np
 from PIL import Image, ImageDraw
-import build_video as b
+import render_english_video as b
 
 P=b.P
-D=P/'docs/explainers/urop_elevenlabs_20261028'
+D=P/'docs/explainers/english_elevenlabs'
 O=P/'data/presentations/urop_elevenlabs_20261028'
 D.mkdir(parents=True, exist_ok=True)
 F=O/'UROP_Beginner_to_Architecture_ElevenLabs.mp4'
@@ -31,8 +31,8 @@ def main():
   b.text(dr,(85,38),cue['text'],36,b.INK,False,1740,11)
   capimgs.append(im)
  for i,im in enumerate(bases):im.save(O/f'chapter_{i+1:02d}.png')
- (D/'captions.srt').write_text('\n\n'.join(f'{i+1}\n{b.srt_time(c["start"])} --> {b.srt_time(c["end"])}\n{c["text"]}' for i,c in enumerate(cues))+'\n')
- (D/'TRANSCRIPT.md').write_text('# UROP: beginner to architecture — ElevenLabs edition\n\nNarration: ElevenLabs Alice / Multilingual v2, via Composio. Provider character alignment is scaled with the documented pitch-preserving tempo adjustment. Scientific content matches the original verified storyboard.\n\n'+'\n\n'.join(f'## {int(c["start"])//60:02d}:{int(c["start"])%60:02d} — {s["title"]}\n\n{s["narration"]}\n\n**What if?** {s["whatif"]}' for s,c in zip(b.SC,chapters)))
+ (D/'subtitles.srt').write_text('\n\n'.join(f'{i+1}\n{b.srt_time(c["start"])} --> {b.srt_time(c["end"])}\n{c["text"]}' for i,c in enumerate(cues))+'\n')
+ (D/'narration.md').write_text('# UROP: beginner to architecture — ElevenLabs edition\n\nNarration: ElevenLabs Alice / Multilingual v2, via Composio. Provider character alignment is scaled with the documented pitch-preserving tempo adjustment. Scientific content matches the original verified storyboard.\n\n'+'\n\n'.join(f'## {int(c["start"])//60:02d}:{int(c["start"])%60:02d} — {s["title"]}\n\n{s["narration"]}\n\n**What if?** {s["whatif"]}' for s,c in zip(b.SC,chapters)))
  writer=cv2.VideoWriter(str(O/'visuals_silent.mp4'),cv2.VideoWriter_fourcc(*'avc1'),b.FPS,(b.W,b.H));assert writer.isOpened()
  starts=[c['start'] for c in chapters];cs=[c['start'] for c in cues]
  n=math.ceil(duration*b.FPS);tic=time.monotonic()
@@ -65,15 +65,15 @@ def main():
   thumb.paste(Image.fromarray(cv2.cvtColor(fr,cv2.COLOR_BGR2RGB)).resize((480,270)),((i%4)*480,(i//4)*270))
  cap.release();thumb.save(O/'contact_sheet.jpg',quality=92)
  buttons=''.join(f'<button onclick="jump({c["start"]:.3f})"><span>{int(c["start"])//60:02d}:{int(c["start"])%60:02d}</span>{html.escape(c["title"])}</button>' for c in chapters)
- watch=(b.D/'WATCH.html').read_text()
+ watch=(b.D/'watch_video.html').read_text()
  import re
  watch=watch.replace('urop_explainer_20261028/UROP_Beginner_to_Architecture.mp4','urop_elevenlabs_20261028/UROP_Beginner_to_Architecture_ElevenLabs.mp4')
  watch=watch.replace('9 min 49 sec · English narration',f'{int(info["duration"])//60} min {int(info["duration"])%60:02d} sec · ElevenLabs Alice narration')
- watch=watch.replace('href="VIVA_FAQ.md"','href="../urop_20261028/VIVA_FAQ.md"')
+ watch=watch.replace('href="faculty_questions.md"','href="../english_basic/faculty_questions.md"')
  watch=re.sub(r'<section>.*?</section>','<section>'+buttons+'</section>',watch,flags=re.S)
- (D/'WATCH.html').write_text(watch)
+ (D/'watch_video.html').write_text(watch)
  receipt={'status':'decoded_complete_pending_visual_review','voice':'Alice — Clear, Engaging Educator','voice_id':'Xb7hH8MSUJpSbSDYk0k2','model_id':'eleven_multilingual_v2','provider':'ElevenLabs via Composio authorized connection','provider_settings':{'stability':.65,'similarity_boost':.75,'style':0,'use_speaker_boost':True,'speed':1.08,'seed':42},'caption_alignment':'provider original-text character timestamps, scaled by pitch-preserving audio tempo factor','audio_processing':tm['audio_processing'],'duration_seconds':info['duration'],'dimensions':[1920,1080],'fps':24,'chapters':18,'output':str(F.relative_to(P)),'bytes':F.stat().st_size,'sha256':hashlib.sha256(F.read_bytes()).hexdigest(),'video_decode':{'decoded_frames':decoded,'container_frames':expected,'sampled_frame_std_min':min(std)},'audio_decode':audio,'maximum_caption_lines':maxlines,'storyboard_sha256':hashlib.sha256((b.D/'storyboard.json').read_bytes()).hexdigest(),'original_video_preserved':True,'devmotion_render':False,'model_or_dataset_changes':False,'timing':str((O/'timing.json').relative_to(P))}
- (D/'VIDEO_RECEIPT.json').write_text(json.dumps(receipt,indent=2)+'\n')
+ (D/'video_verification.json').write_text(json.dumps(receipt,indent=2)+'\n')
  print(json.dumps(receipt),flush=True)
 
 if __name__=='__main__':main()

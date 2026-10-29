@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-29T16:34:08.124268+00:00",
+  "moves": 107,
+  "moved_files_byte_identical": true,
+  "reference_updates": 13,
+  "protected_files_unchanged": 558,
+  "notebooks_parse": 11,
+  "training_launched": false,
+  "final_protected_files_unchanged": 557,
+  "intentional_protected_change": ".gitignore: archive privacy rules",
+  "navigation_links_checked": 80,
+  "kaggle_notebooks_renamed_and_ui_verified": 11,
+  "final_saved_kaggle_version_readback": {
+    "version": "362955511",
+    "private": true,
+    "versions": "1 of 1",
+    "run_link": "/code/rocky62/urop-text-image-final-results/edit/run/362955511"
+  },
+  "final_paths_manifest": "context/organization_20261029/final_paths.json",
+  "recheck_command": "python3 scripts/verify_file_organization.py"
+}

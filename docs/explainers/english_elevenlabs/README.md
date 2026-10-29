@@ -1,15 +1,15 @@
 # UROP explanation video — ElevenLabs edition
 
-Open [WATCH.html](WATCH.html) for the chapter player, or open the MP4 at
+Open [watch_video.html](watch_video.html) for the chapter player, or open the MP4 at
 `data/presentations/urop_elevenlabs_20261028/UROP_Beginner_to_Architecture_ElevenLabs.mp4`.
 
 The full 18-chapter beginner-to-architecture explanation now uses **ElevenLabs Alice — Clear, Engaging Educator**, synthesized with Multilingual v2 through the user-selected Composio connection. No voice cloning was used. The original local Samantha version remains intact.
 
-- [Transcript](TRANSCRIPT.md)
-- [Sentence captions](captions.srt)
-- [Verification receipt](VIDEO_RECEIPT.json)
-- [Architecture and faculty Q&A](../urop_20261028/VIVA_FAQ.md)
-- [Original verified storyboard](../urop_20261028/storyboard.json)
+- [Transcript](narration.md)
+- [Sentence captions](subtitles.srt)
+- [Verification receipt](video_verification.json)
+- [Architecture and faculty Q&A](../english_basic/faculty_questions.md)
+- [Original verified storyboard](../english_basic/storyboard.json)
 - [Scientific completion receipt](../../../results/MM_FINAL_COMPLETION_RECEIPT_20261028.json)
 
 ## Audio, timing and provenance
@@ -22,7 +22,7 @@ The provider supplied original-text character timestamps using its documented [s
 
 The final verification receipt records actual encoded duration, dimensions, complete video/audio decoding, layout bounds, and SHA-256. Decoding establishes media integrity; it does not establish a human pronunciation or listening review. The scientific content and architecture diagrams match the original verified storyboard. Research data, weights, code, metrics and experiment status were not changed.
 
-Visual rendering remains local Pillow/OpenCV/AVFoundation. DevMotion's earlier backend failure is preserved in the [original handoff](../urop_20261028/DEVMOTION_HANDOFF.md); this video is not a DevMotion export.
+Visual rendering remains local Pillow/OpenCV/AVFoundation. DevMotion's earlier backend failure is preserved in the [original handoff](../english_basic/video_render_notes.md); this video is not a DevMotion export.
 
 ## Private assets and rebuilding
 
@@ -32,9 +32,9 @@ The following are offline postproduction commands, not synthesis calls. They req
 
 ```bash
 cd /Users/panveenaidu/Downloads/SEM7/UROP
-swiftc docs/explainers/urop_20261028/tempo.swift -o data/presentations/urop_explainer_20261028/tempo
-.venv-urop/bin/python docs/explainers/urop_20261028/assemble_elevenlabs_audio.py
-.venv-urop/bin/python docs/explainers/urop_20261028/build_elevenlabs_video.py
+swiftc docs/explainers/english_basic/adjust_audio_speed.swift -o data/presentations/urop_explainer_20261028/tempo
+.venv-urop/bin/python docs/explainers/english_basic/prepare_elevenlabs_audio.py
+.venv-urop/bin/python docs/explainers/english_basic/render_elevenlabs_video.py
 ```
 
 The assembler requires the already-downloaded, retained `urop_elevenlabs_sources.zip`; it checks ZIP integrity, per-chapter audio hashes, exact alignment text and timing lengths. There are no account credentials or API calls in these scripts. Keep the private source archive rather than generating the same narration again.
