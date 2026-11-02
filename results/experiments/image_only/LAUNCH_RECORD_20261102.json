@@ -1,6 +1,6 @@
 {
   "utc": "2026-11-02T14:56:55.268388+00:00",
-  "status": "saved_preflight_readback_passed_scientific_trainer_starting",
+  "status": "scientific_training_active",
   "attempt": "OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z",
   "url": "https://www.kaggle.com/code/rocky62/urop-image-only-resnet-50?scriptVersionId=364917396",
   "preflight_url": "https://www.kaggle.com/code/rocky62/urop-image-only-gpu-check?scriptVersionId=364905560",
@@ -18,6 +18,11 @@
   "script_version_id": 364917396,
   "private_saved_preflight_manifest_readback_verified": true,
   "trainer_pid": 74,
-  "latest_heartbeat_utc": "2026-11-02T14:59:25.099121+00:00",
-  "current_phase": "verified_input_staging_or_model_initialization"
+  "latest_heartbeat_utc": "2026-11-02T15:22:55.198684+00:00",
+  "current_phase": "training",
+  "observed_epoch": 1,
+  "observed_samples_seen": 153600,
+  "observed_optimizer_updates": 4798,
+  "observed_AMP_skips": 2,
+  "scientific_checkpoint_observation": "Live counters; accepted epoch/validation/test counts remain0 until private saved output readback."
 }

@@ -1,0 +1,9 @@
+{
+  "utc": "2026-11-02T15:36:16.866122+00:00",
+  "status": "verified_remote_checkpoint_backup",
+  "results_and_context_commit": "c5267e26a8a8fcc622f5d5133973af836a4128dd",
+  "remote_main_readback": "c5267e26a8a8fcc622f5d5133973af836a4128dd",
+  "method": "Successful scoped push and fresh git ls-remote match",
+  "scientific_results_complete": false,
+  "note": "Child receipt records an already observed backup; it does not claim its own future commit hash."
+}
