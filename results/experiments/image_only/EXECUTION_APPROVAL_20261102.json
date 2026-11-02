@@ -1,0 +1,10 @@
+{
+  "utc": "2026-11-02T13:56:19.783640+00:00",
+  "status": "explicit_user_approval",
+  "protocol_id": "OFFICIAL-6W-IMAGE-USABLE-v1",
+  "plan": "context/IMAGE_ONLY_EXECUTION_PLAN_20261102.md",
+  "seed": 42,
+  "planned_epochs": 4,
+  "instruction": "Execute the plan as written. I approve the single-seed, four-epoch maximum. Start at the first missing checkpoint and finish with independently verified results.",
+  "scientific_training_started": false
+}
