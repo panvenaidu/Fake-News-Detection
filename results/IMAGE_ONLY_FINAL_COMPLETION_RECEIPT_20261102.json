@@ -1,6 +1,6 @@
 {
   "utc": "2026-11-02T21:09:06.790599+00:00",
-  "status": "scientific_results_verified_backup_pending",
+  "status": "complete_verified",
   "attempt": "OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z",
   "selected_epoch": 4,
   "epochs_trained": 4,
@@ -39,7 +39,7 @@
   "private_archive_record": "results/experiments/image_only/ARCHIVE_READBACK_20261103.json",
   "job_url": "https://www.kaggle.com/code/rocky62/urop-image-only-resnet-50?scriptVersionId=364917396",
   "script_version_id": 364917396,
-  "github_backup_verified": false,
+  "github_backup_verified": true,
   "source_hashes": {
     "train_image_only_v1.py": "8496d5fe91f6ad58ae2ea63fa6fa4b120dd55a831b90426f0c52766fec827866",
     "train_usable_multimodal_v2.py": "7f7fb90deb08a5901d1ca8343b780f6d82dd42b3e278d51f333568435becee0e",
@@ -49,5 +49,9 @@
     "verify_multimodal_final_v1.py": "2167e194447eacbcfd2c45cd70f07c524e8996b87fd1e702a9b4900de615065b",
     "evaluate_frozen_image_only_v1.py": "178ee95e0f9f40584b3cf05e2979d0d94ee5a5c354b1ac9d1eaa6e3f4b6544bf",
     "check_image_only_v1.py": "bd5f4df242529499545da110e65c8d7138b79c45fdcbceeeec3fd791b244320e"
-  }
+  },
+  "github_results_commit": "0bbdbb6744465dfd3a5a2af945e8eea1b7e291d7",
+  "remote_main_observed": "0bbdbb6744465dfd3a5a2af945e8eea1b7e291d7",
+  "backup_verified_utc": "2026-11-02T21:10:02.644799+00:00",
+  "backup_note": "Results commit pushed and remote hash matched; this receipt is a child of that verified commit."
 }

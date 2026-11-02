@@ -177,7 +177,7 @@
         "validation": 1,
         "final_test_and_result_archive": 1
       },
-      "state": "Scientific results independently verified; documentation backup being finalized",
+      "state": "Complete: training, validation, frozen test, private archives and GitHub results backup independently verified",
       "checkpoint_completion_percent": 100,
       "execution_receipt": "results/experiments/image_only/LAUNCH_RECORD_20261102.json",
       "implementation_receipt": "results/experiments/image_only/GPU_RELEASE_READBACK_20261102.json",
