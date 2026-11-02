@@ -1,8 +1,8 @@
 {
   "model": "Image-only \u00b7 ResNet-50",
   "split": "validation",
-  "status": "Cloud-reported; independent local artifact verification pending",
-  "source": "results/experiments/image_only/CLOUD_COMPLETION_OBSERVED_20261103.json",
+  "status": "Independent saved-artifact verification passed",
+  "source": "results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/validation_metrics.json",
   "metrics": {
     "accuracy": 0.8093391119580431,
     "micro_f1": 0.8093391119580431,

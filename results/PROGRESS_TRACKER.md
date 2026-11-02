@@ -1,3 +1,7 @@
+## Image-only verification complete — 3 November 2026
+
+Four epochs, four validations and one full test independently verified from downloaded private artifacts. Epoch 4 selected. Validation accuracy 80.9339%; test accuracy 81.1557%. All three baseline scientific branches are complete. See `context/IMAGE_ONLY_VERIFIED_20261103.md` and `results/IMAGE_ONLY_FINAL_REPORT_20261102.md`. No retraining or repeat test.
+
 ## Image-only handoff at the5% usage boundary — 2 November2026
 
 Five-hour usage reached95%used,5%remaining. Stop assistant work under the approved rule. Reset is18:53:03UTC,00:23:03IST on3November. Weekly15%used. No reset credit was redeemed.

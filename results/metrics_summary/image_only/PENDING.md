@@ -1,1 +1,3 @@
-Image-only per-class precision, recall, F1, support, confusion matrices and per-epoch results have not yet been retrieved into the local accepted archive. Download saved Kaggle version 364917396 and run scripts/verify_image_only_saved_v1.py before final acceptance. Do not reconstruct missing class metrics from overall values.
+# Resolved
+
+The archive was downloaded and independently verified. Metrics, class reports and confusion matrices are now present. See results/experiments/image_only/IMAGE_ONLY_SAVED_VERIFIED_20261103.json.

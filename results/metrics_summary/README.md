@@ -28,14 +28,14 @@ Evidence: [validation](../../results/experiments/multimodal/OFFICIAL-6W-MM-USABL
 
 ## Image-only · ResNet-50
 
-Cloud-reported; independent local artifact verification pending
+Independent saved-artifact verification passed
 
 | Split | Accuracy | Micro-F1 | Macro-F1 | Weighted-F1 | Balanced accuracy | Cross-entropy loss | Samples |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | Validation | 80.9339% | 80.9339% | 65.6487% | 80.2383% | 62.4213% | 0.583574318 | 59,299 |
 | Test | 81.1557% | 81.1557% | 66.1796% | 80.4935% | 62.9919% | 0.584383827 | 59,270 |
 
-Evidence: [validation](../../results/experiments/image_only/CLOUD_COMPLETION_OBSERVED_20261103.json), [test](../../results/experiments/image_only/CLOUD_COMPLETION_OBSERVED_20261103.json)
+Evidence: [validation](../../results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/validation_metrics.json), [test](../../results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/test_metrics.json)
 
 ## Accuracy compared with the paper
 
@@ -52,7 +52,7 @@ Paper Micro-F1, Macro-F1, weighted-F1, balanced accuracy, cross-entropy loss and
 
 [Paper Table 4](https://arxiv.org/html/1911.03854v2) was checked against the original six-way columns.
 
-These are numerical reference comparisons, not controlled improvements. Our fine-tuning and checkpoint selection differ from the paper. Text-only uses 682,661 released rows; image branches use 682,170 pairs after 491 approved image decoding exclusions. The paper/release count discrepancy and documented cross-split image duplicates remain limitations. One seed per baseline; no significance or state-of-the-art claim. Image-only values remain cloud-reported pending local verification.
+These are numerical reference comparisons, not controlled improvements. Our fine-tuning and checkpoint selection differ from the paper. Text-only uses 682,661 released rows; image branches use 682,170 pairs after 491 approved image decoding exclusions. The paper/release count discrepancy and documented cross-split image duplicates remain limitations. One seed per baseline; no significance or state-of-the-art claim. Image-only saved artifacts passed independent local verification.
 
 ## Detailed results
 

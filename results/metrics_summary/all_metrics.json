@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-02T20:38:23.015642+00:00",
+  "generated_utc": "2026-11-02T21:09:28.979645+00:00",
   "paper_url": "https://arxiv.org/html/1911.03854v2",
   "paper_reference": "Table 4, six-way columns; matching modality; maximum fusion for text + image",
   "records": [
@@ -75,7 +75,7 @@
       "model": "Image-only \u00b7 ResNet-50",
       "model_id": "image_only",
       "split": "validation",
-      "status": "Cloud-reported; independent local artifact verification pending",
+      "status": "Independent saved-artifact verification passed",
       "accuracy": 0.8093391119580431,
       "micro_f1": 0.8093391119580431,
       "macro_f1": 0.6564868851091118,
@@ -86,13 +86,13 @@
       "paper_accuracy": 0.7529,
       "accuracy_difference_percentage_points": 5.643911195804307,
       "paper_other_metrics": "Not reported",
-      "source": "results/experiments/image_only/CLOUD_COMPLETION_OBSERVED_20261103.json"
+      "source": "results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/validation_metrics.json"
     },
     {
       "model": "Image-only \u00b7 ResNet-50",
       "model_id": "image_only",
       "split": "test",
-      "status": "Cloud-reported; independent local artifact verification pending",
+      "status": "Independent saved-artifact verification passed",
       "accuracy": 0.8115572802429559,
       "micro_f1": 0.8115572802429559,
       "macro_f1": 0.6617958357324856,
@@ -103,7 +103,7 @@
       "paper_accuracy": 0.7549,
       "accuracy_difference_percentage_points": 5.665728024295591,
       "paper_other_metrics": "Not reported",
-      "source": "results/experiments/image_only/CLOUD_COMPLETION_OBSERVED_20261103.json"
+      "source": "results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/test_metrics.json"
     }
   ]
 }

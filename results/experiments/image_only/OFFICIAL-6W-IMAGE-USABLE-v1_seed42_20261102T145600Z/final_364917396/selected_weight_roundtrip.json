@@ -1,0 +1,7 @@
+{
+  "utc": "2026-11-02T19:45:22.350248+00:00",
+  "strict_load": true,
+  "weights_sha256": "5bb54f3bc57d747aeb63e6be9e5f76d2ecbb4cf86e62d6b02c84db132a76ecdf",
+  "validation_probe_rows": 32,
+  "maximum_logit_delta": 0.0
+}

@@ -1,0 +1,16 @@
+{
+  "status": "passed_independent_csv_verification",
+  "split": "validation",
+  "metrics": {
+    "accuracy": 0.806472284524191,
+    "micro_f1": 0.806472284524191,
+    "macro_f1": 0.6399186864090121,
+    "weighted_f1": 0.7952325751756919,
+    "balanced_accuracy": 0.6043745631423737,
+    "loss": 0.5608168395270664,
+    "samples": 59299
+  },
+  "prediction_sha256": "8a94b48781708420786b2567f59001915d4f266536d32171d6beeab62320dc0f",
+  "exact_order_ids_labels": true,
+  "probability_ce_confusion_checks": true
+}

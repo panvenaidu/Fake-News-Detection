@@ -1,3 +1,7 @@
+## Image-only verification complete — 3 November 2026
+
+Four epochs, four validations and one full test independently verified from downloaded private artifacts. Epoch 4 selected. Validation accuracy 80.9339%; test accuracy 81.1557%. All three baseline scientific branches are complete. See `context/IMAGE_ONLY_VERIFIED_20261103.md` and `results/IMAGE_ONLY_FINAL_REPORT_20261102.md`. No retraining or repeat test.
+
 ## 3 November 2026 — image-only cloud completion observed
 
 Four epochs, four validations and one full test are reported complete by saved Kaggle job 364917396. Epoch 4 selected. Independent local artifact acceptance remains pending because Chrome blocked the normal output ZIP download. Do not restart training. Current handoff: `context/IMAGE_ONLY_CURRENT_20261103.md`; qualified observed metrics: `results/experiments/image_only/CLOUD_COMPLETION_OBSERVED_20261103.json`.

@@ -80,13 +80,73 @@
     "sha256": "e94b36fede17c00e1a1e1783613ce51bf5090d3d13b320002de77f081e61c44b"
   },
   {
-    "path": "results/experiments/image_only/CLOUD_COMPLETION_OBSERVED_20261103.json",
-    "bytes": 1835,
-    "sha256": "4c2261ced44905bcf46028caa383c1b2deecd815831482536bc9c47716595789"
+    "path": "results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/validation_metrics.json",
+    "bytes": 234,
+    "sha256": "ed10f90931a7cc7ebd5ed0f2f97affc2e0240b5528b51ec150a209fc631a6933"
   },
   {
-    "path": "results/experiments/image_only/CLOUD_COMPLETION_OBSERVED_20261103.json",
-    "bytes": 1835,
-    "sha256": "4c2261ced44905bcf46028caa383c1b2deecd815831482536bc9c47716595789"
+    "path": "results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/test_metrics.json",
+    "bytes": 235,
+    "sha256": "c0cf2cf42f4461204f3dbde094aaf7fc2c25806ce37dd8265ada3cf17c4c9d26"
+  },
+  {
+    "path": "results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/validation_epoch4_classification_report.json",
+    "bytes": 1286,
+    "sha256": "3e80d8a2065126a70e05cadf5b2e35e038444a5cc315c23ff9a79bc90100cf63"
+  },
+  {
+    "path": "results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/validation_epoch3_classification_report.json",
+    "bytes": 1281,
+    "sha256": "05e9ef8f8ae823908667341e0be4a1db67e467470c97ae19075dd17663b55601"
+  },
+  {
+    "path": "results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/validation_epoch1_confusions.json",
+    "bytes": 1691,
+    "sha256": "ab6f85bf69f4507c5538b3bb778c448661e9a855deee698b9e76b3b5123895c1"
+  },
+  {
+    "path": "results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/validation_epoch2_classification_report.json",
+    "bytes": 1286,
+    "sha256": "50d59c3173af777c83c4948bd6c87506b49a7f7ec6a2b19bc77c6652b1a4e31f"
+  },
+  {
+    "path": "results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/validation_epoch3_confusions.json",
+    "bytes": 1708,
+    "sha256": "40b4592babccef518367318319fb631efe10a3f9eb28bc8ae560d1ac03855499"
+  },
+  {
+    "path": "results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/validation_classification_report.json",
+    "bytes": 1286,
+    "sha256": "3e80d8a2065126a70e05cadf5b2e35e038444a5cc315c23ff9a79bc90100cf63"
+  },
+  {
+    "path": "results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/validation_epoch4_confusions.json",
+    "bytes": 1721,
+    "sha256": "b2b4f3e90700026c35e595f197aaeea11e978543f7615f22cc12b921b446f83c"
+  },
+  {
+    "path": "results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/validation_confusions.json",
+    "bytes": 1721,
+    "sha256": "b2b4f3e90700026c35e595f197aaeea11e978543f7615f22cc12b921b446f83c"
+  },
+  {
+    "path": "results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/validation_epoch1_classification_report.json",
+    "bytes": 1282,
+    "sha256": "96988a514afe720d9a3666d647c3aa96fbfa88307f2f03ff8fa5b8c354b2b0e5"
+  },
+  {
+    "path": "results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/validation_epoch2_confusions.json",
+    "bytes": 1714,
+    "sha256": "d533a17f94c829c3870a7db8209eabc4a2ec71d940ec1201935246b6f04fb428"
+  },
+  {
+    "path": "results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/test_confusions.json",
+    "bytes": 1718,
+    "sha256": "bb2fb4891a0974eaef311b350cf1411e7ad2896f580d9eec06865b25f006b812"
+  },
+  {
+    "path": "results/experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/test_classification_report.json",
+    "bytes": 1284,
+    "sha256": "9ae7469230afec54eb35d168e2216214af31739168dda0b638917d2981b8d065"
   }
 ]
