@@ -1,0 +1,18 @@
+{
+  "utc": "2026-11-02T16:46:44.317356+00:00",
+  "status": "observed_runtime_epoch2_after_first_full_validation",
+  "job_version": 364917396,
+  "job_url": "https://www.kaggle.com/code/rocky62/urop-image-only-resnet-50?scriptVersionId=364917396",
+  "heartbeat_utc": "2026-11-02T16:17:55.447730+00:00",
+  "trainer_pid": 74,
+  "runtime_epochs_completed": 1,
+  "runtime_full_validations_completed": 1,
+  "current_epoch": 2,
+  "current_epoch_samples_seen": 16000,
+  "successful_updates": 18106,
+  "amp_skips": 7,
+  "last_epoch_train_loss": 0.6803545331913753,
+  "validation_score": "not read from durable saved artifacts yet",
+  "final_test_complete": false,
+  "acceptance": "Observed runtime only; accepted scientific stage fractions await private saved output readback."
+}

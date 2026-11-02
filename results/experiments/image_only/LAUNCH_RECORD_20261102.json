@@ -18,11 +18,13 @@
   "script_version_id": 364917396,
   "private_saved_preflight_manifest_readback_verified": true,
   "trainer_pid": 74,
-  "latest_heartbeat_utc": "2026-11-02T15:22:55.198684+00:00",
+  "latest_heartbeat_utc": "2026-11-02T16:17:55.447730+00:00",
   "current_phase": "training",
-  "observed_epoch": 1,
-  "observed_samples_seen": 153600,
-  "observed_optimizer_updates": 4798,
-  "observed_AMP_skips": 2,
-  "scientific_checkpoint_observation": "Live counters; accepted epoch/validation/test counts remain0 until private saved output readback."
+  "observed_epoch": 2,
+  "observed_samples_seen": 16000,
+  "observed_optimizer_updates": 18106,
+  "observed_AMP_skips": 7,
+  "scientific_checkpoint_observation": "Live counters; accepted epoch/validation/test counts remain0 until private saved output readback.",
+  "runtime_epochs_completed_observed": 1,
+  "runtime_full_validations_completed_observed": 1
 }
