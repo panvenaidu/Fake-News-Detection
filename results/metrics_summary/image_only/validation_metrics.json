@@ -1,0 +1,15 @@
+{
+  "model": "Image-only \u00b7 ResNet-50",
+  "split": "validation",
+  "status": "Cloud-reported; independent local artifact verification pending",
+  "source": "results/experiments/image_only/CLOUD_COMPLETION_OBSERVED_20261103.json",
+  "metrics": {
+    "accuracy": 0.8093391119580431,
+    "micro_f1": 0.8093391119580431,
+    "macro_f1": 0.6564868851091118,
+    "weighted_f1": 0.8023831155914563,
+    "balanced_accuracy": 0.624212702749842,
+    "loss": 0.5835743179286002,
+    "samples": 59299
+  }
+}

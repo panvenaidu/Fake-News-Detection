@@ -1,0 +1,15 @@
+{
+  "model": "Text-only \u00b7 BERT-base",
+  "split": "test",
+  "status": "Independent saved-artifact verification passed",
+  "source": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence/bert-base/test_metrics.json",
+  "metrics": {
+    "accuracy": 0.8239012795225813,
+    "micro_f1": 0.8239012795225813,
+    "macro_f1": 0.7745655655088569,
+    "weighted_f1": 0.822430054171013,
+    "balanced_accuracy": 0.7497860290168639,
+    "loss": 0.6180801154495272,
+    "samples": 59319
+  }
+}

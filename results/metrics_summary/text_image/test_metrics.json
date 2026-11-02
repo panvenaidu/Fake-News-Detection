@@ -1,0 +1,15 @@
+{
+  "model": "Text + image \u00b7 BERT-base + ResNet-50",
+  "split": "test",
+  "status": "Independent saved-artifact verification passed",
+  "source": "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/final_362955511/test_metrics.json",
+  "metrics": {
+    "accuracy": 0.8814577357853889,
+    "micro_f1": 0.8814577357853889,
+    "macro_f1": 0.8264151321437674,
+    "weighted_f1": 0.8813174383536236,
+    "balanced_accuracy": 0.8082493600939357,
+    "loss": 0.7238658786110204,
+    "samples": 59270
+  }
+}

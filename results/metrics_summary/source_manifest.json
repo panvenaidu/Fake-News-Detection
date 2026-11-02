@@ -1,0 +1,92 @@
+[
+  {
+    "path": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence/bert-base/validation_metrics.json",
+    "bytes": 235,
+    "sha256": "9459142988c6d42bd2dfa35312490797e88e6877aec4b68f3165f99a4102cb53"
+  },
+  {
+    "path": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence/bert-base/test_metrics.json",
+    "bytes": 234,
+    "sha256": "aa8b544587e8f177ce4333183b4b9d6eb7b6cdee35c8dffaa953c264e9692ef9"
+  },
+  {
+    "path": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence/bert-base/validation_classification_report.json",
+    "bytes": 1281,
+    "sha256": "6018fb88183b4cd5ab16327849c012e493f76a4a5b5e9db2af5d2927535e3172"
+  },
+  {
+    "path": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence/bert-base/validation_confusion_matrix.csv",
+    "bytes": 326,
+    "sha256": "4b9249949bc36cef410477405bf6b64b78bf79f5d4eee081e59a3b0080aca340"
+  },
+  {
+    "path": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence/bert-base/validation_confusion_matrix_normalized.csv",
+    "bytes": 917,
+    "sha256": "604c47104d180d53d28f255b2241afe9b45beda882bb2214f221b420e21bbc32"
+  },
+  {
+    "path": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence/bert-base/test_confusion_matrix.csv",
+    "bytes": 327,
+    "sha256": "236e7621a229d6c4caffb623b183191f878d3f0cec3392a37fb79018c26a4644"
+  },
+  {
+    "path": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence/bert-base/test_classification_report.json",
+    "bytes": 1281,
+    "sha256": "e408a4561bf2676db0e66a70d2fa203996b5dbb65c2f5d29c39353ccbc6497dc"
+  },
+  {
+    "path": "results/experiments/official_text/OFFICIAL-6W-TEXT-v2_seed42_20261008T095827Z/KAGGLE_RECOVERY_v1_20261009_356721456/raw_evidence/bert-base/test_confusion_matrix_normalized.csv",
+    "bytes": 909,
+    "sha256": "05a40a9810070c7e6077abf9485a9384b7a57314adbbec1e510591f3bd62e0ff"
+  },
+  {
+    "path": "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/final_362955511/validation_metrics.json",
+    "bytes": 235,
+    "sha256": "181275ea85e5afd5011f1439a0745faf7b4dd5d62216c81b26033b1be4404d5c"
+  },
+  {
+    "path": "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/final_362955511/test_metrics.json",
+    "bytes": 235,
+    "sha256": "c52485e0cfbba244d2b854391ad44b26ac2b7149f373cc08d0bb41bd576af683"
+  },
+  {
+    "path": "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/final_362955511/validation_epoch4_classification_report.json",
+    "bytes": 1285,
+    "sha256": "77a1a53cd26771d1188d3d2d8f89bf02ae3479f22dc5c687ed7ceb59fe06ece7"
+  },
+  {
+    "path": "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/final_362955511/validation_classification_report.json",
+    "bytes": 1285,
+    "sha256": "77a1a53cd26771d1188d3d2d8f89bf02ae3479f22dc5c687ed7ceb59fe06ece7"
+  },
+  {
+    "path": "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/final_362955511/validation_epoch4_confusions.json",
+    "bytes": 1714,
+    "sha256": "47166ad891b3f1a1e389f30722edfc89cfadcbba475dec674055dbdf7519e065"
+  },
+  {
+    "path": "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/final_362955511/validation_confusions.json",
+    "bytes": 1714,
+    "sha256": "47166ad891b3f1a1e389f30722edfc89cfadcbba475dec674055dbdf7519e065"
+  },
+  {
+    "path": "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/final_362955511/test_confusions.json",
+    "bytes": 1715,
+    "sha256": "4def3d08869e8d7fce177af6535b3432aa940bda1b753c9413a28118fc6fec82"
+  },
+  {
+    "path": "results/experiments/multimodal/OFFICIAL-6W-MM-USABLE-v2_seed42_20261027/final_362955511/test_classification_report.json",
+    "bytes": 1284,
+    "sha256": "e94b36fede17c00e1a1e1783613ce51bf5090d3d13b320002de77f081e61c44b"
+  },
+  {
+    "path": "results/experiments/image_only/CLOUD_COMPLETION_OBSERVED_20261103.json",
+    "bytes": 1835,
+    "sha256": "4c2261ced44905bcf46028caa383c1b2deecd815831482536bc9c47716595789"
+  },
+  {
+    "path": "results/experiments/image_only/CLOUD_COMPLETION_OBSERVED_20261103.json",
+    "bytes": 1835,
+    "sha256": "4c2261ced44905bcf46028caa383c1b2deecd815831482536bc9c47716595789"
+  }
+]
