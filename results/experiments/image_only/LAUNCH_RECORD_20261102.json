@@ -1,0 +1,23 @@
+{
+  "utc": "2026-11-02T14:56:55.268388+00:00",
+  "status": "saved_preflight_readback_passed_scientific_trainer_starting",
+  "attempt": "OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z",
+  "url": "https://www.kaggle.com/code/rocky62/urop-image-only-resnet-50?scriptVersionId=364917396",
+  "preflight_url": "https://www.kaggle.com/code/rocky62/urop-image-only-gpu-check?scriptVersionId=364905560",
+  "preflight_saved_successful": true,
+  "preflight_full_private_readback": "mandatory in controller before first scientific update",
+  "source_commit": "b4572e5c3c23fb3a251a902ba22e456e39443cfe",
+  "controller_commit": "3c01a8a736178b1756cda1a0833204e998c7e399",
+  "controller_sha256": "276fadc0a09d06fec2fc743e555293b84d8f7c9993abc218bdbc9dc9e6fc0e5f",
+  "observed_quota_used_minutes": 13,
+  "observed_quota_total_hours": 30,
+  "quota_observation_utc": "2026-11-02T14:55:56.932Z",
+  "epochs_trained_verified": 0,
+  "full_validations_verified": 0,
+  "test_complete": false,
+  "script_version_id": 364917396,
+  "private_saved_preflight_manifest_readback_verified": true,
+  "trainer_pid": 74,
+  "latest_heartbeat_utc": "2026-11-02T14:59:25.099121+00:00",
+  "current_phase": "verified_input_staging_or_model_initialization"
+}

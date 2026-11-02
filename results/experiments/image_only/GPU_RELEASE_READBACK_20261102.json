@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-02T15:01:02.067686+00:00",
+  "status": "accepted_saved_preflight_readback_observed_before_scientific_updates",
+  "preflight_version": 364905560,
+  "scientific_version": 364917396,
+  "proof": "The bounded controller verifies every private saved manifest member SHA/size, pinned source/config and CUDA fixture before spawning PID74. First trainer heartbeat14:57:25Z confirms it passed those checks.",
+  "config_sha256": "91e9e7722297730f280ca2e92a0af91482da78795953b076bf69b47ade9161f6",
+  "pretrained_weights_sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca",
+  "GPU": "Tesla T4 device0",
+  "train_pairs_per_second": 143.65840233416657,
+  "evaluation_pairs_per_second": 161.81716198545172,
+  "estimated_four_epochs_full_validation_test_compute_seconds": 17524.91471633077,
+  "scientific_epochs_accepted": 0,
+  "scientific_test_performed": false,
+  "local_full_private_preflight_archive_readback": "pending; cloud mount readback passed"
+}
