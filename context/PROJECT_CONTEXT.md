@@ -1,3 +1,7 @@
+## 3 November 2026 — image-only cloud completion observed
+
+Four epochs, four validations and one full test are reported complete by saved Kaggle job 364917396. Epoch 4 selected. Independent local artifact acceptance remains pending because Chrome blocked the normal output ZIP download. Do not restart training. Current handoff: `context/IMAGE_ONLY_CURRENT_20261103.md`; qualified observed metrics: `results/experiments/image_only/CLOUD_COMPLETION_OBSERVED_20261103.json`.
+
 ## Image-only handoff at the5% usage boundary — 2 November2026
 
 Five-hour usage reached95%used,5%remaining. Stop assistant work under the approved rule. Reset is18:53:03UTC,00:23:03IST on3November. Weekly15%used. No reset credit was redeemed.

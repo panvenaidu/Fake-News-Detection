@@ -1,0 +1,46 @@
+{
+  "observed_utc": "2026-11-02T20:34:21.534891+00:00",
+  "status": "cloud_completed_local_artifact_acceptance_pending",
+  "job_version": 364917396,
+  "job_url": "https://www.kaggle.com/code/rocky62/urop-image-only-resnet-50?scriptVersionId=364917396",
+  "attempt": "OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z",
+  "evidence": "Kaggle saved Output IMAGE_JOB_RESULT.json rendered in authenticated Rocky Chrome; bytes not downloaded or independently verified locally",
+  "cloud_receipt": {
+    "utc": "2026-11-02T19:39:27.707862+00:00",
+    "training_complete": true,
+    "full_validations": 4,
+    "next_epoch": 5,
+    "cursor": 0,
+    "updates": 70422,
+    "amp_skips": 30,
+    "early_stopped": false,
+    "selected_epoch": 4,
+    "selected_weights_file": "selected_epoch4_0fd08e4213fb4835b7a1760bff1a8892.pt",
+    "selected_weights_sha256": "5bb54f3bc57d747aeb63e6be9e5f76d2ecbb4cf86e62d6b02c84db132a76ecdf",
+    "test_complete": true,
+    "test_csv_check_status": "passed_independent_csv_verification",
+    "elapsed_seconds": 17734.478333938
+  },
+  "validation": {
+    "accuracy": 0.8093391119580431,
+    "micro_f1": 0.8093391119580431,
+    "macro_f1": 0.6564868851091118,
+    "weighted_f1": 0.8023831155914563,
+    "balanced_accuracy": 0.624212702749842,
+    "loss": 0.5835743179286002,
+    "samples": 59299
+  },
+  "test": {
+    "accuracy": 0.8115572802429559,
+    "micro_f1": 0.8115572802429559,
+    "macro_f1": 0.6617958357324856,
+    "weighted_f1": 0.8049352391891245,
+    "balanced_accuracy": 0.6299189007454422,
+    "loss": 0.5843838274080876,
+    "samples": 59270
+  },
+  "download_blocker": "Chrome ERR_BLOCKED_BY_CLIENT on normal Download output; human must complete normal download",
+  "download_url": "https://www.kaggle.com/code/svzip/364917396",
+  "local_final_verification": false,
+  "restart_training": false
+}
