@@ -82,3 +82,19 @@ context/organization_20261029/*.png
 context/organization_20261029/reference_backups/
 results/archive/screenshots/
 results/archive/observations/
+
+# Personal working context and visual dashboards stay on this computer.
+/context/
+/.archify/
+/clicky_handoff/
+/work_logs/
+/collab/COLAB_WORKLOG.md
+/results/metrics_summary/
+/results/PROGRESS_TRACKER.*
+/results/archive/superseded_dashboards/
+/results/*HANDOFF*
+/START_HERE.html
+/results/UROP_Text_Only.html
+/results/UROP_Multimodal_Final_20261028.html
+/docs/progress/
+/docs/comparison/
