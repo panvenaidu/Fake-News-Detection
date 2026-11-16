@@ -1,1 +1,1 @@
-../../../Model/Text Only/train_official_text_recovery_v1.py
+../../../model/text_only/train_official_text_recovery_v1.py

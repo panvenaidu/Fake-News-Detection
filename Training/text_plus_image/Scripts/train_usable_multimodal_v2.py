@@ -1,1 +1,1 @@
-../../../Model/Text + Image/train_usable_multimodal_v2.py
+../../../model/text_plus_image/train_usable_multimodal_v2.py

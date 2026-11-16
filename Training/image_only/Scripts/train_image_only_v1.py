@@ -1,1 +1,1 @@
-../../../Model/Image Only/train_image_only_v1.py
+../../../model/image_only/train_image_only_v1.py
