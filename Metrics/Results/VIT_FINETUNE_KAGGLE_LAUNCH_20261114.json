@@ -1,0 +1,19 @@
+{
+  "schema": "image_only_vit_finetune_launch_v1",
+  "training_version_id": 369555528,
+  "training_url": "https://www.kaggle.com/code/rocky62/urop-image-only-vit-b16-training/log?scriptVersionId=369555528",
+  "private_confirmed": true,
+  "ui_status_at_2026_11_14_20_25_ist": "queued",
+  "trained_checkpoint_observed": false,
+  "test_inference_started": false,
+  "preflight_version_id": 369551317,
+  "preflight_timing_sha256": "83383346284efaa8df13fbae423397844a507c4a702c8b7df9c42400594fc723",
+  "training_cell_sha256": "f0b6ffa8da1af31757c9628f17dd09ac390e4a23e5cf7d5729353baa27ea8e48",
+  "packed_dataset_version_id": 21277535,
+  "quality_check_version_id": 362643633,
+  "accelerator": "Tesla T4 x2",
+  "registered_initial_base_gpu_hours": 30,
+  "reserved_gpu_hours": 6,
+  "conservative_prelaunch_usage_minutes": 30,
+  "session_limit_seconds": 43200
+}

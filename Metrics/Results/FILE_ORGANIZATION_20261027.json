@@ -1,0 +1,106 @@
+{
+  "utc": "2026-10-27T12:34:34.343297+00:00",
+  "purpose": "Move confirmed loose UROP files from Downloads and SEM7 into project; preserve bytes, duplicates and history. No extraction, deletion, training or scientific changes.",
+  "moves": [
+    {
+      "source": "/Users/panveenaidu/Downloads/UROP_MM_PART1_IMAGE_PREP_CPU_20261023.ipynb",
+      "destination": "data/cloud_recovery/browser_exports_20261027/UROP_MM_PART1_IMAGE_PREP_CPU_20261023.ipynb",
+      "bytes": 559295,
+      "sha256": "edc6609a14108e6331f484f7658640fd11873392b183bf3e4415777f9d054493",
+      "status": "moved_and_sha256_verified"
+    },
+    {
+      "source": "/Users/panveenaidu/Downloads/UROP_MM_PART1_IMAGE_PREP_CPU_20261023 (1).ipynb",
+      "destination": "data/cloud_recovery/browser_exports_20261027/UROP_MM_PART1_IMAGE_PREP_CPU_20261023 (1).ipynb",
+      "bytes": 473427,
+      "sha256": "a1d75bf7a04e19e5ea445d0302de7045e5a01b487517b7113414b71f8549cf26",
+      "status": "moved_and_sha256_verified"
+    },
+    {
+      "source": "/Users/panveenaidu/Downloads/UROP_MM_PART1_IMAGE_PREP_CPU_20261023 (2).ipynb",
+      "destination": "data/cloud_recovery/browser_exports_20261027/UROP_MM_PART1_IMAGE_PREP_CPU_20261023 (2).ipynb",
+      "bytes": 546373,
+      "sha256": "e3f7a69e72849158a8268f9ef6e893acf654395ce6b555c5964da707b28bee54",
+      "status": "moved_and_sha256_verified"
+    },
+    {
+      "source": "/Users/panveenaidu/Downloads/urop-full-six-way-multimodal-part1.ipynb",
+      "destination": "data/cloud_recovery/browser_exports_20261027/urop-full-six-way-multimodal-part1.ipynb",
+      "bytes": 14688,
+      "sha256": "89fc72723479339df5209467a6f121290dd35ee6e07d719ad95cf8b6c2682f2b",
+      "status": "moved_and_sha256_verified"
+    },
+    {
+      "source": "/Users/panveenaidu/Downloads/urop.ipynb",
+      "destination": "data/cloud_recovery/e002_original_preservation_20261027/urop.ipynb",
+      "bytes": 256135,
+      "sha256": "e8126b081c7b1856218be7ba57e72287e944e2e52ad6c404e6eff5026da6f664",
+      "status": "moved_and_sha256_verified"
+    },
+    {
+      "source": "/Users/panveenaidu/Downloads/urop_failed_specimens_stateless_v2.zip",
+      "destination": "data/official_paired_v2/diagnostics/urop_failed_specimens_stateless_v2.zip",
+      "bytes": 137784,
+      "sha256": "1389e967e5fbf31d444acf34c881c314803bf57542aca323137e41aa88733ef6",
+      "status": "moved_and_sha256_verified"
+    },
+    {
+      "source": "/Users/panveenaidu/Downloads/UROP_Fake_News_Detection_week-1.pdf",
+      "destination": "docs/reports/historical/UROP_Fake_News_Detection_week-1.pdf",
+      "bytes": 10878,
+      "sha256": "359ca4ebd9bd3473f948b857118fd1214fed51e73503e82bccafaaa98a6651fa",
+      "status": "moved_and_sha256_verified"
+    },
+    {
+      "source": "/Users/panveenaidu/Downloads/applsci-16-01585.pdf",
+      "destination": "docs/literature/applsci-16-01585.pdf",
+      "bytes": 1668662,
+      "sha256": "540708da239ca89394bdfed443fd3832d4fc4f416b3eedd8e1aa4ec35c4192fa",
+      "status": "moved_and_sha256_verified"
+    },
+    {
+      "source": "/Users/panveenaidu/Downloads/index.html",
+      "destination": "docs/reports/historical/browser_export_20261027/index.html",
+      "bytes": 32193,
+      "sha256": "b488bfa5f1dce799f0487cb2a12d7618771a7ba1eafacc49fb8ce84008373f01",
+      "status": "moved_and_sha256_verified"
+    },
+    {
+      "source": "/Users/panveenaidu/Downloads/SEM7/UROP-Training-Summary.pdf",
+      "destination": "docs/reports/historical/UROP-Training-Summary.pdf",
+      "bytes": 28420,
+      "sha256": "85a808da7337d2266ded4241024fc6867cdd5f0a5db89653842a3c2674cfefcf",
+      "status": "moved_and_sha256_verified"
+    },
+    {
+      "source": "/Users/panveenaidu/Downloads/SEM7/UROP_Progress_Brief_Canonical_E002_Seed42.pdf",
+      "destination": "docs/reports/historical/UROP_Progress_Brief_Canonical_E002_Seed42.pdf",
+      "bytes": 4858,
+      "sha256": "ab40a969593826878bb4dcec80661fad1a7312729cb7494a61fb63559fcd05a8",
+      "status": "moved_and_sha256_verified"
+    },
+    {
+      "source": "/Users/panveenaidu/Downloads/SEM7/E002_seed42_canonical_extracted_from_notebook.json",
+      "destination": "results/experiments/e002_text/E002-bert-base-uncased-6way-BP6Wv1-s42/preservation_import_20261027/E002_seed42_canonical_extracted_from_notebook.json",
+      "bytes": 7910,
+      "sha256": "fcf4bf7a014dc5c5a20a8d50bb68c2ca9efd09e269581f02835246f65ddfe70c",
+      "status": "moved_and_sha256_verified"
+    },
+    {
+      "source": "/Users/panveenaidu/Downloads/SEM7/E002_seed42_canonical_handoff.md",
+      "destination": "results/experiments/e002_text/E002-bert-base-uncased-6way-BP6Wv1-s42/preservation_import_20261027/E002_seed42_canonical_handoff.md",
+      "bytes": 2365,
+      "sha256": "99bb7f9ca2147a35524a6f07ab7b8ab1941d6c609926dd34441e96fd7466e016",
+      "status": "moved_and_sha256_verified"
+    },
+    {
+      "source": "/Users/panveenaidu/Downloads/SEM7/UROP_E002_seed42_preservation_package.zip",
+      "destination": "data/cloud_recovery/e002_original_preservation_20261027/UROP_E002_seed42_preservation_package.zip",
+      "bytes": 7727,
+      "sha256": "8c5b24ef27557c343b22a910a184b13ac207a54daba94f067db7e56b405a7d4c",
+      "status": "moved_and_sha256_verified"
+    }
+  ],
+  "status": "complete",
+  "files_moved": 14
+}

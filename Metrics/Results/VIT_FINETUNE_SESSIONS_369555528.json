@@ -1,0 +1,72 @@
+[
+  {
+    "mode": "preflight",
+    "utc": "2026-11-14T14:45:02.484760+00:00",
+    "environment": {
+      "python": "3.13.16",
+      "packages": {
+        "torch": "2.11.0+cu130",
+        "torchvision": "0.26.0+cu130",
+        "numpy": "2.1.3",
+        "pandas": "2.3.3",
+        "Pillow": "13.0.0",
+        "scikit-learn": "1.6.1"
+      },
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "nvidia_smi": [
+        "Tesla T4, 580.178.04, 15360 MiB",
+        "Tesla T4, 580.178.04, 15360 MiB"
+      ],
+      "cpus_available": 4,
+      "free_bytes_working": 20940300288,
+      "free_bytes_scratch": 1038177988608
+    },
+    "world_size": 2,
+    "quota_used_minutes_observed": 10.0,
+    "accounting_multiplier": 1,
+    "duration_cap_seconds": 2700,
+    "deadline_epoch": 1794669467.5152829,
+    "staging_seconds": 439.93200981399997,
+    "setup_seconds": 464.9694962501526,
+    "state": "preflight_complete",
+    "elapsed_seconds": 627.8381922245026
+  },
+  {
+    "mode": "train",
+    "utc": "2026-11-14T18:48:00.510191+00:00",
+    "environment": {
+      "python": "3.13.16",
+      "packages": {
+        "torch": "2.11.0+cu130",
+        "torchvision": "0.26.0+cu130",
+        "numpy": "2.1.3",
+        "pandas": "2.3.3",
+        "Pillow": "13.0.0",
+        "scikit-learn": "1.6.1"
+      },
+      "optional_packages": {
+        "timm": "1.0.30",
+        "safetensors": "0.8.0"
+      },
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "nvidia_smi": [
+        "Tesla T4, 580.178.04, 15360 MiB",
+        "Tesla T4, 580.178.04, 15360 MiB"
+      ],
+      "cpus_available": 4,
+      "free_bytes_working": 20887523328,
+      "free_bytes_scratch": 1038177959936
+    },
+    "world_size": 2,
+    "quota_used_minutes_observed": 30.0,
+    "accounting_multiplier": 1,
+    "duration_cap_seconds": 43200,
+    "deadline_epoch": 1794723031.753293,
+    "staging_seconds": 423.84549734100005,
+    "setup_seconds": 448.75691962242126,
+    "state": "paused",
+    "elapsed_seconds": 41413.0835313797
+  }
+]

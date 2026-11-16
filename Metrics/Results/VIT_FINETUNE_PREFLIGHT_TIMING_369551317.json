@@ -1,0 +1,45 @@
+{
+  "utc": "2026-11-14T14:47:38.242194+00:00",
+  "first_update_loss": 1.8631881475448608,
+  "nonzero_gradients": {
+    "encoder": 0.6544025540351868,
+    "head": 2.5843183994293213
+  },
+  "input_shape": [
+    16,
+    3,
+    224,
+    224
+  ],
+  "logit_shape": [
+    16,
+    6
+  ],
+  "encoder_and_head_changed": true,
+  "continuation_probe_tolerances": {
+    "weight_atol": 2e-06,
+    "weight_rtol": 0.0001,
+    "fp32_eval_probability_atol": 0.0005,
+    "fp32_eval_ce_atol": 0.002,
+    "train_loss_atol": 5e-05
+  },
+  "continuation_max_errors": {
+    "fp32_eval_probability": 3.8743019104003906e-07,
+    "fp32_eval_ce": 1.0728836059570312e-06,
+    "train_loss": 0.0
+  },
+  "validation_reload_exact": true,
+  "continuation_passed": true,
+  "train_rows_per_second": 181.152311503918,
+  "validation_rows_per_second": 176.61335451749946,
+  "benchmark_train_seconds": 77.72464995400003,
+  "benchmark_validation_seconds": 23.191904208999972,
+  "benchmark_successful_updates_including_warmup": 240,
+  "benchmark_skips": 0,
+  "peak_device_bytes": 3115028480,
+  "checkpoint_seconds": 3.794903991999945,
+  "checkpoint_bytes": 1029860553,
+  "trainable_parameters": 85803270,
+  "device_count_used": 2,
+  "effective_batch": 64
+}

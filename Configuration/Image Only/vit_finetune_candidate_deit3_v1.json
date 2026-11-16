@@ -1,0 +1,14 @@
+{
+  "candidate": "deit3_base_patch16_224.fb_in22k_ft_in1k",
+  "implementation": "timm.deit3_base_patch16_224",
+  "hypothesis": "The stronger supervised 22k-to-1k initialization and its DeiT III variant improve full-validation accuracy.",
+  "url": "https://huggingface.co/timm/deit3_base_patch16_224.fb_in22k_ft_in1k/resolve/b5791d4983082b0c680da556954beb5b1962e85f/model.safetensors",
+  "sha256": "408c1eb6cef049d90ee2615a6df47a879385be42e69763e290ddafc23daeb84b",
+  "license": "Apache-2.0",
+  "input_size": [3, 224, 224],
+  "mean": [0.485, 0.456, 0.406],
+  "std": [0.229, 0.224, 0.225],
+  "transforms": "Match continuity crop/resize, effective batch and optimizer to isolate the checkpoint/architecture bundle.",
+  "minimum_epochs": 4,
+  "estimated_cost_factor": 1.15
+}

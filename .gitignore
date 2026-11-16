@@ -1,14 +1,11 @@
-# Data (large files — do not commit)
-data/
+# Private dataset and derived image material
+/Pre-processing/Data/
 *.tsv
 *.csv
-# Retain small official-run numerical evidence when synced from Colab.
-!results/experiments/official_text/**/*.csv
-!results/experiments/multimodal/**/*.csv
-images/
-images.zip
+!Metrics/Results/experiments/official_text/**/*.csv
+!Metrics/Results/experiments/multimodal/**/*.csv
 
-# Model checkpoints
+# Model checkpoints and weights
 checkpoints/
 *.pt
 *.pth
@@ -24,7 +21,7 @@ dist/
 build/
 .eggs/
 
-# Virtual environments
+# Virtual environments and local caches
 venv/
 env/
 .env/
@@ -32,8 +29,8 @@ env/
 .cache/
 .tmp/
 
-# Local literature extraction and browser diagnostics may contain personal UI data.
-results/literature_survey_extracted_*.txt
+# Local extracted literature and browser diagnostics
+Metrics/Results/literature_survey_extracted_*.txt
 
 # Jupyter
 .ipynb_checkpoints/
@@ -49,57 +46,43 @@ results/literature_survey_extracted_*.txt
 .DS_Store
 Thumbs.db
 
-# Logs
+# Logs and run trackers
 *.log
-!results/experiments/official_text/**/*.log
-!results/experiments/multimodal/**/*.log
+!Metrics/Results/experiments/official_text/**/*.log
+!Metrics/Results/experiments/multimodal/**/*.log
 wandb/
 runs/
 
 # Original pretrained tokenizer copies stay in the local evidence archive.
-results/experiments/multimodal/**/tokenizer/
+Metrics/Results/experiments/multimodal/**/tokenizer/
 
 # Full portable snapshots remain local; commit explicit current scientific evidence.
-results/experiments/official_text/**/raw_evidence/historical_colab_snapshot/
-results/experiments/official_text/**/raw_evidence/bert-base/tokenizer/
-results/experiments/official_text/**/raw_evidence/bert-base/train_official_text.py
-results/experiments/official_text/**/raw_evidence/environment*.json
-results/experiments/official_text/**/raw_evidence/pip_freeze*.txt
-results/experiments/official_text/**/raw_evidence/retrieval_manifest.json
-results/bert_*_20261009.png
+Metrics/Results/experiments/official_text/**/raw_evidence/historical_colab_snapshot/
+Metrics/Results/experiments/official_text/**/raw_evidence/bert-base/tokenizer/
+Metrics/Results/experiments/official_text/**/raw_evidence/bert-base/train_official_text.py
+Metrics/Results/experiments/official_text/**/raw_evidence/environment*.json
+Metrics/Results/experiments/official_text/**/raw_evidence/pip_freeze*.txt
+Metrics/Results/experiments/official_text/**/raw_evidence/retrieval_manifest.json
+Metrics/Results/bert_*_20261009.png
+Metrics/Results/bert_completion_cloud_proof_20261009.png
+Metrics/Results/bert_completion_gpu_quota_20261009.png
 
-results/bert_completion_cloud_proof_20261009.png
-results/bert_completion_gpu_quota_20261009.png
+# Current browser screenshots and UI observations stay local.
+Metrics/Results/mm_part1_*_20261023.png
+Metrics/Results/mm_part1_*_20261024.png
+Metrics/Results/archive/screenshots/
+Metrics/Results/archive/observations/
 
-# Current Part1 browser screenshots stay local (account/UI context).
-results/mm_part1_*_20261023.png
-
-# Current recovery UI evidence stays local.
-results/mm_part1_*_20261024.png
-
-# Organization audit private UI/reference backups
-context/organization_20261029/*.png
-context/organization_20261029/reference_backups/
-results/archive/screenshots/
-results/archive/observations/
-
-# Personal working context and visual dashboards stay on this computer.
-/context/
-/.archify/
-/clicky_handoff/
-/work_logs/
-/collab/COLAB_WORKLOG.md
-/results/metrics_summary/
-/results/PROGRESS_TRACKER.*
-/results/archive/superseded_dashboards/
-/results/*HANDOFF*
-/START_HERE.html
-/results/UROP_Text_Only.html
-/results/UROP_Multimodal_Final_20261028.html
-/docs/progress/
-/docs/comparison/
-
-# Local navigation and explainer production materials
+# Personal context, dashboards, workflow visuals, and presentation source assets stay local.
+/AGENTS.md
 /FOLDER_GUIDE.md
-/docs/explainers/
-/data/presentations/
+/Metrics/Reports/Archive/
+/Metrics/Workflow/
+/Metrics/Presentations/
+/Metrics/Results/metrics_summary/
+/Metrics/Results/PROGRESS_TRACKER.*
+/Metrics/Results/archive/superseded_dashboards/
+/Metrics/Results/*HANDOFF*
+/Metrics/Results/UROP_Text_Only.html
+/Metrics/Results/UROP_Multimodal_Final_20261028.html
+/Metrics/Results/UROP_Telugu_T+M.mp4

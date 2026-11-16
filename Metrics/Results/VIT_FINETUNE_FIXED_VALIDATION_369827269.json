@@ -1,0 +1,12 @@
+{
+  "utc": "2026-11-15T11:44:15.271682+00:00",
+  "state": "fresh_process_passed",
+  "checkpoint_sha256": "295ef963b57cb0db64182100887f05954a8c4cb09ebad9f8a80b021ac6051cf2",
+  "selection_sha256": "1b562e241faf49918bbba404d9f1a4de7acb40bf3db7cd100418a93903ee1e66",
+  "validation_predictions_sha256": "14e2d6867ef3f1aa30fe3b8f2d771f496afe171ca150ca37c02decd432fa347a",
+  "rows": 40,
+  "probability_atol": 0.0003,
+  "cross_entropy_atol": 0.002,
+  "probability_max_error": 1.1102230246251565e-16,
+  "ce_max_error": 8.881784197001252e-16
+}
