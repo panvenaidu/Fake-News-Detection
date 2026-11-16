@@ -1,0 +1,16 @@
+{
+  "status": "verified",
+  "report": "results/IMAGE_ONLY_FINAL_REPORT_20261102.md",
+  "verification_receipt": "results/IMAGE_ONLY_FINAL_COMPLETION_RECEIPT_20261102.json",
+  "saved_results": {
+    "experiments/image_only/OFFICIAL-6W-IMAGE-USABLE-v1_seed42_20261102T145600Z/final_364917396/test_metrics.json": {
+      "accuracy": 0.8115572802429559,
+      "micro_f1": 0.8115572802429559,
+      "macro_f1": 0.6617958357324856,
+      "weighted_f1": 0.8049352391891245,
+      "balanced_accuracy": 0.6299189007454422,
+      "loss": 0.5843838274080876,
+      "samples": 59270
+    }
+  }
+}

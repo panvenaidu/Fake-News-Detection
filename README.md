@@ -1,29 +1,14 @@
-# Multimodal misinformation classification
+# UROP misinformation classification
 
-This project evaluates six-category classification using text, images, and text with images from the [Fakeddit dataset (provided by the faculty)](https://github.com/entitize/fakeddit). The models predict research-defined categories; a prediction alone does not establish whether a claim is true.
+This project evaluates research-defined six-category classification using text, images, and both modalities from the faculty-provided Fakeddit dataset. A model prediction alone does not establish whether a claim is true or false.
 
-| Input | Model | Validation accuracy | Test accuracy |
-|---|---|---:|---:|
-| Text | BERT-base | 82.74% | 82.39% |
-| Image | ResNet-50 | 80.93% | 81.16% |
-| Text + image | BERT-base + ResNet-50 | 88.51% | 88.15% |
 
-The reported results use one seed per model and the original split assignments. Image-based models use the approved cohort after excluding 491 images that could not be decoded. Text-only uses the full released title cohort, so comparisons across modalities are descriptive. Different training methods and cohorts also limit direct comparison with the [original paper](https://arxiv.org/abs/1911.03854).
+## Current organization
 
-## Results
+Original scripts are located in model/, preprocessing/, training/, testing/, validation/, and metrics/. Registered settings are in configs/. Original reports, receipts, predictions, and experiment evidence are in results/.
 
-- [Text-only final report](Metrics/Results/TEXT_ONLY_FINAL_REPORT_20261009.md)
-- [Image-only final report](Metrics/Results/IMAGE_ONLY_FINAL_REPORT_20261102.md)
-- [Text + image final report](Metrics/Results/MULTIMODAL_FINAL_REPORT_20261028.md)
+Model and experiment code use image_only, text_only, and text_plus_image subfolders. Shared preparation code is in preprocessing/shared/. Private data is in preprocessing/Data/. Large evidence bundles and Python packages retain their internal structure.
 
-## Project folders
+archives/miscellaneous/ holds presentations, workflow visuals, and Finder metadata. Earlier experiment code remains in its dedicated training and model folders.
 
-- Model: model source and architecture references
-- Configuration: registered settings and dependencies
-- Pre-processing: private data and preparation tools
-- Training: training notebooks and scripts by modality
-- Validation: validation and recovery checks
-- Testing: frozen test evaluation and verification
-- Metrics: saved results, reports, and local presentation materials
-
-Original data, model weights, and local presentation materials are kept private and are not included in the public repository.
+The clearly named model review files contain full original source copies. Original filenames also remain available. Scripts retain historical imports and paths, which require repair and runtime verification before execution.
