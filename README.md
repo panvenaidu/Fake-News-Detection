@@ -1,6 +1,6 @@
 # Multimodal Fake News Detection
 
-A six-class research study using the faculty-provided Fakeddit data. It compares post-title, image-only, and fused title-plus-image models, with a later vision-transformer follow-up. **These are research-category predictions, not fact-checks:** a model score does not establish whether a claim is true.
+A six-class research study using the provided Fakeddit data. It compares post-title, image-only, and fused title-plus-image models, with a later vision-transformer follow-up. **These are research-category predictions, not fact-checks:** a model score does not establish whether a claim is true.
 
 ![Validation and held-out test accuracy across four model runs](accuracy-chart.svg)
 
