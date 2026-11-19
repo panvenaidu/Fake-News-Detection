@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "kind": "synthetic engineering, no training or test",
+  "text_sha256": "870bea50fa608dddd20421c21fd1786e244b1323e22734093214b87023666753",
+  "image_sha256": "97cb89e986c2481d65dd61ff4f2570a907898c885c34ea2e9460385ce01ae300",
+  "text_mapping": {
+    "mapped_keys": 197,
+    "excluded_keys": [
+      "bert.pooler.dense.bias",
+      "bert.pooler.dense.weight",
+      "classifier.bias",
+      "classifier.weight"
+    ],
+    "strict": true
+  },
+  "output_shape": [
+    1,
+    6
+  ],
+  "backward_both_encoders": true,
+  "strict_reload_equal": true
+}

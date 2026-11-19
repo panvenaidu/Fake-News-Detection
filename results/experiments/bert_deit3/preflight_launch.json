@@ -1,0 +1,15 @@
+{
+  "state": "passed",
+  "private_kaggle_url": "https://www.kaggle.com/code/rocky62/urop-bert-deit-iii-gpu-check?scriptVersionId=370755566",
+  "script_version_id": 370755566,
+  "submitted_utc": "2026-11-17T17:55:17.683834+00:00",
+  "notebook_sha256": "354157510f89b6b1aa2ed03ded2d84b5349aca9b4202a76077cfa1cea3d9db7d",
+  "user_approved_preflight": true,
+  "quota_used_before_launch": "20:13 / 30 hours",
+  "scientific_training": false,
+  "held_out_inference": false,
+  "receipt_sha256": "d4ab864c2ce9208015e5826685668c4eef17d8ec8b45dc941e9e0582ebb9ba96",
+  "training_samples_per_second": 56.31187229573892,
+  "validation_samples_per_second": 132.88447570143938,
+  "estimated_epoch_seconds_excluding_checkpoint": 10454.8091463917
+}

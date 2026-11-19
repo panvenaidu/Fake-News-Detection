@@ -1,0 +1,21 @@
+{
+  "status": "passed_independent_csv_verification",
+  "split": "test",
+  "metrics": {
+    "accuracy": 0.8814577357853889,
+    "micro_f1": 0.8814577357853889,
+    "macro_f1": 0.8264151321437674,
+    "weighted_f1": 0.8813174383536236,
+    "balanced_accuracy": 0.8082493600939357,
+    "loss": 0.7238658786110204,
+    "samples": 59270
+  },
+  "prediction_sha256": "9b987c5e2699b288dbdf0aabc57f15122776184fda81f1b972039807adce83ec",
+  "exact_order_ids_labels": true,
+  "probability_ce_confusion_checks": true,
+  "cohort_counts": {
+    "train": 563601,
+    "validation": 59299,
+    "test": 59270
+  }
+}

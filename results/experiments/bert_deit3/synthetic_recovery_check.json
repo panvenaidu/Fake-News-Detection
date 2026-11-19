@@ -1,0 +1,1 @@
+{"status": "passed", "scope": "synthetic CPU only", "rows": 13, "checks": ["interrupted continuation", "model optimizer scheduler scaler equality", "validation and selected checkpoint reload", "accuracy-first selection and ties"]}

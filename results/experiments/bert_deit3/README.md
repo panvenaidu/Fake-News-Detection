@@ -1,0 +1,29 @@
+# BERT + DeiT III experiment — in progress
+
+This is a separate six-class experiment. Scientific training is incomplete; no new held-out test has run, so there is no test accuracy or claim that 89% was reached.
+
+The approved cohort audit reconciled the original TSVs, exclusions and baseline predictions: 563,601 train, 59,299 validation and 59,270 test. The existing BERT + ResNet-50 predictions independently reproduce 88.1458% accuracy and 0.826415 macro-F1. See `baseline_cohort_audit.json`.
+
+The trained text weights SHA-256 is `870bea50fa608dddd20421c21fd1786e244b1323e22734093214b87023666753`. The full-frame image checkpoint was downloaded from private Kaggle training version 370028173 and verified as `97cb89e986c2481d65dd61ff4f2570a907898c885c34ea2e9460385ce01ae300`. Its local private copy is `preprocessing/Data/cloud_recovery/bert_deit3_inputs/deit3_full_frame_epoch3.pt`. These are the exact source checkpoints; the latter is not the earlier 80.39% DeiT run.
+
+`local_engineering_preflight.json` records strict loading, synthetic forward/backward through both encoders, six output logits, and exact state reload. This did not exercise real pairs, CUDA, recovery continuation or measure epoch throughput. The model and separate train/preflight code are under `model/text_plus_image/bert_deit3`; configuration is under `configs/text_plus_image/bert_deit3`. The provisional four-epoch configuration disables early stopping and selects using unrounded validation accuracy, macro-F1, lower loss, then earlier epoch. Training is gated on a matching real-pair CUDA preflight receipt. The checkpoint loader verifies both source hashes. The image transform matches the image-only full-frame recipe.
+
+The private [GPU preflight](https://www.kaggle.com/code/rocky62/urop-bert-deit-iii-gpu-check?scriptVersionId=370755566) passed on a Tesla T4 using real train and validation pairs. Its receipt SHA-256 is `d4ab864c2ce9208015e5826685668c4eef17d8ec8b45dc941e9e0582ebb9ba96`; it measured 56.31 training examples/s and estimated 2h54m per epoch before staging and checkpoint costs. The benchmark recycled a small sample, so full-cohort throughput may differ. See `preflight_launch.json`.
+
+Kaggle showed 20:25 of 30 GPU hours used and no active jobs before launching [training session 1](https://www.kaggle.com/code/rocky62/urop-bert-deit-iii-training?scriptVersionId=370762240). It is bounded to at most two epochs and has recovery state for continuation. The full four-epoch schedule exceeds the remaining quota estimate and will require additional quota. That session finished two epochs and published recovery and validation artifacts, as recorded below. PyTorch warned that the attention backward operation can be nondeterministic under the registered warn-only setting; exact CUDA reproducibility is therefore not guaranteed.
+
+`synthetic_recovery_check.json` records a CPU test of interrupted continuation, model, optimizer, scheduler and scaler equality, checkpoint reload, and selection tie-breaking. It is not a CUDA recovery proof.
+
+Next: wait for sufficient GPU quota, then resume from the latest verified Kaggle receipt and complete the registered training schedule. Freeze the validation-selected checkpoint after training. `testing/text_plus_image/bert_deit3/evaluate_frozen.py` is a separate draft single-test evaluator, and `verify_paired.py` audits predictions and baseline pairing independently; they still require engineering validation before scientific use. No test-driven tuning is permitted.
+
+## Session 1 readback (18 November)
+
+Kaggle version 370762240 finished after approximately 6h45m. Its displayed receipt reports `stage_complete`, two history epochs, and a recovery cursor at epoch 3, with no test. Two recovery-generation files are visible in the output. The epoch 2 metrics file reports validation accuracy 0.8995429939796624 and macro-F1 0.8459234326022042 on 59,299 pairs; epoch 2 is the current best, with selected weights SHA-256 `1165e2e850a48334701afc6416d974748fb1b360f2a16efe79e08b8d8a605026`. The log reports session receipt SHA-256 `cb845905ff96584520e8776cb81ba23437dd7854687338d49ccfed4787768f83`. These are Kaggle UI readbacks, not yet independent local hash verification.
+
+The refreshed quota showed 27:10 of 30 hours used. A bounded continuation notebook was prepared but not submitted. Training, final validation selection, frozen test evaluation and independent readback remain incomplete.
+
+On 18 November, the approved continuation was submitted as private Kaggle version 370849309. The startup log registered the expected predecessor receipt and preflight hashes, with `no_test: true`, and began caching image archives. The trainer's recovery load and subsequent progress have not yet been confirmed. The segment is bounded to 6,000 seconds with a clean-stop margin because only 2h50m of GPU quota remained at launch.
+
+Continuation version 370849309 completed successfully after 4,878.2 seconds. Its receipt reports a clean stop in epoch 3, training cursor 204,992, with two completed validation epochs and no test. The saved generation is `ebe4417d7cba4ca1a4cdbbe00b97b569.pt`, SHA-256 `b9dfce8e3aa4facf2d7f5499745580910128d55447c5badb83e76cc0259b65b4`, and the session receipt SHA-256 is `8bbd69f7e80b0ae6d002b1c418147356698ad11618da3493c3ec0a68104338ba`. These are Kaggle readbacks; the receipt reports no recovery fallback errors. Epoch 2 remains the current best; no later validation has completed.
+
+After that segment Kaggle displayed 28:31 / 30 GPU hours used (1h29m remaining). The session builder reserves one hour for recovery and safety; the remaining allowance permits at most 29 minutes of a new session, including roughly 8 minutes of archive staging plus checkpoint load/save. A new run was therefore not started pending enough quota for a useful segment. The latest receipt above is the required predecessor for continuation.
