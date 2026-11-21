@@ -2,7 +2,7 @@
 
 A six-class research study using the provided Fakeddit data. It compares post-title, image-only, and fused title-plus-image models, with a later vision-transformer follow-up. **These are research-category predictions, not fact-checks:** a model score does not establish whether a claim is true.
 
-![Validation and held-out test accuracy across four model runs](accuracy-chart.svg)
+![Validation and held-out test accuracy across five model runs](accuracy-chart.svg)
 
 ## Results
 
@@ -12,8 +12,9 @@ A six-class research study using the provided Fakeddit data. It compares post-ti
 | ResNet-50 | Image | 80.93% | 81.16% | 0.6618 | 59,270 |
 | BERT-base + ResNet-50 | Title + image | 88.51% | **88.15%** | **0.8264** | 59,270 |
 | DeiT III B/16 fine-tuned | Image follow-up | 83.02% | 83.13% | 0.7131 | 59,270 |
+| BERT-base + DeiT III B/16 | Title + image | **90.89698%** | **90.72887%** | 0.8616 | 59,270 |
 
-The first three rows are the completed baseline comparison shown on the project website. The DeiT III result is a separate, later image-only experiment. Accuracy is the share of correctly classified posts; Macro-F1 weights the six categories equally and helps expose uneven class performance.
+The first three rows are the completed baseline comparison. The DeiT III image-only result and the BERT + DeiT III multimodal result are later follow-up experiments. For BERT + DeiT III, Epoch 4 was selected by validation accuracy; one evaluation of the frozen checkpoint produced a held-out test accuracy **0.16811 percentage points lower** than validation. The training receipt records four completed epochs and `no_test: true`; the separate held-out evaluation passed independent CSV verification. See the [final result record](results/experiments/bert_deit3/final_results.json) and [post-run audit](results/experiments/bert_deit3/POSTRUN_AUDIT.md). Accuracy is the share of correctly classified posts; Macro-F1 weights the six categories equally and helps expose uneven class performance.
 
 ## Data and evaluation
 
@@ -26,7 +27,7 @@ The project uses six Fakeddit categories: **True, Satire/Parody, Misleading Cont
 
 Image-based runs exclude 491 records whose image files could not be decoded. The image-only, multimodal, and DeiT III runs share the usable image cohort; the text-only run retains all released titles, so its test set has 49 more rows. Treat cross-cohort comparisons as descriptive rather than perfectly paired.
 
-For the three baselines, the checkpoint was selected on validation Macro-F1, with lower validation loss and then the earlier epoch as tie-breakers; the selected checkpoint was frozen before held-out testing. The later DeiT III path uses a distinct validation ranking—accuracy, then Macro-F1, lower loss, and earlier epoch. Test scores did not select checkpoints. The fixed seed is 42.
+For the three baselines, the checkpoint was selected on validation Macro-F1, with lower validation loss and then the earlier epoch as tie-breakers; the selected checkpoint was frozen before held-out testing. The DeiT III image-only path uses validation accuracy, then Macro-F1, lower loss, and earlier epoch. BERT + DeiT III selected Epoch 4 by validation accuracy. Test scores did not select checkpoints. The fixed seed is 42.
 
 ## Models
 
@@ -34,6 +35,7 @@ For the three baselines, the checkpoint was selected on validation Macro-F1, wit
 - **Image-only baseline:** ResNet-50 classifies RGB pixels.
 - **Multimodal baseline:** BERT-base and ResNet-50 features are projected and combined with maximum fusion before a classifier head.
 - **Image follow-up:** a fine-tuned DeiT III B/16 model; reported separately from the original three-baseline comparison.
+- **Multimodal follow-up:** BERT-base + DeiT III B/16, with Epoch 4 validation-selected and independently verified once on the held-out test split.
 
 ## Repository map
 

@@ -1,0 +1,34 @@
+{
+  "experiment": "BERT-base + DeiT III B/16",
+  "input": "Title + image",
+  "status": "complete",
+  "training": {
+    "state": "stage_complete",
+    "history_epochs": 4,
+    "no_test": true,
+    "selected_epoch": 4,
+    "selection": "validation accuracy"
+  },
+  "validation": {
+    "accuracy": 0.9089697971297999,
+    "accuracy_display": "90.89698%",
+    "samples": 59299
+  },
+  "held_out_test": {
+    "evaluations": 1,
+    "independently_verified": true,
+    "accuracy": 0.9072886789269445,
+    "accuracy_display": "90.72887%",
+    "samples": 59270
+  },
+  "comparison": {
+    "test_minus_validation_percentage_points": -0.16811,
+    "description": "Held-out test accuracy is 0.16811 percentage points lower than Epoch 4 validation accuracy."
+  },
+  "sha256": {
+    "session_receipt": "283ed2c28c63d5e2ef92b95519aad1e57d97ad34a7ae8c4c7f1f9a5e5f4b5c78",
+    "selected_epoch4_checkpoint": "94eb92621c7dcdf21feb5e7e7117e9c4b3a9fac75f9bf6b9e572024dab3c957a",
+    "held_out_test_predictions": "006d2e1fd8ca3336b037d9bed1206a7aeb41df3874072f4afaa4dba8910488cb"
+  },
+  "audit": "POSTRUN_AUDIT.md"
+}
