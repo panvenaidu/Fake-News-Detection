@@ -2,7 +2,7 @@
 
 This Undergraduate Research Opportunities Programme (UROP) project compares how well a post’s title, its image, or both predict its six-class Fakeddit label. The strongest run combined BERT-base with DeiT III B/16 and achieved **90.73% held-out test accuracy** and **0.8616 Macro-F1**.
 
-[Visit the project website on Vercel](https://urop-research-project.vercel.app/)
+[Visit the project website](https://urop-research-project.vercel.app/)
 
 ## Results
 
