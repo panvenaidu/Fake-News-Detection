@@ -1,4 +1,6 @@
 """Matched, pixel-only linear probes. See the registered JSON and Kaggle builder."""
+# MODEL: Uses frozen pretrained ViT-B/16 and ResNet-50 encoders with trainable six-class heads.
+# LOGIC: Verifies image inputs, extracts features, fits heads, selects on validation, and evaluates.
 import io
 import json
 import os

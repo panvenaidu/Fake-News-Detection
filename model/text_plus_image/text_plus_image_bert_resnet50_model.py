@@ -4,6 +4,8 @@ Launch requires exact approved faculty usable paired data and coverage. --stage 
 at epoch2. Part2 resumes the same four-epoch schedule, with final test implemented
 separately against a frozen validation-selected checkpoint. No local real training.
 """
+# MODEL: Fuses BERT text and ResNet-50 image features for six-way classification.
+# LOGIC: Verifies paired data, trains/resumes, validates, and saves checkpoints; held-out test is separate.
 import argparse
 import copy
 import csv

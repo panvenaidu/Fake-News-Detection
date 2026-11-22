@@ -3,6 +3,8 @@
 Designed for an authorized Colab CUDA runtime. No image downloads; no metadata
 features. Every attempt has its own folder and preserves machine-readable proof.
 """
+# MODEL: Loads and fine-tunes the pretrained BERT sequence classifier for six labels.
+# LOGIC: Supports resumable training, validation-based checkpoint selection, and auditable outputs.
 import argparse
 import gc
 import hashlib

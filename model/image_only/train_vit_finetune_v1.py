@@ -1,4 +1,6 @@
 """Accuracy-first, end-to-end, pixel-only ViT. One optimizer boundary is resumable."""
+# MODEL: Implements image-only Vision Transformer fine-tuning (including the configured ViT/DeiT variants).
+# LOGIC: Handles deterministic data loading, resumable training, validation, and checkpoint selection.
 import argparse
 import datetime as dt
 import hashlib

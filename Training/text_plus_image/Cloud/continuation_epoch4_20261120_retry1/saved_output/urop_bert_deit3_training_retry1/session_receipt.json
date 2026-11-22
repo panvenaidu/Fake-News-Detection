@@ -1,0 +1,37 @@
+{
+  "state": "stage_complete",
+  "stop_after_epoch": 4,
+  "history_epochs": 4,
+  "phase": "train",
+  "epoch": 5,
+  "cursor": 0,
+  "recovery": {
+    "loaded": {
+      "file": "e28048072ad946a7916b9e79c06aa4eb.pt",
+      "sha256": "474319c128c1b149e4deed1c5cad69a5a6f34ff2abc2ed0cdf429ec98e08042d",
+      "bytes": 2348060377,
+      "cursor": 0
+    },
+    "fallback_errors": []
+  },
+  "best": {
+    "predictions_file": "validation_epoch4_predictions.csv",
+    "predictions_sha256": "f9cfe709c19f7abd0823ad5347c38828ff1bef72addda2533f83ff1cad803850",
+    "metrics": {
+      "accuracy": 0.9089697971297999,
+      "micro_f1": 0.9089697971297999,
+      "macro_f1": 0.8629868464894558,
+      "weighted_f1": 0.9081335494633453,
+      "balanced_accuracy": 0.84135097317556,
+      "loss": 0.67159676324853,
+      "samples": 59299
+    },
+    "epoch": 4,
+    "weights_file": "selected_epoch4_7dd15875227c43fcbd41d2d9929045ef.pt",
+    "weights_sha256": "94eb92621c7dcdf21feb5e7e7117e9c4b3a9fac75f9bf6b9e572024dab3c957a"
+  },
+  "protocol_sha256": "c4c286ba5dd22bb1d2581a6099fdc7bc0bf81b6d667bdcff3c215f50b5258be5",
+  "preflight_sha256": "ab25c6a3fb55607efa9de7c520356413e1e803bedfcfca72465e9b99775909e6",
+  "elapsed_seconds": 20769.558114256,
+  "no_test": true
+}

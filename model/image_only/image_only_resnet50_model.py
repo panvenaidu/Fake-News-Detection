@@ -3,6 +3,8 @@
 Reuse the tested multimodal recovery loop and metrics, never its model/tokenizer.
 The image experiment is isolated by its immutable protocol, attempt and contract.
 """
+# MODEL: Defines the trainable ResNet-50 image classifier.
+# LOGIC: Loads verified image data, trains/resumes, validates, and freezes the selected checkpoint.
 import argparse
 import io
 import json

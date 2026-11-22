@@ -1,0 +1,227 @@
+- generic [active] [ref=e1]:
+  - link "Skip to the workroom" [ref=e2] [cursor=pointer]:
+    - /url: "#room-main"
+  - banner [ref=e3]:
+    - link "Panvee Naidu" [ref=e4] [cursor=pointer]:
+      - /url: "#room-home"
+    - navigation "Workroom navigation" [ref=e5]:
+      - group [ref=e6]:
+        - generic "Project directory" [ref=e7] [cursor=pointer]
+      - link "Record" [ref=e8] [cursor=pointer]:
+        - /url: "#room-record"
+      - link "Contact" [ref=e9] [cursor=pointer]:
+        - /url: "#room-contact"
+      - button "Switch all projects to compact Desk view" [ref=e10] [cursor=pointer]: Desk view
+      - button "Pause scroll motion and read in native flow" [ref=e11] [cursor=pointer]: Pause motion
+  - main [ref=e12]:
+    - region "Panvee Naidu" [ref=e13]:
+      - generic [ref=e14]:
+        - figure "Panvee Naidu. India." [ref=e15]:
+          - img "Portrait of Panvee Naidu" [ref=e16]
+        - generic [ref=e18]:
+          - heading "Panvee Naidu" [level=1] [ref=e19]: PanveeNaidu
+          - paragraph [ref=e20]: Software engineer
+          - paragraph [ref=e21]: Open to software engineering roles
+          - link "Read the résumé" [ref=e22] [cursor=pointer]:
+            - /url: /Panvee_Naidu_Resume.pdf
+    - region "Connected work" [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - heading "Connected work" [level=2] [ref=e26]
+          - navigation "Connected work objects" [ref=e27]:
+            - link "AeroChat" [ref=e28] [cursor=pointer]:
+              - /url: "#room-aerochat"
+            - link "Smart Home" [ref=e29] [cursor=pointer]:
+              - /url: "#room-home-automation"
+            - link "PKCS#11" [ref=e30] [cursor=pointer]:
+              - /url: "#room-pkcs11"
+          - paragraph [ref=e31]: Exhibition scale. Use Desk view for compact reading.
+        - generic [ref=e32]:
+          - article [ref=e33]:
+            - figure "Architecture illustration. Four local containers; persistent database volume." [ref=e34]:
+              - generic [ref=e35]:
+                - generic [ref=e36]:
+                  - strong [ref=e37]: React client
+                  - generic [ref=e38]: Client container
+                - generic [ref=e39]:
+                  - strong [ref=e40]: Node + Socket.IO
+                  - generic [ref=e41]: Server container
+                - generic [ref=e42]:
+                  - generic [ref=e43]:
+                    - strong [ref=e44]: PostgreSQL
+                    - generic [ref=e45]: Storage container
+                  - generic [ref=e46]:
+                    - strong [ref=e47]: Redis
+                    - generic [ref=e48]: Cache container
+                - paragraph [ref=e49]: Isolated bridge network
+            - generic [ref=e51]:
+              - heading "AeroChat" [level=3] [ref=e52]
+              - paragraph [ref=e53]: Systems architecture
+              - paragraph [ref=e54]: Docker Compose, PostgreSQL, Redis, Socket.IO
+              - paragraph [ref=e55]: "Four local containers: React client, Node and Socket.IO server, PostgreSQL storage, Redis cache. Isolated bridge network and persistent database volume. Runs locally; application source is private."
+              - generic [ref=e56]:
+                - link "Read AeroChat case study" [ref=e57] [cursor=pointer]:
+                  - /url: /projects/aerochat.html
+                - link "Repository" [ref=e58] [cursor=pointer]:
+                  - /url: https://github.com/panvenaidu/aero-chat-realtime
+          - article [ref=e59]:
+            - figure "Architecture illustration. Processes communicate over MQTT." [ref=e60]:
+              - generic [ref=e61]:
+                - paragraph [ref=e62]: Three decoupled Python processes
+                - generic [ref=e63]:
+                  - generic [ref=e64]: Command parsing
+                  - generic [ref=e65]: REST API
+                  - generic [ref=e66]: Energy monitoring
+                - generic [ref=e67]: MQTT communication
+            - generic [ref=e69]:
+              - heading "Smart Home Automation" [level=3] [ref=e70]: Smart HomeAutomation
+              - paragraph [ref=e71]: Distributed IoT
+              - paragraph [ref=e72]: Python, MQTT, REST
+              - paragraph [ref=e73]: Three decoupled Python processes communicate over MQTT. Multi-threaded REST API, natural-language command parsing and live energy monitoring.
+              - generic [ref=e74]:
+                - link "Read Smart Home case study" [ref=e75] [cursor=pointer]:
+                  - /url: /projects/smart-home-automation.html
+                - link "Repository" [ref=e76] [cursor=pointer]:
+                  - /url: https://github.com/panvee/Home-Automation-Using-Voice-Command
+          - article [ref=e77]:
+            - figure "Security-model illustration. SoftHSM is a simulated cryptographic token." [ref=e78]:
+              - generic [ref=e79]:
+                - paragraph [ref=e80]: One-time-password authentication
+                - generic [ref=e81]: PKCS#11 interface
+                - generic [ref=e82]:
+                  - strong [ref=e83]: SoftHSM token
+                  - generic [ref=e84]: Cryptographic keys remain inside
+                  - emphasis [ref=e85]: Simulated locally
+            - generic [ref=e87]:
+              - heading "PKCS#11 Authentication" [level=3] [ref=e88]: PKCS#11Authentication
+              - paragraph [ref=e89]: Applied cybersecurity
+              - paragraph [ref=e90]: C, PKCS#11, SoftHSM, MySQL
+              - paragraph [ref=e91]: One-time-password authentication with keys held inside a simulated SoftHSM cryptographic token. Explores the hardware security model locally.
+              - generic [ref=e92]:
+                - link "Read PKCS#11 case study" [ref=e93] [cursor=pointer]:
+                  - /url: /projects/pkcs11-otp.html
+                - link "Repository" [ref=e94] [cursor=pointer]:
+                  - /url: https://github.com/panvenaidu/pkcs11-otp-authentication
+    - region "Product evidence" [ref=e95]:
+      - article [ref=e96]:
+        - generic [ref=e97]:
+          - generic [ref=e98]:
+            - heading "Valorix" [level=2] [ref=e99]
+            - paragraph [ref=e100]: Product engineering
+            - paragraph [ref=e101]: Next.js, TypeScript, React
+          - generic [ref=e102]:
+            - paragraph [ref=e103]: VALORANT analytics product with an original design system and purpose-built charts. Real live interface preview; preview data. Riot API approval pending.
+            - generic [ref=e104]:
+              - link "Read Valorix case study" [ref=e105] [cursor=pointer]:
+                - /url: /projects/valorix.html
+              - link "Live preview" [ref=e106] [cursor=pointer]:
+                - /url: https://playvalorix.vercel.app
+              - link "Repository" [ref=e107] [cursor=pointer]:
+                - /url: https://github.com/panvenaidu/valorix
+        - figure "Actual interface preview. Preview data; Riot API approval pending." [ref=e108]:
+          - img "Actual Valorix analytics interface showing its dashboard and charts with preview data" [ref=e110]
+    - region "Further work" [ref=e112]:
+      - heading "Further work" [level=2] [ref=e113]
+      - article [ref=e114]:
+        - generic [ref=e115]:
+          - heading "Crowd Detection" [level=3] [ref=e116]
+          - paragraph [ref=e117]: Computer vision
+          - paragraph [ref=e118]: YOLOv8, OpenCV
+        - paragraph [ref=e119]: Detects people, groups nearby detections into crowds and logs sustained crowd events to CSV. Case study records two bugs found on review.
+        - generic [ref=e120]:
+          - link "Read Crowd Detection case study" [ref=e121] [cursor=pointer]:
+            - /url: /projects/crowd-detection.html
+          - link "Repository" [ref=e122] [cursor=pointer]:
+            - /url: https://github.com/panvee/crowd-detect-ai
+      - article [ref=e123]:
+        - generic [ref=e124]:
+          - heading "Aurum" [level=3] [ref=e125]
+          - paragraph [ref=e126]: Product architecture
+          - paragraph [ref=e127]: FastAPI, React, JWT
+        - paragraph [ref=e128]: Multi-tenant hotel management. Isolated platform admin, hotel admin and guest portals, JWT role guards and automatic commission engine.
+        - link "Aurum repository" [ref=e130] [cursor=pointer]:
+          - /url: https://github.com/panvenaidu/aurum-hotel-management
+      - article [ref=e131]:
+        - generic [ref=e132]:
+          - heading "SoftSell" [level=3] [ref=e133]
+          - paragraph [ref=e134]: Interface development
+          - paragraph [ref=e135]: React, Vite, Tailwind
+        - paragraph [ref=e136]: Software-licence marketplace concept. Eight modular components, system-aware dark mode, validated lead form and scripted chat widget.
+        - generic [ref=e137]:
+          - link "Read SoftSell case study" [ref=e138] [cursor=pointer]:
+            - /url: /projects/softsell.html
+          - link "Repository" [ref=e139] [cursor=pointer]:
+            - /url: https://github.com/panvee/SoftSell-Software-License-Marketplace
+    - region "Record" [ref=e140]:
+      - heading "Record" [level=2] [ref=e141]
+      - generic [ref=e142]:
+        - generic [ref=e143]:
+          - heading "Salesforce Developer Intern" [level=3] [ref=e144]
+          - paragraph [ref=e145]: SmartBridge × Salesforce
+          - paragraph [ref=e146]: May to July 2025
+          - paragraph [ref=e147]: Eight-week Agentblazer Champion program; Apex classes and Lightning Web Components; Object Relationships Superbadge.
+        - generic [ref=e148]:
+          - heading "B.Tech, Computer Science & Engineering" [level=3] [ref=e149]
+          - paragraph [ref=e150]: SRM University, AP
+          - paragraph [ref=e151]: Expected May 2027
+          - paragraph [ref=e152]: "Specialisation in Cybersecurity. CGPA: 7.4/10."
+          - link "Read the full résumé" [ref=e153] [cursor=pointer]:
+            - /url: /Panvee_Naidu_Resume.pdf
+      - generic [ref=e154]:
+        - heading "Certificates" [level=3] [ref=e155]
+        - list [ref=e156]:
+          - listitem [ref=e157]:
+            - link "SAP Generative AI Developer SAP · 2026" [ref=e158] [cursor=pointer]:
+              - /url: /Certs/sap-generative-ai-developer.pdf
+              - generic [ref=e159]: SAP Generative AI Developer
+              - generic [ref=e160]: SAP · 2026
+          - listitem [ref=e161]:
+            - link "Agentblazer Champion Program SmartBridge × Salesforce · 2025" [ref=e162] [cursor=pointer]:
+              - /url: /Certs/salesforce-smartbridge.pdf
+              - generic [ref=e163]: Agentblazer Champion Program
+              - generic [ref=e164]: SmartBridge × Salesforce · 2025
+          - listitem [ref=e165]:
+            - link "Google AI Essentials Google · 2025" [ref=e166] [cursor=pointer]:
+              - /url: /Certs/google-ai-essentials.pdf
+              - generic [ref=e167]: Google AI Essentials
+              - generic [ref=e168]: Google · 2025
+          - listitem [ref=e169]:
+            - link "GenAI for Front-End Development Coursera · 2025" [ref=e170] [cursor=pointer]:
+              - /url: /Certs/meta-genai-frontend.pdf
+              - generic [ref=e171]: GenAI for Front-End Development
+              - generic [ref=e172]: Coursera · 2025
+          - listitem [ref=e173]:
+            - link "Introduction to Front-End Development Meta · 2025" [ref=e174] [cursor=pointer]:
+              - /url: /Certs/meta-intro-frontend.pdf
+              - generic [ref=e175]: Introduction to Front-End Development
+              - generic [ref=e176]: Meta · 2025
+          - listitem [ref=e177]:
+            - link "Data Analytics Hackathon Techgyan × IIT Hyderabad · 2025" [ref=e178] [cursor=pointer]:
+              - /url: /Certs/techgyan-hackathon-data-analytics.jpg
+              - generic [ref=e179]: Data Analytics Hackathon
+              - generic [ref=e180]: Techgyan × IIT Hyderabad · 2025
+          - listitem [ref=e181]:
+            - link "Data Science with Python Techgyan × IIT Hyderabad · 2025" [ref=e182] [cursor=pointer]:
+              - /url: /Certs/techgyan-data-science-python.jpg
+              - generic [ref=e183]: Data Science with Python
+              - generic [ref=e184]: Techgyan × IIT Hyderabad · 2025
+          - listitem [ref=e185]:
+            - link "Data Analytics Workshop Techgyan × IIT Hyderabad · 2025" [ref=e186] [cursor=pointer]:
+              - /url: /Certs/techgyan-workshop-data-analytics.jpg
+              - generic [ref=e187]: Data Analytics Workshop
+              - generic [ref=e188]: Techgyan × IIT Hyderabad · 2025
+    - region "Correspondence" [ref=e189]:
+      - heading "Correspondence" [level=2] [ref=e190]
+      - generic [ref=e191]:
+        - paragraph [ref=e192]: Panvee Naidu
+        - paragraph [ref=e193]: Software engineer. India.Open to software engineering roles.
+        - link "panveenaidu5@gmail.com" [ref=e194] [cursor=pointer]:
+          - /url: mailto:panveenaidu5@gmail.com
+        - generic [ref=e195]:
+          - link "Résumé" [ref=e196] [cursor=pointer]:
+            - /url: /Panvee_Naidu_Resume.pdf
+          - link "GitHub" [ref=e197] [cursor=pointer]:
+            - /url: https://github.com/panvenaidu
+          - link "LinkedIn" [ref=e198] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/panvee-naidu-8a6430291/
+  - status [ref=e199]

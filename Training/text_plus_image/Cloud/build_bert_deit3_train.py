@@ -10,18 +10,15 @@ ROOT = Path(__file__).resolve().parents[3]
 FILES = [
     'model/text_plus_image/bert_deit3/model.py',
     'model/text_plus_image/bert_deit3/train.py',
+    'model/text_plus_image/bert_deit3/preflight.py',
+    'model/text_plus_image/bert_deit3/bert-base-assets/config.json',
+    'model/text_plus_image/bert_deit3/bert-base-assets/tokenizer/tokenizer.json',
+    'model/text_plus_image/bert_deit3/bert-base-assets/tokenizer/tokenizer_config.json',
     'training/text_plus_image/Scripts/usable_cohort_v2.py',
     'training/text_plus_image/Scripts/multimodal_recovery_v1.py',
     'training/text_plus_image/Scripts/packed_image_io_v3.py',
     'configs/text_plus_image/bert_deit3/experiment.json',
 ]
-EXPECTED = {
-    FILES[0]: '61dd410a4df6a87b52478ce3904338ddc463f058768711b7ce2ae2fdc36ac4b8',
-    FILES[1]: '4bd415e202adf678d8f881dd29545a3f6383c7629a7d10567c2584e8f16006d6',
-    FILES[-1]: 'c3c28325dc780511f18f79ea699f920ddb234fd575a73d33d73b8237b79b50b1',
-}
-
-
 def build(destination, quota_minutes, seconds, stop_epoch, previous_receipt):
     if not 0 < quota_minutes < 30*60 or not 900 <= seconds <= 12*3600-1800:
         raise ValueError('Invalid quota/session bound')
@@ -32,8 +29,6 @@ def build(destination, quota_minutes, seconds, stop_epoch, previous_receipt):
     bundle = {}
     for name in FILES:
         raw = (ROOT/name).read_bytes(); digest = hashlib.sha256(raw).hexdigest()
-        if name in EXPECTED and digest != EXPECTED[name]:
-            raise ValueError('Source/config changed since GPU preflight: ' + name)
         bundle[name] = {'sha256': digest, 'bytes': base64.b64encode(raw).decode()}
     payload = base64.b64encode(zlib.compress(json.dumps(bundle).encode(), 9)).decode()
     source = f'''# BERT + DeiT III: one bounded, resumable scientific training session; no test.
@@ -76,15 +71,23 @@ text = unique('**/urop-text-only-final-results/**/bert-base/best_weights.pt',
               '870bea50fa608dddd20421c21fd1786e244b1323e22734093214b87023666753')
 image = unique('**/urop-image-only-vit-83-training/urop_vit83/full_full_frame/best_epoch3.pt',
                '97cb89e986c2481d65dd61ff4f2570a907898c885c34ea2e9460385ce01ae300')
-preflight = unique('**/urop_bert_deit3_preflight/preflight.json',
-                   'd4ab864c2ce9208015e5826685668c4eef17d8ec8b45dc941e9e0582ebb9ba96')
+preflight = Path('/kaggle/working/urop_bert_deit3_retry_preflight.json')
+if preflight.exists(): raise ValueError('Preserve existing retry preflight; use a fresh session')
+preflight_cmd = [sys.executable, '-u', str(source/'model/text_plus_image/bert_deit3/preflight.py'),
+                 '--root', str(data_root), '--coverage', str(coverage), '--packed-index', str(index),
+                 '--config', str(source/'configs/text_plus_image/bert_deit3/experiment.json'),
+                 '--text', str(text), '--image', str(image), '--output', str(preflight),
+                 '--scratch', '/tmp', '--benchmark-seconds', '180']
+print('OFFLINE_LOCAL_ASSET_PREFLIGHT_START', flush=True)
+subprocess.run(preflight_cmd, check=True, env={{**os.environ, 'TOKENIZERS_PARALLELISM':'false',
+                                               'CUBLAS_WORKSPACE_CONFIG':':4096:8', 'OMP_NUM_THREADS':'1'}})
 receipt = json.loads(preflight.read_text())
 if receipt['status'] != 'passed' or receipt['device'] != 'cuda': raise ValueError('Preflight did not pass')
 if receipt['estimated_epoch_seconds_excluding_checkpoint'] <= 0: raise ValueError('Bad throughput receipt')
 import torch
 if not torch.cuda.is_available() or torch.cuda.get_device_name(0) != receipt['gpu']:
     raise ValueError('Different or unavailable GPU; repeat preflight')
-output = Path('/kaggle/working/urop_bert_deit3_training')
+output = Path('/kaggle/working/urop_bert_deit3_training_retry1')
 if output.exists(): raise ValueError('Preserve existing output; do not duplicate a run')
 if PREVIOUS_RECEIPT:
     previous = unique('**/urop_bert_deit3_training/session_receipt.json', PREVIOUS_RECEIPT)

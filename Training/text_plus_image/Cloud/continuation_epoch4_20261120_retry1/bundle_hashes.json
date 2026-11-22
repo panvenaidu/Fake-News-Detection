@@ -1,0 +1,12 @@
+{
+  "model/text_plus_image/bert_deit3/model.py": "61dd410a4df6a87b52478ce3904338ddc463f058768711b7ce2ae2fdc36ac4b8",
+  "model/text_plus_image/bert_deit3/train.py": "8724f44536c03957739dc28d409eb76e47a1478dd85b641bafb5e0fae5f535e6",
+  "model/text_plus_image/bert_deit3/preflight.py": "8eb8b56d39d69c3f7f93e5b87a09daa71f13b43d664b9bdeb0822a97c462bac4",
+  "model/text_plus_image/bert_deit3/bert-base-assets/config.json": "864d63c4c2c4f02b1ec8eabdf40a0315af6a120df8775edc01d80e8c9d1d93bd",
+  "model/text_plus_image/bert_deit3/bert-base-assets/tokenizer/tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+  "model/text_plus_image/bert_deit3/bert-base-assets/tokenizer/tokenizer_config.json": "e1c2a61a99bda00f6c55303a210b30e2f92dcf8b555e215812e2eb583e177ffd",
+  "training/text_plus_image/Scripts/usable_cohort_v2.py": "22bff1eb0fa14d102ad07786f936c5c1ed1582ec7bd5cee2b8e8dc5eb3520092",
+  "training/text_plus_image/Scripts/multimodal_recovery_v1.py": "2f5f67ce79289c69279040d21b483e28535895f5c99c63e0021da3eee6d3d1c8",
+  "training/text_plus_image/Scripts/packed_image_io_v3.py": "a29e66d9c2962eb5bdfdce9abab02866fc77ad44aa5711ec8009a09dda7bb60d",
+  "configs/text_plus_image/bert_deit3/experiment.json": "c3c28325dc780511f18f79ea699f920ddb234fd575a73d33d73b8237b79b50b1"
+}

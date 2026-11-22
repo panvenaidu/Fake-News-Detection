@@ -1,0 +1,13 @@
+{
+  "type": "offline_bert_assets_only",
+  "changed_shared_sources": [
+    "train.py"
+  ],
+  "added_pinned_assets": [
+    "config.json",
+    "tokenizer.json",
+    "tokenizer_config.json"
+  ],
+  "old_preflight_sha256": "d4ab864c2ce9208015e5826685668c4eef17d8ec8b45dc941e9e0582ebb9ba96",
+  "new_preflight_sha256": "ab25c6a3fb55607efa9de7c520356413e1e803bedfcfca72465e9b99775909e6"
+}

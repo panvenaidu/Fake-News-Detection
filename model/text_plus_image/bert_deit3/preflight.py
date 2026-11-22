@@ -1,4 +1,6 @@
 """Real-pair CUDA engineering gate. Does not train a scientific model or touch test."""
+# ROLE: Preflights paired BERT + DeiT III model execution and checkpoint compatibility on CUDA.
+# LOGIC: Verifies inputs/assets, runs a bounded gradient/save-reload smoke check, and writes preflight evidence.
 import argparse
 import json
 import math
@@ -20,8 +22,11 @@ def run(a):
     if sha256(a.text) != TEXT_SHA256 or sha256(a.image) != IMAGE_SHA256:
         raise ValueError('Wrong encoder checkpoint')
     frames, inputs = train.verified_frames(a.root, a.coverage, a.packed_index)
-    tokenizer = AutoTokenizer.from_pretrained(cfg['bert_checkpoint'], revision=cfg['bert_revision'])
-    text = BertModel(AutoConfig.from_pretrained(cfg['bert_checkpoint'], revision=cfg['bert_revision']), add_pooling_layer=False)
+    for name, digest in train.ASSET_HASHES.items():
+        if sha256(train.ASSETS / name) != digest:
+            raise ValueError('Bundled BERT asset checksum mismatch: ' + name)
+    tokenizer = AutoTokenizer.from_pretrained(train.ASSETS/'tokenizer', local_files_only=True)
+    text = BertModel(AutoConfig.from_pretrained(train.ASSETS, local_files_only=True), add_pooling_layer=False)
     mapping = train.map_text_encoder(torch.load(a.text, map_location='cpu', weights_only=True), text)
     model = MaximumFusion(text, load_image_checkpoint(a.image)).cuda()
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
@@ -93,6 +98,7 @@ def run(a):
                'real_paired_images': True, 'cohort_id': train.COHORT, 'inputs': inputs,
                'source_sha256': sha256(Path(train.__file__)), 'model_sha256': sha256(Path(train.__file__).with_name('model.py')),
                'config_sha256': sha256(a.config), 'text_sha256': TEXT_SHA256, 'image_sha256': IMAGE_SHA256,
+               'bert_assets_sha256': train.ASSET_HASHES,
                'train_sample_count': len(ids), 'validation_sample_count': len(val_ids),
                'text_mapping': mapping, 'strict_reload_equal': True, 'seconds': time.monotonic()-started,
                'training_samples': seen, 'training_updates': updates, 'training_seconds': training_seconds,

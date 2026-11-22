@@ -1,0 +1,8 @@
+{
+  "model/text_plus_image/bert_deit3/model.py": "61dd410a4df6a87b52478ce3904338ddc463f058768711b7ce2ae2fdc36ac4b8",
+  "model/text_plus_image/bert_deit3/train.py": "4bd415e202adf678d8f881dd29545a3f6383c7629a7d10567c2584e8f16006d6",
+  "training/text_plus_image/Scripts/usable_cohort_v2.py": "22bff1eb0fa14d102ad07786f936c5c1ed1582ec7bd5cee2b8e8dc5eb3520092",
+  "training/text_plus_image/Scripts/multimodal_recovery_v1.py": "2f5f67ce79289c69279040d21b483e28535895f5c99c63e0021da3eee6d3d1c8",
+  "training/text_plus_image/Scripts/packed_image_io_v3.py": "a29e66d9c2962eb5bdfdce9abab02866fc77ad44aa5711ec8009a09dda7bb60d",
+  "configs/text_plus_image/bert_deit3/experiment.json": "c3c28325dc780511f18f79ea699f920ddb234fd575a73d33d73b8237b79b50b1"
+}

@@ -1,4 +1,6 @@
 """BERT + fine-tuned DeiT III maximum fusion, separate from the baseline."""
+# MODEL: Defines BERT + DeiT III maximum-feature fusion and strict DeiT checkpoint loading.
+# LOGIC: Prepares full-frame images and applies the validation-based checkpoint selection rule.
 from pathlib import Path
 import hashlib
 

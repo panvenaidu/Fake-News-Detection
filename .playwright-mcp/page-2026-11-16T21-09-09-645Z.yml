@@ -1,0 +1,444 @@
+- generic [ref=e2]:
+  - link "Skip to results" [ref=e3] [cursor=pointer]:
+    - /url: "#results"
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "UROP Research Project, top of page" [ref=e6] [cursor=pointer]:
+        - /url: "#top"
+        - text: UROP
+        - generic [ref=e7]: /
+        - generic [ref=e8]: research notebook
+      - paragraph [ref=e9]: SRM University-AP · Undergraduate Research
+      - navigation "Page sections" [ref=e10]:
+        - link "Results" [ref=e11] [cursor=pointer]:
+          - /url: "#results"
+        - link "Workflow" [ref=e12] [cursor=pointer]:
+          - /url: "#workflow"
+        - link "Team" [ref=e13] [cursor=pointer]:
+          - /url: "#team"
+  - main [ref=e14]:
+    - region "Multimodal fake news detection." [ref=e15]:
+      - generic [ref=e16]:
+        - paragraph [ref=e17]:
+          - generic [ref=e18]: Research dossier 01
+          - generic [ref=e19]: Multimodal classification
+        - generic [ref=e20]:
+          - generic [ref=e21]:
+            - paragraph [ref=e22]: A six-class Fakeddit study
+            - heading [level=1] [ref=e23]:
+              - text: Multimodalfake news
+              - emphasis [ref=e24]: detection.
+            - paragraph [ref=e25]: What changes when a model reads a post’s title, looks at its image, or brings both signals together?
+            - generic [ref=e26]:
+              - link "Read the results" [ref=e27] [cursor=pointer]:
+                - /url: "#results"
+                - text: Read the results
+                - generic [aria-hidden] [ref=e28]: ↓
+              - link "Follow the workflow" [ref=e29] [cursor=pointer]:
+                - /url: "#workflow"
+                - text: Follow the workflow
+                - generic [aria-hidden] [ref=e30]: ↗
+          - complementary "Held-out test accuracy across three baselines and one image-only follow-up" [ref=e31]:
+            - generic [ref=e32]:
+              - generic [ref=e33]: Held-out test
+              - generic [ref=e34]: 04 model runs
+            - paragraph [ref=e35]: Three input setups.Four evaluated runs.
+            - list [ref=e36]:
+              - listitem [ref=e37]:
+                - generic [ref=e38]: "01"
+                - generic [ref=e39]:
+                  - generic [ref=e40]: Text only
+                  - strong [ref=e41]: BERT-base
+                - strong [ref=e44]: 82.39%
+              - listitem [ref=e45]:
+                - generic [ref=e46]: "02"
+                - generic [ref=e47]:
+                  - generic [ref=e48]: Image only
+                  - strong [ref=e49]: ResNet-50
+                - strong [ref=e52]: 81.16%
+              - listitem [ref=e53]:
+                - generic [ref=e54]: "03"
+                - generic [ref=e55]:
+                  - generic [ref=e56]: Image-only follow-up
+                  - strong [ref=e57]: DeiT III B/16
+                - strong [ref=e60]: 83.13%
+              - listitem [ref=e61]:
+                - generic [ref=e62]: "04"
+                - generic [ref=e63]:
+                  - generic [ref=e64]: Text + image
+                  - strong [ref=e65]: BERT-base + ResNet-50
+                - strong [ref=e68]: 88.15%
+            - paragraph [ref=e69]: Recorded test split · six-class evaluation
+        - generic "Study at a glance" [ref=e70]:
+          - generic [ref=e71]:
+            - generic [ref=e72]: Model runs
+            - strong [ref=e73]: "04"
+          - generic [ref=e74]:
+            - generic [ref=e75]: Milestones complete
+            - strong [ref=e76]: 15 / 15
+          - generic [ref=e77]:
+            - generic [ref=e78]: Classification
+            - strong [ref=e79]: 6 classes
+    - region "Three input setups. Four evaluated runs." [ref=e80]:
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - generic [ref=e83]:
+            - paragraph [ref=e84]: 01 / Comparative results
+            - heading "Three input setups. Four evaluated runs." [level=2] [ref=e85]: Three input setups.Four evaluated runs.
+          - paragraph [ref=e86]: Text only, image only, and text + image. The image-only setup includes the original ResNet-50 baseline and a later DeiT III follow-up.
+        - generic [ref=e87]:
+          - generic [ref=e89]:
+            - generic [ref=e90]: 100%
+            - generic [aria-hidden] [ref=e91]: 0%
+          - generic [ref=e92]:
+            - paragraph [ref=e93]:
+              - generic [ref=e94]:
+                - generic [ref=e95]: Baseline work complete
+                - text: Baseline work complete
+            - progressbar "Baseline project completion" [ref=e96]
+            - paragraph [ref=e97]: 15 of 15 milestones recorded
+          - generic [ref=e98]: Complete15 / 15
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - generic [ref=e102]: Explore the model results
+            - button "About test sample counts" [ref=e104]: i
+            - button "Show more model results" [ref=e105] [cursor=pointer]: Scroll through results →
+          - region "Model result cards; scroll horizontally to see all four" [ref=e106]:
+            - generic [ref=e107]:
+              - article [ref=e108]:
+                - generic [ref=e109]:
+                  - generic [ref=e110]:
+                    - generic [ref=e111]: 01 / Text only
+                    - generic [ref=e112]: 5 / 5 complete
+                  - generic [ref=e113]:
+                    - generic [ref=e114]: Post title
+                    - generic [aria-hidden] [ref=e115]: →
+                    - strong [ref=e116]: BERT-base
+                  - paragraph [ref=e117]: Validation-selected · held-out test
+                - generic [ref=e118]:
+                  - paragraph [ref=e119]: Baseline 01
+                  - heading "Text only" [level=3] [ref=e120]
+                  - paragraph [ref=e121]: BERT-base
+                  - paragraph [ref=e122]: Classifies each post using its title.
+                  - generic [ref=e123]:
+                    - generic [ref=e124]:
+                      - term [ref=e125]: Validation accuracy
+                      - definition [ref=e126]:
+                        - generic [ref=e127]:
+                          - generic [ref=e128]: 82.74%
+                          - generic [aria-hidden] [ref=e129]: 0.00%
+                    - generic [ref=e130]:
+                      - term [ref=e131]: Test accuracy
+                      - definition [ref=e132]:
+                        - generic [ref=e133]:
+                          - generic [ref=e134]: 82.39%
+                          - generic [aria-hidden] [ref=e135]: 0.00%
+                    - generic [ref=e136]:
+                      - term [ref=e137]: Test samples
+                      - definition [ref=e138]: 59,319
+                  - group [ref=e139]:
+                    - generic "See more details" [ref=e140] [cursor=pointer]:
+                      - text: See more details
+                      - generic [aria-hidden] [ref=e141]: ＋
+              - article [ref=e142]:
+                - generic [ref=e143]:
+                  - generic [ref=e144]:
+                    - generic [ref=e145]: 02 / Image only
+                    - generic [ref=e146]: 5 / 5 complete
+                  - generic [ref=e147]:
+                    - generic [ref=e148]: Image pixels
+                    - generic [aria-hidden] [ref=e149]: →
+                    - strong [ref=e150]: ResNet-50
+                  - paragraph [ref=e151]: Validation-selected · held-out test
+                - generic [ref=e152]:
+                  - paragraph [ref=e153]: Baseline 02
+                  - heading "Image only" [level=3] [ref=e154]
+                  - paragraph [ref=e155]: ResNet-50
+                  - paragraph [ref=e156]: Classifies each post using only image pixels.
+                  - generic [ref=e157]:
+                    - generic [ref=e158]:
+                      - term [ref=e159]: Validation accuracy
+                      - definition [ref=e160]:
+                        - generic [ref=e161]:
+                          - generic [ref=e162]: 80.93%
+                          - generic [aria-hidden] [ref=e163]: 0.00%
+                    - generic [ref=e164]:
+                      - term [ref=e165]: Test accuracy
+                      - definition [ref=e166]:
+                        - generic [ref=e167]:
+                          - generic [ref=e168]: 81.16%
+                          - generic [aria-hidden] [ref=e169]: 0.00%
+                    - generic [ref=e170]:
+                      - term [ref=e171]: Test samples
+                      - definition [ref=e172]: 59,270
+                  - group [ref=e173]:
+                    - generic "See more details" [ref=e174] [cursor=pointer]:
+                      - text: See more details
+                      - generic [aria-hidden] [ref=e175]: ＋
+              - article [ref=e176]:
+                - generic [ref=e177]:
+                  - generic [ref=e178]:
+                    - generic [ref=e179]: 03 / IMAGE ONLY FOLLOW-UP
+                    - generic [ref=e180]: Independent verification
+                  - generic [ref=e181]:
+                    - generic [ref=e182]: Image pixels
+                    - generic [aria-hidden] [ref=e183]: →
+                    - strong [ref=e184]: DeiT III B/16
+                  - paragraph [ref=e185]: Validation accuracy selected · frozen test
+                - generic [ref=e186]:
+                  - paragraph [ref=e187]: Later image-only experiment
+                  - heading "Data-efficient Image Transformer" [level=3] [ref=e188]
+                  - paragraph [ref=e189]: Fine-tuned DeiT III B/16
+                  - paragraph [ref=e190]: Uses RGB image pixels only.
+                  - generic [ref=e191]:
+                    - generic [ref=e192]:
+                      - term [ref=e193]: Validation accuracy
+                      - definition [ref=e194]: 83.02%
+                    - generic [ref=e195]:
+                      - term [ref=e196]: Held-out test accuracy
+                      - definition [ref=e197]: 83.13%
+                    - generic [ref=e198]:
+                      - term [ref=e199]: Test samples
+                      - definition [ref=e200]: 59,270
+                    - generic [ref=e201]:
+                      - term [ref=e202]: Test Macro-F1
+                      - definition [ref=e203]: "0.7131"
+                  - group [ref=e204]:
+                    - generic "See more details" [ref=e205] [cursor=pointer]:
+                      - text: See more details
+                      - generic [aria-hidden] [ref=e206]: ＋
+              - article [ref=e207]:
+                - generic [ref=e208]:
+                  - generic [ref=e209]:
+                    - generic [ref=e210]: 03 / Text + image
+                    - generic [ref=e211]: 5 / 5 complete
+                  - generic [ref=e212]:
+                    - generic [ref=e213]: Title + image
+                    - generic [aria-hidden] [ref=e214]: →
+                    - strong [ref=e215]: BERT-base + ResNet-50
+                  - paragraph [ref=e216]: Validation-selected · held-out test
+                - generic [ref=e217]:
+                  - paragraph [ref=e218]: Baseline 03
+                  - heading "Text + image" [level=3] [ref=e219]
+                  - paragraph [ref=e220]: BERT-base + ResNet-50
+                  - paragraph [ref=e221]: Combines title and image features through maximum fusion.
+                  - generic [ref=e222]:
+                    - generic [ref=e223]:
+                      - term [ref=e224]: Validation accuracy
+                      - definition [ref=e225]:
+                        - generic [ref=e226]:
+                          - generic [ref=e227]: 88.51%
+                          - generic [aria-hidden] [ref=e228]: 0.00%
+                    - generic [ref=e229]:
+                      - term [ref=e230]: Test accuracy
+                      - definition [ref=e231]:
+                        - generic [ref=e232]:
+                          - generic [ref=e233]: 88.15%
+                          - generic [aria-hidden] [ref=e234]: 0.00%
+                    - generic [ref=e235]:
+                      - term [ref=e236]: Test samples
+                      - definition [ref=e237]: 59,270
+                  - group [ref=e238]:
+                    - generic "See more details" [ref=e239] [cursor=pointer]:
+                      - text: See more details
+                      - generic [aria-hidden] [ref=e240]: ＋
+    - region "Follow the evidence from split to test." [ref=e241]:
+      - generic [ref=e242]:
+        - generic [ref=e243]:
+          - generic [ref=e244]:
+            - paragraph [ref=e245]: 02 / Method & sequence
+            - heading "Follow the evidence from split to test." [level=2] [ref=e246]: Follow the evidencefrom split to test.
+          - paragraph [ref=e247]: The workflow records how each signal is prepared, trained, selected, and evaluated.
+        - generic [ref=e248]:
+          - generic [ref=e249]:
+            - figure "Looping vector workflow · hover or focus a box to inspect Click a box to pin its details" [ref=e250]:
+              - paragraph [ref=e251]: The faculty-provided Fakeddit data retains its released splits and six labels. The three baselines select by validation Macro-F1. A later image-only DeiT III B/16 branch selects by validation accuracy with documented tie-breakers, tests its frozen checkpoint once, and receives independent verification.
+              - generic [ref=e252]:
+                - generic "Interactive UROP workflow with three baselines and a DeiT III follow-up" [ref=e253]:
+                  - generic [ref=e254]:
+                    - generic [ref=e255]: UROP / Research workflow
+                    - generic [ref=e256]: Three baselines · one image-only follow-up
+                  - generic [ref=e257]:
+                    - 'button "01 / INPUT: Dataset, Six labels · released splits" [ref=e259] [cursor=pointer]':
+                      - generic [ref=e260]: 01 / INPUT
+                      - strong [ref=e261]: Dataset
+                      - generic [ref=e262]: Six labels · released splits
+                    - 'button "01 / PREPARE: Prepare pairs, Post IDs · splits · labels" [ref=e266] [cursor=pointer]':
+                      - generic [ref=e267]: 01 / PREPARE
+                      - strong [ref=e268]: Prepare pairs
+                      - generic [ref=e269]: Post IDs · splits · labels
+                  - generic [ref=e276]:
+                    - region "Text-only baseline" [ref=e277]:
+                      - generic [ref=e278]:
+                        - 'button "02 / TEXT ONLY: Text preparation, clean_title → tokens" [ref=e280] [cursor=pointer]':
+                          - generic [ref=e281]: 02 / TEXT ONLY
+                          - strong [ref=e282]: Text preparation
+                          - generic [ref=e283]: clean_title → tokens
+                        - 'button "ENCODER: BERT-base, Title-only model" [ref=e287] [cursor=pointer]':
+                          - generic [ref=e288]: ENCODER
+                          - strong [ref=e289]: BERT-base
+                          - generic [ref=e290]: Title-only model
+                        - 'button "TRAIN + VALIDATE: Select checkpoint, 6 epochs · choose epoch 4" [ref=e294] [cursor=pointer]':
+                          - generic [ref=e295]: TRAIN + VALIDATE
+                          - strong [ref=e296]: Select checkpoint
+                          - generic [ref=e297]: 6 epochs · choose epoch 4
+                        - 'button "HELD-OUT TEST: Text test, 82.3901% accuracy" [ref=e301] [cursor=pointer]':
+                          - generic [ref=e302]: HELD-OUT TEST
+                          - strong [ref=e303]: Text test
+                          - generic [ref=e304]: 82.3901% accuracy
+                        - 'button "OUTPUT: Save results, Accuracy · Macro-F1 · run record" [ref=e308] [cursor=pointer]':
+                          - generic [ref=e309]: OUTPUT
+                          - strong [ref=e310]: Save results
+                          - generic [ref=e311]: Accuracy · Macro-F1 · run record
+                    - region "Text + image baseline" [ref=e312]:
+                      - generic [ref=e313]:
+                        - 'button "03 / TEXT + IMAGE: Two encoders, BERT-base + ResNet-50" [ref=e315] [cursor=pointer]':
+                          - generic [ref=e316]: 03 / TEXT + IMAGE
+                          - strong [ref=e317]: Two encoders
+                          - generic [ref=e318]: BERT-base + ResNet-50
+                        - 'button "FUSION: Maximum fusion, 512-d projections → MLP" [ref=e322] [cursor=pointer]':
+                          - generic [ref=e323]: FUSION
+                          - strong [ref=e324]: Maximum fusion
+                          - generic [ref=e325]: 512-d projections → MLP
+                        - 'button "TRAIN + VALIDATE: Select checkpoint, 4 epochs · choose epoch 4" [ref=e329] [cursor=pointer]':
+                          - generic [ref=e330]: TRAIN + VALIDATE
+                          - strong [ref=e331]: Select checkpoint
+                          - generic [ref=e332]: 4 epochs · choose epoch 4
+                        - 'button "HELD-OUT TEST: Frozen test, 88.1458% accuracy" [ref=e336] [cursor=pointer]':
+                          - generic [ref=e337]: HELD-OUT TEST
+                          - strong [ref=e338]: Frozen test
+                          - generic [ref=e339]: 88.1458% accuracy
+                        - 'button "OUTPUT: Save results, Accuracy · Macro-F1 · run record" [ref=e343] [cursor=pointer]':
+                          - generic [ref=e344]: OUTPUT
+                          - strong [ref=e345]: Save results
+                          - generic [ref=e346]: Accuracy · Macro-F1 · run record
+                    - region "Image-only baseline" [ref=e347]:
+                      - generic [ref=e348]:
+                        - 'button "04 / IMAGE ONLY: Prepare images, RGB · 224 × 224" [ref=e350] [cursor=pointer]':
+                          - generic [ref=e351]: 04 / IMAGE ONLY
+                          - strong [ref=e352]: Prepare images
+                          - generic [ref=e353]: RGB · 224 × 224
+                        - 'button "ENCODER: ResNet-50, Image pixels only" [ref=e357] [cursor=pointer]':
+                          - generic [ref=e358]: ENCODER
+                          - strong [ref=e359]: ResNet-50
+                          - generic [ref=e360]: Image pixels only
+                        - 'button "TRAIN + VALIDATE: Select checkpoint, 4 epochs · choose epoch 4" [ref=e364] [cursor=pointer]':
+                          - generic [ref=e365]: TRAIN + VALIDATE
+                          - strong [ref=e366]: Select checkpoint
+                          - generic [ref=e367]: 4 epochs · choose epoch 4
+                        - 'button "HELD-OUT TEST: Image test, 81.1557% accuracy" [ref=e371] [cursor=pointer]':
+                          - generic [ref=e372]: HELD-OUT TEST
+                          - strong [ref=e373]: Image test
+                          - generic [ref=e374]: 81.1557% accuracy
+                        - 'button "OUTPUT: Save results, Accuracy · Macro-F1 · run record" [ref=e378] [cursor=pointer]':
+                          - generic [ref=e379]: OUTPUT
+                          - strong [ref=e380]: Save results
+                          - generic [ref=e381]: Accuracy · Macro-F1 · run record
+                    - region "DeiT III image follow-up" [ref=e382]:
+                      - generic [ref=e383]:
+                        - 'button "05 / IMAGE ONLY: Prepare images, RGB · full-frame 224 × 224" [ref=e385] [cursor=pointer]':
+                          - generic [ref=e386]: 05 / IMAGE ONLY
+                          - strong [ref=e387]: Prepare images
+                          - generic [ref=e388]: RGB · full-frame 224 × 224
+                        - 'button "VISION TRANSFORMER: DeiT III B/16, Image pixels only" [ref=e392] [cursor=pointer]':
+                          - generic [ref=e393]: VISION TRANSFORMER
+                          - strong [ref=e394]: DeiT III B/16
+                          - generic [ref=e395]: Image pixels only
+                        - 'button "TRAIN + VALIDATE: Freeze selection, Accuracy · F1 · loss · epoch" [ref=e399] [cursor=pointer]':
+                          - generic [ref=e400]: TRAIN + VALIDATE
+                          - strong [ref=e401]: Freeze selection
+                          - generic [ref=e402]: Accuracy · F1 · loss · epoch
+                        - 'button "HELD-OUT TEST: Single frozen test, 83.1281% · 59,270 images" [ref=e406] [cursor=pointer]':
+                          - generic [ref=e407]: HELD-OUT TEST
+                          - strong [ref=e408]: Single frozen test
+                          - generic [ref=e409]: 83.1281% · 59,270 images
+                        - 'button "OUTPUT: Independent verify, CPU readback · receipts" [ref=e413] [cursor=pointer]':
+                          - generic [ref=e414]: OUTPUT
+                          - strong [ref=e415]: Independent verify
+                          - generic [ref=e416]: CPU readback · receipts
+                  - generic [ref=e417]:
+                    - generic [ref=e418]: Checkpoint selected by validation Macro-F1
+                    - generic [ref=e419]: Frozen held-out test → saved result
+                - region "Workflow step details" [ref=e420]:
+                  - generic [ref=e421]: INTERACTIVE WORKFLOW
+                  - generic [ref=e422]:
+                    - strong [ref=e423]: Follow a branch
+                    - paragraph [ref=e424]: Hover or focus a box to inspect its operation. The arrows show where each prepared signal goes next.
+              - generic [ref=e425]:
+                - generic [ref=e426]: Looping vector workflow · hover or focus a box to inspect
+                - generic [ref=e427]: Click a box to pin its details
+            - link "Open full diagram ↗" [ref=e429] [cursor=pointer]:
+              - /url: /workflow.html
+          - list [ref=e430]:
+            - listitem [ref=e431]:
+              - generic [ref=e432]: "01"
+              - generic [ref=e433]:
+                - heading "Prepare the data" [level=3] [ref=e434]
+                - paragraph [ref=e435]: Use the original Fakeddit splits. Text uses all released titles. Image branches exclude 491 files that could not be decoded.
+            - listitem [ref=e436]:
+              - generic [ref=e437]: "02"
+              - generic [ref=e438]:
+                - heading "Train the baselines" [level=3] [ref=e439]
+                - paragraph [ref=e440]: Train the title, image, and combined BERT-base / ResNet-50 baselines.
+            - listitem [ref=e441]:
+              - generic [ref=e442]: "03"
+              - generic [ref=e443]:
+                - heading "Run the DeiT follow-up" [level=3] [ref=e444]
+                - paragraph [ref=e445]: Fine-tune DeiT III B/16 on images; select by validation accuracy, freeze the checkpoint, test once, then independently verify.
+            - listitem [ref=e446]:
+              - generic [ref=e447]: "04"
+              - generic [ref=e448]:
+                - heading "Select and test baselines" [level=3] [ref=e449]
+                - paragraph [ref=e450]: Baseline checkpoints are selected by validation Macro-F1, frozen, and evaluated on the held-out split.
+  - contentinfo "Curiosity, combined." [ref=e451]:
+    - generic [ref=e452]:
+      - generic [ref=e453]:
+        - generic [ref=e454]:
+          - paragraph [ref=e455]: SRM University-AP
+          - heading "Curiosity, combined." [level=2] [ref=e456]
+          - paragraph [ref=e457]: UROP Research Project
+          - paragraph [ref=e458]: Faculty supervisor · Dr. N. Kiran Babu
+        - link "Back to top" [ref=e459] [cursor=pointer]:
+          - /url: "#top"
+          - text: ↑
+      - generic [ref=e460]:
+        - generic [ref=e461]:
+          - paragraph [ref=e462]: Read the project
+          - navigation "Project and research references" [ref=e463]:
+            - link "Model results ↗" [ref=e464] [cursor=pointer]:
+              - /url: "#results"
+            - link "Research workflow ↗" [ref=e465] [cursor=pointer]:
+              - /url: "#workflow"
+            - link "Project team ↗" [ref=e466] [cursor=pointer]:
+              - /url: "#team"
+            - link "Original paper ↗" [ref=e467] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/1911.03854
+            - link "Fakeddit release ↗" [ref=e468] [cursor=pointer]:
+              - /url: https://github.com/entitize/fakeddit
+        - generic [ref=e469]:
+          - paragraph [ref=e470]: Contact
+          - link "panvee_naidu@srmap.edu.in" [ref=e471] [cursor=pointer]:
+            - /url: mailto:panvee_naidu@srmap.edu.in
+          - generic [ref=e472]:
+            - button "Copy email" [ref=e473] [cursor=pointer]
+            - button "Copy dashboard link" [ref=e474] [cursor=pointer]
+          - status [ref=e475]
+      - generic [ref=e476]:
+        - generic [ref=e477]:
+          - paragraph [ref=e478]: The people
+          - heading "Project team" [level=3] [ref=e479]
+        - list [ref=e480]:
+          - listitem [ref=e481]:
+            - generic [ref=e482]:
+              - text: Panvee N
+              - generic [ref=e483]: Group leader
+            - generic [ref=e484]: AP23110010749
+            - link "panvee_naidu@srmap.edu.in" [ref=e485] [cursor=pointer]:
+              - /url: mailto:panvee_naidu@srmap.edu.in
+          - listitem [ref=e486]:
+            - generic [ref=e487]: Karthik J
+            - generic [ref=e488]: AP23110010740
+          - listitem [ref=e489]:
+            - generic [ref=e490]: Yogesh P
+            - generic [ref=e491]: AP23110011100
+      - paragraph [ref=e492]: The models classify posts into research categories. Verifying a claim requires separate evidence.

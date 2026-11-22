@@ -4,6 +4,8 @@ This module intentionally contains no E003 or E004 model code.  It validates
 the immutable paired cohort, provides deterministic text data loading, trains
 the approved BERT classifier, and writes auditable experiment artifacts.
 """
+# MODEL: Implements the approved BERT text classifier for six-way fake-news labels.
+# LOGIC: Validates the cohort, prepares text batches, trains, evaluates, and saves experiment evidence.
 
 from __future__ import annotations
 

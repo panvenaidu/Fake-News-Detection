@@ -1,4 +1,6 @@
 """Image-only 83% study, using the historical cohort and resumable training engine."""
+# MODEL: Configures image-only ViT/DeiT and DINOv2 classifier variants.
+# LOGIC: Sets up study recipes, verified checkpoints, preflight, training, and validation selection.
 import argparse
 import importlib.metadata
 import io

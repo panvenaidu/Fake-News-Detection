@@ -4,6 +4,8 @@ Launch requires exact approved faculty usable paired data and coverage. --stage 
 at epoch2. Part2 resumes the same four-epoch schedule, with final test implemented
 separately against a frozen validation-selected checkpoint. No local real training.
 """
+# MODEL: Fine-tunes and fuses BERT text and DeiT III image encoders for six-way classification.
+# LOGIC: Verifies paired inputs, resumes training, validates each epoch, and saves recovery/checkpoint evidence.
 import argparse
 import copy
 import csv
@@ -20,6 +22,8 @@ import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
+ASSETS = Path(__file__).resolve().parent / 'bert-base-assets'
+ASSET_HASHES = {'config.json':'864d63c4c2c4f02b1ec8eabdf40a0315af6a120df8775edc01d80e8c9d1d93bd', 'tokenizer/tokenizer.json':'d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66', 'tokenizer/tokenizer_config.json':'e1c2a61a99bda00f6c55303a210b30e2f92dcf8b555e215812e2eb583e177ffd'}
 sys.path.insert(0, str(ROOT / 'training/text_plus_image/Scripts'))
 from model import MaximumFusion, full_frame, load_image_checkpoint, IMAGE_SHA256
 os.environ.setdefault('TOKENIZERS_PARALLELISM','false')
@@ -156,6 +160,20 @@ def export_eval(folder,epoch,values,frame):
 def better(values,best):
  return best is None or (values['accuracy'],values['macro_f1'],-values['loss'])>(best['metrics']['accuracy'],best['metrics']['macro_f1'],-best['metrics']['loss'])
 
+def resume_compatibility(old,new):
+ """Permit only the offline asset-loading patch when resuming saved optimizer state."""
+ for key in ('config','config_sha256','inputs','versions'):
+  if old.get(key)!=new.get(key):raise ValueError('Resume contract changed: '+key)
+ oldsrc=old.get('sources',{});newsrc=new.get('sources',{})
+ if not set(oldsrc).issubset(newsrc):raise ValueError('Resume source set lost files')
+ changed={name for name,digest in oldsrc.items() if newsrc[name]!=digest}
+ if changed!={'train.py'}:raise ValueError('Resume source changes exceed the reviewed local-loading patch')
+ added=set(newsrc)-set(oldsrc)
+ if added!={'config.json','tokenizer.json','tokenizer_config.json'}:raise ValueError('Unexpected resume asset additions')
+ return {'type':'offline_bert_assets_only','changed_shared_sources':sorted(changed),
+         'added_pinned_assets':sorted(added),'old_preflight_sha256':old.get('preflight_sha256'),
+         'new_preflight_sha256':new.get('preflight_sha256')}
+
 class Engine:
  """The actual loop is injectable for synthetic interrupted-resume regression."""
  def __init__(self,model,optimizer,scheduler,scaler,cfg,output,device,contract):
@@ -170,7 +188,7 @@ class Engine:
   return receipt
  def resume(self):
   p,receipt=load_generation(self.out/'recovery')
-  if p['contract']!=self.contract:raise ValueError('Immutable config/source/input contract changed')
+  if p['contract']!=self.contract:resume_compatibility(p['contract'],self.contract)
   for obj,key in [(self.model,'model'),(self.optimizer,'optimizer'),(self.scheduler,'scheduler'),(self.scaler,'scaler')]:obj.load_state_dict(p[key])
   self.state=p['state'];restore_rng(p['rng']);self.optimizer.zero_grad(set_to_none=True)
   if self.state['best']:
@@ -200,6 +218,8 @@ class Engine:
     stop=STOP or (self.out/'STOP_REQUESTED').exists()
     due=(s['updates']>0 and s['updates']%cfg['checkpoint_updates']==0) or time.monotonic()-self.last_save>=cfg['checkpoint_seconds']
     if due or stop or s['phase']=='validation':self.save()
+    if boundaries%50==0 or s['cursor']==total_rows:
+     print('TRAINING_PROGRESS',json.dumps({'epoch':s['epoch'],'samples_seen':s['cursor'],'samples_total':total_rows,'optimizer_updates':s['updates'],'loss':s['loss_sum']/s['seen']}),flush=True)
     if stop:return False
    if boundary and (boundaries%50==0 or s['cursor']==total_rows):
     atomic_json(self.out/'status.json',{'utc':utc(),'state':'training','epoch':s['epoch'],'samples_seen':s['cursor'],'batches_seen':math.ceil(s['cursor']/micro),'optimizer_updates':s['updates'],'amp_skips':s['skips'],'loss':s['loss_sum']/s['seen']})
@@ -235,7 +255,8 @@ def run(args):
      or preflight.get('model_sha256')!=sha(Path(__file__).with_name('model.py'))
      or preflight.get('config_sha256')!=sha(args.config)
      or preflight.get('image_sha256')!=IMAGE_SHA256
-     or preflight.get('text_sha256')!=cfg['warmstart_sha256']):
+     or preflight.get('text_sha256')!=cfg['warmstart_sha256']
+     or preflight.get('bert_assets_sha256')!=ASSET_HASHES):
   raise ValueError('Matching real-pair CUDA preflight is required before training')
  if cfg.get('protocol_id')!=PROTOCOL or cfg.get('cohort_registration_sha256')!=REGISTRATION_SHA:raise ValueError('Unregistered usable-cohort configuration')
  if cfg['planned_epochs']!=4 or cfg['seed']!=42:raise ValueError('Unexpected registered budget/seed')
@@ -251,15 +272,22 @@ def run(args):
  except FileExistsError:raise RuntimeError('Attempt lock exists; verify original process/job before removing it')
  os.write(fd,str(os.getpid()).encode());os.close(fd)
  try:
-  source_files=[Path(__file__),Path(__file__).with_name('model.py'),ROOT/'training/text_plus_image/Scripts/multimodal_recovery_v1.py',ROOT/'training/text_plus_image/Scripts/usable_cohort_v2.py']
+  source_files=[Path(__file__),Path(__file__).with_name('model.py'),ASSETS/'config.json',ASSETS/'tokenizer/tokenizer.json',ASSETS/'tokenizer/tokenizer_config.json',ROOT/'training/text_plus_image/Scripts/multimodal_recovery_v1.py',ROOT/'training/text_plus_image/Scripts/usable_cohort_v2.py']
   if args.packed_index is not None:source_files.append(ROOT/'training/text_plus_image/Scripts/packed_image_io_v3.py')
   versions={'python':sys.version,'torch':torch.__version__,'torchvision':torchvision.__version__,'transformers':transformers.__version__,'numpy':np.__version__,'pillow':PIL.__version__}
   contract={'config':cfg,'config_sha256':sha(args.config),'inputs':inputs,'versions':versions,'sources':{p.name:sha(p) for p in source_files},'preflight_sha256':sha(args.preflight)}
   protocol=out/'protocol.json'
-  if args.resume and json.loads(protocol.read_text())!=contract:raise ValueError('Run protocol mismatch')
+  if args.resume:
+   old_contract=json.loads(protocol.read_text())
+   migration=resume_compatibility(old_contract,contract)
+   atomic_json(out/'resume_protocol_migration.json',migration)
   atomic_json(protocol,contract)
   random.seed(cfg['seed']);np.random.seed(cfg['seed']);torch.manual_seed(cfg['seed']);torch.cuda.manual_seed_all(cfg['seed']);torch.backends.cudnn.benchmark=False;torch.backends.cuda.matmul.allow_tf32=False;torch.use_deterministic_algorithms(True,warn_only=True)
-  tokenizer=AutoTokenizer.from_pretrained(cfg['bert_checkpoint'],revision=cfg['bert_revision']);bcfg=AutoConfig.from_pretrained(cfg['bert_checkpoint'],revision=cfg['bert_revision'])
+  for name,digest in ASSET_HASHES.items():
+   if sha(ASSETS/name)!=digest:raise ValueError('Bundled BERT asset checksum mismatch: '+name)
+  # Load the hash-pinned assets bundled with this experiment; no Hub access.
+  tokenizer=AutoTokenizer.from_pretrained(ASSETS/'tokenizer',local_files_only=True)
+  bcfg=AutoConfig.from_pretrained(ASSETS,local_files_only=True)
   text=BertModel(bcfg,add_pooling_layer=False)
   if not args.resume:
    if sha(args.warmstart)!=cfg['warmstart_sha256']:raise ValueError('Warmstart hash mismatch')
@@ -287,6 +315,7 @@ def run(args):
     if not engine.train_epoch(build_loader(data['train'],tokenizer,cfg,True,engine.state['cursor']),len(data['train'])):return
    values,pred=evaluate(model,build_loader(data['validation'],tokenizer,cfg,False),torch.device('cuda'))
    if pred.id.tolist()!=frames['validation'].id.tolist():raise ValueError('Validation ID/order mismatch')
+   print('VALIDATION_EPOCH',json.dumps({'epoch':epoch,'metrics':values}),flush=True)
    proof=export_eval(out,epoch,values,pred);engine.finish_validation(values,proof)
   atomic_json(out/('part1_runtime_complete.json' if args.stage=='part1' else 'training_runtime_complete.json'),{'utc':utc(),'epochs_completed':len(engine.state['history']),'best':engine.state['best'],'no_test_performed':True,'durability':'Runtime complete only; not accepted until independent verification/export/Git receipt'})
  finally:lock.unlink(missing_ok=True)

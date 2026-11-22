@@ -1,0 +1,23 @@
+{
+  "id": "rocky62/urop-bert-deit3-continuation-retry1",
+  "title": "UROP BERT DeiT III Continuation Retry 1",
+  "code_file": "training.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "dataset_sources": [
+    "rocky62/urop-faculty-usable-packed-input-v3"
+  ],
+  "kernel_sources": [
+    "rocky62/urop-text-only-final-results/1",
+    "rocky62/urop-images-quality-check/2",
+    "rocky62/urop-image-only-vit-83-training/1",
+    "rocky62/urop-bert-deit3-training-continuation"
+  ],
+  "competition_sources": [],
+  "model_sources": [],
+  "machine_shape": "NvidiaTeslaT4"
+}
